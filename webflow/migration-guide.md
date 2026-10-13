@@ -107,6 +107,8 @@ The Backdrop should remain a sibling within the SmashBurger root and retain `[da
 
 ## Designer, Preview and delivery
 
+Fresh clean-destination legacy Always unlink selector identities and declarations are recorded in the [2026-10-13 class audit](always-unlink-class-audit-2026-10-13.md). Keep paired same-name style records distinct; the declaration-free classification is not permission to remove them without a recoverable copy and before/after behavior checks.
+
 The settings inspector and Embed remain visible on the Designer Canvas. The enhancement hides the settings inspector only after initialization in Preview or published output. A more compact authoring-infrastructure treatment is planned so the settings Div and Embed can remain selectable without occupying normal page layout while the navigation is styled.
 
 Custom Navigator display names can make a polished component demo easier to scan, but they hide the class selectors authors need while adapting a real navigation. Future Webflow releases and the public clonable will therefore leave structural elements on Webflow's class-based Navigator labels. Their planned `sb-*` class names must be descriptive enough to serve as both the styling API and the useful Navigator label.
