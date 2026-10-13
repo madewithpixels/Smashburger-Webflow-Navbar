@@ -171,3 +171,25 @@ Canvas control and passed `true`/`false` Designer checks at their collapse
 breakpoints. The [trial record](unlink-hardening-candidate.md)
 separates the verified fixtures from remaining clean-destination work. The
 shared Library and v0.2.6 delivery assets were not changed.
+
+## Keep in HTML when hidden: isolated Code Embed check (2026-10-13)
+
+On the unpublished `SB Unlink Clean Trial` page `Unlink Fallback Isolation`
+(`6ace83e6064283b213f2c222`), the separate Canvas helper Embed
+(`09cde9a2-2733-c3bd-bebf-1d90daca34ce`) was tested without hiding the runtime
+loader Embed (`09cde9a2-2733-c3bd-bebf-1d90daca34cd`). The helper started
+Visible, with **Keep in HTML when hidden** unchecked. Checking that option and
+then setting the helper to Hidden left its code stored (Data MCP readback),
+but at the 820px Tablet Canvas the collapsed menu panel and links appeared
+instead of remaining hidden for styling. Thus this option did not preserve the
+helper's effective Canvas CSS in this test. This agrees with Michael's report
+that the feature has been unreliable for Code Embeds; do not use it as the
+mechanism for hiding the SmashBurger authoring helper.
+
+The helper was restored to Visible, Keep in HTML was unchecked again, and the
+Tablet Canvas returned to the expected Brand + MENU closed view. Data MCP
+confirmed visibility and helper code were retained. The test says nothing
+about the sibling runtime Embed's execution while hidden, nor about published
+output. Preview was restored after the Canvas test. No Library component,
+release asset, or published site was changed. See also the [unlink candidate
+record](unlink-hardening-candidate.md).
