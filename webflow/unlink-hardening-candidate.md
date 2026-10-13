@@ -333,13 +333,13 @@ infrastructure disclosure to closed. The Details disclosure itself toggled
 in Chrome. Its closed row is 20px high, 14px Arial, unpadded, and visible below
 the navigation in published output.
 
-This is a partial authoring prototype, not an accepted UI pattern. Although
-CSS/JS output remains present and the runtime initializes from inside closed
-Details, the summary is visibly unstyled in published output and the wrapper
-does not show a human-readable property/configuration summary. Webflow/Data DOM
-settings readback confirms the values remain available as static attributes;
-that does not satisfy visual/readable configuration in Preview or published
-output. Follow-up testing blocked only the v0.2.6 JavaScript request while
+This is a partial authoring prototype, not an accepted shared-component
+pattern. Although CSS/JS output remains present and the runtime initializes
+from inside closed Details, the summary is visibly unstyled in published
+output. A native Paragraph inside the wrapper now displays a static snapshot
+of the current settings in Preview and published output. It is not property-
+bound: authors must update it when the corresponding root attributes change.
+Follow-up testing blocked only the v0.2.6 JavaScript request while
 leaving CSS available. At 393, 820 and 667px the native menu disclosure opened
 and closed successfully with zero horizontal overflow, while the infrastructure
 disclosure stayed closed. With JavaScript absent, the native disclosure
@@ -347,8 +347,10 @@ remained accessible but script-managed `aria-expanded`, `aria-hidden` and
 `inert` attributes were absent; Escape closing was not established. Turning
 off the request block and reloading restored `data-mwp-ready="true"` and DevTools
 reported zero blocked requests. Keep the roadmap item open and do not move this
-structure into a shared component until its visible summary/configuration gaps
-are resolved.
+structure into a shared component until the unstyled row and the manual
+snapshot's upkeep are acceptable or resolved. The exact Paragraph text, Preview
+tree visibility and published wrapping at all four widths are recorded in
+`canvas-authoring-fixture.md`.
 
 The clean-trial staging route is now published as isolated test evidence. This
 does not publish the MWP Component Library or alter its tag styles. No push was

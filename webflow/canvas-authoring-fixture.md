@@ -231,14 +231,11 @@ The closed infrastructure disclosure measured 20px high and contained both
 Embeds; its summary was 14px Arial with no padding.
 
 This proves that the saved code and published CSS/JS remain present and the
-runtime initializes while the Embeds sit inside a closed Details element. It
-does **not** complete the authoring prototype: the plain-text summary appears
-as an unstyled extra row below the navigation in published output, and the
-Details does not display a human-readable property/configuration summary.
-Those are visible authoring/presentation gaps; do not reuse this wrapper in a
-release component without resolving them. The root's static attributes remain
-available through Webflow settings and the rendered DOM, but this is not a
-substitute for a readable summary.
+runtime initializes while the Embeds sit inside a closed Details element. The
+plain summary remains an unstyled extra row below the navigation in published
+output. A static settings snapshot was added inside the disclosure afterward;
+it is readable but must be edited whenever the root attributes change, so it
+is not a live binding or suitable as an unattended source of truth.
 
 ### No-JavaScript fallback after wrapping (2026-10-13)
 
@@ -260,3 +257,29 @@ zero affected requests, the v0.2.6 script tag was present, the header returned
 Chrome was returned to the normal Desktop page view. The staging site has the
 isolated test page published as evidence; the Library was not shared or
 published and no Git push was made.
+
+### Static settings snapshot inside Details (2026-10-13)
+
+To test the low-risk, no-JavaScript option, a native Webflow Paragraph was
+appended after the two Embeds inside the same Details wrapper (element
+`fea4e019-8825-fd35-0ac3-4d61862ada32`). The text reads: “Settings snapshot
+(manual): Collapse Tablet · Layout Dropdown · Alignment right · Panel width
+24rem · Motion dropdown · Presets on · Backdrop on · Canvas preview off.
+Update this text if any listed settings change.” Data MCP
+readback confirmed the exact text and the original root/runtime values remain
+unchanged: Tablet, Dropdown, right, 24rem, dropdown motion, presets/backdrop
+on, Canvas preview off. The snapshot is a static text node; it has no property
+binding and can become stale if a setting is changed without updating the note.
+
+Webflow Preview on `Unlink Fallback Isolation` compiled with custom code
+enabled. Expanding `SmashBurger infrastructure` exposed the snapshot as text
+in the Preview accessibility tree. On the published staging page, expanding
+the same disclosure exposed the exact text in Chrome's accessibility tree and
+rendered HTML. It is ordinary 14px inherited Arial text; at 2,060px it occupied
+one line, at 820px two lines, at 667px three lines, and at 393px four lines.
+Each published breakpoint had zero horizontal overflow and the disclosure
+started closed on reload. This confirms a readable manual snapshot in Preview
+and published output without adding JavaScript. The summary row itself remains
+unstyled, and the manual snapshot still requires upkeep when the saved
+attributes change. The source Library candidate, original v0.2.6 component,
+and both imported tag styles remain untouched.
