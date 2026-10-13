@@ -305,3 +305,51 @@ The source candidate tree returns the intended Webflow `styleNames` throughout i
 ### Clean-install linked Navigator readback (2026-10-13)
 
 On `SB Unlink Clean Trial` Home, the Designer Navigator shows linked instances by component name (`SmashBurger CDN` and `SmashBurger CDN Unlink Trial`) and the two adjacent unlinked copies by their automatic root class labels (`mwp-css-nav` and `mwp-css-nav 2`). Selecting a linked component exposes its property editor and Webflow reports that Library components can only be edited on the source site; the consumer Navigator does not expose the linked definition's internal selector tree. Data MCP independently identifies the candidate instance as `d2203eba-be45-3543-7bc2-84bec68c02e6`, backed by the installed local definition `706e9851-a669-9b6c-059d-6a280bd8f781`; the original linked instance remains `a6cc5b4e-6658-7a7e-c943-a774aeac8e50`. This verifies the linked consumer's visible instance labels and the unlinked root labels, but not source Navigator visuals, internal linked selectors (not exposed in the consumer), or a public clonable. The latter is not part of the current unlink release gate.
+
+### Published Details-wrapper follow-up (2026-10-13)
+
+The candidate was already shared/installed on `SB Unlink Clean Trial`; no new
+Library share was performed. On its existing isolated unlink page, both
+component Embeds were moved under a new closed native Details wrapper. Data MCP
+readback confirms the wrapper's summary and both Embed children, the exact
+v0.2.6 stylesheet/deferred-script loader and the Canvas helper code. It also
+confirms the unlinked root's static collapse/Canvas/backdrop/presets attributes
+and the runtime menu settings. The source Library definition and released
+v0.2.6 component remain unchanged.
+
+Michael authorized publishing staging sites during this session. The clean
+trial has no custom domains; a full staging publish compiled at
+`2026-10-13T22:26:55.831Z`. After that publish, the exact
+`/unlink-fallback-isolation` route loaded on the Webflow subdomain. Chrome
+DevTools responsive checks at 2,060, 820, 667 and 393 CSS pixels found one
+navigation root, zero horizontal overflow, the v0.2.6 CSS and JS tags, and
+`data-mwp-ready="true"`. At Desktop the links were directly visible without
+the menu trigger. At the three collapsed widths the menu started closed with
+`aria-expanded="false"`, `aria-hidden="true"` and `inert`; opening exposed the
+links, and Escape closed it and returned focus to the trigger at all three
+widths. At 667px, changing from an open menu through Desktop and back to 393px
+returned to the closed mobile trigger; a 393px refresh also reset the menu and
+infrastructure disclosure to closed. The Details disclosure itself toggled
+in Chrome. Its closed row is 20px high, 14px Arial, unpadded, and visible below
+the navigation in published output.
+
+This is a partial authoring prototype, not an accepted UI pattern. Although
+CSS/JS output remains present and the runtime initializes from inside closed
+Details, the summary is visibly unstyled in published output and the wrapper
+does not show a human-readable property/configuration summary. Webflow/Data DOM
+settings readback confirms the values remain available as static attributes;
+that does not satisfy visual/readable configuration in Preview or published
+output. Follow-up testing blocked only the v0.2.6 JavaScript request while
+leaving CSS available. At 393, 820 and 667px the native menu disclosure opened
+and closed successfully with zero horizontal overflow, while the infrastructure
+disclosure stayed closed. With JavaScript absent, the native disclosure
+remained accessible but script-managed `aria-expanded`, `aria-hidden` and
+`inert` attributes were absent; Escape closing was not established. Turning
+off the request block and reloading restored `data-mwp-ready="true"` and DevTools
+reported zero blocked requests. Keep the roadmap item open and do not move this
+structure into a shared component until its visible summary/configuration gaps
+are resolved.
+
+The clean-trial staging route is now published as isolated test evidence. This
+does not publish the MWP Component Library or alter its tag styles. No push was
+made.

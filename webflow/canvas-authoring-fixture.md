@@ -193,3 +193,70 @@ about the sibling runtime Embed's execution while hidden, nor about published
 output. Preview was restored after the Canvas test. No Library component,
 release asset, or published site was changed. See also the [unlink candidate
 record](unlink-hardening-candidate.md).
+
+## Closed native Details wrapper for the two Embeds (2026-10-13)
+
+On the isolated unlinked candidate at `SB Unlink Clean Trial` → `Unlink
+Fallback Isolation` (`6ac8c9f18e63674e4f34f88a` /
+`6ace83e6064283b213f2c222`), the runtime-loader Embed and Canvas-helper Embed
+were moved under a new, closed native `<details>` element labelled
+`SmashBurger infrastructure`. Data MCP readback confirmed the order
+`summary`, loader Embed, helper Embed; both Embeds remained visible in the
+stored tree. The loader still points to the exact v0.2.6 CSS and deferred
+JavaScript assets. The helper retains its Designer-only rules and the isolated
+candidate's local collapse CSS. The candidate root's static collapse,
+backdrop, presets and Canvas-open values and its menu's motion/layout settings
+remain in the saved element attributes/settings. Neither the Library source,
+the shared candidate definition, nor the released v0.2.6 component was edited.
+
+With the wrapper closed, Preview interaction after the move still opened and
+closed the collapsed menu; the infrastructure summary itself could be opened
+and closed. The page was then published only to the `SB Unlink Clean Trial`
+Webflow staging subdomain (no custom domains). The first route request returned
+404 because the prior compiled publish predated the page edits. One staging
+publish compiled at `2026-10-13T22:26:55.831Z`; the exact published route,
+`/unlink-fallback-isolation`, then loaded.
+
+Chrome DevTools responsive emulation and one batched DOM read per width
+confirmed one navigation root and zero document overflow at 2,060, 820, 667
+and 393 CSS pixels. The v0.2.6 stylesheet and script elements were present at
+all four widths, `data-mwp-ready="true"` was set, and the menu state changed
+from expanded Desktop links to a closed, inert panel with a visible trigger at
+the three collapsed widths. At 820, 667 and 393px, the published trigger opened
+the links; Escape closed it and returned focus to the trigger at all three
+widths. Moving from an open Mobile landscape menu through Desktop and back to
+Mobile portrait returned to the closed mobile trigger state. Refresh at Mobile
+portrait also returned the menu and infrastructure disclosure to closed.
+The closed infrastructure disclosure measured 20px high and contained both
+Embeds; its summary was 14px Arial with no padding.
+
+This proves that the saved code and published CSS/JS remain present and the
+runtime initializes while the Embeds sit inside a closed Details element. It
+does **not** complete the authoring prototype: the plain-text summary appears
+as an unstyled extra row below the navigation in published output, and the
+Details does not display a human-readable property/configuration summary.
+Those are visible authoring/presentation gaps; do not reuse this wrapper in a
+release component without resolving them. The root's static attributes remain
+available through Webflow settings and the rendered DOM, but this is not a
+substitute for a readable summary.
+
+### No-JavaScript fallback after wrapping (2026-10-13)
+
+Chrome DevTools Request Conditions blocked only the exact v0.2.6 CDN JavaScript
+URL; the stylesheet remained available. The browser reported the blocked
+request and the component's fallback warning. At 393, 820 and 667 CSS pixels,
+the closed menu remained hidden, the navigation `<details>` summary remained
+available, and each width had zero horizontal overflow. The native disclosure
+opened to expose the navigation links and closed again at each width. With the
+script blocked, `data-mwp-ready` was absent and the script-managed
+`aria-expanded`, `aria-hidden` and `inert` attributes were absent; native
+`<details>` disclosure semantics remained exposed to Chrome's accessibility
+tree. No-JavaScript Escape closing was not established. The infrastructure
+Details also remained independently closed on reload.
+
+The request-blocking rule was then turned off. After reload, DevTools reported
+zero affected requests, the v0.2.6 script tag was present, the header returned
+`data-mwp-ready="true"`, and the closed menu again had zero overflow at 393px.
+Chrome was returned to the normal Desktop page view. The staging site has the
+isolated test page published as evidence; the Library was not shared or
+published and no Git push was made.
