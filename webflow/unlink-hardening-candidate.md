@@ -99,6 +99,64 @@ Read-only Data MCP reinspection before any release mutation confirmed:
 
 Chrome/Preview interaction is paused while Michael uses Chrome. No further browser action was taken after he interrupted to use it. The remaining browser-only clean-destination checks are still the direct batched DOM/ARIA/inert and overflow measurement plus CSS/native Details fallback; the existing Preview reload compilation error also leaves refresh parity unresolved. Do not infer these checks from MCP structure.
 
+**Prepared read-only Preview probe:** in Chrome DevTools, select the separate-origin `sb-unlink-clean-trial.canvas.webflow.com` execution context, then run this once at each Desktop, Tablet, Mobile landscape and Mobile portrait breakpoint. It evaluates every visible component instance in one call and changes no page state:
+
+```js
+(() => {
+  const variantClass = /^(?:Tablet|Mobile|Always|Never)\s+\d+$/i;
+  const documentElement = document.documentElement;
+  const instances = [...document.querySelectorAll('[data-mwp-navbar]')];
+  const box = (element) => {
+    if (!element) return null;
+    const rect = element.getBoundingClientRect();
+    const style = getComputedStyle(element);
+    return {
+      x: Math.round(rect.x), y: Math.round(rect.y),
+      width: Math.round(rect.width), height: Math.round(rect.height),
+      display: style.display, visibility: style.visibility,
+      opacity: style.opacity
+    };
+  };
+  return {
+    viewport: { width: innerWidth, height: innerHeight },
+    documentOverflowPx: documentElement.scrollWidth - documentElement.clientWidth,
+    instances: instances.map((root, index) => {
+      const menu = root.querySelector('[data-mwp-menu]');
+      const trigger = menu?.querySelector('[data-mwp-trigger]');
+      const panel = root.querySelector('[data-mwp-panel]');
+      const backdrop = root.querySelector('[data-mwp-backdrop]');
+      const generatedClasses = [...new Set(
+        [...root.querySelectorAll('[class]')]
+          .flatMap((element) => [...element.classList])
+          .filter((name) => variantClass.test(name))
+      )];
+      return {
+        index,
+        candidate: root.hasAttribute('data-unlink-candidate'),
+        collapse: root.getAttribute('data-collapse'),
+        canvasOpen: root.getAttribute('data-canvas-open'),
+        menuOpen: menu?.open ?? null,
+        triggerExpanded: trigger?.getAttribute('aria-expanded') ?? null,
+        triggerHasFocus: document.activeElement === trigger,
+        panel: {
+          ariaHidden: panel?.getAttribute('aria-hidden') ?? null,
+          inert: panel?.inert ?? null,
+          box: box(panel)
+        },
+        backdrop: {
+          ariaHidden: backdrop?.getAttribute('aria-hidden') ?? null,
+          box: box(backdrop)
+        },
+        rootOverflowPx: root.scrollWidth - root.clientWidth,
+        generatedClasses
+      };
+    })
+  };
+})()
+```
+
+Run it once per breakpoint. At Desktop, leave the candidate in its normal expanded state. At Tablet and both mobile breakpoints, open the unlinked candidate before the read to capture `aria-expanded`, panel `aria-hidden`/`inert`, backdrop and overflow alongside all instances, then use Escape for the close/focus-return check. Do not modify DOM in the console. This probe is prepared but not yet run or validated against the clean destination.
+
 ### Clean destination baseline (2026-10-09)
 
 Michael created a separate unpublished `SB Unlink Clean Trial` site (`6ac8c9f18e63674e4f34f88a`). Before any Library placement or app use, Webflow Data MCP found one empty Home page (`6ac8c9f38e63674e4f34f8b7`), no component definitions and no matches in the site's style query. The site has no published build or custom domain. This is a pre-import baseline only: it does not yet establish which tag styles a Library installation adds, whether the site accepts the component, or how a fresh unlink behaves. The Smashburger Designer prototype app is authorised for the site, but its install state was not established through the available MCP tools.
