@@ -302,6 +302,15 @@ The Source Trial (`6ac8ebeea85ad2dfbe68865b`) still contains linked instance `36
 
 The source candidate tree returns the intended Webflow `styleNames` throughout its 79 native nodes (27 Blocks, 17 Links, 20 Strings, four DOM nodes, nine Images and two Embeds); no custom `displayName` values appeared in that tree. On the clean destination's unlinked fixture, Data MCP returned `display_name: null` for both the root (`mwp-css-nav 3`) and its inner wrapper, so Webflow's automatic class-based labels remain in use for those two key selectors. Clean Home still has two component instances. This does not finish the broader Navigator check: the linked consumer's visible Navigator treatment and a public clonable have not been verified, and no public clonable is part of the current release gate.
 
+Fresh Data MCP checks later on 2026-10-13 re-read the source candidate's full
+79-node tree and individually queried its root, inner wrapper, native menu,
+and navigation panel. Each returned `display_name: null`; their source
+`styleNames` remain `mwp-css-nav`, `mwp-css-nav_inner`, `mwp-css-nav_menu`,
+and `mwp-css-nav_panel`. This confirms there are no custom labels on those
+four source nodes, but not how the labels render in the source Designer
+Navigator. The attempted Designer MCP connection was unavailable, so the
+source visual check remains open. No component or instance was changed.
+
 ### Clean-install linked Navigator readback (2026-10-13)
 
 On `SB Unlink Clean Trial` Home, the Designer Navigator shows linked instances by component name (`SmashBurger CDN` and `SmashBurger CDN Unlink Trial`) and the two adjacent unlinked copies by their automatic root class labels (`mwp-css-nav` and `mwp-css-nav 2`). Selecting a linked component exposes its property editor and Webflow reports that Library components can only be edited on the source site; the consumer Navigator does not expose the linked definition's internal selector tree. Data MCP independently identifies the candidate instance as `d2203eba-be45-3543-7bc2-84bec68c02e6`, backed by the installed local definition `706e9851-a669-9b6c-059d-6a280bd8f781`; the original linked instance remains `a6cc5b4e-6658-7a7e-c943-a774aeac8e50`. This verifies the linked consumer's visible instance labels and the unlinked root labels, but not source Navigator visuals, internal linked selectors (not exposed in the consumer), or a public clonable. The latter is not part of the current unlink release gate.
