@@ -1,7 +1,7 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The temporary Clean Trial missing-script probe was removed after native Details keyboard checks. A fresh-build run passed 48/48 and restored all generated files. On the existing published Clean Trial page, Escape closed the nested “More” menu with focus returned to its trigger; rendered desktop overflow was zero at DPR 1. This is v0.2.6 evidence. Source-candidate responsive layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The temporary Clean Trial missing-script probe was removed after native Details keyboard checks. The required fresh-build run passed 48/48 and restored all generated files. On the published Clean Trial page, Escape closed the nested “More” menu with focus returned to its trigger; the desktop render showed no visible overflow. This is v0.2.6 evidence. Candidate-specific layout, motion and icon follow-up remains open where noted below. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 71f34de — current `main` checked before this documentation update; local `origin/main` still points to `07de2eb`, ten commits behind this checkout. No remote operation was made.
+**Reviewed at commit:** a467f90 — current `main` checked before this documentation update. The local tracking ref is behind this checkout; no remote operation was made.
 **Next action:** Resume source-candidate layout and close checks in a Chrome session with responsive viewport controls; then check reduced motion, custom animation and icon rendering.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
@@ -21,6 +21,22 @@ DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local
 **Needs Michael:** Review the local commits when convenient. New local fixes and this evidence remain pending acceptance.
 
 **Next useful action:** Use a Chrome session with responsive viewport controls to check the source-derived candidate across collapse boundaries and layouts, then test its backdrop, outside and link closing. Keep new work on authorised test/staging fixtures.
+
+## 14 October 2026 — Brief #12 browser-control follow-up — Codex (night shift)
+
+**Changed (R-095, R-155):** No code, Webflow source, Library resource, staging page or release file changed. This session did not repeat checks already recorded in the Brief #12 test history.
+
+**Outputs:** None. The published Clean Trial comparison page rendered in a fresh Chrome tab; the tab was closed after inspection.
+
+**Checked how:** Confirmed `main` at `a467f90` and a clean tree before this entry. Chrome's computer-use surface returned the published page accessibility tree and a 2,044 × 1,131 screenshot of the full desktop navigation. It exposed no responsive viewport emulation or page-script inspection; the DevTools shortcut exposed neither. This is published v0.2.6 visual evidence only, not a Lite candidate check. The new tab was closed and absent from the browser tab list afterward.
+
+**Still open:** Candidate responsive layout, panel scrolling/containment and outer backdrop/outside/link closing need a browser session with viewport controls and page inspection. Prior records cover local candidate resize/focus and icon emulation; they do not provide physical-display or human screen-reader evidence. Preview compilation and cloned upgrade/rollback also remain unresolved.
+
+**Needs Michael:** Review and push local commits when convenient. No new acceptance was recorded.
+
+**Next useful action:** Continue the source-candidate render matrix in a Chrome session that exposes responsive viewport and page inspection controls. Leave the Clean Trial fixture unchanged until then.
+
+**Handoff:** Read this entry, then the Brief #12 test record and R-095/R-155. Clean Trial remains the published v0.2.6 comparison; no staging or Library mutation was made in this session.
 
 ## 14 October 2026 — Brief #12 missing-script fallback and cleanup — Codex (night shift)
 

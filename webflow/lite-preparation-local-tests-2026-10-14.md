@@ -1004,3 +1004,17 @@ reduced-motion/custom-animation, broader icon visuals, human screen-reader and
 device checks, and cloned upgrade/rollback remain open. Chrome's current
 browser-control surface still does not offer responsive viewport controls;
 this follow-up therefore stayed at its actual 2,044 × 1,131 viewport.
+
+### Brief #12 browser-control follow-up — 14 October 2026
+
+The required clean build and staging fallback cleanup were already recorded in
+the preceding entries; they were not repeated. A fresh Chrome tab opened the
+published Clean Trial `/unlink-fallback-isolation` page. Its accessibility tree
+and 2,044 × 1,131 screenshot showed the full desktop navigation. This is the
+published v0.2.6 comparison page, not the Lite source candidate.
+
+The available computer-use browser surface did not expose responsive viewport
+emulation or page-script inspection. A DevTools keyboard shortcut did not open
+those controls. No candidate breakpoint, runtime or closing claim follows from
+this check. The tab was closed and its ID was absent from the browser tab list.
+No Webflow or repository source content changed.
