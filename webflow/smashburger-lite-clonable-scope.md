@@ -82,7 +82,9 @@ guide.
 
 ## Follow-on decisions
 
-The class migration and release planning must settle the canonical project name,
-class names and exact CDN release before Webflow construction. Visual direction,
-demo page copy and the default collapse breakpoint can be chosen during the
-build, provided they remain within the boundaries above.
+The [class namespace migration audit](class-namespace-migration-audit.md)
+records the migration surface, chosen class mapping and compatibility hooks to
+preserve. The canonical repository must be created and a released CDN version
+verified before Webflow construction. Visual direction, demo page copy and the
+default collapse breakpoint can be chosen during the build, provided they
+remain within the boundaries above.
