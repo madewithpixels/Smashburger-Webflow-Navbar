@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. On the published Clean Trial comparison, responsive samples from 320px to 2,048px had no horizontal document overflow; the 320×568 open panel stayed in view and scrolled internally. Real keyboard, outside-click and link-closing checks passed. This remains v0.2.6 evidence, not candidate-Lite verification. Preview compilation, candidate motion/icon checks, physical-device and screen-reader checks, and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; staging responsive and keyboard checks cover the released v0.2.6 comparison. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 959485b — current `main` checked before this update; history since a467f90 is reflected below. Local branch is 15 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Secure an isolated staging route for the source candidate without publishing unrelated pending pages; then test candidate layouts, motion and icon rendering.
+**Reviewed at commit:** fb78438 — current `main` checked for this entry; history since 959485b contains the fresh-build record. Local branch is 16 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Resolve the documented Preview compiler failure and remaining physical-device, human screen-reader and cloned upgrade/rollback checks before any new Lite release decision.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 fresh-build verification — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, release, Library or Webflow content changed. Freshly built delivery checks passed across maintained source and generated forms.
+
+**Outputs:** Updated the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. No staging publication, Library sharing or release occurred.
+
+**Checked how:** At `fb78438`, `npm run test:built` passed 48/48 across source, dist, minified and Embed deliveries. The runner restored all 12 generated files; `git diff --exit-code` over the generated paths, `git diff --check` and `git status` confirmed no generated or unrelated changes. This verifies freshly built local candidate bytes, not immutable v0.2.6 runtime behavior or Webflow Preview.
+
+**Still open:** The browser did not expose the automatic failed-script request entry. Webflow Preview still reports its earlier compilation error. Human screen-reader/physical-device checks, physical-display DPR 2×/3× icon checks and cloned upgrade/rollback need environments or release prerequisites not available here. No new defect was demonstrated.
+
+**Needs Michael:** Review the local commits when convenient. Candidate fixes and checks remain pending acceptance.
+
+**Next useful action:** Arrange a working Preview route and suitable human/device and cloned-release environments, then complete those checks before deciding on a new release.
 
 ## 14 October 2026 — Brief #12 fresh-build and browser follow-up — Codex (night shift)
 

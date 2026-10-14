@@ -1075,3 +1075,25 @@ showed the desktop navigation accessibility tree. This was a read-only check
 of the v0.2.6 comparison; it adds no candidate layout, keyboard, console, DPR,
 Preview or screen-reader evidence. The tab was closed. No Webflow change or
 publication occurred.
+
+### Brief #12 fresh-build verification — 14 October 2026
+
+At `fb78438`, `npm run test:built` passed all 48 checks across maintained
+source, newly generated `dist`, minified and Webflow Embed deliveries. This is
+fresh-build evidence; the checked-in v0.2.6 delivery files were restored rather
+than overwritten. The runner reported restoration of all 12 generated files.
+An explicit `git diff --exit-code` over the generated paths passed, as did
+`git diff --check`; `git status --short --branch` showed only the expected
+branch-ahead count before these documentation edits.
+
+No browser, Webflow, Library, publication or release change was made for this
+rerun. The earlier rendered candidate responsive, reduced-motion emulation,
+representative icon-emulation and native fallback results remain as recorded
+above; they are not physical-display or human assistive-technology evidence.
+
+Still open: Chrome did not expose the page's automatic failed-script request
+entry. The recorded Webflow Preview compiler failure remains unresolved.
+Physical-device and human screen-reader checks, physical-display DPR 2×/3× icon
+checks, and cloned upgrade/rollback remain unavailable because there is no
+suitable device/screen-reader session or cloned release candidate. No defect
+was demonstrated in this fresh-build rerun.
