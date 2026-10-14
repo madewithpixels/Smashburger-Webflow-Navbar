@@ -1,3 +1,4 @@
+Current numbered roadmap: [ROADMAP.md](ROADMAP.md).
 # SmashBurger roadmap
 
 This checklist is the implementation plan and status record. Completed work is checked only after source or Webflow verification.
