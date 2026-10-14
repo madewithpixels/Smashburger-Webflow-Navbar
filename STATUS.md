@@ -1,12 +1,76 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; one-Base unlink candidate verified in recorded fixtures; class migration and Lite clonable still planned.
-**Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** c808ca40d13395cd6d39e0ecdfe586d79ae10760 — pre-retrofit HEAD checked locally
-**Next action:** Michael reviews the extracted docs and Proposed decisions before choosing the next product/release brief.
-**Needs Michael:** Q-01–Q-07 below; no agent acceptance has been added.
+**Stage:** v0.2.6 released baseline; Lite scope accepted, naming/class migration and Lite publication pending; Designer Extension / Make local deferred until Lite works.
+**Last updated:** 14 October 2026 — Codex
+**Reviewed at commit:** 161b744 — checked baseline before this documentation update
+**Next action:** Continue Lite preparation within D-011; class migration and publication wait for the product name. Verify future fresh installs in current test projects.
+**Needs Michael:** Decide the product name. This blocks the class migration and Lite publication.
 
-Stage sources: todo opening release status and §10; webflow/v0.2.6-release-verification.md;
-webflow/unlink-hardening-candidate.md; git c808ca4, 5d720b1, 77716d2, 802679d.
+Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
+DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md. No new boss question.
+
+## 14 October 2026 — Michael’s answers and historical acceptance — Codex
+
+**Changed:** Applied Q-01–Q-07 to the four project docs. D-011 accepts the Lite
+boundary (R-177–R-186); D-015 accepts separate mega-menu scope and defers premium
+pricing/licensing/backend (R-212, R-215–R-224); D-016 accepts the manual settings
+snapshot as a prototype with a muted “Infrastructure and settings” label (R-165).
+The label is direction only, not an implemented change. D-014 and R-187–R-214
+remain deferred until Lite works. Appended Q-06 to settled D-010 without rewriting
+its original record: R-160 stays a historical defect; leave SB Test Four alone and
+verify fresh installs in current test projects. D-012/D-013 remain Proposed while
+Michael decides the product name (R-119–R-128). Nothing is deployed on a live
+domain yet, so the old repo’s CDN compatibility role matters less; no repository
+change is authorised. Source: Michael’s explicit answers in this session.
+
+**Historical acceptance — Michael, 14 October 2026:** Applied his standing rule to
+183 built roadmap items supported by pre-today release or use records, including
+the v0.2.6 release work. Each item now says `accepted (historical)` and cites an
+acceptance basis. This applies Michael’s rule, not agent sign-off. 83 items remain
+pending: 66 not built and 17 built. Of those 17, four are newer work, four are
+unreleased candidate work, two are prototypes, and seven have unclear qualifying
+release/use evidence. The unclear count is seven; no item-by-item questions raised.
+Evidence fields and States are unchanged. Historical acceptance of superseded
+milestones does not revive them. Sources: project-docs v0.3 Historical acceptance;
+Michael’s instruction in this session; ROADMAP acceptance-basis links to the POC,
+Canvas fixture and v0.2.4/v0.2.6 release records.
+
+**Outputs:** Updated SCOPE.md, DECISIONS.md, ROADMAP.md and STATUS.md only. Local
+commit requested: `Apply Michael's answers and historical acceptance`.
+
+**Checked how:** Clean main baseline at 161b744. Reviewed c808ca4..HEAD: 770bcdf
+contains the retrofit and 161b744 its whitespace fix; no intervening implementation
+gap. Compared all 266 roadmap IDs/titles/order, State and Evidence fields against
+HEAD; checked Acceptance totals, per-item sources, retained pending candidates,
+prototypes and newer work, decision statuses, local Markdown file links and
+`git diff --check`. Original todo and settled D-001–D-010 text remain intact;
+D-010 has a dated follow-up. No code tests or live checks rerun for this docs update.
+
+**Still open:** Product name, class migration and Lite build/publication gates;
+unreleased one-Base candidate, prototype styling/upkeep, and the seven ambiguous
+historical-acceptance cases remain pending. Existing rollback (R-115), icon matrix
+(R-037) and Windows NVDA (R-244) validation remain open. Designer Extension /
+Make local and premium commercial/backend choices are deferred as above.
+
+**Needs Michael:** Decide the product name. This blocks the class migration and Lite publication.
+
+**Open questions (not blocking):** None raised in this update. Deferred choices
+remain recorded in D-014/D-015; they do not block this documentation work.
+
+**Next useful action:** Continue authorised Lite preparation under D-011, using
+current test projects for fresh-install verification. Michael pushes the local
+commit. No repeat naming question in boss.
+
+**Handoff:** For Michael or the next agent: read this header and D-010–D-016 first.
+Branch main; no new worktree. Do not act on the historical Q-01–Q-07 question list
+below: this entry supersedes it. Keep SB Test Four untouched, R-160 historical,
+and D-012/D-013 Proposed. Publication, Library sharing, remote changes and tags
+still require explicit authority. This update changes documentation only.
+
+## Historical log
+
+The retrofit entry below records the earlier position before Michael’s answers
+and standing historical-acceptance rule. Its pending-acceptance statements and
+question queue are preserved as history and superseded by the entry above.
 
 ## 14 October 2026 — Retrofit baseline — Codex (night shift)
 

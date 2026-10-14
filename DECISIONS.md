@@ -2,7 +2,8 @@
 
 Extracted for brief #6 on 14 October 2026 at `c808ca4`. Accepted means the
 source presents a settled choice, not agent acceptance of implementation. Unknown
-original dates are explicit. Proposed choices are queued for Michael in boss.
+original dates are explicit. Michael’s 14 October answers are applied below;
+remaining Proposed choices are recorded here without another boss question.
 
 ## D-001 - Native, CSS-first progressive enhancement
 **Status:** Accepted
@@ -74,44 +75,48 @@ Michael authorised the active Library, Smashburger, Voice Focus, madewithpixels 
 **Source:** todo opening Release status; webflow/v0.2.6-release-verification.md §§Active rollout, Test-site scope; git 7a69f8d.
 **Consequence:** No broad claim that older test-site defects were fixed. Their future ownership is an open question Q-06, not authority to drop R-160.
 
+**Follow-up — Michael, 14 October 2026, Q-06 (this session):** Verify fresh installs in current test projects. Keep R-160 as a historical defect and leave the SB Test Four page alone. This resolves the future verification route without dropping R-160 or claiming its defect repaired.
+
 ## D-011 - Detailed SmashBurger Lite first-clonable boundary
-**Status:** Proposed
-**Date:** 14 October 2026 draft
-Confirm the draft: local native component, plain/styled examples, workbench, safe-editing guide, one exact-version CDN loader and class-based Navigator labels; no Library installation, app dependency, CMS or mega-menu. This draft approval is (inferred — confirm), Q-01.
-**Source:** webflow/smashburger-lite-clonable-scope.md (explicitly scope draft); git 77716d2; R-177–R-186.
+**Status:** Accepted
+**Date:** 14 October 2026 — Michael, Q-01
+Lite contains a local native component, plain/styled examples, workbench, safe-editing guide, one exact-version CDN loader and class-based Navigator labels; no Library installation, app dependency, CMS or mega-menu. Michael accepted this boundary in his Q-01 answer.
+**Source:** Michael’s Q-01 answer, 14 October 2026 (this session); webflow/smashburger-lite-clonable-scope.md; git 77716d2; R-177–R-186.
 **Consequence:** Build waits for a verified class migration/runtime and clone-flow checks; no clonable exists yet.
 
 ## D-012 - Exact structural sb-nav class mapping
 **Status:** Proposed
 **Date:** 14 October 2026 specification
-Confirm sb-nav for the root and sb-nav-{role} for children, replacing mwp-css-nav_ and converting suffix underscores to hyphens. The audit says chosen, but a dated Michael approval is absent: (inferred — confirm), Q-02.
+The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, replacing mwp-css-nav_ and converting suffix underscores to hyphens. The mapping remains Proposed while Michael decides the product name (Q-02/Q-03, 14 October 2026); do not begin the class migration.
 **Source:** webflow/class-namespace-migration-audit.md §Chosen class mapping; git c808ca4, 5d720b1; R-121–R-124.
 **Consequence:** Keep data attributes, CSS variables, APIs/events, diagnostic names, variant markers and old release URLs stable in this class-only migration.
 
 ## D-013 - Canonical repository/package and replacement local path
 **Status:** Proposed
 **Date:** Not recorded in the source; extracted 14 October 2026
-Confirm the planned madewithpixels/SmashBurger-Webflow-Navbar repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity approval are (inferred — confirm), Q-03.
+The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity remain unresolved, Q-03. Michael is still deciding whether to rename the product; nothing is deployed on a live domain yet, so retaining the old repository for CDN compatibility matters less. This is context for the decision, not permission to remove it (Michael, 14 October 2026, this session).
 **Source:** todo §SmashBurger repository and local-folder rename (R-119–R-128); namespace audit §Build order and release boundary; current local cwd.
 **Consequence:** Do not create the canonical repo, archive the old repo, rename this folder or alter remotes under this docs brief.
 
 ## D-014 - Designer Extension with Make local as the preferred product track
 **Status:** Proposed
+**Qualifier:** Deferred until Lite works — Michael, Q-04, 14 October 2026
 **Date:** Not recorded in the source; extracted 14 October 2026
-Confirm the preferred Designer Extension generator/maintenance track, including Make local for linked and unlinked instances, minimal grouped properties, preflight/diff and rollback. Product commitment is (inferred — confirm), Q-04.
+The proposed Designer Extension generator/maintenance track includes Make local for linked and unlinked instances, minimal grouped properties, preflight/diff and rollback. Michael deferred this product commitment until Lite works (Q-04 answer, this session).
 **Source:** todo §11 and R-187–R-214; README §Switching delivery without rebuilding the navigation.
 **Consequence:** Generated native output must work without the app. API feasibility and genuinely temporary authoring controls need proof, not promises.
 
-## D-015 - Separate premium mega-menu and unresolved commercial model
-**Status:** Proposed
-**Date:** Not recorded in the source; extracted 14 October 2026
-Confirm that optional mega-menu complexity is a separate component or premium extension feature, rather than part of the default. This product boundary is (inferred — confirm), Q-05.
+## D-015 - Separate mega-menu and deferred commercial model
+**Status:** Accepted
+**Date:** 14 October 2026 — Michael, Q-05
+Mega-menu stays separate from the basic navbar. Michael accepted this boundary and deferred premium pricing, licensing and backend decisions (Q-05 answer, this session).
 **Source:** todo §12, R-215–R-224; todo §11 Safe maintenance and distribution, R-212.
-**Consequence:** Pricing/free boundary, premium delivery, licensing, telemetry and hybrid backend remain undecided; no implementation inferred.
+**Consequence:** Premium pricing, licensing and backend are deferred. Premium delivery and telemetry remain undecided; no commercial implementation is authorised by this decision.
 
-## D-016 - Graduate the infrastructure disclosure snapshot beyond prototype
-**Status:** Proposed
-**Date:** 14 October 2026 extraction of 13 October prototype
-Decide whether to adopt the closed infrastructure Details plus manual snapshot as a shared authoring pattern, and choose its summary styling. Adoption is (inferred — confirm), Q-07; current evidence proves only a prototype.
+## D-016 - Keep the infrastructure settings snapshot as a prototype
+**Status:** Accepted
+**Qualifier:** Prototype only
+**Date:** 14 October 2026 — Michael, Q-07
+Keep the closed infrastructure Details and manual settings snapshot as a prototype, with a muted “Infrastructure and settings” label. Michael accepted the prototype boundary and label direction (Q-07 answer, this session); this docs update does not implement styling.
 **Source:** webflow/canvas-authoring-fixture.md §§Closed native Details wrapper, Static settings snapshot; webflow/unlink-hardening-candidate.md §Published Details-wrapper follow-up; R-165.
 **Consequence:** Static text requires manual upkeep; no live binding or accepted shared pattern is claimed.

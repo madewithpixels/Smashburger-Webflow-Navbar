@@ -2,7 +2,8 @@
 
 Extracted 14 October 2026 for brief #6. Sources are the README, original
 `todo.md`, the linked Webflow records and git history at `c808ca4`.
-This records existing direction; proposed boundaries still need Michael.
+Updated with Michael’s Q-01–Q-07 answers on 14 October 2026 (this session).
+D-012/D-013 remain Proposed while Michael decides the product name.
 
 ## Purpose
 
@@ -33,10 +34,12 @@ JavaScript enhancement. Source: [README — introduction](README.md#smashburger)
   Source: README §Optional CDN distribution; R-120–R-127;
   [namespace audit](webflow/class-namespace-migration-audit.md).
 - **S-08:** Generated output remains editable and functional after the future app is
-  closed or uninstalled. Make local preserves authored structure and provides a
-  recoverable conversion. Source: todo §11; R-192, R-200–R-208.
+  closed or uninstalled. The proposed Make local track preserves authored structure and provides a
+  recoverable conversion; commitment is deferred until Lite works (Michael,
+  Q-04, 14 October 2026; D-014). Source: todo §11; R-192, R-200–R-208.
 - **S-09:** Structural Navigator labels should expose descriptive `sb-*` classes;
-  SmashBurger Lite is the clonable product name. Source: R-121, R-162–R-164;
+  SmashBurger Lite is the working clonable product name, pending Michael’s
+  naming decision (Q-02/Q-03, 14 October 2026). Source: R-121, R-162–R-164;
   namespace audit §Chosen class mapping. The exact mapping is Proposed in D-012.
 - **S-10:** Backup before structural Webflow testing and retain deliberate publication
   approval. Source: README §Webflow testing safety; R-008. This brief authorises
@@ -49,25 +52,33 @@ generated Embeds, reference demo, tests, integration/migration documentation and
 responsive/accessibility verification. Source: README §Repository map and §Optional
 CDN distribution; todo §§1–10, 13.
 
-Planned product tracks: basic free clonable, private Designer Extension installer,
-Make local, conservative maintenance and optional separate premium mega-menu.
-These are roadmap direction, not completed products. Source: todo §§10–12;
-R-177–R-224. The detailed clonable scope is a draft (D-011).
+The accepted Lite boundary is a native local component with plain and styled
+examples, a workbench, a safe-editing guide and one pinned CDN loader. No Library
+install, app dependency, CMS or mega-menu. Source: Michael, Q-01, 14 October 2026;
+D-011; R-177–R-186. The clonable is not built or published.
+
+The Designer Extension / Make local commitment is deferred until Lite works.
+Mega-menu stays separate from the basic navbar; premium pricing, licensing and
+backend are deferred. Source: Michael, Q-04/Q-05, 14 October 2026; D-014/D-015;
+R-187–R-224. The manual settings snapshot stays a prototype, with a muted
+“Infrastructure and settings” label direction. Source: Michael, Q-07,
+14 October 2026; D-016; R-165. Label styling is not implemented by this update.
 
 ## Out of scope / gates
 
 - No duplication of desktop/mobile navigation or proprietary app-owned runtime.
   Sources: README introduction; todo §11, R-207.
 - Mega-menu complexity stays separate from the default instance. Source: todo §12;
-  D-015 records this future product boundary as Proposed.
+  D-015 records Michael’s accepted separation; commercial choices are deferred.
 - No public clonable publication before versioned class migration, verified released
   runtime, clone-flow checks and approval. Source:
   [clonable draft §§Explicit exclusions, Build and acceptance gates](webflow/smashburger-lite-clonable-scope.md).
 - SB Test Four/Five were explicitly excluded from the 8 October v0.2.6 rollout.
-  Their historical defects remain; future ownership is an open question (D-010).
+  Verify fresh installs in current test projects. Keep R-160 as a historical
+  defect and leave the SB Test Four page alone (Michael, Q-06, 14 October 2026; D-010).
   Source: [release §Test-site scope](webflow/v0.2.6-release-verification.md).
-- Tonight: no code, Webflow, CDN, release, remote or dependency changes. Source:
-  Michael's brief #6 and night-shift hard limits, 14 October 2026.
+- This update covers the four docs and one local commit only; Michael pushes.
+  Source: Michael’s instructions in this session, 14 October 2026.
 
 ## Success criteria
 
@@ -79,17 +90,16 @@ R-185, R-225, R-260–R-261;
 [clonable acceptance gates](webflow/smashburger-lite-clonable-scope.md).
 These are technical criteria; Michael alone signs off Acceptance.
 
-## Open questions for Michael
+## Open decisions
 
-- D-011: confirm the 14 October Lite draft's complete boundary (inferred — confirm).
-- D-012: approve the exact `sb-nav` / `sb-nav-{role}` mapping (inferred — confirm).
-- D-013: confirm canonical repo/package direction and a MacStudio replacement for
-  the historic Macbook folder target (inferred — confirm).
-- D-014: confirm the preferred Designer Extension and Make local product track
-  (inferred — confirm).
-- D-015: confirm the separate premium mega-menu boundary; commercial model and
-  backend remain undecided (inferred — confirm).
-- D-010: decide whether the old SB Test Four defect should remain active or be
-  replaced by current fixtures, without an agent dropping R-160 (inferred — confirm).
-- D-016: decide whether the manually maintained infrastructure snapshot should
-  graduate beyond the prototype, and how its summary should look (inferred — confirm).
+D-012 and D-013 remain Proposed while Michael decides whether to rename the
+product. This blocks the class migration and Lite publication. Nothing is deployed
+on a live domain yet, so retaining the old repo for CDN compatibility matters less;
+existing pinned assets remain protected until a decision authorises a change.
+Source: Michael, Q-02/Q-03, 14 October 2026 (this session). No repeat boss question.
+
+## Deferred decisions (not blocking the docs update)
+
+Designer Extension / Make local waits until Lite works (D-014). Premium pricing,
+licensing and backend remain deferred (D-015). Source: Michael, Q-04/Q-05,
+14 October 2026 (this session).
