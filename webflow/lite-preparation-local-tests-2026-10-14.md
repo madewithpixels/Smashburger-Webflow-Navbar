@@ -541,3 +541,37 @@ Candidate staging runtime and asset-failure checks remain open. The next step is
 Michael's decision on whether to publish the whole Clean Trial site to its
 Webflow staging subdomain with those other drafts included, or leave staging
 untouched until isolated page publishing or Preview compilation is available.
+
+### Staging publication and Chrome verification — 14 October 2026
+
+Michael explicitly authorised full-site staging publication of SB Unlink Clean
+Trial, Smashburger and MWP Component Library. Webflow Data MCP published each
+site to its Webflow subdomain only; `get_site` readback reported these publish
+times and empty `customDomains` arrays:
+
+- SB Unlink Clean Trial (`sb-unlink-clean-trial`): 19:47:51 UTC.
+- Smashburger (`smashburger-4b8f18`): 19:48:52 UTC.
+- MWP Component Library (`mwp-component-library`): 19:48:56 UTC.
+
+The Clean Trial page list still reports all four audit/probe pages as
+`draft: true`, including `SB Lite Preview Compiler Probe`; direct Chrome
+navigation to the probe returned Webflow's 404 page. The published
+`Unlink Fallback Isolation` route rendered. No custom domain was published,
+and no Library update was shared or applied to a consumer.
+
+Chrome rendered the Smashburger and MWP Component Library home pages and Clean
+Trial's fallback isolation page. On Smashburger, keyboard focus was on the
+nested `More` button; Space collapsed it and Enter expanded it, with focus
+remaining on that button. Its accessibility tree exposed the navigation links.
+This is actual Chrome browser keyboard and accessibility-tree evidence for
+that published page, not a screen-reader test and not a test of the repaired
+Navbar Light resize behavior.
+
+`npm run test:built` passed all 44 checks across source, freshly generated
+dist, minified and Embed outputs. The runner confirmed restoration of all 12
+pre-build generated files; `git status`, generated-file diff and `git diff`
+checks were clean. No released v0.2.6 file was overwritten. The fixed source
+candidate still has no staging runtime evidence: the empty probe remains a
+draft, single-page publishing was rejected earlier, and Designer Preview
+continues to fail with `CompilationError: Invalid source code`. The three full
+site publications do not change the candidate's unreleased status.

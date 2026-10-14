@@ -1,12 +1,51 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; breakpoint-timer and stylesheet-failure fixes remain local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Candidate Embed Preview also stalls with `CompilationError: Invalid source code`; isolated page-only staging publish was rejected, and full-site staging publish is not safe while four other drafts are pending. Human checks remain open. Lite class migration/publication still waits for naming.
+**Stage:** v0.2.6 remains the released baseline; breakpoint-timer and stylesheet-failure fixes are local, fresh-build verified and unreleased. Chrome reproduced the released resize defect and earlier local rendering verified its source fix. All three authorised Webflow test sites have now been published to staging only. Candidate Webflow runtime remains unverified because Preview compilation fails and the probe is still a draft. Human/device checks and Lite class migration/publication remain open.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 44e4ad6 — baseline checked for the latest fresh-build rerun
-**Next action:** Decide whether to authorise a full-site staging publish of SB Unlink Clean Trial, which would include its four other pending draft pages, or wait for isolated page publishing/Preview to work; then continue physical-device, assistive-technology and upgrade/rollback checks where prerequisites exist.
-**Needs Michael:** Review and push local commits. Decide the staging-publish scope described in the latest entry. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** 6f91104 — baseline checked for the fresh-build rerun and staging readback
+**Next action:** Resolve Webflow Preview compilation or establish a safe isolated way to stage the clearly labelled candidate probe, then verify the fixed resize race in Chrome against the freshly generated candidate. Continue device/accessibility and cloned rollback checks where prerequisites exist.
+**Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Staging publication and Chrome verification — Codex
+
+**Changed (R-095, R-155):** Published SB Unlink Clean Trial, Smashburger and
+MWP Component Library to their Webflow staging subdomains only, under Michael's
+explicit authority. No custom domains, Library share or candidate asset update
+was made. No source or release file changed.
+
+**Outputs:** Updated [local test record](webflow/lite-preparation-local-tests-2026-10-14.md)
+and R-095/R-155 evidence in [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** Webflow MCP readback confirmed all three staging publications
+and no custom domains. The Clean Trial site has six pages; its four audit/probe
+pages remain `draft: true`, and the probe route returns 404. Chrome rendered
+the Smashburger and MWP Component Library home pages and Clean Trial's published
+Unlink Fallback Isolation page. On Smashburger, real browser Space closed and
+Enter reopened the nested More disclosure while focus remained on its button.
+The staging accessibility tree exposed the site navigation links. This is
+rendered published-page and browser-keyboard evidence, not a screen-reader or
+physical-device check. `npm run test:built` passed 44/44 and restored all 12
+generated files; `git status` and generated-file diff checks were clean.
+
+**Still open:** Candidate source runtime and asset-failure behavior on Webflow
+Preview/staging; the fixed resize race on a rendered candidate; DPR 2×/3× and
+physical-display icon evidence; human assistive-technology/device checks; and
+cloned upgrade/rollback checks. Preview remains blocked by Webflow's
+`CompilationError: Invalid source code`; isolated page publishing remains
+unsupported for the probe.
+
+**Needs Michael:** Review and push local commits. Product naming remains needed
+for later class migration and Lite publication.
+
+**Next useful action:** Diagnose or bypass the Preview compiler issue through a
+reversible candidate fixture, then run the fixed source candidate in Chrome.
+
+**Handoff:** Test sites are published only on their Webflow staging subdomains.
+The probe stays an empty draft. SB Test Four and the Navbar Light test page were
+not touched. Do not share an update or change a consumer until a recoverable
+candidate and consumer backup are confirmed.
 
 ## 14 October 2026 — Post-restart verification — Codex
 
