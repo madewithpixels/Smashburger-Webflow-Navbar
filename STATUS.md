@@ -1,12 +1,26 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; staging responsive and keyboard checks cover the released v0.2.6 comparison. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
-**Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** e888525 — current `main` checked for this entry. The one commit since the previous review records the fresh-build result. Local branch reports 17 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Resolve the documented Preview compiler failure and remaining physical-device, human screen-reader and cloned upgrade/rollback checks before any new Lite release decision.
+**Last updated:** 15 October 2026 — Codex (night shift)
+**Reviewed at commit:** 8792a5e — current `main` checked for this entry. The one commit since the previous review records the prior browser-surface check. Local branch reports 18 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Use Chrome with viewport and console/request inspection to complete candidate rendering and runtime checks, then arrange Preview and the unavailable human/device and cloned-release checks.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 staging readback — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, Webflow, Library, release asset or staging content changed. A fresh browser tab reached the published Clean Trial comparison page and showed its expected navigation in the accessibility tree.
+
+**Outputs:** Added this observation and its limits to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. Closed the tab opened for this check.
+
+**Checked how:** Read the project record and verified `main` at `8792a5e`; the only commit since the last reviewed baseline was the recorded browser-surface check. Opened a fresh Chrome tab at the published Clean Trial comparison URL. Its accessibility tree showed the full navigation and nested “More” control. This is a read-only published v0.2.6 check, not candidate evidence. The available browser API exposed no viewport, console or network-request controls. Closed the new tab; left earlier-session tabs untouched.
+
+**Still open:** Candidate responsive layout and outer-menu behavior, browser-captured missing-script request, Preview compilation, reduced-motion and custom-animation integration, broader icon geometry, physical-device and human screen-reader checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. New source fixes and evidence remain pending Michael’s acceptance.
+
+**Needs Michael:** Review the local commits. Arrange a Chrome inspection surface with viewport and request/console access, plus a usable Preview route, human/device session and cloned release candidate when available.
+
+**Next useful action:** Run the candidate layout and interaction checks on the backed-up Clean Trial staging fixture using the required Chrome inspection controls; keep its current draft and cleanup state intact.
 
 ## 14 October 2026 — Brief #12 browser-surface check — Codex (night shift)
 

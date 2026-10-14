@@ -1111,3 +1111,21 @@ capture. The tab was closed. No Webflow content, sharing, publication or
 release changed. Candidate rendering and runtime checks, Preview compilation,
 motion, icon geometry, physical-device and human screen-reader checks,
 physical-display DPR 2×/3×, and cloned upgrade/rollback remain open.
+
+### Brief #12 staging readback — 15 October 2026
+
+Verified current `main` at `8792a5e`; the only commit after the previous
+reviewed baseline was the recorded browser-surface entry. Opened a new Chrome
+tab at the published Clean Trial `/unlink-fallback-isolation` page. Its
+accessibility tree showed the published navigation and nested “More” control.
+This confirms the comparison page loaded; it does not verify the Lite source
+candidate or its responsive/runtime behavior. The available browser API
+provided no viewport override, console log or automatic request inspection.
+Closed the new tab and left the tabs from earlier sessions untouched. No
+Webflow content, publication, Library item, asset or release changed.
+
+Candidate layout and outer-menu checks, captured missing-script request,
+Preview compilation, motion/custom animation, broader icon geometry,
+human/device/screen-reader checks, physical-display DPR 2×/3× and cloned
+upgrade/rollback remain open. No candidate check was repeated; the missing
+script fallback cleanup and fresh-build result are already recorded above.
