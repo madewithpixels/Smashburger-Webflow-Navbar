@@ -926,3 +926,47 @@ responsive geometry and outer-panel close behavior; reduced-motion/custom
 animation; icon visuals at DPR 1×/2×/3×; human screen-reader/device checks;
 Preview compilation; and cloned upgrade/rollback. The network-failure request
 and its runtime result were not confirmed in this run.
+
+### Brief #12 missing-script fallback follow-up — 14 October 2026
+
+Before editing, Webflow readback confirmed the backed-up `SB Unlink Clean Trial`
+site (`6ac8c9f18e63674e4f34f88a`) had no custom domains and its named `SB Lite
+Preview Compiler Probe` page (`6acfd482072d7417c8ae9149`) was an empty draft with
+blank page head/footer code. The fixture's recoverable backup was confirmed in
+the earlier handoff; no other fixture was used.
+
+I added one clearly labelled temporary WHTML root
+(`410f6f05-7d04-7d56-96c8-3cb570dca2cd`) with a native Details/Summary trigger,
+two adjacent panel links and the maintained `src/navbar-light.css` in page head
+code. The footer referenced the one-off missing URL
+`/__brief12-candidate-js-unavailable__.js`. This did not include or alter
+candidate component JavaScript, a versioned URL, release loader, or consumer.
+Source readback confirmed the label, Details/Summary, links and script URL.
+
+Clean Trial was published to its Webflow subdomain only. The published Chrome
+page showed the temporary label and native trigger. Real Space opened the
+disclosure; Tab moved to the first link; Shift-Tab returned to the trigger; and
+Enter closed it. Direct HTTPS navigation to the exact missing script URL showed
+Webflow's 404 page. Chrome's current control did not expose the automatic
+page-load request in DevTools Network/console, so that request entry is not
+independently recorded. The browser's direct 404 response and the page's
+read-back script reference show the resource is unavailable, while actual
+human screen-reader behavior remains untested.
+
+Cleanup removed the WHTML root, restored page head/footer code to blank and
+returned the page to `draft: true`. Webflow style readback revealed temporary
+classes created for the probe: `brief12-js-failure`, `brief12-nav`,
+`brief12-inner`, `brief12-menu` and `brief12-panel`. All five were removed and a
+final style readback found no `brief12-*` entries. Cleanup was published to the
+Webflow subdomain; final site readback at `2026-10-14T22:18:18.210Z` reports
+`customDomains: []`. The temporary route returned 404 after the final publish.
+The original Chrome tab was restored to `/unlink-fallback-isolation`; no new
+tab was opened. No Library sharing, consumer update, production/custom-domain
+publication, asset/version release, SB Test Four change or Navbar Light page
+change occurred.
+
+This verifies native fallback keyboard behavior and the missing URL's 404 on
+one staging probe. It does not verify the browser's captured automatic request,
+the JavaScript runtime, responsive geometry, Preview, screen-reader output,
+physical devices, physical DPR, reduced motion or cloned upgrade/rollback.
+The source fixes and these checks remain pending Michael's acceptance.

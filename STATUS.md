@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The labelled native Details fallback passes open/close and focus checks on Clean Trial staging with candidate CSS and no candidate JavaScript. A separate request for a deliberately missing candidate script was staged, but Chrome input timed out before its network failure or fallback interaction could be verified. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. On Clean Trial staging, a labelled native Details fallback with maintained CSS opened and closed with real browser keyboard input. Its deliberately missing script path returned Webflow's 404 page. The automatic page-load request was not captured in DevTools. The temporary page and its styles are now removed and the probe is an empty draft. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** c533e19 — current `main` checked; `origin/main` locally points to `07de2eb`, with seven local commits ahead. No remote operation was made.
-**Next action:** On the backed-up Clean Trial fixture, capture the candidate script request failure and operate the native fallback in DevTools; then check candidate responsive geometry and outer-panel closing.
+**Reviewed at commit:** 70e7a38 — current `main` checked before this documentation update; `origin/main` locally points to `07de2eb`, with eight local commits ahead. No remote operation was made.
+**Next action:** Use a working Chrome DevTools session for source-candidate responsive layouts and close behavior, then continue reduced-motion and icon rendering checks.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 missing-script fallback and cleanup — Codex (night shift)
+
+**Changed (R-095, R-155):** The backed-up Clean Trial probe temporarily hosted a clearly labelled Details/Summary fallback with maintained candidate CSS and a deliberately missing JavaScript URL. The native menu opened and closed; no component JavaScript ran. The page, page code, temporary styles and published route have been restored or removed.
+
+**Outputs:** Updated the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. No source, released asset, Library resource or consumer changed.
+
+**Checked how:** On `SB Unlink Clean Trial` page `SB Lite Preview Compiler Probe` (`6acfd482072d7417c8ae9149`), Designer readback confirmed the probe structure and `/__brief12-candidate-js-unavailable__.js` footer URL. The temporary WHTML root was `410f6f05-7d04-7d56-96c8-3cb570dca2cd`; its temporary style classes were `brief12-js-failure`, `brief12-nav`, `brief12-inner`, `brief12-menu` and `brief12-panel`. The published staging page showed the labelled Details trigger. Space opened it, Tab reached the first link, Shift-Tab returned to the trigger, and Enter closed it. Direct HTTPS navigation to the missing script path returned Webflow's 404 page. Chrome's current control did not expose the automatic page-load request in DevTools, so that request entry is not claimed. Cleanup readback showed Body only, blank head/footer code, `draft: true` and no `brief12-*` style classes. Clean Trial was published to its Webflow subdomain only at 22:14:49, 22:15:56 and 22:18:18 UTC; `customDomains` remained empty, and the temporary route returned 404 after the final cleanup publish. The reused Chrome tab is restored to `Unlink Fallback Isolation`.
+
+**Still open:** Source-candidate responsive geometry and outer-menu closing; reduced-motion/custom-animation; icon visuals at DPR 1×/2×/3×; actual screen-reader/device checks; Webflow Preview; and cloned upgrade/rollback. No new defect was demonstrated.
+
+**Needs Michael:** Review and push local commits when convenient. New source fixes and these verification results remain pending acceptance.
+
+**Next useful action:** With DevTools request/console access available, confirm the automatic failed-script entry, then continue candidate responsive and close-behaviour checks. Keep the local fixes unreleased and the product name decision open.
 
 ## 14 October 2026 — Brief #12 candidate JavaScript request attempt — Codex (night shift)
 
