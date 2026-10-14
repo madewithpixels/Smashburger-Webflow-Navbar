@@ -995,6 +995,7 @@ observation, not a candidate Lite measurement or a physical-display DPR claim.
 The nested chevron lines measured roughly 2px declared thickness and 5px
 computed bounding-box size after rotation; this does not test the hidden burger
 icon or other line/gap variants.
+The captured console had no warnings or errors on this page load.
 
 No Webflow source was modified, Preview or another publication was attempted,
 or defect demonstrated. The automatic missing-script request remains
