@@ -884,3 +884,45 @@ rendered icon geometry at DPR 1×/2×/3×, physical-device and human
 screen-reader checks, and cloned upgrade/rollback. The earlier no-runtime
 fallback passes with no candidate JavaScript included, but does not simulate a
 failed JavaScript network request.
+
+### Brief #12 candidate JavaScript request attempt — 14 October 2026
+
+`npm run test:built` passed 48/48 across maintained source, freshly generated
+`dist`, minified and Webflow Embed deliveries. The runner restored all 12
+generated files. An explicit diff of those 12 paths, `git diff --check`, and
+the post-build working-tree check passed. No generated release bytes changed.
+
+Before writing to the backed-up Clean Trial probe (`SB Lite Preview Compiler
+Probe`, page `6acfd482072d7417c8ae9149` on site
+`6ac8c9f18e63674e4f34f88a`), readback confirmed it was an empty draft with blank
+head/footer code; the site had no custom domains. I inserted a clearly labelled
+temporary fixture (WHTML element `d2a8e694-721c-8212-d37e-47172a1e400d`) using
+native Details/Summary and adjacent panel links. The Details trigger and links
+read back in the expected tree. I placed the maintained `src/navbar-light.css`
+in page head code and a one-off script request for
+`/__brief12-candidate-js-unavailable__.js` in footer code. This temporary URL
+was not a versioned asset, release loader, or ordinary consumer change.
+
+The page was made publishable and the Clean Trial site was published to its
+Webflow subdomain only (`customDomains: []`). Chrome opened the published
+probe and showed the temporary label and native Details trigger. Chrome input
+timed out before opening the trigger. I could not read the console or Network
+panel, so the failed request itself and the fallback's rendered open/close
+behavior are **not verified**. This is an attempted network-failure setup, not
+a passing candidate-JavaScript-failure check.
+
+Cleanup removed the temporary WHTML root, restored blank head/footer code and
+returned the probe to `draft: true`. Designer/Data readback found zero matches
+for the temporary root and both code blocks blank. Clean Trial was republished
+to its Webflow subdomain only; site readback reported
+`lastPublished: 2026-10-14T22:08:42.932Z` and `customDomains: []`. Chrome
+confirmed the temporary route returns Webflow's 404 page. The temporary Chrome
+tab was closed. No Library sharing, consumer update, custom-domain publication,
+release, SB Test Four change or Navbar Light page change occurred.
+
+**Still open:** Observe the missing candidate script request in DevTools and
+exercise the native Details fallback while it is unavailable; candidate
+responsive geometry and outer-panel close behavior; reduced-motion/custom
+animation; icon visuals at DPR 1×/2×/3×; human screen-reader/device checks;
+Preview compilation; and cloned upgrade/rollback. The network-failure request
+and its runtime result were not confirmed in this run.

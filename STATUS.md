@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The labelled native Details fallback passes open/close and focus checks on Clean Trial staging with candidate CSS and no candidate JavaScript. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The labelled native Details fallback passes open/close and focus checks on Clean Trial staging with candidate CSS and no candidate JavaScript. A separate request for a deliberately missing candidate script was staged, but Chrome input timed out before its network failure or fallback interaction could be verified. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 0bd5973 — current `main` checked; this entry records the fresh-build and published nested-menu checks.
-**Next action:** Use Chrome DevTools on the backed-up Clean Trial fixture to block a candidate script request and set responsive viewport widths; then verify outer-panel closing and layout geometry.
+**Reviewed at commit:** c533e19 — current `main` checked; `origin/main` locally points to `07de2eb`, with seven local commits ahead. No remote operation was made.
+**Next action:** On the backed-up Clean Trial fixture, capture the candidate script request failure and operate the native fallback in DevTools; then check candidate responsive geometry and outer-panel closing.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 candidate JavaScript request attempt — Codex (night shift)
+
+**Changed (R-095, R-155):** No source or release files changed. A clearly labelled temporary candidate was added to the backed-up Clean Trial probe with maintained candidate CSS and a one-off missing JavaScript URL. The probe has been restored to an empty draft and its temporary staging route removed.
+
+**Outputs:** Updated the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. No Library share, consumer update or release occurred.
+
+**Checked how:** `npm run test:built` passed 48/48; its runner restored all 12 generated files, and an explicit generated-file diff and `git diff --check` passed. Webflow readback showed the labelled Details/Summary and sibling links, maintained candidate CSS and a footer script URL at `/__brief12-candidate-js-unavailable__.js`. Published to the Clean Trial Webflow subdomain only; Chrome rendered the temporary label and native trigger. Chrome input timed out before I could open the trigger or inspect its network request/console, so the failed request and fallback behavior are not claimed. Cleanup readback showed zero matches for the temporary root, blank head/footer code and `draft: true`; cleanup publication completed and Chrome confirmed the temporary route returns 404. Final site readback has no custom domains.
+
+**Still open:** Confirm the candidate script request failure and native Details behavior in Chrome; source-candidate responsive layouts and close behavior; reduced-motion/custom-animation; icon visuals at DPR 1×/2×/3×; human screen-reader/device checks; Webflow Preview; and cloned upgrade/rollback. No new defect was demonstrated.
+
+**Needs Michael:** Review newer local changes when convenient. The local tracking ref `origin/main` still points to `07de2eb`; this run did not access or change a remote.
+
+**Next useful action:** Use the Clean Trial probe with DevTools open to observe the failed candidate script request and operate the native trigger, then continue the source-candidate viewport checks.
 
 ## 14 October 2026 — Brief #12 fresh-build and staging follow-up — Codex (night shift)
 
