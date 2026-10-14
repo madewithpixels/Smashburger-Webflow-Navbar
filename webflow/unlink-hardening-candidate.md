@@ -318,14 +318,25 @@ Fresh Data MCP checks later on 2026-10-13 re-read the source candidate's full
 79-node tree and individually queried its root, inner wrapper, native menu,
 and navigation panel. Each returned `display_name: null`; their source
 `styleNames` remain `mwp-css-nav`, `mwp-css-nav_inner`, `mwp-css-nav_menu`,
-and `mwp-css-nav_panel`. This confirms there are no custom labels on those
-four source nodes, but not how the labels render in the source Designer
-Navigator. The attempted Designer MCP connection was unavailable, so the
-source visual check remains open. No component or instance was changed.
+and `mwp-css-nav_panel`.
+
+### Source candidate Navigator visual check (2026-10-14)
+
+The MWP Component Library Designer MCP connection was activated and the
+`SmashBurger CDN Unlink Trial` Base component canvas opened read-only. With the
+Navigator expanded and scrolled through its lower section, native structure
+labels appeared as their class names: the root and inner wrapper; brand, menu,
+summary, label and icon; panel, primary and links; submenu and CTA elements;
+secondary links, icons and labels; contacts; and backdrop. These labels match
+the candidate tree's `styleNames`. The two intentionally named Embeds remain
+`SmashBurger CDN loader` and `SmashBurger Canvas helper`; unclassed contact text
+nodes show `Telephone` and `Email`. The root selector in the Style panel is
+`mwp-css-nav`. This closes the source-candidate visual Navigator check. No
+component, class, or instance was changed.
 
 ### Clean-install linked Navigator readback (2026-10-13)
 
-On `SB Unlink Clean Trial` Home, the Designer Navigator shows linked instances by component name (`SmashBurger CDN` and `SmashBurger CDN Unlink Trial`) and the two adjacent unlinked copies by their automatic root class labels (`mwp-css-nav` and `mwp-css-nav 2`). Selecting a linked component exposes its property editor and Webflow reports that Library components can only be edited on the source site; the consumer Navigator does not expose the linked definition's internal selector tree. Data MCP independently identifies the candidate instance as `d2203eba-be45-3543-7bc2-84bec68c02e6`, backed by the installed local definition `706e9851-a669-9b6c-059d-6a280bd8f781`; the original linked instance remains `a6cc5b4e-6658-7a7e-c943-a774aeac8e50`. This verifies the linked consumer's visible instance labels and the unlinked root labels, but not source Navigator visuals, internal linked selectors (not exposed in the consumer), or a public clonable. The latter is not part of the current unlink release gate.
+On `SB Unlink Clean Trial` Home, the Designer Navigator shows linked instances by component name (`SmashBurger CDN` and `SmashBurger CDN Unlink Trial`) and the two adjacent unlinked copies by their automatic root class labels (`mwp-css-nav` and `mwp-css-nav 2`). Selecting a linked component exposes its property editor and Webflow reports that Library components can only be edited on the source site; the consumer Navigator does not expose the linked definition's internal selector tree. Data MCP independently identifies the candidate instance as `d2203eba-be45-3543-7bc2-84bec68c02e6`, backed by the installed local definition `706e9851-a669-9b6c-059d-6a280bd8f781`; the original linked instance remains `a6cc5b4e-6658-7a7e-c943-a774aeac8e50`. This verifies the linked consumer's visible instance labels and the unlinked root labels. The source-candidate visual check is recorded above. The consumer Navigator does not expose linked internal selectors, and a public clonable does not exist yet; it remains outside the current unlink release gate.
 
 ### Published Details-wrapper follow-up (2026-10-13)
 
