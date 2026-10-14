@@ -75,6 +75,44 @@ trigger is visible. Keep all new work pending Michael's acceptance.
 
 **Handoff:** Current branch `main`; no source or Webflow changes remain uncommitted. The existing Chrome denial is a real browser permission boundary; do not retry through another surface. Candidate probe is empty/draft and its staging route is 404. SB Test Four and Navbar Light remain untouched. New verification remains pending Michael's acceptance.
 
+## 14 October 2026 — Brief #12 browser-session handoff — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, release, Library, Webflow or browser
+content changed. This session confirmed the recorded verification state and
+found that the available browser-control connection cannot attach to the
+existing Clean Trial staging tabs: their IDs belong to another Chrome browser
+session.
+
+**Outputs:** No new test evidence. The previous candidate cleanup and local
+build evidence remain recorded above and in the [test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** `git --no-optional-locks status` was clean at `749cb8a` on
+`main`; `git log 749cb8a..HEAD` was empty. The current Chrome inventory showed
+the existing staging tabs, but browser control refused to bind to their
+session. No new tab was opened and no alternate browser surface was used. The
+earlier origin approval denial remains recorded in the test record.
+
+**Still open:** Candidate no-runtime fallback, broader rendered layouts and
+closing behavior, motion integration, icon appearance at higher display
+density, human screen-reader/device checks, and cloned upgrade/rollback.
+These remain open because the browser session/origin gate prevents the needed
+rendered checks. No new defect was demonstrated, so no source fix or repeated
+test was warranted.
+
+**Needs Michael:** Restore a Chrome browser-control session that can access
+the already-authorised SmashBurger staging origin, or approve that origin in
+Chrome. Review the local commits; no push was made.
+
+**Next useful action:** You: make the staging tab available to the browser
+control session, then resume the uncompleted rendered checks without repeating
+the already-recorded Tablet fixture checks.
+
+**Handoff:** Resume from this entry and the final Brief #12 sections in the
+[test record](webflow/lite-preparation-local-tests-2026-10-14.md). The prior
+candidate is cleaned up and draft. Do not revisit the earlier passing
+Tablet-collapse matrix, SB Test Four, or Navbar Light. New work remains pending
+Michael's acceptance.
+
 ## 14 October 2026 — Rendered viewport resize and focus hardening — Codex
 
 **Changed (R-095, R-155):** Added a maintained-source fix and regression test
