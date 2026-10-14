@@ -115,4 +115,3 @@ Confirm that optional mega-menu complexity is a separate component or premium ex
 Decide whether to adopt the closed infrastructure Details plus manual snapshot as a shared authoring pattern, and choose its summary styling. Adoption is (inferred — confirm), Q-07; current evidence proves only a prototype.
 **Source:** webflow/canvas-authoring-fixture.md §§Closed native Details wrapper, Static settings snapshot; webflow/unlink-hardening-candidate.md §Published Details-wrapper follow-up; R-165.
 **Consequence:** Static text requires manual upkeep; no live binding or accepted shared pattern is claimed.
-
