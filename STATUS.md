@@ -1,12 +1,46 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, fresh-build verified, unreleased and pending Michael. Rendered and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 4a8e9d0 — clean baseline for Webflow source readback
+**Reviewed at commit:** 5aed027 — clean baseline for focus cancellation regression
 **Next action:** Enable an authorised Chrome control surface and confirm a recoverable backup for the chosen temporary fixture, then verify the timer fix in rendered output.
 **Needs Michael:** Review and push local commits. A Chrome control surface is not exposed in this session; connect one for rendered checks. Product name remains needed for class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Focus cancellation regression — Codex
+
+**Changed (R-095, R-155):** Added independent regression coverage proving that a
+queued first-link focus is cancelled when opening is interrupted by a resize to
+desktop. No runtime implementation change; source already clears that request.
+The new fix remains local and unreleased.
+
+**Outputs:** `tests/runtime-delivery.test.js`; updated R-095/R-155 evidence and
+[pre-Lite test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** `npm run test:built` passed 40/40 across source and all freshly
+generated delivery forms. The runner restored all 12 generated files, and an
+independent `git diff --exit-code` on generated paths passed. `npm test` recorded
+77 tests, 68 passes and nine expected TODO failures (the opening state, queued
+focus and closing state regressions in each immutable v0.2.6 generated form).
+Source passed all three. `npm run check`, test syntax and `git diff --check` passed.
+
+**Still open:** Rendered Chrome/browser verification, real keyboard/focus,
+responsive geometry, real OS reduced motion, DPR visual checks, Preview and
+published runtime, screen readers and upgrade/rollback. Chrome control is still
+not exposed in this session; no Webflow backup or fixture was changed.
+
+**Needs Michael:** Review and push local commits. Connect an authorised Chrome
+control surface for rendered work; product naming remains the later migration
+and publication gate.
+
+**Next useful action:** Add the temporary candidate build to the isolated fixture
+after rendered browser control and a recoverable backup are available, then run
+the opening/closing resize plus native focus behavior.
+
+**Handoff:** Read this entry and the focus regression section of the test record.
+Preserve v0.2.6 bytes/pins, leave SB Test Four alone, and do not publish/share a
+temporary same-version candidate. No Webflow mutations were made.
 
 ## 14 October 2026 — Continuation test run — Codex
 

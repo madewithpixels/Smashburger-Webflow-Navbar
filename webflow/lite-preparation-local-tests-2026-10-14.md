@@ -184,3 +184,29 @@ two native copies (`mwp-css-nav` and `mwp-css-nav 2`). The published
 `Unlink Fallback Isolation` page reads as an 85-node native tree rooted in
 `mwp-css-nav 3`. These tree reads do not establish that the page renders or that
 its browser runtime behaves correctly. No data was written, shared or published.
+
+## 14 October 2026 — focus cancellation regression
+
+Review found that the opening-resize test proved the state timer was cancelled,
+but did not independently assert that a queued `focusFirst` request was cancelled.
+Added a dedicated case in `tests/runtime-delivery.test.js`: request first-link
+focus, expand to desktop before the opening timer completes, then assert that the
+desktop link did not receive focus.
+
+`npm run test:built` passed **40/40** across source, freshly generated dist,
+minified and Embed deliveries. The runner restored all 12 generated files; a
+separate `git diff --exit-code` over every generated path passed. The regular
+`npm test` run recorded **77 tests: 68 passes and nine expected TODO failures**
+(exit 0). For each of the three immutable v0.2.6 generated forms, the opening
+state race, queued focus and closing state race fail independently. The source
+passes all three. No release artifacts were changed. `npm run check`, test-file
+syntax check and `git diff --check` passed.
+
+This strengthens automated state evidence only. It does not prove physical
+focus behavior, rendered layout, assistive technology output or Preview/runtime
+behavior. The source fix remains unreleased and pending Michael.
+
+For the next rendered check, Webflow additional-tool discovery was queried with
+the `BACKUPS` category. It reported that the full tool list was already exposed;
+no backup/restore tool appeared. No structural Webflow test was started because
+the fixture recovery point is still unverified.

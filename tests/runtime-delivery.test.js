@@ -131,6 +131,24 @@ for (const delivery of deliveries) {
     } finally { f.close(); }
   });
 
+  test(`${delivery}: breakpoint expansion cancels queued first-link focus`, {
+    todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
+      ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false
+  }, async () => {
+    const f = runtimeFixture(delivery);
+    try {
+      f.root.dataset.collapse = 'tablet'; f.root.dataset.motion = 'fade';
+      f.root.style.setProperty('--mwp-nav-duration-open', '40ms');
+      const navbar = f.create();
+      const opening = event(f.root, 'mwp-nav:open');
+      navbar.open({ focusFirst: true }); await opening;
+      f.resize(1280);
+      await new Promise(resolve => setTimeout(resolve, 80));
+      assert.notEqual(f.dom.window.document.activeElement, f.root.querySelector('[data-mwp-panel] a'));
+      navbar.destroy();
+    } finally { f.close(); }
+  });
+
   test(`${delivery}: expanding during a closing transition cancels hiding and preserves scroll styles`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
       ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false
