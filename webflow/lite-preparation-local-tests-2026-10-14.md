@@ -1005,6 +1005,41 @@ device checks, and cloned upgrade/rollback remain open. Chrome's current
 browser-control surface still does not offer responsive viewport controls;
 this follow-up therefore stayed at its actual 2,044 × 1,131 viewport.
 
+### Brief #12 responsive and interaction follow-up — 14 October 2026
+
+A fresh Chrome tab opened the published Clean Trial `/unlink-fallback-isolation`
+comparison. With a supported temporary viewport override at height 900px,
+rendered checks at widths 2,048, 1,280, 992, 991, 820, 768, 767, 480, 393
+and 320px reported `documentElement.scrollWidth === innerWidth` at every
+sample. The navigation trigger was hidden at desktop widths and visible at the
+collapse widths. The browser reported DPR 1; width emulation did not change it.
+
+At 320×568, the outer MENU trigger was visible at the top. After opening it,
+the panel measured 304×496px at x=16,y=72, ending at the viewport bottom.
+Its content height was 585px against a 494px client area, allowing internal
+scrolling without document overflow.
+
+Real browser input opened the menu with pointer, Space and Enter. Tab from the
+trigger reached Home, and Shift-Tab from Home returned to the trigger. Escape
+closed the nested More disclosure and restored focus to More; a second Escape
+closed the outer menu and returned focus to MENU. A pointer click outside the
+panel closed it. Selecting Home navigated to the Clean Trial root and left the
+menu closed. These observations are the published v0.2.6 runtime, not the
+unreleased source candidate. Console warning/error readback was empty.
+
+The viewport override was reset and the fresh tab closed; the browser tab list
+confirmed it was gone. Webflow readback still reports Clean Trial
+`customDomains: []` and `lastPublished: 2026-10-14T22:18:18.210Z`; no page,
+style, script, Library resource or site setting changed. No publication or
+sharing occurred in this follow-up.
+
+Candidate-specific geometry, automatic failed-script request capture, reduced
+motion/custom animation, icon visuals, Webflow Preview, human screen-reader or
+physical-device checks, and cloned upgrade/rollback remain open. The existing
+published comparison is v0.2.6. The candidate probe remains an empty draft;
+its prior page-only publish failed, and full-site publication was not used
+because unrelated draft pages were pending. See the Brief #12 STATUS entry.
+
 ### Brief #12 browser-control follow-up — 14 October 2026
 
 The required clean build and staging fallback cleanup were already recorded in

@@ -1,12 +1,28 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The temporary Clean Trial missing-script probe was removed after native Details keyboard checks. The required fresh-build run passed 48/48 and restored all generated files. On the published Clean Trial page, Escape closed the nested “More” menu with focus returned to its trigger; the desktop render showed no visible overflow. This is v0.2.6 evidence. Candidate-specific layout, motion and icon follow-up remains open where noted below. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. On the published Clean Trial comparison, responsive samples from 320px to 2,048px had no horizontal document overflow; the 320×568 open panel stayed in view and scrolled internally. Real keyboard, outside-click and link-closing checks passed. This remains v0.2.6 evidence, not candidate-Lite verification. Preview compilation, candidate motion/icon checks, physical-device and screen-reader checks, and cloned upgrade/rollback remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** a467f90 — current `main` checked before this documentation update. The local tracking ref is behind this checkout; no remote operation was made.
-**Next action:** Resume source-candidate layout and close checks in a Chrome session with responsive viewport controls; then check reduced motion, custom animation and icon rendering.
+**Reviewed at commit:** eb7df0f — current `main` and docs checked before this update; history since a467f90 is reflected below. Local branch is 14 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Secure an isolated staging route for the source candidate without publishing unrelated pending pages; then test candidate layouts, motion and icon rendering.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 responsive and interaction follow-up — Codex (night shift)
+
+**Changed (R-095, R-155):** No code, Webflow content, Library item or release changed. Rendered checks on the published Clean Trial comparison now cover responsive widths and outer-menu interactions.
+
+**Outputs:** Updated the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. No staging publication or Library sharing occurred.
+
+**Checked how:** Verified `main` at `eb7df0f`, with the tree clean before work. In a fresh Chrome tab on the published `Unlink Fallback Isolation` page, viewport widths 2,048, 1,280, 992, 991, 820, 768, 767, 480, 393 and 320px at 900px height had zero horizontal document overflow. The outer trigger was hidden at desktop and visible at the collapse widths. At 320×568, the open 304×496px panel fit the viewport and its 585px content scrolled internally. Real browser keyboard input passed Tab/Shift-Tab, Space, Enter, nested Escape and outer Escape with focus restoration. Pointer open and outside click closed the panel; selecting Home navigated and left it closed. Browser-reported DPR was 1, and the console had no warnings or errors. These are published v0.2.6 results, not candidate-Lite, physical-display or screen-reader evidence. The temporary viewport was reset and the tab closed. Webflow readback confirms Clean Trial has no custom domains and its last publication remains the earlier 22:18:18 cleanup; no Webflow change was made.
+
+**Still open:** Source-candidate rendering and exact missing-script request capture; reduced-motion/custom-animation and icon visuals; Preview compilation; human screen-reader/device checks; cloned upgrade/rollback. The available published fixture uses v0.2.6. The candidate probe is an empty draft and prior page-only publication failed; full-site publication risks unrelated pending pages.
+
+**Needs Michael:** Review and push the local commits when convenient. All newer fixes and verification remain pending acceptance.
+
+**Next useful action:** Provide an isolated staging route or equivalent approved preview for the local source candidate, then run the same responsive and interaction checks against it.
+
+**Handoff:** Continue from this entry and the final Brief #12 section in the local test record. The fresh Chrome tab is closed; no Webflow content changed. Do not publish the Clean Trial site as a whole to reach the candidate probe: four unrelated draft pages were pending in the last readback. Use a separately isolated, backed-up staging fixture or wait for Michael's answer to the scope question in Boss.
 
 ## 14 October 2026 — Brief #12 fresh-build and rendered follow-up — Codex (night shift)
 
