@@ -846,6 +846,12 @@ only; final site readback reports `customDomains: []` and
 `/unlink-fallback-isolation`; no new tab was opened. No Library share, consumer
 update, released asset change, custom-domain publication or release occurred.
 
-The fallback now passes native open/close and basic keyboard focus on one
-staging fixture. The remaining check for closed-link keyboard reachability
-should be done before relying on this fallback for accessibility.
+The fallback passes native open/close and basic keyboard focus on one staging
+fixture. A focused follow-up used a second temporary WHTML root
+(`1fcfa9b3-8cbe-89a6-4a09-a5e120571f33`) to test Tab after closing: neither
+navigation link received focus, and the refreshed accessibility tree omitted
+both links. The same root was removed; page code was blanked and the page
+returned to draft. After Clean Trial's subdomain-only cleanup publication at
+`2026-10-14T21:53:10.007Z`, the temporary route returned 404. Designer
+readback showed Body only, blank head/footer code and `draft: true`. The
+existing Chrome tab was returned to `/unlink-fallback-isolation`.
