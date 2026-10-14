@@ -247,7 +247,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 ### Free Webflow clonable
 
-- [ ] Define a deliberately basic clonable scope that demonstrates SmashBurger without turning the Library component into a site-specific header system.
+- [x] Define a deliberately basic clonable scope that demonstrates SmashBurger without turning the Library component into a site-specific header system. Drafted 2026-10-14 in `webflow/smashburger-lite-clonable-scope.md`; build remains gated on the planned class migration and a verified released runtime.
 - [ ] Supply a preconfigured, editable local Webflow component so clonable users do not need to install, configure and unlink a shared-Library instance first.
 - [ ] Ensure the clonable's local component does not ship with the Library unlink workflow's generated `.always*` combo-class trail; retain only deliberately named, explainable classes.
 - [ ] Leave structural elements on their default class-based Navigator labels; do not add custom display names that hide the clonable's `sb-*` selectors.
