@@ -1,12 +1,28 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, keyboard/pointer closing and icon emulation have rendered-browser evidence in the local test record; current published staging checks cover the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, motion/custom-animation integration, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 9adf264 — current `main` checked for this entry. The latest two commits record the current published keyboard check and handoff. Local branch reports 23 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Resolve the recorded Webflow Preview compiler failure and obtain a cloned release candidate plus human/device access; continue candidate motion and captured failed-request checks when those routes are available.
+**Reviewed at commit:** 8621f3d — checked current `main`; worktree was clean at start. Git reports 24 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Arrange a working Preview/browser-inspection route and a cloned candidate plus human/device access; continue candidate motion and captured failed-request checks when available.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 continuation and Preview availability check — Codex (night shift)
+
+**Changed (R-095, R-155):** No maintained source, Webflow content, asset, Library item, publication or release changed. The earlier candidate verification is complete as recorded below; no finished check was repeated.
+
+**Outputs:** Added this session's Preview availability result to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-155 evidence.
+
+**Checked how:** Started Boss for brief #12 and confirmed it was taken. Checked `git --no-optional-locks status`, history and current `main` at `8621f3d`; the worktree was clean. A fresh Chrome tab loaded the authorised published Clean Trial comparison. A separate new Designer tab opened the Clean Trial probe URL but exposed only an empty embedded Designer surface, with no usable canvas or Preview controls. Boss was notified once that Preview could not be checked. Both tabs opened for this session were closed. No Webflow mutation or publication occurred.
+
+**Still open:** Preview compilation remains unresolved; earlier records contain `CompilationError: Invalid source code`. Candidate failed-script request capture, motion/custom-animation integration, narrow-height scrolling in full-width/right layouts, human screen-reader and physical-device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback remain open. All new work is pending Michael's acceptance.
+
+**Needs Michael:** Review local commits. Arrange a working Preview/browser-inspection route, cloned release candidate, and human/device screen-reader and physical-display checks when available.
+
+**Next useful action:** Resolve Preview access/compiler behavior and perform the still-open candidate checks on an isolated route; keep naming, class migration and Lite publication deferred.
+
+**Handoff:** No temporary Webflow content remains. Current published comparison remained readable, and the Designer route did not expose Preview. See the latest continuation in the test record.
 
 ## 15 October 2026 — Brief #12 source-derived staging candidate checks — Codex (night shift)
 
