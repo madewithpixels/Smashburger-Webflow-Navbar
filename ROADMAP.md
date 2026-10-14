@@ -298,9 +298,11 @@ the Library global-style packaging finding, and remaining scope.
 **Source:** [todo.md](todo.md), original line 58 (now 59); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/icon-geometry-regression.md](webflow/icon-geometry-regression.md)
-**Evidence boundary:** Partial native-fixture checks only; linked candidate and versioned-distribution matrix remain open.
+**Evidence boundary:** Historical live native-fixture checks plus local v0.2.6/source token calculations; rendered linked-candidate and exact-version DPR matrix remain open.
 
   - Partial Webflow follow-up (2026-10-13): on editable native unlinked elements, maintained source JS measured the 3px/7px geometry at 1×, 2× and 3× in both icon modes; visible line centres matched at 36px and overflow was zero. CSS-only high-DPI rendering also passed at 4px/7px with the expected 11px shift at 2× and 3× in both icon modes. A new 4px/7px pass with maintained JS active produced an 11px auto shift and a visible 3-line X at Tablet; the 2-line JavaScript case and DPR for this pass were not recorded. Webflow Preview rejected a bare-block wrapper on re-evaluation but compiled the IIFE-wrapped source. The original v0.2.6 loader was restored and read back exactly. Linked candidate consumer and versioned-distribution checks remain. See `webflow/icon-geometry-regression.md`.
+
+  - Brief #11 local follow-up (2026-10-14): source, exact v0.2.6 dist/minified/Embed each pass 24 two/three-line, odd/even/custom-gap token calculations. No browser rendering or DPR proof was obtained; this does not close R-037. See [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 #### R-038 · Synchronize native open state, lifecycle state, ARIA and panel inertness.
 **State:** built · **Evidence:** none · **Acceptance:** accepted (historical)
@@ -727,10 +729,12 @@ the Library global-style packaging finding, and remaining scope.
 
 
 #### R-095 · Add automated state, focus, outside/link close, backdrop and scroll-lock tests.
-**State:** built · **Evidence:** none · **Acceptance:** accepted (historical)
+**State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (historical)
 **Source:** [todo.md](todo.md), original line 135 (now 136); baseline `c808ca4`.
 **Acceptance basis:** Michael’s standing historical-acceptance decision, 14 October 2026 (this session); [v0.2.6 release](webflow/v0.2.6-release-verification.md) and [POC record](webflow/smashburger-poc-acceptance.md), released navbar, repository deliverables and source/consumer use before 14 October; original checklist source above records this milestone.
 **Exit criteria:**
+**Evidence links:** [Brief #11 local test record](webflow/lite-preparation-local-tests-2026-10-14.md); `tests/runtime-delivery.test.js`.
+**Evidence boundary:** DOM/media-query simulation only; fresh-build checks pass. The new breakpoint-timer fix is unreleased and pending Michael; historical Acceptance above is unchanged.
 
 
 #### R-096 · Document structure, classes, properties, variants, hooks and integration patterns.
@@ -1205,6 +1209,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Exit criteria:**
 **Evidence links:** [webflow/v0.2.4-release-verification.md](webflow/v0.2.4-release-verification.md)
 **Evidence boundary:** Historical recorded check only; not rerun during this docs retrofit.
+**Local follow-up — 14 October 2026, brief #11:** new delivery matrix and fresh-build regression checks cover DOM state, synthetic Escape, mocked collapse boundaries/reduced motion and CSS-only Always fallback. Opening/closing breakpoint races are fixed in source; immutable v0.2.6 retains six labelled TODO failures. New fix remains pending and unreleased; historical Acceptance is unchanged. Browser/Webflow/human gates are listed in [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 
 #### R-156 · Make panel focus order match visual order (WCAG 2.4.3). Decision (Michael, 2026-10-03): Primary first everywhere. Both MWP Component Library source components now have `Primary navigation` before `Secondary navigation` (MCP move and readback); the published source pages Tab through the primary links first, collapsed and expanded, with no overflow. The demo, tests and docs were updated. No CSS or CDN change was needed: the collapsed `order` rules stay so older instances keep their visual layout.

@@ -1,12 +1,74 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; Lite scope accepted, naming/class migration and Lite publication pending; Designer Extension / Make local deferred until Lite works.
-**Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 161b744 — checked baseline before this documentation update
-**Next action:** Continue Lite preparation within D-011; class migration and publication wait for the product name. Verify future fresh installs in current test projects.
-**Needs Michael:** Decide the product name. This blocks the class migration and Lite publication.
+**Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, unreleased and pending Michael. Lite class migration/publication still waits for naming.
+**Last updated:** 14 October 2026 — Codex (night shift)
+**Reviewed at commit:** 2eda9f3 — locally tested implementation; before this evidence update
+**Next action:** Michael reviews the local fix and test evidence; arrange authorised rendered/browser/Webflow checks and a new semantic release before distributing it.
+**Needs Michael:** Review/push local commits; browser/Webflow/human checks and future release authority; product name for class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
-DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md. No new boss question.
+DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #11: existing-menu tests and local hardening — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** Expanded identical runtime checks for maintained
+source and exact v0.2.6 unminified/minified/Embed deliveries. Demonstrated a race:
+expanding the viewport during opening/closing allowed a pending collapsed timer
+to overwrite `expanded` with `open`/`closed`; the closing case hid/inerted desktop
+links. Source now cancels that timer and pending focus request on breakpoint
+state resets. The new fix is built, verified (local), pending Michael and
+unreleased. Existing historical Acceptance remains unchanged. Source: new
+regression tests and [full evidence record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Outputs:** `src/navbar-light.js`; `tests/runtime-delivery.test.js` and its
+`scripts/runtime-test-fixture.mjs` helper; `npm run test:built` and
+`scripts/check-built-runtime.mjs`; test record; ROADMAP evidence and this entry.
+Generated v0.2.6 bytes, package version, CDN loader and pinned URLs are unchanged.
+Implementation committed locally as `2eda9f3`; this evidence update is a separate local commit. Michael pushes.
+
+**Checked how:** Clean main at 5824d28; reviewed 161b744..HEAD (only Michael's
+answers/historical-acceptance docs, no implementation gap). Baseline 41/41 tests,
+syntax and `check:dist` passed. Final `npm test`: 73 tests, 67 passes, zero
+unexpected failures and six executed TODO failures documenting both known races
+in the three immutable v0.2.6 delivery forms (exit 0). Fresh-build suite:
+36/36 pass, zero TODOs, including both fixed races in all generated forms, demo
+startup and local loader SRI. Build runner restores all 12 generated files;
+readback via `git diff --exit-code` confirms restoration. Source/new-file syntax
+and `git diff --check` pass. `check:dist` now fails as expected: source contains
+an unreleased correction; README explicitly allows source/release drift between
+releases. Do not overwrite immutable v0.2.6 to silence it. DOM tests simulate
+260 collapse-boundary initialisations, 140 layout/motion opens/closes, 96 icon
+token calculations, reduced-motion waits, synthetic Escape/focus, close controls,
+repeat init/destroy and CSS-only Always fallback. These are not rendered checks.
+
+**Still open:** Browser rendering, actual Enter/Space/Tab and touch, overflow,
+DPR 1×/2×/3× visual convergence, OS/CSS reduced motion, custom GSAP integration,
+Webflow source/linked/unlinked/clean-install and Preview/published checks, actual
+CDN requests, VoiceOver/NVDA (R-244), and cloned upgrade/rollback (R-115).
+Installed sandboxed Chrome exited 134 before opening; browser connector rejected
+local file URLs and prohibited circumvention. No workaround was attempted and no
+browser viewport/preferences were changed. Detailed actionable checks are in the
+test record. Naming still gates migration/publication (D-012/D-013).
+
+**Needs Michael:** Review and push local commits. Arrange authorised rendered
+local-browser and current-fixture Webflow/human validation, with backup before
+structural work, then authorise a new semantic release for the fix. Decide the
+product name when ready; no repeat naming question was raised.
+
+**Open questions (not blocking):** None added. No product/design choice was needed
+for the demonstrated local timer fix.
+
+**Next useful action:** Read the test record, reproduce the mid-transition resize
+in an authorised rendered browser, and decide the next release before Lite uses
+the fixed source. `npm run test:built` is the repeatable local fresh-build check;
+`npm test` intentionally continues to expose six v0.2.6 TODO failures.
+
+**Handoff:** Michael/next agent: branch main; no worktree. Source is fixed, release
+files are still immutable v0.2.6 and retain the defect. Do not copy a temporary
+same-version build's loader/SRI into Webflow. New version/tag/distribution work
+needs a separate authorised release. Keep SB Test Four untouched under D-010.
+Read the local test record and D-011–D-013 before proceeding. Brief #11 completes
+the available local testing/hardening and records all unavailable checks; it does
+not accept the new fix or close R-037's rendered matrix.
 
 ## 14 October 2026 — Michael’s answers and historical acceptance — Codex
 
