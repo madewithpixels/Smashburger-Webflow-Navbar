@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. On Clean Trial staging, a labelled native Details fallback with maintained CSS opened and closed with real browser keyboard input. Its deliberately missing script path returned Webflow's 404 page. The automatic page-load request was not captured in DevTools. The temporary page and its styles are now removed and the probe is an empty draft. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The temporary Clean Trial missing-script probe was removed after native Details keyboard checks. A fresh-build run passed 48/48 and restored all generated files. On the existing published Clean Trial page, Escape closed the nested “More” menu with focus returned to its trigger; rendered desktop overflow was zero at DPR 1. This is v0.2.6 evidence. Source-candidate responsive layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 70e7a38 — current `main` checked before this documentation update; `origin/main` locally points to `07de2eb`, with eight local commits ahead. No remote operation was made.
-**Next action:** Continue in a Chrome session that exposes DevTools request logs and viewport controls; the current browser control could not open DevTools with its shortcut. Then check source-candidate responsive layouts, close behavior, reduced motion and icon rendering.
+**Reviewed at commit:** 71f34de — current `main` checked before this documentation update; local `origin/main` still points to `07de2eb`, ten commits behind this checkout. No remote operation was made.
+**Next action:** Resume source-candidate layout and close checks in a Chrome session with responsive viewport controls; then check reduced motion, custom animation and icon rendering.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 fresh-build and rendered follow-up — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, generated release, Library or Webflow content changed. A fresh source build passed all 48 checks and restored its generated outputs. On the existing published Clean Trial page, the nested “More” menu closed with Escape and returned focus to its trigger.
+
+**Outputs:** Extended the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. No staging publication, Library sharing or release occurred.
+
+**Checked how:** `npm run test:built` passed 48/48 across source, dist, minified and Embed; all 12 generated files were restored. `git diff --check` passed and the working tree was clean after the build. In a fresh Chrome tab, a real click opened the published nested menu and Escape closed it with focus on “More”. Rendered readback at 2,044 × 1,131 CSS px reported DPR 1, zero document overflow, a full-width panel container and the outer collapsed trigger hidden at this wide size. These are published v0.2.6 observations, not candidate-Lite geometry or physical-display DPR evidence.
+
+**Still open:** Source-candidate responsive geometry and outer-panel close behavior; browser-captured missing-script request; Preview compilation; reduced-motion and custom-animation integration; icon geometry across line counts/thicknesses/gaps and DPR; genuine screen-reader/device checks; and cloned upgrade/rollback.
+
+**Needs Michael:** Review the local commits when convenient. New local fixes and this evidence remain pending acceptance.
+
+**Next useful action:** Use a Chrome session with responsive viewport controls to check the source-derived candidate across collapse boundaries and layouts, then test its backdrop, outside and link closing. Keep new work on authorised test/staging fixtures.
 
 ## 14 October 2026 — Brief #12 missing-script fallback and cleanup — Codex (night shift)
 

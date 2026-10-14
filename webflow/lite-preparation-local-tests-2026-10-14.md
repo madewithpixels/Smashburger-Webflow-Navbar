@@ -976,3 +976,30 @@ After cleanup, I tried Chrome's `Option+Command+J` shortcut on the restored
 the current browser-control surface did not open DevTools or expose viewport
 controls. No further candidate layout or automatic-request checks were possible
 through this session. The tab remains on its original staging route.
+
+### Brief #12 fresh-build and rendered nested-menu follow-up — 14 October 2026
+
+`npm run test:built` passed all 48 checks across maintained source and freshly
+generated dist, minified and Webflow Embed deliveries. The runner restored all
+12 generated files, and the working tree was clean after the run. No immutable
+v0.2.6 file was changed.
+
+In a fresh Chrome tab on the published Clean Trial staging page
+`/unlink-fallback-isolation`, a real browser click opened the nested “More”
+disclosure; Escape closed it and focus returned to its Summary trigger. At the
+rendered 2,044 × 1,131 CSS-pixel viewport, `devicePixelRatio` was 1, document
+width was 2,044px (no horizontal overflow), and the outer MENU trigger was
+hidden while the full-width desktop links were visible. The navigation root
+spanned the viewport with `z-index: 100`. This is one published v0.2.6 desktop
+observation, not a candidate Lite measurement or a physical-display DPR claim.
+The nested chevron lines measured roughly 2px declared thickness and 5px
+computed bounding-box size after rotation; this does not test the hidden burger
+icon or other line/gap variants.
+
+No Webflow source was modified, Preview or another publication was attempted,
+or defect demonstrated. The automatic missing-script request remains
+uncaptured. Source-candidate responsive layouts and outer-panel closing,
+reduced-motion/custom-animation, broader icon visuals, human screen-reader and
+device checks, and cloned upgrade/rollback remain open. Chrome's current
+browser-control surface still does not offer responsive viewport controls;
+this follow-up therefore stayed at its actual 2,044 × 1,131 viewport.
