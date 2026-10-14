@@ -1,12 +1,28 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Clean Trial's published Tablet-collapse fixture passed responsive geometry and browser-keyboard checks. A temporary candidate with maintained CSS and no JavaScript did not render its trigger or links in Chrome, so its no-runtime fallback remains unverified. Webflow Preview still fails compilation; human/device, physical-DPR and cloned upgrade/rollback checks remain open. Current source, linked demo, dedicated staging instance and unlinked fixture have Designer readback; a further Chrome render on Smashburger staging was blocked by the browser origin approval gate.
+**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. The no-JavaScript native Details fallback now renders and opens on Clean Trial staging with the maintained candidate CSS. Broader source-candidate layouts, close behavior, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** fcd9824 — current `main` code/evidence baseline checked; subsequent local changes record this shift's read-only evidence
-**Next action:** Resume rendered staging checks when Chrome allows the Smashburger origin, and diagnose the absent trigger/links before repeating the candidate no-runtime check.
+**Reviewed at commit:** 664de82 — current `main` code/evidence baseline checked; this entry records additional staging evidence
+**Next action:** Continue rendered source-candidate checks across layouts, close behavior, motion and icon geometry; investigate the closed-panel accessibility-tree observation.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 native fallback verification — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, release, Library or consumer files changed. The temporary no-JavaScript candidate now passes the native Details open/close check on the authorised staging site.
+
+**Outputs:** [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md); temporary Webflow changes on `SB Unlink Clean Trial` page `SB Lite Preview Compiler Probe` were fully restored.
+
+**Checked how:** With maintained candidate CSS retained and no candidate JavaScript in the fixture, rendered Chrome showed the labelled trigger and links. Space opened it and Enter closed it. With it open, Tab focused the first link and Shift-Tab returned to the trigger. Designer readback confirmed the native `details`/`summary` trigger is a sibling of the navigation panel, matching the maintained CSS fallback selector. On closing, the screenshot showed the panel hidden, but Chrome's accessibility tree still listed the two links; whether they remain keyboard-reachable while visually hidden needs a focused follow-up. This did not simulate a failed candidate JavaScript network request, and no console capture was available.
+
+The temporary WHTML root was `6eeb3434-ba70-5330-f46d-b58985adb3b2`. I removed it, restored blank page head/footer code, and restored `draft: true`. Final Designer readback showed Body only, blank code blocks and the page still draft. I published Clean Trial to its Webflow subdomain only for the check and cleanup. Site readback shows `customDomains: []` and final publication at `2026-10-14T21:50:12.680Z`; Chrome confirmed the temporary route returns 404. No Library sharing/update or consumer change occurred. The existing Clean Trial tab was returned to its starting page; no new browser tab was opened.
+
+**Still open:** Source-candidate geometry across layouts and breakpoints, keyboard/pointer closing beyond native Details, reduced-motion/custom-animation integration, visual icon checks at DPR 1×/2×/3×, human screen-reader/device checks and cloned upgrade/rollback. Existing evidence for the published v0.2.6 Tablet fixture is recorded below and was not repeated. The closed-panel accessibility-tree listing needs investigation before treating keyboard hiding as verified.
+
+**Needs Michael:** Review and push local commits. New source fixes remain unreleased and pending acceptance; naming still blocks the later class migration and Lite publication.
+
+**Next useful action:** Test whether closed fallback links can receive Tab focus in a rendered candidate, then resume candidate responsive and close-behavior checks. Keep all changes on test fixtures and staging only.
 
 ## 14 October 2026 — Lite verification continuation — Codex (night shift)
 

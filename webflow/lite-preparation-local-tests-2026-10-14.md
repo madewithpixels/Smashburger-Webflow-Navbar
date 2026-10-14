@@ -807,3 +807,45 @@ browser surface was used to retry. Therefore the requested rendered checks for
 the linked and dedicated staging layouts remain open. Continue when Chrome's
 origin approval is available; keep the no-runtime candidate check separate
 until its native trigger and links render.
+
+### Brief #12 native no-JavaScript fallback staging check — 14 October 2026
+
+The browser-control session was available for the backed-up Clean Trial fixture.
+Before writing, Designer and Data MCP readback confirmed the isolated `SB Lite
+Preview Compiler Probe` (`6acfd482072d7417c8ae9149`) was an empty draft with
+blank page head/footer code. The site had no custom domains. The other audit
+pages remained drafts.
+
+I added a temporary WHTML root (`6eeb3434-ba70-5330-f46d-b58985adb3b2`) with
+a clear Brief #12 test label. It used the native `<details><summary>` trigger
+as a sibling of the navigation panel, matching the maintained CSS selector.
+The full maintained `src/navbar-light.css` was placed in page head code with a
+temporary comment. No candidate component JavaScript was included; the Webflow
+page itself still includes Webflow's own platform scripts. Designer readback
+confirmed the label, brand link, Details/Summary, panel and both test links,
+and a complete readback of the temporary stylesheet. This is a component
+JavaScript-omission test, not a blocked-network-request test.
+
+The probe was temporarily made publishable and Clean Trial was published to
+its Webflow subdomain only. In rendered Chrome, the labelled fixture and
+trigger appeared. Real Space opened the native Details element and revealed
+both navigation links; Enter closed it. Tab moved from the open trigger to the
+first link, and Shift-Tab returned to the trigger. A screenshot after closing
+showed the panel hidden. The accessibility tree still listed the two links
+after closing, so their hidden-state keyboard reachability remains unverified.
+No screen-reader or console-log evidence was obtained. These checks do not
+verify other component layouts, responsive geometry, a failed network request,
+or candidate runtime behavior.
+
+I removed the temporary root, restored the page head code to blank, and restored
+`draft: true`. Final readback showed the Body only, blank head/footer code and
+the probe still draft. Clean Trial was republished to its Webflow subdomain
+only; final site readback reports `customDomains: []` and
+`lastPublished: 2026-10-14T21:50:12.680Z`. The temporary route returned Webflow's
+404 page after cleanup. The existing Chrome tab was returned to
+`/unlink-fallback-isolation`; no new tab was opened. No Library share, consumer
+update, released asset change, custom-domain publication or release occurred.
+
+The fallback now passes native open/close and basic keyboard focus on one
+staging fixture. The remaining check for closed-link keyboard reachability
+should be done before relying on this fallback for accessibility.
