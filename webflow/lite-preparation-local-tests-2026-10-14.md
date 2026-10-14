@@ -404,6 +404,22 @@ not found”, so that API path could not identify a source block. Candidate
 Preview remains unverified. No page/site mutation, share or publication
 occurred.
 
+### Empty-page Preview compiler probe
+
+To test whether page content caused the Preview failure, I created the draft
+page `SB Lite Preview Compiler Probe` (`sb-lite-preview-compiler-probe`, page ID
+`6acfd482072d7417c8ae9149`) in the backed-up SB Unlink Clean Trial. Its Navigator
+body is empty; page settings show empty head and before-body custom-code fields.
+With Preview custom code enabled, this page also stalled and logged
+`CompilationError: Invalid source code` from
+`design.webflow.com/js/site/webflow.js`. The same error is now observed on three
+pages, including one with no page elements or page-level code. This rules out
+page content and page-level code as the cause on the empty page, but does not
+distinguish site-wide custom code from a Webflow Preview compiler issue. The
+site/page scripts readback API returned 404 and did not expose site-wide code.
+The empty probe is intentionally retained as an unpublished draft for follow-up;
+it has no test Embed or other page content. Nothing was published or shared.
+
 Final local checks after the demo fixture token change: `npm test` completed
 with 77 tests (68 pass, 9 expected TODO failures in the immutable v0.2.6
 generated deliveries); `npm run test:built` passed 40/40 and restored all 12
