@@ -22,6 +22,8 @@ DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local
 
 **Next useful action:** Continue the candidate checks once the browser inspection controls and isolated Preview/publish route are available; do not repeat the completed fresh-build or fallback cleanup checks.
 
+**Handoff:** For the next session, read this entry and the last section of the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md). The local tree is clean at `3dc49d6`; no temporary Webflow content remains. Start with candidate verification only when Chrome viewport and request/console inspection and an isolated staging or Preview route are usable. Do not publish the whole Clean Trial site while its four unrelated draft pages remain.
+
 ## 15 October 2026 — Brief #12 Clean Trial state readback — Codex (night shift)
 
 **Changed (R-095, R-155):** No code, Webflow content, Library item, asset, publication or release changed. Current readback confirms the temporary probe remains an empty draft and the Clean Trial site still has no custom domain.
