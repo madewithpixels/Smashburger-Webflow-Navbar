@@ -1097,3 +1097,17 @@ Physical-device and human screen-reader checks, physical-display DPR 2×/3× ico
 checks, and cloned upgrade/rollback remain unavailable because there is no
 suitable device/screen-reader session or cloned release candidate. No defect
 was demonstrated in this fresh-build rerun.
+
+### Brief #12 browser-surface check — 14 October 2026
+
+Checked `main` at `e888525`; the only commit after the previous reviewed
+baseline is the fresh-build entry already described above. In a fresh Chrome
+tab on the published Clean Trial `/unlink-fallback-isolation` page, clicking
+the nested “More” button and pressing Escape closed the disclosure and left
+focus on its trigger in the accessibility tree. This reconfirms published
+v0.2.6 behavior only; it adds no candidate evidence. The available browser
+surface did not provide viewport emulation, console logs or DevTools request
+capture. The tab was closed. No Webflow content, sharing, publication or
+release changed. Candidate rendering and runtime checks, Preview compilation,
+motion, icon geometry, physical-device and human screen-reader checks,
+physical-display DPR 2×/3×, and cloned upgrade/rollback remain open.

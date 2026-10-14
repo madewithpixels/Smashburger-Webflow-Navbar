@@ -1,12 +1,26 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; staging responsive and keyboard checks cover the released v0.2.6 comparison. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** fb78438 — current `main` checked for this entry; history since 959485b contains the fresh-build record. Local branch is 16 commits ahead of its tracking ref; no remote operation was made.
+**Reviewed at commit:** e888525 — current `main` checked for this entry. The one commit since the previous review records the fresh-build result. Local branch reports 17 commits ahead of its tracking ref; no remote operation was made.
 **Next action:** Resolve the documented Preview compiler failure and remaining physical-device, human screen-reader and cloned upgrade/rollback checks before any new Lite release decision.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 browser-surface check — Codex (night shift)
+
+**Changed (R-095, R-155):** No code, Webflow content, Library item, release asset or publication changed. I confirmed the published nested “More” menu still closes on Escape and returns focus to its trigger.
+
+**Outputs:** Added the observation and the browser inspection limits to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. The fresh Chrome tab was closed.
+
+**Checked how:** Read the project record and checked `main` at `e888525`; the only commit after the previous reviewed baseline was the recorded fresh-build entry. Opened a fresh Chrome tab on the published Clean Trial comparison page, clicked “More”, and pressed Escape. The accessibility tree showed the disclosure closed and focus on its button. This is published v0.2.6 evidence only. The available browser surface did not provide viewport emulation, console logs or DevTools request capture.
+
+**Still open:** Candidate responsive geometry and outer-menu behavior, automatic failed-script request capture, Preview compilation, motion and custom-animation checks, broader icon geometry, physical-device and human screen-reader checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. No new defect was demonstrated.
+
+**Needs Michael:** Review local commits and arrange a Preview route plus human/device and cloned-release environments when convenient. New candidate fixes and checks remain pending acceptance.
+
+**Next useful action:** With a usable Chrome inspection surface, finish candidate layout, motion, icon and runtime checks on the authorised staging fixture, preserving its draft and cleanup state.
 
 ## 14 October 2026 — Brief #12 fresh-build verification — Codex (night shift)
 
