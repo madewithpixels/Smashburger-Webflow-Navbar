@@ -367,6 +367,43 @@ Consequently, candidate-in-Preview behavior is blocked on a working Designer
 bridge. This is a tool connection limitation, not a Preview failure. No sharing
 or publishing occurred.
 
+### Designer Preview check in the browser UI
+
+After the previous bridge failure, Chrome reopened the site-specific Designer
+URL and the Designer UI became controllable directly. I selected only the
+existing draft `Unlink Override Verification` page; it contains linked and
+unlinked trial instances and was not edited. The Canvas rendered those instances
+and their authored links. In Preview with “Enable custom code?” on, Webflow
+stayed on “Compiling custom code…” rather than rendering the page. Chrome's
+DevTools log contained Webflow's `CompilationError: Invalid source code` twice
+from `design.webflow.com/js/site/webflow.js`; no page-specific source location
+was supplied. This is a Preview compilation failure on this fixture, not proof
+that the Navbar runtime itself threw an error.
+
+With the Preview custom-code toggle temporarily off, the page rendered. This
+toggle disables custom Embed code generally, so it is broader than blocking only
+the Navbar JavaScript asset. The native Details trigger opened and closed using
+browser UI input, and Tab moved from the trigger into the navigation link order.
+Both linked/unlinked fixture copies remained visible. I restored custom code to
+on and returned to Canvas. This confirms a no-custom-code native fallback in
+Preview, but does not verify the candidate fix there or isolate JavaScript-only
+failure while retaining Embed CSS. No site/page content, publish state, share or
+Library resource changed. Designer MCP continued to return “Unable to connect”
+despite the direct UI being usable.
+
+The same Preview behavior was then checked on the separate existing
+`Unlink Fallback Isolation` page, the published-v0.2.6 baseline fixture. With
+custom code enabled, it also remained at “Compiling custom code…” and DevTools
+reported `CompilationError: Invalid source code` from Webflow's
+`webflow.js:501`. With the Preview custom-code toggle disabled, the native
+fallback rendered in the earlier comparison; no page content was edited. This
+second page shows the error is not confined to the first draft fixture, but does
+not establish a site-wide cause or implicate Navbar runtime JavaScript.
+`get_site_scripts` and `get_page_scripts` each returned 404 “Custom code block
+not found”, so that API path could not identify a source block. Candidate
+Preview remains unverified. No page/site mutation, share or publication
+occurred.
+
 Final local checks after the demo fixture token change: `npm test` completed
 with 77 tests (68 pass, 9 expected TODO failures in the immutable v0.2.6
 generated deliveries); `npm run test:built` passed 40/40 and restored all 12

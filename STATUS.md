@@ -1,12 +1,53 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; breakpoint-timer fix remains local, fresh-build verified and unreleased. Rendered Chrome checks now reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Preview/published candidate and human checks remain open. Lite class migration/publication still waits for naming.
+**Stage:** v0.2.6 released baseline; breakpoint-timer fix remains local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. The backed-up Webflow fixture renders native fallback in Preview with custom code disabled; enabling it stalls at compilation with a Webflow source error. Candidate Preview and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 922d7ff — baseline checked for rendered Chrome follow-up
-**Next action:** Restore the Webflow Designer MCP bridge, then test a temporary candidate only on a confirmed disposable fixture and verify exact cleanup. Data MCP can read the test site, but Designer MCP rejected its supplied launch link after Chrome opened it.
+**Reviewed at commit:** 0f4ac75 — baseline checked for Webflow Preview follow-up
+**Next action:** Isolate the Webflow Preview custom-code compilation error on a disposable fixture; then test the temporary candidate with custom code enabled and verify exact cleanup. Designer MCP remains disconnected, though Chrome's Designer UI is available.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Webflow Preview fallback continuation — Codex
+
+**Changed (R-095, R-155):** Recorded the read-only Designer Canvas/Preview
+comparison and a repeated custom-code Preview compilation failure on two pages.
+No Webflow
+page, component, Library, share or published site was changed.
+
+**Outputs:** This status entry, the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md),
+and R-095/R-155 evidence in [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** Webflow Data MCP listed the authorised sites and read the
+existing linked/unlinked `Unlink Override Verification` fixture. Chrome Designer
+Canvas showed the two instances. With Preview custom code enabled, Webflow
+remained at “Compiling custom code…” on both `Unlink Override Verification` and
+`Unlink Fallback Isolation`; DevTools reported `CompilationError: Invalid source
+code` on each. With the Preview custom-code toggle temporarily off on the first
+page, it rendered; the native Details menu opened/closed and
+Tab entered its link order. Restored the toggle to on and returned to Canvas.
+This is Preview fallback evidence, not candidate runtime or JavaScript-only
+asset-failure evidence. The scripts readback endpoint returned 404 “Custom code
+block not found” for site and page scripts, so it did not identify the source.
+The repeated error does not establish its root cause or prove it is site-wide.
+`npm test`, `npm run test:built`, `npm run check` and
+`git diff --check` remain as verified in the immediately preceding entry; no
+implementation files changed in this continuation.
+
+**Still open:** Candidate Preview with custom code enabled; diagnosing the
+repeated fixture compilation error; all human screen-reader/touch/physical-display checks,
+full custom icon DPR combinations, actual OS reduced-motion and upgrade/rollback.
+Designer MCP still reports disconnected despite the browser UI being available.
+
+**Needs Michael:** Review/push local commits. No product decision is required.
+
+**Next useful action:** Diagnose the Preview custom-code compilation failure on a
+disposable page with a minimal Embed; then inject the clearly labelled local
+candidate and verify the opening/closing resize fix in Preview with exact cleanup.
+
+**Handoff:** Chrome is left on the backed-up `Unlink Fallback Isolation`
+fixture in Canvas with Preview custom code restored to on. Its content remains
+unchanged. Do not touch SB Test Four or refresh the Navbar Light test page.
 
 ## 14 October 2026 — Rendered Chrome continuation — Codex
 
@@ -39,10 +80,13 @@ physical-keyboard or assistive-technology tests.
 delivery files. `npm run test:built`: 40/40; all 12 generated files restored and
 an independent diff check passed. `npm run check` and `git diff --check` passed.
 
-**Still open:** Webflow Preview with the candidate is blocked by a Designer MCP
-bridge disconnect: the supplied site launch URL opened the Designer UI, but the
-bridge still returned “Unable to connect” and its embedded app remained blank.
-No source/page mutation was attempted. The full icon thickness/gap combinations
+**Still open:** Candidate Preview with custom code enabled is blocked: the
+existing verification page remains at “Compiling custom code…” and Webflow's
+Designer console reports `CompilationError: Invalid source code`. The Designer
+MCP bridge also remains disconnected. With Preview's custom-code toggle off,
+native Details fallback rendered and opened/closed; this disables all Embed code,
+so it does not isolate failure of only the JavaScript asset. No page/source data
+was changed. The full icon thickness/gap combinations
 across all DPR values and physical Retina evidence; actual OS reduced-motion and
 custom-animation integration (Chrome CSS emulation passed); CSS/CDN asset-failure
 variants beyond the script-free native fallback; real touch, VoiceOver/NVDA and
@@ -54,8 +98,8 @@ assets, not the candidate.
 **Needs Michael:** Review and push local commits. Naming remains the later
 class-migration/Lite-publication gate.
 
-**Next useful action:** Reconnect the Designer MCP bridge; then run the candidate
-Preview check on a confirmed disposable test page, read back and restore it.
+**Next useful action:** Diagnose the Preview compilation failure on a disposable
+test page; after custom code compiles, run and read back the candidate Preview.
 
 **Handoff:** Read this entry and the rendered-browser section of the test record.
 The Clean Trial backup is confirmed by Michael. Keep the candidate local and
