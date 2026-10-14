@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; staging responsive and keyboard checks cover the released v0.2.6 comparison. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; published staging checks cover both the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 8792a5e — current `main` checked for this entry. The one commit since the previous review records the prior browser-surface check. Local branch reports 18 commits ahead of its tracking ref; no remote operation was made.
+**Reviewed at commit:** 0117237 — current `main` checked for this entry. One commit since the previous reviewed baseline records the prior staging readback. Local branch reports 19 commits ahead of its tracking ref; no remote operation was made.
 **Next action:** Use Chrome with viewport and console/request inspection to complete candidate rendering and runtime checks, then arrange Preview and the unavailable human/device and cloned-release checks.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 linked staging interaction check — Codex (night shift)
+
+**Changed (R-095, R-155):** No source or Webflow content changed. A fresh browser tab rendered the linked navigation on Smashburger's published staging home. Pointer opened the nested “More” menu; Escape closed it and returned focus to its button.
+
+**Outputs:** Added the rendered result and limits to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. Closed the tab opened for this check.
+
+**Checked how:** At baseline `0117237`, opened a new Chrome tab at `https://smashburger-4b8f18.webflow.io/`. The screenshot showed the full-width desktop navigation. Accessibility readback showed the nested links after a pointer click on “More”; after Escape the control was collapsed and focused. This is published staging behavior on the linked consumer, not Lite-candidate behavior. No viewport, console or request inspection was available. Closed the new tab and left earlier-session tabs untouched.
+
+**Still open:** Candidate viewport and outer-menu checks, automatic missing-script request capture, Preview compilation, reduced-motion/custom-animation on the current Webflow consumer, broader icon geometry, human screen-reader/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback. No source, Library, release asset, staging content, sharing or publication changed; new candidate work remains pending Michael’s acceptance.
+
+**Needs Michael:** Review local commits. Arrange Chrome viewport/request inspection, a working Preview route, a human/device screen-reader session and a cloned release candidate when available.
+
+**Next useful action:** Complete the remaining candidate-specific checks with a Chrome surface that supports viewport and request inspection; keep the Clean Trial probe draft-only unless an isolated publishable route becomes available.
 
 ## 15 October 2026 — Brief #12 staging readback — Codex (night shift)
 

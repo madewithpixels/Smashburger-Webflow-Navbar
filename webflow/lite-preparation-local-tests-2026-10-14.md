@@ -1129,3 +1129,19 @@ Preview compilation, motion/custom animation, broader icon geometry,
 human/device/screen-reader checks, physical-display DPR 2×/3× and cloned
 upgrade/rollback remain open. No candidate check was repeated; the missing
 script fallback cleanup and fresh-build result are already recorded above.
+
+### Brief #12 linked Smashburger staging interaction check — 15 October 2026
+
+Opened a new Chrome tab at the published Smashburger staging home
+(`https://smashburger-4b8f18.webflow.io/`). The rendered screenshot showed the
+full-width navigation. A pointer click opened the nested “More” control; Escape
+closed it and the accessibility state showed focus returned to the button.
+This is a current published linked-consumer interaction check, not candidate or
+responsive evidence. No viewport, console or network-request inspection was
+available in this browser surface.
+
+Closed the tab opened for the check. No Webflow content, Library item, site
+publication, asset or release changed. Preview compilation, candidate-specific
+responsive and outer-panel checks, captured missing-script request, custom
+animation, remaining icon geometry, human/device/screen-reader evidence,
+physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
