@@ -1,12 +1,26 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. The no-JavaScript native Details fallback now renders and opens on Clean Trial staging with the maintained candidate CSS. Broader source-candidate layouts, close behavior, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The labelled native Details fallback passes open/close and focus checks on Clean Trial staging with candidate CSS and no candidate JavaScript. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** e01431b — current `main` code/evidence baseline checked; this entry records additional staging evidence
-**Next action:** Continue rendered source-candidate checks across layouts, close behavior, motion and icon geometry; investigate the closed-panel accessibility-tree observation.
+**Reviewed at commit:** 0bd5973 — current `main` checked; this entry records the fresh-build and published nested-menu checks.
+**Next action:** Resume source-candidate staging checks when rendered viewport controls are available; prioritise layout/breakpoint geometry and outer-panel close behavior.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 fresh-build and staging follow-up — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, release, Library or Webflow content changed. The generated-delivery checks pass, and the published Clean Trial page still supports Escape closing its nested “More” disclosure with focus returned to the trigger.
+
+**Outputs:** Added the check details to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and updated R-095/R-155 evidence in [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** `npm run test:built` passed 48/48 across source, dist, minified and Embed. The runner restored all 12 generated files. Chrome rendered the published `Unlink Fallback Isolation` page at a wide desktop view; a real browser click opened “More”, and Escape closed it with focus on the same button. This is a published v0.2.6 nested-disclosure check, not source-candidate geometry or outer-menu close evidence. Webflow readback confirms the candidate probe is Body-only and still `draft: true`; Clean Trial reports `customDomains: []` and its prior publication timestamp. No Webflow changes or publication occurred. The temporary Chrome tab was closed.
+
+**Still open:** Source-candidate layouts and collapse boundaries, candidate JavaScript network failure, backdrop/outside/link closing, reduced-motion and custom-animation integration, rendered icon geometry at DPR 1×/2×/3×, and human screen-reader/physical-device checks. Webflow Preview remains blocked by its recorded compilation error. No cloned upgrade/rollback fixture or suitable human screen-reader session is available.
+
+**Needs Michael:** Review and push local commits when convenient. The newer source fixes and verification remain pending acceptance; the product name still blocks the later class migration and Lite publication.
+
+**Next useful action:** When a browser session with viewport controls is available, run source-candidate responsive and outer-panel close checks on the backed-up Clean Trial fixture. Leave the probe and other fixtures untouched until the structural test setup is verified.
 
 ## 14 October 2026 — Brief #12 native fallback verification — Codex (night shift)
 

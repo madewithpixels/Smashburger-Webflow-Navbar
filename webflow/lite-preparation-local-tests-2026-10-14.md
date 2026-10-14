@@ -855,3 +855,32 @@ returned to draft. After Clean Trial's subdomain-only cleanup publication at
 `2026-10-14T21:53:10.007Z`, the temporary route returned 404. Designer
 readback showed Body only, blank head/footer code and `draft: true`. The
 existing Chrome tab was returned to `/unlink-fallback-isolation`.
+
+### Fresh-build and published nested-menu follow-up — 14 October 2026
+
+At `0bd5973`, `npm run test:built` passed 48/48 checks across maintained
+source, freshly generated dist, minified and Webflow Embed deliveries. The
+runner reported that all 12 pre-build generated files were restored. This is
+automated DOM/state and delivery evidence; it does not replace browser layout or
+human assistive-technology checks.
+
+On the already-published `Unlink Fallback Isolation` page in Clean Trial, Chrome
+rendered the navigation at a wide desktop view. A real browser click expanded
+the nested “More” disclosure. Escape closed it, and Chrome's accessibility
+state reported focus on the same “More” button. This is a rendered published
+v0.2.6 nested-menu check, not source-candidate or outer Navbar Light panel
+behavior. No DPR was measured in this follow-up.
+
+Read-only Webflow site/page readback confirmed the Clean Trial staging site has
+`customDomains: []`, its previous publish timestamp remains
+`2026-10-14T21:53:10.007Z`, and `SB Lite Preview Compiler Probe` remains
+`draft: true`. Element readback returned only its Body root. No page or site
+content changed and no publication occurred. The temporary Chrome tab opened
+for this check was closed.
+
+**Still open:** source-candidate responsive layouts and collapse boundaries,
+outer-menu backdrop/outside/link closing, reduced-motion/custom-animation,
+rendered icon geometry at DPR 1×/2×/3×, physical-device and human
+screen-reader checks, and cloned upgrade/rollback. The earlier no-runtime
+fallback passes with no candidate JavaScript included, but does not simulate a
+failed JavaScript network request.
