@@ -162,3 +162,25 @@ unchanged. The smallest next step is to make an authorised Chrome control surfac
 available, confirm a recoverable backup for the chosen temporary test fixture,
 then inject a clearly labelled candidate build and run the resize/interaction
 matrix without changing ordinary consumers.
+
+### Additional Webflow source and fixture readback
+
+Read the MWP source component trees and HtmlEmbed settings through Data MCP.
+The self-contained `SmashBurger` component's runtime Embed (44,492 characters)
+matches `webflow/navbar-light-embed.html` exactly; its Canvas helper (4,182
+characters) matches `webflow/navbar-light-canvas-embed.html`. The CDN component's
+loader Embed (1,314 characters) matches `webflow/navbar-light-cdn-loader.html`,
+and its Canvas helper also matches the local Canvas helper exactly. The CDN
+loader readback retains the `v0.2.6` URLs and SRI values. This confirms current
+source Embeds still use the committed release/source bytes; the unreleased fix
+was not copied to Webflow.
+
+The Smashburger `/demo` page tree confirms a linked `SmashBurger CDN` instance.
+Webflow MCP returned `Component.getRootElement does not support library
+components` when asked to traverse its internals, so linked runtime Embed values
+remain unverified through this route. On SB Unlink Clean Trial Home, the readback
+contains the original linked definition, the separate one-Base candidate, and
+two native copies (`mwp-css-nav` and `mwp-css-nav 2`). The published
+`Unlink Fallback Isolation` page reads as an 85-node native tree rooted in
+`mwp-css-nav 3`. These tree reads do not establish that the page renders or that
+its browser runtime behaves correctly. No data was written, shared or published.

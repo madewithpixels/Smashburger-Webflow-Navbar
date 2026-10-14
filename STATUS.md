@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, fresh-build verified, unreleased and pending Michael. Rendered and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 7968cb2 — clean baseline for continuation check
+**Reviewed at commit:** 4a8e9d0 — clean baseline for Webflow source readback
 **Next action:** Enable an authorised Chrome control surface and confirm a recoverable backup for the chosen temporary fixture, then verify the timer fix in rendered output.
 **Needs Michael:** Review and push local commits. A Chrome control surface is not exposed in this session; connect one for rendered checks. Product name remains needed for class migration/Lite publication.
 
@@ -20,6 +20,8 @@ immutable v0.2.6 assets, pinned URLs and existing content remain unchanged.
 **Checked how:** Reviewed `5824d28..HEAD` (2eda9f3 implementation and 7968cb2 evidence update); `git --no-optional-locks status` was clean. `npm run test:built` passed 36/36 across source and three generated delivery forms; runner restored all 12 generated files and `git diff --exit-code` confirmed exact restoration. Read-only site, page and component calls confirmed the MWP Library's two five-variant source definitions and separate one-Base unlink candidate, plus the linked `SmashBurger CDN` instance on Smashburger `/demo`. These are structured readbacks, not runtime evidence.
 
 **Still open:** Rendered reproduction/fix check, responsive geometry, physical keyboard/touch, no-JS and asset failure, actual reduced motion/custom animation, icon visuals at DPR 1×/2×/3×, Preview/published runtime, screen readers and upgrade/rollback. Chrome control is not exposed in this session; the local-file URL security rejection was not bypassed. No recoverable backup was confirmed for a target fixture, so no structural Webflow test was attempted.
+
+**Additional check:** Read the stored MWP self-contained and CDN source component Embeds. Runtime and Canvas helper/loader values match their committed local files byte for byte, including pinned v0.2.6 loader URLs/SRI. Smashburger `/demo` is linked, but Webflow MCP does not expose Library component internals there. The isolated clean-trial Home and fallback page structures were read without mutation; none of these reads prove Preview, rendering or runtime behavior. Details are in the continuation section of the test record.
 
 **Needs Michael:** Review/push local commits. Make an authorised Chrome control surface available for rendered tests; product naming remains for the later migration/publication gate.
 
