@@ -170,6 +170,25 @@ for (const delivery of deliveries) {
     } finally { f.close(); }
   });
 
+  test(`${delivery}: collapsing to mobile restores focus before hiding desktop links`, {
+    todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
+      ? 'Known v0.2.6 focus-on-hidden-panel defect; immutable artifacts retained. Source fix needs a new release.' : false
+  }, () => {
+    const f = runtimeFixture(delivery);
+    try {
+      f.root.dataset.collapse = 'tablet'; f.resize(1280);
+      const navbar = f.create();
+      const trigger = f.root.querySelector('[data-mwp-trigger]');
+      const panel = f.root.querySelector('[data-mwp-panel]');
+      panel.querySelector('a').focus();
+      f.resize(800);
+      assert.equal(f.dom.window.document.activeElement, trigger);
+      assert.equal(panel.getAttribute('aria-hidden'), 'true');
+      assert.equal(panel.inert, true);
+      navbar.destroy();
+    } finally { f.close(); }
+  });
+
   test(`${delivery}: expanding during a closing transition cancels hiding and preserves scroll styles`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
       ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false

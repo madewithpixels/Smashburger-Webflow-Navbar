@@ -190,14 +190,18 @@ export class NavbarLight {
   }
 
   onBreakpointChange(initial = false) {
+    const isInitial = initial === true;
     const collapsed = this.isCollapsed();
     const previous = this.root.dataset.mwpCollapsed === 'true';
     this.root.dataset.mwpCollapsed = String(collapsed);
 
     if (collapsed) {
-      if (initial || !previous) {
+      if (isInitial || !previous) {
         this.clearStateTimer();
         this.focusOnOpened = false;
+        if (!isInitial && this.panel.contains(this.root.ownerDocument.activeElement)) {
+          this.trigger.focus();
+        }
         this.menu.open = false;
         this.setState('closed', false);
       } else {
