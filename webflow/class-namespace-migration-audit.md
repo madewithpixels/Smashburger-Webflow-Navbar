@@ -33,6 +33,51 @@ clear in the Webflow Navigator and avoids carrying the old internal `css`
 namespace into the public class API. This mapping applies to Webflow class
 tokens and CSS class selectors only.
 
+| Current class | New class |
+| --- | --- |
+| `mwp-css-nav` | `sb-nav` |
+| `mwp-css-nav_inner` | `sb-nav-inner` |
+| `mwp-css-nav_brand` | `sb-nav-brand` |
+| `mwp-css-nav_menu` | `sb-nav-menu` |
+| `mwp-css-nav_summary` | `sb-nav-summary` |
+| `mwp-css-nav_label` | `sb-nav-label` |
+| `mwp-css-nav_icon` | `sb-nav-icon` |
+| `mwp-css-nav_line` | `sb-nav-line` |
+| `mwp-css-nav_panel` | `sb-nav-panel` |
+| `mwp-css-nav_primary` | `sb-nav-primary` |
+| `mwp-css-nav_links` | `sb-nav-links` |
+| `mwp-css-nav_link` | `sb-nav-link` |
+| `mwp-css-nav_submenu` | `sb-nav-submenu` |
+| `mwp-css-nav_submenu-trigger` | `sb-nav-submenu-trigger` |
+| `mwp-css-nav_submenu-icon` | `sb-nav-submenu-icon` |
+| `mwp-css-nav_submenu-icon-line-left` | `sb-nav-submenu-icon-line-left` |
+| `mwp-css-nav_submenu-icon-line-right` | `sb-nav-submenu-icon-line-right` |
+| `mwp-css-nav_submenu-list` | `sb-nav-submenu-list` |
+| `mwp-css-nav_submenu-link` | `sb-nav-submenu-link` |
+| `mwp-css-nav_cta` | `sb-nav-cta` |
+| `mwp-css-nav_secondary` | `sb-nav-secondary` |
+| `mwp-css-nav_socials` | `sb-nav-socials` |
+| `mwp-css-nav_secondary-link` | `sb-nav-secondary-link` |
+| `mwp-css-nav_secondary-icon` | `sb-nav-secondary-icon` |
+| `mwp-css-nav_secondary-label` | `sb-nav-secondary-label` |
+| `mwp-css-nav_contacts` | `sb-nav-contacts` |
+| `mwp-css-nav_backdrop` | `sb-nav-backdrop` |
+| `mwp-css-nav_settings` | `sb-nav-settings` |
+| `mwp-css-nav_settings-summary` | `sb-nav-settings-summary` |
+| `mwp-css-nav_settings-title` | `sb-nav-settings-title` |
+| `mwp-css-nav_settings-help` | `sb-nav-settings-help` |
+| `mwp-css-nav_settings-note` | `sb-nav-settings-note` |
+| `mwp-css-nav_config-row` | `sb-nav-config-row` |
+| `mwp-css-nav_config-label` | `sb-nav-config-label` |
+| `mwp-css-nav_config-title` | `sb-nav-config-title` |
+| `mwp-css-nav_config-value` | `sb-nav-config-value` |
+| `mwp-css-nav_desktop` | `sb-nav-desktop` |
+
+The last ten names occur in legacy settings/demo structures beyond the
+candidate's 27-node-base class set. Confirm which remain in each source edition
+before renaming or deleting them; the mapping is defined so they cannot be
+left behind by a root/children-only replacement.
+
 Preserve the descriptive role of each structural class. Webflow-generated
 collision suffixes such as `-5`, historical `.always*` combos, and
 `mwp-component-library--`-prefixed Library selector records are environment or
