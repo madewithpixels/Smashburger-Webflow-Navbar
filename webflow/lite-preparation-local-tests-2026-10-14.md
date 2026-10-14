@@ -1056,3 +1056,22 @@ denied permission to bind `127.0.0.1:8765` and exited immediately. No local
 candidate render was attempted through `file://` or another route. The staging
 tab was closed and its ID was absent from the browser tab list. No Webflow or
 repository source content changed.
+
+### Brief #12 fresh-build follow-up — 14 October 2026
+
+`npm run test:built` completed with 34 passing and 14 failing checks across
+maintained source, committed dist, minified and Embed deliveries. The maintained
+source cases passed. The failures were the breakpoint timer/focus and missing
+component-CSS expectations against immutable v0.2.6 generated deliveries;
+those artifacts intentionally do not contain the newer local fixes. This run
+therefore does not pass the generated-delivery gate and does not demonstrate a
+new source regression. An earlier invocation was interrupted before cleanup;
+I restored all 12 generated files from the known-clean starting `959485b` and
+verified no generated-file diff remained. No v0.2.6 file or source fix was
+committed or published.
+
+A fresh Chrome tab on published Clean Trial `/unlink-fallback-isolation`
+showed the desktop navigation accessibility tree. This was a read-only check
+of the v0.2.6 comparison; it adds no candidate layout, keyboard, console, DPR,
+Preview or screen-reader evidence. The tab was closed. No Webflow change or
+publication occurred.

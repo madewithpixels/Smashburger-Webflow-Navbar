@@ -1,12 +1,26 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. On the published Clean Trial comparison, responsive samples from 320px to 2,048px had no horizontal document overflow; the 320×568 open panel stayed in view and scrolled internally. Real keyboard, outside-click and link-closing checks passed. This remains v0.2.6 evidence, not candidate-Lite verification. Preview compilation, candidate motion/icon checks, physical-device and screen-reader checks, and cloned upgrade/rollback remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** eb7df0f — current `main` and docs checked before this update; history since a467f90 is reflected below. Local branch is 14 commits ahead of its tracking ref; no remote operation was made.
+**Reviewed at commit:** 959485b — current `main` checked before this update; history since a467f90 is reflected below. Local branch is 15 commits ahead of its tracking ref; no remote operation was made.
 **Next action:** Secure an isolated staging route for the source candidate without publishing unrelated pending pages; then test candidate layouts, motion and icon rendering.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Brief #12 fresh-build and browser follow-up — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, release, Library or Webflow content changed. I reran the fresh-build gate. Maintained source tests passed, but 14 checks against the committed v0.2.6 deliveries failed where those immutable files lack newer local fixes. I restored all generated files to the pre-run `959485b` bytes.
+
+**Outputs:** Updated the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. No publication, sharing or release occurred.
+
+**Checked how:** `npm run test:built` completed with 34 passes and 14 failures across source, dist, minified and Embed. The failures are the existing breakpoint timer/focus and missing-CSS fixes intentionally absent from immutable v0.2.6 deliveries; this run does not establish a passing delivery gate. The runner had been interrupted on an earlier invocation, so I restored the 12 generated files from the clean starting commit and verified `git diff --exit-code HEAD --` across every generated path. A fresh Chrome tab showed the published Clean Trial desktop navigation tree; this adds no candidate evidence and I closed the tab. No Webflow content changed. The requested project-docs skill v0.3+ file was not present in the declared `.codex/skills` or `.agents/skills` roots, so I followed the repository instructions directly.
+
+**Still open:** Candidate responsive and browser interaction checks remain blocked pending an isolated staging route; Boss still shows Michael’s earlier whole-site publication question unanswered. Preview compilation, motion/custom-animation, icon geometry, human screen-reader/device checks and cloned upgrade/rollback remain open. Earlier fallback behavior is verified on staging, but the automatic missing-script request was not captured in DevTools.
+
+**Needs Michael:** Review the local work; provide an isolated, backed-up staging route when available. Do not publish Clean Trial sitewide while unrelated draft pages are pending.
+
+**Next useful action:** Run candidate rendering and behavior checks on an isolated staging route; then rerun `npm run test:built` after the exact committed delivery expectations have been deliberately resolved.
 
 ## 14 October 2026 — Brief #12 responsive and interaction follow-up — Codex (night shift)
 
