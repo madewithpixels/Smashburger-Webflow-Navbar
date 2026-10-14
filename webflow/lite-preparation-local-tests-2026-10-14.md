@@ -636,3 +636,70 @@ channel, so neither race direction was tested in this attempt. Candidate
 actual-viewport verification, candidate JavaScript asset failure, Preview
 compilation, responsive staging geometry, physical DPR 2×/3×, human
 assistive-technology/device checks and cloned upgrade/rollback remain open.
+
+### Actual viewport resize race and focus restoration — 14 October 2026
+
+**Fixture and boundary.** Michael confirmed that the SB Unlink Clean Trial
+fixture had a recoverable backup and authorised staging publication. The test
+used its isolated `SB Lite Preview Compiler Probe` page and the separate
+published `Unlink Fallback Isolation` page. Chrome DevTools responsive emulation
+reported CSS viewport sizes; these are rendered-browser checks with emulated
+viewport changes, not physical-device measurements. No physical DPR claim is
+made.
+
+**Released baseline reproduction.** On the published page with its original
+v0.2.6 URLs, at 800 CSS px, real Space input opened and then closed the mobile
+menu. Resizing to 1200 CSS px during the animation and waiting 700 ms left the
+desktop links absent from Chrome's accessibility tree. Chrome also warned that
+`aria-hidden` could not be applied while a descendant link retained focus. This
+reproduced the released resize/timer defect.
+
+**Source-derived candidate.** A clearly labelled, temporary candidate Embed
+from maintained source was staged on the backed-up probe. At 800×852 CSS px,
+real Tab/Space input opened and closed the menu; resizing to 1200×852 during
+each animation left all three desktop links in Chrome's accessibility tree
+after 700 ms, and Tab focused the first link. This verifies both directions
+against an actual emulated CSS viewport change, rather than a synthetic
+`matchMedia` event. It is not a released v0.2.6 correction.
+
+**Additional focus defect and fix.** During a later resize from desktop to
+collapsed mobile while a desktop link held focus, Chrome reported the
+`aria-hidden`/focused-descendant warning. Source inspection showed the
+breakpoint callback treated the `MediaQueryListEvent` argument as the initial
+boolean flag. The callback now uses an explicit `initial === true` check and,
+on a real transition into collapsed mode, moves focus to the trigger before
+hiding and inerting the panel. A regression test covers focus, `aria-hidden`
+and `inert` across source and fresh generated deliveries. A fresh source-derived
+candidate then passed the 1200→800 rendered Chrome transition with focus on
+the trigger and no console messages at that check. This focus correction is
+also local and unreleased; the ordinary v0.2.6 files remain untouched.
+
+**Automated evidence.** `npm test`: 85 total, 70 pass, zero unexpected
+failures, 15 expected TODO failures. The TODOs deliberately demonstrate
+defects in unchanged v0.2.6 delivery files: three CSS-failure fallback cases,
+nine opening/focus/closing resize-race cases, and three desktop-to-mobile focus
+cases. `npm run check` passed. `npm run test:built` passed 48/48 against source
+and freshly generated dist/minified/Embed outputs. The runner reported restoring
+all 12 generated files and explicit diffs for those paths were empty. This
+separates DOM/state automated checks from the rendered Chrome checks above.
+
+**Cleanup and Webflow readback.** The temporary Embed was removed; Designer
+element readback showed Body only and `isDraft: true`. Clean Trial was
+republished to its Webflow staging subdomain only; site readback showed
+`customDomains: []`, and the temporary route returned 404. No Library share or
+consumer update occurred. SB Test Four, Navbar Light, other fixture content,
+released assets and pinned URLs were not changed.
+
+**Still open.** Candidate JavaScript-asset failure; broader staging geometry
+across layouts/collapse boundaries; Preview runtime (still blocked by
+`CompilationError: Invalid source code`); actual human screen-reader and
+physical-device checks; physical-display DPR 2×/3× icon evidence; and cloned
+upgrade/rollback. Chrome's DPR emulation would not count as physical evidence.
+
+**Browser policy boundary.** A follow-on attempt to open a local no-JavaScript
+candidate file in Chrome was denied: the browser URL policy permits HTTP(S)
+only. The denial explicitly prohibited reaching the same local-file outcome
+through another browser surface, command-line browser control or indirect
+execution, so none was attempted. This does not verify candidate JavaScript
+failure. The already-authorised HTTPS staging fixture is the appropriate route
+for any later candidate-asset check.

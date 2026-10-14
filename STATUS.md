@@ -1,12 +1,63 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline; breakpoint-timer and stylesheet-failure fixes are local, fresh-build verified and unreleased. Chrome reproduced the released resize defect. The fresh source-built candidate now passed both resize-race directions on Clean Trial staging through a clearly labelled temporary fixture, which was removed and returned to draft. Webflow Preview still fails compilation. Human/device checks and Lite class migration/publication remain open.
+**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Rendered Chrome reproduced both released resize races; temporary staging candidates passed actual viewport resizing and desktop-to-mobile focus restoration. The temporary Embed is removed and the probe is again an empty draft. Webflow Preview still fails compilation. Broader JavaScript-failure, human/device and Lite class-migration/publication checks remain open.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 2621a4a — current code, refreshed Designer and responsive staging page checked
-**Next action:** Retry the actual viewport resize race when Chrome input is stable; continue candidate fallback, responsive and accessibility checks, then human/device and cloned upgrade/rollback where prerequisites exist.
+**Reviewed at commit:** b2f05bc — source and regression tests; rendered Clean Trial staging evidence and cleanup recorded below
+**Next action:** Test source-candidate JavaScript-asset failure through the authorised HTTPS staging fixture, then continue broader responsive geometry and remaining accessibility/device checks where available.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Rendered viewport resize and focus hardening — Codex
+
+**Changed (R-095, R-155):** Added a maintained-source fix and regression test
+for focus remaining inside desktop links while resizing into the collapsed
+mobile layout. The breakpoint callback now distinguishes its initial call from
+a `MediaQueryListEvent` and returns focus to the trigger before making the
+panel inert/hidden. The opening/closing timer fix remains local and unreleased;
+v0.2.6 release files were not changed.
+
+**Outputs:** `src/navbar-light.js`, `tests/runtime-delivery.test.js`, R-095/R-155
+notes and [rendered test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** On the backed-up Clean Trial staging fixture, Chrome DevTools
+responsive emulation at 800×852 CSS px used real Space input to open and close,
+then resized to 1200×852 during each animation. After 700 ms, the timer-fix
+candidate exposed all three desktop links in Chrome's accessibility tree and
+Tab reached the first link in both directions. The unchanged v0.2.6 page
+reproduced the race: desktop links were absent after the old timer. A second,
+fresh source-derived temporary candidate passed a 1200→800 resize with focus on
+a desktop link: focus returned to the trigger before the panel was hidden, and
+the page had no console messages at that check. These are rendered-browser,
+keyboard-event and accessibility-tree checks using emulated CSS viewport
+resizing, not physical-device or human screen-reader evidence. `npm test` passed
+85 tests (70 pass, 15 expected TODO demonstrations against unchanged v0.2.6
+outputs); `npm run check` passed; `npm run test:built` passed 48/48 across
+source and fresh deliveries. The build runner restored all 12 generated files,
+confirmed by an empty diff for those paths.
+
+The temporary candidate Embed was removed through Designer; readback showed
+Body only and `isDraft: true`. Clean Trial was republished to its Webflow
+subdomain only (`customDomains: []`); the temporary route returned 404. No
+Library share/update or release was made. No other pages, SB Test Four,
+Navbar Light, released files or consumers were changed.
+
+**Still open:** Candidate JavaScript-asset failure, broader responsive staging
+geometry, Webflow Preview (compiler error), genuine screen-reader/physical-device
+checks, physical DPR 2×/3× evidence and cloned upgrade/rollback. Product naming,
+class migration and Lite publication remain deferred.
+
+**Needs Michael:** Review and push local commits; choose a product name before
+the later class migration/Lite-publication gate.
+
+**Next useful action:** Run candidate JavaScript-failure and responsive-layout
+checks in the rendered staging fixture, retaining the same temporary-candidate
+and cleanup controls.
+
+**Handoff:** The candidate probe is empty/draft and its route is absent. Read the
+new rendered-browser section of the local test record before resuming. Chrome
+blocked a local `file://` candidate URL under its HTTP(S)-only security policy;
+the same file-based check was not attempted through another browser surface.
 
 ## 14 October 2026 — Staging publication and Chrome verification — Codex
 
