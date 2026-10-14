@@ -2,7 +2,7 @@
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. The labelled native Details fallback passes open/close and focus checks on Clean Trial staging with candidate CSS and no candidate JavaScript. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
 **Reviewed at commit:** 0bd5973 — current `main` checked; this entry records the fresh-build and published nested-menu checks.
-**Next action:** Resume source-candidate staging checks when rendered viewport controls are available; prioritise layout/breakpoint geometry and outer-panel close behavior.
+**Next action:** Use Chrome DevTools on the backed-up Clean Trial fixture to block a candidate script request and set responsive viewport widths; then verify outer-panel closing and layout geometry.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
@@ -20,7 +20,7 @@ DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local
 
 **Needs Michael:** Review and push local commits when convenient. The newer source fixes and verification remain pending acceptance; the product name still blocks the later class migration and Lite publication.
 
-**Next useful action:** When a browser session with viewport controls is available, run source-candidate responsive and outer-panel close checks on the backed-up Clean Trial fixture. Leave the probe and other fixtures untouched until the structural test setup is verified.
+**Next useful action:** Use Chrome DevTools on the backed-up Clean Trial fixture to block a candidate script request and set responsive viewport widths. Verify the panel and links at collapse boundaries, then test backdrop, outside and link closing. The current browser control allowed page rendering and input but did not expose DevTools viewport or request-blocking controls. Leave the probe and other fixtures untouched until the structural test setup is verified.
 
 ## 14 October 2026 — Brief #12 native fallback verification — Codex (night shift)
 
