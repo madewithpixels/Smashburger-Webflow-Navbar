@@ -616,3 +616,23 @@ outputs. Explicit diffs of those 12 paths, `git diff --check`, and
 Webflow Preview (still `CompilationError: Invalid source code`), candidate
 JavaScript-asset failure, responsive staging geometry and human/device checks
 remain open.
+
+### Designer reconnect and candidate-build recheck — 14 October 2026
+
+After Michael refreshed Designer, Webflow MCP readback succeeded. The current
+page is still `SB Lite Preview Compiler Probe`, `isDraft: true`; its element
+tree contains only Body. Breakpoint readback reports Tablet through 991px,
+Mobile (L) through 767px and Mobile through 479px. This confirms the temporary
+fixture remained cleaned up and the probe remains unpublished.
+
+`npm run test:built` was repeated at `2621a4a`: 44/44 passed across source,
+fresh dist, minified and Embed outputs. The runner reported restoration of all
+12 pre-build generated files. Chrome DevTools responsive emulation was opened
+on the published v0.2.6 fallback-isolation page and its width was set to 800
+CSS px; the rendered page showed the collapsed MENU trigger at that width.
+This confirms responsive layout at one emulated viewport, not the resize race.
+The following attempt to click the page trigger timed out in Chrome's input
+channel, so neither race direction was tested in this attempt. Candidate
+actual-viewport verification, candidate JavaScript asset failure, Preview
+compilation, responsive staging geometry, physical DPR 2×/3×, human
+assistive-technology/device checks and cloned upgrade/rollback remain open.

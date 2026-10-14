@@ -1,8 +1,8 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline; breakpoint-timer and stylesheet-failure fixes are local, fresh-build verified and unreleased. Chrome reproduced the released resize defect. The fresh source-built candidate now passed both resize-race directions on Clean Trial staging through a clearly labelled temporary fixture, which was removed and returned to draft. Webflow Preview still fails compilation. Human/device checks and Lite class migration/publication remain open.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** be3fc87 — current code and authorised staging evidence checked
-**Next action:** Continue the remaining staged responsive, asset-failure and accessibility checks where a safe rendered fixture exists; then complete human/device and cloned upgrade/rollback evidence when prerequisites are available.
+**Reviewed at commit:** 2621a4a — current code, refreshed Designer and responsive staging page checked
+**Next action:** Retry the actual viewport resize race when Chrome input is stable; continue candidate fallback, responsive and accessibility checks, then human/device and cloned upgrade/rollback where prerequisites exist.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
@@ -583,3 +583,33 @@ wording; edit its fields going forward and retain todo as history. Current branc
 is main, no new worktree. Keep v0.2.6, source/consumer sites, CDN, remotes and code
 untouched under the retrofit brief. Review recorded evidence before any new live
 check; do not use older memory to reopen the completed clean-destination gate.
+
+## 14 October 2026 — Designer reconnect and candidate-build recheck — Codex
+
+**Changed (R-095, R-155):** Confirmed the refreshed Designer connection and
+repeated candidate-build verification. No Webflow content or publication
+changed.
+
+**Outputs:** Added the reconnect and current build evidence to the [local test
+record](webflow/lite-preparation-local-tests-2026-10-14.md) and [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** Webflow MCP readback confirmed the compiler probe is still an
+empty draft containing only Body; configured collapse boundaries are Tablet
+991px, Mobile (L) 767px and Mobile 479px. `npm run test:built` passed 44/44 at
+`2621a4a` and reported restoring all 12 generated files. Chrome DevTools
+emulation showed the published v0.2.6 page at 800 CSS px with its collapsed
+trigger visible. The subsequent input timed out, so the resize race was not
+retested.
+
+**Still open:** Candidate actual-viewport resize, JavaScript-asset failure,
+Webflow Preview, responsive staging geometry, physical DPR 2×/3×, human
+assistive-technology/device checks and cloned upgrade/rollback.
+
+**Needs Michael:** Review and push local commits. Product naming remains needed
+for later class migration and Lite publication.
+
+**Next useful action:** Retry the actual viewport race after Chrome input is
+stable, then continue staged responsive geometry and failure-fallback checks.
+
+**Handoff:** The probe remains empty/draft and its staging route remains absent.
+SB Test Four and the Navbar Light page remain untouched.
