@@ -1,12 +1,26 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, motion emulation and representative icon emulation have rendered-browser evidence in the local test record; published staging checks cover both the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** d14693d — current `main` checked for this entry. One commit since the previous reviewed baseline records the linked staging interaction. Local branch reports 20 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Use Chrome with viewport and console/request inspection to complete candidate rendering and runtime checks, then arrange Preview and the unavailable human/device and cloned-release checks.
+**Reviewed at commit:** 439dec2 — current `main` checked for this entry. Two commits since the previous reviewed baseline record the linked staging interaction and Clean Trial state readback. Local branch reports 21 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Provide a Chrome inspection route with viewport and console/request controls plus an isolated publishable or usable Preview route, then finish candidate rendering and runtime checks.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 browser keyboard and access check — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, Webflow content, Library item, asset, publication or release changed. A fresh Chrome tab confirmed Space opens and Escape closes the nested menu on the published Clean Trial comparison, with focus returning to “More”.
+
+**Outputs:** Added the staging observation and actual browser-control limits to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. Closed the new Chrome tab; tabs from earlier sessions were left untouched.
+
+**Checked how:** Verified `main` at `439dec2`; the worktree was clean before this entry. On the published `/unlink-fallback-isolation` comparison, CUA browser keyboard input focused “More”, opened it with Space, and closed it with Escape. Accessibility readback showed focus returned to “More”. Webflow MCP site readback reports no custom domains and last publication at `2026-10-14T22:18:18.210Z`. This is published v0.2.6 behavior, not candidate behavior. CUA exposes accessibility and screenshots but not viewport, console or request inspection in this session.
+
+**Still open:** Candidate responsive layout and outer-menu behavior, captured automatic missing-script request, Preview compilation, reduced-motion/custom-animation rendering, broader icon geometry, physical-device and human screen-reader checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. Four unrelated draft pages remain, so do not publish the whole Clean Trial site to reach the empty probe. No candidate source defect was demonstrated.
+
+**Needs Michael:** Review local commits. Arrange browser viewport/console/request inspection and an isolated route for Preview or staging candidate verification. Arrange a human/device screen-reader session and cloned release candidate when available.
+
+**Next useful action:** Continue the candidate checks once the browser inspection controls and isolated Preview/publish route are available; do not repeat the completed fresh-build or fallback cleanup checks.
 
 ## 15 October 2026 — Brief #12 Clean Trial state readback — Codex (night shift)
 

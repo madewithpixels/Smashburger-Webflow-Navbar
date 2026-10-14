@@ -1167,3 +1167,26 @@ just to reach the empty probe. Candidate responsive and outer-panel behavior,
 Preview, captured missing-script request, motion/custom-animation, broader icon
 geometry, genuine human/device checks, physical-display DPR 2×/3× and cloned
 upgrade/rollback remain open.
+
+### Brief #12 current browser keyboard check — 15 October 2026
+
+On a fresh Chrome tab at the published Clean Trial `/unlink-fallback-isolation`
+page, browser keyboard input focused the nested “More” control. Space opened the
+disclosure; Escape closed it and the accessibility readback showed focus back
+on “More”. This is current published v0.2.6 comparison behavior, not candidate
+or Lite evidence. The tab was closed.
+
+Webflow MCP readback reports Clean Trial has no custom domains and its last
+publication remains `2026-10-14T22:18:18.210Z`. The available browser interface
+provides accessibility and screenshots, but no viewport emulation, console log
+or request capture. No page, code, style, Library item, asset or publication
+changed. The previous candidate fallback and `npm run test:built` results were
+not repeated. Four unrelated draft pages still prevent a whole-site publish
+just to reach the empty probe.
+
+Candidate responsive layout and outer-menu closing, captured automatic
+missing-script request, usable Preview compilation, reduced-motion/custom
+animation, broader icon geometry, human/device screen-reader evidence,
+physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The smallest
+next step is a browser inspection surface with viewport and console/request
+controls plus an isolated publishable or usable Preview route.
