@@ -575,3 +575,44 @@ candidate still has no staging runtime evidence: the empty probe remains a
 draft, single-page publishing was rejected earlier, and Designer Preview
 continues to fail with `CompilationError: Invalid source code`. The three full
 site publications do not change the candidate's unreleased status.
+
+### Rendered staging candidate resize-race check — 14 October 2026
+
+Michael's explicit authority allowed full-site publication of Clean Trial to
+its Webflow staging subdomain. I changed only the backed-up, empty `SB Lite
+Preview Compiler Probe` page from Draft to publishable, then inserted a
+clearly-labelled temporary Embed containing the current source CSS and a fresh
+minified build of `src/navbar-light.js`. The page was published as part of the
+full staging site; Webflow site readback reported `customDomains: []` and
+`lastPublished: 2026-10-14T20:42:05.393Z`.
+
+Chrome rendered the page at 2060 CSS px and DPR 1. The fixture dispatched a
+synthetic Tablet `matchMedia` event during both opening and closing. At 400 ms,
+both runs reported PASS: component `expanded`, panel visible,
+`aria-hidden=false`, `inert=false`, and both desktop links visible and enabled.
+Chrome's accessibility tree exposed both links. This exercises the actual
+freshly generated candidate runtime and its real timers in a rendered browser;
+the collapse-boundary event was synthetic, so this is not proof from resizing
+the browser viewport across the real CSS breakpoint. The build remained an
+unreleased source candidate, not a v0.2.6 correction.
+
+After the check, I removed the temporary Embed through Designer and verified
+the probe tree contained only its Body. I returned the page to `draft: true`,
+republished Clean Trial to its Webflow subdomain (`lastPublished:
+2026-10-14T20:43:26.339Z`, `customDomains: []`), and confirmed the temporary
+route returned 404. The probe is again an empty draft. The other draft pages,
+SB Test Four, Navbar Light, released assets and Library consumers were not
+changed. No Library share or update occurred.
+
+On the published SmashBurger staging home, real Chrome Tab entered the nested
+More submenu, Shift-Tab returned to the More trigger, and Escape collapsed the
+submenu with focus on that trigger. A pointer click on blank page space left
+this separate nested disclosure open; this does not test the Navbar Light
+outer panel's outside-close behavior. No screen-reader claim follows.
+
+At `be3fc87`, `npm run test:built` passed 44/44 and restored all 12 generated
+outputs. Explicit diffs of those 12 paths, `git diff --check`, and
+`git --no-optional-locks status` were clean. Candidate actual-viewport resize,
+Webflow Preview (still `CompilationError: Invalid source code`), candidate
+JavaScript-asset failure, responsive staging geometry and human/device checks
+remain open.

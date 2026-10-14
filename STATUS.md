@@ -1,8 +1,8 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline; breakpoint-timer and stylesheet-failure fixes are local, fresh-build verified and unreleased. Chrome reproduced the released resize defect and earlier local rendering verified its source fix. All three authorised Webflow test sites have now been published to staging only. Candidate Webflow runtime remains unverified because Preview compilation fails and the probe is still a draft. Human/device checks and Lite class migration/publication remain open.
+**Stage:** v0.2.6 remains the released baseline; breakpoint-timer and stylesheet-failure fixes are local, fresh-build verified and unreleased. Chrome reproduced the released resize defect. The fresh source-built candidate now passed both resize-race directions on Clean Trial staging through a clearly labelled temporary fixture, which was removed and returned to draft. Webflow Preview still fails compilation. Human/device checks and Lite class migration/publication remain open.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 6f91104 — baseline checked for the fresh-build rerun and staging readback
-**Next action:** Resolve Webflow Preview compilation or establish a safe isolated way to stage the clearly labelled candidate probe, then verify the fixed resize race in Chrome against the freshly generated candidate. Continue device/accessibility and cloned rollback checks where prerequisites exist.
+**Reviewed at commit:** be3fc87 — current code and authorised staging evidence checked
+**Next action:** Continue the remaining staged responsive, asset-failure and accessibility checks where a safe rendered fixture exists; then complete human/device and cloned upgrade/rollback evidence when prerequisites are available.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
@@ -46,6 +46,54 @@ reversible candidate fixture, then run the fixed source candidate in Chrome.
 The probe stays an empty draft. SB Test Four and the Navbar Light test page were
 not touched. Do not share an update or change a consumer until a recoverable
 candidate and consumer backup are confirmed.
+
+## 14 October 2026 — Rendered staging candidate and keyboard follow-up — Codex
+
+**Changed (R-095, R-155):** Verified both breakpoint-timer race directions with
+the freshly generated source candidate in a temporary, clearly labelled Clean
+Trial staging fixture. Also checked nested submenu keyboard focus and Escape on
+the published SmashBurger staging home. No release file, Library share or
+consumer update changed.
+
+**Outputs:** Added the browser and cleanup evidence to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md)
+and R-095/R-155 in [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** At `be3fc87`, `npm run test:built` passed 44/44 across source,
+freshly built dist, minified and Embed outputs. The runner restored all 12
+generated files; explicit generated-file diff, `git diff --check` and
+`git --no-optional-locks status` were clean. On Clean Trial, the source-built
+candidate passed opening and closing races in rendered Chrome after 400 ms:
+the component remained expanded, the panel visible, `aria-hidden=false`,
+`inert=false`, and both desktop links visible and enabled. Chrome reported
+2060 CSS px and DPR 1. The fixture dispatched a synthetic Tablet
+`matchMedia` change, so this proves browser runtime/timer behavior in the staged
+candidate, not a physical viewport resize. Afterward I removed the Embed in
+Designer, read back only the Body element, returned the page to `draft: true`,
+republished Clean Trial to its Webflow subdomain, and verified the temporary
+route returned 404; `customDomains` remained empty. On the published SmashBurger
+home, Tab entered the More submenu and Shift-Tab returned to its trigger;
+Escape collapsed it and left focus on the trigger. A pointer click on blank
+page space did not collapse this separate nested More disclosure; this is not
+evidence about Navbar Light's outer panel close behavior. No physical
+screen-reader or device test was performed.
+
+**Still open:** A candidate test driven by an actual browser viewport resize;
+candidate JS-asset failure and Webflow Preview; narrower/wider live responsive
+geometry, backdrop and overflow checks; physical DPR 2×/3× evidence; human
+assistive-technology/device checks; and cloned upgrade/rollback. Webflow Preview
+still reports `CompilationError: Invalid source code`.
+
+**Needs Michael:** Review and push local commits. Product naming remains needed
+for the later class migration and Lite publication.
+
+**Next useful action:** Run the candidate through a real browser viewport
+collapse-boundary change in the staging fixture, then continue live responsive
+and failure-fallback checks.
+
+**Handoff:** The candidate Embed is removed, the probe is empty and draft, and
+Clean Trial's staging route is absent after republishing. The three prior site
+publications remain on their Webflow subdomains only. SB Test Four and the
+Navbar Light page were not touched.
 
 ## 14 October 2026 — Post-restart verification — Codex
 
