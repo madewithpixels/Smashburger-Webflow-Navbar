@@ -127,3 +127,38 @@ and current Webflow fixtures, with backup before structural Webflow work:
 
 Product naming still blocks class migration/Lite publication under D-012/D-013.
 It does not block this local test/fix. No new product decision was needed.
+
+## 14 October 2026 — continuation check
+
+The fresh-build test was repeated from repository head `7968cb2` with
+`npm run test:built`. All 36 tests passed across maintained source, freshly
+generated `dist`, minified delivery and Webflow Embed. The runner reported that
+all 12 generated files were restored; `git diff --exit-code` over those paths
+returned success and the working tree was clean before these documentation edits.
+This confirms the local candidate build and its restoration, not browser rendering.
+
+Read-only Webflow MCP access was verified by listing authorised sites and reading
+site details, page lists, and component definitions. MWP Component Library
+currently contains the five-variant `SmashBurger` and `SmashBurger CDN` source
+definitions and a separate one-Base `SmashBurger CDN Unlink Trial` candidate.
+Smashburger `/demo` contains a linked `SmashBurger CDN` instance; the current
+definition reports eight instances. SB Unlink Clean Trial still has its existing
+Home, `Unlink Fallback Isolation`, and named audit/verification fixture pages.
+These are structured source/page readbacks only: they do not prove rendered
+Canvas, Preview, published behavior, runtime bytes, or human interaction. No
+backup for a target page was confirmed, so no structural mutation was made.
+
+Chrome control was not callable in this session. The exposed Node REPL could not
+import Playwright (`./index.js` does not provide a default export), and the tool
+inventory and plugin search exposed no installed Chrome/browser-control tool.
+The previously recorded local-file URL security rejection remains in force; no
+alternate route was used to bypass it. Consequently this continuation produced
+no rendered-browser, staging runtime, physical keyboard/device, DPR, screen-reader,
+or upgrade/rollback evidence. No Library update was shared and no site was
+published.
+
+The fix remains local and unreleased; `v0.2.6` assets and pinned URLs remain
+unchanged. The smallest next step is to make an authorised Chrome control surface
+available, confirm a recoverable backup for the chosen temporary test fixture,
+then inject a clearly labelled candidate build and run the resize/interaction
+matrix without changing ordinary consumers.

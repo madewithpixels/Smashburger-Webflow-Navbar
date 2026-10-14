@@ -304,6 +304,8 @@ the Library global-style packaging finding, and remaining scope.
 
   - Brief #11 local follow-up (2026-10-14): source, exact v0.2.6 dist/minified/Embed each pass 24 two/three-line, odd/even/custom-gap token calculations. No browser rendering or DPR proof was obtained; this does not close R-037. See [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
+  - Continuation check (2026-10-14): fresh candidate build rerun passed 36/36, but no rendered icon or DPR check was possible because Chrome control was not exposed in this session. DPR 1×/2×/3× visual convergence remains open. See [continuation test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
 #### R-038 · Synchronize native open state, lifecycle state, ARIA and panel inertness.
 **State:** built · **Evidence:** none · **Acceptance:** accepted (historical)
 **Source:** [todo.md](todo.md), original line 60 (now 61); baseline `c808ca4`.
@@ -735,6 +737,7 @@ the Library global-style packaging finding, and remaining scope.
 **Exit criteria:**
 **Evidence links:** [Brief #11 local test record](webflow/lite-preparation-local-tests-2026-10-14.md); `tests/runtime-delivery.test.js`.
 **Evidence boundary:** DOM/media-query simulation only; fresh-build checks pass. The new breakpoint-timer fix is unreleased and pending Michael; historical Acceptance above is unchanged.
+**Continuation — 14 October 2026:** `npm run test:built` passed 36/36 across source, dist, minified and Embed; generated-file restoration passed. No rendered-browser evidence was obtained. See [continuation test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 
 #### R-096 · Document structure, classes, properties, variants, hooks and integration patterns.
@@ -1210,6 +1213,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Evidence links:** [webflow/v0.2.4-release-verification.md](webflow/v0.2.4-release-verification.md)
 **Evidence boundary:** Historical recorded check only; not rerun during this docs retrofit.
 **Local follow-up — 14 October 2026, brief #11:** new delivery matrix and fresh-build regression checks cover DOM state, synthetic Escape, mocked collapse boundaries/reduced motion and CSS-only Always fallback. Opening/closing breakpoint races are fixed in source; immutable v0.2.6 retains six labelled TODO failures. New fix remains pending and unreleased; historical Acceptance is unchanged. Browser/Webflow/human gates are listed in [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+**Continuation — 14 October 2026:** repeated fresh-build check passed and Webflow Data MCP read back current source and consumer component definitions. This is source/structure evidence only; Chrome control was unavailable, so Preview, rendered behavior and published runtime were not rechecked. See [continuation test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 
 #### R-156 · Make panel focus order match visual order (WCAG 2.4.3). Decision (Michael, 2026-10-03): Primary first everywhere. Both MWP Component Library source components now have `Primary navigation` before `Secondary navigation` (MCP move and readback); the published source pages Tab through the primary links first, collapsed and expanded, with no overflow. The demo, tests and docs were updated. No CSS or CDN change was needed: the collapsed `order` rules stay so older instances keep their visual layout.

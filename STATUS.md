@@ -1,12 +1,31 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, unreleased and pending Michael. Lite class migration/publication still waits for naming.
-**Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 2eda9f3 — locally tested implementation; before this evidence update
-**Next action:** Michael reviews the local fix and test evidence; arrange authorised rendered/browser/Webflow checks and a new semantic release before distributing it.
-**Needs Michael:** Review/push local commits; browser/Webflow/human checks and future release authority; product name for class migration/Lite publication.
+**Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, fresh-build verified, unreleased and pending Michael. Rendered and human checks remain open. Lite class migration/publication still waits for naming.
+**Last updated:** 14 October 2026 — Codex
+**Reviewed at commit:** 7968cb2 — clean baseline for continuation check
+**Next action:** Enable an authorised Chrome control surface and confirm a recoverable backup for the chosen temporary fixture, then verify the timer fix in rendered output.
+**Needs Michael:** Review and push local commits. A Chrome control surface is not exposed in this session; connect one for rendered checks. Product name remains needed for class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Continuation test run — Codex
+
+**Changed (R-037, R-095, R-155):** No code or Webflow changes. Repeated the
+fresh-build candidate suite and read current source/consumer component metadata
+through Webflow Data MCP. The local timer fix remains unreleased and pending;
+immutable v0.2.6 assets, pinned URLs and existing content remain unchanged.
+
+**Outputs:** Continued evidence in [pre-Lite test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-037/R-095/R-155 roadmap notes. No Library update was shared; no page or site was published.
+
+**Checked how:** Reviewed `5824d28..HEAD` (2eda9f3 implementation and 7968cb2 evidence update); `git --no-optional-locks status` was clean. `npm run test:built` passed 36/36 across source and three generated delivery forms; runner restored all 12 generated files and `git diff --exit-code` confirmed exact restoration. Read-only site, page and component calls confirmed the MWP Library's two five-variant source definitions and separate one-Base unlink candidate, plus the linked `SmashBurger CDN` instance on Smashburger `/demo`. These are structured readbacks, not runtime evidence.
+
+**Still open:** Rendered reproduction/fix check, responsive geometry, physical keyboard/touch, no-JS and asset failure, actual reduced motion/custom animation, icon visuals at DPR 1×/2×/3×, Preview/published runtime, screen readers and upgrade/rollback. Chrome control is not exposed in this session; the local-file URL security rejection was not bypassed. No recoverable backup was confirmed for a target fixture, so no structural Webflow test was attempted.
+
+**Needs Michael:** Review/push local commits. Make an authorised Chrome control surface available for rendered tests; product naming remains for the later migration/publication gate.
+
+**Next useful action:** Once Chrome control and a fixture backup are available, use a temporary candidate Embed on the isolated test fixture and run the opening/closing resize check first.
+
+**Handoff:** Read this entry and the continuation section of the test record. Keep SB Test Four alone, do not replace v0.2.6 assets or pinned URLs, and do not share/publish a temporary same-version candidate. No Webflow changes were made in this run.
 
 ## 14 October 2026 — Brief #11: existing-menu tests and local hardening — Codex (night shift)
 
