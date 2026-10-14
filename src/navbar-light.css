@@ -6,6 +6,7 @@
  */
 
 :where([data-mwp-navbar]) {
+  --mwp-nav-css-ready: 1;
   --mwp-nav-duration-open: 280ms;
   --mwp-nav-duration-close: 220ms;
   --mwp-nav-ease: cubic-bezier(0.22, 1, 0.36, 1);

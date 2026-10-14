@@ -1,12 +1,57 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; breakpoint-timer fix remains local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Webflow Preview stalls with custom code enabled on three Clean Trial pages, including an empty draft probe; candidate Preview and human checks remain open. Lite class migration/publication still waits for naming.
+**Stage:** v0.2.6 released baseline; breakpoint-timer and stylesheet-failure fixes remain local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Webflow Preview stalls with custom code enabled on three Clean Trial pages, including an empty draft probe; candidate Preview and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 6a23a62 — baseline checked for Preview and asset-failure follow-up
+**Reviewed at commit:** 9c08121 — baseline checked for source CSS-failure hardening
 **Next action:** Diagnose the Webflow Preview compiler error before running the candidate there; continue the remaining physical-device, assistive-technology and upgrade/rollback checks where prerequisites exist.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Source candidate stylesheet-failure hardening — Codex
+
+**Changed (R-095, R-155):** Fixed a demonstrated source-candidate failure in
+which JavaScript hid and inerted the menu panel after the component stylesheet
+failed. The runtime now enables itself only when its stylesheet readiness
+marker is present, leaving native menu content accessible when CSS is missing.
+This remains local and unreleased; immutable v0.2.6 deliveries and URLs were
+preserved.
+
+**Outputs:** Runtime/CSS readiness marker, a fresh-build regression across
+source/dist/minified/Embed, and the dated [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** `npm test` passed 69 tests with 12 expected TODO cases: nine
+demonstrate the known v0.2.6 resize-timer defect, and three show the new CSS
+failure fix is not in the immutable v0.2.6 generated deliveries. `npm run
+test:built` passed 44/44 on fresh outputs and restored all 12 generated files;
+restoration was checked byte-for-byte for the two temporary Webflow/demo files
+used in the rendered follow-up. `npm run check` and `git diff --check` passed.
+A fresh source-derived local browser candidate loaded while its stylesheet was
+deliberately missing: DevTools reported `ERR_FILE_NOT_FOUND`, while the menu
+remained unenhanced, its panel had no `aria-hidden` or `inert`, and all 14 links
+remained in the accessibility tree; the first link had `tabIndex=0`. DevTools responsive
+width was set to 393, but the page reported `innerWidth=634`; this check does
+not establish narrow-layout geometry. This was local rendered-browser evidence,
+not Webflow Preview or published candidate evidence.
+
+**Still open:** Candidate CSS/JavaScript failure checks in Webflow Preview or
+staging; Preview's custom-code compilation error; physical-device, human
+screen-reader, touch, actual OS reduced-motion and cloned upgrade/rollback
+checks. The CSS fallback's narrow visual layout remains unverified.
+
+**Needs Michael:** Review and push the pending local commits; no product decision
+is needed.
+
+**Next useful action:** Diagnose the Webflow Preview compiler failure, then run
+the fresh candidate in a recoverable Webflow fixture and verify cleanup. Continue
+the device/accessibility checks only where a suitable human/device environment
+exists.
+
+**Handoff:** Designer remains on the SB Unlink Clean Trial Home Canvas. The
+published fallback-isolation tab is restored at 1280px with the CSS block rule
+removed and the pre-existing JavaScript rule disabled. Temporary local HTML and
+generated outputs were removed/restored. The empty Preview probe is unpublished
+and retained. Do not touch SB Test Four or refresh the Navbar Light test page.
 
 ## 14 October 2026 — Webflow Preview fallback continuation — Codex
 

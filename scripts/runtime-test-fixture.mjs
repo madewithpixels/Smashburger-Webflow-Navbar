@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 export const deliveries = ['source', 'dist', 'minified', 'embed'];
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 
-export function runtimeFixture(delivery, { width = 820, reducedMotion = false, javascript = true } = {}) {
+export function runtimeFixture(delivery, { width = 820, reducedMotion = false, javascript = true, includeCss = true } = {}) {
   const source = delivery === 'source'
     ? read('src/navbar-light.js').replace(/^export /gm, '') + '\nglobalThis.NavbarLight = NavbarLight; globalThis.initNavbarLight = initNavbarLight;'
     : delivery === 'embed'
@@ -13,7 +13,8 @@ export function runtimeFixture(delivery, { width = 820, reducedMotion = false, j
   const css = delivery === 'source' ? read('src/navbar-light.css')
     : delivery === 'embed' ? read('webflow/navbar-light-embed.html').match(/<style>\s*([\s\S]*?)<\/style>/)[1]
       : read(`dist/navbar-light${delivery === 'minified' ? '.min' : ''}.css`);
-  const dom = new JSDOM(`<!doctype html><style>${css}</style><header data-mwp-navbar data-collapse="always" data-motion="none">
+  const stylesheet = includeCss ? `<style>${css}</style>` : '';
+  const dom = new JSDOM(`<!doctype html>${stylesheet}<header data-mwp-navbar data-collapse="always" data-motion="none">
     <div data-mwp-inner><details data-mwp-menu><summary data-mwp-trigger aria-label="Navigation menu">
     <span data-mwp-icon style="row-gap:7px"><span data-mwp-line style="height:3px"></span><span data-mwp-line style="height:3px"></span><span data-mwp-line style="height:3px"></span></span>
     </summary></details><nav data-mwp-panel><a href="#first" data-mwp-item>First</a>

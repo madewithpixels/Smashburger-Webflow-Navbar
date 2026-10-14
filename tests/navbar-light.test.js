@@ -235,7 +235,8 @@ test('custom motion keeps the panel hidden when closed and reserves time for GSA
   assert.match(css, /\[data-state="closed"\] \[data-mwp-panel\]\s*\{[\s\S]*?visibility:\s*hidden;/);
 });
 
-const markup = `
+const runtimeCss = readFileSync(new URL('../src/navbar-light.css', import.meta.url), 'utf8');
+const markup = `<style>${runtimeCss}</style>
   <header data-mwp-navbar data-collapse="always" data-motion="none" data-close-on-link="true" data-close-on-outside="true">
     <div>
       <details data-mwp-menu open>

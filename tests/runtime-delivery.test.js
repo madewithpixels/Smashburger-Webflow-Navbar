@@ -3,6 +3,27 @@ import test from 'node:test';
 import { deliveries, runtimeFixture, event, change } from '../scripts/runtime-test-fixture.mjs';
 
 for (const delivery of deliveries) {
+  test(`${delivery}: missing component CSS leaves native navigation accessible`, {
+    todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
+      ? 'Known v0.2.6 stylesheet-failure defect; immutable artifacts retained. Source fix needs a new release.' : false
+  }, () => {
+    const f = runtimeFixture(delivery, { includeCss: false });
+    try {
+      const panel = f.root.querySelector('[data-mwp-panel]');
+      const menu = f.root.querySelector('[data-mwp-menu]');
+      assert.equal(f.dom.window.initNavbarLight().length, 0);
+      const navbar = f.create();
+      assert.equal(f.root.hasAttribute('data-mwp-ready'), false);
+      assert.equal(panel.getAttribute('aria-hidden'), null);
+      assert.equal(panel.hasAttribute('inert'), false);
+      assert.equal(panel.querySelector('a').tabIndex, 0);
+      menu.open = true;
+      assert.equal(menu.open, true);
+      assert.equal(panel.querySelector('a').textContent, 'First');
+      navbar.destroy();
+    } finally { f.close(); }
+  });
+
   test(`${delivery}: collapse boundaries and open resize preserve accessible state`, async () => {
     const f = runtimeFixture(delivery);
     try {

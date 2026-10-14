@@ -457,7 +457,42 @@ again with its normal navigation. No Webflow page content, site settings, publis
 state or Library item changed. Candidate-build asset-failure behavior remains
 untested.
 
-Final local checks after the demo fixture token change: `npm test` completed
+### Source-candidate CSS failure reproduction and fix
+
+I copied the local demo into a temporary `demo/.lite-css-failure-probe.html`
+fixture and changed only its component stylesheet URL to a deliberately missing
+local path. After saving the original generated demo/Embed files, I generated a
+fresh source-derived `demo/navbar-light.browser.js` and opened the fixture in
+Chrome. DevTools reported `GET .../__missing-navbar-light.css
+net::ERR_FILE_NOT_FOUND`. Before the fix, the runtime had still set the closed
+panel to `aria-hidden="true"` and `inert`, while the missing CSS left that panel
+painted on the page. This made visible navigation unavailable to assistive
+technology.
+
+I added a CSS readiness custom property to the maintained stylesheet and made
+the runtime skip enhancement when that marker is absent. The fresh candidate
+was rebuilt and reloaded against the same missing stylesheet. DevTools still
+reported the intentional `ERR_FILE_NOT_FOUND`; the root remained without runtime
+state, the panel had no `aria-hidden` or `inert`, all 14 navigation links
+remained in the accessibility tree, and the first link had `tabIndex=0`. The
+native Details summary remains available. DevTools' responsive width field was
+set to 393, while the page's `innerWidth` and `scrollWidth` read 634; therefore
+this does not prove narrow-viewport containment or layout. DPR was not recorded.
+This is a rendered local source-candidate check, not Webflow Preview, staging,
+or physical-device evidence. CSS failure still leaves the local layout
+un-styled, and its narrow visual behavior needs separate geometry testing.
+
+`npm test` completed with 81 tests: 69 pass and 12 expected TODO failures. The
+nine immutable v0.2.6 race TODOs remain; three added CSS-failure TODOs show the
+fix is absent from the unchanged v0.2.6 dist, minified and Embed files. The
+source CSS-failure regression passes. `npm run test:built` passed 44/44 across
+fresh source/dist/minified/Embed outputs and restored all 12 generated files.
+The temporary fresh demo/Embed outputs were also restored and compared byte for
+byte with their saved originals; the temporary HTML fixture and saved copies
+were removed. `npm run check` and `git diff --check` passed. No release asset or
+Webflow page was changed.
+
+Earlier local checks after the demo fixture token change: `npm test` completed
 with 77 tests (68 pass, 9 expected TODO failures in the immutable v0.2.6
 generated deliveries); `npm run test:built` passed 40/40 and restored all 12
 generated files. It was rerun after this continuation and again passed 40/40

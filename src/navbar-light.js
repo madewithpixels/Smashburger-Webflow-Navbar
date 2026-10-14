@@ -7,6 +7,13 @@ const COLLAPSE_QUERIES = {
 };
 
 const TRUE_VALUES = new Set(['', '1', 'true', 'yes', 'on']);
+const CSS_READY_PROPERTY = '--mwp-nav-css-ready';
+
+function navbarStylesAvailable(root) {
+  const view = root?.ownerDocument?.defaultView;
+  if (!view?.getComputedStyle) return true;
+  return view.getComputedStyle(root).getPropertyValue(CSS_READY_PROPERTY).trim() === '1';
+}
 
 function booleanAttribute(element, name, fallback) {
   if (!element.hasAttribute(name)) return fallback;
@@ -55,7 +62,7 @@ export class NavbarLight {
     this.onBreakpointChange = this.onBreakpointChange.bind(this);
     this.syncIconGeometry = this.syncIconGeometry.bind(this);
 
-    if (!this.menu || !this.trigger || !this.panel) return;
+    if (!this.menu || !this.trigger || !this.panel || !navbarStylesAvailable(this.root)) return;
     this.configure();
     this.bind();
     this.onBreakpointChange(true);
@@ -371,7 +378,7 @@ export class NavbarLight {
 
 export function initNavbarLight(root = document) {
   return [...root.querySelectorAll(ROOT_SELECTOR)]
-    .filter((element) => !element.mwpNavbarLight)
+    .filter((element) => !element.mwpNavbarLight && navbarStylesAvailable(element))
     .map((element) => new NavbarLight(element));
 }
 
