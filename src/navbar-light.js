@@ -189,12 +189,17 @@ export class NavbarLight {
 
     if (collapsed) {
       if (initial || !previous) {
+        this.clearStateTimer();
+        this.focusOnOpened = false;
         this.menu.open = false;
         this.setState('closed', false);
       } else {
         this.syncNative(false);
       }
     } else {
+      // A collapsed animation must not overwrite the new expanded state later.
+      this.clearStateTimer();
+      this.focusOnOpened = false;
       this.unlockScroll();
       this.menu.open = true;
       this.setState('expanded', false);
