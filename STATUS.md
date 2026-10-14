@@ -1,12 +1,52 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; breakpoint-timer and stylesheet-failure fixes remain local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Webflow Preview stalls with custom code enabled on three Clean Trial pages, including an empty draft probe; candidate Preview and human checks remain open. Lite class migration/publication still waits for naming.
+**Stage:** v0.2.6 released baseline; breakpoint-timer and stylesheet-failure fixes remain local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Candidate Embed Preview also stalls with `CompilationError: Invalid source code`; isolated page-only staging publish was rejected, and full-site staging publish is not safe while four other drafts are pending. Human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 9c08121 — baseline checked for source CSS-failure hardening
-**Next action:** Diagnose the Webflow Preview compiler error before running the candidate there; continue the remaining physical-device, assistive-technology and upgrade/rollback checks where prerequisites exist.
-**Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** 44e4ad6 — baseline checked for the latest fresh-build rerun
+**Next action:** Decide whether to authorise a full-site staging publish of SB Unlink Clean Trial, which would include its four other pending draft pages, or wait for isolated page publishing/Preview to work; then continue physical-device, assistive-technology and upgrade/rollback checks where prerequisites exist.
+**Needs Michael:** Review and push local commits. Decide the staging-publish scope described in the latest entry. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Post-restart verification — Codex
+
+**Changed (R-095, R-155):** Repeated the candidate-build delivery suite after
+the CSS-failure hardening commit; confirmed Webflow MCP read/write access on the
+backed-up test project; and tried the candidate Embed in Designer Preview. The
+Embed was removed after Preview failed. No staging publication changed.
+
+**Outputs:** Candidate Preview failure, page-only publish rejection and cleanup
+evidence in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** At `44e4ad6`, `npm run test:built` passed 44/44 across fresh
+source/dist/minified/Embed outputs and restored all 12 generated files. Read-only
+Webflow `list_sites`, `get_site` and Designer current-page/current-mode calls
+first succeeded after the restart. In the empty draft probe, a clearly labelled
+source-candidate Embed was written and read back. Designer Preview showed only
+the native Menu summary, without its candidate links; DevTools showed
+`CompilationError: Invalid source code` and an uncaught rejection. I removed the
+Embed, read back only the Body element, and confirmed the probe remains a draft.
+A page-only staging publish request returned `Bad Request: Invalid parameter:
+pageId`. The site has four other pending draft pages, so I did not fall back to
+a full-site publish. Site metadata still reports its existing 13 October
+publication. This provides candidate Designer Preview failure evidence, not
+candidate staging runtime evidence.
+
+**Still open:** Candidate Preview remains blocked by Webflow's compiler error;
+candidate staging runtime/asset-failure checks await a safe isolated publish
+route or Michael's decision on full-site staging scope. Human/device and cloned
+rollback checks remain open.
+
+**Needs Michael:** Decide whether to authorise a full-site staging publish of
+Clean Trial, which will also publish four other pending draft pages, or wait
+for an isolated page-publish/Preview path.
+
+**Next useful action:** Follow Michael's staging-scope decision; if full-site
+publish is not authorised, wait for Webflow to support isolated page publishing
+or resolve Preview compilation before running the fresh candidate.
+
+**Handoff:** The Designer remains on SB Unlink Clean Trial Home in Design mode.
+Do not touch SB Test Four or refresh the Navbar Light test page.
 
 ## 14 October 2026 — Source candidate stylesheet-failure hardening — Codex
 

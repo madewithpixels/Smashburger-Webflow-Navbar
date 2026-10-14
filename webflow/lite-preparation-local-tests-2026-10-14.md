@@ -498,3 +498,46 @@ generated deliveries); `npm run test:built` passed 40/40 and restored all 12
 generated files. It was rerun after this continuation and again passed 40/40
 with all 12 generated files restored. `npm run check` and `git diff --check`
 passed. No implementation files changed in this continuation.
+
+### Post-restart verification — 14 October 2026
+
+After Michael restarted the Webflow MCP connection, read-only `list_sites`,
+`get_site` and Designer current-page/current-mode calls succeeded. Designer
+reported SB Unlink Clean Trial Home in Design mode. Site metadata still reports
+the existing 13 October staging publication and no custom domains. These reads
+do not diagnose the Preview compiler error or verify candidate runtime.
+
+`npm run test:built` was rerun at commit `44e4ad6`: all 44 fresh-build delivery
+checks passed across source, dist, minified and Embed outputs; all 12 generated
+files were restored. No Webflow share or publication occurred during that
+verification. The temporary Webflow Embed write and cleanup are recorded below.
+Candidate Preview and Webflow candidate asset-failure tests remain open until
+Preview compiles successfully. SB Test Four and the Navbar Light test page were
+not touched.
+
+### Temporary source-candidate Embed Preview attempt — 14 October 2026
+
+Using the backed-up Clean Trial project, I inserted one HtmlEmbed into the empty
+`SB Lite Preview Compiler Probe` draft page. Its code contained a clear comment
+that it was an unreleased source candidate, plus the current source CSS and
+JavaScript and two native navigation links. The `code` setting read back with
+the complete labelled candidate. In Designer Preview with custom code enabled,
+only the native Menu summary appeared; candidate links did not render. Chrome
+DevTools showed `CompilationError: Invalid source code` and `Uncaught (in
+promise) CompilationError: Invalid source code`. This confirms the same failure
+with a non-empty candidate Embed, not a candidate runtime success.
+
+I removed the temporary Embed immediately. Element readback then contained only
+the page Body; page listing confirmed the probe remains `draft: true`. Site
+metadata still reports the existing 13 October 2026 staging publication. A
+single-page publish request for this page returned `Bad Request: Invalid
+parameter: pageId`, so it did not publish. The Clean Trial site currently has
+four other draft pages; I did not try a full-site publish that would include
+them. The page's last-updated timestamp changed because of the temporary
+insert/remove, but its blank body and draft status were restored. The Designer
+was returned to Home Canvas and Chrome DevTools was closed.
+
+Candidate staging runtime and asset-failure checks remain open. The next step is
+Michael's decision on whether to publish the whole Clean Trial site to its
+Webflow staging subdomain with those other drafts included, or leave staging
+untouched until isolated page publishing or Preview compilation is available.
