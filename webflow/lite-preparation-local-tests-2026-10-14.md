@@ -1016,5 +1016,8 @@ published v0.2.6 comparison page, not the Lite source candidate.
 The available computer-use browser surface did not expose responsive viewport
 emulation or page-script inspection. A DevTools keyboard shortcut did not open
 those controls. No candidate breakpoint, runtime or closing claim follows from
-this check. The tab was closed and its ID was absent from the browser tab list.
-No Webflow or repository source content changed.
+this check. A built-in Python HTTP server for the maintained local demo was
+denied permission to bind `127.0.0.1:8765` and exited immediately. No local
+candidate render was attempted through `file://` or another route. The staging
+tab was closed and its ID was absent from the browser tab list. No Webflow or
+repository source content changed.

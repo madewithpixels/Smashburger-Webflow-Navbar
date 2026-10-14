@@ -28,13 +28,13 @@ DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local
 
 **Outputs:** None. The published Clean Trial comparison page rendered in a fresh Chrome tab; the tab was closed after inspection.
 
-**Checked how:** Confirmed `main` at `a467f90` and a clean tree before this entry. Chrome's computer-use surface returned the published page accessibility tree and a 2,044 × 1,131 screenshot of the full desktop navigation. It exposed no responsive viewport emulation or page-script inspection; the DevTools shortcut exposed neither. This is published v0.2.6 visual evidence only, not a Lite candidate check. The new tab was closed and absent from the browser tab list afterward.
+**Checked how:** Confirmed `main` at `a467f90` and a clean tree before this entry. Chrome's computer-use surface returned the published page accessibility tree and a 2,044 × 1,131 screenshot of the full desktop navigation. It exposed no responsive viewport emulation or page-script inspection; the DevTools shortcut exposed neither. This is published v0.2.6 visual evidence only, not a Lite candidate check. A temporary built-in HTTP server for the local demo was denied permission to bind localhost, so no local candidate render was attempted through `file://` or another route. The staging tab was closed and absent from the browser tab list afterward.
 
-**Still open:** Candidate responsive layout, panel scrolling/containment and outer backdrop/outside/link closing need a browser session with viewport controls and page inspection. Prior records cover local candidate resize/focus and icon emulation; they do not provide physical-display or human screen-reader evidence. Preview compilation and cloned upgrade/rollback also remain unresolved.
+**Still open:** Candidate responsive layout, panel scrolling/containment and outer backdrop/outside/link closing need a browser session with viewport controls and page inspection. This environment also needs to allow a localhost server before the maintained local demo can be rendered. Prior records cover local candidate resize/focus and icon emulation; they do not provide physical-display or human screen-reader evidence. Preview compilation and cloned upgrade/rollback also remain unresolved.
 
 **Needs Michael:** Review and push local commits when convenient. No new acceptance was recorded.
 
-**Next useful action:** Continue the source-candidate render matrix in a Chrome session that exposes responsive viewport and page inspection controls. Leave the Clean Trial fixture unchanged until then.
+**Next useful action:** Continue the source-candidate render matrix in a Chrome session that exposes responsive viewport and page inspection controls, or with an approved local HTTP preview available. Leave the Clean Trial fixture unchanged until then.
 
 **Handoff:** Read this entry, then the Brief #12 test record and R-095/R-155. Clean Trial remains the published v0.2.6 comparison; no staging or Library mutation was made in this session.
 
