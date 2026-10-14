@@ -210,3 +210,165 @@ For the next rendered check, Webflow additional-tool discovery was queried with
 the `BACKUPS` category. It reported that the full tool list was already exposed;
 no backup/restore tool appeared. No structural Webflow test was started because
 the fixture recovery point is still unverified.
+
+## 14 October 2026 — Rendered Chrome continuation
+
+Michael confirmed that **SB Unlink Clean Trial is backed up**. Chrome control
+became available after restarting Chrome and Codex. The published test page was
+already open; it was not refreshed or modified. No Webflow source, page, Library
+share or publication mutation was made.
+
+### Published v0.2.6 baseline — rendered staging check
+
+On `https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation`, the
+loaded script and stylesheet URLs remained pinned to v0.2.6. At an emulated
+393px viewport, expanding to desktop during a mobile close reproduced the
+closing race: after the old animation, the page said `closed`, the panel was
+`aria-hidden=true` and inert, while desktop links were visibly positioned in
+the header. They were therefore not exposed/operable as desktop navigation.
+Repeating the resize during opening left state `open` and `aria-expanded=true`
+after the desktop trigger became hidden; panel content stayed exposed in that
+case. This is rendered behavior of the released baseline, not a candidate
+release correction. The emulated browser reported DPR 2 during this staging
+check; this is not physical-display evidence.
+
+### Source-derived local candidate — rendered browser check
+
+Served a clearly named temporary page and a fresh esbuild bundle from maintained
+`src/navbar-light.js`; the temporary bundle was not called v0.2.6 and was never
+copied into Webflow or a release consumer. At mobile width, resizing to Desktop
+during both opening and closing left `data-state="expanded"`,
+`aria-expanded=false`, panel `aria-hidden=false`, and no `inert`. The first
+desktop link remained visible, in the tab order and usable after the previous
+animation duration. Browser window event check used a 350ms settle period.
+This is a rendered local source candidate, separate from the published baseline.
+
+Responsive checks used the demo's workbench and browser viewport controls. The
+default `mobile-landscape` mode stayed collapsed through 767px and expanded at
+768px; Tablet stayed collapsed at 991px and expanded at 992px; Mobile portrait
+stayed collapsed at 479px and expanded at 480px. Samples included 320, 393,
+478, 479, 480, 766, 767, 768, 990, 991, 992, 1,280 and 2,060px. In those
+settled samples, the trigger/panel collapsed state matched the selected boundary
+and document horizontal overflow was zero. This did not cover every layout at
+every width.
+
+At 320×400, the sample navbar's inner header anchor was 80px while the
+`--mwp-nav-header-height` fallback was 72px. With the default, the open panel
+ended at 408px. This was a real demo-fixture mismatch, not a general runtime
+failure: the demo header is authored at 5rem, and the optional token controls
+the amount reserved above the scrollable panel. Added the matching `5rem` token
+to `.site-nav` and a `tests/demo.test.js` assertion. Rebuilt candidate rendering
+then measured the panel from y=80 to y=400, 320px max height, 354px scroll
+content in 318px client height, and zero document overflow. This covers the
+fixture's configured header; other sites must set the token to match their own
+panel anchor when their header differs from the default.
+
+Browser UI input through CUA passed Tab and Shift-Tab focus order, Enter and
+Space trigger activation, nested Escape followed by outer Escape, focus return
+to the submenu summary and then trigger, link closing, outside click and the
+left-drawer backdrop closing. The pointer backdrop sample used a local-only
+temporary width rule to make the drawer narrower than the viewport; the backdrop
+occupied the remaining viewport and closed on pointer input. These are browser
+input events delivered through the control surface, not physical keyboard,
+touchscreen or human screen-reader evidence.
+
+A separate script-free local fixture opened and closed the native `details`
+menu and placed its first link in the keyboard tab order. This is the native
+fallback in a page with all scripts removed; CSS-asset failure and every
+no-JavaScript breakpoint/layout were not separately rechecked. `localTab` console
+readback returned no warning/error entries for the loaded candidate. No actual
+OS reduced-motion toggle or custom/GSAP integration was exercised.
+
+One Chrome iPhone 16 preset reported a 393×852 viewport and `devicePixelRatio=3`.
+The browser control surfaces then returned to the default 320×400, DPR 1 context
+while interacting with DevTools. No stable DPR 3 icon screenshot/line geometry
+was captured, so this does not count as R-037 visual evidence. The temporary
+candidate was also observed at DPR 1; no physical-display claim follows. Actual
+Retina display, complete 1×/2×/3× icon convergence, screen-reader output, touch,
+Preview candidate runtime, and cloned upgrade/rollback remain open.
+
+`npm test` recorded 77 tests: 68 pass and nine expected TODO failures in the
+unchanged v0.2.6 dist/minified/Embed regression cases (exit 0). `npm run
+test:built` passed 40/40 across source and freshly generated delivery files. It
+restored all 12 generated files; `git diff --exit-code` over the generated paths
+passed. `npm run check` and `git diff --check` passed. The temporary local HTML
+and bundle are removed after browser work; no generated or released v0.2.6 bytes
+are retained or altered by `test:built`.
+
+### Rendered icon follow-up
+
+After the first partial attempt above, the device presets were re-applied and
+their live page metrics were checked before interaction. The temporary local
+candidate produced screenshots and DOM geometry at responsive 393×852, DPR 1;
+the iPad Mini preset, 768×1024, DPR 2; and the iPhone 16 preset, 393×852, DPR
+3. At each DPR, two-line and three-line icons were inspected closed and open.
+For the stock 3px bars and 4px gap, line centres converged in the open X and
+closed hamburger. Browser-reported values were DPR 1/2/3 respectively; DPR 2
+and 3 are Chrome device emulation, not evidence from physical Retina hardware.
+
+With temporary DevTools-only inline styles that were removed afterward, a
+rendered DPR 2 follow-up checked odd 1px bars with a 5px gap, odd 3px bars with
+a 7px gap, and even 4px bars with a 9px gap in both two-line and three-line
+modes. The enhanced runtime measured shifts of 6px, 10px and 13px respectively;
+DOM line bounds showed both diagonal bars centred on the middle-bar axis (or
+shared icon centre in the two-line mode). The 3px/7px pair was also checked at
+DPR 1 in both modes. These measurements and screenshots cover representative
+custom combinations, not the full thickness×gap×DPR cross-product or a physical
+display. Existing automated checks continue to cover token calculations across
+the fuller matrix.
+
+Afterwards, the browser-only styles and workbench settings were restored to
+3-line, 4px gap, mobile-landscape defaults; the responsive override and DevTools
+were reset/closed. The local candidate HTML/bundle had already been removed and
+the localhost server was stopped. No test style or temporary asset remains in
+the repository.
+
+### Rendered layout and reduced-motion follow-up
+
+At 393×852 CSS pixels and DPR 1, the fresh local candidate was opened in each
+layout and measured. Full-width panel bounds were x=0, y=80, w=393, h=303.78px;
+its backdrop covered the viewport but had `pointer-events:none`, matching the
+fixture's default opt-out. Left drawer bounds were x=0, y=0, w=384, h=852px;
+right drawer bounds were x=9, y=0, w=384, h=852px; both had 850px scroll/client
+height, vertical scrolling, full-viewport active backdrops and visible trigger
+controls. Overlay bounds were x=0, y=0, w=393, h=852px with a full-viewport
+active backdrop and visible trigger. Document scroll width remained 393px in
+all four checks. The separately tested dropdown was contained at 320×400 after
+the demo header-offset token correction. These are one mobile viewport per
+layout, not a complete layout-by-boundary matrix.
+
+Chrome DevTools Rendering emulation set
+`prefers-reduced-motion: reduce`; `matchMedia` returned true and computed panel,
+icon-line and backdrop transitions became `0.00001s` (the CSS token was
+`0.01ms`). After returning to “No emulation”, `matchMedia` returned false and
+normal transition values returned (panel 0.28s, icon line 0.22s, backdrop
+0.22s). The reduced-motion open state remained `open`, exposed and non-inert,
+with zero horizontal overflow. This is browser CSS media emulation, not an OS
+accessibility setting. The page contains no custom/GSAP animation integration,
+so that integration remains untested.
+
+Chrome's viewport, device and reduced-motion overrides were reset, DevTools was
+closed, and the browser reported its normal 2060×1147, DPR 1 viewport with
+reduced motion false. Temporary local files and the server had already been
+removed. No Webflow mutation or publication occurred.
+
+### Webflow Preview availability check
+
+Webflow Data MCP was proven available by listing the 21 accessible sites, then
+reading the SB Unlink Clean Trial pages and the full element tree of its existing
+`Unlink Override Verification` fixture. Site instructions search returned none.
+That fixture contains its authored menu, sub-menu, links and social content; it
+was not changed. The Designer tool initially reported that its bridge was not
+running and supplied a site-specific launch URL. Opening that URL in Chrome did
+load the Webflow Designer UI, but a subsequent Designer MCP read still returned
+“Unable to connect”; the embedded Webflow MCP Bridge App showed `about:blank`.
+The Designer canvas was on Home, so no page switch or mutation was attempted.
+Consequently, candidate-in-Preview behavior is blocked on a working Designer
+bridge. This is a tool connection limitation, not a Preview failure. No sharing
+or publishing occurred.
+
+Final local checks after the demo fixture token change: `npm test` completed
+with 77 tests (68 pass, 9 expected TODO failures in the immutable v0.2.6
+generated deliveries); `npm run test:built` passed 40/40 and restored all 12
+generated files; `npm run check` and `git diff --check` passed. The final
+repository status contained only the five intended local files.

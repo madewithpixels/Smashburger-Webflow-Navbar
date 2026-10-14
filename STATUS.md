@@ -1,12 +1,66 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 released baseline; local pre-Lite tests expanded and breakpoint-timer fix built, fresh-build verified, unreleased and pending Michael. Rendered and human checks remain open. Lite class migration/publication still waits for naming.
+**Stage:** v0.2.6 released baseline; breakpoint-timer fix remains local, fresh-build verified and unreleased. Rendered Chrome checks now reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Preview/published candidate and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 5aed027 — clean baseline for focus cancellation regression
-**Next action:** Enable an authorised Chrome control surface and confirm a recoverable backup for the chosen temporary fixture, then verify the timer fix in rendered output.
-**Needs Michael:** Review and push local commits. A Chrome control surface is not exposed in this session; connect one for rendered checks. Product name remains needed for class migration/Lite publication.
+**Reviewed at commit:** 922d7ff — baseline checked for rendered Chrome follow-up
+**Next action:** Restore the Webflow Designer MCP bridge, then test a temporary candidate only on a confirmed disposable fixture and verify exact cleanup. Data MCP can read the test site, but Designer MCP rejected its supplied launch link after Chrome opened it.
+**Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Rendered Chrome continuation — Codex
+
+**Changed (R-037, R-095, R-155):** Rendered baseline/candidate tests now run in
+Chrome. Added the demo's `--mwp-nav-header-height: 5rem` token after its 80px
+panel anchor exceeded a 400px test viewport by 8px with the default 4.5rem
+fallback. Added a regression assertion for that fixture contract. The runtime
+fix remains local and unreleased; no versioned assets changed.
+
+**Outputs:** `demo/index.html`, `tests/demo.test.js`, the dated [local test
+record](webflow/lite-preparation-local-tests-2026-10-14.md), and R-095/R-155
+evidence below. Temporary browser fixtures are removed before commit.
+
+**Checked how:** Reproduced opening and closing resize races on the published
+v0.2.6 page in the backed-up SB Unlink Clean Trial. A separately labelled,
+source-derived local browser candidate passed both races after 350ms, with
+desktop links visible, non-inert and focusable. Browser-input Tab, Shift-Tab,
+Enter, Space, nested/outer Escape, trigger focus restoration, link/outside and
+backdrop closing passed. Responsive width samples covered 320–767px for
+mobile-landscape, 479/480px for mobile-portrait, 991/992px for tablet, and
+wide desktop. At 320×400 the candidate panel stayed within the viewport, scrolled
+its 354px content, and kept document horizontal overflow at zero. Full-width,
+left/right drawer and overlay bounds were measured at 393×852 with zero document
+overflow. Chrome reduced-motion emulation reduced panel, icon and backdrop
+transitions to 0.01ms, then restored normal durations; this was CSS media
+emulation, not an OS setting. A script-free fixture opened/closed with native
+Details and exposed links to keyboard focus. These are browser UI events, not
+physical-keyboard or assistive-technology tests.
+`npm test`: 77 tests, 68 passes, nine expected TODO failures in immutable v0.2.6
+delivery files. `npm run test:built`: 40/40; all 12 generated files restored and
+an independent diff check passed. `npm run check` and `git diff --check` passed.
+
+**Still open:** Webflow Preview with the candidate is blocked by a Designer MCP
+bridge disconnect: the supplied site launch URL opened the Designer UI, but the
+bridge still returned “Unable to connect” and its embedded app remained blank.
+No source/page mutation was attempted. The full icon thickness/gap combinations
+across all DPR values and physical Retina evidence; actual OS reduced-motion and
+custom-animation integration (Chrome CSS emulation passed); CSS/CDN asset-failure
+variants beyond the script-free native fallback; real touch, VoiceOver/NVDA and
+cloned upgrade/rollback remain. DPR 2× and 3× icon checks used Chrome device
+emulation, not physical displays. No Webflow source change, Library share or
+publication was made. The published page checked here still uses pinned v0.2.6
+assets, not the candidate.
+
+**Needs Michael:** Review and push local commits. Naming remains the later
+class-migration/Lite-publication gate.
+
+**Next useful action:** Reconnect the Designer MCP bridge; then run the candidate
+Preview check on a confirmed disposable test page, read back and restore it.
+
+**Handoff:** Read this entry and the rendered-browser section of the test record.
+The Clean Trial backup is confirmed by Michael. Keep the candidate local and
+temporary; leave SB Test Four, pinned v0.2.6 assets, source Library definitions
+and Navbar Light test page unchanged. No refresh or Webflow mutation occurred.
 
 ## 14 October 2026 — Focus cancellation regression — Codex
 

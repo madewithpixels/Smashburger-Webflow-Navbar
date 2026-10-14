@@ -29,6 +29,14 @@ test('demo initializes when opened directly from the filesystem', async () => {
   });
 
   const root = dom.window.document.querySelector('[data-mwp-navbar]');
+  const siteNavRule = [...dom.window.document.styleSheets]
+    .flatMap((sheet) => [...sheet.cssRules])
+    .find((rule) => rule.selectorText === '.site-nav');
+  assert.equal(
+    siteNavRule?.style.getPropertyValue('--mwp-nav-header-height').trim(),
+    '5rem',
+    'the dropdown viewport offset must match the demo header height'
+  );
   assert.equal(root.dataset.mwpReady, 'true');
   assert.equal(typeof dom.window.NavbarLight, 'function');
   assert.equal(root.dataset.state, 'expanded');
