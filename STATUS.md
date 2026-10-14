@@ -1,12 +1,63 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Rendered Chrome reproduced both released resize races; temporary staging candidates passed actual viewport resizing and desktop-to-mobile focus restoration. The temporary Embed is removed and the probe is again an empty draft. Webflow Preview still fails compilation. Broader JavaScript-failure, human/device and Lite class-migration/publication checks remain open.
-**Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** b2f05bc — source and regression tests; rendered Clean Trial staging evidence and cleanup recorded below
-**Next action:** Test source-candidate JavaScript-asset failure through the authorised HTTPS staging fixture, then continue broader responsive geometry and remaining accessibility/device checks where available.
+**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Clean Trial's published Tablet-collapse fixture passed responsive geometry and browser-keyboard checks. A temporary candidate with maintained CSS and no JavaScript did not render its trigger or links in Chrome, so its no-runtime fallback remains unverified. Webflow Preview still fails compilation; human/device, physical-DPR and cloned upgrade/rollback checks remain open.
+**Last updated:** 14 October 2026 — Codex (night shift)
+**Reviewed at commit:** 07de2eb — current `main` baseline checked before this documentation update; Brief #12 adds rendered staging evidence below
+**Next action:** Resolve why the temporary probe's Designer-native Details trigger and links were absent from its published Chrome render, then repeat the candidate no-runtime check.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 14 October 2026 — Lite verification continuation — Codex (night shift)
+
+**Changed (R-095, R-155):** No source or release files changed. I tested the
+no-runtime candidate on the backed-up Clean Trial probe, then checked the
+existing published Tablet-collapse fixture at responsive widths.
+
+**Outputs:** [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**Checked how:** `npm run test:built` passed 48/48 across source, freshly built
+dist, minified and Embed deliveries. The runner restored all 12 generated
+files; an explicit diff of those paths was empty. The published
+`Unlink Fallback Isolation` page stayed within its viewport at 1,280, 992,
+991, 820, 768, 767, 480, 479, 393 and 320 CSS px; document horizontal
+overflow was zero at each width. At 393×852, the open panel was 377×543px and
+contained; the browser reported DPR 1. Pointer open, Tab/Shift-Tab, Space,
+Enter, nested Escape and outer Escape with focus return passed. This page has
+the published v0.2.6 runtime; these checks do not verify the source candidate.
+
+On `SB Unlink Clean Trial` page `SB Lite Preview Compiler Probe`
+(`6acfd482072d7417c8ae9149`), I inserted a clearly labelled temporary WHTML
+candidate (root element `9f478d5c-721e-a021-3bda-ca9a1ddf3574`), added
+maintained source CSS and temporary fixture styles to page head code, and
+temporarily changed the page from draft to publishable for staging. The
+candidate omitted JavaScript. Designer readback showed native Details and
+Summary structure, but published Chrome showed only the fixture label, brand
+and test note; the trigger and navigation links were absent from the
+accessibility tree, and Tab reached only the brand link. The fallback result
+is therefore inconclusive. I removed that WHTML element, restored blank page
+head/footer code, returned the probe to `draft: true`, and republished Clean
+Trial to its Webflow subdomain. Readback showed Body only, no custom domains,
+and the temporary route returned 404. The temporary publication was
+21:32:28 UTC and cleanup publication was 21:33:35 UTC. No Library share,
+consumer update, production-domain publication or release occurred.
+
+**Still open:** Why the candidate trigger and links were absent in the
+published render; the candidate no-runtime test; backdrop/outside/link close
+on the candidate; other rendered layouts; reduced-motion/custom-animation
+integration; icon visuals at physical DPR 2×/3×; human screen-reader/device
+checks; and cloned upgrade/rollback. The backdrop click on the existing page
+was denied by Chrome because the attempted target resolved to Instagram, so I
+stopped that check. Candidate console output was not captured. The existing
+fixture's console had no warnings or errors at its initial desktop read.
+
+**Needs Michael:** Review and push the local commits. Product naming still
+precedes the later class migration and Lite publication. Human screen-reader
+and physical-device evidence needs a person using those devices.
+
+**Next useful action:** Inspect the temporary probe render through supported
+Designer and Chrome readback, then rerun the no-runtime case once the native
+trigger is visible. Keep all new work pending Michael's acceptance.
 
 ## 14 October 2026 — Rendered viewport resize and focus hardening — Codex
 

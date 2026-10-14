@@ -703,3 +703,86 @@ through another browser surface, command-line browser control or indirect
 execution, so none was attempted. This does not verify candidate JavaScript
 failure. The already-authorised HTTPS staging fixture is the appropriate route
 for any later candidate-asset check.
+
+### Brief #12 candidate fallback, responsive layout and keyboard follow-up — 14 October 2026
+
+#### Candidate with JavaScript unavailable
+
+The starting fixture was the backed-up `SB Lite Preview Compiler Probe`
+(`6acfd482072d7417c8ae9149`) on `SB Unlink Clean Trial`
+(`6ac8c9f18e63674e4f34f88a`). Designer readback initially showed only Body,
+the page was a draft and its page head/footer code was blank. Breakpoint
+readback remained Tablet ≤991px, Mobile (L) ≤767px and Mobile ≤479px.
+
+I inserted a clearly labelled temporary fixture into that page as WHTML root
+element `9f478d5c-721e-a021-3bda-ca9a1ddf3574`. I temporarily changed the
+page from draft to publishable for this staging check. The intended
+navigation used native Details/Summary and the maintained candidate CSS from
+`src/navbar-light.css`, copied to page head code with temporary fixture
+presentation rules. No candidate JavaScript was included, so this tests the
+no-runtime case by omission; it does not simulate a failed network request for
+a candidate JavaScript URL. Designer element readback showed the Details,
+Summary and navigation links in the expected source tree.
+
+After publishing Clean Trial to its Webflow subdomain only, Chrome showed the
+temporary label, brand and test note. It did not show the Summary trigger or
+navigation links in the accessibility tree. Tab reached the brand link only.
+The no-runtime fallback result is inconclusive; the rendered failure does not
+prove a component defect because the Designer source tree had the expected
+structure. Candidate-page console output was not captured.
+
+After the check, I removed the temporary WHTML content, restored blank page
+head code, returned the probe to `draft: true`, and republished Clean Trial to
+its staging subdomain. The page tree returned to Body only, head/footer
+readback was blank, `customDomains` was empty, and Chrome received a 404 at the
+temporary route. The candidate publication completed at 21:32:28 UTC and the
+cleanup publication at 21:33:35 UTC. The other audit pages remained drafts.
+No Library sharing/update, custom-domain publication, release, SB Test Four
+change or Navbar Light test-page change occurred.
+
+#### Existing published Tablet-collapse fixture
+
+On the existing `Unlink Fallback Isolation` staging page, read-only browser
+inspection confirmed the root uses Tablet collapse and dropdown layout, and
+`data-mwp-ready="true"`; this is the published v0.2.6 runtime, not the
+source-derived candidate. Chrome reported a 2,044×1,131 CSS px default
+viewport and DPR 1. The initial console read contained no warnings or errors.
+
+With a temporary browser viewport override at 900px height, I checked widths
+1,280, 992, 991, 820, 768, 767, 480, 479, 393 and 320 CSS px. The trigger
+was hidden above the 991px collapse boundary and visible at/below it. The
+closed panel remained inside the viewport at each checked width. Document
+horizontal overflow was zero at every width. At 393×852, pointer opening
+showed the 377×543px panel within the viewport, with its backdrop visible.
+This checks one Tablet-collapse dropdown fixture, not every layout or a
+physical device. DPR 1 is the browser reading during emulated viewport checks;
+it is not evidence from a known physical-display density.
+
+Real browser input on the visible fixture passed pointer open, Tab from the
+trigger to the first link, Shift-Tab back to the trigger, Space open and Enter
+close. Enter opened the nested More disclosure; the first Escape closed that
+disclosure and left focus on More, and the second Escape closed the outer menu
+and returned focus to the trigger. These are browser keyboard and accessibility
+tree observations, not screen-reader output.
+
+The attempted backdrop click was denied by Chrome because the resolved hit
+target was an Instagram link. I did not retry through another interaction
+surface. Backdrop, outside and link closing were not verified in this run.
+Reduced-motion/custom-animation integration, physical DPR 2×/3×, other layout
+presets, physical-device and human screen-reader checks, and cloned
+upgrade/rollback were not run. No suitable cloned release candidate or
+physical assistive-technology session was available; new versioned releases
+are outside this brief.
+
+#### Fresh-build check
+
+`npm run test:built` passed all 48 checks across source, freshly generated
+dist, minified and Webflow Embed deliveries. The runner reported restoring
+all 12 generated files. An explicit `git diff --exit-code` check over the
+complete generated-file list was empty, as were `git diff --check` and the
+pre-documentation working-tree check. No released v0.2.6 file was overwritten.
+
+**Still open:** Make the native trigger and links render in the temporary
+candidate, then repeat the no-runtime check through the HTTPS fixture. Broader
+layout, close-behaviour, motion, icon, assistive-technology and clone gates
+remain open. This work stays pending Michael's acceptance.
