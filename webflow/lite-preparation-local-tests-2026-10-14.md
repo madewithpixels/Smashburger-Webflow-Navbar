@@ -1145,3 +1145,25 @@ publication, asset or release changed. Preview compilation, candidate-specific
 responsive and outer-panel checks, captured missing-script request, custom
 animation, remaining icon geometry, human/device/screen-reader evidence,
 physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+
+### Brief #12 Clean Trial state readback — 15 October 2026
+
+At `d14693d`, a fresh read-only Webflow MCP read confirmed the Clean Trial site
+(`6ac8c9f18e63674e4f34f88a`) still has no custom domains and its last
+publication is `2026-10-14T22:18:18.210Z`. The six-page list shows the named
+probe (`6acfd482072d7417c8ae9149`) is `draft: true`; four pages are drafts.
+The published `Unlink Fallback Isolation` page is unchanged. This is source
+metadata readback, not a Designer Canvas, Preview or candidate runtime check.
+
+A fresh Chrome tab displayed the published navigation on that comparison page.
+The available CUA browser surface returned the accessibility tree but did not
+provide viewport override, console logs or automatic request capture. The tab
+opened for this check was closed. No site content, publication, Library item,
+asset or release changed. The earlier candidate fallback and fresh-build checks
+were not repeated.
+
+The four unrelated draft pages remain a reason not to publish the whole site
+just to reach the empty probe. Candidate responsive and outer-panel behavior,
+Preview, captured missing-script request, motion/custom-animation, broader icon
+geometry, genuine human/device checks, physical-display DPR 2×/3× and cloned
+upgrade/rollback remain open.
