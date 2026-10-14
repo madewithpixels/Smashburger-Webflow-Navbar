@@ -1,8 +1,8 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Clean Trial's published Tablet-collapse fixture passed responsive geometry and browser-keyboard checks. A temporary candidate with maintained CSS and no JavaScript did not render its trigger or links in Chrome, so its no-runtime fallback remains unverified. Webflow Preview still fails compilation; human/device, physical-DPR and cloned upgrade/rollback checks remain open.
+**Stage:** v0.2.6 remains the released baseline. The local breakpoint-timer, stylesheet-failure and focus-restoration fixes are fresh-build verified and unreleased. Clean Trial's published Tablet-collapse fixture passed responsive geometry and browser-keyboard checks. A temporary candidate with maintained CSS and no JavaScript did not render its trigger or links in Chrome, so its no-runtime fallback remains unverified. Webflow Preview still fails compilation; human/device, physical-DPR and cloned upgrade/rollback checks remain open. Current source, linked demo, dedicated staging instance and unlinked fixture have Designer readback; a further Chrome render on Smashburger staging was blocked by the browser origin approval gate.
 **Last updated:** 14 October 2026 — Codex (night shift)
-**Reviewed at commit:** 07de2eb — current `main` baseline checked before this documentation update; Brief #12 adds rendered staging evidence below
-**Next action:** Resolve why the temporary probe's Designer-native Details trigger and links were absent from its published Chrome render, then repeat the candidate no-runtime check.
+**Reviewed at commit:** fcd9824 — current `main` code/evidence baseline checked; subsequent local changes record this shift's read-only evidence
+**Next action:** Resume rendered staging checks when Chrome allows the Smashburger origin, and diagnose the absent trigger/links before repeating the candidate no-runtime check.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
@@ -58,6 +58,22 @@ and physical-device evidence needs a person using those devices.
 **Next useful action:** Inspect the temporary probe render through supported
 Designer and Chrome readback, then rerun the no-runtime case once the native
 trigger is visible. Keep all new work pending Michael's acceptance.
+
+## 14 October 2026 — Source and fixture readback; browser gate — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, Library, consumer or site content changed. Read-only Webflow MCP comparison covered the Library source, linked `/demo`, dedicated Smashburger staging Home, and the existing Clean Trial unlinked fixture.
+
+**Outputs:** Additional evidence in the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and [ROADMAP.md](ROADMAP.md).
+
+**Checked how:** Source, linked demo and dedicated staging instance each read back 60 component properties with matching settings; only nine icon asset IDs differed between source and destination. Asset readback confirmed matching icon names and sizes, with destination-local IDs shared by the linked demo and dedicated Home. The unlinked fixture read back 85 nodes, 27 navigation class variants, nine images, two Embeds, and its original Tablet-collapse and candidate attributes. These are Designer source/property reads, not Canvas, Preview or rendered-page checks. A new Chrome tab for the Smashburger staging origin was blocked by the browser's origin approval gate; the unused tab was closed. No alternate surface was used.
+
+**Still open:** Chrome rendered checks across the Smashburger layouts and linked instance; candidate no-runtime fallback; Preview compilation; backdrop/outside/link closing; motion and custom-animation integration; physical DPR 2×/3×; human screen-reader/device checks; and cloned upgrade/rollback. The additional Chrome check could not proceed because of the origin approval gate.
+
+**Needs Michael:** Review the local commits and resume the blocked Chrome staging checks when browser origin approval is available.
+
+**Next useful action:** You: enable the Smashburger staging origin in Chrome's approval controls, then continue the rendered layout and close-behaviour checks. Keep the temporary candidate probe cleaned up and draft until its trigger renders correctly.
+
+**Handoff:** Current branch `main`; no source or Webflow changes remain uncommitted. The existing Chrome denial is a real browser permission boundary; do not retry through another surface. Candidate probe is empty/draft and its staging route is 404. SB Test Four and Navbar Light remain untouched. New verification remains pending Michael's acceptance.
 
 ## 14 October 2026 — Rendered viewport resize and focus hardening — Codex
 

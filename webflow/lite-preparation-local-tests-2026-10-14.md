@@ -786,3 +786,24 @@ pre-documentation working-tree check. No released v0.2.6 file was overwritten.
 candidate, then repeat the no-runtime check through the HTTPS fixture. Broader
 layout, close-behaviour, motion, icon, assistive-technology and clone gates
 remain open. This work stays pending Michael's acceptance.
+
+### Brief #12 source, fixture and browser-origin follow-up — 14 October 2026
+
+Read-only Designer/MCP comparison of the MWP Library source, linked Smashburger
+`/demo`, and dedicated Smashburger staging Home returned 60 properties on each
+instance with matching settings. Nine icon asset IDs differed between source
+and destination; asset readback showed matching icon names and sizes, and the
+linked demo and dedicated Home shared the destination-local IDs. This is source
+and property readback only; no Canvas, Preview or rendered result is inferred.
+
+The existing Clean Trial unlinked page read back 85 nodes, 27 navigation class
+variants, nine Images, two Embeds and the original Tablet collapse/candidate
+attributes. The fixture was read only. No Library share or update, consumer
+change or site content change occurred.
+
+A new Chrome tab for `smashburger-4b8f18.webflow.io` was stopped by the browser
+origin approval gate before navigation. The unused tab was closed, and no other
+browser surface was used to retry. Therefore the requested rendered checks for
+the linked and dedicated staging layouts remain open. Continue when Chrome's
+origin approval is available; keep the no-runtime candidate check separate
+until its native trigger and links render.
