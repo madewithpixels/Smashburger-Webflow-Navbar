@@ -1,8 +1,8 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 released baseline; breakpoint-timer fix remains local, fresh-build verified and unreleased. Rendered Chrome checks reproduce the released defect and verify the temporary source candidate. Demo header-offset correction is local. Webflow Preview stalls with custom code enabled on three Clean Trial pages, including an empty draft probe; candidate Preview and human checks remain open. Lite class migration/publication still waits for naming.
 **Last updated:** 14 October 2026 — Codex
-**Reviewed at commit:** 420de33 — baseline checked for empty-page Preview probe
-**Next action:** Isolate the Preview compiler error between site-wide custom code and Webflow's compiler; then test the temporary candidate with custom code enabled and verify exact cleanup. Designer MCP remains disconnected, though Chrome's Designer UI is available.
+**Reviewed at commit:** 6a23a62 — baseline checked for Preview and asset-failure follow-up
+**Next action:** Diagnose the Webflow Preview compiler error before running the candidate there; continue the remaining physical-device, assistive-technology and upgrade/rollback checks where prerequisites exist.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
@@ -12,8 +12,11 @@ DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local
 
 **Changed (R-095, R-155):** Recorded the read-only Designer Canvas/Preview
 comparison and a repeated custom-code Preview compilation failure on two pages,
-then on a new empty draft probe page. No component, Library, share or published
-site was changed.
+then on a new empty draft probe page. Verified the published v0.2.6 CSS and
+JavaScript failure fallbacks on the backed-up staging fixture using Chrome
+request blocking. Recorded that the Designer MCP bridge is available again,
+while the scripts readback route still fails. No site content, Library item,
+or publication was changed.
 
 **Outputs:** This status entry, the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md),
 and R-095/R-155 evidence in [ROADMAP.md](ROADMAP.md). The empty probe remains
@@ -31,31 +34,43 @@ both page-level custom-code fields are empty; Preview with custom code enabled
 stalled with the same error. With the Preview custom-code toggle temporarily
 off on the first page, it rendered; the native Details menu opened/closed and
 Tab entered its link order. Restored the toggle to on and returned to Canvas.
-This is Preview fallback evidence, not candidate runtime or JavaScript-only
-asset-failure evidence. The scripts readback endpoint returned 404 “Custom code
+This is Preview fallback evidence, not candidate runtime or asset-failure
+evidence. Separate published v0.2.6 asset-failure checks are recorded below.
+The scripts readback endpoint returned 404 “Custom code
 block not found” for site and page scripts, so it did not identify the source.
 The error on an empty page rules out that page's elements and page-level code,
-but does not distinguish site-wide code from Webflow's Preview compiler.
+but does not distinguish site-wide code from Webflow's Preview compiler. After
+Michael restarted the connection, Designer MCP returned the current page (Home)
+and mode (design) successfully. The site/page script readback endpoints still
+return 404. A local CSS-failure browser harness could not start because the
+sandbox denied binding `127.0.0.1:8766` with `EPERM`; I removed it without
+bypassing the restriction. Separate Chrome DevTools checks then verified the
+published v0.2.6 CSS/JavaScript failure fallbacks; candidate asset failure
+remains untested.
 `npm test`, `npm run test:built`, `npm run check` and
-`git diff --check` remain as verified in the immediately preceding entry; no
-implementation files changed in this continuation.
+`git diff --check` were verified earlier; `npm run test:built` was rerun in
+this continuation and passed 40/40, restoring all 12 generated files. No
+implementation files changed.
 
 **Still open:** Candidate Preview with custom code enabled; separating site-wide
-custom code from a Webflow Preview compiler issue; all human screen-reader/touch/physical-display checks,
-full custom icon DPR combinations, actual OS reduced-motion and upgrade/rollback.
-Designer MCP still reports disconnected despite the browser UI being available.
+custom code from a Webflow Preview compiler issue; candidate-build asset failures;
+all human screen-reader/touch/physical-display checks, full custom icon DPR
+combinations, actual OS reduced-motion and upgrade/rollback. Published v0.2.6
+CSS/JavaScript failure fallback passed at emulated DPR 2; physical-device evidence
+is still absent.
 
 **Needs Michael:** Review/push local commits. No product decision is required.
 
-**Next useful action:** Inspect site-wide custom code through Webflow's site
-settings or narrow the Preview service error; then inject the clearly labelled
-local candidate and verify the opening/closing resize fix in Preview with exact
-cleanup.
+**Next useful action:** Diagnose the Preview compiler error through the Webflow
+site settings or a narrower compiler probe; then run the clearly labelled local
+candidate in Preview and verify exact cleanup.
 
-**Handoff:** Chrome is left on the empty `SB Lite Preview Compiler Probe` draft
-in Canvas; it has no page elements or page-level custom code. It remains
-unpublished for diagnosis. Do not touch SB Test Four or refresh the Navbar Light
-test page.
+**Handoff:** The empty `SB Lite Preview Compiler Probe` draft remains in SB
+Unlink Clean Trial; it has no page elements or page-level custom code and is
+unpublished. The separate staging tab was restored to 1280px after the CSS/JS
+request-blocking checks; both temporary rules were removed or disabled and the
+page reloaded. Designer MCP is responsive again. Do not touch SB Test Four or
+refresh the Navbar Light test page.
 
 ## 14 October 2026 — Rendered Chrome continuation — Codex
 

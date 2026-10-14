@@ -420,8 +420,46 @@ site/page scripts readback API returned 404 and did not expose site-wide code.
 The empty probe is intentionally retained as an unpublished draft for follow-up;
 it has no test Embed or other page content. Nothing was published or shared.
 
+### Designer bridge recovery and staging asset-failure checks
+
+After Michael restarted the Designer connection, a read-only
+`get_current_page`/`get_current_mode` request succeeded and returned Home in
+design mode. The Data Scripts `get_site_scripts` and `get_page_scripts` routes
+still return 404 “Custom code block not found”; this does not prove that no
+site-wide code exists.
+
+The separate local CSS-failure fixture could not start: the sandbox rejected
+binding `127.0.0.1:8766` with `EPERM`, before Chrome loaded it. I removed that
+temporary server file and did not bypass the restriction. I then used Chrome
+DevTools request blocking in the already-open, separate
+`Unlink Fallback Isolation` staging tab. The exact published v0.2.6 stylesheet
+URL was blocked once. At 393 CSS px, DevTools logged the blocked request and the
+loader's “CDN CSS failed to load; native navigation content remains available”
+message. The native menu summary remained available and opened/closed with
+browser UI input. A read-only console measurement reported `innerWidth`, document
+`scrollWidth` and body `scrollWidth` all as 393; the inspected navigation root
+was 393px wide with no document overflow. This was responsive emulation at DPR
+2, not physical-display evidence.
+
+With the Navbar Light CSS restored, I temporarily enabled the existing disabled
+DevTools rule for the exact v0.2.6 JavaScript URL. The loader logged “CDN
+JavaScript failed to load; native details behavior remains available”. At 393
+CSS px the native disclosure was opened with browser UI input, closed with
+Space and reopened with Enter; links remained available while it was open.
+This tested the component JavaScript failure while Webflow's own styles/scripts
+remained loaded, not a fully JavaScript-disabled browser.
+
+Afterward I removed the temporary CSS rule, disabled the JavaScript rule again,
+restored the DevTools viewport to 1280px and reloaded the staging page. The
+request-condition panel showed the CSS rule removed and the pre-existing
+JavaScript rule disabled with zero affected requests. The staging page rendered
+again with its normal navigation. No Webflow page content, site settings, publish
+state or Library item changed. Candidate-build asset-failure behavior remains
+untested.
+
 Final local checks after the demo fixture token change: `npm test` completed
 with 77 tests (68 pass, 9 expected TODO failures in the immutable v0.2.6
 generated deliveries); `npm run test:built` passed 40/40 and restored all 12
-generated files; `npm run check` and `git diff --check` passed. The final
-repository status contained only the five intended local files.
+generated files. It was rerun after this continuation and again passed 40/40
+with all 12 generated files restored. `npm run check` and `git diff --check`
+passed. No implementation files changed in this continuation.
