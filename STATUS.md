@@ -2,7 +2,7 @@
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes pass fresh-build checks and remain unreleased. On Clean Trial staging, a labelled native Details fallback with maintained CSS opened and closed with real browser keyboard input. Its deliberately missing script path returned Webflow's 404 page. The automatic page-load request was not captured in DevTools. The temporary page and its styles are now removed and the probe is an empty draft. Broader source-candidate layouts, motion and icon visuals remain open. Webflow Preview still fails compilation; human/device and cloned upgrade/rollback checks remain open.
 **Last updated:** 14 October 2026 — Codex (night shift)
 **Reviewed at commit:** 70e7a38 — current `main` checked before this documentation update; `origin/main` locally points to `07de2eb`, with eight local commits ahead. No remote operation was made.
-**Next action:** Use a working Chrome DevTools session for source-candidate responsive layouts and close behavior, then continue reduced-motion and icon rendering checks.
+**Next action:** Continue in a Chrome session that exposes DevTools request logs and viewport controls; the current browser control could not open DevTools with its shortcut. Then check source-candidate responsive layouts, close behavior, reduced motion and icon rendering.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;

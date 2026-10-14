@@ -970,3 +970,9 @@ one staging probe. It does not verify the browser's captured automatic request,
 the JavaScript runtime, responsive geometry, Preview, screen-reader output,
 physical devices, physical DPR, reduced motion or cloned upgrade/rollback.
 The source fixes and these checks remain pending Michael's acceptance.
+
+After cleanup, I tried Chrome's `Option+Command+J` shortcut on the restored
+`Unlink Fallback Isolation` page to open DevTools. Chrome remained on the page;
+the current browser-control surface did not open DevTools or expose viewport
+controls. No further candidate layout or automatic-request checks were possible
+through this session. The tab remains on its original staging route.
