@@ -1190,3 +1190,48 @@ animation, broader icon geometry, human/device screen-reader evidence,
 physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The smallest
 next step is a browser inspection surface with viewport and console/request
 controls plus an isolated publishable or usable Preview route.
+
+### Brief #12 fresh responsive and console check — 15 October 2026
+
+A fresh Chrome tab opened the published Clean Trial
+`/unlink-fallback-isolation` comparison page. The browser now exposed a
+temporary viewport override and captured console logs. At 320, 393, 479, 480,
+767, 768, 991, 992, 1,280 and 2,060 CSS px, the document had zero horizontal
+overflow. The MENU trigger was visible through the 991px Tablet collapse edge
+and hidden at 992px and above. This is the published v0.2.6 dropdown fixture,
+not a candidate check or all-layout matrix.
+
+At 320×568, the browser reported DPR 1. Opening the panel measured it at
+304×496px, x=16/y=72, while its 585px of content scrolled inside a 494px client
+area. Document overflow remained zero. Escape closed the outer menu and focus
+returned to its trigger. Console warning/error readback was empty. The browser
+reported `prefers-reduced-motion: reduce` as false; no OS or browser preference
+was changed. DPR 1 is the browser's reported value during width emulation, not
+physical-display evidence.
+
+The viewport override was reset and the new tab was closed. No Webflow page,
+style, script, Library resource, asset or publication changed. Network request
+capture is still unavailable. This adds current published-baseline evidence;
+candidate failure, responsive, Preview, custom-motion, broader icon, human
+screen-reader/device, physical DPR 2×/3× and clone checks remain as described
+above. The earlier candidate fallback check retained its CSS and omitted
+candidate JavaScript, but its missing-trigger rendering made the result
+inconclusive; it did not prove handling of a failed candidate script request.
+
+### Brief #12 source-derived candidate responsive and interaction check — 15 October 2026
+
+A labelled temporary candidate was installed on the backed-up `SB Unlink Clean Trial` site (`6ac8c9f18e63674e4f34f88a`), page `SB Lite Preview Compiler Probe` (`6acfd482072d7417c8ae9149`). The page began as a Body-only empty draft with blank head/footer code. A temporary root element (`4091cf84-1a95-a6e0-ac65-29ca91c195b7`) and child scroll-content element (`1427c0ac-d35b-7589-b3bf-b87de3945722`) carried an explicit Brief 12 test label. Temporary head CSS combined the current source CSS and component presentation rules; footer JavaScript was bundled from maintained `src/navbar-light.js` using the already-installed esbuild. No dependency was installed and no source or released file changed.
+
+An initial temporary fixture reused the consumer's `mwp-css-nav_*` classes and inherited Webflow rules that hid the trigger at the tested width. That was a fixture collision, not evidence of a product defect. It was removed and rebuilt with data attributes and no consumer class names before candidate checks. The final fixture exercised five layouts: dropdown, full-width, left, right and overlay.
+
+Under CSS viewport emulation, ten widths (320, 393, 479, 480, 767, 768, 991, 992, 1280 and 2060 CSS px) had zero horizontal page overflow. The trigger was visible through 991px and hidden from 992px. Each layout opened and remained within the viewport at 320, 393 and 991px. With a 400px viewport height, dropdown, left and overlay also kept scrolling inside their panels (respectively 304×320, 320×400 and 320×400px); full-width and right narrow-height scrolling were not checked. The enabled backdrop covered the viewport. Escape closed the outer panel and restored trigger focus.
+
+At 393×852, actual browser input checked Tab from the brand to the Navigation menu, Space to open, Tab into Home, Shift-Tab to the trigger, Enter to open nested More, Escape to close the nested disclosure and return focus to More, then another Escape to close the outer panel and return focus to its trigger. Clicking Home closed the panel and set the test hash. Clicking the visible backdrop closed the panel and restored trigger focus. With the backdrop disabled, an outside click closed the panel while focus remained on the clicked page content. Console warning/error readback was empty.
+
+Icon rendering covered 24 combinations: two or three lines, 1/2/3/4px thickness, and 5/7/9px gaps. At 393×852 the rendered bar centers aligned with zero measured vertical spread after opening, and the calculated shift matched the configured thickness and gap. Browser-reported DPR was 1 while CSS viewport emulation was active. The browser interface did not provide a device-scale override; no physical-display 2×/3× evidence was collected. `prefers-reduced-motion` and an external/custom animation library were not exercised in this staging candidate.
+
+The temporary page was published to the Clean Trial Webflow subdomain during the test. The five candidate publish timestamps were `2026-10-15T23:21:46.676Z`, `23:22:54.378Z`, `23:24:39.593Z`, `23:27:31.773Z` and `23:29:18.031Z`. Afterward the temporary head/footer code and both temporary elements were removed, the page was restored to its original title, slug, publish setting and blank SEO/OpenGraph metadata, and `draft: true` was restored. Designer readback confirmed Body-only content and empty head/footer code. Cleanup was published to the staging subdomain at `2026-10-15T23:30:40.323Z`; the route returned 404 in a fresh Chrome tab. Site readback had `customDomains: []`. The three unrelated audit drafts stayed drafts. No Library share/update or production/custom-domain publish occurred. The owned Chrome tab was closed.
+
+This is rendered staging runtime evidence for the source-derived temporary candidate. It is distinct from Designer source/readback, Webflow Preview, the published v0.2.6 comparison page, and actual human/device use. Preview compilation remains at its previously recorded `CompilationError: Invalid source code`. The automatic browser Network entry for a failed candidate script was not captured; the earlier native no-runtime fallback test is recorded above and was not repeated. Human screen-reader/device checks and cloned upgrade/rollback remain unavailable. Reduced-motion/custom-animation integration and narrow-height scrolling in full-width/right layouts remain open.
+
+`npm run test:built` passed 48/48 and reported restoration of all 12 generated files. Explicit `git diff --exit-code` across the generated outputs passed. `git diff --check` passed. No generated or release bytes were retained.
