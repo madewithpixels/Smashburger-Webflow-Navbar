@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** The unreleased 0.3.0-rc.1 candidate now fixes overlapping overlay scroll locks and has local Lite example and workbench references. v0.2.6 and its protected assets remain unchanged. Library sharing, rendered local review, consumer linkage/rollback and human/device checks remain open.
+**Stage:** The unreleased 0.3.0-rc.1 candidate now fixes overlapping overlay scroll locks and has locally checked Lite example and workbench references. v0.2.6 and its protected assets remain unchanged. Library sharing, rendered local review, consumer linkage/rollback and human/device checks remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** ade4dac — candidate source, generated files, tests and Lite review artifacts were checked against this commit.
+**Reviewed at commit:** 19ef5e6 — checked the candidate baseline and following docs-only handoff commit; this entry records the new Lite DOM checks and partial roadmap progress.
 **Next action:** Review the candidate examples in a local browser when an authorised preview is available. Separately, approve the exact five-resource Library review before any sharing or consumer installation.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Lite structure checks and partial roadmap progress — Codex (night shift)
+
+**Changed (R-181–R-182):** Added a DOM regression that checks each candidate navbar has one native menu, one panel and one link tree, retains the `sb-nav` classes and runtime hooks, and has no Library-generated class trail. Recorded the plain/styled examples and closed/open workbench references as locally verified preparation only.
+
+**Outputs:** Updated [Lite candidate checks](tests/lite-candidate.test.js) and [ROADMAP](ROADMAP.md). R-181 and R-182 are in progress with local evidence; neither is marked built. The examples are still HTML references, not native Webflow components.
+
+**Checked how:** `node --test tests/lite-candidate.test.js` passed 2/2 checks. `SMASHBURGER_CANDIDATE=1 npm run test:built` passed 59/59 checks across source, candidate distribution, minified output and Embed; all 17 protected historical files matched. `git diff --check` passed. Boss start/inbox showed brief #66 taken and no waiting handoff. The browser check was attempted in a new Chrome tab; its URL policy rejected `file:` and permits only `http:` and `https:`. Per that policy, no alternate route was attempted.
+
+**Still open:** Rendered desktop/phone review; the blank-project native component and clone flow; the approved five-resource Library share and consumer linkage/update/rollback; final release gates; human keyboard, screen-reader and device checks. The three Library “Changed” flags remain unexplained by saved local properties/styles comparisons.
+
+**Needs Michael:** Enable an authorised local browser preview. Approve the exact five-resource Library review before sharing. Complete human/device and final release decisions when those stages are ready.
+
+**Next useful action:** Continue with reproducible local release and rollback checks that do not alter released files; resume rendered Lite review when an allowed local preview URL is available.
+
+**Handoff:** Start with this entry, `webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md`, and the candidate test runner. Keep candidate outputs unreleased and v0.2.6 protected. The browser URL policy explicitly prohibited alternate access after rejecting `file:`; do not retry through another browser surface. The prior local HTTP binding failure remains in the 15 October STATUS evidence and was not repeated.
 
 ## 16 October 2026 — Candidate overlay fix and Lite local examples — Codex (night shift)
 

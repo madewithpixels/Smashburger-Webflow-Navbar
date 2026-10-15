@@ -1596,15 +1596,19 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-181 · Include a plain baseline and a separately styled example, with one shared set of native links and no duplicated desktop/mobile navigation.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 254 (now 255); baseline `c808ca4`.
 **Exit criteria:**
+**Local preparation — 16 October 2026:** Candidate plain/styled HTML examples each contain one native panel and one set of three links. A DOM regression checks the link tree and candidate class/runtime hooks. This does not provide a native Webflow component or clonable.
+**Evidence links:** [candidate examples](candidate/lite/review-examples.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
 #### R-182 · Include the Navbar workbench with prepared closed/open examples and a backdrop reference so common styling work does not obstruct the clonable's real pages.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 255 (now 256); baseline `c808ca4`.
 **Exit criteria:**
+**Local preparation — 16 October 2026:** Candidate HTML contains one closed and one open native disclosure reference plus a labelled backdrop swatch. A DOM regression checks the two states and retained candidate structure. This is a static workbench reference, not a Webflow workbench.
+**Evidence links:** [workbench references](candidate/lite/workbench-references.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
 #### R-183 · Install one exact-version pinned CDN Embed with integrity metadata and keep the settings/structure understandable on the Canvas.
