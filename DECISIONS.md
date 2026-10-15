@@ -85,7 +85,8 @@ Lite contains a local native component, plain/styled examples, workbench, safe-e
 **Consequence:** Build waits for a verified class migration/runtime and clone-flow checks; no clonable exists yet.
 
 ## D-012 - Exact structural sb-nav class mapping
-**Status:** Proposed
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss, 15 October 2026
 **For Michael:** Should the visible class names use “sb-nav” and its role names? I recommend keeping that clear pattern; choosing it lets the migration start, while another name changes the class names designers see.
 **Date:** 14 October 2026 specification
 The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, replacing mwp-css-nav_ and converting suffix underscores to hyphens. The mapping remains Proposed while Michael decides the product name (Q-02/Q-03, 14 October 2026); do not begin the class migration.
@@ -93,7 +94,8 @@ The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, re
 **Consequence:** Keep data attributes, CSS variables, APIs/events, diagnostic names, variant markers and old release URLs stable in this class-only migration.
 
 ## D-013 - Canonical repository/package and replacement local path
-**Status:** Proposed
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss, 15 October 2026 — *"'/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar'"*
 **For Michael:** What should the main repository and package be called, and where should the local folder live? I recommend keeping the SmashBurger name and choosing a MacStudio path; this sets where you and collaborators find the work, while another choice changes those names and location.
 **Date:** Not recorded in the source; extracted 14 October 2026
 The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity remain unresolved, Q-03. Michael is still deciding whether to rename the product; nothing is deployed on a live domain yet, so retaining the old repository for CDN compatibility matters less. This is context for the decision, not permission to remove it (Michael, 14 October 2026, this session).

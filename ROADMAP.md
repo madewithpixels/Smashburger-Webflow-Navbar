@@ -1441,8 +1441,8 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Exit criteria:**
 
 
-#### R-165 · Prototype moving the Canvas-visible Code Embed inside one compact `SmashBurger infrastructure` Details element, collapsed by default, and verify the CSS/JS output and a readable settings snapshot in Preview and published output.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+#### R-165 · Prototype moving the Canvas-visible Code Embed inside one compact `SmashBurger infrastructure` Details element, collapsed by default, and verify the CSS/JS output and a readable settings snapshot in Preview and published output. *(accepted by Michael in boss, 15 Oct 2026)*
+**State:** built · **Evidence:** verified (live) · **Acceptance:** accepted (15 October 2026)
 **Try:** In Preview, check that the settings list is readable and the menu works while the “SmashBurger infrastructure” box is closed. The list is a manual snapshot, so it may need updating if the settings change.
 **Covers:** R-167, R-170
 **Source:** [todo.md](todo.md), original line 233 (now 234); baseline `c808ca4`.
@@ -1596,8 +1596,8 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Exit criteria:**
 
 
-#### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+#### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal. *(accepted by Michael in boss, 15 Oct 2026)*
+**State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (15 October 2026)
 **Try:** Open the safe-editing guide and check how it explains editing the menu safely, including what to keep in place and what needs updating before using it in a future project.
 **Source:** [todo.md](todo.md), original line 257 (now 258); baseline `c808ca4`.
 **Exit criteria:** Draft covers each listed topic and labels current runtime selectors and instructions for refresh after class migration and runtime selection.
@@ -2205,8 +2205,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Brief #13 callable browser control confirmation — 15 October 2026 (R-037, R-095, R-155):** Chrome is listed, but `cua.getApp("com.google.Chrome")` returns `cgWindowNotFound`. The CUA browser-control surface available in this session provides accessibility, screenshots and input, not page evaluation, viewport control or Network request events. A richer Playwright/DevTools interface appears in browser documentation but is not callable through this session's CUA API. No browser tab or Webflow content changed; the empty draft probe remains untouched. Candidate request capture, Details/focus, Full-width/Right short-height, rendered reduced-motion/custom-animation, human/device, physical-display DPR and cloned upgrade/rollback remain open. The route blocker was already reported to Boss; details in [STATUS](STATUS.md) and the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 
-#### R-267 · Leave a tidy site after unlinking the component.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+#### R-267 · Leave a tidy site after unlinking the component. *(accepted by Michael in boss, 15 Oct 2026)*
+**State:** built · **Evidence:** verified (live) · **Acceptance:** accepted (15 October 2026)
 **Try:** On the “Unlink test” page, find an unlinked menu in the list of page elements. Check that there are no duplicate or blank “Always” entries, then use Preview to open and close the menu.
 **Covers:** R-122, R-129–R-137
 **Source:** [always-class audit](webflow/always-unlink-class-audit-2026-10-13.md); [unlink candidate record](webflow/unlink-hardening-candidate.md).
