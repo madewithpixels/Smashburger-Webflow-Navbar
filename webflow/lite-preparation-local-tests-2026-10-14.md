@@ -1754,3 +1754,40 @@ screen-reader and physical-device use; physical-display DPR 2×/3×; and cloned
 upgrade/rollback. Earlier interaction and local build evidence were not
 repeated. No candidate styles/content were applied; the probe remains empty.
 The isolated-route blocker was already reported to Boss and was not duplicated.
+
+### Brief #13 current staging and Chrome controls — 15 October 2026
+
+At `94a4098`, `main` was clean. This was the only commit after the STATUS
+reviewed baseline `cd04987`; no remote operation was made. Read AGENTS.md,
+project-docs v0.4, the project record and the latest Brief #12 test sections.
+
+Read-only Webflow `list_sites`, `get_site`, `list_pages`, `get_all_elements`
+and Designer `list_branches` confirmed Clean Trial has no custom domains, its
+last publication remains `2026-10-14T23:30:40.323Z`, and the probe is a draft
+with only Body. The six-page list has four drafts total: the probe and three
+unrelated pages. No branch exists for the probe. This readback does not expose
+a source-derived candidate or a safe isolated route; no Webflow content or
+publication changed.
+
+Chrome appears in the app inventory, but `cua.getApp("com.google.Chrome")`
+returned `cgWindowNotFound` twice, including after a 30-second wait. The
+supported extension browser opened a fresh tab on the published
+`/unlink-fallback-isolation` comparison page and showed its accessibility
+tree. That page is the published v0.2.6 comparison, not the candidate. The
+DevTools shortcut did not open a DevTools panel. The extension surface has no
+Network request list; Node repl has no browser handles, and dynamic Playwright
+import returned `The requested module './index.js' does not provide an export
+named 'default'`. The tab opened for this check was closed.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details and closed-panel link/focus; Full-width and Right short-height
+containment; rendered candidate reduced-motion/custom-animation; human
+screen-reader and physical-device checks; physical-display DPR 2×/3×; and
+cloned upgrade/rollback. Earlier candidate interaction, layout and 48/48
+build evidence were not repeated. The isolated-route/request-inspection
+blocker was already reported to Boss, so it was not duplicated.
+
+Next useful action: when an isolated route can render the candidate and a
+supported browser control exposes request events, capture the failed-script
+request and continue candidate checks. Keep the whole Clean Trial site
+unpublished and leave its three unrelated draft pages untouched.
