@@ -3,7 +3,8 @@
 Extracted 14 October 2026 for brief #6. Sources are the README, original
 `todo.md`, the linked Webflow records and git history at `c808ca4`.
 Updated with Michael’s Q-01–Q-07 answers on 14 October 2026 (this session).
-D-012/D-013 remain Proposed while Michael decides the product name.
+Michael settled D-012 and D-013 in boss on 15 October 2026. SmashBurger remains the
+product identity; the `sb-nav` class mapping and new repository/local path are set.
 
 ## Purpose
 
@@ -37,10 +38,10 @@ JavaScript enhancement. Source: [README — introduction](README.md#smashburger)
   closed or uninstalled. The proposed Make local track preserves authored structure and provides a
   recoverable conversion; commitment is deferred until Lite works (Michael,
   Q-04, 14 October 2026; D-014). Source: todo §11; R-192, R-200–R-208.
-- **S-09:** Structural Navigator labels should expose descriptive `sb-*` classes;
-  SmashBurger Lite is the working clonable product name, pending Michael’s
-  naming decision (Q-02/Q-03, 14 October 2026). Source: R-121, R-162–R-164;
-  namespace audit §Chosen class mapping. The exact mapping is Proposed in D-012.
+- **S-09:** Structural Navigator labels should expose descriptive `sb-*` classes.
+  SmashBurger is the product identity and SmashBurger Lite is the free clonable
+  name. Michael accepted the `sb-nav` mapping in D-012 on 15 October 2026.
+  Source: R-121, R-162–R-164; namespace audit §Chosen class mapping; D-012.
 - **S-10:** Backup before structural Webflow testing and retain deliberate publication
   approval. Source: README §Webflow testing safety; R-008. This brief authorises
   documentation and one local commit only; it authorises no external mutation.
@@ -90,13 +91,16 @@ R-185, R-225, R-260–R-261;
 [clonable acceptance gates](webflow/smashburger-lite-clonable-scope.md).
 These are technical criteria; Michael alone signs off Acceptance.
 
-## Open decisions
+## Naming and repository direction
 
-D-012 and D-013 remain Proposed while Michael decides whether to rename the
-product. This blocks the class migration and Lite publication. Nothing is deployed
-on a live domain yet, so retaining the old repo for CDN compatibility matters less;
-existing pinned assets remain protected until a decision authorises a change.
-Source: Michael, Q-02/Q-03, 14 October 2026 (this session). No repeat boss question.
+The SmashBurger product identity and `sb-nav` class mapping are settled (D-012).
+The canonical repository/package direction and local destination are settled in
+D-013. Michael will create and clone the new repository at
+`/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. The current
+checkout and remote have not moved. Continue with R-119 onward after that clone is
+available; move the local folder only at R-128. Existing pinned assets and old
+compatibility URLs remain protected until the planned release checks are complete.
+Source: Michael’s accepted decisions in boss, 15 October 2026; R-119–R-128.
 
 ## Deferred decisions (not blocking the docs update)
 

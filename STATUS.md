@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 were accepted by Michael on 15 October 2026. Product naming and the new local destination are settled; repository migration has not started.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 7e74173 — checked the project record, D-014 and recent decision verdicts before this sign-off wording update. No remote operation was made.
-**Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
-**Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** e9bf567 — checked the project record and accepted D-012/D-013 decisions before this record update. No remote operation was made.
+**Next action:** Michael creates and clones the canonical repository at the path recorded in D-013; resume the rename sequence there.
+**Needs Michael:** Create and clone the new repository at `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. Review and push local commits when ready.
+
+## 15 October 2026 — Record accepted naming and repository direction — Codex
+
+**Changed (D-012, D-013; R-119, R-121, R-128):** Recorded that SmashBurger remains the product identity, the `sb-nav` class mapping is accepted, and the selected local destination is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`.
+
+**Outputs:** Updated `SCOPE.md`, `DECISIONS.md`, `ROADMAP.md` and this status record. The roadmap now says Michael will create and clone the new repository; the class migration follows once that checkout is available, and the local folder move remains last. No repository, remote, source, release or Webflow content changed.
+
+**Checked how:** Compared the accepted D-012/D-013 verdicts in `DECISIONS.md` with SCOPE, R-119/R-121/R-128 and the current checkout. Confirmed the exact destination spelling, preserved the original decision text, and kept roadmap State, Evidence and Acceptance unchanged. The checked baseline is `e9bf567`; `git diff --check` passed. This is local documentation evidence only.
+
+**Still open:** The new repository and clone do not exist yet. The versioned class migration, release checks and later local folder move remain planned.
+
+**Needs Michael:** Create and clone the new repository at the selected path. Review and push local commits when ready.
+
+**Next useful action:** After the new clone is available, continue R-119 onward there, beginning with verifying the complete history and repository state before the class migration.
 
 ## 15 October 2026 — Brief #47 D-014 sign-off wording — Codex (night shift)
 

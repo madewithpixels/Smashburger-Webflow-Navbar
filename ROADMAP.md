@@ -997,7 +997,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 ### SmashBurger repository and local-folder rename
 
-**Current direction — Michael, Q-02/Q-03, 14 October 2026:** Product naming remains open; D-012/D-013 remain Proposed. The class migration and Lite publication wait for this decision. The old compatibility repo matters less because nothing is deployed on a live domain yet; no remote or path change is authorised.
+**Current direction — Michael, 15 October 2026:** SmashBurger remains the product identity; D-012 accepts the `sb-nav` class mapping and D-013 records the canonical repository/package direction and local destination. Michael will create and clone the new repository at `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. Resume this sequence when that checkout is available. Preserve old pinned assets and compatibility URLs through the planned release checks.
 
 
 #### R-118 · Commit and push all current portability, Library-installation and cleanup documentation before changing repository identity (`58e1407`).
@@ -1010,7 +1010,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 #### R-119 · Create `madewithpixels/SmashBurger-Webflow-Navbar` as the new canonical GitHub repository with the complete Git history; use `smashburger-webflow-navbar` for the package name.
 **State:** planned · **Evidence:** none · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 167 (now 168); baseline `c808ca4`.
-**Current direction:** Michael, Q-02/Q-03, 14 October 2026: product naming remains open; D-013 remains Proposed. Nothing is deployed on a live domain yet, so old-repo CDN compatibility matters less; no repository change is authorised.
+**Current direction:** D-013 is Accepted. Michael will create the canonical repository and clone it at the selected local path. This item remains planned until the new repository and complete history are available; no agent is to create or clone it on Michael’s behalf.
 **Exit criteria:**
 
 
@@ -1023,7 +1023,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 #### R-121 · Rename every portable component class from the legacy `mwp-*` / `mwp-css-nav_*` namespace to a documented `sb-*` namespace (`SmashBurger`) as part of the canonical repository rename. Update source HTML/CSS/JavaScript, generated Embeds, demos, Webflow components, clonable, documentation and tests together; treat this as an explicit versioned class migration rather than silently changing an existing release. Reserve `SmashBurger Lite` for the free clonable's product name, not its class prefix.
 **State:** planned · **Evidence:** none · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 169 (now 170); baseline `c808ca4`.
-**Current direction:** Michael, Q-02/Q-03, 14 October 2026: class migration waits for the product name; D-012/D-013 remain Proposed.
+**Current direction:** D-012 accepts the `sb-nav` root and `sb-nav-{role}` child mapping. SmashBurger remains the product identity. Start this versioned class migration after R-119’s new checkout is available; retain the non-class compatibility hooks listed in R-122.
 **Exit criteria:**
 
 
@@ -1065,11 +1065,11 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 
 
-#### R-128 · Rename the local folder last to `/Users/michaelauty/Work on Macbook/SmashBurger Webflow Navbar`, update the Git remote and reopen Codex from the new workspace path.
+#### R-128 · Rename the local folder last to `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, update the Git remote and reopen Codex from the new workspace path.
 **State:** planned · **Evidence:** none · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 176 (now 177); baseline `c808ca4`.
 **Exit criteria:**
-**Qualifier:** The old Macbook target path is historical. Current checkout is on MacStudio; replacement destination is (inferred — confirm), tracked in D-013.
+**Qualifier:** Michael selected this exact destination in D-013 on 15 October 2026. He will create and clone the canonical repository there; move the existing folder only after the earlier rename and release steps are complete.
 
 
 ## 10. Migration hardening and public clonable

@@ -93,6 +93,10 @@ The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, re
 **Source:** webflow/class-namespace-migration-audit.md §Chosen class mapping; git c808ca4, 5d720b1; R-121–R-124.
 **Consequence:** Keep data attributes, CSS variables, APIs/events, diagnostic names, variant markers and old release URLs stable in this class-only migration.
 
+**Follow-up — Michael, 15 October 2026:** Accepted the `sb-nav` mapping. Product
+identity remains SmashBurger; proceed with the planned versioned class migration
+when the new canonical checkout is available.
+
 ## D-013 - Canonical repository/package and replacement local path
 **Status:** Accepted
 **Qualifier:** settled by Michael in boss, 15 October 2026 — *"'/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar'"*
@@ -101,6 +105,12 @@ The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, re
 The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity remain unresolved, Q-03. Michael is still deciding whether to rename the product; nothing is deployed on a live domain yet, so retaining the old repository for CDN compatibility matters less. This is context for the decision, not permission to remove it (Michael, 14 October 2026, this session).
 **Source:** todo §SmashBurger repository and local-folder rename (R-119–R-128); namespace audit §Build order and release boundary; current local cwd.
 **Consequence:** Do not create the canonical repo, archive the old repo, rename this folder or alter remotes under this docs brief.
+
+**Follow-up — Michael, 15 October 2026:** The selected local destination is
+`/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. Michael will
+create and clone the new repository. This records his planned action; it does not
+change the current checkout or remote. The local folder move remains the last
+rename step (R-128).
 
 ## D-014 - Designer Extension with Make local as the preferred product track
 **Status:** Proposed
