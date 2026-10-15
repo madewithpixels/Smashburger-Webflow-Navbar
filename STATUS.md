@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest recorded `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` run reported 33/48 passing and 15 failures in the immutable distribution and Embed against newer source behavior; generated files were restored. Rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 94a4098 — current `main` was clean at start. No remote operation was made.
+**Reviewed at commit:** 08e71d4 — current `main` was clean at start. No remote operation was made.
 **Next action:** Resume rendered candidate checks when an isolated candidate route and request-inspection control are available.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 current verification result — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, immutable release file or Webflow content changed. The newest built-runtime run found that the unreleased source fixes are not present in the v0.2.6 distribution and Embed.
+
+**Outputs:** Updated the local test record and roadmap with the 33/48 result and the candidate access limits. Work remains pending Michael's acceptance.
+
+**Checked how:** At `08e71d4`, `main` was clean; no commits followed the reviewed baseline `94a4098` except the recorded documentation commit. `npm run test:built` passed all 12 maintained-source checks but finished 33/48 overall, with 15 failures in the immutable distribution, minified files and Webflow Embed for source-latest stylesheet-failure and breakpoint/focus timing behavior. The runner restored all 12 generated files; `git diff --check` passed and the worktree is clean. No release bytes were retained or published. Read-only Webflow `list_sites` confirmed the Clean Trial staging site and unchanged publication. Chrome app lookup returned `cgWindowNotFound`; the supported Node repl Playwright import returned `The requested module './index.js' does not provide an export named 'default'`. The earlier isolated-route blocker remains the same and was not reported again.
+
+**Still open:** Failed candidate-script request capture; source-derived candidate Details and closed-link focus; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader and device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The new build failure reflects unreleased source versus pinned v0.2.6 outputs; no release asset was altered to force a pass.
+
+**Needs Michael:** Arrange a supported isolated candidate route with working request inspection. Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Once a candidate route and request inspection are available, capture the failed-script request and run the remaining rendered checks. Keep the whole Clean Trial site unpublished.
+
+**Handoff:** Read this entry and the latest Brief #13 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). Keep the probe empty and draft; leave its three unrelated draft pages untouched. Do not refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 current staging and Chrome controls — Codex (night shift)
 

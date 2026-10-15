@@ -1791,3 +1791,41 @@ Next useful action: when an isolated route can render the candidate and a
 supported browser control exposes request events, capture the failed-script
 request and continue candidate checks. Keep the whole Clean Trial site
 unpublished and leave its three unrelated draft pages untouched.
+
+### Brief #13 latest verification — 15 October 2026
+
+At `08e71d4`, `main` was clean; the only commit after the recorded review
+baseline `94a4098` was the existing Brief #13 access record. Read the latest
+Brief #12 fixture sections before continuing. The Boss run resumed for R-037,
+R-095 and R-155.
+
+`npm run test:built` completed with 33/48 passing and 15 failing. All 12
+maintained-source checks passed, including missing-CSS fallback, transition
+and breakpoint focus fixes, and simulated reduced motion. Five checks failed
+in each of the committed distribution, minified and Embed outputs: the missing
+CSS fallback and four newer breakpoint/focus timing behaviors. These files
+remain the immutable v0.2.6 baseline and do not include the unreleased source
+fixes. No release file was changed to force a pass. The runner restored all 12
+generated files; `git --no-optional-locks status` is clean and `git diff
+--check` passed.
+
+The Chrome app control was tried and returned `cgWindowNotFound`. The supported
+Node repl dynamic Playwright import returned `The requested module './index.js'
+does not provide an export named 'default'`. The available CUA extension
+surface does not expose request events or a DevTools panel. The latest
+read-only Webflow site list still shows Clean Trial as a staging/test site
+without custom domains; no site content, publication or Library item changed.
+The backed-up probe was not edited.
+
+Not checked: automatic failed-candidate-script request capture; source-derived
+candidate Details and closed-panel link/focus; Full-width and Right
+narrow-height containment; rendered candidate reduced-motion/custom-animation;
+human screen-reader and physical-device checks; physical-display DPR 2×/3×; and
+cloned upgrade/rollback. The candidate route/request blocker was already
+reported to Boss, so it was not duplicated. The test result is local automated
+source/output comparison, not rendered candidate evidence.
+
+Next useful action: once a supported isolated route renders the source-derived
+candidate and request events can be inspected, capture the failed-script
+request and complete the remaining browser checks. Keep the Clean Trial site
+unpublished as a whole and keep all draft pages unchanged.
