@@ -1,12 +1,28 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, keyboard/pointer closing and icon emulation have rendered-browser evidence in the local test record; current published staging checks cover the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, motion/custom-animation integration, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, keyboard/pointer closing and icon emulation have rendered-browser evidence in the local test record; current published staging checks cover the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, reduced-motion/custom-animation integration, full-width/right narrow-height scrolling, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** f6df7ff — checked current `main`; worktree was clean at start. Git reports 25 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Arrange a Chrome inspection route with DOM, console and request access, and a usable Preview route; continue only the remaining candidate checks when available.
+**Reviewed at commit:** 8e7f5bd — checked current `main`; worktree was clean at start. Git reports 26 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Make a usable Preview and browser inspection route available; finish only the remaining candidate checks listed below.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 remaining-check access review — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, Webflow page, asset, Library item, publication or release changed. Previously completed candidate checks were not repeated.
+
+**Outputs:** Recorded the remaining browser and Preview limits in the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-095/R-155 evidence. All new work remains pending Michael's acceptance.
+
+**Checked how:** Boss resumed the existing run and confirmed Brief 12 is taken. `git --no-optional-locks status` was clean at start on `main` `8e7f5bd`; history since the prior reviewed commit contains only the documented inspection-limit entry. Read the project-docs v0.4 skill and the current project record. The available Chrome control documentation exposes screenshots and accessibility/input interaction, but not page DOM evaluation, responsive viewport control, console logs or failed-request capture in this session. The prior Webflow Designer attempt on the probe exposed no usable canvas or Preview control. No new Chrome tab was opened, and no Webflow mutation or publication occurred.
+
+**Still open:** Failed-script request capture, Preview compilation, candidate reduced-motion/custom-animation, full-width/right narrow-height scrolling, human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. No source defect was demonstrated in this session.
+
+**Needs Michael:** Provide a usable Preview route and a browser inspection surface with DOM, viewport, console and request access. Human/device checks and a cloned release candidate are also needed for the remaining physical accessibility and rollback checks.
+
+**Next useful action:** Resume the missing checks on the isolated Clean Trial probe when the inspection surfaces are available. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** The Clean Trial probe was already read back as an empty draft after cleanup. Read the latest Brief 12 section in the test record before any further staging work; do not publish the entire site while unrelated draft pages remain.
 
 ## 15 October 2026 — Brief #12 fixture and inspection-route readback — Codex (night shift)
 
