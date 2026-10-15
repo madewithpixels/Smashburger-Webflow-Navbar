@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** Full history is in the canonical working clone. The unreleased 0.3.0-rc.1 sb-nav source and both real Library candidates are prepared. Source-Library Preview and local CDN checks passed; v0.2.6 remains released. Library sharing, consumer linkage/rollback and human/device checks remain open.
-**Last updated:** 15 October 2026 — Codex
-**Reviewed at commit:** ddb83c7 — checked baseline before the Library-candidate preparation and Designer icon correction recorded below.
-**Next action:** Obtain approval for the exact five-resource Library review, then install/apply only in backed-up New Smashburger Test and verify consumer linkage, overrides, unlink, update/rollback and actual Webflow fallback.
-**Needs Michael:** No Git transfer or repository setup work. Explicit Library-sharing approval, human/device sign-off and final release approval remain separate gates. Test-site staging publication is already authorised.
+**Stage:** The unreleased 0.3.0-rc.1 candidate now fixes overlapping overlay scroll locks and has local Lite example and workbench references. v0.2.6 and its protected assets remain unchanged. Library sharing, rendered local review, consumer linkage/rollback and human/device checks remain open.
+**Last updated:** 16 October 2026 — Codex (night shift)
+**Reviewed at commit:** ade4dac — candidate source, generated files, tests and Lite review artifacts were checked against this commit.
+**Next action:** Review the candidate examples in a local browser when an authorised preview is available. Separately, approve the exact five-resource Library review before any sharing or consumer installation.
+**Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Candidate overlay fix and Lite local examples — Codex (night shift)
+
+**Changed (R-121, R-178–R-182):** Fixed page scroll unlocking too early when two candidate overlay menus are open. Prepared plain and styled examples plus closed/open workbench references and a backdrop swatch. Updated the safe-editing guide to separate released instructions from candidate review.
+
+**Outputs:** [Candidate multi-navbar check](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md), [plain and styled examples](candidate/lite/review-examples.html), [workbench references](candidate/lite/workbench-references.html), and the refreshed [safe-editing guide](webflow/smashburger-lite-safe-editing.md). These local HTML artifacts are not a native Webflow component or clonable.
+
+**Checked how:** `SMASHBURGER_CANDIDATE=1 npm run test:built` passed 58/58 checks across source, candidate distribution, minified output and self-contained Embed. This included the new multi-navbar lock regression, native fallback, failed CDN scripts, keyboard/Escape, ARIA/inert, reduced motion, custom icon geometry and prior layout/motion checks. The runner verified 17 protected historical files byte-for-byte. `npm run check`, the Lite artifact check and `git diff --check` passed. Candidate outputs were built under `candidate/`; released v0.2.6 outputs were not rebuilt.
+
+**Still open:** Browser rendering of the Lite pages was blocked. Chrome control rejected a new local file tab under its URL policy; a local HTTP server could not bind to 127.0.0.1 (`PermissionError: Operation not permitted`). Automated DOM/runtime checks do not prove rendered stacking or narrow-height scrolling. Webflow Canvas/Preview, Library sharing, consumer linkage/update/rollback, and physical keyboard, screen-reader and device checks remain open.
+
+**Needs Michael:** Enable an authorised local browser preview. Approve the exact five-resource Library review before sharing. Human/device sign-off and final release approval remain his gates; no Acceptance was changed.
+
+**Next useful action:** Render the local Lite references at desktop and phone sizes when browser preview is available. Continue Library consumer verification only after its sharing approval.
+
+**Handoff:** Start with this entry and the multi-navbar check record. Keep all `candidate/` files labelled unreleased; preserve v0.2.6 and old pins. The two Lite pages are static HTML review artifacts, not Webflow-native work or clone-flow evidence. No Designer, Preview, staging, Library sharing or Webflow content was changed. The local browser attempt created no tab, and no browser workaround was used.
 
 ## 15 October 2026 — Library candidates prepared and Designer icons corrected — Codex
 
