@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 in this run; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 195927f — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** 6f6d382 — checked current `main`; worktree was clean at start. Only the recorded Brief 13 evidence update followed the previous reviewed commit. No remote operation was made.
 **Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
 **Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 DevTools and isolated-route check — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, Webflow page, Library item, asset, release or publication changed. Chrome's visible DevTools panels are available, but no candidate runtime could be loaded for the remaining checks.
+
+**Outputs:** Added the DevTools control and current isolated-route findings to the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and related roadmap evidence. New work remains pending Michael's acceptance.
+
+**Checked how:** At reviewed baseline `195927f`, history through `6f6d382` contained the previous Brief 13 evidence update; the worktree was clean. Started Boss for R-037, R-095 and R-155. Read project-docs v0.4 and the latest Brief 12/13 fixture entries. Webflow site/page readback confirms Clean Trial has no custom domains, last publication `2026-10-14T23:30:40.323Z`, an empty draft probe and four unrelated draft pages. Chrome's visible Developer Tools menu opens Network and responsive-dimension controls on a fresh comparison-page tab. The CUA API has no Network request log or Rendering override method; the Node repl Playwright import returns `The requested module './index.js' does not provide an export named 'default'`. Webflow guidance confirms page/site branching requires Enterprise and the supported publishing call publishes the whole site. The fresh Chrome tab was closed. No Webflow change or publication occurred.
+
+**Still open:** Failed candidate-script request capture and candidate Details/focus behavior; Full-width and Right short-height containment; candidate reduced-motion/custom-animation; and a usable isolated staging or Preview route. The visible DevTools panel does not supply candidate behavior without that route. Human screen-reader/device, physical-display DPR 2×/3× and cloned upgrade/rollback checks still need people, hardware or a release candidate. No source defect was demonstrated.
+
+**Needs Michael:** Provide a supported isolated SmashBurger staging or Preview route. Arrange the human/device checks and cloned release candidate when available.
+
+**Next useful action:** Resume candidate browser checks when an isolated route is available. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** Clean Trial remains unchanged; the backed-up probe is empty and draft and the four other drafts remain untouched. Read the latest Brief 13 test-record section first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 fresh build and inspection-surface check — Codex (night shift)
 

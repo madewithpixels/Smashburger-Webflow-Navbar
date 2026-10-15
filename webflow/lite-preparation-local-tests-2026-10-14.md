@@ -1445,3 +1445,35 @@ Details and closed-panel link/focus checks remain recorded and were not
 repeated. The same isolated-route blocker was already reported to Boss; no
 duplicate report was sent. Continue after an isolated route and callable
 browser inspection surface are available.
+
+### Brief #13 DevTools and isolated-route check — 15 October 2026
+
+At reviewed baseline `195927f`, `main` was clean; the only commit through
+`6f6d382` was the previous Brief 13 documentation update. Read the latest
+Brief 12 fixture record and current Brief 13 handoffs before checking access.
+
+Chrome's visible View → Developer → Developer Tools menu opened DevTools on a
+fresh tab for the published `Unlink Fallback Isolation` comparison page. The
+Network panel and responsive width/height controls are visible. This is the
+published v0.2.6 comparison, not the source-derived candidate; no candidate
+request or behavior was inferred from it. The Network panel showed no filtered
+match for its existing `navbar-light.min.js` filter. The documented CUA API
+offers screenshots and accessibility/input, but no Network request log or
+Rendering override method. The Node repl `import('playwright')` returned
+`The requested module './index.js' does not provide an export named 'default'`.
+The temporary Chrome tab was closed.
+
+Read-only Webflow site/page calls confirmed Clean Trial still has no custom
+domains, last publication `2026-10-14T23:30:40.323Z`, an empty `Body`-only
+probe with `draft: true`, and four other drafts. Webflow guidance confirms
+branch actions require Enterprise; supported publishing is site-wide on this
+workspace, and the prior page-only `pageId` attempt was rejected. No supported
+isolated staging route became available. No page, code, style, Library item or
+publication changed.
+
+Not checked: failed candidate-script request capture; candidate Details and
+closed-link focus; Full-width and Right narrow-height containment; candidate
+reduced-motion/custom-animation; human screen-reader/device checks;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. Earlier Details and
+link/focus checks and the fresh build were not repeated. The isolated-route
+blocker was already reported to Boss, so no duplicate blocker report was sent.
