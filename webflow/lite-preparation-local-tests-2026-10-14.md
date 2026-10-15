@@ -1347,6 +1347,32 @@ checks still need their people, hardware or release setup. Continue on an
 isolated test site with a supported page-level route; do not publish the whole
 site to reach the probe.
 
+### Brief #13 fresh build and access recheck — 15 October 2026
+
+At baseline `1ccf54d`, `main` was clean; the only commit after reviewed commit
+`e2fc350` was the already-recorded Brief 13 access entry. `npm run test:built`
+passed 48/48. The runner restored all 12 generated files, and
+`git diff --exit-code` confirmed no generated output changed. This is local
+automated evidence across source and generated deliveries, not a rendered
+candidate check.
+
+Read-only Webflow MCP `get_site` and `list_pages` confirmed Clean Trial has no
+custom domains, the last publication remains `2026-10-14T23:30:40.323Z`, the
+probe is still draft and four unrelated pages remain drafts. The MCP connection
+and site read are available. The current CUA Chrome surface documents
+screenshots and accessibility/input controls only; it has no request log, DOM
+evaluation or viewport control. A Node repl Playwright import failed with an
+export syntax error, so it supplied no usable Chrome/CDP control. No browser
+tab was opened and no Webflow content or publication changed.
+
+Not checked: automatic failed-script request capture; Full-width and Right
+narrow-height containment; candidate reduced-motion/custom-animation; usable
+candidate Preview or isolated staging; human screen-reader/device use;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. The candidate route
+blocker was already reported to Boss; no duplicate report was sent. Resume
+after Brief 14 provides the isolated route or working Preview. Keep product
+naming, class migration and Lite publication deferred.
+
 
 ### Brief #13 current access recheck — 15 October 2026
 

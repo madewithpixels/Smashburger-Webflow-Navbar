@@ -1,7 +1,7 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 at `861428b`; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 in this run; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** e2fc350 — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** 1ccf54d — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
 **Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
 
@@ -20,6 +20,22 @@
 **Next useful action:** Resume candidate browser checks after Brief 14 provides a supported isolated staging or Preview route. Keep naming, class migration and Lite publication deferred.
 
 **Handoff:** Clean Trial remains empty/draft and no staging publication occurred. Do not use whole-site publication to reach the probe while unrelated drafts remain. Do not refresh the Navbar Light test page or touch SB Test Four.
+
+## 15 October 2026 — Brief #13 fresh build and route recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, Webflow page, asset, Library item, publication or release changed. The fresh build passed; candidate browser checks remain open because there is no supported isolated route.
+
+**Outputs:** Added this run's build and Webflow/browser access evidence to the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and relevant ROADMAP evidence. New work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss and read the current project record, project-docs v0.4 and latest Brief 12/13 fixture notes. At baseline `1ccf54d`, `main` was clean and only the already-recorded access entry followed reviewed commit `e2fc350`. `npm run test:built` passed 48/48 and restored all 12 generated files; `git diff --exit-code` confirmed no output changes. Webflow MCP `get_site` and `list_pages` confirmed no custom domains, the probe remains draft, four other pages remain drafts, and the last publication is still `2026-10-14T23:30:40.323Z`. CUA's documented Chrome surface provides screenshots and accessibility/input controls, but no request log, DOM or viewport access. The Node repl's Playwright import failed with an export syntax error, so it provided no usable browser/CDP control. No browser tabs were opened and no Webflow changes were made.
+
+**Still open:** Automatic failed-candidate-script request capture; Full-width and Right short-height containment; candidate reduced-motion/custom-animation; a usable candidate Preview or isolated staging route; human screen-reader/device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The same isolated-route blocker was already reported to Boss; no duplicate blocker report was sent.
+
+**Needs Michael:** Complete the isolated-route or Preview setup in Brief 14. Arrange human/device checks and a cloned release candidate when ready.
+
+**Next useful action:** Resume candidate browser checks once Brief 14 provides a supported isolated staging or Preview route. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** The probe is empty and draft; four other drafts remain untouched. No publication occurred. Do not publish the whole site to reach the probe, refresh the Navbar Light test page, or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 candidate access and cleanup — Codex (night shift)
 
