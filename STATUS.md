@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 in this run; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 3e78f81 — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** 195927f — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
 **Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 fresh build and inspection-surface check — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No maintained source, generated release file, Webflow content, Library item, asset or publication changed. The fresh build passed; no candidate behavior check could run.
+
+**Outputs:** Added the fresh-build result and current tool/fixture readback to the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and related roadmap evidence. New work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for Brief 13 and read the current project record, project-docs v0.4 and latest Brief 12/13 test entries. At baseline `195927f`, history since reviewed commit `3e78f81` contained only the prior access recheck; the worktree was clean. `npm run test:built` passed 48/48; its runner restored all 12 generated files, and `git diff --exit-code` confirmed no generated output changed. Read-only Webflow `get_site` and `list_pages` confirm the Clean Trial probe is still an empty draft, four other pages remain drafts, there are no custom domains, and the last publication remains `2026-10-14T23:30:40.323Z`. Chrome's callable CUA surface here exposes accessibility, screenshots and input, not DOM, viewport or request inspection. Its browser documentation describes a separate Playwright/DevTools interface, but that interface is not available from this CUA session. The authorised Node repl Playwright import returned `SyntaxError: The requested module './index.js' does not provide an export named 'default'`. No browser tab was opened and no Webflow change or publication occurred.
+
+**Still open:** Automatic failed-candidate-script request capture; candidate Full-width/Right narrow-height scrolling; rendered reduced-motion/custom-animation integration; and a working isolated Preview or page-level staging route. Earlier Brief 12 Details and closed-panel link/focus checks were not repeated. Human screen-reader/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback still require people, hardware or a clone. The isolated-route blocker was already reported to Boss, so it was not reported again.
+
+**Needs Michael:** Provide the supported isolated route and inspection controls needed for candidate browser checks. Arrange human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume candidate request, layout and motion checks once the isolated route and browser inspection surface are available. Keep naming, class migration and Lite publication deferred.
+
+**Handoff:** The Clean Trial probe remains empty and draft, four unrelated drafts remain untouched, and the last staging publication is unchanged. Read the latest Brief 13 test-record section before further fixture work. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 browser and fixture access recheck — Codex (night shift)
 

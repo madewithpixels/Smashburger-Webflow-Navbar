@@ -1414,3 +1414,34 @@ At `3e78f81`, `main` was clean; history since the prior reviewed commit `1ccf54d
 The CUA interface available in this session provides accessibility state, screenshots and input, but no DOM evaluation, viewport emulation or Network request capture. The richer browser documentation was not exposed as a callable control. No browser tab was opened, and no Webflow content or publication changed. No previously completed candidate check was repeated.
 
 Not checked: automatic failed-candidate-script request capture; Full-width and Right short-height containment; candidate reduced-motion/custom-animation; isolated Preview or staging runtime; human screen-reader/device use; physical-display DPR 2×/3×; and cloned upgrade/rollback. The isolated-route blocker was already reported to Boss, so no duplicate report was sent. Resume these candidate checks after a supported isolated route and inspection controls are available.
+
+### Brief #13 fresh build and current inspection-surface check — 15 October 2026
+
+At baseline `195927f`, `main` was clean; history since the prior reviewed
+commit `3e78f81` contained only the already-recorded access recheck. The
+project record, project-docs v0.4 and latest Brief 12/13 fixture notes were
+read before continuing. `npm run test:built` passed 48/48 across maintained
+source, generated distribution, minified output and Webflow Embed. The runner
+restored all 12 generated files; `git diff --exit-code` confirmed they are
+unchanged. This is local automated evidence, not a rendered candidate check.
+
+Read-only Webflow `get_site` and `list_pages` confirm Clean Trial has no custom
+domains, its last publication remains `2026-10-14T23:30:40.323Z`, the backed-up
+probe remains empty and `draft: true`, and four other pages remain drafts. No
+browser tab was opened. This CUA session exposes accessibility, screenshots
+and input, but not DOM evaluation, viewport emulation, console logs or Network
+request capture. The Chrome browser documentation describes a separate
+Playwright/DevTools interface, but it is not callable from the available CUA
+runtime. The explicitly authorised Node repl Playwright import returned
+`SyntaxError: The requested module './index.js' does not provide an export
+named 'default'`. This is a tool/runtime limitation, not a passed browser
+check. No Webflow content, Library item, asset or publication changed.
+
+Not checked: automatic failed-candidate-script request capture; Full-width and
+Right narrow-height containment; candidate rendered reduced-motion and
+custom-animation integration; human screen-reader/device use;
+physical-display DPR 2×/3×; cloned upgrade/rollback. Earlier Brief 12 native
+Details and closed-panel link/focus checks remain recorded and were not
+repeated. The same isolated-route blocker was already reported to Boss; no
+duplicate report was sent. Continue after an isolated route and callable
+browser inspection surface are available.
