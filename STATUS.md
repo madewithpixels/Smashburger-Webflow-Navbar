@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 6b91cd2 — checked current `main`; worktree was clean at start. Only the Preview-retry evidence commit followed the prior reviewed baseline `05999ab`. No remote operation was made.
+**Reviewed at commit:** d0e6c3d — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide a supported isolated candidate route that renders, then repeat the failed-script request, narrow-height and motion checks.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
 
@@ -20,6 +20,20 @@
 **Next useful action:** Resume browser checks when the candidate can render on an isolated route. Keep the whole Clean Trial site unpublished and the four unrelated drafts untouched.
 
 **Handoff:** The Clean Trial probe remains empty and draft; four other draft pages are unchanged. The browser tab opened during this follow-up was closed. Read the latest Brief 13 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
+
+## 15 October 2026 — Brief #13 Chrome bridge and Preview retry — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, generated release file or Webflow content changed. The isolated probe still does not render in Preview.
+
+**Outputs:** Added the current Chrome inspection controls and a fresh Preview retry to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). This work remains pending Michael's acceptance.
+
+**Checked how:** At baseline `d0e6c3d`, `main` was clean. Boss was started for R-037, R-095 and R-155. Read-only Webflow readback confirms the Clean Trial site has no custom domains, the last publish remains `2026-10-14T23:30:40.323Z`, the probe is still `draft: true` with a Body-only tree and blank head/footer code, and four other pages remain drafts. A fresh Chrome Designer tab loaded the probe; after 30 seconds, Preview logged `CompilationError: Invalid source code`. Reloading and waiting 30 seconds produced the same error; a fresh Designer tab and another Preview attempt produced it again. The available Chrome browser bridge supports read-only DOM evaluation, viewport control and console logs, but lists no Network request capture. The only browser and page capabilities returned were viewport override and page assets; DevTools logs are console-only. `npm run test:built` passed 48/48 and restored all 12 generated files; `git diff --exit-code` for maintained/generated outputs and `git diff --check` passed. All three tabs opened for this check were closed. No source or Webflow content changed.
+
+**Still open:** Automatic failed-candidate-script request capture; source-derived candidate Details and closed-link focus; Full-width and Right short-height containment; rendered reduced-motion and custom-animation integration; human screen-reader/device use; physical-display DPR 2×/3×; and cloned upgrade/rollback. The same isolated-route blocker was already reported to Boss, so no duplicate blocker report was sent.
+
+**Needs Michael:** Provide a supported isolated candidate route whose Preview or staging runtime renders. Arrange the human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume source-derived candidate checks when a supported isolated route renders and provides Network request inspection. Keep the whole Clean Trial site unpublished and its four unrelated drafts untouched.
 
 ## 15 October 2026 — Brief #13 Preview retry — Codex (night shift)
 

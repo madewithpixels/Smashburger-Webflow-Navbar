@@ -1558,3 +1558,47 @@ regression test was warranted.
 The next useful step remains a supported isolated candidate route that renders.
 Keep the Clean Trial site unpublished as a whole and leave its four other draft
 pages untouched.
+
+### Brief #13 Chrome bridge and Preview retry — 15 October 2026
+
+At baseline `d0e6c3d`, `main` was clean. The project record and latest Brief
+12 fixture sections were read before the browser check. Boss was started for
+R-037, R-095 and R-155.
+
+Read-only Webflow MCP readback confirms the backed-up `SB Lite Preview
+Compiler Probe` (`6acfd482072d7417c8ae9149`) remains a draft with only its Body
+element and blank page head/footer code. `SB Unlink Clean Trial`
+(`6ac8c9f18e63674e4f34f88a`) has no custom domains, and its last publication
+remains `2026-10-14T23:30:40.323Z`. Four other pages remain drafts. No Webflow
+content or publication changed.
+
+The Chrome browser bridge in this session provides read-only DOM evaluation,
+viewport control, screenshots and console logs. Its advertised browser
+capabilities list only viewport override; the page lists only page-assets, and
+DevTools access returns console messages. There is no Network request list or
+request event API in the available control surface. A fresh Designer tab loaded
+the probe. Preview logged `CompilationError: Invalid source code` after a
+30-second wait. Reloading and waiting 30 seconds gave the same error. A second
+fresh Designer tab also loaded; Preview returned the same error after another
+30-second wait. These failures leave no rendered candidate from which to
+capture the intentionally failed script request or test candidate behavior.
+
+`npm run test:built` passed 48/48, including source and generated reduced-motion
+checks. The runner restored all 12 generated files; `git diff --exit-code` for
+the maintained/generated outputs and `git diff --check` passed. No source or
+generated release bytes changed. All three tabs opened for this check were
+closed.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+native Details and closed-link focus; Full-width and Right narrow-height
+containment; rendered reduced-motion and custom-animation integration; human
+screen-reader/device use; physical-display DPR 2×/3×; and cloned
+upgrade/rollback. Earlier Details/focus and layout checks remain as recorded
+Brief 12 evidence; they were not inferred as new Brief 13 passes. The same
+isolated-route blocker was already reported to Boss, so it was not reported
+again.
+
+The next useful step is a supported isolated route that renders and exposes
+Network requests. Keep the whole site and its four unrelated draft pages
+unpublished. Leave product naming, class migration and Lite publication
+deferred.
