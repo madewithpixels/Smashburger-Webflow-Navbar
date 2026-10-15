@@ -1,12 +1,28 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, keyboard/pointer closing and icon emulation have rendered-browser evidence in the local test record; current published staging checks cover the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, motion/custom-animation integration, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 8621f3d — checked current `main`; worktree was clean at start. Git reports 24 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Arrange a working Preview/browser-inspection route and a cloned candidate plus human/device access; continue candidate motion and captured failed-request checks when available.
+**Reviewed at commit:** f6df7ff — checked current `main`; worktree was clean at start. Git reports 25 commits ahead of its tracking ref; no remote operation was made.
+**Next action:** Arrange a Chrome inspection route with DOM, console and request access, and a usable Preview route; continue only the remaining candidate checks when available.
 **Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #12 fixture and inspection-route readback — Codex (night shift)
+
+**Changed (R-095, R-155):** No source, Webflow content, asset, Library item, publication or release changed. I did not repeat the previously completed candidate checks.
+
+**Outputs:** Added the current fixture state and browser inspection limits to the [Brief #12 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-155 evidence.
+
+**Checked how:** Started Boss and confirmed brief #12 is taken. Checked the worktree and history from the prior reviewed baseline; current `main` is `f6df7ff`, with only the recorded Preview follow-up since `8621f3d`. Read-only Webflow MCP confirms the backed-up Clean Trial probe is still `draft: true`, the site has no custom domains, and the last staging publication remains `2026-10-14T23:30:40.323Z`; four other pages remain drafts. The current browser API offers screenshots, accessibility state and input, without DOM evaluation, viewport, console or request inspection. No Chrome tab was opened, and no Webflow change was made.
+
+**Still open:** Candidate Preview remains unavailable. Automatic failed-script request capture, candidate reduced-motion/custom-animation, full-width/right narrow-height scrolling, human screen-reader/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. Earlier native fallback keyboard behavior and the source-candidate responsive/layout checks remain recorded; they were not repeated. All new work remains pending Michael's acceptance.
+
+**Needs Michael:** Arrange a Chrome inspection route with DOM, console and request access, plus a usable Preview route and human/device session when available.
+
+**Next useful action:** Resume only the remaining candidate checks on the isolated route after those inspection controls are available. Keep naming, class migration and Lite publication deferred.
+
+**Handoff:** The Clean Trial probe remains an empty draft. Read the latest Brief #12 entry in the test record first; do not publish the whole site while unrelated drafts remain.
 
 ## 15 October 2026 — Brief #12 continuation and Preview availability check — Codex (night shift)
 

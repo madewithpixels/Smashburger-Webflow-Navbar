@@ -1236,6 +1236,30 @@ This is rendered staging runtime evidence for the source-derived temporary candi
 
 `npm run test:built` passed 48/48 and reported restoration of all 12 generated files. Explicit `git diff --exit-code` across the generated outputs passed. `git diff --check` passed. No generated or release bytes were retained.
 
+### Brief #12 fixture and inspection-route readback — 15 October 2026
+
+Read-only Webflow MCP readback confirms `SB Unlink Clean Trial` remains on the
+Webflow subdomain only (`customDomains: []`), with last publication at
+`2026-10-14T23:30:40.323Z`. The backed-up probe
+(`SB Lite Preview Compiler Probe`, `6acfd482072d7417c8ae9149`) is still
+`draft: true`; its original slug and blank SEO/OpenGraph fields are present.
+Four other pages remain drafts. No Designer, page, code, style, asset, Library
+or publication change was made.
+
+The browser surface available in this session supports screenshots,
+accessibility state and input. It does not expose DOM evaluation, viewport
+emulation, console logs or automatic request capture. No tab was opened. The
+earlier staging fallback check already verified native Space/Enter/Tab behavior
+with candidate CSS and a deliberately unavailable script URL; its automatic
+Network request entry remains unrecorded. The broader source-candidate layout,
+keyboard/pointer and icon checks are also already recorded and were not
+repeated.
+
+This readback adds no candidate-runtime evidence. Preview, captured failed-script
+request, candidate reduced-motion/custom-animation, full-width/right
+narrow-height scrolling, human/device checks, physical-display DPR 2×/3×, and
+cloned upgrade/rollback remain open. No source defect was demonstrated.
+
 ### Brief #12 Preview availability follow-up — 15 October 2026
 
 At `8621f3d`, `git --no-optional-locks status` showed a clean worktree before this entry. A fresh Chrome tab at the authorised published Clean Trial comparison loaded and exposed the navigation in its accessibility tree. A separate new tab opened the Designer URL for the authorised probe page, but its accessibility tree contained only the outer page and an empty embedded Designer surface. No canvas or Preview controls became available, so the prior `CompilationError: Invalid source code` could not be retested or isolated. Boss was notified once that Preview was unavailable.
