@@ -1598,6 +1598,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 #### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**Try:** Open the safe-editing guide and check how it explains editing the menu safely, including what to keep in place and what needs updating before using it in a future project.
 **Source:** [todo.md](todo.md), original line 257 (now 258); baseline `c808ca4`.
 **Exit criteria:** Draft covers each listed topic and labels current runtime selectors and instructions for refresh after class migration and runtime selection.
 **Evidence links:** [SmashBurger Lite safe-editing guide](webflow/smashburger-lite-safe-editing.md)

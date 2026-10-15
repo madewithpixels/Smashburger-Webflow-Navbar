@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** a74ba2f — checked the project record and D-012–D-014 sign-off wording. No remote operation was made.
+**Reviewed at commit:** f339a3f — checked the project record and R-184 before rewriting its sign-off wording. No remote operation was made.
 **Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #45 R-184 sign-off wording — Codex (night shift)
+
+**Changed (R-184):** Added a plain check for the safe-editing guide so Michael can review how it explains safe edits and future updates.
+
+**Outputs:** Updated the R-184 Try line in `ROADMAP.md`. State, Evidence and Acceptance remain unchanged; no implementation or Webflow content changed.
+
+**Checked how:** Compared R-184 before and after. Confirmed the Try line follows State and the State, Evidence and Acceptance values are unchanged. `git diff --check` passed. This wording change does not verify the guide's instructions in a future project.
+
+**Still open:** Michael's review and sign-off. The guide still needs refreshing against the chosen released files before it is used in the future project.
+
+**Needs Michael:** Review the safe-editing guide and record a verdict in boss. Review and push the local commit when ready.
+
+**Next useful action:** Michael checks the R-184 Try line and the guide; after runtime selection, refresh the guide against those released files.
 
 ## 15 October 2026 — Brief #44 decision sign-off wording — Codex (night shift)
 
