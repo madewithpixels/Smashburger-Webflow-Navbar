@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** d0e6c3d — checked current `main`; worktree was clean at start. No remote operation was made.
-**Next action:** Provide a supported isolated candidate route that renders, then repeat the failed-script request, narrow-height and motion checks.
+**Reviewed at commit:** 00d652a — checked current `main`; worktree was clean at start. No remote operation was made.
+**Next action:** Provide a supported isolated candidate route that renders and exposes request inspection, then continue the remaining browser checks.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 current route and browser-surface readback — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release file or Webflow content changed. The current browser and site readback confirms the source-derived candidate still cannot be reached for testing.
+
+**Outputs:** Added current route and browser-surface evidence to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-037/R-155 roadmap notes. Work remains pending Michael's acceptance.
+
+**Checked how:** At `00d652a`, `main` was clean; only the prior Chrome bridge and Preview retry followed the reviewed baseline `d0e6c3d`. Started Boss for R-037, R-095 and R-155. Read-only Webflow readback confirms Clean Trial has no custom domains, its last publication remains `2026-10-14T23:30:40.323Z`, the probe remains a draft and four other pages remain drafts. The site record was last updated at `2026-10-15T09:52:33.303Z`. The CUA browser list contains only the Chrome extension surface; its documented page controls do not expose automatic Network request events. The available Playwright import through `node_repl` returned an export error. No Chrome tab was opened. No Webflow content or publication changed.
+
+**Still open:** Automatic failed-script request capture; candidate Details and closed-link focus; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader/device use; physical-display DPR 2×/3×; and cloned upgrade/rollback. The route blocker was already reported to Boss, so no duplicate blocker report was sent.
+
+**Needs Michael:** Provide an isolated candidate route that renders and exposes request inspection. Arrange the human/device checks and cloned release candidate when available.
+
+**Next useful action:** Resume candidate browser checks after a supported isolated route renders. Keep the whole Clean Trial site unpublished and its four unrelated draft pages untouched.
+
+**Handoff:** The probe remains an empty draft and no tabs were opened in this check. Read this entry and the latest Brief 13 test-record section first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 candidate access follow-up — Codex (night shift)
 

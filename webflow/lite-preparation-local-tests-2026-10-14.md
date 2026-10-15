@@ -1602,3 +1602,38 @@ The next useful step is a supported isolated route that renders and exposes
 Network requests. Keep the whole site and its four unrelated draft pages
 unpublished. Leave product naming, class migration and Lite publication
 deferred.
+
+### Brief #13 current route and browser-surface readback — 15 October 2026
+
+At `00d652a`, `main` was clean; history since the Status reviewed-at commit
+`d0e6c3d` contains only the already-recorded Chrome bridge and Preview retry.
+Read the project-docs v0.4 procedure and the latest Brief 12/13 fixture notes
+before checking the current route.
+
+Read-only Webflow readback confirms Clean Trial still has no custom domains and
+its last publication remains `2026-10-14T23:30:40.323Z`. The probe page is
+`draft: true`, with `shouldPublish: true` and `canBranch: true`; four other
+pages are also drafts. `canBranch` does not provide a branch preview on this
+workspace: the earlier branch attempt returned `not_enterprise_plan_site`.
+The site record's `lastUpdated` is `2026-10-15T09:52:33.303Z`, with no change
+to the publication state. No Webflow page, code, style, Library item, asset or
+publication changed.
+
+The current CUA browser list contains only the Chrome extension surface. Its
+documented methods provide accessibility, screenshots and input. The browser
+bridge documentation describes DOM reads, viewport override and console logs,
+but no Network request event/list API. The authorised `node_repl` Playwright
+import again returned `The requested module './index.js' does not provide an
+export named 'default'`. No Chrome tab was opened; no new candidate route or
+runtime was available.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details and closed-link focus; Full-width and Right short-height containment;
+rendered reduced-motion/custom-animation; human screen-reader/device use;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. Previously recorded
+Details/focus and other layout passes were not repeated. The isolated-route
+blocker was already reported to Boss, so no duplicate blocker report was sent.
+
+Next useful action: provide a supported isolated route that renders and
+provides request inspection, then resume the candidate checks. Keep the whole
+Clean Trial site unpublished and leave its four other drafts untouched.
