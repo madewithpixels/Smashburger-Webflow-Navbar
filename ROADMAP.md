@@ -1419,7 +1419,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 #### R-162 · Remove custom Navigator display names from portable Webflow release elements so Webflow shows the actual `sb-*` class names authors need for styling and structural work. Make the class names themselves clear enough to describe the element.
 **State:** built · **Evidence:** none · **Acceptance:** pending
-**Try:** In Webflow's Navigator, check that each part of the component has a clear name.
+**Try:** Expand the component in Webflow's Navigator and check that each part has a clear name you can use to find it.
 **Covers:** R-163
 **Source:** [todo.md](todo.md), original line 228 (now 229); baseline `c808ca4`.
 **Exit criteria:**

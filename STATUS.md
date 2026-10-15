@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 4321320 — checked the project record, Lite scope, current hooks, README runtime contract and v0.2.6 release record for R-184. No remote operation was made.
-**Next action:** Michael can try the three outcomes in the roadmap and record his verdict in boss.
-**Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push the local commit when ready. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** c688e43 — checked the project record and R-162/R-163 sign-off wording. No remote operation was made.
+**Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
+**Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #41 Navigator sign-off wording — Codex (night shift)
+
+**Changed (R-162):** Rewrote the Try line so Michael can check whether each part is easy to find by its name in Webflow's Navigator. Kept the State and Evidence unchanged; R-163 remains a technical step covered by R-162.
+
+**Outputs:** Updated the sign-off wording in `ROADMAP.md`. No implementation or Webflow content changed.
+
+**Checked how:** Compared R-162 and R-163 before and after; confirmed State, Evidence and Acceptance are unchanged, and the Try line sits directly under State. `git diff --check` passed. This is a documentation change; no Webflow check was run.
+
+**Still open:** Michael's Navigator check and sign-off. The live result was not checked in this session.
+
+**Needs Michael:** Try R-162 in Webflow and record a verdict in boss. Review and push the local commit when ready.
+
+**Next useful action:** Michael checks the component names in Navigator; a later agent records his verdict without changing acceptance.
 
 ## 15 October 2026 — SmashBurger Lite safe-editing guide — Codex (night shift)
 
