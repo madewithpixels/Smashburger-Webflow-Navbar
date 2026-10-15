@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-15",
+  "shared": false,
+  "sourceSite": "6a0351de7c4e42148a81db6f",
+  "resources": [
+    {
+      "name": "SmashBurger",
+      "state": "Changed"
+    },
+    {
+      "name": "SmashBurger CDN",
+      "state": "Changed"
+    },
+    {
+      "name": "SmashBurger CDN Unlink Trial",
+      "state": "Changed"
+    },
+    {
+      "name": "SmashBurger 0.3.0-rc.1 candidate",
+      "state": "Added"
+    },
+    {
+      "name": "SmashBurger CDN 0.3.0-rc.1 candidate",
+      "state": "Added"
+    }
+  ],
+  "counts": {
+    "components": 7,
+    "variables": 26,
+    "tagStyles": 2,
+    "assets": 9,
+    "installedSites": 5
+  },
+  "limits": "The review still flags three existing definitions despite matching saved settings, original variant declarations and global styles. Cleanup removed 34 unused duplicate-variant overrides on legacy classes, but did not clear the review flags. The cause of the remaining flags is not established; no share was run.",
+  "targetInstallSite": "6ad10fe7ca9deaf9a5ea7498",
+  "targetBackup": {
+    "name": "Before Library candidate install — 15 Oct 2026",
+    "displayedTime": "20:08:19",
+    "pages": 1,
+    "styles": 26,
+    "elements": 45
+  }
+}

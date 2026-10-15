@@ -1,0 +1,31 @@
+{
+  "nestedOpen": {
+    "focusOnSummary": true,
+    "open": true
+  },
+  "nestedClosed": {
+    "focusOnSummary": true,
+    "open": false,
+    "outerOpen": true
+  },
+  "nestedFinal": {
+    "ariaExpanded": "false",
+    "ariaHidden": "true",
+    "collapsed": "true",
+    "focusOnTrigger": true,
+    "inert": true,
+    "left": 16,
+    "loadedImages": 9,
+    "menuDisplay": "block",
+    "open": false,
+    "overflow": 0,
+    "panelDisplay": "grid",
+    "panelVisibility": "hidden",
+    "ready": "true",
+    "right": 393,
+    "state": "closed",
+    "triggerDisplay": "flex",
+    "variant": "always",
+    "width": 393
+  }
+}

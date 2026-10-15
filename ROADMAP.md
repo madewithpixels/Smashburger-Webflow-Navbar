@@ -1029,6 +1029,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 **15 October 2026 — Codex:** Source, demo, fixtures, tests and isolated generated output now use accepted sb-nav classes as 0.3.0-rc.1. Webflow component/Library/clonable rollout remains open; this is not a released class migration.
 **Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
+**Library follow-up — 15 October 2026:** [Both actual Library candidates](webflow/library-sb-nav-candidates-2026-10-15.md) retain properties/assets/five variants and pass source self-contained Preview checks. Sharing, linked consumer upgrades and clonable rollout remain open.
 **Live evidence — 15 October 2026:** [New Smashburger Test](webflow/new-smashburger-test-2026-10-15.md): backed-up fresh native fixture, exact saved candidate Embeds, authorised staging publication, 35 layout/motion pairs, 25 collapse/width checks, keyboard/focus, short-height and genuine no-JavaScript fallback. This does not verify Library property/asset retention, upgrades or the future clonable.
 
 
@@ -1061,13 +1062,15 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Source:** [todo.md](todo.md), original line 173 (now 174); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** Candidate is built/tested with proposed canonical exact-version URLs and SHA-384 values. No new release tag or CDN publication exists. Staging fixture publication is a separate test-site action and does not complete this release item.
-**Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md)
+**Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md). [Library CDN verification](webflow/library-sb-nav-candidates-2026-10-15.md) reads an already-pushed exact commit and verifies bytes/SRI locally; this does not create or complete a semantic release.
 
 
 #### R-126 · Update both MWP Component Library editions and the `Smashburger` clean-install instance through the Library workflow; verify properties, variants, assets, CDN loading, rollback and update linkage.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 174 (now 175); baseline `c808ca4`.
 **Exit criteria:**
+**15 October 2026 — Codex:** Backed-up isolated copies of both real editions retain 144 nodes, 60 properties, five variants, nine assets and 67 bindings; source self-contained Canvas/Preview is verified. Exact-commit CDN runtime and script-omission fallback are separately verified locally. No Library share or consumer installation occurred. The five-resource sharing review requires approval; linked properties/overrides/assets/class prefixes, fresh unlink, update/rollback and actual Webflow CDN/fallback remain open.
+**Evidence links:** [Library candidate checks and sharing scope](webflow/library-sb-nav-candidates-2026-10-15.md)
 
 
 #### R-127 · Archive the old compatibility repository only after the new release and old pinned URLs have both been independently verified.

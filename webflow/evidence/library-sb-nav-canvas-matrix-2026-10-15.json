@@ -1,0 +1,762 @@
+[
+  {
+    "breakpoint": "Desktop: Base breakpoint",
+    "rows": [
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ed6ca70a-c285-3ffb-2a4c-4e562802e73a",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 1255,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-landscape",
+        "width": 1279
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ce31f660-41d4-f3fe-0aff-6239cf4cfbc9",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 1255,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "never",
+        "width": 1279
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "deed5665-d3e9-ba47-30f4-db1de481ce0c",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 1255,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "tablet",
+        "width": 1279
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "3b46e7e6-a276-5b5e-51db-6323ccedeab5",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 1255,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-portrait",
+        "width": 1279
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "f62a3479-5a9b-c87c-b501-18f158ce183e",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "always",
+        "width": 1279
+      }
+    ]
+  },
+  {
+    "breakpoint": "Tablet: 991px and down",
+    "rows": [
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ed6ca70a-c285-3ffb-2a4c-4e562802e73a",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 796,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-landscape",
+        "width": 820
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ce31f660-41d4-f3fe-0aff-6239cf4cfbc9",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 796,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "never",
+        "width": 820
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "deed5665-d3e9-ba47-30f4-db1de481ce0c",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "tablet",
+        "width": 820
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "3b46e7e6-a276-5b5e-51db-6323ccedeab5",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 796,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-portrait",
+        "width": 820
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "f62a3479-5a9b-c87c-b501-18f158ce183e",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "always",
+        "width": 820
+      }
+    ]
+  },
+  {
+    "breakpoint": "Mobile (L): 767px and down",
+    "rows": [
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ed6ca70a-c285-3ffb-2a4c-4e562802e73a",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-landscape",
+        "width": 667
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ce31f660-41d4-f3fe-0aff-6239cf4cfbc9",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 643,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "never",
+        "width": 667
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "deed5665-d3e9-ba47-30f4-db1de481ce0c",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "tablet",
+        "width": 667
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "3b46e7e6-a276-5b5e-51db-6323ccedeab5",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 643,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-portrait",
+        "width": 667
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "f62a3479-5a9b-c87c-b501-18f158ce183e",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "always",
+        "width": 667
+      }
+    ]
+  },
+  {
+    "breakpoint": "Mobile: 479px and down",
+    "rows": [
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ed6ca70a-c285-3ffb-2a4c-4e562802e73a",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-landscape",
+        "width": 393
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "ce31f660-41d4-f3fe-0aff-6239cf4cfbc9",
+        "left": 113.25,
+        "loadedImages": 9,
+        "menuDisplay": "none",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "flex",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 369,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "never",
+        "width": 393
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "deed5665-d3e9-ba47-30f4-db1de481ce0c",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "tablet",
+        "width": 393
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "3b46e7e6-a276-5b5e-51db-6323ccedeab5",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "mobile-portrait",
+        "width": 393
+      },
+      {
+        "ariaExpanded": null,
+        "ariaHidden": null,
+        "bars": [
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          },
+          {
+            "height": "2px",
+            "padding": "0px",
+            "width": "24px"
+          }
+        ],
+        "collapsed": null,
+        "focusOnTrigger": false,
+        "id": "f62a3479-5a9b-c87c-b501-18f158ce183e",
+        "left": 0,
+        "loadedImages": 9,
+        "menuDisplay": "block",
+        "open": false,
+        "overflow": 0,
+        "panelDisplay": "none",
+        "panelVisibility": "visible",
+        "ready": null,
+        "right": 0,
+        "state": null,
+        "triggerDisplay": "flex",
+        "variant": "always",
+        "width": 393
+      }
+    ]
+  }
+]

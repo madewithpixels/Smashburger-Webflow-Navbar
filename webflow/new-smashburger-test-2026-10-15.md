@@ -1,5 +1,13 @@
 # New Smashburger Test — renamed source fixture
 
+## Designer icon correction — 15 October 2026 follow-up
+
+Michael's screenshot showed oversized burger bars and chevrons in Design mode. Computed Canvas readback identified Webflow's `.wf-empty` rule adding 75px right/bottom padding to the five empty DOM strokes. Set all four native padding longhands to zero on `sb-nav-line`, `sb-nav-submenu-icon-line-left` and `sb-nav-submenu-icon-line-right`; saved readback and Canvas geometry now show 24 × 2px burger bars and 7 × 2px chevron strokes (about 6.364px rotated bounds), all with zero padding. [Corrected Designer screenshot](evidence/new-smashburger-designer-icon-fix-2026-10-15.jpg).
+
+Republished only the already-authorised staging subdomain; metadata readback reported lastPublished/fullSiteCompiledAt `2026-10-15T18:45:54.995Z`. Published computed styles match the corrected dimensions. This fixes fixture authoring presentation, not the runtime. The runtime/Canvas Embed source bytes remain unchanged.
+
+Before any future Library installation, saved and verified **Before Library candidate install — 15 Oct 2026**, displayed 20:08:19, 1 page, 26 styles, 45 elements. [Backup screenshot](evidence/new-smashburger-before-library-backup-2026-10-15.jpg). No Library has been installed into this site by this follow-up. Actual source Library candidate preparation and its separate evidence are in [the Library record](library-sb-nav-candidates-2026-10-15.md).
+
 ## Authority and backup
 
 Michael offered this fresh empty site for testing in this chat on 15 October 2026, then explicitly approved: “Publish this test site's staging subdomain only”. Only this site's Webflow staging subdomain was published. No Library share, existing component update, custom-domain publication, new Git tag or CDN release was made.

@@ -1,0 +1,1047 @@
+[
+  {
+    "width": 1279,
+    "variant": "never",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "pass": true
+  },
+  {
+    "width": 1279,
+    "variant": "tablet",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "pass": true
+  },
+  {
+    "width": 1279,
+    "variant": "mobile-landscape",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "pass": true
+  },
+  {
+    "width": 1279,
+    "variant": "mobile-portrait",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1255,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "pass": true
+  },
+  {
+    "width": 1279,
+    "variant": "always",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 895,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 1279,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 895,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 1279,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 895,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 1279,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 1279
+    },
+    "pass": true
+  },
+  {
+    "width": 820,
+    "variant": "never",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "pass": true
+  },
+  {
+    "width": 820,
+    "variant": "tablet",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "pass": true
+  },
+  {
+    "width": 820,
+    "variant": "mobile-landscape",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "pass": true
+  },
+  {
+    "width": 820,
+    "variant": "mobile-portrait",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 796,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "pass": true
+  },
+  {
+    "width": 820,
+    "variant": "always",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 436,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 820,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 820
+    },
+    "pass": true
+  },
+  {
+    "width": 393,
+    "variant": "never",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 369,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "opened": null,
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 113.25,
+      "menuDisplay": "none",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "flex",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 369,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "pass": true
+  },
+  {
+    "width": 393,
+    "variant": "tablet",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "pass": true
+  },
+  {
+    "width": 393,
+    "variant": "mobile-landscape",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "pass": true
+  },
+  {
+    "width": 393,
+    "variant": "mobile-portrait",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 0,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 0,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 0,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "pass": true
+  },
+  {
+    "width": 393,
+    "variant": "always",
+    "closed": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": false,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "opened": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": true,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "visible",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "final": {
+      "ariaExpanded": null,
+      "ariaHidden": null,
+      "assets": [
+        {
+          "kind": "css",
+          "status": "loaded",
+          "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@ddb83c79934914ef0f03f3f012ee2743154153f7/candidate/dist/navbar-light.min.css"
+        }
+      ],
+      "collapsed": null,
+      "cssReady": "1",
+      "focusOnTrigger": true,
+      "inert": false,
+      "left": 9,
+      "menuDisplay": "block",
+      "open": false,
+      "overflow": 0,
+      "panelDisplay": "grid",
+      "panelVisibility": "hidden",
+      "ready": null,
+      "right": 393,
+      "runtimeScripts": 0,
+      "state": null,
+      "width": 393
+    },
+    "pass": true
+  }
+]

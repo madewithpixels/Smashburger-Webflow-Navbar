@@ -43,6 +43,18 @@ export async function checkNamespace() {
   const embed = await read('candidate/webflow/navbar-light-embed.html');
   assertNoLegacyClasses(embed, 'self-contained Embed');
   assertContracts(embed, [...cssHooks, ...jsHooks], 'self-contained Embed');
+  const libraryEmbed = await read('candidate/webflow/library/navbar-light-embed.html');
+  assertNoLegacyClasses(libraryEmbed, 'unshared Library candidate Embed');
+  assertContracts(libraryEmbed, [...cssHooks, ...jsHooks], 'unshared Library candidate Embed');
+  assert.equal(libraryEmbed.match(/<script>([\s\S]*)<\/script>/)?.[1], embed.match(/<script>([\s\S]*)<\/script>/)?.[1], 'Library candidate JavaScript must match the source candidate');
+  assert.ok(libraryEmbed.length <= 50000, 'Library candidate exceeds Webflow Embed limit');
+  const libraryCanvas = await read('candidate/webflow/library/navbar-light-canvas-embed.html');
+  assertNoLegacyClasses(libraryCanvas, 'unshared Library Canvas helper');
+  assertContracts(libraryCanvas, contracts.sourceTokens['src/navbar-light-canvas.css'], 'unshared Library Canvas helper');
+  const libraryCdn = await read('candidate/webflow/library/navbar-light-cdn-candidate-loader.html');
+  assertNoLegacyClasses(libraryCdn, 'unshared Library CDN verification loader');
+  assert.match(libraryCdn, /@ddb83c79934914ef0f03f3f012ee2743154153f7\/candidate\/dist\//);
+  assert.doesNotMatch(libraryCdn, /--mwp-nav-css-ready/);
   for (const path of ['candidate/webflow/navbar-light-canvas-embed.html', 'candidate/demo/navbar-light.browser.js']) {
     const text = await read(path);
     assertNoLegacyClasses(text, path);

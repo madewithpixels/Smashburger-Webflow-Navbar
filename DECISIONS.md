@@ -146,3 +146,12 @@ Use package name `smashburger-webflow-navbar` and prerelease version `0.3.0-rc.1
 **Rationale:** R-121 requires an explicit versioned class change; R-122 and S-07 protect runtime compatibility and existing immutable releases. Separate output allows the full renamed build to be reviewed without silently replacing the released baseline or inventing a published CDN URL.
 **Source:** Michael's completion brief, 15 October 2026; D-012/D-013; R-121–R-125; `scripts/build-paths.mjs`; `compatibility/`; [migration record](webflow/canonical-rename-2026-10-15.md).
 **Consequence:** Release promotion to top-level `/dist`, final loader generation, tags and Webflow/Library rollout remain gated work. The selected canonical clone can be used now while the old repository stays available.
+
+## D-018 - Isolate Library verification names and pin already-pushed candidate bytes
+**Status:** Accepted
+**Qualifier:** technical — settled by Codex, 15 October 2026, under project-docs / boss D-096
+**Date:** 15 October 2026
+Duplicate the two actual Library editions into explicitly named 0.3.0-rc.1 review candidates, retaining their five variants, native content, assets and property bindings. Copy authored declarations to new sb-nav class records; retain original definitions and class declarations. Generate candidate-only CSS aliases for the new Webflow variant markers and unmarked Mobile landscape base, while preserving old hooks. Use an exact already-pushed canonical commit and verified SRI for the CDN test candidate; retain the released v0.2.6 loader and the illustrative, uninstalled tag proposal separately.
+**Rationale:** A class-only rehearsal should not silently redesign the original Library properties/variants or publish a nonexistent release tag. An immutable existing-commit pin enables CDN verification without a new release operation.
+**Source:** Michael's continuation and full-focus instructions, 15 October 2026; D-012/D-017; R-121/R-122/R-126; [candidate checks and limits](webflow/library-sb-nav-candidates-2026-10-15.md); `scripts/build-webflow-library-candidates.mjs`.
+**Consequence:** This is technical candidate preparation, not Michael's Acceptance or sharing authority. The actual five-resource sharing review, clean consumer linkage/update/unlink/rollback, Webflow fallback, stable release and human/device checks remain gated. The separate one-Base Lite/unlink direction remains unchanged.

@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** Full history is in the canonical repository and ready working clone. The sb-nav source/package rename is built as an unreleased 0.3.0-rc.1 candidate, checked locally and on a fresh native Webflow staging fixture. v0.2.6 remains the released baseline. Library rollout, human/device checks and cloned upgrade/rollback remain open.
+**Stage:** Full history is in the canonical working clone. The unreleased 0.3.0-rc.1 sb-nav source and both real Library candidates are prepared. Source-Library Preview and local CDN checks passed; v0.2.6 remains released. Library sharing, consumer linkage/rollback and human/device checks remain open.
 **Last updated:** 15 October 2026 — Codex
-**Reviewed at commit:** 1261de5 — candidate tested from the canonical clone and verified on canonical origin/main; final changes after this baseline are fixture controls, evidence and records.
-**Next action:** Prepare the versioned Library migration with backups and full property/asset checks, then complete remaining release and cloned upgrade/rollback gates before tagging or distributing a release.
-**Needs Michael:** No Git transfer or repository setup work. Human/device sign-off and release/Library-sharing approval remain separate gates when a release is ready. Test-site staging publication was explicitly approved and completed.
+**Reviewed at commit:** ddb83c7 — checked baseline before the Library-candidate preparation and Designer icon correction recorded below.
+**Next action:** Obtain approval for the exact five-resource Library review, then install/apply only in backed-up New Smashburger Test and verify consumer linkage, overrides, unlink, update/rollback and actual Webflow fallback.
+**Needs Michael:** No Git transfer or repository setup work. Explicit Library-sharing approval, human/device sign-off and final release approval remain separate gates. Test-site staging publication is already authorised.
+
+## 15 October 2026 — Library candidates prepared and Designer icons corrected — Codex
+
+**Changed (R-121, R-125, R-126):** Prepared isolated sb-nav duplicates of both real Library editions, retaining five variants, properties, bindings and assets. Added reproducible candidate-name CSS aliases and a verified existing-commit CDN pin. Fixed the oversized Designer burger/chevron strokes with explicit zero padding and republished only New Smashburger Test staging under Michael's existing approval. Saved and verified source and target backups before structural work.
+
+**Outputs:** [Library candidates, evidence and sharing gate](webflow/library-sb-nav-candidates-2026-10-15.md), three generated Library candidate Embeds, build/readback verification scripts, saved before/after snapshots and browser evidence. [Test-site correction](webflow/new-smashburger-test-2026-10-15.md). The canonical checkout receives this final commit and push; the old remote and immutable releases remain available.
+
+**Checked how:** Each Library copy retains 144 nodes, 60 properties, five variants, nine assets and 67 bindings. Compared saved original settings, global styles and original variant declarations with baseline. Self-contained source-Library Canvas and Preview each passed 20 variant/width cases; ten collapsed cases passed opening, Escape, focus, ARIA/inert and horizontal containment. Nested keyboard Escape passed on the final Always fixture. A local reconstruction separately passed 15 CDN runtime and 15 runtime-script-omission fallback cases; these are not consumer or published Webflow evidence. Candidate tests passed 53/53, readback assertions, syntax, reproducible generation and namespace guards passed; all 17 protected historical files match. Designer and staging readback confirmed 24 × 2px burger strokes and zero icon padding.
+
+**Still open:** The exact Library sharing review includes three existing definitions marked Changed plus two new candidates; checked original settings/styles match, but the remaining review flags are unexplained. No share was submitted. Linked consumer properties/assets/overrides, class prefixes, fresh unlink, update/rollback and actual Webflow CDN/fallback remain unverified. CDN-only and temporary CSS-only Preview stalled; the full self-contained runtime was restored exactly. Multi-navbar stacking/vertical placement, Lite clonable, final release promotion/tag, human/device checks and reopening Codex in the canonical workspace remain open.
+
+**Needs Michael:** Approve the exact five-resource Library update before sharing. Human/device Acceptance and final release approval remain his calls; no Acceptance was changed.
+
+**Next useful action:** After sharing approval, apply/install only in backed-up New Smashburger Test, preserving its existing fixture and both Library tag styles, then complete the consumer and release gates.
+
+**Handoff:** Read this entry and the detailed Library record from `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. This chat's boss commit binding remains at the retained old checkout; its commit is fast-forwarded and pushed from canonical before closing. Both Designers are in Design mode, sharing review is cancelled, the restored runtime is intact, the local server/tab is closed and viewport overrides are reset. Chrome is free. Do not install the illustrative tag loader, share without approval, alter old pins or retire the old repository before its gates pass.
 
 ## 15 October 2026 — Canonical checkout verified and new Webflow fixture tested — Codex
 

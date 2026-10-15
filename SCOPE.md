@@ -98,6 +98,8 @@ D-013. On 15 October 2026 Michael explicitly authorised Codex to complete the tr
 The source class migration is an unreleased `0.3.0-rc.1` candidate. Michael separately authorised the fresh New Smashburger Test fixture and its staging-only publication on 15 October 2026; [live checks and limits](webflow/new-smashburger-test-2026-10-15.md) do not establish a Library upgrade or released distribution. Existing pinned assets, the old compatibility remote and v0.2.6 output bytes remain protected. Webflow rollout, publication, Library sharing, new release tags and retirement remain subject to their release/backup gates. The original folder is retained; no destructive folder rename is needed because the selected clone already exists.
 Source: Michael’s completion brief in this chat, 15 October 2026; [transfer evidence](webflow/canonical-rename-2026-10-15.md); R-119–R-128.
 
+**15 October 2026 — Library migration preparation:** isolated copies of both real Library editions now use sb-nav classes while preserving their properties, assets and five variants. Source readback and self-contained Preview are verified; the CDN exact-commit pin and runtime-script-omission fallback are locally verified. This does not complete Library installation/update linkage, the separate one-Base Lite direction, a released version or Michael's Acceptance. See [the candidate and sharing record](webflow/library-sb-nav-candidates-2026-10-15.md); D-018, R-121, R-125–R-126.
+
 ## Deferred decisions (not blocking the docs update)
 
 Designer Extension / Make local waits until Lite works (D-014). Premium pricing,
