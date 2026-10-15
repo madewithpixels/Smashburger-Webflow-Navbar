@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` run reported 33/48 passing and 15 failures in the immutable distribution and Embed against newer source behavior; generated files were restored. A failed-script request and native Details/focus fallback were confirmed on the published comparison route, but the route still loads v0.2.6 rather than the source candidate. Remaining candidate layout/motion checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate checks remain open: this continuation reached DevTools but could not establish which runtime the route served or inspect completed requests. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 466e3d8 — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Provide an isolated route serving the maintained candidate CSS and JavaScript; then run the remaining layout and motion checks.
-**Needs Michael:** Provide the source-candidate route. Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** c4611f2 — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Recheck the route's loaded CSS and JavaScript in DevTools, then run the candidate layout and motion checks if confirmed.
+**Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #15 route inspection retry — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release file or Webflow content changed. The isolated Clean Trial route opened in Chrome, but this check did not confirm that it served the maintained candidate.
+
+**Outputs:** Reached Chrome DevTools and inspected the existing request-blocking rule. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss and read the project record and project-docs workflow. At `c4611f2`, `main` was clean. I opened two fresh tabs for the named `/unlink-fallback-isolation` route. Chrome DevTools showed one unchecked blocking rule targeting `@v0.2.6/dist/navbar-light.min.js`; the Network panel showed the page document pending for 30 seconds and still pending after a reload and another 30-second wait. A fresh tab rendered the route's navigation in its accessibility tree, but that did not identify its loaded runtime. Further Chrome input stopped when the browser state changed. Both tabs opened for this check were closed. No Webflow content or publication changed, and the request rule was not enabled or altered.
+
+**Still open:** Candidate failed-script request capture; native Details and focus behavior on the candidate; Full-width and Right short-height behavior; candidate reduced-motion and custom-animation; human screen-reader/device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The earlier published v0.2.6 fallback result remains comparison evidence only.
+
+**Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Reopen the isolated route in a fresh tab, confirm its CSS and JavaScript URLs in DevTools Network, then test the candidate layouts and motion settings. Keep Clean Trial unpublished, the empty probe empty, and unrelated drafts unchanged.
+
+**Handoff:** Read this section and the latest Brief #15 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). The v0.2.6 blocking rule remains unchecked. No tabs from this check remain open.
 
 ## 15 October 2026 — Brief #15 candidate route and fallback checks — Codex (night shift)
 

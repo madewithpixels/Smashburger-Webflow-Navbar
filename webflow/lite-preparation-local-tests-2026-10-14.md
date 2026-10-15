@@ -1877,3 +1877,27 @@ upgrade/rollback. The route does not contain the candidate layouts or motion
 configuration. The mismatch was reported once to Boss. No source, release
 asset, Webflow content or publication changed. The empty probe and unrelated
 drafts remain untouched. The Chrome tab opened for this check is closed.
+
+### Brief #15 isolated-route inspection retry — 15 October 2026
+
+Started the Boss continuation and read the current STATUS and relevant project
+record. At `c4611f2`, `main` was clean. Opened two fresh Chrome tabs for the
+Clean Trial `/unlink-fallback-isolation` route. Chrome DevTools opened through
+the native shortcut. Its Request conditions panel already contained one
+unchecked rule for
+`*://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.6/dist/navbar-light.min.js`.
+I did not enable or edit the rule.
+
+Network showed the route document as pending for 30 seconds and still pending
+after one reload and another 30-second wait. The fresh tab's accessibility tree
+showed the navigation rendered, but that does not establish which CSS or
+JavaScript runtime loaded. Chrome stopped accepting input after the browser
+state changed, before I could read completed requests or test interactions. I
+closed both tabs opened for this check. No Webflow page, setting, draft or
+publication changed. The empty probe and unrelated drafts remain untouched.
+
+Not checked: maintained-candidate script request failure; candidate Details and
+focus behavior; Full-width and Right short-height behavior; rendered reduced
+motion and custom-animation; human screen-reader/device checks; physical-display
+DPR 2×/3×; and cloned upgrade/rollback. The earlier v0.2.6 script-failure and
+native Details/focus checks are comparison evidence only.
