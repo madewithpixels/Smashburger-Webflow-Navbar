@@ -1314,3 +1314,35 @@ and cloned upgrade/rollback. Candidate browser checks need a supported isolated
 staging or Preview route. Human, hardware and clone checks also need their
 respective prerequisites. No defect was demonstrated and no source fix was
 made.
+
+### Brief #13 isolated-route attempt and cleanup — 15 October 2026
+
+After the Brief 12 readback above, the backed-up Clean Trial probe was used for
+a clearly labelled, temporary source-derived candidate. Its draft page received
+maintained candidate CSS, a deliberately unavailable script URL, and a small
+fixture for the Full-width and Right layouts plus custom-animation integration.
+No source file or released asset changed.
+
+The page-branch request returned Webflow's `not_enterprise_plan_site` error,
+confirming that the workspace does not support this isolated branch route. In a
+fresh Designer tab, Preview remained on “Compiling custom code…” after about 30
+seconds. Reloading and waiting again produced the same result; a second fresh
+tab waited about 30 seconds and returned to Design without a Preview runtime.
+The visible Chrome DevTools Network panel was available, but there was no
+candidate runtime request to capture while Preview failed. The earlier Brief 12
+native Details interaction and closed-panel link/focus checks remain recorded
+as passed; they were not repeated. Automatic request capture, short-height
+containment, reduced-motion and custom-animation behavior remain unverified.
+
+Cleanup removed the temporary page head/footer code, fixture element, and all
+eight uniquely named `sb-brief13-*` styles. Webflow readback returned blank
+head/footer code and a Body-only page. The probe remains a draft and no publish
+or Library share occurred. All tabs opened for this work were closed. Four other
+draft pages were left alone.
+
+The full-width/right short-height checks, failed-script Network capture,
+candidate Preview and motion/custom-animation checks remain open. Human
+screen-reader/device, physical-display DPR 2×/3× and cloned upgrade/rollback
+checks still need their people, hardware or release setup. Continue on an
+isolated test site with a supported page-level route; do not publish the whole
+site to reach the probe.

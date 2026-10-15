@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passes 48/48 and restores all 12 generated files. Candidate failed-script capture, Preview, reduced-motion/custom-animation, full-width/right narrow-height scrolling, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 at `861428b`; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** f2dbd5e — checked current `main`; worktree was clean at start. The only commit since the prior reviewed baseline is the Brief 12 access review. No remote operation was made.
-**Next action:** Enable an isolated staging or Preview route for the Clean Trial probe, then complete the remaining candidate browser checks.
-**Needs Michael:** Review and push local commits. Enable single-page staging publish for the backed-up probe or provide a usable isolated Preview route. Arrange the remaining human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** 861428b — checked current `main`; worktree was clean at start. No remote operation was made.
+**Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
+**Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 candidate access and cleanup — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** The backed-up Clean Trial probe temporarily held a labelled source-derived candidate in its draft Designer page. Candidate code, elements and eight styles were removed after Preview stalled. Nothing was published or shared.
+
+**Outputs:** Updated the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-037/R-095/R-155 evidence. New work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss and reviewed Brief 12's latest records before touching the probe. Read-only Webflow data confirmed the probe was empty/draft and four other pages were drafts. Page-branch creation returned `not_enterprise_plan_site`; no retry or whole-site publish was attempted. In Chrome Preview, waited about 30 seconds, reloaded and waited about 30 seconds, then opened a fresh Designer tab and waited about 30 seconds; Preview remained at “Compiling custom code…” or returned to Design without a Preview runtime. Readback after cleanup showed empty page head/footer code and Body only; the eight temporary styles were removed by their unique names. No publication occurred. All tabs opened for this work were closed.
+
+**Still open:** Automatic failed-script Network request capture, Full-width and Right short-height scrolling, reduced-motion/custom-animation, and a usable Preview remain open. Earlier native Details and closed-panel link/focus checks are already recorded in Brief 12 and were not repeated. Human screen-reader/device, physical-display DPR 2×/3× and cloned upgrade/rollback still need people, hardware or a clone.
+
+**Needs Michael:** Provide an isolated test site on its Webflow subdomain with a confirmed backup and a working Preview or supported page-level publish route. Arrange the human/device and clone prerequisites when ready.
+
+**Next useful action:** Resume candidate browser checks on the isolated route; keep naming, class migration and Lite publication deferred.
+
+**Handoff:** The existing probe is restored to an empty draft, the site was not published, and four unrelated drafts remain untouched. Boss already received one blocker report for the missing isolated route. Keep the remaining checks open and do not refresh the Navbar Light test page or touch SB Test Four.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
