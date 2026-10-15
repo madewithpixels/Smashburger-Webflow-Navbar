@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Chrome DevTools request inspection works, but the only published Clean Trial route still serves v0.2.6; the candidate route was not identified in the site page list. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Chrome DevTools request inspection was available on the comparison route, but the browser approval gate rejected the documented SB Test Four source-candidate route. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 2354365 — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Use the isolated candidate URL when it is supplied or appears on Clean Trial, then capture its failed-script request and run the remaining browser checks.
-**Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** a136494 — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Approve the SB Test Four staging origin or provide another approved candidate URL, then capture the failed-script request and finish the candidate browser checks.
+**Needs Michael:** Approve the SB Test Four staging origin or provide another approved candidate URL. Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #15 candidate browser access — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release asset or Webflow content changed. The Clean Trial comparison route opened in a fresh tab; Chrome rejected the documented SB Test Four source-candidate route at its origin approval gate.
+
+**Outputs:** Reported the access blocker to Boss once. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for Brief #15 and read the project record. At `a136494`, `main` was clean. Opened a fresh tab at the recorded Clean Trial isolation URL and confirmed the page's navigation rendered; this does not establish that it serves the maintained candidate. The published source-candidate fixture documented in `webflow/enhanced-layout-regression.md` is `https://sb-test-four.webflow.io/sb-enhanced-regression`. Chrome rejected opening that origin with an approval-gate notice, and instructed not to try another surface or workaround. Reported the blocker to Boss. Closed both tabs created for this check. No Webflow content, draft, setting or publication changed.
+
+**Still open:** Automatic failed-script request capture and candidate Details/focus; Full-width and Right short-height behavior; reduced-motion and custom-animation. Human screen-reader/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open. The comparison route and its earlier request/focus results do not establish candidate behavior.
+
+**Needs Michael:** Approve the SB Test Four staging origin or provide another approved candidate URL. Arrange human/device checks and a cloned release candidate when available. Review local commits.
+
+**Next useful action:** Once an approved candidate route is available, capture its failed-script request, check Details and focus, test Full-width and Right at short heights, and check reduced motion and custom-animation. Keep Clean Trial unpublished and its empty probe and unrelated drafts unchanged.
+
+**Handoff:** Read this entry and the latest Brief #15 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). Do not retry the SB Test Four origin unless Michael approves it. Tabs opened for this check are closed.
 
 ## 15 October 2026 — Brief #15 route and request check — Codex (night shift)
 

@@ -1978,3 +1978,28 @@ results remain comparison evidence only.
 Next useful action: use the isolated candidate URL when it is supplied or
 appears on Clean Trial, then complete the remaining browser checks. Keep Clean
 Trial unpublished and leave its empty probe and unrelated drafts unchanged.
+
+### Brief #15 candidate browser access — 15 October 2026
+
+At baseline `a136494`, `main` was clean. Started Boss and read the project
+record. Opened a fresh tab at the recorded Clean Trial isolation URL; its
+navigation rendered, but this alone does not identify its loaded candidate.
+The published source-candidate fixture documented in
+[`enhanced-layout-regression.md`](enhanced-layout-regression.md) is
+`https://sb-test-four.webflow.io/sb-enhanced-regression`. Chrome rejected
+opening that origin with an approval-gate notice. The notice prohibited
+reaching the same destination through another browser surface or workaround,
+so I stopped. I reported the blocker to Boss once. Closed both tabs created
+for this check. No Webflow content, draft, setting or publication changed.
+
+Not checked: failed-candidate-script request capture; candidate Details and
+keyboard focus; Full-width and Right short-height behavior; candidate reduced
+motion and custom-animation; human screen-reader/device checks;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. Clean Trial's
+comparison route and prior checks there do not establish candidate behavior.
+
+Next useful action: after Michael approves the SB Test Four staging origin or
+provides another approved candidate URL, capture its failed-script request,
+check Details and focus, test Full-width and Right at short heights, and check
+reduced motion and custom-animation. Keep Clean Trial unpublished and leave
+its empty probe and unrelated drafts unchanged.
