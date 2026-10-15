@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** f339a3f — checked the project record and R-184 before rewriting its sign-off wording. No remote operation was made.
+**Reviewed at commit:** 7e74173 — checked the project record, D-014 and recent decision verdicts before this sign-off wording update. No remote operation was made.
 **Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #47 D-014 sign-off wording — Codex (night shift)
+
+**Changed (D-014):** Reworded the question to make clear that Michael should decide after using the Lite release. It remains Proposed; this is a product commitment that affects what he builds and maintains.
+
+**Outputs:** Updated the **For Michael:** line directly below Status in `DECISIONS.md`. The decision text and other fields are unchanged.
+
+**Checked how:** Read D-014, its source references and Lite direction in the project record. Confirmed the question follows Status, gives a recommendation, and explains what changes either way. Confirmed Status remains Proposed. `git diff --check` passed.
+
+**Still open:** Michael's decision after using the Lite release. This wording update does not block other work.
+
+**Needs Michael:** Use the Lite release, then decide whether to build and maintain the separate Designer Extension and menu-maintenance tool.
+
+**Next useful action:** Continue Lite work under the existing scope; return to D-014 after Michael has used its release.
 
 ## 15 October 2026 — Brief #45 R-184 sign-off wording — Codex (night shift)
 

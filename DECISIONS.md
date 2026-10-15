@@ -104,7 +104,7 @@ The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repo
 
 ## D-014 - Designer Extension with Make local as the preferred product track
 **Status:** Proposed
-**For Michael:** Once Lite works, do you want to build a separate Designer Extension and menu-maintenance tool? I recommend waiting until you have used Lite; proceeding adds a tool to build and maintain, while declining keeps the native component as the product.
+**For Michael:** After you have used the Lite release, do you want to build a separate Designer Extension and menu-maintenance tool? I recommend waiting for that experience before deciding; committing means building and maintaining a second tool, while declining keeps SmashBurger focused on the native navbar component.
 **Qualifier:** Deferred until Lite works — Michael, Q-04, 14 October 2026
 **Date:** Not recorded in the source; extracted 14 October 2026
 The proposed Designer Extension generator/maintenance track includes Make local for linked and unlinked instances, minimal grouped properties, preflight/diff and rollback. Michael deferred this product commitment until Lite works (Q-04 answer, this session).
