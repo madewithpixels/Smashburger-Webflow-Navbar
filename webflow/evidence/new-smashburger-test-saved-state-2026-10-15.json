@@ -1,0 +1,1183 @@
+{
+  "siteId": "6ad10fe7ca9deaf9a5ea7498",
+  "pageId": "6ad10fe9ca9deaf9a5ea74b9",
+  "backup": "Blank baseline before sb-nav candidate — 15 Oct 2026",
+  "tree": {
+    "id": {
+      "component": "6ad10fe9ca9deaf9a5ea74b9",
+      "element": "6ad10fe9ca9deaf9a5ea74be"
+    },
+    "type": "Body",
+    "children": [
+      {
+        "id": {
+          "component": "6ad10fe9ca9deaf9a5ea74b9",
+          "element": "e627aafa-583e-023b-9d2f-59640bf9a5ee"
+        },
+        "type": "DOM",
+        "styleNames": [
+          "sb-nav"
+        ],
+        "attributes": {
+          "data-mwp-navbar": "",
+          "data-collapse": "tablet",
+          "data-layout": "dropdown",
+          "data-motion": "dropdown"
+        },
+        "settings": {
+          "tag": "header",
+          "visibility": true,
+          "dom": {
+            "tag": "header"
+          }
+        },
+        "children": [
+          {
+            "id": {
+              "component": "6ad10fe9ca9deaf9a5ea74b9",
+              "element": "a1abca52-bbc4-414b-445f-349fab8d7aa6"
+            },
+            "type": "DOM",
+            "styleNames": [
+              "sb-nav-inner"
+            ],
+            "attributes": {
+              "data-mwp-inner": ""
+            },
+            "settings": {
+              "tag": "div",
+              "visibility": true,
+              "dom": {
+                "tag": "div"
+              }
+            },
+            "children": [
+              {
+                "id": {
+                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                  "element": "0249d94e-2238-bd64-dfc7-31e4f6f522f8"
+                },
+                "type": "Link",
+                "styleNames": [
+                  "sb-nav-brand"
+                ],
+                "settings": {
+                  "visibility": true
+                },
+                "children": [
+                  {
+                    "id": {
+                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                      "element": "0d6483b6-1212-058f-4e60-6098a74d797e"
+                    },
+                    "type": "String",
+                    "textContent": "SmashBurger"
+                  }
+                ]
+              },
+              {
+                "id": {
+                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                  "element": "90a01958-f744-9799-40c7-e1a089ef31ec"
+                },
+                "type": "DOM",
+                "styleNames": [
+                  "sb-nav-menu"
+                ],
+                "attributes": {
+                  "data-mwp-menu": ""
+                },
+                "settings": {
+                  "tag": "details",
+                  "visibility": true,
+                  "dom": {
+                    "tag": "details"
+                  }
+                },
+                "children": [
+                  {
+                    "id": {
+                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                      "element": "5386a44b-6a9d-a308-4fc9-440add89ea99"
+                    },
+                    "type": "DOM",
+                    "styleNames": [
+                      "sb-nav-summary"
+                    ],
+                    "attributes": {
+                      "data-mwp-trigger": "",
+                      "aria-label": "Navigation menu"
+                    },
+                    "settings": {
+                      "tag": "summary",
+                      "visibility": true,
+                      "dom": {
+                        "tag": "summary"
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "021bc910-8590-e827-ce0f-04b53f6a8446"
+                        },
+                        "type": "Block",
+                        "styleNames": [
+                          "sb-nav-label"
+                        ],
+                        "settings": {
+                          "tag": "div",
+                          "visibility": true,
+                          "block": {
+                            "tag": "div"
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "021bc910-8590-e827-ce0f-04b53f6a8447"
+                            },
+                            "type": "String",
+                            "textContent": "Menu"
+                          }
+                        ]
+                      },
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "6e0195c7-96bb-8927-8b56-2fd112598dbf"
+                        },
+                        "type": "DOM",
+                        "styleNames": [
+                          "sb-nav-icon"
+                        ],
+                        "attributes": {
+                          "data-mwp-icon": "",
+                          "aria-hidden": "true"
+                        },
+                        "settings": {
+                          "tag": "div",
+                          "visibility": true,
+                          "dom": {
+                            "tag": "div"
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "ddf628de-a919-d3d0-5a5e-324b6fc1762d"
+                            },
+                            "type": "DOM",
+                            "styleNames": [
+                              "sb-nav-line"
+                            ],
+                            "attributes": {
+                              "data-mwp-line": ""
+                            },
+                            "settings": {
+                              "tag": "div",
+                              "visibility": true,
+                              "dom": {
+                                "tag": "div"
+                              }
+                            }
+                          },
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "29d5a819-2c13-ebab-7155-1238424cfa73"
+                            },
+                            "type": "DOM",
+                            "styleNames": [
+                              "sb-nav-line"
+                            ],
+                            "attributes": {
+                              "data-mwp-line": ""
+                            },
+                            "settings": {
+                              "tag": "div",
+                              "visibility": true,
+                              "dom": {
+                                "tag": "div"
+                              }
+                            }
+                          },
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "14532343-359c-7808-0a4c-dad23948f5f7"
+                            },
+                            "type": "DOM",
+                            "styleNames": [
+                              "sb-nav-line"
+                            ],
+                            "attributes": {
+                              "data-mwp-line": ""
+                            },
+                            "settings": {
+                              "tag": "div",
+                              "visibility": true,
+                              "dom": {
+                                "tag": "div"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": {
+                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                  "element": "04b6bf81-5513-d926-2239-889ca7f12f98"
+                },
+                "type": "DOM",
+                "styleNames": [
+                  "sb-nav-panel"
+                ],
+                "attributes": {
+                  "data-mwp-panel": "",
+                  "aria-label": "Test navigation"
+                },
+                "settings": {
+                  "tag": "nav",
+                  "visibility": true,
+                  "dom": {
+                    "tag": "nav"
+                  }
+                },
+                "children": [
+                  {
+                    "id": {
+                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                      "element": "661f4ca2-5329-3067-ec77-b9da9eda8aa0"
+                    },
+                    "type": "DOM",
+                    "styleNames": [
+                      "sb-nav-primary"
+                    ],
+                    "attributes": {
+                      "data-mwp-primary": ""
+                    },
+                    "settings": {
+                      "tag": "div",
+                      "visibility": true,
+                      "dom": {
+                        "tag": "div"
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "f1bb0fcc-c6d2-62b6-62fc-3b0f597ce735"
+                        },
+                        "type": "DOM",
+                        "styleNames": [
+                          "sb-nav-links"
+                        ],
+                        "attributes": {
+                          "data-mwp-links": ""
+                        },
+                        "settings": {
+                          "tag": "div",
+                          "visibility": true,
+                          "dom": {
+                            "tag": "div"
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "2b046029-72bc-30c9-8ed2-90ee854a0371"
+                            },
+                            "type": "Link",
+                            "styleNames": [
+                              "sb-nav-link"
+                            ],
+                            "attributes": {
+                              "data-mwp-item": ""
+                            },
+                            "settings": {
+                              "visibility": true
+                            },
+                            "children": [
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "28c84edd-3c10-6265-3142-5f5653e2209c"
+                                },
+                                "type": "String",
+                                "textContent": "Home"
+                              }
+                            ]
+                          },
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "48b3342e-ad10-5974-d7e7-c62fe8058f70"
+                            },
+                            "type": "Link",
+                            "styleNames": [
+                              "sb-nav-link"
+                            ],
+                            "attributes": {
+                              "data-mwp-item": ""
+                            },
+                            "settings": {
+                              "visibility": true
+                            },
+                            "children": [
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "56eae381-e383-63f7-4429-427a0151fe86"
+                                },
+                                "type": "String",
+                                "textContent": "Features"
+                              }
+                            ]
+                          },
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "4947d858-ef42-a9db-a38b-496e582302b3"
+                            },
+                            "type": "DOM",
+                            "styleNames": [
+                              "sb-nav-submenu"
+                            ],
+                            "attributes": {
+                              "data-mwp-submenu": "",
+                              "data-mwp-item": ""
+                            },
+                            "settings": {
+                              "tag": "details",
+                              "visibility": true,
+                              "dom": {
+                                "tag": "details"
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "7aa684ac-2b69-0142-7a86-fc1f0923bb07"
+                                },
+                                "type": "DOM",
+                                "styleNames": [
+                                  "sb-nav-submenu-trigger"
+                                ],
+                                "settings": {
+                                  "tag": "summary",
+                                  "visibility": true,
+                                  "dom": {
+                                    "tag": "summary"
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": {
+                                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                      "element": "f7337644-c468-903a-c619-7679552f93ad"
+                                    },
+                                    "type": "Block",
+                                    "styleNames": [
+                                      "sb-nav-label"
+                                    ],
+                                    "settings": {
+                                      "tag": "div",
+                                      "visibility": true,
+                                      "block": {
+                                        "tag": "div"
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "id": {
+                                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                          "element": "f7337644-c468-903a-c619-7679552f93ae"
+                                        },
+                                        "type": "String",
+                                        "textContent": "More"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "id": {
+                                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                      "element": "d9094b01-ce6b-df80-8588-50106965b1e7"
+                                    },
+                                    "type": "DOM",
+                                    "styleNames": [
+                                      "sb-nav-submenu-icon"
+                                    ],
+                                    "attributes": {
+                                      "data-mwp-submenu-icon": "",
+                                      "aria-hidden": "true"
+                                    },
+                                    "settings": {
+                                      "tag": "div",
+                                      "visibility": true,
+                                      "dom": {
+                                        "tag": "div"
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "id": {
+                                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                          "element": "29e6705d-0b4d-5a35-78f7-253fdaefa1e3"
+                                        },
+                                        "type": "DOM",
+                                        "styleNames": [
+                                          "sb-nav-submenu-icon-line-left"
+                                        ],
+                                        "settings": {
+                                          "tag": "div",
+                                          "visibility": true,
+                                          "dom": {
+                                            "tag": "div"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "id": {
+                                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                          "element": "5aa18483-59bb-6c5b-d9f9-01c131be4429"
+                                        },
+                                        "type": "DOM",
+                                        "styleNames": [
+                                          "sb-nav-submenu-icon-line-right"
+                                        ],
+                                        "settings": {
+                                          "tag": "div",
+                                          "visibility": true,
+                                          "dom": {
+                                            "tag": "div"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "242cb4ec-1edb-f410-7e1d-6a096cc7aa1d"
+                                },
+                                "type": "DOM",
+                                "styleNames": [
+                                  "sb-nav-submenu-list"
+                                ],
+                                "settings": {
+                                  "tag": "div",
+                                  "visibility": true,
+                                  "dom": {
+                                    "tag": "div"
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "id": {
+                                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                      "element": "7b71623d-0b8d-6e85-2f6c-a41d871329e5"
+                                    },
+                                    "type": "Link",
+                                    "styleNames": [
+                                      "sb-nav-submenu-link"
+                                    ],
+                                    "attributes": {
+                                      "data-mwp-item": ""
+                                    },
+                                    "settings": {
+                                      "visibility": true
+                                    },
+                                    "children": [
+                                      {
+                                        "id": {
+                                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                          "element": "116967f8-3802-f498-a73f-0c1c69ee1d32"
+                                        },
+                                        "type": "String",
+                                        "textContent": "Nested link"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "5e859c67-4312-a414-1ad2-a8b5880f0817"
+                        },
+                        "type": "Link",
+                        "styleNames": [
+                          "sb-nav-cta"
+                        ],
+                        "attributes": {
+                          "data-mwp-item": ""
+                        },
+                        "settings": {
+                          "visibility": true
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "d131197c-df1e-41e3-d641-2300e3a98116"
+                            },
+                            "type": "String",
+                            "textContent": "Contact"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": {
+                      "component": "6ad10fe9ca9deaf9a5ea74b9",
+                      "element": "dd0df4c4-581d-23e0-9e0e-7bfd260ea832"
+                    },
+                    "type": "DOM",
+                    "styleNames": [
+                      "sb-nav-secondary"
+                    ],
+                    "attributes": {
+                      "data-mwp-secondary": ""
+                    },
+                    "settings": {
+                      "tag": "div",
+                      "visibility": true,
+                      "dom": {
+                        "tag": "div"
+                      }
+                    },
+                    "children": [
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "4eea5073-4ce5-21d2-ab51-c80a40b01487"
+                        },
+                        "type": "DOM",
+                        "styleNames": [
+                          "sb-nav-socials"
+                        ],
+                        "settings": {
+                          "tag": "div",
+                          "visibility": true,
+                          "dom": {
+                            "tag": "div"
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "4b39ed76-b883-41ad-9d7d-6294cf7aec3d"
+                            },
+                            "type": "Link",
+                            "styleNames": [
+                              "sb-nav-secondary-link"
+                            ],
+                            "attributes": {
+                              "data-mwp-item": ""
+                            },
+                            "settings": {
+                              "visibility": true
+                            },
+                            "children": [
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "b9923b0d-e2bc-55ab-93ca-289ff9628586"
+                                },
+                                "type": "String",
+                                "textContent": "Social"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": {
+                          "component": "6ad10fe9ca9deaf9a5ea74b9",
+                          "element": "807d4381-8c35-2d5b-b2d5-584ac2833cc4"
+                        },
+                        "type": "DOM",
+                        "styleNames": [
+                          "sb-nav-contacts"
+                        ],
+                        "settings": {
+                          "tag": "div",
+                          "visibility": true,
+                          "dom": {
+                            "tag": "div"
+                          }
+                        },
+                        "children": [
+                          {
+                            "id": {
+                              "component": "6ad10fe9ca9deaf9a5ea74b9",
+                              "element": "8b12e775-fa60-3141-f960-ac3124b17ef4"
+                            },
+                            "type": "Link",
+                            "styleNames": [
+                              "sb-nav-secondary-link"
+                            ],
+                            "attributes": {
+                              "data-mwp-item": ""
+                            },
+                            "settings": {
+                              "visibility": true,
+                              "link": {
+                                "linkType": "email",
+                                "href": "mailto:hello@example.com"
+                              }
+                            },
+                            "children": [
+                              {
+                                "id": {
+                                  "component": "6ad10fe9ca9deaf9a5ea74b9",
+                                  "element": "9425eec7-11b7-0fe6-32c0-1025d93dd3b0"
+                                },
+                                "type": "String",
+                                "textContent": "Email"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": {
+              "component": "6ad10fe9ca9deaf9a5ea74b9",
+              "element": "c797342d-3b46-c743-aa69-8aab9246765f"
+            },
+            "type": "DOM",
+            "styleNames": [
+              "sb-nav-backdrop"
+            ],
+            "attributes": {
+              "data-mwp-backdrop": "",
+              "aria-hidden": "true"
+            },
+            "settings": {
+              "tag": "div",
+              "visibility": true,
+              "dom": {
+                "tag": "div"
+              }
+            }
+          },
+          {
+            "id": {
+              "component": "6ad10fe9ca9deaf9a5ea74b9",
+              "element": "2fa6c1a1-cbb1-9925-51bc-ea69b67b2ffb"
+            },
+            "type": "HtmlEmbed",
+            "settings": {
+              "visibility": true
+            }
+          },
+          {
+            "id": {
+              "component": "6ad10fe9ca9deaf9a5ea74b9",
+              "element": "c337b392-e34b-c712-3b17-017c119cd43a"
+            },
+            "type": "HtmlEmbed",
+            "settings": {
+              "visibility": true
+            }
+          }
+        ]
+      },
+      {
+        "id": {
+          "component": "6ad10fe9ca9deaf9a5ea74b9",
+          "element": "00f65219-9609-d995-2b74-85f4c117c3ad"
+        },
+        "type": "Heading",
+        "attributes": {
+          "id": "test-content"
+        },
+        "settings": {
+          "tag": "h1",
+          "visibility": true,
+          "headingLevel": 1
+        },
+        "children": [
+          {
+            "id": {
+              "component": "6ad10fe9ca9deaf9a5ea74b9",
+              "element": "1c437ad3-d37e-d006-3f06-7b1195cea1c5"
+            },
+            "type": "String",
+            "textContent": "Unreleased SmashBurger class migration test"
+          }
+        ]
+      },
+      {
+        "id": {
+          "component": "6ad10fe9ca9deaf9a5ea74b9",
+          "element": "4c22de96-f0bb-e62f-0b4a-2641aa7054d1"
+        },
+        "type": "HtmlEmbed",
+        "settings": {
+          "visibility": true
+        }
+      }
+    ]
+  },
+  "styles": [
+    {
+      "id": "d14ffc87-8cd2-342a-907c-847ebce4b637",
+      "name": "sb-nav-secondary-label",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-secondary-label",
+      "properties": {
+        "base": {}
+      }
+    },
+    {
+      "id": "add2e7f9-3823-fc02-e156-0b18d538435f",
+      "name": "sb-nav-submenu-link",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-link",
+      "properties": {
+        "base": {
+          "properties": {
+            "color": "#202020"
+          }
+        }
+      }
+    },
+    {
+      "id": "0b525852-e94f-cfe4-65a3-6d1071d37f2e",
+      "name": "sb-nav-submenu-icon",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-icon",
+      "properties": {
+        "base": {
+          "properties": {
+            "position": "relative",
+            "width": "12px",
+            "height": "12px"
+          }
+        }
+      }
+    },
+    {
+      "id": "3ab29852-ebb1-9591-5a9d-45ab9927e5ce",
+      "name": "sb-nav-secondary-link",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-secondary-link",
+      "properties": {
+        "base": {
+          "properties": {
+            "color": "#202020"
+          }
+        }
+      }
+    },
+    {
+      "id": "03f265bf-f74c-a72a-8ea3-4a9103f0ff95",
+      "name": "sb-nav-cta",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-cta",
+      "properties": {
+        "base": {
+          "properties": {
+            "padding-top": "0.5rem",
+            "padding-right": "1rem",
+            "padding-bottom": "0.5rem",
+            "padding-left": "1rem",
+            "background-color": "#202020",
+            "color": "#ffffff"
+          }
+        }
+      }
+    },
+    {
+      "id": "c7933ab5-c108-8c34-7262-8a6b1a6163fb",
+      "name": "sb-nav-submenu-icon-line-left",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-icon-line-left",
+      "properties": {
+        "base": {
+          "properties": {
+            "position": "absolute",
+            "left": "0px",
+            "top": "5px",
+            "width": "7px",
+            "height": "2px",
+            "background-color": "#202020",
+            "transform": "rotate(45deg)"
+          }
+        }
+      }
+    },
+    {
+      "id": "db7bb27d-ad45-e003-13d1-86625b298276",
+      "name": "sb-nav-secondary",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-secondary",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "1rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "71a5077e-07b8-5145-e268-56ba27bdc077",
+      "name": "sb-nav-contacts",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-contacts",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "gap": "0.75rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "a7f074e6-082b-a496-cdb0-3302eb3763f8",
+      "name": "sb-nav-submenu-trigger",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-trigger",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "align-items": "center",
+            "cursor": "pointer",
+            "gap": "0.5rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "0ee0d6fa-6467-22b6-164e-540f354f9f07",
+      "name": "sb-nav-submenu-list",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-list",
+      "properties": {
+        "base": {
+          "properties": {
+            "padding-top": "0.5rem",
+            "padding-right": "0.5rem",
+            "padding-bottom": "0.5rem",
+            "padding-left": "0.5rem",
+            "background-color": "#ffffff",
+            "gap": "0.5rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "91700f5a-4d14-c97f-fc24-6c86618830bc",
+      "name": "sb-nav-icon",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-icon",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "width": "24px",
+            "flex-direction": "column",
+            "gap": "5px"
+          }
+        }
+      }
+    },
+    {
+      "id": "676e791b-de87-f830-983f-f63845bc0b35",
+      "name": "sb-nav-link",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-link",
+      "properties": {
+        "base": {
+          "properties": {
+            "padding-top": "0.5rem",
+            "padding-bottom": "0.5rem",
+            "color": "#202020"
+          }
+        }
+      }
+    },
+    {
+      "id": "273d4c5a-2087-424f-42d0-710cf7e87f2c",
+      "name": "sb-nav-socials",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-socials",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "gap": "0.75rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "4c645891-9612-9346-23f8-8af52d4c2970",
+      "name": "sb-nav-summary",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-summary",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "padding-top": "0.5rem",
+            "padding-right": "0.75rem",
+            "padding-bottom": "0.5rem",
+            "padding-left": "0.75rem",
+            "align-items": "center",
+            "cursor": "pointer",
+            "gap": "0.75rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "97a66bb2-b1c1-f6e3-3204-aaa92ffaf37d",
+      "name": "sb-nav-backdrop",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-backdrop",
+      "properties": {
+        "base": {}
+      }
+    },
+    {
+      "id": "ede7c8cf-a5f2-b368-dd23-649659a70350",
+      "name": "sb-nav-brand",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-brand",
+      "properties": {
+        "base": {
+          "properties": {
+            "color": "#202020",
+            "font-size": "1.25rem",
+            "font-weight": "700"
+          }
+        }
+      }
+    },
+    {
+      "id": "f291abb7-f266-7bff-2794-dc8eeb65aaa2",
+      "name": "sb-nav-primary",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-primary",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "1rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "92751451-181c-139b-e05e-fc8dfcd1497d",
+      "name": "sb-nav",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "block",
+            "background-color": "#f4f4f4"
+          }
+        }
+      }
+    },
+    {
+      "id": "c56d4ca2-90d8-23d2-ff03-526aed46309e",
+      "name": "sb-nav-inner",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-inner",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "padding-top": "1rem",
+            "padding-right": "1rem",
+            "padding-bottom": "1rem",
+            "padding-left": "1rem",
+            "justify-content": "space-between",
+            "flex-wrap": "wrap",
+            "align-items": "center",
+            "gap": "1rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "19b61b63-f568-ba1c-cb76-980bda314d5c",
+      "name": "sb-nav-panel",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-panel",
+      "properties": {
+        "base": {}
+      }
+    },
+    {
+      "id": "2481813b-e102-f0dd-801b-6af4286649ca",
+      "name": "sb-nav-links",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-links",
+      "properties": {
+        "base": {
+          "properties": {
+            "display": "flex",
+            "align-items": "center",
+            "gap": "1rem"
+          }
+        }
+      }
+    },
+    {
+      "id": "a58f47cd-9652-a515-fd3d-dfc57746e222",
+      "name": "sb-nav-submenu-icon-line-right",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu-icon-line-right",
+      "properties": {
+        "base": {
+          "properties": {
+            "position": "absolute",
+            "top": "5px",
+            "right": "0px",
+            "width": "7px",
+            "height": "2px",
+            "background-color": "#202020",
+            "transform": "rotate(-45deg)"
+          }
+        }
+      }
+    },
+    {
+      "id": "d3a6e084-079c-32ce-614c-1d1b8065f960",
+      "name": "sb-nav-line",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-line",
+      "properties": {
+        "base": {
+          "properties": {
+            "width": "24px",
+            "height": "2px",
+            "background-color": "#202020"
+          }
+        }
+      }
+    },
+    {
+      "id": "fb3ecdc7-531d-c239-47cb-bec1b3c999ec",
+      "name": "sb-nav-submenu",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-submenu",
+      "properties": {
+        "base": {
+          "properties": {
+            "position": "relative"
+          }
+        }
+      }
+    },
+    {
+      "id": "aee92489-2150-2eee-f0b1-25275a5aaf84",
+      "name": "sb-nav-label",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-label",
+      "properties": {
+        "base": {}
+      }
+    },
+    {
+      "id": "d22da585-40fc-1f2a-6327-2e9bb454f0b0",
+      "name": "sb-nav-menu",
+      "isFromLibrary": false,
+      "isComboClass": false,
+      "type": "global",
+      "selector": ".sb-nav-menu",
+      "properties": {
+        "base": {
+          "properties": {
+            "margin-left": "auto"
+          }
+        }
+      }
+    }
+  ]
+}

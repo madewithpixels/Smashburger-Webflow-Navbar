@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** Full history transferred to the canonical repository and clone. Renamed sb-nav source, demo and isolated 0.3.0-rc.1 output are built and locally checked. v0.2.6 remains released; Webflow/Library rollout, human/device checks and cloned upgrade/rollback remain open.
+**Stage:** Full history is in the canonical repository and ready working clone. The sb-nav source/package rename is built as an unreleased 0.3.0-rc.1 candidate, checked locally and on a fresh native Webflow staging fixture. v0.2.6 remains the released baseline. Library rollout, human/device checks and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex
-**Reviewed at commit:** 0864f82 — complete source/remote baseline checked before the transfer and candidate changes.
-**Next action:** Commit and sync the checked candidate to the canonical clone, then assess the newly offered Webflow test site before any structural test.
-**Needs Michael:** No Git transfer or repository setup work. Michael has offered “new smashburger test”; its backup state must be checked before structural tests. Human/device acceptance and later publication approval remain separate gates.
+**Reviewed at commit:** 1261de5 — candidate tested from the canonical clone and verified on canonical origin/main; final changes after this baseline are fixture controls, evidence and records.
+**Next action:** Prepare the versioned Library migration with backups and full property/asset checks, then complete remaining release and cloned upgrade/rollback gates before tagging or distributing a release.
+**Needs Michael:** No Git transfer or repository setup work. Human/device sign-off and release/Library-sharing approval remain separate gates when a release is ready. Test-site staging publication was explicitly approved and completed.
+
+## 15 October 2026 — Canonical checkout verified and new Webflow fixture tested — Codex
+
+**Changed (R-119–R-125, R-128):** Tested and pushed source candidate 1261de5 from the canonical clone. Preserved the boss key and routed future runner sessions to that path, with a configuration backup. Built a fresh native sb-nav test fixture in New Smashburger Test after saving and verifying its blank-site backup. Published only its Webflow staging subdomain after Michael explicitly approved it. At his request, updated the local Webflow MCP skill to warn before focus-dependent Chrome work and say when Chrome is free again.
+
+**Outputs:** [Canonical transfer record](webflow/canonical-rename-2026-10-15.md), [Webflow test record](webflow/new-smashburger-test-2026-10-15.md), saved native tree/styles, measurements, mobile screenshot and outside test-controls source. Working destination: `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. The source candidate and final records are to be kept in sync there; old remote and original release tags remain available.
+
+**Checked how:** From the canonical checkout: candidate checks 53/53; full suite 90 checks, 75 passed, no unmarked failures and 15 known v0.2.6 TODOs; syntax and reproducibility passed. Canonical remote main was read back at 1261de5 while old remote main remained 0864f82; all old tags and the prototype branch matched. Test-site MCP readback confirmed 45 nodes, 26 local styles, no legacy class tokens, native Details/Summary/Nav tags and both Embeds byte-identical to the candidate files. Staging passed 35 layout/motion pairs, 25 collapse/width checks, nested/outer Escape with focus return, Full-width and Right at 393 × 384, and genuine no-JavaScript native menu/submenu fallback. A final mobile in-app-browser render also initialised and contained the panel. All 17 protected historical files remained byte-identical.
+
+**Still open:** This is a fresh native fixture, not an imported Library component: Library properties/variants/assets/linkage and upgrade/rollback remain unverified for the class migration. No new distribution tag or CDN release exists. Human/device accessibility, physical-display icon checks and final workspace reopening remain open. Preview was stuck on first-time custom-code loading and supplied no behavioral evidence.
+
+**Needs Michael:** No Git technical steps. Human/device acceptance and later release/Library-sharing approval remain his gates. Both the transfer and test-site publishing permission questions were answered in this chat; they are not current blockers.
+
+**Next useful action:** Use the canonical checkout and these fixture limits to prepare the actual versioned Library-edition migration, preserving backups, properties, assets, old releases and exact runtime hooks.
+
+**Handoff:** Future agent work uses the canonical path and stable boss key smashburger. The runner's path has been updated; this already-running chat/boss commit tool remains bound to the retained old checkout, so its last record commit is fast-forwarded to canonical before closing. Designer is back in normal Design mode with the original custom-code preference off. JavaScript, viewport overrides and temporary local browser/server resources were restored; the staging deliverable remains available. Do not install the illustrative candidate CDN loader. Follow R-125–R-127 gates before distribution or retiring the old repository. Acceptance was not changed.
 
 ## 15 October 2026 — Canonical transfer and renamed source candidate — Codex
 

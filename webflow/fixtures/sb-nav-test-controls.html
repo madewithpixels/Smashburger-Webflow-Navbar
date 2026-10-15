@@ -1,0 +1,26 @@
+<!-- Test-site controls only. These are outside the portable navigation. -->
+<form class="sb-proof-controls" aria-label="Candidate test controls" onsubmit="return false">
+  <label>Collapse <select name="collapse"><option>never</option><option selected>tablet</option><option>mobile-landscape</option><option>mobile-portrait</option><option>always</option></select></label>
+  <label>Layout <select name="layout"><option selected>dropdown</option><option>full-width</option><option>left</option><option>right</option><option>overlay</option></select></label>
+  <label>Motion <select name="motion"><option selected>dropdown</option><option>left</option><option>right</option><option>up</option><option>fade</option><option>none</option><option>custom</option></select></label>
+  <label>Alignment <select name="align"><option>left</option><option>center</option><option selected>right</option></select></label>
+  <p>Unreleased 0.3.0-rc.1 fixture. These controls reset the menu; they do not change the saved component.</p>
+</form>
+<style>
+.sb-proof-controls { display:flex; flex-wrap:wrap; gap:1rem; padding:1rem; margin-top:2rem; border-top:1px solid #aaa; font:14px/1.5 system-ui,sans-serif; }
+.sb-proof-controls label { display:flex; flex-direction:column; gap:.25rem; }
+.sb-proof-controls p { flex-basis:100%; margin:0; }
+</style>
+<script>
+(() => {
+  const form = document.querySelector('.sb-proof-controls');
+  const root = document.querySelector('[data-mwp-navbar]');
+  form.addEventListener('change', event => {
+    const { name, value } = event.target;
+    if (!['collapse', 'layout', 'motion', 'align'].includes(name)) return;
+    root.mwpNavbarLight?.destroy();
+    root.dataset[name] = value;
+    globalThis.initNavbarLight();
+  });
+})();
+</script>

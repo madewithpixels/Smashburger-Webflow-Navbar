@@ -189,7 +189,7 @@ npm run check:dist
 
 Open [demo/index.html](demo/index.html) directly or through a local web server after `npm run build`. Its controls exercise the renamed candidate's layouts and motion choices. Build commands write self-contained, Canvas, browser and distribution files into `candidate/`; they leave released top-level files alone. `npm run check:dist` checks that this candidate rebuilds reproducibly. Version tags and release promotion remain separate steps.
 
-The candidate includes the earlier unreleased stylesheet-failure and breakpoint/focus fixes. On 15 October 2026, `npm run test:candidate` passed all 53 delivery, namespace and demo checks with no pending tests. `npm test` passed 75 checks with 15 known legacy-delivery checks marked TODO; those defects remain in the immutable v0.2.6 outputs. These are local automated results; Webflow, human/device accessibility and clone upgrade/rollback checks remain open. See [the candidate record](webflow/canonical-rename-2026-10-15.md).
+The candidate includes the earlier unreleased stylesheet-failure and breakpoint/focus fixes. On 15 October 2026, `npm run test:candidate` passed all 53 delivery, namespace and demo checks with no pending tests. `npm test` passed 75 checks with 15 known legacy-delivery checks marked TODO; those defects remain in the immutable v0.2.6 outputs. These are local automated results. A fresh native Webflow fixture has also passed [staging checks](webflow/new-smashburger-test-2026-10-15.md); existing Library upgrades, human/device accessibility and clone upgrade/rollback remain open. See [the candidate record](webflow/canonical-rename-2026-10-15.md).
 
 ## Optional CDN distribution
 

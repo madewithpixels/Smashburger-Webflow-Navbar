@@ -1024,11 +1024,12 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-121 · Rename every portable component class from the legacy `mwp-*` / `mwp-css-nav_*` namespace to a documented `sb-*` namespace (`SmashBurger`) as part of the canonical repository rename. Update source HTML/CSS/JavaScript, generated Embeds, demos, Webflow components, clonable, documentation and tests together; treat this as an explicit versioned class migration rather than silently changing an existing release. Reserve `SmashBurger Lite` for the free clonable's product name, not its class prefix.
-**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 169 (now 170); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** Source, demo, fixtures, tests and isolated generated output now use accepted sb-nav classes as 0.3.0-rc.1. Webflow component/Library/clonable rollout remains open; this is not a released class migration.
 **Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
+**Live evidence — 15 October 2026:** [New Smashburger Test](webflow/new-smashburger-test-2026-10-15.md): backed-up fresh native fixture, exact saved candidate Embeds, authorised staging publication, 35 layout/motion pairs, 25 collapse/width checks, keyboard/focus, short-height and genuine no-JavaScript fallback. This does not verify Library property/asset retention, upgrades or the future clonable.
 
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.
@@ -1056,9 +1057,11 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 173 (now 174); baseline `c808ca4`.
 **Exit criteria:**
+**15 October 2026 — Codex:** Candidate is built/tested with proposed canonical exact-version URLs and SHA-384 values. No new release tag or CDN publication exists. Staging fixture publication is a separate test-site action and does not complete this release item.
+**Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-126 · Update both MWP Component Library editions and the `Smashburger` clean-install instance through the Library workflow; verify properties, variants, assets, CDN loading, rollback and update linkage.
@@ -1077,7 +1080,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 176 (now 177); baseline `c808ca4`.
 **Exit criteria:**
-**15 October 2026 — Codex:** Selected clone is populated with the canonical origin and will be used for final verification. Original folder is retained. This chat/boss commit binding still points at the old checkout; final workspace reopen and release-dependent retirement remain open. No folder was destructively moved.
+**15 October 2026 — Codex:** Selected clone is populated with the canonical origin and was used for final tests and the push of 1261de5. Its boss key is smashburger; the runner path now points there. Original folder is retained. This chat/boss commit binding still points at the old checkout; final workspace reopen and release-dependent retirement remain open. No folder was destructively moved.
 **Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
