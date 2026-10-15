@@ -1273,3 +1273,44 @@ Checked current `main` at `8e7f5bd`; `git --no-optional-locks status` was clean 
 Not checked: automatic failed-script request capture; candidate Preview; candidate reduced-motion/custom-animation; full-width/right narrow-height scrolling; actual human screen-reader and physical-device use; physical-display DPR 2×/3×; cloned upgrade/rollback. No defect was demonstrated, so no source change or new regression test was warranted. The earlier `npm run test:built` result (48/48, with all 12 generated files restored) was not repeated. No candidate-build verification was performed in this session.
 
 The smallest next step is to provide an inspection surface with DOM, viewport, console and request access plus a usable Preview route. Human/device access and a cloned release candidate are needed for the remaining physical accessibility and rollback checks. Keep the named Clean Trial probe isolated; leave product naming, class migration and Lite publication deferred.
+
+### Brief #13 continuation — 15 October 2026
+
+At `f2dbd5e`, the worktree was clean on `main`; the only commit since the
+previously reviewed `8e7f5bd` is the Brief 12 access review. Read the current
+project record and project-docs v0.4. `npm run test:built` passed 48/48 across
+the maintained source, generated distribution, minified build and Embed. The
+runner restored all 12 generated files; `git diff --exit-code` confirmed the
+generated outputs are unchanged. This is automated local evidence, not a
+rendered candidate check.
+
+The current Chrome DevTools UI was opened in a new tab on the published Clean
+Trial comparison page. It exposes the Network panel, responsive width and
+height fields, and Rendering controls for `prefers-reduced-motion`. These
+controls were inspected but not used to claim a candidate result. The tab was
+closed. No Webflow content, page code, styles, publication, Library item, asset
+or release changed.
+
+Read-only Webflow checks confirm Clean Trial has no custom domain and its last
+publication remains `2026-10-14T23:30:40.323Z`. The backed-up probe is still
+Body-only and `draft: true`; four other pages remain drafts. The previously
+attempted page-only staging publish failed with `Bad Request: Invalid
+parameter: pageId`. The full tool list contains no alternate isolated
+page-publish or Preview route. Whole-site publication would expose the four
+unrelated drafts, so no publication was attempted.
+
+Current source and linked readback adds no candidate runtime evidence. The
+Component Library still contains the `SmashBurger` and `SmashBurger CDN`
+components; the Smashburger staging Home tree contains a linked `SmashBurger
+CDN` instance with a primary-navigation override. The unlinked Clean Trial
+comparison remains published as the separate v0.2.6 fixture. This is Designer
+data readback, not Preview or rendered candidate behavior.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details/link/focus behavior; full-width and right narrow-height scrolling;
+candidate reduced-motion/custom-animation; usable candidate Preview;
+human screen-reader and physical-device checks; physical-display DPR 2×/3×;
+and cloned upgrade/rollback. Candidate browser checks need a supported isolated
+staging or Preview route. Human, hardware and clone checks also need their
+respective prerequisites. No defect was demonstrated and no source fix was
+made.

@@ -1,12 +1,28 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate fallback, responsive layout, keyboard/pointer closing and icon emulation have rendered-browser evidence in the local test record; current published staging checks cover the Clean Trial comparison and Smashburger's linked navigation. Preview compilation, automatic failed-script request capture, reduced-motion/custom-animation integration, full-width/right narrow-height scrolling, physical-device and screen-reader checks, physical-display DPR 2×/3× evidence, and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passes 48/48 and restores all 12 generated files. Candidate failed-script capture, Preview, reduced-motion/custom-animation, full-width/right narrow-height scrolling, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 8e7f5bd — checked current `main`; worktree was clean at start. Git reports 26 commits ahead of its tracking ref; no remote operation was made.
-**Next action:** Make a usable Preview and browser inspection route available; finish only the remaining candidate checks listed below.
-**Needs Michael:** Review and push local commits. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** f2dbd5e — checked current `main`; worktree was clean at start. The only commit since the prior reviewed baseline is the Brief 12 access review. No remote operation was made.
+**Next action:** Enable an isolated staging or Preview route for the Clean Trial probe, then complete the remaining candidate browser checks.
+**Needs Michael:** Review and push local commits. Enable single-page staging publish for the backed-up probe or provide a usable isolated Preview route. Arrange the remaining human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
 
 Stage sources: Michael’s Q-01–Q-07 answers in this session, 14 October 2026;
 DECISIONS D-010–D-016; webflow/v0.2.6-release-verification.md; brief #11 local test record below and implementation `2eda9f3`. No new boss question.
+
+## 15 October 2026 — Brief #13 remaining Lite checks — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, Webflow page, asset, Library item, publication or release changed. The fresh-build check passed; candidate browser checks remain open because no isolated route is available.
+
+**Outputs:** Added the current build, Chrome DevTools control and Webflow readback to the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md) and R-037/R-095/R-155 evidence. This work remains for Michael's review.
+
+**Checked how:** At `f2dbd5e`, `git --no-optional-locks status` was clean on `main`; one documentation commit followed the previously reviewed `8e7f5bd`. `npm run test:built` passed 48/48 and restored all 12 generated files; `git diff --exit-code` confirmed no generated output changed. Read-only Webflow data confirms the Clean Trial site has no custom domains, the probe is Body-only/draft, and four other pages remain drafts. The current Smashburger Home tree contains a linked `SmashBurger CDN` instance with a primary-navigation override. Visible Chrome DevTools exposes Network, viewport and reduced-motion controls. The owned tab was closed. No Webflow mutation or publication occurred.
+
+**Still open:** Automatic failed-candidate-script request capture, candidate Details/link/focus behavior, candidate full-width/right narrow-height scrolling, candidate reduced-motion/custom-animation, usable Preview, human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. The earlier page-only staging publish failed with `Bad Request: Invalid parameter: pageId`; a whole-site publish would include four unrelated draft pages. No source defect was demonstrated.
+
+**Needs Michael:** Enable single-page staging publish for the backed-up probe or provide a usable isolated Preview route. Arrange human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume the source-derived candidate checks on the isolated Clean Trial probe when a supported staging or Preview route is available. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** No temporary staging content remains. The Clean Trial probe is empty and draft; its last staging publication is still `2026-10-14T23:30:40.323Z`. Boss received one blocker report for the missing isolated route. Chrome DevTools has Network, responsive viewport and reduced-motion controls, so those checks can continue as soon as candidate content can be rendered safely.
 
 ## 15 October 2026 — Brief #12 remaining-check access review — Codex (night shift)
 
