@@ -88,9 +88,10 @@ the Library global-style packaging finding, and remaining scope.
 
 
 #### R-009 · Keep this roadmap and `README.md` aligned with implementation.
-**State:** built · **Evidence:** none · **Acceptance:** n/a (housekeeping — no outcome for Michael to try)
+**State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (housekeeping — no outcome for Michael to try)
 **Source:** [todo.md](todo.md), original line 21 (now 22); baseline `c808ca4`.
-**Exit criteria:**
+**Exit criteria:** README and this roadmap describe the checked source, generated files and release baseline accurately.
+**Evidence links:** [README.md](README.md); [Brief #13 local generated-runtime comparison](webflow/lite-preparation-local-tests-2026-10-14.md#brief-13-latest-verification--15-october-2026); [v0.2.6 release record](webflow/v0.2.6-release-verification.md).
 
 
 ## Current handoff — 21 August 2026

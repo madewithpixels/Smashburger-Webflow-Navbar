@@ -185,6 +185,8 @@ npm run check:dist
 
 Open [demo/index.html](demo/index.html) directly or through a local web server. Its controls exercise every layout and motion combination. `npm run build` regenerates the self-contained Webflow Embed, the demo's classic browser script and the release-ready `dist` files from the maintained source files. `npm run check:dist` fails when committed CDN artifacts no longer match the source. CI runs the source tests and syntax check on every push and pull request; it runs `check:dist` on version tags so a release cannot contain stale generated assets. Between releases, maintained source may intentionally differ from the committed immutable version.
 
+The maintained source currently contains unreleased fixes for stylesheet-load failure and breakpoint/focus timing. The committed `dist` files and Webflow Embeds remain the released `v0.2.6` baseline and do not contain those fixes. On 15 October 2026, `npm run test:built` passed all 12 maintained-source checks and 33 of 48 generated-output checks; the 15 failures were the same five source-only behaviors in each of the distribution, minified and Embed outputs. The runner restores generated files after comparison. This local automated result does not verify the unreleased candidate in Webflow or a browser; see the [test record](webflow/lite-preparation-local-tests-2026-10-14.md#brief-13-latest-verification--15-october-2026) for limits and remaining checks.
+
 ## Optional CDN distribution
 
 The CDN route uses exact semantic-version GitHub tags through jsDelivr. The `v0.2.6` production files are:

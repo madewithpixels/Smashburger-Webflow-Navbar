@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The three outcomes from Brief #16 are ready for Michael's review.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. README now records the generated-output comparison and limits. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 532f9f9 — checked the current main baseline before this documentation update. No remote operation was made.
+**Reviewed at commit:** 532f9f9 — checked this baseline and compared the release record, maintained source, generated outputs and current README/roadmap claims. No remote operation was made.
 **Next action:** Michael can try the three outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push the local commit when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — README and roadmap implementation check — Codex (night shift)
+
+**Changed (R-009):** README now says the maintained source includes unreleased stylesheet-failure and breakpoint/focus timing fixes, while `dist` and Webflow Embeds remain the released v0.2.6 baseline. The roadmap now links the local comparison and release record and marks the documentation evidence verified locally.
+
+**Outputs:** Updated `README.md`, `ROADMAP.md` and this status record. No runtime code, generated release file, Webflow content or historical decision changed.
+
+**Checked how:** Compared `src/`, generated output paths, `package.json`, the v0.2.6 release record and the Brief #13 test record. The completed 15 October `npm run test:built` result recorded there is 33/48: all 12 maintained-source checks passed, with 15 generated-output failures covering five source-only behaviors across distribution, minified and Embed files. A fresh invocation began but did not complete in this session; generated files were restored to their starting versions and verified unchanged. `git diff --check` passes. This is local automated evidence only.
+
+**Still open:** The unreleased candidate has not been verified in Webflow or a browser. Human/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+
+**Needs Michael:** Review and push the local documentation commit when ready.
+
+**Next useful action:** A later session can verify candidate behavior when an isolated route serves the maintained files and supported browser request inspection is available.
 
 ## 15 October 2026 — Brief #16 outcome sign-off wording — Codex (night shift)
 
