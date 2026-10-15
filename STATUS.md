@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 558083b — checked the project record and R-165 sign-off wording. No remote operation was made.
+**Reviewed at commit:** 09bb78f — checked the project record and R-267 sign-off wording. No remote operation was made.
 **Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #43 unlink outcome sign-off wording — Codex (night shift)
+
+**Changed (R-267):** Named the “Unlink test” page and described the visible checks in plain words: no duplicate or blank “Always” entries, and a menu that opens and closes in Preview. The technical steps remain covered by this outcome.
+
+**Outputs:** Updated the Try line in `ROADMAP.md`. No State, Evidence or Acceptance value changed; no Webflow content changed.
+
+**Checked how:** Compared R-267 and its covered steps R-122 and R-129–R-137 before and after. Confirmed the State and Evidence values are unchanged, each technical step still points to R-267, and the Try line follows the State line. `git diff --check` passed. This documentation edit does not verify Webflow behavior.
+
+**Still open:** Michael's check and sign-off. Preview behavior was not checked in this session.
+
+**Needs Michael:** Try the unlinked menu on the “Unlink test” page and record a verdict in boss. Review and push the local commit when ready.
+
+**Next useful action:** Michael checks R-267 in Webflow; a later session records his verdict without changing acceptance.
 
 ## 15 October 2026 — Brief #42 infrastructure outcome sign-off wording — Codex (night shift)
 

@@ -2206,7 +2206,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 #### R-267 · Leave a tidy site after unlinking the component.
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
-**Try:** On the unlink test page, unlink the component. Check that the Navigator has no pile of duplicate or empty entries labelled “Always”, and that the menu still works in Preview.
+**Try:** On the “Unlink test” page, find an unlinked menu in the list of page elements. Check that there are no duplicate or blank “Always” entries, then use Preview to open and close the menu.
 **Covers:** R-122, R-129–R-137
 **Source:** [always-class audit](webflow/always-unlink-class-audit-2026-10-13.md); [unlink candidate record](webflow/unlink-hardening-candidate.md).
 **Evidence boundary:** Recorded checks cover the legacy cleanup duplicate and the one-Base candidate in the named fixtures; they do not promise the same result for every existing or future Webflow instance.
