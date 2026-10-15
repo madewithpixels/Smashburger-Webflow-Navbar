@@ -1638,6 +1638,35 @@ Next useful action: provide a supported isolated route that renders and
 provides request inspection, then resume the candidate checks. Keep the whole
 Clean Trial site unpublished and leave its four other drafts untouched.
 
+### Brief #13 current tool access — 15 October 2026
+
+Started the existing Boss run for R-037, R-095 and R-155. Read the current
+project record and latest Brief #12/13 fixture notes before checking access.
+Read-only Webflow `list_sites` and `get_site` succeeded. Clean Trial still has
+no custom domains and its last publication remains
+`2026-10-14T23:30:40.323Z`.
+
+The current Chrome inventory exposes an extension browser. The documented
+native-app route, `cua.getApp("com.google.Chrome")`, returned
+`cgWindowNotFound`. The available CUA page surface provides accessibility,
+screenshots and input, but not DevTools Network requests or page evaluation.
+The Node repl Playwright import returned
+`The requested module './index.js' does not provide an export named 'default'`.
+No browser tab was opened, and no Webflow content or publication changed.
+The previously recorded native Details/focus pass and 48/48 candidate build
+were not repeated.
+
+Not checked: automatic failed-candidate-script request capture; Full-width
+and Right short-height containment; candidate reduced-motion/custom-animation;
+human screen-reader and physical-device checks; physical-display DPR 2×/3×;
+and cloned upgrade/rollback. No source-derived candidate runtime was available
+in this session. The isolated-route blocker was already reported to Boss, so
+no duplicate blocker report was sent.
+
+Next useful action: resume the candidate checks when a supported isolated route
+and working request-inspection surface are available. Keep the whole Clean Trial
+site unpublished and leave its four other draft pages untouched.
+
 ### Brief #13 current access and fixture readback — 15 October 2026
 
 At baseline `2711447`, `main` was clean. Read AGENTS.md and project-docs v0.4,

@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 2711447 — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** b269248 — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide a supported isolated candidate route that renders and exposes request inspection, then continue the remaining browser checks.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 inspection-surface recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release asset or Webflow content changed. This session did not obtain a source-derived candidate runtime, so no remaining rendered check could be completed.
+
+**Outputs:** Added the current Chrome and Webflow access result to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and roadmap evidence. Work remains pending Michael's acceptance.
+
+**Checked how:** Started the existing Boss run for R-037, R-095 and R-155. Read the project record and latest Brief #12/13 fixture notes. Read-only Webflow `list_sites` and `get_site` confirmed Clean Trial still has no custom domains and its last publication remains `2026-10-14T23:30:40.323Z`. The current Chrome inventory exposes an extension browser; native `cua.getApp("com.google.Chrome")` returned `cgWindowNotFound`. The available CUA page surface offers accessibility, screenshot and input methods but no DevTools Network request list or page evaluation. Node repl Playwright import returned `The requested module './index.js' does not provide an export named 'default'`. No browser tab was opened. No candidate, build or previously completed interaction check was repeated. No Webflow change or publication occurred.
+
+**Still open:** Failed candidate-script request capture; Full-width and Right narrow-height containment; candidate reduced-motion/custom-animation; human screen-reader and physical-device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. A usable isolated candidate route and DevTools request capture remain unavailable in this session.
+
+**Needs Michael:** Arrange an isolated candidate route and working Chrome DevTools request capture. Arrange human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume the rendered candidate checks when an isolated route and request capture are available. Keep the whole Clean Trial site unpublished and leave the four other drafts untouched.
+
+**Handoff:** This records an access recheck only; the isolated-route blocker was already reported to Boss, so no duplicate blocker report was sent. No tabs were opened and no temporary staging content was created.
 
 ## 15 October 2026 — Brief #13 current access and fixture readback — Codex (night shift)
 
