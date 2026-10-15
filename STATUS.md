@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest recorded `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** b269248 — checked current `main`; worktree was clean at start. No remote operation was made.
-**Next action:** Provide a supported isolated candidate route that renders and exposes request inspection, then continue the remaining browser checks.
+**Reviewed at commit:** 08900f5 — current `main` was clean at start. No remote operation was made.
+**Next action:** Provide a supported isolated route for the candidate plus a Chrome control that exposes page requests, then continue the remaining rendered checks.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 browser and probe recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release asset or Webflow content changed. No source-derived candidate runtime was available, so no remaining rendered candidate check could be completed.
+
+**Outputs:** Recorded today's Chrome-control and Clean Trial probe readback in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and ROADMAP. Work remains pending Michael's acceptance.
+
+**Checked how:** Started the existing Boss run and reported this access result as progress; the isolated-route blocker had already been reported, so I did not duplicate it. Current Webflow readback: Clean Trial has no custom domains and last published at `2026-10-14T23:30:40.323Z`; the probe remains `draft: true` and its element tree contains only Body. The page list shows three other draft pages, while the brief and earlier records say four; this count needs reconciling. Chrome is listed in the app inventory, but two `cua.getApp("com.google.Chrome")` attempts returned `cgWindowNotFound`. The extension browser's CUA surface provides accessibility, screenshots and input, but no page evaluation or Network request list. Its DevTools shortcut left the fresh staging comparison page unchanged. `node_repl` Playwright import returned `The requested module './index.js' does not provide an export named 'default'`. The one staging tab opened by this session was closed; pre-existing tabs were left alone. The unavailable `visible` tab option was omitted on retry. No candidate content, styles or publication changed. Earlier Details/focus and 48/48 build evidence were not repeated.
+
+**Still open:** Failed candidate-script request capture; candidate Details and closed-panel link/focus; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader and physical-device checks; physical-display DPR 2×/3×; cloned upgrade/rollback; and the draft-page count discrepancy.
+
+**Needs Michael:** Arrange a supported isolated candidate route and browser request inspection. Arrange the human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Reconcile the draft-page count on the next Webflow readback, then resume rendered candidate checks when an isolated route and request-inspection control are available. Keep the whole Clean Trial site unpublished.
+
+**Handoff:** The probe remains an empty draft with only Body in its element tree. No tabs opened in this session remain open. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 inspection-surface recheck — Codex (night shift)
 

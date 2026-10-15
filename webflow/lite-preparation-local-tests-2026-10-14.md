@@ -1696,3 +1696,29 @@ demonstrated and no fix or regression test was warranted.
 Next useful action: provide a supported isolated candidate route that renders
 and permits request inspection, then resume the candidate checks. Keep the
 whole Clean Trial site unpublished and leave its four other drafts untouched.
+
+### Brief #13 current browser-control and probe readback — 15 October 2026
+
+Read-only Webflow readback reconfirmed Clean Trial has no custom domains and
+its last publication remains `2026-10-14T23:30:40.323Z`. The candidate probe
+remains `draft: true`; its element tree contains only Body. The page list has
+three other pages marked draft. Earlier records and the brief say four other
+drafts, so the count differs; no Webflow content or publication changed.
+
+Chrome appears in the app inventory, but two attempts to bind it with
+`cua.getApp("com.google.Chrome")` returned `cgWindowNotFound`. The extension
+browser offers accessibility snapshots, screenshots and input, but no page
+evaluation or Network request list. A new tab on the published comparison
+page showed its existing page; the DevTools keyboard shortcut did not expose
+the panel in this browser surface. That page is the v0.2.6 comparison, not a
+source-derived candidate. The tab was closed. `node_repl` Playwright import
+returned `The requested module './index.js' does not provide an export named
+'default'`.
+
+Not checked: automatic failed-candidate-script request capture; source-derived
+candidate Details and closed-panel link/focus; Full-width and Right narrow-height
+containment; rendered candidate reduced-motion/custom-animation; human
+screen-reader and physical-device use; physical-display DPR 2×/3×; and cloned
+upgrade/rollback. Earlier interaction and local build evidence were not
+repeated. No candidate styles/content were applied; the probe remains empty.
+The isolated-route blocker was already reported to Boss and was not duplicated.
