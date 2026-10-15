@@ -1514,3 +1514,47 @@ defect was demonstrated and no fix or regression test was warranted.
 Continue when a supported isolated candidate route has a working Preview, or
 when an isolated staging route is available. Keep the whole site unpublished;
 the four unrelated drafts must remain untouched.
+
+### Brief #13 candidate access follow-up — 15 October 2026
+
+Started the existing Boss run for R-037, R-095 and R-155. The prior reviewed
+baseline was `05999ab`; `main` was clean and the only later commit was the
+recorded Preview retry at `6b91cd2`. Read the current house rules, project-docs
+v0.4, STATUS, relevant SCOPE/DECISIONS/ROADMAP entries, and the latest Brief
+12/13 fixture records before proceeding.
+
+The supported CUA Chrome browser opened a fresh tab at the published Clean
+Trial `/unlink-fallback-isolation` comparison. Its accessibility state and
+screenshot were available, but this page is the released v0.2.6 comparison and
+contains no source-derived candidate request or behavior to test. The CUA
+browser documentation provides no Network request list. Attempting to access
+the Chrome app window returned `cgWindowNotFound` twice. Sending the DevTools
+shortcut through the page tab did not open DevTools in the page surface. The
+tab opened for this check was closed. These are the inspection controls
+available in this session, not a passed candidate check.
+
+Read-only Webflow site and page readback confirms the Clean Trial site still
+has no custom domains and its last publication remains
+`2026-10-14T23:30:40.323Z`. The compiler probe remains draft, and four other
+pages remain drafts. No page elements, code, styles, Library items or
+publication changed.
+
+A local rendering route was also considered because `demo/index.html` loads the
+maintained source stylesheet and its browser runtime. Starting the built-in
+local HTTP server failed with `PermissionError: [Errno 1] Operation not
+permitted` when binding to `127.0.0.1`. No attempt was made to bypass that
+sandbox restriction or use `file://` after its known browser restriction.
+
+Not checked: automatic failed-candidate-script Network capture; source-derived
+candidate Details and closed-link focus; Full-width and Right short-height
+containment; rendered reduced-motion and custom-animation integration; human
+screen-reader/device use; physical-display DPR 2×/3×; and cloned
+upgrade/rollback. Earlier candidate Details/focus and local build evidence
+were not repeated because no candidate or source change was available. The
+isolated-route blocker was already reported to Boss, so no duplicate blocker
+report was sent. No source defect was demonstrated and no source fix or
+regression test was warranted.
+
+The next useful step remains a supported isolated candidate route that renders.
+Keep the Clean Trial site unpublished as a whole and leave its four other draft
+pages untouched.

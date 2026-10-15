@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 05999ab — checked current `main`; worktree was clean at start. The only commit since reviewed baseline `6f6d382` was the recorded DevTools evidence. No remote operation was made.
-**Next action:** Provide a supported isolated candidate Preview/staging route, then repeat the request, narrow-height and motion checks.
-**Needs Michael:** Review and push local commits. The current Webflow workspace cannot create page branches; its Preview still logs a compile error. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** 6b91cd2 — checked current `main`; worktree was clean at start. Only the Preview-retry evidence commit followed the prior reviewed baseline `05999ab`. No remote operation was made.
+**Next action:** Provide a supported isolated candidate route that renders, then repeat the failed-script request, narrow-height and motion checks.
+**Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 candidate access follow-up — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, generated release file or Webflow content changed. The available Chrome tab inspection reached only the published comparison page, not the source-derived candidate.
+
+**Outputs:** Recorded the current browser and local-route limits in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and ROADMAP. Work remains pending Michael's acceptance.
+
+**Checked how:** At `6b91cd2`, `main` was clean; only `6b91cd2` followed the previous reviewed baseline `05999ab`. Started Boss for R-037, R-095 and R-155. Read-only Webflow site/page readback confirms Clean Trial has no custom domains, its last publication is still `2026-10-14T23:30:40.323Z`, the candidate probe is draft and four other pages remain drafts. The CUA browser can open a fresh Chrome tab and read page accessibility/screenshot state, but exposes no Network request list; the candidate route is unavailable on the published comparison page. `cua.getApp("Google Chrome")` returned `cgWindowNotFound` on both attempts, and the browser tab shortcut did not open DevTools in the page surface. A local HTTP server attempt returned `PermissionError: [Errno 1] Operation not permitted` while binding to `127.0.0.1`; no alternate route was attempted. The fresh comparison tab was closed. No Webflow or source changes occurred.
+
+**Still open:** Automatic failed-script request capture; source-derived candidate Details and closed-link focus; Full-width and Right short-height containment; rendered reduced-motion and custom-animation integration; human screen-reader/device use; physical-display DPR 2×/3×; and cloned upgrade/rollback. The recorded Details/focus pass and local build results were not repeated. The isolated-route blocker was already reported to Boss, so it was not reported again.
+
+**Needs Michael:** Provide a supported isolated route with a working candidate runtime. Arrange the human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume browser checks when the candidate can render on an isolated route. Keep the whole Clean Trial site unpublished and the four unrelated drafts untouched.
+
+**Handoff:** The Clean Trial probe remains empty and draft; four other draft pages are unchanged. The browser tab opened during this follow-up was closed. Read the latest Brief 13 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 Preview retry — Codex (night shift)
 
