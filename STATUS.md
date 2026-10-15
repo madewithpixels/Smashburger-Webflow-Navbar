@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 09bb78f — checked the project record and R-267 sign-off wording. No remote operation was made.
+**Reviewed at commit:** a74ba2f — checked the project record and D-012–D-014 sign-off wording. No remote operation was made.
 **Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #44 decision sign-off wording — Codex (night shift)
+
+**Changed (D-012, D-013, D-014):** Added a plain question and recommendation under each proposed decision for Michael. All three remain Proposed because they concern product identity, where the work lives, or future product scope.
+
+**Outputs:** Updated `DECISIONS.md` and this status record. No decision text or implementation changed.
+
+**Checked how:** Read the project rules and the relevant decision and roadmap context. Confirmed each **For Michael:** line is directly below Status, includes a question and recommendation and explains what changes either way. Confirmed all three Status values remain Proposed. `git diff --check` passed.
+
+**Still open:** Michael's choices. None blocks this documentation change.
+
+**Needs Michael:** Review the three **For Michael:** lines and give a verdict when ready.
+
+**Next useful action:** Record Michael's choices and update the decisions in a later session.
 
 ## 15 October 2026 — Brief #43 unlink outcome sign-off wording — Codex (night shift)
 

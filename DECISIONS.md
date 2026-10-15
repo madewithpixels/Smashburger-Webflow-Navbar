@@ -86,6 +86,7 @@ Lite contains a local native component, plain/styled examples, workbench, safe-e
 
 ## D-012 - Exact structural sb-nav class mapping
 **Status:** Proposed
+**For Michael:** Should the visible class names use “sb-nav” and its role names? I recommend keeping that clear pattern; choosing it lets the migration start, while another name changes the class names designers see.
 **Date:** 14 October 2026 specification
 The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, replacing mwp-css-nav_ and converting suffix underscores to hyphens. The mapping remains Proposed while Michael decides the product name (Q-02/Q-03, 14 October 2026); do not begin the class migration.
 **Source:** webflow/class-namespace-migration-audit.md §Chosen class mapping; git c808ca4, 5d720b1; R-121–R-124.
@@ -93,6 +94,7 @@ The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, re
 
 ## D-013 - Canonical repository/package and replacement local path
 **Status:** Proposed
+**For Michael:** What should the main repository and package be called, and where should the local folder live? I recommend keeping the SmashBurger name and choosing a MacStudio path; this sets where you and collaborators find the work, while another choice changes those names and location.
 **Date:** Not recorded in the source; extracted 14 October 2026
 The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity remain unresolved, Q-03. Michael is still deciding whether to rename the product; nothing is deployed on a live domain yet, so retaining the old repository for CDN compatibility matters less. This is context for the decision, not permission to remove it (Michael, 14 October 2026, this session).
 **Source:** todo §SmashBurger repository and local-folder rename (R-119–R-128); namespace audit §Build order and release boundary; current local cwd.
@@ -100,6 +102,7 @@ The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repo
 
 ## D-014 - Designer Extension with Make local as the preferred product track
 **Status:** Proposed
+**For Michael:** Once Lite works, do you want to build a separate Designer Extension and menu-maintenance tool? I recommend waiting until you have used Lite; proceeding adds a tool to build and maintain, while declining keeps the native component as the product.
 **Qualifier:** Deferred until Lite works — Michael, Q-04, 14 October 2026
 **Date:** Not recorded in the source; extracted 14 October 2026
 The proposed Designer Extension generator/maintenance track includes Make local for linked and unlinked instances, minimal grouped properties, preflight/diff and rollback. Michael deferred this product commitment until Lite works (Q-04 answer, this session).
