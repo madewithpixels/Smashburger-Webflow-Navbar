@@ -1848,3 +1848,32 @@ Full-width/Right short-height containment, rendered reduced-motion/custom
 animation, human screen-reader/device use, physical-display DPR 2x/3x, and
 cloned upgrade/rollback. The isolated-route blocker was already reported to Boss
 and was not duplicated.
+
+
+### Brief #15 route and fallback checks — 15 October 2026
+
+Opened a fresh Chrome tab at the Clean Trial `/unlink-fallback-isolation`
+route. The route served `@v0.2.6/dist/navbar-light.min.css` and
+`navbar-light.min.js`; the page's manual settings snapshot reports Dropdown
+layout, right alignment and dropdown motion. This is the published comparison
+fixture, not the maintained source candidate.
+
+Chrome DevTools Network already contained an unchecked request-blocking pattern
+for that script. I enabled it for one page reload. Network and Console showed
+the `navbar-light.min.js` request blocked by DevTools, and the page reported:
+“Navbar Light 0.2.6: CDN JavaScript failed to load; native details behavior
+remains available.” I disabled the pattern and reloaded; the normal script
+request succeeded again. No Webflow setting or page content changed.
+
+With the script blocked, the native Details disclosures opened. “More” received
+focus when clicked; Tab reached its first link while open. After closing the
+disclosure, Tab skipped the hidden links and moved to “VIEW RELEASE”. This is
+published v0.2.6 fallback evidence, not a source-candidate behavior claim.
+
+Not checked: Full-width and Right short-height scrolling, rendered
+reduced-motion or custom-animation integration on the maintained candidate;
+human screen-reader/device checks; physical-display DPR 2×/3×; and cloned
+upgrade/rollback. The route does not contain the candidate layouts or motion
+configuration. The mismatch was reported once to Boss. No source, release
+asset, Webflow content or publication changed. The empty probe and unrelated
+drafts remain untouched. The Chrome tab opened for this check is closed.

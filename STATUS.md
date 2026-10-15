@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` run reported 33/48 passing and 15 failures in the immutable distribution and Embed against newer source behavior; generated files were restored. Rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` run reported 33/48 passing and 15 failures in the immutable distribution and Embed against newer source behavior; generated files were restored. A failed-script request and native Details/focus fallback were confirmed on the published comparison route, but the route still loads v0.2.6 rather than the source candidate. Remaining candidate layout/motion checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 91532aa — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Resume rendered candidate checks when an isolated candidate route and request-inspection control are available.
-**Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** 466e3d8 — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Provide an isolated route serving the maintained candidate CSS and JavaScript; then run the remaining layout and motion checks.
+**Needs Michael:** Provide the source-candidate route. Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #15 candidate route and fallback checks — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release file or Webflow content changed. Chrome DevTools blocked the route's v0.2.6 script for one reload; I disabled the block and reloaded successfully. The published route is still the comparison, not the maintained source candidate.
+
+**Outputs:** Captured the failed script request and checked native Details and focus behavior on the isolated route. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for this continuation and read the current project record and project-docs v0.4. Chrome Network showed the route loading `@v0.2.6/dist/navbar-light.min.css` and `navbar-light.min.js`. With the pre-existing request-blocking pattern enabled, Network and Console recorded the blocked `navbar-light.min.js` request and the page's “CDN JavaScript failed to load; native details behavior remains available” message. The native disclosures opened; with “More” open, Tab focused its first link, and after closing it, Tab skipped those links to “VIEW RELEASE”. I disabled the block and reloaded, then closed the tab I opened. No Webflow page, probe, draft or publication changed. Git status was clean at `466e3d8`; the only commit after the previous reviewed baseline `91532aa` was the recorded access-limit update. No remote operation was made.
+
+**Still open:** The route's manual settings snapshot says Dropdown layout, right alignment and dropdown motion. It does not contain the source candidate or the Full-width/Right fixtures. The Full-width and Right short-height, rendered reduced-motion and custom-animation checks remain unverified. Human screen-reader/device checks, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+
+**Needs Michael:** Provide the direct route that serves the maintained candidate CSS and JavaScript. Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Once the candidate route is available, test Full-width and Right at short heights, then reduced motion and custom-animation. Keep the Clean Trial probe empty, leave unrelated drafts unchanged, and do not publish the whole site.
+
+**Handoff:** Read the latest Brief #15 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). The request-blocking pattern is disabled again. My test tab is closed.
 
 ## 15 October 2026 — Brief #13 browser control confirmation — Codex (night shift)
 
