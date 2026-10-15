@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 00d652a — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** 2711447 — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide a supported isolated candidate route that renders and exposes request inspection, then continue the remaining browser checks.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 current access and fixture readback — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, generated release file or Webflow content changed. The current route and browser controls still do not permit the remaining candidate checks.
+
+**Outputs:** Recorded today's Webflow and Chrome readback in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and added the R-037/R-095/R-155 evidence boundary to ROADMAP. Work remains pending Michael's acceptance.
+
+**Checked how:** At baseline `2711447`, `main` was clean. Read AGENTS.md, project-docs v0.4, STATUS, SCOPE, DECISIONS, ROADMAP and the latest Brief #12 fixture notes. Started Boss for R-037, R-095 and R-155. Webflow MCP `list_sites` and `get_site` succeeded: Clean Trial has no custom domains and its last publication remains `2026-10-14T23:30:40.323Z`. Chrome's inventory exposes only the extension browser; its documented CUA surface has no request-event capture, and `cua.getApp("Google Chrome")` returned `cgWindowNotFound`. Existing tabs were left untouched; no new tab was opened because no source-derived candidate route or request-inspection control was available. No Webflow content or publication changed.
+
+**Still open:** Failed candidate-script request capture; candidate Details and closed-link focus; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader and physical-device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. Previously evidenced behavior and the 48/48 local build were not repeated. The isolated-route blocker was already reported to Boss, so no duplicate blocker report was sent.
+
+**Needs Michael:** Provide a supported isolated candidate route that renders and allows request inspection. Arrange human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume candidate checks when that route and inspection surface are available. Keep Clean Trial unpublished as a whole and leave its four other draft pages untouched.
+
+**Handoff:** Read this entry and the latest Brief #13 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 current route and browser-surface readback — Codex (night shift)
 

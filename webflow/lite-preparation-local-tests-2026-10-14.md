@@ -1637,3 +1637,33 @@ blocker was already reported to Boss, so no duplicate blocker report was sent.
 Next useful action: provide a supported isolated route that renders and
 provides request inspection, then resume the candidate checks. Keep the whole
 Clean Trial site unpublished and leave its four other drafts untouched.
+
+### Brief #13 current access and fixture readback — 15 October 2026
+
+At baseline `2711447`, `main` was clean. Read AGENTS.md and project-docs v0.4,
+the project record, and the latest Brief #12 fixture entries. Started Boss for
+R-037, R-095 and R-155.
+
+Webflow MCP access was proved with `list_sites` and `get_site`. Clean Trial has
+no custom domains, and its last publication remains
+`2026-10-14T23:30:40.323Z`. The latest recorded page readback still identifies
+an empty draft probe and four unrelated draft pages. No page, Library item or
+publication changed.
+
+Chrome's current inventory exposes only the extension browser. Its documented
+CUA controls do not provide a request-event list or CDP session. `cua.getApp("Google Chrome")`
+returned `cgWindowNotFound`. Existing tabs belong to another connection and
+were left untouched; no tab was opened because the source-derived candidate
+route and needed request-inspection control are unavailable.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details and closed-link focus; Full-width and Right narrow-height containment;
+rendered reduced-motion/custom-animation; human screen-reader/device use;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. Earlier interaction,
+layout and build results were not repeated. The route blocker was already
+reported to Boss, so no duplicate blocker report was sent. No source defect was
+demonstrated and no fix or regression test was warranted.
+
+Next useful action: provide a supported isolated candidate route that renders
+and permits request inspection, then resume the candidate checks. Keep the
+whole Clean Trial site unpublished and leave its four other drafts untouched.
