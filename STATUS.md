@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 6f6d382 — checked current `main`; worktree was clean at start. Only the recorded Brief 13 evidence update followed the previous reviewed commit. No remote operation was made.
-**Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
-**Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+**Reviewed at commit:** 05999ab — checked current `main`; worktree was clean at start. The only commit since reviewed baseline `6f6d382` was the recorded DevTools evidence. No remote operation was made.
+**Next action:** Provide a supported isolated candidate Preview/staging route, then repeat the request, narrow-height and motion checks.
+**Needs Michael:** Review and push local commits. The current Webflow workspace cannot create page branches; its Preview still logs a compile error. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 Preview retry — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source or Webflow content changed. A fresh Designer Preview still fails to compile, so candidate checks could not run.
+
+**Outputs:** Added the Chrome inspection-surface and Preview retry evidence to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and related roadmap evidence. Work remains pending Michael's acceptance.
+
+**Checked how:** At baseline `05999ab`, the worktree was clean on `main`; only the already-recorded DevTools evidence followed reviewed commit `6f6d382`. Started Boss for R-037, R-095 and R-155. The Chrome extension runtime exposes DOM snapshots, page-console logs and a viewport override; it does not expose a Network request list. In a fresh Designer tab for the backed-up Clean Trial probe, Preview became active but the console logged `CompilationError: Invalid source code`. After 30 seconds, reloading and waiting another 30 seconds showed the same error. A second fresh Designer tab also logged the same error after Preview was entered and allowed 30 seconds. Read-only Webflow site/page readback confirms no custom domains, last publication `2026-10-14T23:30:40.323Z`, the empty draft probe and four other drafts. All tabs opened for this check were closed. No page, code, style, Library item, asset or publication changed.
+
+**Still open:** Candidate failed-script request capture, native Details and closed-link focus, Full-width/Right short-height containment, reduced-motion/custom-animation and usable candidate Preview. Human screen-reader/device, physical-display DPR 2×/3× and cloned upgrade/rollback still need people, hardware or a release candidate. No source defect was demonstrated.
+
+**Needs Michael:** Provide an isolated candidate route whose Preview compiles, or a supported staging route. Arrange the human/device checks and cloned release candidate when available.
+
+**Next useful action:** Resume source-derived candidate checks when that isolated route is available. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** The Clean Trial probe remains empty and draft; four other draft pages are untouched. Read the latest Brief 13 test record first. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 DevTools and isolated-route check — Codex (night shift)
 

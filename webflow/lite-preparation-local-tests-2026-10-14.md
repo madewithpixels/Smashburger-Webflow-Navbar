@@ -1477,3 +1477,40 @@ reduced-motion/custom-animation; human screen-reader/device checks;
 physical-display DPR 2×/3×; and cloned upgrade/rollback. Earlier Details and
 link/focus checks and the fresh build were not repeated. The isolated-route
 blocker was already reported to Boss, so no duplicate blocker report was sent.
+
+### Brief #13 Preview retry with Chrome inspection — 15 October 2026
+
+At baseline `05999ab`, `main` was clean; only the previous DevTools evidence
+commit followed reviewed commit `6f6d382`. The Chrome extension's browser
+runtime is callable from `cua_repl` in this session. It provides DOM snapshots,
+read-only page evaluation, console logs and an optional viewport override. Its
+browser capability list contains only `viewport`; no Network request list is
+exposed. The earlier CUA-only inspection limitation therefore does not describe
+this extension runtime.
+
+A new Designer tab opened the backed-up Clean Trial probe. Preview switched on,
+but Chrome's page-console log recorded `CompilationError: Invalid source code`
+from Webflow's Preview runtime. After waiting 30 seconds, reloading and waiting
+30 seconds returned to the same Preview state and error. A second fresh Designer
+tab loaded successfully; entering Preview and waiting 30 seconds logged the
+same error again. This follows the requested wait/reload/fresh-tab recovery
+sequence. The error prevents the candidate from rendering; it does not identify
+whether the cause is site-wide custom code or Webflow's compiler.
+
+Read-only Webflow `get_site` and `list_pages` again showed no custom domains,
+last publication `2026-10-14T23:30:40.323Z`, the empty draft probe and four
+unrelated drafts. The draft page still has no candidate runtime, and Designer
+Preview could not render one. The three tabs opened for this check were
+closed. No Webflow page, code, style, Library item, asset or publication
+changed.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details and closed-link focus; Full-width and Right narrow-height containment;
+candidate reduced-motion/custom-animation; human screen-reader/device use;
+physical-display DPR 2×/3×; and cloned upgrade/rollback. The earlier native
+Details and closed-link checks and fresh build were not repeated. No source
+defect was demonstrated and no fix or regression test was warranted.
+
+Continue when a supported isolated candidate route has a working Preview, or
+when an isolated staging route is available. Keep the whole site unpublished;
+the four unrelated drafts must remain untouched.
