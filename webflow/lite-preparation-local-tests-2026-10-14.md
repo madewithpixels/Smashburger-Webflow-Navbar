@@ -1952,3 +1952,29 @@ Details/focus, Full-width and Right short-height, reduced-motion and
 custom-animation checks remain open, along with human/device, physical-display
 DPR 2×/3× and cloned upgrade/rollback checks. Earlier v0.2.6 fallback and
 Details/focus results remain comparison evidence only.
+
+### Brief #15 route and request check — 15 October 2026
+
+Started Boss for Brief #15 and read the project record. At `2354365`, `main`
+was clean. In a fresh Chrome tab, opened DevTools Network and reloaded
+`https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation`. The
+document returned 200. Network showed
+`@v0.2.6/dist/navbar-light.min.css` and `navbar-light.min.js`, both returning
+200. DevTools request inspection therefore works, but this remains the
+v0.2.6 comparison route rather than the maintained candidate.
+
+Read-only Webflow page listing shows this as the only published isolation
+page. The `SB Lite Preview Compiler Probe` is still an empty draft; the three
+unrelated audit pages remain drafts. No separate candidate page appears in
+the list. My fresh Chrome tab was closed. No page, setting, draft, request
+blocking rule or publication changed.
+
+Not checked: failed-candidate-script request capture; candidate Details and
+keyboard focus; Full-width and Right at short heights; candidate reduced-motion
+and custom-animation; human screen-reader/device checks; physical-display DPR
+2×/3×; and cloned upgrade/rollback. Earlier v0.2.6 fallback and Details/focus
+results remain comparison evidence only.
+
+Next useful action: use the isolated candidate URL when it is supplied or
+appears on Clean Trial, then complete the remaining browser checks. Keep Clean
+Trial unpublished and leave its empty probe and unrelated drafts unchanged.

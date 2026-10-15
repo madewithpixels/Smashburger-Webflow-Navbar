@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Brief #15 says the isolated candidate route and request inspection are available, but this check did not confirm candidate files. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Chrome DevTools request inspection works, but the only published Clean Trial route still serves v0.2.6; the candidate route was not identified in the site page list. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 3e03ff5 — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Retry the candidate route when Chrome remains available long enough to finish its document load, then capture its failed-script request and run the remaining browser checks.
+**Reviewed at commit:** 2354365 — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Use the isolated candidate URL when it is supplied or appears on Clean Trial, then capture its failed-script request and run the remaining browser checks.
 **Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #15 route and request check — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release asset or Webflow content changed. Chrome DevTools request inspection is available, but the known isolated Clean Trial route still serves v0.2.6 rather than the maintained candidate.
+
+**Outputs:** Confirmed the published route's loaded CSS and JavaScript URLs and the Clean Trial page list. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for Brief #15 and read the project record. At `2354365`, `main` was clean. In a fresh Chrome tab, opened DevTools Network and reloaded `https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation`. The route document returned 200; Network showed `@v0.2.6/dist/navbar-light.min.css` and `navbar-light.min.js`, both 200. Read-only Webflow page listing shows that route is the only published isolation page; the empty `SB Lite Preview Compiler Probe` and three unrelated audit drafts remain drafts. No separate candidate page appears. I closed my tab; no Webflow setting, draft, request-blocking rule or publication changed.
+
+**Still open:** Candidate failed-script request capture; candidate Details and keyboard focus; Full-width and Right at short heights; candidate reduced-motion and custom-animation. Human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback also remain open. No candidate behavior was inferred from the v0.2.6 comparison route.
+
+**Needs Michael:** Provide the isolated candidate route URL or make it discoverable in the Clean Trial page list. Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** On the source-candidate route, capture the failed-script request, check Details and focus, test Full-width and Right at short heights, then check reduced motion and custom-animation. Keep Clean Trial unpublished and leave the empty probe and unrelated drafts unchanged.
+
+**Handoff:** Read this entry and the matching Brief #15 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). My fresh Chrome tab is closed; Clean Trial is unchanged.
 
 ## 15 October 2026 — Brief #15 candidate route inspection retry — Codex (night shift)
 
