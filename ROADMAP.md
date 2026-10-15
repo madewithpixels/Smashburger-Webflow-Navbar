@@ -1443,7 +1443,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 #### R-165 · Prototype moving the Canvas-visible Code Embed inside one compact `SmashBurger infrastructure` Details element, collapsed by default, and verify the CSS/JS output and a readable settings snapshot in Preview and published output.
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
-**Try:** In Designer, leave the “SmashBurger infrastructure” box closed, then check that the menu still works in Preview.
+**Try:** In Preview, check that the settings list is readable and the menu works while the “SmashBurger infrastructure” box is closed. The list is a manual snapshot, so it may need updating if the settings change.
 **Covers:** R-167, R-170
 **Source:** [todo.md](todo.md), original line 233 (now 234); baseline `c808ca4`.
 **Current direction:** Michael, Q-07, 14 October 2026: accepted as a prototype only (D-016), with a muted “Infrastructure and settings” label direction. Manual upkeep remains necessary; styling is not implemented here and roadmap Acceptance remains pending.

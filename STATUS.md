@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** c688e43 — checked the project record and R-162/R-163 sign-off wording. No remote operation was made.
+**Reviewed at commit:** 558083b — checked the project record and R-165 sign-off wording. No remote operation was made.
 **Next action:** Michael can try the outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push local commits when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #42 infrastructure outcome sign-off wording — Codex (night shift)
+
+**Changed (R-165):** Made the Preview check clear: Michael can check the readable settings list and working menu while the infrastructure box is closed. The list is a manual snapshot and may need updating if settings change. R-167 and R-170 remain technical steps covered by this outcome.
+
+**Outputs:** Updated the Try line in `ROADMAP.md`. No implementation or Webflow content changed.
+
+**Checked how:** Compared R-165, R-167 and R-170 before and after. Confirmed State, Evidence and Acceptance are unchanged, and the Try line is directly under State. `git diff --check` passed. This documentation change does not verify Preview behavior.
+
+**Still open:** Michael's Preview check and sign-off. Preview behavior was not checked in this session.
+
+**Needs Michael:** Try the settings list and menu in Preview with the infrastructure box closed, then record a verdict in boss. Review and push the local commit when ready.
+
+**Next useful action:** Michael checks the R-165 outcome in Preview; a later agent records his verdict without changing acceptance.
 
 ## 15 October 2026 — Brief #41 Navigator sign-off wording — Codex (night shift)
 
