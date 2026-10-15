@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 were accepted by Michael on 15 October 2026. Product naming and the new local destination are settled; repository migration has not started.
-**Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** e9bf567 — checked the project record and accepted D-012/D-013 decisions before this record update. No remote operation was made.
-**Next action:** Michael creates and clones the canonical repository at the path recorded in D-013; resume the rename sequence there.
-**Needs Michael:** Create and clone the new repository at `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. Review and push local commits when ready.
+**Stage:** Full history transferred to the canonical repository and clone. Renamed sb-nav source, demo and isolated 0.3.0-rc.1 output are built and locally checked. v0.2.6 remains released; Webflow/Library rollout, human/device checks and cloned upgrade/rollback remain open.
+**Last updated:** 15 October 2026 — Codex
+**Reviewed at commit:** 0864f82 — complete source/remote baseline checked before the transfer and candidate changes.
+**Next action:** Commit and sync the checked candidate to the canonical clone, then assess the newly offered Webflow test site before any structural test.
+**Needs Michael:** No Git transfer or repository setup work. Michael has offered “new smashburger test”; its backup state must be checked before structural tests. Human/device acceptance and later publication approval remain separate gates.
+
+## 15 October 2026 — Canonical transfer and renamed source candidate — Codex
+
+**Changed (R-119–R-124, R-128):** Copied the complete branch/tag history to the canonical repository and populated the selected clone. Renamed maintained source, demo, fixtures and tests to the accepted sb-nav classes. Package identity is smashburger-webflow-navbar; 0.3.0-rc.1 is an unreleased candidate, generated separately from the released files (technical D-017). Recorded Michael's explicit remote-operation authority under D-013 without rewriting its original decision text.
+
+**Outputs:** Source and candidate distribution/Embeds/loader, automated class/hook and immutable-file guards, updated CI and version-boundary guides. Full transfer/check record: [canonical rename](webflow/canonical-rename-2026-10-15.md). Verified history backup copied to `.backups/` in both checkouts; existing dependencies copied into the canonical clone without installation or upgrades. Original remote, release tags, archived demos and detached trial worktree remain available.
+
+**Checked how:** Verified both remote states before transfer. Destination HEAD/tree, both branches, eight tags and reachable history matched at 0864f82 (244 main commits); git fsck passed. Candidate tests passed 53/53; full tests: 90 checks, 75 passed, no unmarked failures, 15 known v0.2.6 TODO checks. Syntax, class/hook checks, reproducible generation and git diff --check passed. All 17 protected historical files remain byte-identical. Local in-app browser at 1280px/393px confirmed candidate loading, contained mobile panel, submenu hiding and nested/outer Escape with focus return and closed ARIA/inert. Six old CDN assets at v0.1.0/v0.2.0/v0.2.6 returned 200 and matched tagged bytes. These do not establish Webflow candidate acceptance.
+
+**Still open:** Sync the candidate commit and run checks from the canonical clone. R-121's Webflow/Library/clonable scope, final release promotion/tag/CDN delivery, human/device accessibility, physical-display checks, cloned upgrade/rollback and final workspace reopen. The old repository must remain until release/compatibility gates are met. No new tag, Webflow edit, share, publish or CDN write was made by this entry.
+
+**Needs Michael:** No technical Git transfer. Human/device sign-off and later release/publication approval remain his gates. Confirm or create a Webflow backup if the new test site has none; structured site inspection is next.
+
+**Next useful action:** Verify and push the candidate from the canonical clone; inspect “new smashburger test” and use an isolated backed-up test surface for the next candidate checks.
+
+**Handoff:** Future repository work starts at `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. This chat/boss commit tool still binds the old checkout, so commits are made there and fast-forwarded into the canonical clone. Do not install the illustrative candidate CDN loader or replace top-level v0.2.6 output. Read the rename record and current site state before Webflow work. Michael offered the new test site during this session; it has not yet been structurally changed.
 
 ## 15 October 2026 — Record accepted naming and repository direction — Codex
 

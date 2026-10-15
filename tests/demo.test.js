@@ -51,7 +51,7 @@ test('demo initializes when opened directly from the filesystem', async () => {
   collapse.dispatchEvent(new dom.window.Event('change', { bubbles: true }));
   assert.notEqual(dom.window.getComputedStyle(root.querySelector('[data-mwp-panel]')).display, 'none');
   const submenu = root.querySelector('[data-mwp-submenu]');
-  const submenuList = root.querySelector('.mwp-css-nav_submenu-list');
+  const submenuList = root.querySelector('.sb-nav-submenu-list');
   assert.equal(dom.window.getComputedStyle(submenuList).display, 'none');
   submenu.open = true;
   assert.notEqual(dom.window.getComputedStyle(submenuList).display, 'none');
@@ -60,19 +60,19 @@ test('demo initializes when opened directly from the filesystem', async () => {
   // DOM order is the reading and Tab order; it must match the visual order
   // (Primary first) so keyboard and screen-reader users meet the main links first.
   assert.deepEqual(panelGroups.map((element) => element.className), [
-    'mwp-css-nav_primary',
-    'mwp-css-nav_secondary'
+    'sb-nav-primary',
+    'sb-nav-secondary'
   ]);
   const focusable = [...root.querySelectorAll('[data-mwp-panel] a[href]')];
   assert.ok(focusable[0].closest('[data-mwp-primary]'), 'first panel link must be a primary link');
-  assert.deepEqual([...root.querySelector('.mwp-css-nav_primary').children].map((element) => element.className), [
-    'mwp-css-nav_links',
-    'mwp-css-nav_cta'
+  assert.deepEqual([...root.querySelector('.sb-nav-primary').children].map((element) => element.className), [
+    'sb-nav-links',
+    'sb-nav-cta'
   ]);
-  assert.equal(root.querySelectorAll('.mwp-css-nav_socials a').length, 7);
-  assert.equal(root.querySelectorAll('.mwp-css-nav_socials .mwp-css-nav_secondary-label').length, 7);
-  assert.equal(root.querySelectorAll('.mwp-css-nav_contacts a').length, 2);
-  assert.equal(root.querySelectorAll('.mwp-css-nav_contacts a > span').length, 2);
+  assert.equal(root.querySelectorAll('.sb-nav-socials a').length, 7);
+  assert.equal(root.querySelectorAll('.sb-nav-socials .sb-nav-secondary-label').length, 7);
+  assert.equal(root.querySelectorAll('.sb-nav-contacts a').length, 2);
+  assert.equal(root.querySelectorAll('.sb-nav-contacts a > span').length, 2);
 
   layout.value = 'dropdown';
   layout.dispatchEvent(new dom.window.Event('change', { bubbles: true }));

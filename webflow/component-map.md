@@ -154,6 +154,6 @@ Native layout classes:
 
 ## Generated embeds
 
-`webflow/navbar-light-embed.html` and `demo/navbar-light.browser.js` are generated from `src/navbar-light.css` and `src/navbar-light.js`. Never edit generated output as the source of truth; run `npm run build:webflow`, then synchronize the Embed output to Webflow.
+`npm run build:webflow` generates `candidate/webflow/navbar-light-embed.html` and `candidate/demo/navbar-light.browser.js` from the maintained source. These use the accepted `sb-nav` classes and are unreleased. Top-level Embed and browser files remain the immutable v0.2.6 baseline; the Webflow readbacks above describe that baseline. Do not synchronise the candidate into Webflow until backup and release gates are satisfied. See [the candidate structure and mapping](canonical-rename-2026-10-15.md).
 
 `webflow/navbar-light-cdn-loader.html` is generated from the package version and built release files. The current generated loader references `v0.2.6` with matching SHA-384 integrity values. The `SmashBurger CDN` component is separate so the self-contained edition remains available without an external runtime request. Library source and consumer rollout must be verified separately from generating this file.

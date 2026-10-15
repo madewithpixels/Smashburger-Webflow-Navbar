@@ -76,7 +76,7 @@
       top: 0;
       z-index: 50;
     }
-    .mwp-css-nav_inner {
+    .sb-nav-inner {
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -106,8 +106,8 @@
       text-transform: uppercase;
       width: 7.5rem;
     }
-    .mwp-css-nav_menu { margin-left: auto; }
-    .mwp-css-nav_summary {
+    .sb-nav-menu { margin-left: auto; }
+    .sb-nav-summary {
       align-items: center;
       background: var(--yellow);
       border: 2px solid var(--ink);
@@ -117,34 +117,34 @@
       padding: .55rem .75rem;
       text-transform: uppercase;
     }
-    .mwp-css-nav_summary [data-mwp-label] { font-size: .7rem; font-weight: 900; letter-spacing: .08em; }
-    .mwp-css-nav_icon { gap: .25rem; width: 1.5rem; }
-    .mwp-css-nav_line { background: currentColor; height: 3px; width: 100%; }
-    .mwp-css-nav_panel {
+    .sb-nav-summary [data-mwp-label] { font-size: .7rem; font-weight: 900; letter-spacing: .08em; }
+    .sb-nav-icon { gap: .25rem; width: 1.5rem; }
+    .sb-nav-line { background: currentColor; height: 3px; width: 100%; }
+    .sb-nav-panel {
       align-items: center;
       display: flex;
       gap: 1.5rem;
       padding-left: 1.5rem;
     }
-    .mwp-css-nav_primary { align-items: center; display: flex; gap: .75rem; }
-    .mwp-css-nav_links { align-items: center; display: flex; gap: 1.25rem; }
-    .mwp-css-nav_links > a,
-    .mwp-css-nav_submenu > summary {
+    .sb-nav-primary { align-items: center; display: flex; gap: .75rem; }
+    .sb-nav-links { align-items: center; display: flex; gap: 1.25rem; }
+    .sb-nav-links > a,
+    .sb-nav-submenu > summary {
       font-size: .75rem;
       font-weight: 900;
       letter-spacing: .06em;
       text-decoration: none;
       text-transform: uppercase;
     }
-    .mwp-css-nav_links > a:hover { text-decoration: underline 3px var(--red); text-underline-offset: 5px; }
-    .mwp-css-nav_submenu { position: relative; }
-    .mwp-css-nav_submenu summary { align-items: center; cursor: pointer; display: flex; gap: .45rem; list-style: none; }
-    .mwp-css-nav_submenu-icon { display: flex; height: .75rem; position: relative; width: .75rem; }
-    .mwp-css-nav_submenu-icon-line-left,
-    .mwp-css-nav_submenu-icon-line-right { background: currentColor; height: 2px; position: absolute; top: 50%; width: 55%; }
-    .mwp-css-nav_submenu-icon-line-left { left: 7%; transform: rotate(45deg); }
-    .mwp-css-nav_submenu-icon-line-right { right: 7%; transform: rotate(-45deg); }
-    .mwp-css-nav_submenu-list {
+    .sb-nav-links > a:hover { text-decoration: underline 3px var(--red); text-underline-offset: 5px; }
+    .sb-nav-submenu { position: relative; }
+    .sb-nav-submenu summary { align-items: center; cursor: pointer; display: flex; gap: .45rem; list-style: none; }
+    .sb-nav-submenu-icon { display: flex; height: .75rem; position: relative; width: .75rem; }
+    .sb-nav-submenu-icon-line-left,
+    .sb-nav-submenu-icon-line-right { background: currentColor; height: 2px; position: absolute; top: 50%; width: 55%; }
+    .sb-nav-submenu-icon-line-left { left: 7%; transform: rotate(45deg); }
+    .sb-nav-submenu-icon-line-right { right: 7%; transform: rotate(-45deg); }
+    .sb-nav-submenu-list {
       background: var(--pink);
       border: var(--line);
       box-shadow: var(--shadow);
@@ -155,12 +155,12 @@
       right: 0;
       top: calc(100% + 1.4rem);
     }
-    .mwp-css-nav_submenu-list a { font-size: .8rem; font-weight: 900; padding: .5rem; text-decoration: none; text-transform: uppercase; }
-    .mwp-css-nav_submenu-list a:hover { background: var(--cream); }
-    .mwp-css-nav_secondary { display: none; }
-    .mwp-css-nav_socials,
-    .mwp-css-nav_contacts { align-items: center; display: flex; gap: .5rem; }
-    .mwp-css-nav_cta,
+    .sb-nav-submenu-list a { font-size: .8rem; font-weight: 900; padding: .5rem; text-decoration: none; text-transform: uppercase; }
+    .sb-nav-submenu-list a:hover { background: var(--cream); }
+    .sb-nav-secondary { display: none; }
+    .sb-nav-socials,
+    .sb-nav-contacts { align-items: center; display: flex; gap: .5rem; }
+    .sb-nav-cta,
     .button {
       align-items: center;
       background: var(--red);
@@ -178,10 +178,10 @@
       text-transform: uppercase;
       transition: box-shadow .12s ease, transform .12s ease;
     }
-    .mwp-css-nav_cta:hover,
+    .sb-nav-cta:hover,
     .button:hover { box-shadow: 2px 2px 0 var(--ink); transform: translate(3px, 3px); }
     .button--cream { background: var(--cream); color: var(--ink); }
-    [data-mwp-collapsed="true"] .mwp-css-nav_panel {
+    [data-mwp-collapsed="true"] .sb-nav-panel {
       align-items: stretch;
       background: var(--yellow);
       border-bottom: var(--line);
@@ -192,9 +192,9 @@
       right: 0;
       width: 100%;
     }
-    [data-mwp-collapsed="true"] .mwp-css-nav_primary,
-    [data-mwp-collapsed="true"] .mwp-css-nav_links { align-items: stretch; display: grid; gap: 1rem; }
-    [data-mwp-collapsed="true"] .mwp-css-nav_submenu-list { box-shadow: none; margin-top: .7rem; position: static; }
+    [data-mwp-collapsed="true"] .sb-nav-primary,
+    [data-mwp-collapsed="true"] .sb-nav-links { align-items: stretch; display: grid; gap: 1rem; }
+    [data-mwp-collapsed="true"] .sb-nav-submenu-list { box-shadow: none; margin-top: .7rem; position: static; }
 
     .hero {
       background: var(--yellow);
@@ -770,14 +770,14 @@
 
     @media (max-width: 767px) {
       .brand-mini { display: none; }
-      .mwp-css-nav_panel { width: min(24rem, 100vw); }
-      [data-mwp-collapsed="false"] .mwp-css-nav_inner { flex-wrap: wrap; }
-      [data-mwp-collapsed="false"] .mwp-css-nav_panel {
+      .sb-nav-panel { width: min(24rem, 100vw); }
+      [data-mwp-collapsed="false"] .sb-nav-inner { flex-wrap: wrap; }
+      [data-mwp-collapsed="false"] .sb-nav-panel {
         flex-basis: 100%;
         padding: 0 0 1rem;
         width: 100%;
       }
-      [data-mwp-collapsed="false"] .mwp-css-nav_primary { flex-wrap: wrap; }
+      [data-mwp-collapsed="false"] .sb-nav-primary { flex-wrap: wrap; }
       .section-heading { align-items: start; flex-direction: column; }
       .burger-card { display: grid; grid-template-columns: 1fr; }
       .ingredient-stack { margin-top: 4rem; min-height: 12rem; }
@@ -807,60 +807,60 @@
   </style>
 </head>
 <body data-art-mode="hybrid">
-  <header class="mwp-css-nav site-nav" data-mwp-navbar data-collapse="mobile-landscape" data-layout="dropdown" data-motion="dropdown" data-align="right" data-menu-label="visible" data-close-on-link="true" data-close-on-outside="true" data-focus-first="false" data-scroll-lock="auto" data-duration="280ms" data-open-duration="280ms" data-close-duration="220ms" data-distance="1.5rem" data-easing="cubic-bezier(0.22, 1, 0.36, 1)" data-panel-width="min(24rem, 100%)" data-stagger="35ms" data-icon-duration="220ms" data-submenu-icon-duration="220ms" data-submenu-icon-easing="cubic-bezier(0.22, 1, 0.36, 1)" data-submenu-icon-rotation="180deg" data-icon-lines="3">
-    <div class="mwp-css-nav_inner" data-mwp-inner>
+  <header class="sb-nav site-nav" data-mwp-navbar data-collapse="mobile-landscape" data-layout="dropdown" data-motion="dropdown" data-align="right" data-menu-label="visible" data-close-on-link="true" data-close-on-outside="true" data-focus-first="false" data-scroll-lock="auto" data-duration="280ms" data-open-duration="280ms" data-close-duration="220ms" data-distance="1.5rem" data-easing="cubic-bezier(0.22, 1, 0.36, 1)" data-panel-width="min(24rem, 100%)" data-stagger="35ms" data-icon-duration="220ms" data-submenu-icon-duration="220ms" data-submenu-icon-easing="cubic-bezier(0.22, 1, 0.36, 1)" data-submenu-icon-rotation="180deg" data-icon-lines="3">
+    <div class="sb-nav-inner" data-mwp-inner>
       <a class="brand" href="#top" aria-label="Smashed home">SMASHED<span class="brand-dot">.</span><span class="brand-mini">Aggressively flat burgers</span></a>
 
-      <details class="mwp-css-nav_menu" data-mwp-menu>
-        <summary class="mwp-css-nav_summary" data-mwp-trigger aria-label="Navigation menu">
+      <details class="sb-nav-menu" data-mwp-menu>
+        <summary class="sb-nav-summary" data-mwp-trigger aria-label="Navigation menu">
           <span data-mwp-label>Menu-ish</span>
-          <span class="mwp-css-nav_icon" data-mwp-icon aria-hidden="true">
-            <span class="mwp-css-nav_line" data-mwp-line></span>
-            <span class="mwp-css-nav_line" data-mwp-line></span>
-            <span class="mwp-css-nav_line" data-mwp-line></span>
+          <span class="sb-nav-icon" data-mwp-icon aria-hidden="true">
+            <span class="sb-nav-line" data-mwp-line></span>
+            <span class="sb-nav-line" data-mwp-line></span>
+            <span class="sb-nav-line" data-mwp-line></span>
           </span>
         </summary>
       </details>
 
-      <nav class="mwp-css-nav_panel" data-mwp-panel aria-label="Site navigation">
-        <div class="mwp-css-nav_primary" data-mwp-primary>
-          <div class="mwp-css-nav_links" data-mwp-links>
+      <nav class="sb-nav-panel" data-mwp-panel aria-label="Site navigation">
+        <div class="sb-nav-primary" data-mwp-primary>
+          <div class="sb-nav-links" data-mwp-links>
             <a href="#menu" data-mwp-item>Burgers</a>
             <a href="#method" data-mwp-item>The violence</a>
-            <details class="mwp-css-nav_submenu" data-mwp-submenu data-mwp-item>
+            <details class="sb-nav-submenu" data-mwp-submenu data-mwp-item>
               <summary>
                 <span>Corporate info</span>
-                <span class="mwp-css-nav_submenu-icon" data-mwp-submenu-icon aria-hidden="true">
-                  <span class="mwp-css-nav_submenu-icon-line-left"></span>
-                  <span class="mwp-css-nav_submenu-icon-line-right"></span>
+                <span class="sb-nav-submenu-icon" data-mwp-submenu-icon aria-hidden="true">
+                  <span class="sb-nav-submenu-icon-line-left"></span>
+                  <span class="sb-nav-submenu-icon-line-right"></span>
                 </span>
               </summary>
-              <div class="mwp-css-nav_submenu-list">
+              <div class="sb-nav-submenu-list">
                 <a href="#proof">Why burger?</a>
                 <a href="#playground">Website settings</a>
               </div>
             </details>
           </div>
-          <a class="mwp-css-nav_cta" href="#menu" data-mwp-item>Order the obvious</a>
+          <a class="sb-nav-cta" href="#menu" data-mwp-item>Order the obvious</a>
         </div>
-        <div class="mwp-css-nav_secondary" data-mwp-secondary aria-label="Secondary navigation">
-          <div class="mwp-css-nav_socials">
-            <a href="#facebook" data-mwp-item><span class="mwp-css-nav_secondary-label">Facebook</span></a>
-            <a href="#instagram" data-mwp-item><span class="mwp-css-nav_secondary-label">Instagram</span></a>
-            <a href="#linkedin" data-mwp-item><span class="mwp-css-nav_secondary-label">LinkedIn</span></a>
-            <a href="#tiktok" data-mwp-item><span class="mwp-css-nav_secondary-label">TikTok</span></a>
-            <a href="#threads" data-mwp-item><span class="mwp-css-nav_secondary-label">Threads</span></a>
-            <a href="#x" data-mwp-item><span class="mwp-css-nav_secondary-label">X</span></a>
-            <a href="#whatsapp" data-mwp-item><span class="mwp-css-nav_secondary-label">WhatsApp</span></a>
+        <div class="sb-nav-secondary" data-mwp-secondary aria-label="Secondary navigation">
+          <div class="sb-nav-socials">
+            <a href="#facebook" data-mwp-item><span class="sb-nav-secondary-label">Facebook</span></a>
+            <a href="#instagram" data-mwp-item><span class="sb-nav-secondary-label">Instagram</span></a>
+            <a href="#linkedin" data-mwp-item><span class="sb-nav-secondary-label">LinkedIn</span></a>
+            <a href="#tiktok" data-mwp-item><span class="sb-nav-secondary-label">TikTok</span></a>
+            <a href="#threads" data-mwp-item><span class="sb-nav-secondary-label">Threads</span></a>
+            <a href="#x" data-mwp-item><span class="sb-nav-secondary-label">X</span></a>
+            <a href="#whatsapp" data-mwp-item><span class="sb-nav-secondary-label">WhatsApp</span></a>
           </div>
-          <div class="mwp-css-nav_contacts">
+          <div class="sb-nav-contacts">
             <a href="tel:+441234567890" data-mwp-item><span>Telephone</span></a>
             <a href="mailto:hello@example.com" data-mwp-item><span>Email</span></a>
           </div>
         </div>
       </nav>
     </div>
-    <div class="mwp-css-nav_backdrop" data-mwp-backdrop aria-hidden="true"></div>
+    <div class="sb-nav-backdrop" data-mwp-backdrop aria-hidden="true"></div>
   </header>
 
   <main id="top">
@@ -990,7 +990,7 @@
             <div class="step-panel-inner">
               <div>
                 <h4>Install / the two-click version</h4>
-                <p>Copy Navbar Light from the MWP Component Library and paste it into your project. Keep its one native Navigation panel: desktop and mobile share the same links, because duplicating your menu is how haunted websites begin.</p>
+                <p>Copy SmashBurger from the MWP Component Library and paste it into your project. Keep its one native Navigation panel: desktop and mobile share the same links, because duplicating your menu is how haunted websites begin.</p>
               </div>
               <div class="step-code">OPTION A → self-contained Embed<br>OPTION B → pinned v0.2.0 CDN<br>NEVER → “latest”</div>
             </div>
@@ -1008,7 +1008,7 @@
             <div class="step-panel-inner">
               <div>
                 <h4>Configure / the fiddly bit</h4>
-                <p>At the Base breakpoint choose when it collapses, then pick dropdown, drawer or overlay and a motion preset. Style the existing <code>mwp-css-nav_*</code> classes in Designer. Leave the data hooks alone; they are shy and structurally important.</p>
+                <p>At the Base breakpoint choose when it collapses, then pick dropdown, drawer or overlay and a motion preset. Style the existing <code>sb-nav-*</code> classes in Designer. Leave the data hooks alone; they are shy and structurally important.</p>
               </div>
               <div class="step-code">COLLAPSE → tablet / mobile / always<br>LAYOUT → dropdown / left / right / overlay<br>MOTION → built-in / custom</div>
             </div>
@@ -1085,7 +1085,7 @@
   </footer>
 
   <script>globalThis.MWP_NAVBAR_LIGHT_AUTO_INIT = false;</script>
-  <script src="./navbar-light.browser.js"></script>
+  <script src="../candidate/demo/navbar-light.browser.js"></script>
   <script>
     const root = document.querySelector('[data-mwp-navbar]');
     const controls = document.querySelector('#navbar-controls');

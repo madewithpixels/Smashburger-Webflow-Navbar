@@ -112,6 +112,8 @@ create and clone the new repository. This records his planned action; it does no
 change the current checkout or remote. The local folder move remains the last
 rename step (R-128).
 
+**Follow-up — Michael, 15 October 2026, completion brief:** Explicitly authorised Codex to carry out the full history transfer and necessary remote repository operations. The clone already exists at the selected path; Michael will not handle the Git transfer. Preserve the old repository and all release hooks/URLs. This authority replaces the earlier allocation of the transfer work to Michael; it does not authorise bypassing the release or Webflow gates.
+
 ## D-014 - Designer Extension with Make local as the preferred product track
 **Status:** Proposed
 **For Michael:** After you have used the Lite release, do you want to build a separate Designer Extension and menu-maintenance tool? I recommend waiting for that experience before deciding; committing means building and maintaining a second tool, while declining keeps SmashBurger focused on the native navbar component.
@@ -135,3 +137,12 @@ Mega-menu stays separate from the basic navbar. Michael accepted this boundary a
 Keep the closed infrastructure Details and manual settings snapshot as a prototype, with a muted “Infrastructure and settings” label. Michael accepted the prototype boundary and label direction (Q-07 answer, this session); this docs update does not implement styling.
 **Source:** webflow/canvas-authoring-fixture.md §§Closed native Details wrapper, Static settings snapshot; webflow/unlink-hardening-candidate.md §Published Details-wrapper follow-up; R-165.
 **Consequence:** Static text requires manual upkeep; no live binding or accepted shared pattern is claimed.
+
+## D-017 - Isolate the renamed class candidate from the immutable release
+**Status:** Accepted
+**Qualifier:** technical — settled by Codex, 15 October 2026, under project-docs / boss D-096
+**Date:** 15 October 2026
+Use package name `smashburger-webflow-navbar` and prerelease version `0.3.0-rc.1` for the accepted `sb-nav` class migration. Generate into `candidate/`; retain the existing top-level v0.2.6 distribution, Embeds, loader and archived demo bytes. Protect these bytes and the retained runtime contracts with automated assertions. Do not create a release tag or install the illustrative candidate loader.
+**Rationale:** R-121 requires an explicit versioned class change; R-122 and S-07 protect runtime compatibility and existing immutable releases. Separate output allows the full renamed build to be reviewed without silently replacing the released baseline or inventing a published CDN URL.
+**Source:** Michael's completion brief, 15 October 2026; D-012/D-013; R-121–R-125; `scripts/build-paths.mjs`; `compatibility/`; [migration record](webflow/canonical-rename-2026-10-15.md).
+**Consequence:** Release promotion to top-level `/dist`, final loader generation, tags and Webflow/Library rollout remain gated work. The selected canonical clone can be used now while the old repository stays available.

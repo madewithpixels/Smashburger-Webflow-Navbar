@@ -1,11 +1,10 @@
 import { build } from 'esbuild';
 import { mkdir, readFile } from 'node:fs/promises';
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+import { projectRoot, outputRoot } from './build-paths.mjs';
 
-const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sourceDirectory = resolve(projectRoot, 'src');
-const outputDirectory = resolve(projectRoot, 'dist');
+const outputDirectory = resolve(outputRoot, 'dist');
 const packageMetadata = JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8'));
 const version = packageMetadata.version;
 const moduleSource = await readFile(resolve(sourceDirectory, 'navbar-light.js'), 'utf8');
@@ -32,14 +31,14 @@ await Promise.all([
     ...shared,
     entryPoints: [resolve(sourceDirectory, 'navbar-light.css')],
     outfile: resolve(outputDirectory, 'navbar-light.css'),
-    banner: { css: `/*! Navbar Light v${version} */` }
+    banner: { css: `/*! SmashBurger v${version} */` }
   }),
   build({
     ...shared,
     entryPoints: [resolve(sourceDirectory, 'navbar-light.css')],
     outfile: resolve(outputDirectory, 'navbar-light.min.css'),
     minify: true,
-    banner: { css: `/*! Navbar Light v${version} */` }
+    banner: { css: `/*! SmashBurger v${version} */` }
   }),
   build({
     ...shared,
@@ -51,7 +50,7 @@ await Promise.all([
     },
     format: 'iife',
     outfile: resolve(outputDirectory, 'navbar-light.js'),
-    banner: { js: `/*! Navbar Light v${version} */` }
+    banner: { js: `/*! SmashBurger v${version} */` }
   }),
   build({
     ...shared,
@@ -64,6 +63,6 @@ await Promise.all([
     format: 'iife',
     minify: true,
     outfile: resolve(outputDirectory, 'navbar-light.min.js'),
-    banner: { js: `/*! Navbar Light v${version} */` }
+    banner: { js: `/*! SmashBurger v${version} */` }
   })
 ]);

@@ -3,7 +3,7 @@
 1. Set the Navbar Light `Motion class` property to `mwp-motion-custom`.
 2. Add a first-click interaction to `Menu trigger` that animates `Navigation panel` into view.
 3. Add the matching second-click interaction that animates it out.
-4. Target the panel by the `mwp-css-nav_panel` class or `[data-mwp-panel]` hook.
+4. Target the panel by the `sb-nav-panel` candidate class (released v0.2.6: `mwp-css-nav_panel`) or `[data-mwp-panel]` hook.
 5. Leave the native summary and Navbar Light enhancement in place. They continue to own open state, ARIA, inertness, Escape and focus behavior.
 
 Webflow Interactions responds to its configured UI triggers, but it does not natively subscribe to Navbar Light's custom DOM lifecycle events. A two-click interaction therefore covers pointer/keyboard activation of the trigger, but an outside click or Escape close cannot automatically run the same Interaction timeline.

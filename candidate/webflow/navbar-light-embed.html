@@ -1,0 +1,1116 @@
+<style>
+/*
+ * SmashBurger
+ * Functional state plus low-specificity structural defaults.
+ * Neutral layout presets use overridable colour and spacing tokens.
+ * No pseudo-elements are used.
+ */
+
+:where([data-mwp-navbar]) {
+  --mwp-nav-css-ready: 1;
+  --mwp-nav-duration-open: 280ms;
+  --mwp-nav-duration-close: 220ms;
+  --mwp-nav-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mwp-nav-distance: 1.5rem;
+  --mwp-nav-panel-width: min(24rem, 100vw);
+  --mwp-nav-icon-duration: 220ms;
+  --mwp-nav-submenu-icon-duration: 220ms;
+  --mwp-nav-submenu-icon-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mwp-nav-submenu-icon-rotation: 180deg;
+  --mwp-nav-stagger: 0ms;
+  --mwp-nav-backdrop-opacity: 0.45;
+  position: relative;
+  isolation: isolate;
+  z-index: var(--mwp-nav-z-index, 100);
+}
+
+:where([data-mwp-navbar] .sb-nav-inner) {
+  position: relative;
+  z-index: 2;
+}
+
+/* The native component has the same hooks even when a shared Library prefixes
+ * its Webflow class names. */
+:where([data-mwp-inner]) {
+  position: relative;
+  z-index: 2;
+}
+
+:where([data-mwp-menu]) {
+  position: relative;
+  z-index: 3;
+}
+
+:where([data-mwp-trigger]) {
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  list-style: none;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+:where([data-mwp-trigger] > *) {
+  pointer-events: none;
+}
+
+:where([data-mwp-icon]) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:where([data-mwp-line]) {
+  display: block;
+  transform-origin: center;
+  transition-duration: var(--mwp-nav-icon-effective-duration, var(--mwp-nav-icon-duration));
+  transition-property: opacity, transform;
+  transition-timing-function: var(--mwp-nav-ease);
+}
+
+/* The enhancement measures the rendered bar thickness and gap before opening.
+ * The legacy shift token still provides an explicit override and no-JS fallback. */
+[data-mwp-menu][open] [data-mwp-line]:nth-child(1) {
+  transform: translateY(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem))) rotate(45deg);
+}
+
+[data-mwp-menu][open] [data-mwp-line]:nth-child(2) {
+  opacity: 0;
+}
+
+[data-mwp-menu][open] [data-mwp-line]:nth-child(3) {
+  transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * -1)) rotate(-45deg);
+}
+
+[data-mwp-navbar][data-icon-lines="2"] [data-mwp-line]:nth-child(2) {
+  display: none;
+}
+
+[data-mwp-navbar][data-icon-lines="2"] [data-mwp-menu][open] [data-mwp-line]:nth-child(1) {
+  transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * 0.5)) rotate(45deg);
+}
+
+[data-mwp-navbar][data-icon-lines="2"] [data-mwp-menu][open] [data-mwp-line]:nth-child(3) {
+  transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * -0.5)) rotate(-45deg);
+}
+
+:where([data-mwp-panel]) {
+  will-change: opacity, transform;
+}
+
+:where([data-mwp-submenu] .sb-nav-submenu-list) {
+  display: grid;
+}
+
+[data-mwp-submenu]:not([open]) > .sb-nav-submenu-list {
+  display: none;
+}
+
+:where([data-mwp-submenu-icon]) {
+  pointer-events: none;
+  transform-origin: center;
+  transition-duration: var(--mwp-nav-submenu-icon-effective-duration, var(--mwp-nav-submenu-icon-duration));
+  transition-property: transform;
+  transition-timing-function: var(--mwp-nav-submenu-icon-ease);
+}
+
+[data-mwp-submenu][open] > summary [data-mwp-submenu-icon] {
+  transform: rotate(var(--mwp-nav-submenu-icon-rotation));
+}
+
+:where([data-mwp-backdrop]) {
+  background-color: rgb(0 0 0 / var(--mwp-nav-backdrop-opacity));
+  inset: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+[data-mwp-backdrop] {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close)) var(--mwp-nav-ease), visibility 0s linear var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close));
+  visibility: hidden;
+}
+
+/* Runtime-expanded state. Webflow breakpoint variants can provide the same
+ * element styles when JavaScript is unavailable. */
+[data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-trigger] {
+  display: none;
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-panel]) {
+  display: flex;
+  inset: auto;
+  position: static;
+  width: auto;
+  will-change: auto;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-panel] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  transition: none;
+  visibility: visible;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-backdrop] {
+  display: none;
+}
+
+/* Collapsed state shared by runtime detection and the standalone no-JS demo. */
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"],
+  [data-mwp-navbar][data-collapse="always"],
+  [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="always"], [data-wf--smashburger--variant="always"], [data-wf--smashburger-cdn--variant="always"])
+) [data-mwp-trigger] {
+  display: flex;
+}
+
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-panel],
+  [data-mwp-navbar][data-collapse="always"] [data-mwp-panel],
+  [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="always"], [data-wf--smashburger--variant="always"], [data-wf--smashburger-cdn--variant="always"]) [data-mwp-panel]
+) {
+  display: grid;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transform-origin: top right;
+  width: var(--mwp-nav-panel-width);
+}
+
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"],
+  [data-mwp-navbar][data-collapse="always"],
+  [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="always"], [data-wf--smashburger--variant="always"], [data-wf--smashburger-cdn--variant="always"])
+) [data-mwp-panel] {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(var(--mwp-nav-distance) * -1));
+  transition-delay: 0s, 0s, var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close));
+  transition-duration: var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close)), var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close)), 0s;
+  transition-property: opacity, transform, visibility;
+  transition-timing-function: var(--mwp-nav-ease);
+  visibility: hidden;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-state="closed"] [data-mwp-panel] {
+  opacity: 0;
+  pointer-events: none;
+  transition: none;
+  visibility: hidden;
+}
+
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"],
+  [data-mwp-navbar][data-collapse="always"],
+  [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="always"], [data-wf--smashburger--variant="always"], [data-wf--smashburger-cdn--variant="always"])
+) [data-mwp-menu][open] + [data-mwp-panel] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  transition-delay: 0s;
+  transition-duration: var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open)), var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open)), 0s;
+  visibility: visible;
+}
+
+/* CSS-only collapse choices. The source and CDN components have different
+ * Webflow variant attribute names; data-collapse remains portable markup. */
+@media screen and (max-width: 991px) {
+  :where(
+    [data-mwp-navbar][data-collapse="tablet"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="tablet"], [data-wf--smashburger--variant="tablet"], [data-wf--smashburger-cdn--variant="tablet"])
+  ) [data-mwp-trigger] { display: flex; }
+  :where(
+    [data-mwp-navbar][data-collapse="tablet"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="tablet"], [data-wf--smashburger--variant="tablet"], [data-wf--smashburger-cdn--variant="tablet"]) [data-mwp-panel]
+  ) {
+    display: grid; position: absolute; right: 0; top: 100%; width: var(--mwp-nav-panel-width);
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="tablet"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="tablet"], [data-wf--smashburger--variant="tablet"], [data-wf--smashburger-cdn--variant="tablet"])
+  ) [data-mwp-panel] {
+    opacity: 0; pointer-events: none;
+    transform: translateY(calc(var(--mwp-nav-distance) * -1)); visibility: hidden;
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="tablet"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="tablet"], [data-wf--smashburger--variant="tablet"], [data-wf--smashburger-cdn--variant="tablet"])
+  ) [data-mwp-menu][open] + [data-mwp-panel] {
+    opacity: 1; pointer-events: auto; transform: none; visibility: visible;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-landscape"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-landscape"], [data-wf--smashburger--variant="mobile-landscape"], [data-wf--smashburger-cdn--variant="mobile-landscape"])
+  ) [data-mwp-trigger] { display: flex; }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-landscape"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-landscape"], [data-wf--smashburger--variant="mobile-landscape"], [data-wf--smashburger-cdn--variant="mobile-landscape"]) [data-mwp-panel]
+  ) {
+    display: grid; position: absolute; right: 0; top: 100%; width: var(--mwp-nav-panel-width);
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-landscape"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-landscape"], [data-wf--smashburger--variant="mobile-landscape"], [data-wf--smashburger-cdn--variant="mobile-landscape"])
+  ) [data-mwp-panel] {
+    opacity: 0; pointer-events: none;
+    transform: translateY(calc(var(--mwp-nav-distance) * -1)); visibility: hidden;
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-landscape"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-landscape"], [data-wf--smashburger--variant="mobile-landscape"], [data-wf--smashburger-cdn--variant="mobile-landscape"])
+  ) [data-mwp-menu][open] + [data-mwp-panel] {
+    opacity: 1; pointer-events: auto; transform: none; visibility: visible;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-portrait"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-portrait"], [data-wf--smashburger--variant="mobile-portrait"], [data-wf--smashburger-cdn--variant="mobile-portrait"])
+  ) [data-mwp-trigger] { display: flex; }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-portrait"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-portrait"], [data-wf--smashburger--variant="mobile-portrait"], [data-wf--smashburger-cdn--variant="mobile-portrait"]) [data-mwp-panel]
+  ) {
+    display: grid; position: absolute; right: 0; top: 100%; width: var(--mwp-nav-panel-width);
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-portrait"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-portrait"], [data-wf--smashburger--variant="mobile-portrait"], [data-wf--smashburger-cdn--variant="mobile-portrait"])
+  ) [data-mwp-panel] {
+    opacity: 0; pointer-events: none;
+    transform: translateY(calc(var(--mwp-nav-distance) * -1)); visibility: hidden;
+  }
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-portrait"],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-portrait"], [data-wf--smashburger--variant="mobile-portrait"], [data-wf--smashburger-cdn--variant="mobile-portrait"])
+  ) [data-mwp-menu][open] + [data-mwp-panel] {
+    opacity: 1; pointer-events: auto; transform: none; visibility: visible;
+  }
+}
+
+/* Alignment defaults deliberately have zero specificity so ordinary Webflow
+ * classes can reposition the panel without !important. */
+:where([data-mwp-navbar][data-align="left"] [data-mwp-panel]) { left: 0; right: auto; }
+:where([data-mwp-navbar][data-align="center"] [data-mwp-panel]) { left: 50%; right: auto; }
+:where([data-mwp-navbar][data-mwp-collapsed="false"][data-align="center"] [data-mwp-panel]) { translate: none; }
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-align="center"] [data-mwp-panel],
+  [data-mwp-navbar][data-collapse="always"][data-align="center"] [data-mwp-panel],
+  [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="always"], [data-wf--smashburger--variant="always"], [data-wf--smashburger-cdn--variant="always"])[data-align="center"] [data-mwp-panel]
+) {
+  translate: -50% 0;
+}
+
+@media screen and (max-width: 991px) {
+  :where(
+    [data-mwp-navbar][data-collapse="tablet"][data-align="center"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="tablet"], [data-wf--smashburger--variant="tablet"], [data-wf--smashburger-cdn--variant="tablet"])[data-align="center"] [data-mwp-panel]
+  ) { translate: -50% 0; }
+}
+
+@media screen and (max-width: 767px) {
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-landscape"][data-align="center"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-landscape"], [data-wf--smashburger--variant="mobile-landscape"], [data-wf--smashburger-cdn--variant="mobile-landscape"])[data-align="center"] [data-mwp-panel]
+  ) { translate: -50% 0; }
+}
+
+@media screen and (max-width: 479px) {
+  :where(
+    [data-mwp-navbar][data-collapse="mobile-portrait"][data-align="center"] [data-mwp-panel],
+    [data-mwp-navbar]:not([data-collapse]):is([data-wf--navbar-light--variant="mobile-portrait"], [data-wf--smashburger--variant="mobile-portrait"], [data-wf--smashburger-cdn--variant="mobile-portrait"])[data-align="center"] [data-mwp-panel]
+  ) { translate: -50% 0; }
+}
+
+/* Layouts
+ * Structural rules always apply to a collapsed navbar: placement, size,
+ * scrolling, stacking and grid tracks. Visual preset rules (surface, border,
+ * shadow, ink, spacing, overlay typography and the drawer close button) can be
+ * switched off with data-presets="false" on the root, so destination Webflow
+ * classes own the whole look. Presets are on when the attribute is absent. */
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-panel] {
+  box-sizing: border-box;
+  max-height: calc(100dvh - var(--mwp-nav-header-height, 4.5rem));
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 2;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-panel] {
+  background: var(--mwp-nav-panel-surface, #fff);
+  border: 1px solid var(--mwp-nav-panel-border, rgb(0 0 0 / 0.14));
+  box-shadow: var(--mwp-nav-panel-shadow, 0 1rem 2.5rem rgb(0 0 0 / 0.12));
+  color: var(--mwp-nav-panel-ink, #1d2022);
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-primary],
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-links] {
+  align-items: stretch;
+  display: grid;
+  min-width: 0;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-primary],
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-links] {
+  gap: 0.5rem;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-primary] { order: 0; }
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-links] > * {
+  min-width: 0;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-links] > a,
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-links] > [data-mwp-submenu] > summary {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  min-height: 2.75rem;
+  padding: 0.5rem 0;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-secondary] {
+  display: grid;
+  min-width: 0;
+  order: 1;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-secondary] {
+  border-top: 1px solid var(--mwp-nav-panel-border, rgb(0 0 0 / 0.14));
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-secondary] > * {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-secondary] > * {
+  gap: 0.5rem;
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"][data-layout="dropdown"] [data-mwp-panel]) {
+  width: min(var(--mwp-nav-panel-width), calc(100vw - 1rem));
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"] [data-mwp-panel]) {
+  left: 50%;
+  right: auto;
+  translate: -50% 0;
+  width: 100vw;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"] [data-mwp-panel] {
+  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+  max-height: calc(100dvh - var(--mwp-nav-header-height, 4.5rem));
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"]:not([data-presets="false" i]) [data-mwp-panel] {
+  border-left: 0;
+  border-right: 0;
+  box-shadow: var(--mwp-nav-panel-shadow, 0 1rem 2.5rem rgb(0 0 0 / 0.12));
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"] [data-mwp-links] {
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"]:not([data-presets="false" i]) [data-mwp-secondary] {
+  border-left: 1px solid var(--mwp-nav-panel-border, rgb(0 0 0 / 0.14));
+  border-top: 0;
+  padding-left: clamp(1rem, 2vw, 2rem);
+  padding-top: 0;
+}
+
+:where(
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-layout="left"] [data-mwp-panel],
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-layout="right"] [data-mwp-panel],
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"] [data-mwp-panel]
+) {
+  bottom: 0;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:is([data-layout="left"], [data-layout="right"]) [data-mwp-panel] {
+  align-content: start;
+  grid-template-rows: auto 1fr;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"]:is([data-layout="left"], [data-layout="right"]) [data-mwp-panel]) {
+  width: min(var(--mwp-nav-panel-width), 100vw);
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:is([data-layout="left"], [data-layout="right"]) [data-mwp-secondary] {
+  align-self: end;
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"][data-layout="left"] [data-mwp-panel]) {
+  left: 0;
+  right: auto;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="left"] [data-mwp-panel] {
+  transform: translateX(-100%);
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"][data-layout="right"] [data-mwp-panel]) {
+  left: auto;
+  right: 0;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="right"] [data-mwp-panel] {
+  transform: translateX(100%);
+}
+
+:where([data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"] [data-mwp-panel]) {
+  inset: 0;
+  width: 100%;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"] [data-mwp-panel] {
+  transform: translateY(100%);
+}
+
+/* Keep the primary links and secondary contacts in vertical grid rows even
+ * when a destination reuses a flex-based desktop navigation class. */
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"] [data-mwp-panel] {
+  display: grid;
+  /* Panel alignment belongs to anchored layouts. A centred alignment on a
+   * viewport overlay otherwise translates it left by half its width. */
+  translate: none;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"] [data-mwp-panel] {
+  align-content: center;
+  height: 100dvh;
+  justify-items: center;
+  max-height: 100dvh;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:not([data-presets="false" i]) [data-mwp-panel] {
+  background: var(--mwp-nav-overlay-surface, #1d2022);
+  border: 0;
+  border-radius: 0;
+  color: var(--mwp-nav-overlay-ink, #fff);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(5rem, 8vw, 8rem) clamp(1rem, 6vw, 5rem);
+  text-align: center;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:not([data-presets="false" i]) [data-mwp-links] {
+  justify-items: center;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:not([data-presets="false" i]) [data-mwp-links] > a,
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:not([data-presets="false" i]) [data-mwp-links] > [data-mwp-submenu] > summary {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:not([data-presets="false" i]) [data-mwp-secondary] {
+  justify-items: center;
+}
+
+/* Asset-backed icons cannot inherit currentColor from the page. Paint a copy
+ * from each image's alpha silhouette in the parent link's currentColor while
+ * retaining the replaceable native Image and its component property. Authors
+ * using multicolour images can set data-icon-mode="original" on the root. */
+[data-mwp-navbar]:not([data-presets="false" i]):not([data-icon-mode="original"]) [data-mwp-secondary] a[data-mwp-item] {
+  overflow: hidden;
+}
+
+[data-mwp-navbar]:not([data-presets="false" i]):not([data-icon-mode="original"]) [data-mwp-secondary] a[data-mwp-item] img {
+  color: inherit;
+  filter: drop-shadow(4rem 0 0 currentColor);
+  transform: translateX(-4rem);
+}
+
+/* Drawer close buttons move into the drawer. An overlay trigger stays in its
+ * authored header position so opening the menu cannot make it jump. */
+[data-mwp-navbar][data-mwp-collapsed="true"]:is([data-layout="left"], [data-layout="right"]):is([data-state="opening"], [data-state="open"], [data-state="closing"]) [data-mwp-menu] {
+  position: fixed;
+  right: clamp(1rem, 2vw, 2rem);
+  top: 1rem;
+  z-index: 4;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="overlay"]:is([data-state="opening"], [data-state="open"], [data-state="closing"]) [data-mwp-menu] {
+  z-index: 4;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-layout="left"]:is([data-state="opening"], [data-state="open"], [data-state="closing"]) [data-mwp-menu] {
+  left: clamp(1rem, 2vw, 2rem);
+  right: auto;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]):is([data-layout="left"], [data-layout="right"], [data-layout="overlay"]):is([data-state="opening"], [data-state="open"], [data-state="closing"]) [data-mwp-trigger] {
+  background: var(--mwp-nav-close-surface, #1d2022);
+  border: 1px solid var(--mwp-nav-close-border, rgb(255 255 255 / 0.3));
+  border-radius: 999px;
+  color: var(--mwp-nav-close-ink, #fff);
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"] [data-mwp-panel] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-mwp-navbar][data-mwp-collapsed="true"][data-layout="full-width"]:not([data-presets="false" i]) [data-mwp-secondary] {
+    border-left: 0;
+    border-top: 1px solid var(--mwp-nav-panel-border, rgb(0 0 0 / 0.14));
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:where([data-layout="left"], [data-layout="right"], [data-layout="overlay"]) [data-mwp-menu][open] + [data-mwp-panel] {
+  transform: none;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-backdrop="true" i]:where([data-layout="dropdown"], [data-layout="full-width"]):is([data-state="opening"], [data-state="open"]) [data-mwp-backdrop],
+[data-mwp-navbar][data-mwp-collapsed="true"]:where([data-layout="left"], [data-layout="right"], [data-layout="overlay"])[data-state="open"] [data-mwp-backdrop],
+[data-mwp-navbar][data-mwp-collapsed="true"]:where([data-layout="left"], [data-layout="right"], [data-layout="overlay"])[data-state="opening"] [data-mwp-backdrop] {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0s;
+  transition-duration: var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open)), 0s;
+  visibility: visible;
+}
+
+/* Motion presets */
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="left"] [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-left"] + [data-mwp-panel] {
+  transform: translateX(-100%);
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="right"] [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-right"] + [data-mwp-panel] {
+  transform: translateX(100%);
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="up"] [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-up"] + [data-mwp-panel] {
+  transform: translateY(100%);
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="fade"] [data-mwp-panel],
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="none"] [data-mwp-panel],
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="custom"] [data-mwp-panel],
+[data-mwp-menu]:where([data-mwp-motion="mwp-motion-fade"], [data-mwp-motion="mwp-motion-none"], [data-mwp-motion="mwp-motion-custom"]) + [data-mwp-panel] {
+  transform: none;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-menu][open] + [data-mwp-panel],
+[data-mwp-menu][open] + [data-mwp-panel] {
+  transform: none;
+}
+
+[data-mwp-navbar][data-motion="none"] [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-none"] + [data-mwp-panel] {
+  transition: none;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="custom"] [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-custom"] + [data-mwp-panel] {
+  opacity: 0;
+  pointer-events: none;
+  transform: none;
+  transition: none;
+  visibility: hidden;
+  will-change: auto;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"][data-motion="custom"]:is([data-state="opening"], [data-state="open"], [data-state="closing"]) [data-mwp-panel],
+[data-mwp-menu][data-mwp-motion="mwp-motion-custom"][open] + [data-mwp-panel] {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Enhanced menus expose state on the panel itself, so a project layout
+ * wrapper around the trigger need not be adjacent to the panel. The native
+ * details sibling rules above remain the no-script fallback. */
+[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-motion="custom"]) [data-mwp-panel]:is([data-state="opening"], [data-state="open"]) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  transition-delay: 0s;
+  transition-duration: var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open)), var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open)), 0s;
+  visibility: visible;
+}
+
+/* Optional item stagger. The script assigns --mwp-item-index. */
+[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-item] {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition-duration: var(--mwp-nav-effective-duration-close, var(--mwp-nav-duration-close));
+  transition-property: opacity, transform;
+  transition-timing-function: var(--mwp-nav-ease);
+  transition-delay: 0ms;
+}
+
+[data-mwp-navbar][data-mwp-collapsed="true"]:where([data-state="opening"], [data-state="open"]) [data-mwp-item] {
+  opacity: 1;
+  transform: none;
+  transition-duration: var(--mwp-nav-effective-duration-open, var(--mwp-nav-duration-open));
+  transition-delay: calc(var(--mwp-item-index, 0) * var(--mwp-nav-effective-stagger, var(--mwp-nav-stagger)));
+}
+
+[data-mwp-navbar]:where([data-motion="none"], [data-motion="custom"]) [data-mwp-item] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+[data-mwp-navbar][data-menu-label="hidden"] [data-mwp-label] {
+  display: none;
+}
+
+html[data-mwp-scroll-locked="true"],
+html[data-mwp-scroll-locked="true"] body {
+  overscroll-behavior: none;
+}
+
+/* This block is deliberately visible in Webflow Designer. JavaScript hides it
+ * only at runtime after reading its property-bound native Text Blocks. */
+[data-mwp-navbar][data-mwp-ready="true"] [data-mwp-config] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-mwp-navbar] {
+    --mwp-nav-effective-duration-open: 0.01ms;
+    --mwp-nav-effective-duration-close: 0.01ms;
+    --mwp-nav-icon-effective-duration: 0.01ms;
+    --mwp-nav-submenu-icon-effective-duration: 0.01ms;
+    --mwp-nav-effective-stagger: 0ms;
+  }
+
+  [data-mwp-navbar] [data-mwp-panel],
+  [data-mwp-navbar] [data-mwp-backdrop],
+  [data-mwp-navbar] [data-mwp-line],
+  [data-mwp-navbar] [data-mwp-submenu-icon],
+  [data-mwp-navbar] [data-mwp-item] {
+    scroll-behavior: auto;
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}
+</style>
+<script>
+const ROOT_SELECTOR = '[data-mwp-navbar]';
+
+const COLLAPSE_QUERIES = {
+  tablet: '(max-width: 991px)',
+  'mobile-landscape': '(max-width: 767px)',
+  'mobile-portrait': '(max-width: 479px)'
+};
+
+const TRUE_VALUES = new Set(['', '1', 'true', 'yes', 'on']);
+const CSS_READY_PROPERTY = '--mwp-nav-css-ready';
+
+function navbarStylesAvailable(root) {
+  const view = root?.ownerDocument?.defaultView;
+  if (!view?.getComputedStyle) return true;
+  return view.getComputedStyle(root).getPropertyValue(CSS_READY_PROPERTY).trim() === '1';
+}
+
+function booleanAttribute(element, name, fallback) {
+  if (!element.hasAttribute(name)) return fallback;
+  return TRUE_VALUES.has(String(element.getAttribute(name)).trim().toLowerCase());
+}
+
+function validCss(property, value) {
+  return Boolean(value && globalThis.CSS?.supports?.(property, value));
+}
+
+function milliseconds(value, fallback = 0) {
+  const input = String(value || '').trim();
+  if (!input) return fallback;
+  if (input.endsWith('ms')) return Number.parseFloat(input) || fallback;
+  if (input.endsWith('s')) return (Number.parseFloat(input) || 0) * 1000;
+  return Number.parseFloat(input) || fallback;
+}
+
+function ensureId(element, prefix) {
+  if (element.id) return element.id;
+  const random = globalThis.crypto?.randomUUID?.() || Math.random().toString(36).slice(2);
+  element.id = `${prefix}-${random}`;
+  return element.id;
+}
+
+class NavbarLight {
+  constructor(root) {
+    this.root = root;
+    this.menu = root.querySelector('[data-mwp-menu], [data-mwp-css-nav]');
+    this.trigger = this.menu?.querySelector('[data-mwp-trigger], summary');
+    this.icon = this.trigger?.querySelector('[data-mwp-icon]');
+    this.panel = root.querySelector('[data-mwp-panel], .sb-nav-panel');
+    this.backdrop = root.querySelector('[data-mwp-backdrop]');
+    this.items = [...root.querySelectorAll('[data-mwp-item]')];
+    this.submenus = [...root.querySelectorAll('[data-mwp-submenu]')];
+    this.mediaQuery = null;
+    this.stateTimer = null;
+    this.lockSnapshot = null;
+    this.focusOnOpened = false;
+    this.destroyed = false;
+    this.onDocumentClick = this.onDocumentClick.bind(this);
+    this.onBackdropClick = this.onBackdropClick.bind(this);
+    this.onKeydown = this.onKeydown.bind(this);
+    this.onPanelClick = this.onPanelClick.bind(this);
+    this.onToggle = this.onToggle.bind(this);
+    this.onBreakpointChange = this.onBreakpointChange.bind(this);
+    this.syncIconGeometry = this.syncIconGeometry.bind(this);
+
+    if (!this.menu || !this.trigger || !this.panel || !navbarStylesAvailable(this.root)) return;
+    this.configure();
+    this.bind();
+    this.onBreakpointChange(true);
+  }
+
+  configure() {
+    const config = new Map(
+      [...this.root.querySelectorAll('[data-mwp-config-value]')]
+        .map((element) => [element.dataset.mwpConfigValue, element.textContent.trim()])
+    );
+    const value = (key, fallback = '') => config.get(key) || fallback;
+    const cleanPreset = (input, prefix) => String(input || '').trim().replace(prefix, '');
+
+    this.root.dataset.layout = cleanPreset(this.menu.dataset.mwpLayout || this.root.dataset.layout || value('layout', 'dropdown'), 'mwp-layout-');
+    this.root.dataset.motion = cleanPreset(this.menu.dataset.mwpMotion || this.root.dataset.motion || value('motion', 'dropdown'), 'mwp-motion-');
+    this.root.dataset.align = this.menu.dataset.mwpAlign || this.root.dataset.align || value('alignment', 'right');
+    this.root.dataset.iconLines = this.menu.dataset.mwpIconLines || this.root.dataset.iconLines || value('iconLines', '3');
+    this.root.setAttribute('data-focus-first', this.menu.dataset.focusFirst || this.root.getAttribute('data-focus-first') || value('focusFirst', 'false'));
+    this.root.setAttribute('data-close-on-outside', this.menu.dataset.closeOnOutside || this.root.getAttribute('data-close-on-outside') || value('closeOutside', 'true'));
+    this.root.setAttribute('data-close-on-link', this.menu.dataset.closeOnLink || this.root.getAttribute('data-close-on-link') || value('closeLink', 'true'));
+    this.root.setAttribute('data-scroll-lock', this.menu.dataset.scrollLock || this.root.getAttribute('data-scroll-lock') || value('scrollLock', 'auto'));
+
+    const panelId = ensureId(this.panel, 'mwp-navbar-panel');
+    this.trigger.setAttribute('aria-controls', panelId);
+    this.trigger.setAttribute('aria-haspopup', 'true');
+
+    const rootStyle = this.root.style;
+    const duration = this.menu.dataset.mwpDuration || this.root.dataset.duration;
+    const openDuration = this.menu.dataset.mwpOpenDuration || this.root.dataset.openDuration || duration;
+    const closeDuration = this.menu.dataset.mwpCloseDuration || this.root.dataset.closeDuration || value('closeDuration') || duration;
+    const distance = this.menu.dataset.mwpDistance || this.root.dataset.distance;
+    const easing = this.menu.dataset.mwpEase || this.menu.dataset.mwpEasing || this.root.dataset.easing;
+    const panelWidth = this.menu.dataset.mwpPanelWidth || this.root.dataset.panelWidth || value('panelWidth');
+    const stagger = this.menu.dataset.mwpStagger || this.root.dataset.stagger || value('stagger');
+    const iconDuration = this.menu.dataset.mwpIconDuration || this.root.dataset.iconDuration || value('iconDuration');
+    const submenuIconDuration = this.root.dataset.submenuIconDuration || value('submenuIconDuration');
+    const submenuIconEasing = this.root.dataset.submenuIconEasing || value('submenuIconEasing');
+    const submenuIconRotation = this.root.dataset.submenuIconRotation || value('submenuIconRotation');
+
+    if (validCss('transition-duration', openDuration)) rootStyle.setProperty('--mwp-nav-duration-open', openDuration);
+    if (validCss('transition-duration', closeDuration)) rootStyle.setProperty('--mwp-nav-duration-close', closeDuration);
+    if (validCss('transform', `translateY(${distance})`)) rootStyle.setProperty('--mwp-nav-distance', distance);
+    if (validCss('transition-timing-function', easing)) rootStyle.setProperty('--mwp-nav-ease', easing);
+    if (validCss('width', panelWidth)) rootStyle.setProperty('--mwp-nav-panel-width', panelWidth);
+    if (validCss('transition-delay', stagger)) rootStyle.setProperty('--mwp-nav-stagger', stagger);
+    if (validCss('transition-duration', iconDuration)) rootStyle.setProperty('--mwp-nav-icon-duration', iconDuration);
+    if (validCss('transition-duration', submenuIconDuration)) rootStyle.setProperty('--mwp-nav-submenu-icon-duration', submenuIconDuration);
+    if (validCss('transition-timing-function', submenuIconEasing)) rootStyle.setProperty('--mwp-nav-submenu-icon-ease', submenuIconEasing);
+    if (validCss('transform', `rotate(${submenuIconRotation})`)) rootStyle.setProperty('--mwp-nav-submenu-icon-rotation', submenuIconRotation);
+
+    this.items.forEach((item, index) => item.style.setProperty('--mwp-item-index', index));
+    this.syncIconGeometry();
+
+    const collapse = this.collapsePreset();
+    this.root.dataset.mwpReady = 'true';
+    if (COLLAPSE_QUERIES[collapse]) {
+      this.mediaQuery = globalThis.matchMedia(COLLAPSE_QUERIES[collapse]);
+      this.mediaQuery.addEventListener?.('change', this.onBreakpointChange);
+    }
+
+    this.root.mwpNavbarLight = this.publicApi();
+    this.menu.mwpNav = this.root.mwpNavbarLight;
+  }
+
+  bind() {
+    this.menu.addEventListener('toggle', this.onToggle);
+    this.backdrop?.addEventListener('click', this.onBackdropClick);
+    document.addEventListener('click', this.onDocumentClick);
+    document.addEventListener('keydown', this.onKeydown);
+    this.panel.addEventListener('click', this.onPanelClick);
+
+    if (!this.mediaQuery) window.addEventListener('resize', this.onBreakpointChange, { passive: true });
+    if (this.icon && typeof ResizeObserver !== 'undefined') {
+      this.iconObserver = new ResizeObserver(this.syncIconGeometry);
+      this.iconObserver.observe(this.icon);
+    }
+  }
+
+  syncIconGeometry() {
+    const firstLine = this.icon?.querySelector('[data-mwp-line]');
+    if (!firstLine) return;
+    const lineHeight = Number.parseFloat(getComputedStyle(firstLine).height);
+    const gap = Number.parseFloat(getComputedStyle(this.icon).rowGap) || 0;
+    if (Number.isFinite(lineHeight) && lineHeight > 0) {
+      this.root.style.setProperty('--mwp-nav-icon-auto-shift', `${lineHeight + gap}px`);
+    }
+  }
+
+  collapsePreset() {
+    if (this.root.dataset.collapse) return this.root.dataset.collapse;
+    for (const attribute of this.root.attributes) {
+      if (/^data-wf--.+--variant$/.test(attribute.name) &&
+        (attribute.value === 'always' || attribute.value === 'never' || COLLAPSE_QUERIES[attribute.value])) {
+        return attribute.value;
+      }
+    }
+    return '';
+  }
+
+  publicApi() {
+    const navbar = this;
+    return Object.freeze({
+      open: (options) => this.open(options),
+      close: (options) => this.close(options),
+      toggle: (options) => this.toggle(options),
+      destroy: () => this.destroy(),
+      get state() { return navbar.root.dataset.state; }
+    });
+  }
+
+  isCollapsed() {
+    const collapse = this.collapsePreset();
+    if (collapse === 'always') return true;
+    if (collapse === 'never') return false;
+    if (this.mediaQuery) return this.mediaQuery.matches;
+    // Webflow collapse variants control the <details> wrapper. Its summary can
+    // still report `display: list-item` while the wrapper itself is hidden.
+    return getComputedStyle(this.menu).display !== 'none';
+  }
+
+  usesScrollLock() {
+    const requested = this.root.getAttribute('data-scroll-lock');
+    if (requested && requested !== 'auto') return TRUE_VALUES.has(requested.trim().toLowerCase());
+    return ['left', 'right', 'overlay'].includes(this.root.dataset.layout);
+  }
+
+  onBreakpointChange(initial = false) {
+    const isInitial = initial === true;
+    const collapsed = this.isCollapsed();
+    const previous = this.root.dataset.mwpCollapsed === 'true';
+    this.root.dataset.mwpCollapsed = String(collapsed);
+
+    if (collapsed) {
+      if (isInitial || !previous) {
+        this.clearStateTimer();
+        this.focusOnOpened = false;
+        if (!isInitial && this.panel.contains(this.root.ownerDocument.activeElement)) {
+          this.trigger.focus();
+        }
+        this.menu.open = false;
+        this.setState('closed', false);
+      } else {
+        this.syncNative(false);
+      }
+    } else {
+      // A collapsed animation must not overwrite the new expanded state later.
+      this.clearStateTimer();
+      this.focusOnOpened = false;
+      this.unlockScroll();
+      this.menu.open = true;
+      this.setState('expanded', false);
+      this.submenus.forEach((submenu) => { submenu.open = false; });
+    }
+  }
+
+  onToggle() {
+    if (!this.isCollapsed()) {
+      if (!this.menu.open) this.menu.open = true;
+      this.setState('expanded', false);
+      return;
+    }
+    this.syncNative(true);
+  }
+
+  onDocumentClick(event) {
+    if (!this.menu.open || !booleanAttribute(this.root, 'data-close-on-outside', true)) return;
+    if (!this.root.contains(event.target)) this.close();
+  }
+
+  onBackdropClick() {
+    this.close({ focusTrigger: true });
+  }
+
+  onPanelClick(event) {
+    const link = event.target.closest('a');
+    if (link && booleanAttribute(this.root, 'data-close-on-link', true)) this.close();
+  }
+
+  onKeydown(event) {
+    if (event.key !== 'Escape') return;
+
+    const openSubmenu = this.submenus.find((submenu) => submenu.open && submenu.contains(document.activeElement));
+    if (openSubmenu) {
+      openSubmenu.open = false;
+      openSubmenu.querySelector('summary')?.focus();
+      event.preventDefault();
+      return;
+    }
+
+    if (this.menu.open && this.isCollapsed()) {
+      this.close({ focusTrigger: true });
+      event.preventDefault();
+    }
+  }
+
+  syncNative(notify) {
+    if (this.menu.open) this.transitionToOpen(notify);
+    else this.transitionToClosed(notify);
+  }
+
+  transitionToOpen(notify = true) {
+    this.syncIconGeometry();
+    this.clearStateTimer();
+    this.setState('opening', notify);
+    if (this.usesScrollLock()) this.lockScroll();
+
+    const duration = this.motionDuration('open');
+    this.stateTimer = window.setTimeout(() => {
+      this.setState('open', true);
+      if (this.focusOnOpened || booleanAttribute(this.root, 'data-focus-first', false)) {
+        this.panel.querySelector('a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')?.focus();
+      }
+      this.focusOnOpened = false;
+    }, duration);
+  }
+
+  transitionToClosed(notify = true) {
+    this.clearStateTimer();
+    this.setState('closing', notify);
+    const duration = this.motionDuration('close');
+    this.stateTimer = window.setTimeout(() => {
+      this.setState('closed', true);
+      this.unlockScroll();
+      this.submenus.forEach((submenu) => { submenu.open = false; });
+    }, duration);
+  }
+
+  setState(state, notify) {
+    const open = ['opening', 'open'].includes(state);
+    this.root.dataset.state = state;
+    this.menu.dataset.state = state;
+    this.panel.dataset.state = state;
+    if (this.backdrop) this.backdrop.dataset.state = state;
+    this.trigger.setAttribute('aria-expanded', String(open));
+    this.panel.setAttribute('aria-hidden', String(!open && state !== 'expanded'));
+    this.panel.inert = !open && state !== 'expanded';
+    if (notify) this.emit(state);
+  }
+
+  emit(state) {
+    const eventNames = { opening: 'open', open: 'opened', closing: 'close', closed: 'closed' };
+    const eventName = eventNames[state];
+    if (!eventName) return;
+    const detail = { navbar: this, root: this.root, menu: this.menu, trigger: this.trigger, panel: this.panel, state };
+    const CustomEventConstructor = this.root.ownerDocument?.defaultView?.CustomEvent || globalThis.CustomEvent;
+    if (CustomEventConstructor) {
+      this.root.dispatchEvent(new CustomEventConstructor(`mwp-nav:${eventName}`, { bubbles: true, detail }));
+    }
+  }
+
+  motionDuration(direction) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return 0;
+    if (this.root.dataset.motion === 'none') return 0;
+    const property = direction === 'open' ? '--mwp-nav-duration-open' : '--mwp-nav-duration-close';
+    return milliseconds(getComputedStyle(this.root).getPropertyValue(property), 0);
+  }
+
+  open({ focusFirst = false } = {}) {
+    if (!this.isCollapsed() || this.menu.open) return;
+    this.focusOnOpened = focusFirst;
+    this.menu.open = true;
+  }
+
+  close({ focusTrigger = false } = {}) {
+    if (!this.isCollapsed() || !this.menu.open) return;
+    this.menu.open = false;
+    if (focusTrigger) this.trigger.focus();
+  }
+
+  toggle(options) {
+    if (this.menu.open) this.close(options);
+    else this.open(options);
+  }
+
+  lockScroll() {
+    if (this.lockSnapshot) return;
+    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
+    this.lockSnapshot = {
+      overflow: document.documentElement.style.overflow,
+      paddingRight: document.documentElement.style.paddingRight
+    };
+    document.documentElement.dataset.mwpScrollLocked = 'true';
+    document.documentElement.style.overflow = 'hidden';
+    if (scrollbar > 0) document.documentElement.style.paddingRight = `${scrollbar}px`;
+  }
+
+  unlockScroll() {
+    if (!this.lockSnapshot) return;
+    document.documentElement.style.overflow = this.lockSnapshot.overflow;
+    document.documentElement.style.paddingRight = this.lockSnapshot.paddingRight;
+    delete document.documentElement.dataset.mwpScrollLocked;
+    this.lockSnapshot = null;
+  }
+
+  clearStateTimer() {
+    if (this.stateTimer) window.clearTimeout(this.stateTimer);
+    this.stateTimer = null;
+  }
+
+  destroy() {
+    if (this.destroyed) return;
+    this.destroyed = true;
+    this.clearStateTimer();
+    this.unlockScroll();
+    this.menu.removeEventListener('toggle', this.onToggle);
+    this.backdrop?.removeEventListener('click', this.onBackdropClick);
+    document.removeEventListener('click', this.onDocumentClick);
+    document.removeEventListener('keydown', this.onKeydown);
+    this.panel.removeEventListener('click', this.onPanelClick);
+    window.removeEventListener('resize', this.onBreakpointChange);
+    this.mediaQuery?.removeEventListener?.('change', this.onBreakpointChange);
+    this.iconObserver?.disconnect();
+    delete this.root.mwpNavbarLight;
+    delete this.menu.mwpNav;
+  }
+}
+
+function initNavbarLight(root = document) {
+  return [...root.querySelectorAll(ROOT_SELECTOR)]
+    .filter((element) => !element.mwpNavbarLight && navbarStylesAvailable(element))
+    .map((element) => new NavbarLight(element));
+}
+
+if (typeof document !== 'undefined' && globalThis.MWP_NAVBAR_LIGHT_AUTO_INIT !== false) {
+  const start = () => initNavbarLight();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+}
+
+
+globalThis.NavbarLight = NavbarLight;
+globalThis.initNavbarLight = initNavbarLight;
+</script>

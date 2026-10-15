@@ -1,5 +1,8 @@
 # Replacing an existing Webflow Navbar with SmashBurger
 
+**Version boundary — 15 October 2026:** This guide describes the released v0.2.6 Webflow structure and historical readbacks. The canonical source candidate now uses `sb-nav` / `sb-nav-{role}`, with the same runtime hooks. Use [the migration record](canonical-rename-2026-10-15.md) to map classes; do not apply the unreleased candidate loader to an existing Library copy.
+
+
 This guide covers the reusable lessons from replacing an already styled and rearranged native Webflow Navbar. The current released baseline is `v0.2.6` (see [release verification](v0.2.6-release-verification.md)). Project-specific navigation content, destinations and visual design deliberately remain outside this guide.
 
 ## Recommended workflow

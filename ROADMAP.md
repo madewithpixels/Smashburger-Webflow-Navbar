@@ -997,7 +997,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 ### SmashBurger repository and local-folder rename
 
-**Current direction — Michael, 15 October 2026:** SmashBurger remains the product identity; D-012 accepts the `sb-nav` class mapping and D-013 records the canonical repository/package direction and local destination. Michael will create and clone the new repository at `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. Resume this sequence when that checkout is available. Preserve old pinned assets and compatibility URLs through the planned release checks.
+**Current direction — Michael, 15 October 2026:** SmashBurger and the `sb-nav` mapping remain accepted. Michael's completion brief authorises Codex to do the transfer and necessary remote operations. Full branch/tag history is now in the canonical repository and selected clone. The source migration is packaged as an unreleased candidate; existing release bytes, compatibility URLs and the old repository remain protected. See [the migration record](webflow/canonical-rename-2026-10-15.md).
 
 
 #### R-118 · Commit and push all current portability, Library-installation and cleanup documentation before changing repository identity (`58e1407`).
@@ -1008,43 +1008,51 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-119 · Create `madewithpixels/SmashBurger-Webflow-Navbar` as the new canonical GitHub repository with the complete Git history; use `smashburger-webflow-navbar` for the package name.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 167 (now 168); baseline `c808ca4`.
-**Current direction:** D-013 is Accepted. Michael will create the canonical repository and clone it at the selected local path. This item remains planned until the new repository and complete history are available; no agent is to create or clone it on Michael’s behalf.
 **Exit criteria:**
+**15 October 2026 — Codex:** The verified empty canonical remote received both branches and all eight existing tags without force. The selected clone contains the complete history; package naming is applied. No new release was published. Acceptance remains pending.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-120 · Keep `madewithpixels/Webflow-Navbar-Light` available as an archived compatibility repository so existing immutable `v0.1.0` and `v0.2.0` jsDelivr URLs continue to resolve; do not rely on GitHub repository redirects for the third-party CDN contract.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 168 (now 169); baseline `c808ca4`.
 **Exit criteria:**
+**15 October 2026 — Codex:** Old repository retained unchanged. Six v0.1.0/v0.2.0/v0.2.6 pinned asset reads returned 200 and matched tagged bytes. Archiving remains gated by R-125–R-127.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-121 · Rename every portable component class from the legacy `mwp-*` / `mwp-css-nav_*` namespace to a documented `sb-*` namespace (`SmashBurger`) as part of the canonical repository rename. Update source HTML/CSS/JavaScript, generated Embeds, demos, Webflow components, clonable, documentation and tests together; treat this as an explicit versioned class migration rather than silently changing an existing release. Reserve `SmashBurger Lite` for the free clonable's product name, not its class prefix.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 169 (now 170); baseline `c808ca4`.
-**Current direction:** D-012 accepts the `sb-nav` root and `sb-nav-{role}` child mapping. SmashBurger remains the product identity. Start this versioned class migration after R-119’s new checkout is available; retain the non-class compatibility hooks listed in R-122.
 **Exit criteria:**
+**15 October 2026 — Codex:** Source, demo, fixtures, tests and isolated generated output now use accepted sb-nav classes as 0.3.0-rc.1. Webflow component/Library/clonable rollout remains open; this is not a released class migration.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 170 (now 171); baseline `c808ca4`.
 **Exit criteria:**
-**Evidence links:** [webflow/class-namespace-migration-audit.md](webflow/class-namespace-migration-audit.md)
-**Evidence boundary:** Inventory/mapping document exists at c808ca4; no class migration performed.
+**15 October 2026 — Codex:** Retained source contracts inventoried from 0864f82 are asserted in source and candidate outputs. Data hooks, variables, API/event and diagnostic names, variant markers and old files/URLs are preserved.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-123 · Add a generated-output assertion that a clean renamed release contains no legacy `mwp-*` class tokens while still rejecting accidental changes to retained runtime attributes or compatibility hooks.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 171 (now 172); baseline `c808ca4`.
 **Exit criteria:**
+**15 October 2026 — Codex:** Added source/generated class and retained-hook assertions, negative fixtures and 17 immutable-file hashes. Included in candidate checks and CI; no release was tagged.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-124 · Audit public-facing HTML, CSS and JavaScript comments, diagnostics, demo copy and generated banners for stale `Navbar Light` wording. Use `SmashBurger` for the product name while retaining versioned filenames, CDN URLs, Webflow variant markers and compatibility API aliases until an explicitly tested migration can replace them.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 172 (now 173); baseline `c808ca4`.
 **Exit criteria:**
+**15 October 2026 — Codex:** Audited maintained sources, new banners/console text and demo copy. New output says SmashBurger. Historical Webflow readbacks, filenames, API/diagnostic identifiers and exact old URLs retain their actual names; current guides explain the boundary.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
@@ -1066,10 +1074,12 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-128 · Rename the local folder last to `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, update the Git remote and reopen Codex from the new workspace path.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 176 (now 177); baseline `c808ca4`.
 **Exit criteria:**
-**Qualifier:** Michael selected this exact destination in D-013 on 15 October 2026. He will create and clone the canonical repository there; move the existing folder only after the earlier rename and release steps are complete.
+**15 October 2026 — Codex:** Selected clone is populated with the canonical origin and will be used for final verification. Original folder is retained. This chat/boss commit binding still points at the old checkout; final workspace reopen and release-dependent retirement remain open. No folder was destructively moved.
+**Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
+
 
 
 ## 10. Migration hardening and public clonable

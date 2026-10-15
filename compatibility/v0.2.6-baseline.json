@@ -1,0 +1,23 @@
+{
+  "baseline": "0864f82",
+  "version": "0.2.6",
+  "sha256": {
+    "demo/navbar-light.browser.js": "a4f77b2b5f2ff51c2dcdaf0e85b27780d37d5761218f523cd4d167719ffdda27",
+    "webflow/navbar-light-embed.html": "e6ff338220c6e8a4211ba00c57be9b3332d3a5e6f28b02cc22ba67acc0f31f4a",
+    "webflow/navbar-light-cdn-loader.html": "3ecd71729b25a4a3794c3b088035125f7cde9e1d39059e4cf11b1ea2242aa56a",
+    "webflow/navbar-light-canvas-embed.html": "c25b45bc03e41e493c38e473dc25cdc0aa20136ab4bf9f5e945d84e5a92e7464",
+    "dist/navbar-light.css": "3c3528662d5e6359324453795da698082ac9d62c0ec0c5d69463ee00b963caaf",
+    "dist/navbar-light.css.map": "d76d5322e6ab7ca98915e63813d930c040317fa41ed8c7ea3c6156d1dc799e92",
+    "dist/navbar-light.js": "223c5b77d8976bdb42f2a688d24752f5c1d335320ed5cc3e21ba201827fbaa23",
+    "dist/navbar-light.js.map": "07ea820c8e212afc0c7a298dd1ae6ebe83565bce16a7bbdffd5786f8509193dc",
+    "dist/navbar-light.min.css": "7a78498d44fd70d9ee7f7c3186b6f7f95c676d7c08465db2c8f2ed5191caca9c",
+    "dist/navbar-light.min.css.map": "f1d8ad5246130d194774c8cbe0560f7a1aaabf2ff27110e38e7bc5dee34b44e0",
+    "dist/navbar-light.min.js": "55aa3cc3847ce71b21c7fdac8e650193c5d9bdee3d0854c180582ecd4a22d940",
+    "dist/navbar-light.min.js.map": "2e51505c182b48bd8bdfea42a0d3e39c169ae248de4395753a1392b4a7949d0b",
+    "smashed-navbar-html-demo.zip": "2adbd46a292fd68d02eea0348d2358c9ee75fd30e814ee2d7daf8ee9f8c18706",
+    "smashed-navbar-html-demo/demo/assets/smashed-hero.jpg": "842b9bad0cb76ff6c5c0f3ebd2628024324486eaa5181462be91fb98ea29a248",
+    "smashed-navbar-html-demo/demo/index.html": "539d3fb66c4ece98850f0bc41371d3ebba017f04ec649e19c4e8b633e8222085",
+    "smashed-navbar-html-demo/demo/navbar-light.browser.js": "db16fb66add52cac656b8e3a5c295b3dbcc42972237945ee215eeab5034039d6",
+    "smashed-navbar-html-demo/src/navbar-light.css": "00a4e477aadc6686669d07632f0fb88390aa50015e668725f0d6b851df03e4a9"
+  }
+}

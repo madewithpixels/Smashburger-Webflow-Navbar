@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.1.0/dist/navbar-light.min.css",
+    "status": 200,
+    "bytes": 10272,
+    "sha256": "bd5de6c47c0a9bbd49cec6aaa1b3ddcd09c2389f7cd22f8c6186321698776204"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.1.0/dist/navbar-light.min.js",
+    "status": 200,
+    "bytes": 10030,
+    "sha256": "4eb0815faf8f56af83cd3c1a745de7e858503890612f731b9a766051d57c9150"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.0/dist/navbar-light.min.css",
+    "status": 200,
+    "bytes": 10777,
+    "sha256": "a7c5f837b8d6643a8d75b7b2ca3644fe79366029d852b3218c18912a34d0d694"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.0/dist/navbar-light.min.js",
+    "status": 200,
+    "bytes": 10467,
+    "sha256": "dbc108941c2bf6dd912508a5b7980257a6d90d6ac408f4e335670b4525abcc35"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.6/dist/navbar-light.min.css",
+    "status": 200,
+    "bytes": 22973,
+    "sha256": "7a78498d44fd70d9ee7f7c3186b6f7f95c676d7c08465db2c8f2ed5191caca9c"
+  },
+  {
+    "url": "https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.6/dist/navbar-light.min.js",
+    "status": 200,
+    "bytes": 11183,
+    "sha256": "55aa3cc3847ce71b21c7fdac8e650193c5d9bdee3d0854c180582ecd4a22d940"
+  }
+]

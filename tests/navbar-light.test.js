@@ -22,7 +22,7 @@ function waitForEvent(target, eventName, timeout = 1000) {
 
 test('functional CSS keeps a closed native submenu out of the accessibility tree', () => {
   const css = readFileSync(new URL('../src/navbar-light.css', import.meta.url), 'utf8');
-  assert.match(css, /\[data-mwp-submenu\]:not\(\[open\]\) > \.mwp-css-nav_submenu-list\s*\{\s*display:\s*none;/);
+  assert.match(css, /\[data-mwp-submenu\]:not\(\[open\]\) > \.sb-nav-submenu-list\s*\{\s*display:\s*none;/);
   assert.match(css, /\[data-mwp-submenu\]\[open\] > summary \[data-mwp-submenu-icon\]/);
   assert.doesNotMatch(css, /::before|::after/);
 });
@@ -662,6 +662,6 @@ test('Canvas helper hides a closed collapsed panel only on the Designer Canvas',
   assert.doesNotMatch(css.replaceAll(/\/\*[\s\S]*?\*\//g, ''), /!important/);
   // Webflow shows a placeholder for any Embed whose code contains this text, even in a comment.
   assert.doesNotMatch(css, /<script/i);
-  const embed = readFileSync(new URL('../webflow/navbar-light-canvas-embed.html', import.meta.url), 'utf8');
+  const embed = readFileSync(new URL('../candidate/webflow/navbar-light-canvas-embed.html', import.meta.url), 'utf8');
   assert.equal(embed, `<style>\n${css.trim()}\n</style>\n`);
 });

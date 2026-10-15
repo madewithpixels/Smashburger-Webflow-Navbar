@@ -2,7 +2,9 @@
 
 Read by Codex and imported by Claude through CLAUDE.md. Project owner: Michael
 Auty. Boss repo key: `smashburger`. Current checkout:
-`/Users/michaelauty/Work on MacStudio/Webflow-Navbar-Light`.
+`/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`.
+The former checkout and remote are retained for compatibility; see
+`webflow/canonical-rename-2026-10-15.md`.
 
 Retrofitted 14 October 2026 under Michael's brief #6. House rules adapt the
 project-docs skill and boss AGENTS.md; Webflow safety comes from README §Webflow

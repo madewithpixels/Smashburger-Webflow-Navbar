@@ -1,5 +1,5 @@
 /*
- * Navbar Light
+ * SmashBurger
  * Functional state plus low-specificity structural defaults.
  * Neutral layout presets use overridable colour and spacing tokens.
  * No pseudo-elements are used.
@@ -23,7 +23,7 @@
   z-index: var(--mwp-nav-z-index, 100);
 }
 
-:where([data-mwp-navbar] .mwp-css-nav_inner) {
+:where([data-mwp-navbar] .sb-nav-inner) {
   position: relative;
   z-index: 2;
 }
@@ -97,11 +97,11 @@
   will-change: opacity, transform;
 }
 
-:where([data-mwp-submenu] .mwp-css-nav_submenu-list) {
+:where([data-mwp-submenu] .sb-nav-submenu-list) {
   display: grid;
 }
 
-[data-mwp-submenu]:not([open]) > .mwp-css-nav_submenu-list {
+[data-mwp-submenu]:not([open]) > .sb-nav-submenu-list {
   display: none;
 }
 

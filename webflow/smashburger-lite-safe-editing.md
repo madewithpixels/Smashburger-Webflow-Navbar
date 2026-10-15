@@ -5,7 +5,7 @@ draft describes the current released v0.2.6 hooks and native structure as a
 working reference; refresh the selectors, class names, structure and loader
 instructions after the planned class migration and runtime selection. Confirm
 them against the exact released files chosen for Lite before placing this guide
-in Webflow. The structural `sb-*` mapping remains proposed (D-012).
+in Webflow. Michael accepted the `sb-nav` / `sb-nav-{role}` mapping (D-012) on 15 October 2026. It is implemented in the unreleased source candidate; Webflow still uses the released classes.
 
 ## Safe changes
 

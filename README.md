@@ -1,12 +1,16 @@
 # SmashBurger
 
-SmashBurger is a CSS-first, Webflow-native replacement for the native Navbar component. It keeps one shared set of links for expanded and collapsed layouts, exposes the useful choices as component properties, and uses JavaScript only for progressive enhancement. The `v0.2.3` files and compatibility API retain their original `Navbar Light` implementation names until the planned repository and package migration is released.
+SmashBurger is a CSS-first, Webflow-native replacement for the native Navbar component. It keeps one shared set of links for expanded and collapsed layouts, exposes useful choices as component properties, and uses JavaScript for progressive enhancement.
 
-The maintained implementation exists in synchronized forms:
+The canonical repository is `madewithpixels/Smashburger-Webflow-Navbar`; the working checkout is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. The package is `smashburger-webflow-navbar`.
 
-1. The self-contained `SmashBurger` component in the **MWP Component Library**, tested on the legacy **Navbar Light** acceptance page.
-2. The optional pinned `SmashBurger CDN` component, isolated on the legacy **Navbar Light CDN** acceptance page.
-3. This repository, containing the matching CSS, enhancement script, interactive reference demo, tests and generated Webflow embeds.
+**Unreleased candidate:** maintained `src/`, `demo/index.html` and `candidate/` use the accepted `sb-nav` / `sb-nav-{role}` classes. Version `0.3.0-rc.1` identifies this class migration; it has no published tag or CDN release. `npm run build` writes only to `candidate/`. Do not install its illustrative CDN loader: its proposed tag URLs are not live, and release promotion to `/dist` is still gated.
+
+**Released baseline:** v0.2.6 remains installed in Webflow. The existing `dist/`, top-level Webflow Embeds/loader, `demo/navbar-light.browser.js`, archived `smashed-navbar-html-demo/` and ZIP retain their original bytes. The old GitHub repository remains available for pinned CDN URLs. Do not mix its legacy classes with candidate CSS. Runtime attributes, CSS variables, APIs/events, diagnostics and variant markers remain compatible; their `mwp-*` or `NavbarLight` names are intentional.
+
+Run `npm run test:candidate` for the fresh candidate deliveries, `npm test` for source and legacy regression coverage, `npm run check:namespace` for class/hook and immutable-file checks, and `npm run check:dist` for candidate build reproducibility. See [the migration and repository record](webflow/canonical-rename-2026-10-15.md) for evidence, remaining gates and the class map.
+
+The following Library instructions and published acceptance links describe the released v0.2.6 component. Webflow components, Library editions and the future clonable have not yet received the class migration.
 
 Published acceptance builds:
 
@@ -40,7 +44,7 @@ The variant applies across the component instance. Do not choose a different var
 
 The test instance is left on `Tablet`, so it is expanded on Desktop and collapsed at Tablet and below.
 
-`Never` deliberately preserves the expanded navigation at every width. At very narrow widths, the designer must ensure the chosen links fit, wrap the native inner/panel classes, or choose a collapsing variant; Navbar Light does not silently override that selection.
+`Never` deliberately preserves the expanded navigation at every width. At very narrow widths, the designer must ensure the chosen links fit, wrap the native inner/panel classes, or choose a collapsing variant; SmashBurger does not silently override that selection.
 
 The live Webflow Canvas matrix has been checked for all five variants at Desktop, Tablet, Mobile landscape and Mobile portrait. Expanded variants keep the shared native panel visible; collapsed variants keep the burger and editable panel visible in their authoring layout. The published stylesheet and acceptance page were subsequently verified at both affected mobile widths, including keyboard open/Escape close, panel containment and zero page overflow.
 
@@ -76,7 +80,7 @@ Existing fixed or sticky page content can also paint over an otherwise open pane
 
 ### MWP Component Library demo shell
 
-The source site has a deliberately separate demo theme for presenting components. Its `MWP Demo Theme` variables, `mwp-site-*` classes and `mwp-home-*` classes style the library pages, not the Navbar Light component itself. Navbar Light does not reference those theme variables.
+The source site has a deliberately separate demo theme for presenting components. Its `MWP Demo Theme` variables, `mwp-site-*` classes and `mwp-home-*` classes style the library pages, not the SmashBurger component itself. SmashBurger does not reference those theme variables.
 
 The native `/style-guide` page is both a visual reference and a class-retention page. It keeps the demo typography, semantic colours, layout primitives, buttons, pills and cards attached to real Canvas elements so Webflow's unused-class cleanup does not remove useful library-site styles. Project-specific presentation belongs on these host-page classes; portable component structure belongs on `mwp-css-nav_*`.
 
@@ -183,9 +187,9 @@ npm run build
 npm run check:dist
 ```
 
-Open [demo/index.html](demo/index.html) directly or through a local web server. Its controls exercise every layout and motion combination. `npm run build` regenerates the self-contained Webflow Embed, the demo's classic browser script and the release-ready `dist` files from the maintained source files. `npm run check:dist` fails when committed CDN artifacts no longer match the source. CI runs the source tests and syntax check on every push and pull request; it runs `check:dist` on version tags so a release cannot contain stale generated assets. Between releases, maintained source may intentionally differ from the committed immutable version.
+Open [demo/index.html](demo/index.html) directly or through a local web server after `npm run build`. Its controls exercise the renamed candidate's layouts and motion choices. Build commands write self-contained, Canvas, browser and distribution files into `candidate/`; they leave released top-level files alone. `npm run check:dist` checks that this candidate rebuilds reproducibly. Version tags and release promotion remain separate steps.
 
-The maintained source currently contains unreleased fixes for stylesheet-load failure and breakpoint/focus timing. The committed `dist` files and Webflow Embeds remain the released `v0.2.6` baseline and do not contain those fixes. On 15 October 2026, `npm run test:built` passed all 12 maintained-source checks and 33 of 48 generated-output checks; the 15 failures were the same five source-only behaviors in each of the distribution, minified and Embed outputs. The runner restores generated files after comparison. This local automated result does not verify the unreleased candidate in Webflow or a browser; see the [test record](webflow/lite-preparation-local-tests-2026-10-14.md#brief-13-latest-verification--15-october-2026) for limits and remaining checks.
+The candidate includes the earlier unreleased stylesheet-failure and breakpoint/focus fixes. On 15 October 2026, `npm run test:candidate` passed all 53 delivery, namespace and demo checks with no pending tests. `npm test` passed 75 checks with 15 known legacy-delivery checks marked TODO; those defects remain in the immutable v0.2.6 outputs. These are local automated results; Webflow, human/device accessibility and clone upgrade/rollback checks remain open. See [the candidate record](webflow/canonical-rename-2026-10-15.md).
 
 ## Optional CDN distribution
 
@@ -212,7 +216,7 @@ The native Webflow structure and component properties are independent of the del
 
 Never leave two delivery Embeds active. After switching, publish and verify `data-mwp-ready="true"`, the hidden runtime settings block, the expected asset requests and native open/close fallback. In a shared Library installation, make the Embed change in a versioned source component and apply the Library update; the future Designer Extension will automate this safely.
 
-Navbar Light is released under the [MIT License](LICENSE), copyright © 2026 madewithpixels. The repository remains `private: true` as an npm package; npm distribution can be reconsidered after package naming and ownership are settled.
+SmashBurger is released under the [MIT License](LICENSE), copyright © 2026 madewithpixels. The repository remains `private: true` as an npm package; npm publication remains outside this migration.
 
 The `Navbar Light CDN` Webflow component contains this generated loader and is isolated on `/navbar-light-cdn` for testing. The original `Navbar Light` component and `/navbar-light` acceptance page retain the self-contained Embed.
 
@@ -228,7 +232,9 @@ The published Tablet variant has passed a genuine macOS VoiceOver keyboard-and-s
 .
 ├── README.md
 ├── todo.md
-├── dist
+├── candidate/  # unreleased generated output; never install its CDN loader
+├── compatibility/  # immutable-file hashes and retained runtime contracts
+├── dist  # released v0.2.6 baseline
 │   ├── navbar-light.css
 │   ├── navbar-light.js
 │   └── minified files and source maps

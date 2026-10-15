@@ -43,8 +43,7 @@ JavaScript enhancement. Source: [README — introduction](README.md#smashburger)
   name. Michael accepted the `sb-nav` mapping in D-012 on 15 October 2026.
   Source: R-121, R-162–R-164; namespace audit §Chosen class mapping; D-012.
 - **S-10:** Backup before structural Webflow testing and retain deliberate publication
-  approval. Source: README §Webflow testing safety; R-008. This brief authorises
-  documentation and one local commit only; it authorises no external mutation.
+  approval. Source: README §Webflow testing safety; R-008. The 14 October retrofit brief authorised documentation and one local commit only. The 15 October completion brief separately authorises the repository transfer and necessary remote operations.
 
 ## In scope
 
@@ -78,8 +77,7 @@ R-187–R-224. The manual settings snapshot stays a prototype, with a muted
   Verify fresh installs in current test projects. Keep R-160 as a historical
   defect and leave the SB Test Four page alone (Michael, Q-06, 14 October 2026; D-010).
   Source: [release §Test-site scope](webflow/v0.2.6-release-verification.md).
-- This update covers the four docs and one local commit only; Michael pushes.
-  Source: Michael’s instructions in this session, 14 October 2026.
+- The 14 October documentation-only authority is historical. Michael’s 15 October completion brief authorises Codex to perform the repository transfer and necessary remote Git operations; it retains the release and Webflow gates.
 
 ## Success criteria
 
@@ -95,12 +93,10 @@ These are technical criteria; Michael alone signs off Acceptance.
 
 The SmashBurger product identity and `sb-nav` class mapping are settled (D-012).
 The canonical repository/package direction and local destination are settled in
-D-013. Michael will create and clone the new repository at
-`/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`. The current
-checkout and remote have not moved. Continue with R-119 onward after that clone is
-available; move the local folder only at R-128. Existing pinned assets and old
-compatibility URLs remain protected until the planned release checks are complete.
-Source: Michael’s accepted decisions in boss, 15 October 2026; R-119–R-128.
+D-013. On 15 October 2026 Michael explicitly authorised Codex to complete the transfer and necessary remote repository operations. Both branches and all existing release tags were copied to `madewithpixels/Smashburger-Webflow-Navbar` without rewriting history. The selected working checkout is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`.
+
+The source class migration is an unreleased `0.3.0-rc.1` candidate. Existing pinned assets, the old compatibility remote and v0.2.6 output bytes remain protected. Webflow rollout, publication, Library sharing, new release tags and retirement remain subject to their release/backup gates. The original folder is retained; no destructive folder rename is needed because the selected clone already exists.
+Source: Michael’s completion brief in this chat, 15 October 2026; [transfer evidence](webflow/canonical-rename-2026-10-15.md); R-119–R-128.
 
 ## Deferred decisions (not blocking the docs update)
 

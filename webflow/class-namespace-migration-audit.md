@@ -1,8 +1,7 @@
 # SmashBurger class namespace migration audit
 
 Prepared 2026-10-14 from the maintained source, generated Webflow embeds,
-demos, tests and documentation. This is a migration inventory, not a class
-rename or release. Released v0.2.6 files and Webflow baselines remain unchanged.
+demos, tests and documentation. The mapping was accepted on 15 October 2026 (D-012) and is now implemented in the maintained source and isolated `candidate/` outputs. This document retains the original inventory. Released v0.2.6 files and Webflow baselines remain unchanged. See [the implementation and transfer record](canonical-rename-2026-10-15.md).
 
 ## Scope to rename
 
@@ -153,5 +152,4 @@ outputs before tagging a new semantic version.
 
 The class mapping is specified above. The roadmap already names
 `madewithpixels/SmashBurger-Webflow-Navbar` and package
-`smashburger-webflow-navbar`; the canonical repository still needs to be
-created before the rename is packaged and released.
+`smashburger-webflow-navbar`; the canonical repository and clone now contain the complete history. The renamed candidate is packaged locally; release and Webflow rollout remain gated.

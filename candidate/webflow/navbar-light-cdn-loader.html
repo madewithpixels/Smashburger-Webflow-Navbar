@@ -1,0 +1,20 @@
+<!-- UNRELEASED CANDIDATE: tag and CDN URLs are not published. Do not install in Webflow. -->
+<!-- SmashBurger CDN loader: exact version 0.3.0-rc.1 (v0.3.0-rc.1) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.3.0-rc.1/dist/navbar-light.min.css"
+  integrity="sha384-CHBz/LfxkFBbjeXMGi5tQVHiA80e1z+LAEpsnCpYYz9E6L4xgm0REid6pBvUHe0N"
+  crossorigin="anonymous"
+  data-mwp-navbar-light-cdn="css"
+  data-mwp-navbar-light-version="0.3.0-rc.1"
+  onload="this.dataset.mwpStatus='loaded'"
+  onerror="this.dataset.mwpStatus='error';window.dispatchEvent(new CustomEvent('mwp-navbar-light:cdn-error',{detail:{asset:'css',version:'0.3.0-rc.1'}}));console.error('SmashBurger 0.3.0-rc.1: CDN CSS failed to load; native navigation content remains available.')">
+<script
+  defer
+  src="https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.3.0-rc.1/dist/navbar-light.min.js"
+  integrity="sha384-9cGtXQ4jePBy9MF0q3zmhELqfYUY4xFdEhJpmgOW3nytWjUbInNnjdTGfv9qv+JP"
+  crossorigin="anonymous"
+  data-mwp-navbar-light-cdn="javascript"
+  data-mwp-navbar-light-version="0.3.0-rc.1"
+  onload="this.dataset.mwpStatus='loaded'"
+  onerror="this.dataset.mwpStatus='error';window.dispatchEvent(new CustomEvent('mwp-navbar-light:cdn-error',{detail:{asset:'javascript',version:'0.3.0-rc.1'}}));console.error('SmashBurger 0.3.0-rc.1: CDN JavaScript failed to load; native details behavior remains available.')"></script>

@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
 
 export const deliveries = ['source', 'dist', 'minified', 'embed'];
-const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
+const candidate = Boolean(process.env.SMASHBURGER_CANDIDATE);
+const read = (path) => readFileSync(new URL(`../${candidate && !path.startsWith('src/') ? 'candidate/' : ''}${path}`, import.meta.url), 'utf8');
 
 export function runtimeFixture(delivery, { width = 820, reducedMotion = false, javascript = true, includeCss = true } = {}) {
   const source = delivery === 'source'
@@ -18,7 +19,7 @@ export function runtimeFixture(delivery, { width = 820, reducedMotion = false, j
     <div data-mwp-inner><details data-mwp-menu><summary data-mwp-trigger aria-label="Navigation menu">
     <span data-mwp-icon style="row-gap:7px"><span data-mwp-line style="height:3px"></span><span data-mwp-line style="height:3px"></span><span data-mwp-line style="height:3px"></span></span>
     </summary></details><nav data-mwp-panel><a href="#first" data-mwp-item>First</a>
-    <details data-mwp-submenu><summary>More</summary><div class="mwp-css-nav_submenu-list"><a href="#nested">Nested</a></div></details></nav></div>
+    <details data-mwp-submenu><summary>More</summary><div class="${delivery === 'source' || candidate ? 'sb-nav-submenu-list' : 'mwp-css-nav_submenu-list'}"><a href="#nested">Nested</a></div></details></nav></div>
     <div data-mwp-backdrop></div></header><button id="outside">Outside</button>`, { runScripts: 'outside-only' });
   const media = new Set();
   let currentWidth = width;

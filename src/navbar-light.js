@@ -45,7 +45,7 @@ export class NavbarLight {
     this.menu = root.querySelector('[data-mwp-menu], [data-mwp-css-nav]');
     this.trigger = this.menu?.querySelector('[data-mwp-trigger], summary');
     this.icon = this.trigger?.querySelector('[data-mwp-icon]');
-    this.panel = root.querySelector('[data-mwp-panel], .mwp-css-nav_panel');
+    this.panel = root.querySelector('[data-mwp-panel], .sb-nav-panel');
     this.backdrop = root.querySelector('[data-mwp-backdrop]');
     this.items = [...root.querySelectorAll('[data-mwp-item]')];
     this.submenus = [...root.querySelectorAll('[data-mwp-submenu]')];
