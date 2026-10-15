@@ -1932,3 +1932,23 @@ Next useful action: provide a route that serves the maintained candidate files
 on the isolated staging site. Then capture its failed-script request and run
 the remaining layout and motion checks. Keep Clean Trial unpublished and leave
 the empty probe and unrelated drafts unchanged.
+
+### Brief #15 candidate route inspection retry — 15 October 2026
+
+Started the Boss run for Brief #15 and read the project record. At `3e03ff5`,
+`main` was clean. Opened two fresh tabs for the isolated Clean Trial URL. The
+first rendered its navigation and SmashBurger infrastructure disclosure in
+the accessibility tree. Native Chrome DevTools opened on that tab with the
+Network panel available. The existing request-blocking pattern for
+`@v0.2.6/dist/navbar-light.min.js` was unchecked. After clearing the Network
+list and reloading, the route document stayed pending for 30 seconds. Chrome
+then switched to a Boss tab and stopped accepting input. The second fresh-tab
+retry also opened, but no request or runtime evidence could be captured. Both
+tabs created for this check were closed. The request rule was not enabled or
+changed. No Webflow content, setting, draft or publication changed.
+
+No candidate files were confirmed. The failed-script request, candidate
+Details/focus, Full-width and Right short-height, reduced-motion and
+custom-animation checks remain open, along with human/device, physical-display
+DPR 2×/3× and cloned upgrade/rollback checks. Earlier v0.2.6 fallback and
+Details/focus results remain comparison evidence only.

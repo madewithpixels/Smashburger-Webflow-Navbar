@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The isolated route still serves v0.2.6, so candidate browser checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Brief #15 says the isolated candidate route and request inspection are available, but this check did not confirm candidate files. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** de788ab — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Make a source-candidate route available on the isolated staging site, then capture its failed-script request and run the remaining browser checks.
+**Reviewed at commit:** 3e03ff5 — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Retry the candidate route when Chrome remains available long enough to finish its document load, then capture its failed-script request and run the remaining browser checks.
 **Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #15 candidate route inspection retry — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release file or Webflow content changed. The candidate route and request inspection were not verified because the page request stayed pending and Chrome switched away during the check.
+
+**Outputs:** Opened Chrome DevTools Network on my fresh tab and confirmed the pre-existing v0.2.6 JavaScript blocking rule remained unchecked. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for Brief #15 and read the project record. At `3e03ff5`, `main` was clean. Opened fresh tabs for `https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation`; its accessibility tree showed the isolated navigation and SmashBurger infrastructure disclosure. Chrome DevTools opened on that tab and showed Network capture available, plus the existing `@v0.2.6/dist/navbar-light.min.js` blocking rule unchecked. After clearing the log and reloading, the route document remained pending after 30 seconds. Chrome then switched to a Boss tab and stopped accepting input. A second fresh-tab retry also opened, but no loaded candidate files or behavior were confirmed. Closed both tabs created for this check. The Network rule was not enabled or changed. No Webflow content or publication changed.
+
+**Still open:** Candidate CSS/JavaScript identity and failed-script request capture; candidate Details/focus; Full-width and Right short-height behavior; reduced-motion and custom-animation. Human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback also remain open. Earlier v0.2.6 fallback and Details/focus evidence remains comparison evidence only.
+
+**Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Retry the candidate route when Chrome remains available long enough to finish its document load, then capture its script request and run the layout and motion checks. Keep Clean Trial unpublished, its probe empty, and unrelated drafts unchanged.
+
+**Handoff:** Read this entry and the latest Brief #15 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). Both tabs opened for this check are closed; the existing request-blocking rule remains unchecked.
 
 ## 15 October 2026 — Brief #15 route inspection retry — Codex (night shift)
 
