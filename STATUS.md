@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 in this run; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 1ccf54d — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** 3e78f81 — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
 **Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 browser and fixture access recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, Webflow content, Library item, asset, publication or release changed. No completed candidate behavior check was repeated.
+
+**Outputs:** Confirmed the current browser surface and Clean Trial page state against the latest Brief 12 fixture record. New verification remains pending Michael's acceptance.
+
+**Checked how:** At `3e78f81`, `main` was clean; history since the prior reviewed commit `1ccf54d` contains only the already-recorded build/access recheck. Read-only Webflow site/page calls confirm the probe remains `draft: true`, the site has no custom domains, its last publication remains `2026-10-14T23:30:40.323Z`, and four other pages remain drafts. The documented CUA API in this session provides accessibility state, screenshots and input, but no Network request capture, DOM evaluation or viewport emulation. The richer browser documentation was not exposed as a callable control here. No browser tab was opened; no Webflow change or publication occurred.
+
+**Still open:** Automatic failed-candidate-script request capture; Full-width and Right short-height containment; candidate reduced-motion/custom-animation; usable isolated Preview or staging route; human screen-reader/device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The isolated-route blocker was already reported to Boss, so it was not reported again.
+
+**Needs Michael:** Provide a supported isolated staging or Preview route with a working browser inspection surface. Arrange human/device checks and a cloned release candidate when available.
+
+**Next useful action:** Resume the remaining candidate checks once the isolated route is available. Keep product naming, class migration and Lite publication deferred.
+
+**Handoff:** The Clean Trial probe is empty and draft; four unrelated drafts remain untouched. No tabs were opened. Do not publish the whole site to reach the probe, refresh the Navbar Light test page, or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 current access recheck — Codex (night shift)
 

@@ -1406,3 +1406,11 @@ Right narrow-height containment; candidate reduced-motion/custom-animation;
 human screen-reader or physical-device checks; physical-display DPR 2×/3×; and
 cloned upgrade/rollback. The isolated-route/Preview blocker was already
 reported to Boss; Brief 14 is the next authorised setup action.
+
+### Brief #13 browser and fixture access recheck — 15 October 2026
+
+At `3e78f81`, `main` was clean; history since the prior reviewed commit `1ccf54d` contains only the already-recorded build/access recheck. Read-only Webflow site and page calls confirm Clean Trial has no custom domains, its last publication remains `2026-10-14T23:30:40.323Z`, the probe is still a draft, and four other pages remain drafts.
+
+The CUA interface available in this session provides accessibility state, screenshots and input, but no DOM evaluation, viewport emulation or Network request capture. The richer browser documentation was not exposed as a callable control. No browser tab was opened, and no Webflow content or publication changed. No previously completed candidate check was repeated.
+
+Not checked: automatic failed-candidate-script request capture; Full-width and Right short-height containment; candidate reduced-motion/custom-animation; isolated Preview or staging runtime; human screen-reader/device use; physical-display DPR 2×/3×; and cloned upgrade/rollback. The isolated-route blocker was already reported to Boss, so no duplicate report was sent. Resume these candidate checks after a supported isolated route and inspection controls are available.
