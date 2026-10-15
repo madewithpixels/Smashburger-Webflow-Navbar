@@ -231,3 +231,38 @@ for (const delivery of deliveries) {
     } finally { f.close(); }
   });
 }
+
+test('maintained source icon geometry centres two- and three-line opens across simulated pixel ratios', () => {
+  const f = runtimeFixture('source');
+  try {
+    const css = f.dom.window.document.querySelector('style').textContent.replace(/\s+/g, ' ');
+    assert.ok(css.includes('[data-mwp-menu][open] [data-mwp-line]:nth-child(1) { transform: translateY(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem))) rotate(45deg); }'));
+    assert.ok(css.includes('[data-mwp-menu][open] [data-mwp-line]:nth-child(3) { transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * -1)) rotate(-45deg); }'));
+    assert.ok(css.includes('[data-mwp-navbar][data-icon-lines="2"] [data-mwp-menu][open] [data-mwp-line]:nth-child(1) { transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * 0.5)) rotate(45deg); }'));
+    assert.ok(css.includes('[data-mwp-navbar][data-icon-lines="2"] [data-mwp-menu][open] [data-mwp-line]:nth-child(3) { transform: translateY(calc(var(--mwp-nav-icon-shift, var(--mwp-nav-icon-auto-shift, 0.4375rem)) * -0.5)) rotate(-45deg); }'));
+    const physicalPixel = (cssPixels, ratio) => Math.round(cssPixels * ratio);
+    for (const mode of ['2', '3']) for (const height of [1, 2, 3, 4])
+      for (const gap of [5, 7, 9]) for (const ratio of [1, 1.25, 1.5, 2, 3]) {
+        f.root.dataset.iconLines = mode;
+        const icon = f.root.querySelector('[data-mwp-icon]');
+        icon.style.rowGap = `${gap}px`;
+        f.root.querySelectorAll('[data-mwp-line]').forEach(line => { line.style.height = `${height}px`; });
+        const navbar = f.create();
+
+        const step = height + gap;
+        const expectedShift = mode === '2' ? step / 2 : step;
+        assert.equal(f.root.style.getPropertyValue('--mwp-nav-icon-auto-shift'), `${step}px`,
+          `${mode} lines, ${height}px bars, ${gap}px gap, ${ratio}x`);
+
+        // The middle row disappears in two-line mode, leaving one row gap;
+        // three-line mode spans two. Apply the source CSS translation rule,
+        // then map both centres onto the simulated physical-pixel grid.
+        const rowIntervals = mode === '2' ? 1 : 2;
+        const firstCentre = height / 2 + expectedShift;
+        const lastCentre = height / 2 + rowIntervals * step - expectedShift;
+        assert.equal(physicalPixel(firstCentre, ratio), physicalPixel(lastCentre, ratio),
+          `${mode} lines, ${height}px bars, ${gap}px gap, ${ratio}x`);
+        navbar.destroy();
+      }
+  } finally { f.close(); }
+});

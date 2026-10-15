@@ -1,5 +1,23 @@
 # Burger X geometry candidate
 
+## Maintained-source local geometry matrix — 2026-10-15
+
+Run `npm run test:icon-geometry` to exercise the maintained source in a fresh
+local fixture. The test covers 120 combinations: two- and three-line icons,
+1px through 4px bars, overridden 5px/7px/9px gaps, and simulated pixel ratios
+of 1, 1.25, 1.5, 2 and 3. It checks that JavaScript measures the expected
+bar-plus-gap shift, applies the half shift for two lines and full shift for
+three, and that both resulting line centres round to the same simulated
+physical-pixel coordinate. It also checks the maintained CSS declarations for
+the full three-line shifts and half-sized two-line shifts.
+
+This is a deterministic geometry model using maintained source and CSS rules;
+it is not a browser screenshot or a test of antialiasing/rasterisation. It
+proves the source calculation and the modelled centre alignment for these
+values. It does not prove that a physical screen renders the bars cleanly, or
+that a Webflow component or exact-version distribution uses these rules.
+Physical-display DPR 2×/3× and Webflow candidate checks remain open.
+
 The released `v0.2.3` CSS uses a fixed 7px shift (or half that for two bars). That matches only the original 2px bars and 5px gap. The maintained source now measures the rendered bar height plus the icon's row gap and sets `--mwp-nav-icon-auto-shift` on the root. The existing transform transition remains intact, so the bars still move and rotate smoothly. An explicit `--mwp-nav-icon-shift` remains a manual override, and its 7px fallback remains available without JavaScript.
 
 On 2026-10-02 a localhost browser fixture loaded the maintained CSS and JavaScript, used native summary/icon/line markup and exercised three and two visible lines. At 2px bars with a 5px gap the measured shift was 7px; at 3px bars with a 7px gap it was 10px. After the opening transition settled, the first and final line centres matched exactly in all four cases: 8px and 11.5px for three lines, 4.5px and 6.5px for two lines, measured from the icon top. The browser's rendered sample showed symmetric Xs. The automated suite additionally verifies recalculation when the gap changes, and all 36 tests pass.

@@ -11,6 +11,7 @@
     "build:webflow": "node scripts/build-webflow-embed.mjs",
     "build:canvas": "node scripts/build-canvas-embed.mjs",
     "test": "node --test",
+    "test:icon-geometry": "node --test --test-name-pattern='maintained source icon geometry' tests/runtime-delivery.test.js",
     "test:built": "node scripts/check-built-runtime.mjs",
     "check": "node --check src/navbar-light.js",
     "check:dist": "node scripts/check-dist.mjs"

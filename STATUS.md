@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. README now records the generated-output comparison and limits. The three outcomes from Brief #16 are ready for Michael's review.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 532f9f9 — checked this baseline and compared the release record, maintained source, generated outputs and current README/roadmap claims. No remote operation was made.
+**Reviewed at commit:** 948203e — checked the current baseline, project record, maintained source tests and icon geometry record. No remote operation was made.
 **Next action:** Michael can try the three outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push the local commit when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Maintained-source icon geometry matrix — Codex (night shift)
+
+**Changed (R-037):** Added a focused local regression for open two-line and three-line icons across four bar thicknesses, three overridden gaps and five simulated pixel ratios. The immutable v0.2.6 files and Webflow were not changed.
+
+**Outputs:** Added `npm run test:icon-geometry` and documented the 120-case coverage and its limits in the [icon geometry record](webflow/icon-geometry-regression.md).
+
+**Checked how:** `npm run test:icon-geometry` passed (1 test, 120 combinations). It checks the maintained JavaScript shift, the source CSS translation rules and modelled line-centre rounding at simulated 1×, 1.25×, 1.5×, 2× and 3×. `git diff --check` passed.
+
+**Still open:** This does not render or inspect browser pixels. Physical-display DPR 2×/3×, Webflow candidate checks and exact-version distribution checks remain open.
+
+**Needs Michael:** Review and push the local commit when ready.
+
+**Next useful action:** Use the maintained source matrix for future local regression checks; complete the physical-display and Webflow candidate checks when they can be run.
 
 ## 15 October 2026 — README and roadmap implementation check — Codex (night shift)
 
