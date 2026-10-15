@@ -1,9 +1,25 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Chrome DevTools request inspection was available on the comparison route, but the browser approval gate rejected the documented SB Test Four source-candidate route. Candidate behavior checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** a136494 — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Approve the SB Test Four staging origin or provide another approved candidate URL, then capture the failed-script request and finish the candidate browser checks.
-**Needs Michael:** Approve the SB Test Four staging origin or provide another approved candidate URL. Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
+**Reviewed at commit:** 532f9f9 — checked the current main baseline before this documentation update. No remote operation was made.
+**Next action:** Michael can try the three outcomes in the roadmap and record his verdict in boss.
+**Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push the local commit when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #16 outcome sign-off wording — Codex (night shift)
+
+**Changed (R-009, R-122, R-129–R-137, R-162, R-163, R-165, R-167, R-170, R-177):** Reframed the built work as three outcomes Michael can check in Webflow: a tidy site after unlinking, clear names in Navigator, and a closed infrastructure box whose menu still works in Preview. Detailed engineering items now point to their outcome; housekeeping items need no separate sign-off.
+
+**Outputs:** Updated `ROADMAP.md` with Try lines, Covers links and a new unlink outcome (R-267). Kept the existing State and Evidence fields unchanged and did not accept any outcome.
+
+**Checked how:** Read the project rules and current project docs; checked `532f9f9..HEAD` and the working tree before editing. Compared all requested item State and Evidence values before and after; confirmed each step points to the intended outcome, the three outcome Try lines are present and `git diff --check` passes. This is a documentation rewrite; no Webflow or browser checks were run.
+
+**Still open:** Michael's three outcome checks and sign-off. The Webflow behavior described by the existing records was not rerun in this session.
+
+**Needs Michael:** Try the three outcomes in the roadmap and record a verdict for each in boss. Review and push the local commit when ready.
+
+**Next useful action:** Michael tries the three outcomes; a later agent records his verdict without changing the evidence or outcome wording unless asked.
+
+**Handoff:** For Michael: read the three Try lines in `ROADMAP.md`; they are the review surface boss will show. The work is on `main` and committed locally. Existing fixture boundaries remain in their linked records; no Webflow changes were made.
 
 ## 15 October 2026 — Brief #15 candidate browser access — Codex (night shift)
 

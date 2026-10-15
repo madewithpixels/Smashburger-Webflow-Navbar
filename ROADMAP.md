@@ -88,7 +88,7 @@ the Library global-style packaging finding, and remaining scope.
 
 
 #### R-009 · Keep this roadmap and `README.md` aligned with implementation.
-**State:** built · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** none · **Acceptance:** n/a (housekeeping — no outcome for Michael to try)
 **Source:** [todo.md](todo.md), original line 21 (now 22); baseline `c808ca4`.
 **Exit criteria:**
 
@@ -1026,7 +1026,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 170 (now 171); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/class-namespace-migration-audit.md](webflow/class-namespace-migration-audit.md)
@@ -1080,7 +1080,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-129 · Audit the `.always`, `.always-1`, `.always-2` and further variant-derived combo classes materialized when a configured Library instance is unlinked. Record which rules are functional, authoring-only, visibility-related or redundant before removing or consolidating any of them.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 186 (now 187); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/always-unlink-class-audit-2026-10-13.md](webflow/always-unlink-class-audit-2026-10-13.md)
@@ -1088,7 +1088,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-130 · Use the fresh clean-destination v0.2.6 Always unlink as a class-audit fixture and compare it with the historical madewithpixels counts. It materialized 36 selector names across 103 attachments, not 35/102. Three local selectors carry functional inner/menu/panel layout declarations; 33 are declaration-free across 100 attachments. No class removal is implied by that classification. See `webflow/always-unlink-class-audit-2026-10-13.md`.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 187 (now 188); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/always-unlink-class-audit-2026-10-13.md](webflow/always-unlink-class-audit-2026-10-13.md)
@@ -1096,7 +1096,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-131 · Remove only the confirmed declaration-free class attachments from a recoverable duplicate of the clean-destination legacy Always unlink. Removed 100 attachments on `Always Unlink Class Audit Backup` (99 numbered plus the unnumbered root token), preserving ordinary base classes, the three functional numbered tokens and the original audit page. Four Canvas breakpoints retain zero overflow; Preview open/Escape, backdrop closure, ARIA/inert, focus return, and CSS/native Details fallback at Desktop and Mobile portrait pass. The pinned loader was restored and read back byte-for-byte. See the dated audit and `webflow/unlink-cleanup-checklist.md`.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 188 (now 189); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/always-unlink-class-audit-2026-10-13.md](webflow/always-unlink-class-audit-2026-10-13.md)
@@ -1104,7 +1104,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-132 · Minimize variant-specific Webflow styles in the unreleased source candidate where stable base classes and the `data-collapse` value provide the same behavior, reducing generated class clutter without weakening the CSS/native fallback.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 189 (now 190); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/unlink-hardening-candidate.md](webflow/unlink-hardening-candidate.md)
@@ -1113,7 +1113,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
   - 2026-10-13: the candidate uses one Base variant and a static collapse value after unlink; five fresh source unlinks and the clean-destination Always unlink produced zero numbered variant selectors. The released v0.2.6 component remains unchanged.
 
 #### R-133 · Prevent declaration-free variant selectors from being emitted on unlink where Webflow permits it. Consolidate genuinely required Always behavior into stable, deliberately named base/state selectors and aim to leave no numbered `Always` combo trail in a newly unlinked instance.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 191 (now 192); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/unlink-hardening-candidate.md](webflow/unlink-hardening-candidate.md)
@@ -1122,7 +1122,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
   - 2026-10-13: the one-Base candidate produced zero numbered selectors across the five source collapse choices and again in the clean destination. This applies to the candidate path only; a v0.2.6 unlink still has three functional numbered selectors and is documented separately.
 
 #### R-134 · Add an unlink-cleanup checklist and a before/after regression fixture that proves an Always-collapsed instance retains layout, visibility, accessibility and Preview behavior after only demonstrably redundant generated classes are removed.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 193 (now 194); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/always-unlink-class-audit-2026-10-13.md](webflow/always-unlink-class-audit-2026-10-13.md)
@@ -1131,7 +1131,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
   - 2026-10-13: the recovery duplicate has all 100 declaration-free attachments removed. Four Canvas breakpoints and Preview open/Escape, backdrop closure, ARIA/inert, trigger-focus and overflow checks pass. A temporary stylesheet-only loader passed native Details open/close at Desktop and Mobile portrait; the pinned loader was restored and read back byte-for-byte. The class-audit report records the remaining page-level JavaScript caveat.
 
 #### R-135 · Document and test the duplicate-name hazard created by unlinking a Library component: namespaced and unprefixed combo selectors share Designer display names but have distinct IDs. Avoid name-only style-record mutation; use a recoverable duplicate and exact-element class assignment with full-list preflight/readback.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 195 (now 196); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/always-unlink-class-audit-2026-10-13.md](webflow/always-unlink-class-audit-2026-10-13.md)
@@ -1140,7 +1140,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
   - 2026-10-13: the fresh fixture has 36 paired names (72 style records) with distinct selectors/IDs. Exact identities and declarations are recorded in `webflow/always-unlink-class-audit-2026-10-13.md`. The recovery duplicate confirmed an exact-element `set_style` assignment changes only the intended page element; no style records were deleted.
 
 #### R-136 · Build the unreleased one-Base source Library candidate so a newly configured/unlinked instance reproduces the cleaned madewithpixels behavior without manual removal: stable base declarations, no fixed `80rem` maximum and no generated declaration-free `Always` trail.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 197 (now 198); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/unlink-hardening-candidate.md](webflow/unlink-hardening-candidate.md)
@@ -1149,7 +1149,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
   - 2026-10-13: verified in the source fixtures and clean destination. Preserve this candidate as unreleased trial work; do not infer that pre-existing v0.2.6 unlinks or every future Webflow unlink are clean.
 
 #### R-137 · Share only the candidate and verify its clean-destination acceptance path: preserve the v0.2.6 comparison, install and retain the linked candidate, unlink one duplicate, audit retained static values and generated selectors, run responsive/runtime and CSS-only fallback checks, and confirm both imported tag styles remain.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-267)
 **Source:** [todo.md](todo.md), original line 199 (now 200); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/unlink-hardening-candidate.md](webflow/unlink-hardening-candidate.md)
@@ -1417,13 +1417,15 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 #### R-162 · Remove custom Navigator display names from portable Webflow release elements so Webflow shows the actual `sb-*` class names authors need for styling and structural work. Make the class names themselves clear enough to describe the element.
 **State:** built · **Evidence:** none · **Acceptance:** pending
+**Try:** In Webflow's Navigator, check that each part of the component has a clear name.
+**Covers:** R-163
 **Source:** [todo.md](todo.md), original line 228 (now 229); baseline `c808ca4`.
 **Exit criteria:**
 
   - Done on both MWP Library source components (2026-10-03): 21 structural names reset per edition; Embeds renamed `SmashBurger runtime` / `SmashBurger CDN loader` and `SmashBurger Canvas helper`. Class clarity is the later `sb-*` rename.
 
 #### R-163 · Verify the source Library candidate, linked clean-install instance and unlinked/local instance expose the expected class names directly in the Navigator, without friendly labels masking native selectors.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-162)
 **Source:** [todo.md](todo.md), original line 230 (now 231); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/unlink-hardening-candidate.md](webflow/unlink-hardening-candidate.md)
@@ -1439,6 +1441,8 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 #### R-165 · Prototype moving the Canvas-visible Code Embed inside one compact `SmashBurger infrastructure` Details element, collapsed by default, and verify the CSS/JS output and a readable settings snapshot in Preview and published output.
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**Try:** In Designer, leave the “SmashBurger infrastructure” box closed, then check that the menu still works in Preview.
+**Covers:** R-167, R-170
 **Source:** [todo.md](todo.md), original line 233 (now 234); baseline `c808ca4`.
 **Current direction:** Michael, Q-07, 14 October 2026: accepted as a prototype only (D-016), with a muted “Infrastructure and settings” label direction. Manual upkeep remains necessary; styling is not implemented here and roadmap Acceptance remains pending.
 **Exit criteria:**
@@ -1458,7 +1462,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-167 · Test Webflow's `Keep in HTML when hidden` behavior before relying on a hidden authoring wrapper; the runtime must never disappear because an author hid the Canvas helper. On the isolated clean-destination page, hiding only the Canvas helper with this option enabled left its code stored but made the collapsed panel visible on the Tablet Canvas. Restoring Visible and unchecking the option restored the expected closed Canvas view. Do not rely on this feature for Code Embed authoring CSS; the sibling runtime loader was never hidden. See `webflow/canvas-authoring-fixture.md`.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-165)
 **Source:** [todo.md](todo.md), original line 236 (now 237); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/canvas-authoring-fixture.md](webflow/canvas-authoring-fixture.md)
@@ -1485,7 +1489,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-170 · Prove a Designer-only CSS hook on the disposable linked fixture without changing released assets. A page-local `html.wf-design-mode` rule hid the panel on Canvas while keeping Brand and Menu visible; Preview and published desktop/mobile output retained the links and menu behavior. See `webflow/canvas-authoring-fixture.md`. The full default experience above remains open because the prototype also hides expanded/Never authoring and linked instances cannot expose internal links in the consumer Navigator.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-165)
 **Source:** [todo.md](todo.md), original line 239 (now 240); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/canvas-authoring-fixture.md](webflow/canvas-authoring-fixture.md)
@@ -1547,7 +1551,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-177 · Define a deliberately basic clonable scope that demonstrates SmashBurger without turning the Library component into a site-specific header system. Drafted 2026-10-14 in `webflow/smashburger-lite-clonable-scope.md`; build remains gated on the planned class migration and a verified released runtime.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (housekeeping — no outcome for Michael to try)
 **Source:** [todo.md](todo.md), original line 250 (now 251); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/smashburger-lite-clonable-scope.md](webflow/smashburger-lite-clonable-scope.md)
@@ -2194,3 +2198,11 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 
 **Brief #13 callable browser control confirmation — 15 October 2026 (R-037, R-095, R-155):** Chrome is listed, but `cua.getApp("com.google.Chrome")` returns `cgWindowNotFound`. The CUA browser-control surface available in this session provides accessibility, screenshots and input, not page evaluation, viewport control or Network request events. A richer Playwright/DevTools interface appears in browser documentation but is not callable through this session's CUA API. No browser tab or Webflow content changed; the empty draft probe remains untouched. Candidate request capture, Details/focus, Full-width/Right short-height, rendered reduced-motion/custom-animation, human/device, physical-display DPR and cloned upgrade/rollback remain open. The route blocker was already reported to Boss; details in [STATUS](STATUS.md) and the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+
+#### R-267 · Leave a tidy site after unlinking the component.
+**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**Try:** On the unlink test page, unlink the component. Check that the Navigator has no pile of duplicate or empty entries labelled “Always”, and that the menu still works in Preview.
+**Covers:** R-122, R-129–R-137
+**Source:** [always-class audit](webflow/always-unlink-class-audit-2026-10-13.md); [unlink candidate record](webflow/unlink-hardening-candidate.md).
+**Evidence boundary:** Recorded checks cover the legacy cleanup duplicate and the one-Base candidate in the named fixtures; they do not promise the same result for every existing or future Webflow instance.
