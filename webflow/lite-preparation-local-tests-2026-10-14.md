@@ -1346,3 +1346,37 @@ screen-reader/device, physical-display DPR 2×/3× and cloned upgrade/rollback
 checks still need their people, hardware or release setup. Continue on an
 isolated test site with a supported page-level route; do not publish the whole
 site to reach the probe.
+
+
+### Brief #13 current access recheck — 15 October 2026
+
+Started the existing Boss run and reviewed the latest Brief 12/13 fixture records
+before checking access. The checked baseline was clean at `e2fc350`; the only
+commit after the Status reviewed-at baseline `861428b` is the already-recorded
+Brief 13 cleanup entry.
+
+Read-only Webflow MCP `get_site` and `list_pages` calls returned the backed-up
+Clean Trial site with no custom domains and last publication still at
+`2026-10-14T23:30:40.323Z`. The six-page list confirms that the probe remains
+`draft: true` and four unrelated pages remain drafts. The API reports
+`canBranch: true` for the probe, but this is page eligibility only. Webflow AI
+confirmed the Branch API and branch staging Preview require Enterprise; the
+previous `not_enterprise_plan_site` response is authoritative, and there is no
+site-scope or other branch route for this site. A new Chrome tab loaded the
+published `/unlink-fallback-isolation` v0.2.6 comparison. It is not the source-derived
+candidate, and it adds no candidate behavior evidence. The tab was closed. No
+Webflow content, publication, Library item or asset changed.
+
+The available CUA browser interface exposed page accessibility and screenshots
+but no request log, DOM evaluation or viewport control. The `node_repl`
+inspection returned no browser, CDP, Chrome or Playwright handle; its exposed
+keys were limited to the local runtime helpers. No candidate request existed to
+capture on the comparison page, and no attempt was made to restore temporary
+content or publish the whole site. This access recheck does not repeat earlier
+Details, closed-link/focus, responsive, or fresh-build checks.
+
+Not checked: automatic failed-candidate-script request capture; Full-width and
+Right narrow-height containment; candidate reduced-motion/custom-animation;
+human screen-reader or physical-device checks; physical-display DPR 2×/3×; and
+cloned upgrade/rollback. The isolated-route/Preview blocker was already
+reported to Boss; Brief 14 is the next authorised setup action.

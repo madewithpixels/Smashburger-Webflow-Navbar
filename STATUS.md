@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. `npm run test:built` passed 48/48 at `861428b`; candidate browser checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 861428b — checked current `main`; worktree was clean at start. No remote operation was made.
+**Reviewed at commit:** e2fc350 — checked current `main`; worktree was clean at start. No remote operation was made.
 **Next action:** Provide an isolated SmashBurger test site with a supported staging or Preview route, then continue candidate checks.
 **Needs Michael:** Review and push local commits. The current Webflow workspace is not Enterprise, so page branches are unavailable; Preview also stalled. Arrange human/device checks and a cloned release candidate when available. Product name remains needed for the later class migration/Lite publication.
+
+## 15 October 2026 — Brief #13 current access recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, Webflow page, asset, Library item, publication or release changed. Candidate checks remain open because there is no supported isolated route in this workspace.
+
+**Outputs:** Added the live site and browser-surface readback to the [Brief 13 test record](webflow/lite-preparation-local-tests-2026-10-14.md). New work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss, reviewed Brief 12/13 records, and checked the clean baseline at `e2fc350`; only the previously recorded `e2fc350` entry followed the `861428b` reviewed baseline. Read-only Webflow `get_site` and `list_pages` confirm no custom domains, last publication remains `2026-10-14T23:30:40.323Z`, the probe is still draft, and four unrelated pages remain drafts. Although the page list says `canBranch: true`, Webflow AI confirms this is page eligibility only: Branch API and staging Preview require Enterprise. A new Chrome tab loaded the published v0.2.6 comparison page, not a candidate, and was closed. CUA exposed accessibility/screenshot controls but no request log, DOM evaluation or viewport control. `node_repl` exposed no browser/CDP handle. No candidate request was available to capture.
+
+**Still open:** Automatic failed-script request capture, Full-width and Right short-height containment, candidate reduced-motion/custom-animation, usable candidate Preview, human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback. The same isolated-route blocker was already reported to Boss; no duplicate blocker report was sent.
+
+**Needs Michael:** Complete the isolated-route or Preview setup in Brief 14. Arrange human/device checks and a cloned release candidate when ready.
+
+**Next useful action:** Resume candidate browser checks after Brief 14 provides a supported isolated staging or Preview route. Keep naming, class migration and Lite publication deferred.
+
+**Handoff:** Clean Trial remains empty/draft and no staging publication occurred. Do not use whole-site publication to reach the probe while unrelated drafts remain. Do not refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 candidate access and cleanup — Codex (night shift)
 
