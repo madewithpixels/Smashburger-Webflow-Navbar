@@ -1829,3 +1829,22 @@ Next useful action: once a supported isolated route renders the source-derived
 candidate and request events can be inspected, capture the failed-script
 request and complete the remaining browser checks. Keep the Clean Trial site
 unpublished as a whole and keep all draft pages unchanged.
+
+
+### Brief #13 callable browser control confirmation — 15 October 2026
+
+The latest check started Boss for R-037, R-095 and R-155 and reviewed the
+project-docs v0.4 skill plus the latest Brief #12 fixture evidence. The CUA
+state lists Chrome and its extension browser, but native Chrome binding via
+`cua.getApp("com.google.Chrome")` returns `cgWindowNotFound`. Although the
+extension browser documentation describes Playwright and DevTools APIs, the
+callable CUA interface in this session offers accessibility, screenshot and
+input controls only. It does not expose page evaluation, viewport control or
+Network request events. No tab or Webflow content was changed. The source-derived
+candidate route remains unavailable; the empty draft probe was left untouched.
+
+Not checked: failed-script request capture, candidate Details/focus behavior,
+Full-width/Right short-height containment, rendered reduced-motion/custom
+animation, human screen-reader/device use, physical-display DPR 2x/3x, and
+cloned upgrade/rollback. The isolated-route blocker was already reported to Boss
+and was not duplicated.

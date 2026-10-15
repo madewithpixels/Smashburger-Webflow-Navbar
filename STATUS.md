@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest `npm run test:built` run reported 33/48 passing and 15 failures in the immutable distribution and Embed against newer source behavior; generated files were restored. Rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 08e71d4 — current `main` was clean at start. No remote operation was made.
+**Reviewed at commit:** 91532aa — current `main` was clean at start of this check. No remote operation was made.
 **Next action:** Resume rendered candidate checks when an isolated candidate route and request-inspection control are available.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 browser control confirmation — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release files, or Webflow content changed. Chrome is listed, but its native window cannot be bound in this session.
+
+**Outputs:** Confirmed the supported browser surface and retained the candidate checks as open. Work remains pending Michael’s acceptance.
+
+**Checked how:** Started Boss for R-037, R-095 and R-155. Read the project-docs v0.4 skill, STATUS, and the latest Brief #12/#13 fixture records. `cua.getState()` lists Chrome and an extension browser; `cua.getApp("com.google.Chrome")` returned `cgWindowNotFound`. The extension browser documentation describes a richer Playwright/DevTools interface, but the callable CUA surface here only supports accessibility, screenshots and input; it exposes no page evaluation, viewport control or request events. Webflow access is explicitly authorised, but the existing source-derived candidate route remains unavailable and the draft probe must stay empty. No tab or Webflow content changed.
+
+**Still open:** Failed-script request capture; candidate Details/focus behavior; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader/device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The isolated-route blocker was already reported to Boss, so it was not repeated.
+
+**Needs Michael:** Arrange a supported isolated candidate route with request inspection, human/device checks, and a cloned release candidate. Review and push local commits.
+
+**Next useful action:** When a supported route and browser inspection controls are available, capture the failed-script request and continue the rendered candidate checks. Keep Clean Trial unpublished.
+
+**Handoff:** Read the latest Brief #13 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). Preserve the empty draft probe, unrelated drafts, Navbar Light test page and SB Test Four.
 
 ## 15 October 2026 — Brief #13 current verification result — Codex (night shift)
 
