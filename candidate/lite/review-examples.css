@@ -1,0 +1,19 @@
+/* Unreleased local review styling; these rules are not Webflow component output. */
+body { color: #242321; font: 16px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 70rem; padding: 2rem; }
+main { display: grid; gap: 3rem; }
+section > .sb-nav { margin: 1rem 0; }
+.review-heading { margin-bottom: 3rem; }
+.review-heading p:first-child { color: #6758a3; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.lite-example--styled { --mwp-nav-z-index: 20; background: #132d3a; color: white; padding: 1rem 1.5rem; }
+.lite-example--styled .sb-nav-inner { align-items: center; display: flex; gap: 2rem; justify-content: space-between; min-height: 3rem; }
+.lite-example--styled .brand { color: inherit; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+.lite-example--styled .sb-nav-panel { gap: 1.25rem; }
+.lite-example--styled a:focus-visible, .lite-example--styled summary:focus-visible { outline: 3px solid #f7bf56; outline-offset: 4px; }
+.workbench-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.workbench-grid article { border: 1px solid #d4d1ca; padding: 1rem; }
+.workbench-example { min-height: 9rem; }
+.backdrop-swatch { background: rgb(0 0 0 / .45); border: 1px solid #888; height: 7rem; }
+@media (max-width: 991px) {
+  .lite-example--styled .sb-nav-inner { flex-wrap: wrap; }
+  .lite-example--styled .sb-nav-panel { width: min(28rem, calc(100vw - 2rem)); }
+}

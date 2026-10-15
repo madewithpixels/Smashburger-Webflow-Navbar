@@ -9,6 +9,35 @@
   };
   var TRUE_VALUES = /* @__PURE__ */ new Set(["", "1", "true", "yes", "on"]);
   var CSS_READY_PROPERTY = "--mwp-nav-css-ready";
+  var scrollLocks = /* @__PURE__ */ new WeakMap();
+  function acquireScrollLock(document2) {
+    let lock = scrollLocks.get(document2);
+    if (!lock) {
+      const root = document2.documentElement;
+      const scrollbar = document2.defaultView.innerWidth - root.clientWidth;
+      lock = {
+        count: 0,
+        overflow: root.style.overflow,
+        paddingRight: root.style.paddingRight
+      };
+      scrollLocks.set(document2, lock);
+      root.dataset.mwpScrollLocked = "true";
+      root.style.overflow = "hidden";
+      if (scrollbar > 0) root.style.paddingRight = `${scrollbar}px`;
+    }
+    lock.count += 1;
+  }
+  function releaseScrollLock(document2) {
+    const lock = scrollLocks.get(document2);
+    if (!lock) return;
+    lock.count -= 1;
+    if (lock.count > 0) return;
+    const root = document2.documentElement;
+    root.style.overflow = lock.overflow;
+    root.style.paddingRight = lock.paddingRight;
+    delete root.dataset.mwpScrollLocked;
+    scrollLocks.delete(document2);
+  }
   function navbarStylesAvailable(root) {
     const view = root?.ownerDocument?.defaultView;
     if (!view?.getComputedStyle) return true;
@@ -299,21 +328,13 @@
     }
     lockScroll() {
       if (this.lockSnapshot) return;
-      const scrollbar = window.innerWidth - document.documentElement.clientWidth;
-      this.lockSnapshot = {
-        overflow: document.documentElement.style.overflow,
-        paddingRight: document.documentElement.style.paddingRight
-      };
-      document.documentElement.dataset.mwpScrollLocked = "true";
-      document.documentElement.style.overflow = "hidden";
-      if (scrollbar > 0) document.documentElement.style.paddingRight = `${scrollbar}px`;
+      this.lockSnapshot = true;
+      acquireScrollLock(this.root.ownerDocument);
     }
     unlockScroll() {
       if (!this.lockSnapshot) return;
-      document.documentElement.style.overflow = this.lockSnapshot.overflow;
-      document.documentElement.style.paddingRight = this.lockSnapshot.paddingRight;
-      delete document.documentElement.dataset.mwpScrollLocked;
       this.lockSnapshot = null;
+      releaseScrollLock(this.root.ownerDocument);
     }
     clearStateTimer() {
       if (this.stateTimer) window.clearTimeout(this.stateTimer);

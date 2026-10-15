@@ -1031,6 +1031,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 **Library follow-up — 15 October 2026:** [Both actual Library candidates](webflow/library-sb-nav-candidates-2026-10-15.md) retain properties/assets/five variants and pass source self-contained Preview checks. Sharing, linked consumer upgrades and clonable rollout remain open.
 **Live evidence — 15 October 2026:** [New Smashburger Test](webflow/new-smashburger-test-2026-10-15.md): backed-up fresh native fixture, exact saved candidate Embeds, authorised staging publication, 35 layout/motion pairs, 25 collapse/width checks, keyboard/focus, short-height and genuine no-JavaScript fallback. This does not verify Library property/asset retention, upgrades or the future clonable.
+**Local follow-up — 16 October 2026:** Fixed overlapping overlay scroll locks in the unreleased candidate and added a regression across source, candidate distribution, minified output and Embed. [Check record](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md). Rendered stacking and short-height placement remain unverified.
 
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.

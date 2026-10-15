@@ -1,11 +1,13 @@
 # SmashBurger Lite: safe editing
 
-Read Me copy for the future clonable. Lite is not built or published yet. This
-draft describes the current released v0.2.6 hooks and native structure as a
-working reference; refresh the selectors, class names, structure and loader
-instructions after the planned class migration and runtime selection. Confirm
-them against the exact released files chosen for Lite before placing this guide
-in Webflow. Michael accepted the `sb-nav` / `sb-nav-{role}` mapping (D-012) on 15 October 2026. It is implemented in the unreleased source candidate; Webflow still uses the released classes.
+Read Me copy for the future clonable. Lite is not built or published yet. Keep
+released-install instructions and unreleased candidate review separate: current
+Webflow Libraries and released v0.2.6 installations still use `mwp-css-nav_*`
+classes and `mwp-*` runtime hooks. The isolated 0.3.0-rc.1 candidate uses
+`sb-nav-*` classes and retains those runtime hooks. Its generated loader points
+at an unpublished tag, so it is evidence only and must not be installed.
+Michael accepted the `sb-nav` / `sb-nav-{role}` class mapping (D-012) on
+15 October 2026.
 
 ## Safe changes
 
@@ -20,12 +22,19 @@ in Webflow. Michael accepted the `sb-nav` / `sb-nav-{role}` mapping (D-012) on 1
 
 ## Keep the functional structure
 
-In the current v0.2.6 structure, `[data-mwp-navbar]` marks the root;
+In the released v0.2.6 structure, `[data-mwp-navbar]` marks the root;
 `[data-mwp-menu]` marks the native `<details>` menu; `[data-mwp-trigger]` marks
 its `<summary>` trigger; and `[data-mwp-panel]` marks the panel. The menu and
 panel are adjacent direct children of the navigation inner wrapper. Keep these
 hooks, the native elements and their relationship intact. The CSS-only open
 state depends on the `<details>` menu and adjacent panel.
+
+The 0.3.0-rc.1 candidate keeps the same `data-mwp-*` runtime hooks and native
+element relationships. Its maintained structural classes include
+`.sb-nav-inner`, `.sb-nav-panel` and `.sb-nav-submenu-list`; a Webflow Library
+may add its own prefix to authored class names. Check candidate files under
+`candidate/` when reviewing this migration. Do not copy their classes or loader
+into a released project.
 
 Do not rename, remove, duplicate or move these functional hooks. Do not replace
 the native `<details>`/`<summary>` menu with Webflow's Menu Button, a separate
@@ -62,10 +71,10 @@ closed menu states and keyboard focus.
 
 ## Version-specific instructions to refresh
 
-These selectors use the current `mwp-*` runtime hooks. The planned class
-migration changes structural Webflow classes to `sb-*`; it does not by itself
-rename the runtime hooks. Runtime choice and release version are not yet
-settled. Before this guide is placed in the future project, update it for the
-chosen structure and exact released runtime, then verify the CDN URLs,
-version markers, integrity hashes and `crossorigin` attributes together. Do
-not treat maintained but unreleased source as a supported clonable runtime.
+For an existing released project, follow its current classes and exact pinned
+runtime together; do not mix its classes with the candidate. For future Lite
+work, refresh this guide only after a released runtime and native Webflow
+structure have been selected. Verify exact CDN URLs, version markers, integrity
+hashes and `crossorigin` attributes against those released files.
+`candidate/webflow/navbar-light-cdn-loader.html` is unreleased review material,
+not an installation instruction.

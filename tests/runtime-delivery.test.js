@@ -106,6 +106,38 @@ for (const delivery of deliveries) {
     } finally { f.close(); }
   });
 
+  test(`${delivery}: multiple overlay navbars keep page scrolling locked until all close`, async () => {
+    const f = runtimeFixture(delivery);
+    try {
+      f.root.dataset.layout = 'overlay';
+      f.root.dataset.motion = 'none';
+      const secondRoot = f.root.cloneNode(true);
+      secondRoot.querySelector('[data-mwp-panel]').removeAttribute('id');
+      f.root.after(secondRoot);
+      const first = f.create();
+      const second = new f.dom.window.NavbarLight(secondRoot);
+      const html = f.dom.window.document.documentElement;
+
+      await change(f, () => first.open(), 'opened');
+      const secondOpened = event(secondRoot, 'mwp-nav:opened');
+      second.open();
+      await secondOpened;
+      assert.equal(html.dataset.mwpScrollLocked, 'true');
+      assert.equal(html.style.overflow, 'hidden');
+
+      await change(f, () => first.close(), 'closed');
+      assert.equal(html.dataset.mwpScrollLocked, 'true');
+      assert.equal(html.style.overflow, 'hidden');
+
+      const secondClosed = event(secondRoot, 'mwp-nav:closed');
+      second.close();
+      await secondClosed;
+      assert.equal(html.dataset.mwpScrollLocked, undefined);
+      assert.equal(html.style.overflow, '');
+      first.destroy(); second.destroy();
+    } finally { f.close(); }
+  });
+
   test(`${delivery}: both icon modes calculate odd/even custom geometry`, () => {
     const f = runtimeFixture(delivery);
     try {

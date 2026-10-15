@@ -1,0 +1,6 @@
+/* Unreleased local authoring reference; no runtime is loaded on this page. */
+body { color: #242321; font: 16px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 64rem; padding: 2rem; }
+main { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+article { border: 1px solid #d4d1ca; padding: 1rem; }
+.workbench-example { min-height: 12rem; }
+.backdrop-swatch { background: rgb(0 0 0 / .45); border: 1px solid #888; height: 9rem; }
