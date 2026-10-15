@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The latest recorded `npm run test:built` passed 48/48; rendered candidate checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 08900f5 — current `main` was clean at start. No remote operation was made.
-**Next action:** Provide a supported isolated route for the candidate plus a Chrome control that exposes page requests, then continue the remaining rendered checks.
+**Reviewed at commit:** cd04987 — current `main` was clean at start. No remote operation was made.
+**Next action:** Resume rendered candidate checks when an isolated candidate route and request-inspection control are available.
 **Needs Michael:** Review and push local commits. Arrange human/device checks and a cloned release candidate when available. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — Brief #13 live fixture count and browser capability — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** Corrected the current Clean Trial draft count in the handoff record. The probe plus three unrelated pages are drafts; older “four other drafts” wording is stale. No product, source or Webflow content changed.
+
+**Outputs:** Added the current live page/site readback and exact browser-control limits to the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md) and ROADMAP. Work remains pending Michael's acceptance.
+
+**Checked how:** At `cd04987`, `main` was clean. Read AGENTS.md, project-docs v0.4, STATUS, relevant SCOPE/DECISIONS/ROADMAP, README safety and the latest Brief #12 fixture notes. Started the existing Boss run for R-037, R-095 and R-155. Webflow MCP `list_sites`, `get_site`, `list_pages` and `get_all_elements` confirm Clean Trial has no custom domains, last published at `2026-10-14T23:30:40.323Z`, and the backed-up probe remains draft with only Body. The six-page list contains the probe, three other drafts and two published pages. Browser inventory shows Chrome running, but `cua.getApp("com.google.Chrome")` returned `cgWindowNotFound`. The supported extension browser documentation exposes read-only page evaluation, viewport control and console logs, but no Network request events/list. The authorised Node repl Playwright import returned `The requested module './index.js' does not provide an export named 'default'`. No tab or Webflow content changed. No candidate runtime was available; finished Details, layout and 48/48 build evidence were not repeated. The project-docs skill was read from its canonical user-level location; the r1 alias path was absent.
+
+**Still open:** Failed candidate-script request capture; candidate Details and closed-panel link/focus; Full-width and Right narrow-height containment; rendered reduced-motion/custom-animation; human screen-reader and physical-device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback. The isolated-route and request-inspection blocker was already reported to Boss, so it was not duplicated.
+
+**Needs Michael:** Arrange a supported isolated candidate route with request inspection. Arrange the human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** When an isolated route with Network request inspection is available, capture the failed candidate-script request, then continue the remaining candidate checks. Keep the whole Clean Trial site unpublished.
+
+**Handoff:** Keep the probe empty and draft. The three unrelated audit pages remain drafts. Do not publish the whole site, refresh the Navbar Light test page or touch SB Test Four.
 
 ## 15 October 2026 — Brief #13 browser and probe recheck — Codex (night shift)
 

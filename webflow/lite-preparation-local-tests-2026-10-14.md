@@ -1667,6 +1667,38 @@ Next useful action: resume the candidate checks when a supported isolated route
 and working request-inspection surface are available. Keep the whole Clean Trial
 site unpublished and leave its four other draft pages untouched.
 
+### Brief #13 live fixture count and browser capability — 15 October 2026
+
+Read-only Webflow MCP `list_sites`, `get_site`, `list_pages` and
+`get_all_elements` reconfirmed that `SB Unlink Clean Trial` has no custom domains
+and was last published at `2026-10-14T23:30:40.323Z`. The probe
+(`6acfd482072d7417c8ae9149`) is still `draft: true` and contains only Body. The
+six-page list has two published pages and four drafts total: the probe plus
+three unrelated audit pages. Earlier Brief #13 notes saying there are “four
+other” drafts are stale; the brief's “four other draft pages” wording is also
+inconsistent with this current live list. No page, content, code, style or
+publication changed.
+
+The browser inventory shows Chrome running, but `cua.getApp("com.google.Chrome")`
+returned `cgWindowNotFound`. The supported extension-browser documentation
+advertises read-only DOM evaluation, viewport override and console logs, but no
+Network request list or event capture. The authorised Node repl Playwright
+import returned `The requested module './index.js' does not provide an export
+named 'default'`. No browser tab was opened. No candidate runtime was available,
+so no rendered candidate check was attempted. Previously recorded Details,
+layout and 48/48 build results were not repeated.
+
+Not checked: automatic failed-candidate-script request capture; candidate
+Details and closed-panel link/focus; Full-width and Right narrow-height
+containment; rendered reduced-motion/custom-animation; human screen-reader and
+physical-device checks; physical-display DPR 2×/3×; and cloned upgrade/rollback.
+The isolated-route/request-inspection blocker was already reported to Boss, so
+it was not duplicated.
+
+Next useful action: resume the candidate checks when an isolated route and
+Network request inspection are available. Keep the whole Clean Trial site
+unpublished and leave the three unrelated draft pages untouched.
+
 ### Brief #13 current access and fixture readback — 15 October 2026
 
 At baseline `2711447`, `main` was clean. Read AGENTS.md and project-docs v0.4,
