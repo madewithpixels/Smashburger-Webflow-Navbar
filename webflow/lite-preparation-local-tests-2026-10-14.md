@@ -1901,3 +1901,34 @@ focus behavior; Full-width and Right short-height behavior; rendered reduced
 motion and custom-animation; human screen-reader/device checks; physical-display
 DPR 2×/3×; and cloned upgrade/rollback. The earlier v0.2.6 script-failure and
 native Details/focus checks are comparison evidence only.
+
+### Brief #15 candidate-route availability recheck — 15 October 2026
+
+At `de788ab`, `main` was clean. Started Boss for Brief #15 and read STATUS,
+the relevant ROADMAP entries and the project-docs workflow.
+
+Opened a fresh browser tab for the supplied
+`https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation` route.
+The rendered page's script and stylesheet URLs both point to the immutable
+`@v0.2.6/dist/` files. Read-only Webflow page listing shows this as the only
+published isolation route; the other pages are the empty draft probe and three
+unrelated drafts. There is no separate source-candidate page. The route is
+therefore the published comparison fixture, not the candidate described in
+Brief #15.
+
+The browser bridge has viewport control and console logs, but no Network
+request-event capture. Opening native Chrome to retry DevTools was interrupted
+by a browser state change; after waiting 30 seconds and refreshing the browser
+inventory, native input was not retried. My fresh route tab was closed. No
+Webflow page, setting, request-blocking rule, draft or publication changed.
+
+Not checked: failed-script request capture and candidate Details/focus;
+Full-width and Right short-height behavior; candidate reduced-motion and
+custom-animation; human screen-reader/device checks; physical-display DPR
+2×/3×; and cloned upgrade/rollback. Previous v0.2.6 failure and Details/focus
+results are comparison evidence only.
+
+Next useful action: provide a route that serves the maintained candidate files
+on the isolated staging site. Then capture its failed-script request and run
+the remaining layout and motion checks. Keep Clean Trial unpublished and leave
+the empty probe and unrelated drafts unchanged.

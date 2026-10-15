@@ -1,8 +1,8 @@
 # SmashBurger — Status
-**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate checks remain open: this continuation reached DevTools but could not establish which runtime the route served or inspect completed requests. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
+**Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. The isolated route still serves v0.2.6, so candidate browser checks remain open. Human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback also remain open.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** c4611f2 — current `main` was clean at start of this check. No remote operation was made.
-**Next action:** Recheck the route's loaded CSS and JavaScript in DevTools, then run the candidate layout and motion checks if confirmed.
+**Reviewed at commit:** de788ab — current `main` was clean at start of this check. No remote operation was made.
+**Next action:** Make a source-candidate route available on the isolated staging site, then capture its failed-script request and run the remaining browser checks.
 **Needs Michael:** Arrange human/device checks and a cloned release candidate when available. Review and push local commits. Product naming remains needed for the later class migration and Lite publication.
 
 ## 15 October 2026 — Brief #15 route inspection retry — Codex (night shift)
@@ -20,6 +20,22 @@
 **Next useful action:** Reopen the isolated route in a fresh tab, confirm its CSS and JavaScript URLs in DevTools Network, then test the candidate layouts and motion settings. Keep Clean Trial unpublished, the empty probe empty, and unrelated drafts unchanged.
 
 **Handoff:** Read this section and the latest Brief #15 entry in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). The v0.2.6 blocking rule remains unchecked. No tabs from this check remain open.
+
+## 15 October 2026 — Brief #15 candidate-route availability recheck — Codex (night shift)
+
+**Changed (R-037, R-095, R-155):** No source, release file or Webflow content changed. The supplied route still serves the released v0.2.6 comparison, so the candidate checks could not proceed.
+
+**Outputs:** Confirmed the route's CSS/JavaScript URLs and the current Clean Trial page list. Work remains pending Michael's acceptance.
+
+**Checked how:** Started Boss for Brief #15 and read the project record and project-docs workflow. At `de788ab`, `main` was clean. Opened and closed my own fresh browser tab for `https://sb-unlink-clean-trial.webflow.io/unlink-fallback-isolation`. Its DOM reports `@v0.2.6/dist/navbar-light.min.css` and `navbar-light.min.js`. Read-only Webflow page listing shows only this published isolation page and the existing empty draft probe plus three unrelated drafts; no separate candidate page is present. The browser bridge provides viewport control and console logs, but no Network request-event capture. Native Chrome control was interrupted when the app state changed; after waiting 30 seconds and refreshing the browser inventory, I did not retry native input. No page, setting, draft, request-blocking rule or publication changed.
+
+**Still open:** Failed-script request capture and candidate Details/focus; Full-width and Right short-height behavior; candidate reduced-motion and custom-animation. Human screen-reader/device checks, physical-display DPR 2×/3×, and cloned upgrade/rollback also remain open. The earlier v0.2.6 fallback result remains comparison evidence only.
+
+**Needs Michael:** Provide or publish a source-candidate route on the isolated staging site so its script failure and layout/motion behavior can be checked. Arrange human/device checks and a cloned release candidate when available. Review and push local commits.
+
+**Next useful action:** Once the candidate route serves the maintained CSS and JavaScript, capture a failed-script request, check Details and keyboard focus, test Full-width and Right at short heights, and check reduced-motion and custom-animation. Keep Clean Trial unpublished and its empty probe and unrelated drafts unchanged.
+
+**Handoff:** Read this entry and the latest Brief #15 section in the [local test record](webflow/lite-preparation-local-tests-2026-10-14.md). The only published isolation route still loads v0.2.6. No tabs from this check remain open.
 
 ## 15 October 2026 — Brief #15 candidate route and fallback checks — Codex (night shift)
 
