@@ -1597,9 +1597,11 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 257 (now 258); baseline `c808ca4`.
-**Exit criteria:**
+**Exit criteria:** Draft covers each listed topic and labels current runtime selectors and instructions for refresh after class migration and runtime selection.
+**Evidence links:** [SmashBurger Lite safe-editing guide](webflow/smashburger-lite-safe-editing.md)
+**Evidence boundary:** Local documentation review only. Lite is not built or published; final selectors, structure and pinned loader require refresh and verification against the selected released runtime.
 
 
 #### R-185 · Verify the clone flow into a blank test project, including Canvas editability, all four core breakpoints, keyboard behavior, asset loading, zero overflow and a clean console.

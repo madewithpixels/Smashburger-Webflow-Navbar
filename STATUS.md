@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** v0.2.6 remains the released baseline. Local breakpoint-timer, stylesheet-failure and focus-restoration fixes remain unreleased. Candidate behavior checks, human/device accessibility, physical-display DPR 2×/3× and cloned upgrade/rollback remain open. The maintained-source icon geometry matrix now has a reproducible local command; it does not replace display or Webflow checks. The three outcomes from Brief #16 are ready for Michael's review.
 **Last updated:** 15 October 2026 — Codex (night shift)
-**Reviewed at commit:** 948203e — checked the current baseline, project record, maintained source tests and icon geometry record. No remote operation was made.
+**Reviewed at commit:** 4321320 — checked the project record, Lite scope, current hooks, README runtime contract and v0.2.6 release record for R-184. No remote operation was made.
 **Next action:** Michael can try the three outcomes in the roadmap and record his verdict in boss.
 **Needs Michael:** Try the unlink result, Navigator labels and closed infrastructure box in Webflow, then accept or return each outcome in boss. Review and push the local commit when ready. Product naming remains needed for the later class migration and Lite publication.
+
+## 15 October 2026 — SmashBurger Lite safe-editing guide — Codex (night shift)
+
+**Changed (R-184):** Reworked the future-project guide to cover safe edits, functional hooks and trigger/panel structure, native Menu Button restrictions, accessible names, stacking and duplicate-header removal. Marked current v0.2.6 selectors as version-specific and requiring refresh after class migration and runtime selection.
+
+**Outputs:** Updated [safe-editing guide](webflow/smashburger-lite-safe-editing.md) and recorded its local documentation evidence in `ROADMAP.md`. No runtime, class namespace, clonable or Webflow project changed.
+
+**Checked how:** Compared the guide with accepted Lite scope (D-011), R-184, the source hook selectors, README integration/runtime contract and v0.2.6 release record. `git diff --check` passed. This is local documentation evidence only.
+
+**Still open:** Final Lite structure and runtime are unselected. Refresh and verify the version-specific instructions against the chosen released files before placing the guide in the future project; Lite is not built or published.
+
+**Needs Michael:** Review and push the local documentation commit when ready.
+
+**Next useful action:** After naming, class migration and runtime selection, reconcile the guide with the built component and exact pinned loader before clone-flow checks.
 
 ## 15 October 2026 — Maintained-source icon geometry matrix — Codex (night shift)
 
