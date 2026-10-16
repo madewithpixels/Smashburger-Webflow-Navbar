@@ -1,5 +1,7 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+import { outputRoot } from './build-paths.mjs';
 import { transform } from 'esbuild';
 import { JSDOM } from 'jsdom';
 import { createLibraryVerificationLoader } from './library-verification.mjs';
@@ -28,9 +30,9 @@ export async function buildLibraryCandidates() {
   const { version } = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));
   // Resolve both immutable blobs before writing any Library outputs.
   const loader = createLibraryVerificationLoader(version);
-  await mkdir(new URL('candidate/webflow/library/', root), { recursive: true });
+  await mkdir(resolve(outputRoot, 'webflow/library'), { recursive: true });
   for (const name of ['navbar-light-embed.html', 'navbar-light-canvas-embed.html']) {
-    const source = await readFile(new URL(`candidate/webflow/${name}`, root), 'utf8');
+    const source = await readFile(resolve(outputRoot, `webflow/${name}`), 'utf8');
     const names = name.includes('canvas') ? aliases : aliases.filter(name => !name.includes('cdn-'));
     let output = addCandidateAliases(source, names);
     // CSS-only minification leaves room under the native Embed character limit.
@@ -39,7 +41,7 @@ export async function buildLibraryCandidates() {
     const minified = await transform(css, { loader: 'css', minify: true });
     output = output.replace(/<style>[\s\S]*?<\/style>/, `<style>\n${minified.code}</style>`);
     if (output.length > 50000) throw new Error(`${name} exceeds Webflow's Embed limit`);
-    await writeFile(new URL(`candidate/webflow/library/${name}`, root), output);
+    await writeFile(resolve(outputRoot, `webflow/library/${name}`), output);
   }
   // The CDN verification edition loads bytes already pushed at this exact
   // commit. This is a test pin, not a new semantic release or distribution tag.
@@ -61,6 +63,6 @@ export async function buildLibraryCandidates() {
   dom.window.close();
   const minifiedAliases = await transform(aliasCss, { loader: 'css', minify: true });
   if (minifiedAliases.code.includes('--mwp-nav-css-ready')) throw new Error('Alias layer must not fake CDN CSS readiness');
-  await writeFile(new URL('candidate/webflow/library/navbar-light-cdn-candidate-loader.html', root), `<style>\n${minifiedAliases.code}</style>\n${loader}`);
+  await writeFile(resolve(outputRoot, 'webflow/library/navbar-light-cdn-candidate-loader.html'), `<style>\n${minifiedAliases.code}</style>\n${loader}`);
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) await buildLibraryCandidates();

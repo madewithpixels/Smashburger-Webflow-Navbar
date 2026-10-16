@@ -1,10 +1,12 @@
 import { build } from 'esbuild';
-import { mkdir, readFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { basename, resolve } from 'node:path';
 import { projectRoot, outputRoot } from './build-paths.mjs';
 
 const sourceDirectory = resolve(projectRoot, 'src');
 const outputDirectory = resolve(outputRoot, 'dist');
+// Use the normal logical location for source-map paths, even in isolated checks.
+const logicalOutputDirectory = resolve(projectRoot, 'candidate/dist');
 const packageMetadata = JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8'));
 const version = packageMetadata.version;
 const moduleSource = await readFile(resolve(sourceDirectory, 'navbar-light.js'), 'utf8');
@@ -23,20 +25,21 @@ const shared = {
   legalComments: 'none',
   sourcemap: 'external',
   sourcesContent: true,
+  write: false,
   target: ['es2020']
 };
 
-await Promise.all([
+const results = await Promise.all([
   build({
     ...shared,
     entryPoints: [resolve(sourceDirectory, 'navbar-light.css')],
-    outfile: resolve(outputDirectory, 'navbar-light.css'),
+    outfile: resolve(logicalOutputDirectory, 'navbar-light.css'),
     banner: { css: `/*! SmashBurger v${version} */` }
   }),
   build({
     ...shared,
     entryPoints: [resolve(sourceDirectory, 'navbar-light.css')],
-    outfile: resolve(outputDirectory, 'navbar-light.min.css'),
+    outfile: resolve(logicalOutputDirectory, 'navbar-light.min.css'),
     minify: true,
     banner: { css: `/*! SmashBurger v${version} */` }
   }),
@@ -49,7 +52,7 @@ await Promise.all([
       sourcefile: 'navbar-light.js'
     },
     format: 'iife',
-    outfile: resolve(outputDirectory, 'navbar-light.js'),
+    outfile: resolve(logicalOutputDirectory, 'navbar-light.js'),
     banner: { js: `/*! SmashBurger v${version} */` }
   }),
   build({
@@ -62,7 +65,9 @@ await Promise.all([
     },
     format: 'iife',
     minify: true,
-    outfile: resolve(outputDirectory, 'navbar-light.min.js'),
+    outfile: resolve(logicalOutputDirectory, 'navbar-light.min.js'),
     banner: { js: `/*! SmashBurger v${version} */` }
   })
 ]);
+await Promise.all(results.flatMap(result => result.outputFiles.map(file =>
+  writeFile(resolve(outputDirectory, basename(file.path)), file.contents))));
