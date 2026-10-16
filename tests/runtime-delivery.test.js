@@ -2,6 +2,276 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { deliveries, runtimeFixture, event, change } from '../scripts/runtime-test-fixture.mjs';
 
+// Advance only the enhancement's window timers. Native Details toggle delivery
+// remains asynchronous in jsdom; change() waits for those real notifications.
+function timedMotionFixture(delivery, motion) {
+  const f = runtimeFixture(delivery);
+  f.root.dataset.motion = motion;
+  f.root.style.setProperty('--mwp-nav-duration-open', '280ms');
+  f.root.style.setProperty('--mwp-nav-duration-close', '220ms');
+  const navbar = f.create();
+  const { menu, trigger, panel, backdrop } = navbar;
+  const document = f.dom.window.document;
+  const api = f.root.mwpNavbarLight;
+  let now = 0, nextId = 1;
+  const timers = new Map();
+  f.dom.window.setTimeout = (callback, delay) => {
+    const id = nextId++;
+    timers.set(id, { at: now + Number(delay), callback });
+    return id;
+  };
+  f.dom.window.clearTimeout = id => timers.delete(id);
+  function advance(ms) {
+    const end = now + ms;
+    for (;;) {
+      const next = [...timers].sort((a, b) => a[1].at - b[1].at)[0];
+      if (!next || next[1].at > end) break;
+      const [id, task] = next;
+      timers.delete(id);
+      now = task.at;
+      task.callback();
+    }
+    now = end;
+  }
+  const events = [], bubbled = [];
+  for (const name of ['open', 'opened', 'close', 'closed']) {
+    f.root.addEventListener(`mwp-nav:${name}`, e => events.push({
+      name, at: now, event: e,
+      state: [f.root, menu, panel, backdrop].map(node => node.dataset.state),
+      nativeOpen: menu.open, expanded: trigger.getAttribute('aria-expanded'),
+      hidden: panel.getAttribute('aria-hidden'), inert: panel.inert
+    }), { capture: true });
+    document.addEventListener(`mwp-nav:${name}`, e => bubbled.push(e));
+  }
+  const focus = [];
+  document.addEventListener('focusin', e => focus.push(e.target));
+  function state(expected) {
+    const open = ['opening', 'open'].includes(expected);
+    assert.equal(menu.open, open);
+    for (const node of [f.root, menu, panel, backdrop]) assert.equal(node.dataset.state, expected);
+    assert.equal(api.state, expected);
+    assert.equal(trigger.getAttribute('aria-expanded'), String(open));
+    assert.equal(panel.getAttribute('aria-hidden'), String(!open));
+    assert.equal(panel.inert, !open);
+    assert.equal(trigger.getAttribute('aria-controls'), panel.id);
+  }
+  function sequence(expected) {
+    assert.deepEqual(events.map(e => e.name), expected);
+    assert.deepEqual(bubbled, events.map(e => e.event), 'Every lifecycle event reaches the owner document once');
+    for (const { name, event: e, state: states, nativeOpen, expanded, hidden, inert } of events) {
+      const state = { open: 'opening', opened: 'open', close: 'closing', closed: 'closed' }[name];
+      const open = name === 'open' || name === 'opened';
+      assert.equal(e.bubbles, true);
+      assert.equal(e.target, f.root);
+      assert.deepEqual(Object.keys(e.detail).sort(), ['navbar', 'root', 'menu', 'trigger', 'panel', 'state'].sort());
+      for (const [key, value] of Object.entries({ navbar, root: f.root, menu, trigger, panel, state })) {
+        assert.equal(e.detail[key], value, `${name} payload ${key}`);
+      }
+      assert.deepEqual(states, Array(4).fill(state));
+      assert.equal(nativeOpen, open);
+      assert.equal(expanded, String(open));
+      assert.equal(hidden, String(!open));
+      assert.equal(inert, !open);
+    }
+  }
+  return { ...f, navbar, api, menu, panel, trigger, document, events, focus,
+    outside: document.querySelector('#outside'), first: panel.querySelector('a'),
+    advance, state, sequence };
+}
+
+// These are candidate-contract checks. Ordinary npm test retains its existing
+// historical-release checks below, while still exercising maintained source here.
+const motionDeliveries = deliveries.filter(delivery => delivery === 'source' || process.env.SMASHBURGER_CANDIDATE);
+for (const delivery of motionDeliveries) for (const motion of ['dropdown', 'custom']) {
+  test(`${delivery} ${motion}: timed public open/close calls are idempotent`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.trigger.focus();
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      f.state('opening');
+      f.advance(100);
+      f.api.open(); f.api.open({ focusFirst: false });
+      f.advance(179);
+      f.state('opening'); f.sequence(['open']);
+      assert.equal(f.document.activeElement, f.trigger);
+      f.advance(1);
+      f.state('open'); f.sequence(['open', 'opened']);
+      assert.equal(f.document.activeElement, f.first);
+      f.api.open();
+      await change(f, () => f.api.close({ focusTrigger: true }), 'close');
+      f.state('closing');
+      f.advance(100);
+      f.api.close(); f.api.close({ focusTrigger: true });
+      f.advance(119);
+      f.state('closing'); f.sequence(['open', 'opened', 'close']);
+      f.advance(1);
+      f.state('closed');
+      f.api.close(); f.advance(1000);
+      f.sequence(['open', 'opened', 'close', 'closed']);
+      assert.deepEqual(f.events.map(e => e.at), [0, 280, 280, 500]);
+      assert.deepEqual(f.focus, [f.trigger, f.first, f.trigger]);
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: closing cancels opening completion and queued focus`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.trigger.focus();
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      f.advance(40);
+      await change(f, () => f.api.close({ focusTrigger: true }), 'close');
+      f.state('closing');
+      f.outside.focus();
+      f.advance(219); f.sequence(['open', 'close']); f.state('closing');
+      f.advance(1); f.state('closed');
+      f.advance(1000); // Past the cancelled opening deadline as well.
+      f.sequence(['open', 'close', 'closed']);
+      assert.deepEqual(f.events.map(e => e.at), [0, 40, 260]);
+      assert.deepEqual(f.focus, [f.trigger, f.outside]);
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: reopening cancels closing completion and defers fresh focus`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.trigger.focus();
+      await change(f, () => f.api.open(), 'open');
+      f.advance(280);
+      await change(f, () => f.api.close({ focusTrigger: true }), 'close');
+      f.advance(40);
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      f.state('opening');
+      f.advance(180); // The superseded close would complete here.
+      f.state('opening'); f.sequence(['open', 'opened', 'close', 'open']);
+      assert.equal(f.document.activeElement, f.trigger);
+      f.advance(99); f.state('opening');
+      f.advance(1); f.state('open');
+      assert.equal(f.document.activeElement, f.first);
+      f.advance(1000);
+      f.sequence(['open', 'opened', 'close', 'open', 'opened']);
+      assert.deepEqual(f.events.map(e => e.at), [0, 280, 280, 320, 600]);
+      assert.deepEqual(f.focus, [f.trigger, f.first]);
+    } finally { f.close(); }
+  });
+
+  for (const closeWith of ['public', 'native']) {
+    test(`${delivery} ${motion}: ${closeWith} cancellation discards focus before native reopening`, async () => {
+      const f = timedMotionFixture(delivery, motion);
+      try {
+        f.outside.focus();
+        await change(f, () => f.api.open({ focusFirst: true }), 'open');
+        f.advance(40);
+        await change(f, () => {
+          if (closeWith === 'public') f.api.close();
+          else f.menu.open = false;
+        }, 'close');
+        f.advance(40);
+        await change(f, () => { f.menu.open = true; }, 'open');
+        f.advance(180); // Old close deadline.
+        f.state('opening');
+        f.advance(20); // Old opening deadline.
+        f.state('opening');
+        f.sequence(['open', 'close', 'open']);
+        f.advance(80); f.state('open');
+        f.advance(1000);
+        f.sequence(['open', 'close', 'open', 'opened']);
+        assert.deepEqual(f.events.map(e => e.at), [0, 40, 80, 360]);
+        assert.deepEqual(f.focus, [f.outside], 'Cancelled focusFirst must not survive into a later native opening');
+      } finally { f.close(); }
+    });
+  }
+
+  test(`${delivery} ${motion}: repeated public toggles settle only the final transition`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.outside.focus();
+      // Native Details coalesces same-turn attribute changes to the final state.
+      await change(f, () => {
+        f.api.open(); f.api.open(); f.api.close(); f.api.close(); f.api.toggle();
+      }, 'open');
+      f.advance(40);
+      await change(f, () => f.api.toggle({ focusTrigger: true }), 'close');
+      f.advance(40);
+      await change(f, () => f.api.toggle({ focusFirst: true }), 'open');
+      f.advance(40);
+      await change(f, () => {
+        f.api.toggle(); f.api.open(); f.api.toggle(); f.api.close(); f.api.close();
+      }, 'close');
+      f.advance(219); f.state('closing');
+      f.sequence(['open', 'close', 'open', 'close']);
+      f.advance(1); f.state('closed');
+      f.advance(1000);
+      f.sequence(['open', 'close', 'open', 'close', 'closed']);
+      assert.deepEqual(f.events.map(e => e.at), [0, 40, 80, 120, 340]);
+      assert.deepEqual(f.focus, [f.outside, f.trigger]);
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: an opened listener can close without later focus theft`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.outside.focus();
+      f.root.addEventListener('mwp-nav:opened', () => f.api.close({ focusTrigger: true }), { once: true });
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      await change(f, () => f.advance(280), 'close');
+      f.state('closing');
+      f.advance(220); f.state('closed');
+      f.advance(1000);
+      f.sequence(['open', 'opened', 'close', 'closed']);
+      assert.deepEqual(f.focus, [f.outside, f.trigger], 'Closing in a lifecycle listener must cancel opening focus');
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: closure at the opening deadline prevents stale completion before toggle delivery`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.outside.focus();
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      f.advance(279);
+      await change(f, () => {
+        f.api.close();
+        f.advance(1); // Native toggle has not been delivered yet.
+        f.sequence(['open']);
+        assert.deepEqual(f.focus, [f.outside]);
+      }, 'close');
+      f.advance(220); f.state('closed');
+      f.advance(1000); f.sequence(['open', 'close', 'closed']);
+      assert.deepEqual(f.focus, [f.outside]);
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: reopening at the closing deadline prevents stale completion before toggle delivery`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      await change(f, () => f.api.open(), 'open');
+      f.advance(280);
+      await change(f, () => f.api.close(), 'close');
+      f.advance(219);
+      await change(f, () => {
+        f.api.open();
+        f.advance(1);
+        f.sequence(['open', 'opened', 'close']);
+      }, 'open');
+      f.advance(280); f.state('open');
+      f.advance(1000); f.sequence(['open', 'opened', 'close', 'open', 'opened']);
+      assert.deepEqual(f.focus, []);
+    } finally { f.close(); }
+  });
+
+  test(`${delivery} ${motion}: same-turn close and native reopen discard cancelled focus`, async () => {
+    const f = timedMotionFixture(delivery, motion);
+    try {
+      f.outside.focus();
+      await change(f, () => f.api.open({ focusFirst: true }), 'open');
+      f.advance(40);
+      await change(f, () => { f.api.close(); f.menu.open = true; }, 'open');
+      f.advance(280); f.state('open');
+      f.advance(1000); f.sequence(['open', 'open', 'opened']);
+      assert.deepEqual(f.focus, [f.outside]);
+    } finally { f.close(); }
+  });
+}
+
 for (const delivery of deliveries) {
   test(`${delivery}: missing component CSS leaves native navigation accessible`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD

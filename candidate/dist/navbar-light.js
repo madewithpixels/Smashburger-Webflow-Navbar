@@ -266,8 +266,9 @@
       if (this.usesScrollLock()) this.lockScroll();
       const duration = this.motionDuration("open");
       this.stateTimer = window.setTimeout(() => {
+        if (!this.menu.open) return;
         this.setState("open", true);
-        if (this.focusOnOpened || booleanAttribute(this.root, "data-focus-first", false)) {
+        if (this.menu.open && this.root.dataset.state === "open" && (this.focusOnOpened || booleanAttribute(this.root, "data-focus-first", false))) {
           this.panel.querySelector('a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')?.focus();
         }
         this.focusOnOpened = false;
@@ -275,9 +276,11 @@
     }
     transitionToClosed(notify = true) {
       this.clearStateTimer();
+      this.focusOnOpened = false;
       this.setState("closing", notify);
       const duration = this.motionDuration("close");
       this.stateTimer = window.setTimeout(() => {
+        if (this.menu.open) return;
         this.setState("closed", true);
         this.unlockScroll();
         this.submenus.forEach((submenu) => {
@@ -319,6 +322,7 @@
     }
     close({ focusTrigger = false } = {}) {
       if (!this.isCollapsed() || !this.menu.open) return;
+      this.focusOnOpened = false;
       this.menu.open = false;
       if (focusTrigger) this.trigger.focus();
     }

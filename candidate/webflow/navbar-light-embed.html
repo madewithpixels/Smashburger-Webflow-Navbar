@@ -1021,8 +1021,13 @@ class NavbarLight {
 
     const duration = this.motionDuration('open');
     this.stateTimer = window.setTimeout(() => {
+      // Native toggle notification is queued separately from the attribute
+      // change. A reversal can win before that notification clears this timer.
+      if (!this.menu.open) return;
       this.setState('open', true);
-      if (this.focusOnOpened || booleanAttribute(this.root, 'data-focus-first', false)) {
+      // An opened listener can close the menu synchronously.
+      if (this.menu.open && this.root.dataset.state === 'open' &&
+          (this.focusOnOpened || booleanAttribute(this.root, 'data-focus-first', false))) {
         this.panel.querySelector('a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')?.focus();
       }
       this.focusOnOpened = false;
@@ -1031,9 +1036,11 @@ class NavbarLight {
 
   transitionToClosed(notify = true) {
     this.clearStateTimer();
+    this.focusOnOpened = false;
     this.setState('closing', notify);
     const duration = this.motionDuration('close');
     this.stateTimer = window.setTimeout(() => {
+      if (this.menu.open) return;
       this.setState('closed', true);
       this.unlockScroll();
       this.submenus.forEach((submenu) => { submenu.open = false; });
@@ -1078,6 +1085,9 @@ class NavbarLight {
 
   close({ focusTrigger = false } = {}) {
     if (!this.isCollapsed() || !this.menu.open) return;
+    // Also discard focus when close/reopen changes coalesce into one native
+    // opening notification, so transitionToClosed never runs.
+    this.focusOnOpened = false;
     this.menu.open = false;
     if (focusTrigger) this.trigger.focus();
   }
