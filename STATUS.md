@@ -1,9 +1,43 @@
 # SmashBurger — Status
-**Stage:** The actual Lite examples now pass local behaviour checks with their candidate runtime. All 128 source/fresh-candidate checks pass without expected failures. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
+**Stage:** Candidate reproducibility verification now preserves existing files on matching, stale and failed builds. All 16 focused build/distribution checks pass. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 9200c0e — checked the actual Lite examples, complete candidate suite and protected historical hashes; this entry records the results.
-**Next action:** Review the local Lite checks and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
+**Reviewed at commit:** 18147a2 — checked candidate preservation, deliberate build output and protected historical hashes; this entry records the results.
+**Next action:** Review the local candidate-preservation changes and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Verification preserves existing candidate files — Codex (night shift)
+
+**Changed (R-125, R-155):**
+
+- Checking a candidate no longer refreshes or partially overwrites its existing files.
+- Verification builds in a disposable copy, including the Library outputs, and reports differences without keeping generated changes.
+- Deliberate build commands still write to the normal candidate directory.
+- Added nine bounded fixture tests for matching output, stale bytes, new/removed files, partial failure, termination, missing output, links and deliberate building.
+- No runtime, generated candidate bytes, release version, pin, integrity value, dependency or Acceptance changed.
+
+**Outputs:** Local implementation/test commit `18147a2`; [verifier](scripts/check-dist.mjs); [executable preservation checks](tests/check-dist.test.js); [behaviour, evidence and limits](webflow/candidate-reproducibility-2026-10-16.md); README command documentation and roadmap evidence.
+
+**Checked how:**
+
+- The nine new fixture tests pass with zero skips or expected failures. Every verification case compares the complete original fixture tree and binary bytes before/after, including temporary-output cleanup.
+- Matching output passes twice. Stale bytes, new/removed output and a missing candidate return 1. A partial build returns its induced status 7. A terminated child returns 1. Links fail before building.
+- The focused candidate fixture, namespace and distribution command passes 16/16, with zero skips or expected failures. The exact command is in the linked record.
+- Real `npm run check:dist` and `npm run build` both exit 0. Independent before/after snapshots confirm identical candidate paths, file modes and all 19 file hashes after each command.
+- All 17 protected historical SHA-256 hashes match. Explicit diffs confirm maintained runtime, generated candidates, released assets, compatibility records, package and dependencies are unchanged.
+- Edited JavaScript syntax checks, `npm run check`, evidence-record links and `git diff --check` pass.
+- Initial main was clean at `475a545`. Its only commit after the previous reviewed baseline recorded the Lite evidence already described below. Boss confirmed brief #72 taken and showed no conflicting agent work or new decision needed.
+- Not checked: the full runtime suite or migration/rollback rehearsals. The focused checks cover this build-tool brief without running unrelated rehearsals.
+- Not checked: browsers, Webflow, network/CDN loading, linked consumer installation, human/device checks or release publication.
+
+**Still open:** Nothing remains in brief #72. Existing rendered, Webflow/consumer, human/device and release gates remain open.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser access, Library sharing, human/device checks and final release approval remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Review the local commits and continue the separately authorised local briefs. No push, tag or publication occurred.
+
+**Handoff:** On main, `npm run check:dist` now preserves the original candidate. Use `npm run build` deliberately when refreshed candidate files are wanted. The verifier sets the internal output override for its child only; every build destination, including Library output, uses it. Distribution source maps retain their normal relative paths. Fixtures have ten-second child limits and fifteen-second test limits. Read the linked record for exact commands and special-entry/concurrency limits. Preserve protected releases, existing Acceptance and all browser/Webflow/release gates. No browser, Webflow, remote access or migration/rollback rehearsal occurred.
 
 ## 16 October 2026 — Actual Lite examples checked with their runtime — Codex (night shift)
 
