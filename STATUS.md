@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** c309bbc — checked the existing candidate handoff, current Chrome controls, and read-only Webflow state against this baseline.
-**Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
+**Reviewed at commit:** 24701c7 — checked the current candidate handoff, Chrome access and earlier read-only Webflow evidence against this baseline.
+**Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 16 October 2026 — Combined candidate Chrome access check — Codex (night shift)
+
+**Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Added the current Chrome access check to the review record. No candidate page loaded, so rendered checks remain open and Acceptance stays pending.
+
+**Outputs:** [Combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Candidate source/build commit remains `9211a9f5871b9de30a613b0bf7d5118035858d86`; starting documentation HEAD was `24701c7ecc153628de1fd85519c90f350f0f8f0b`.
+
+**Checked how:** Confirmed Git root and `git config boss.repo` (`smashburger`) match this folder, consistent with the Boss mapping readback in the existing evidence. Started clean on `main` at `24701c7`. `cua.getApp('com.google.Chrome')` succeeded and showed Chrome on the Boss Agents page; no candidate tab was opened. The CUA interface provides visible-page accessibility/screenshot and input methods, but no callable page evaluation, viewport override, request blocking or CDP. `node_repl` exposed only `cwd`, `env`, `homeDir`, `tmpDir`, `requestMeta`, `write`, `emitImage` and `rpc`; no browser/CDP handle. The repository evidence records the completed candidate build and exact generated-file comparison from the candidate commit, two denied loopback server binds, and the prior read-only Webflow candidate/asset readbacks. New Smashburger Test previously returned 404; that failed access was not repeated. No Webflow Preview was used because it was not showing the exact combined candidate.
+
+**Still open:** Chrome proof that the exact built CSS and JavaScript are loaded; checks at 1280, 991, 767, 479 and 393px; Full-width and Right menus in a short viewport; scrolling, closing, focus return, Escape, overlapping menus, rapid open/close, reduced motion, Custom animation and blocked-script/native fallback. New Smashburger Test variants, properties, bindings and assets remain unreadable. Older Library editions and the earlier test fixture do not prove the combined candidate.
+
+**Needs Michael:** Enable local browser preview and restore read-only access to New Smashburger Test. Library sharing and final release approval remain separate gates.
+
+**Next useful action / Handoff:** When local preview is available, serve the recorded candidate commit, prove its built files in Chrome, and complete the listed checks. When New Smashburger Test is readable, inspect its current component state. Keep Acceptance pending; do not share or publish.
 
 ## 16 October 2026 — Combined candidate review follow-up — Codex (night shift)
 
