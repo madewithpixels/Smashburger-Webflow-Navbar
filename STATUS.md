@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** 24701c7 — checked the current candidate handoff, Chrome access and earlier read-only Webflow evidence against this baseline.
+**Reviewed at commit:** feb3488 — checked the current candidate handoff, Chrome access and refreshed read-only Webflow metadata against this baseline.
 **Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 16 October 2026 — Brief #88 current readback — Codex (night shift)
+
+**Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Refreshed the saved Library candidate metadata and icon assets. The exact combined candidate still has no Chrome rendering proof. Acceptance remains pending.
+
+**Outputs:** [Combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Starting commit: `feb3488fa1ecb8f3b3458ee5f4e3e1576775a343`; candidate source/build commit remains `9211a9f5871b9de30a613b0bf7d5118035858d86`.
+
+**Checked how:** Confirmed the Git root and `git config boss.repo` (`smashburger`) match this folder. Started clean on `main`; two documentation commits follow the previous reviewed baseline and update the same candidate handoff. Chrome inventory showed the Boss Agents page and several pre-existing tabs; none were opened or changed. The `cua_repl` API provides no page evaluation, viewport, or Network controls; its browser capability list is empty. Browser documentation describes a fuller Playwright surface, but that surface is not callable from the exposed CUA API. No tab was opened. The earlier Python and Node loopback binds both failed with permission errors; no setup change makes another attempt useful. Read-only Webflow listing returned the same 16 sites and omitted New Smashburger Test, so its earlier 404 was not repeated. Current MWP Library readback found both saved candidate editions with five variants, 60 properties and nine image properties apiece. Both currently select Mobile landscape. The nine saved icon IDs resolve to their named SVG assets. The earlier 144-element audit and 67 bindings per edition remain documented; bindings were not re-audited in this run. No Webflow content changed.
+
+**Still open:** Not checked: Chrome loading the exact candidate CSS and JavaScript, widths 1280/991/767/479/393px, Full-width and Right menus in a short viewport, scrolling, close, focus return, Escape, overlapping menus, rapid open/close, reduced motion, Custom animation, or blocked-script/native fallback. Not checked: current clean-install variants, properties, bindings and assets; New Smashburger Test remains absent from accessible MCP sites. The saved Library editions and older linked consumer predate the combined candidate and do not prove it is installed or released.
+
+**Needs Michael:** Enable local browser preview and restore read-only access to New Smashburger Test. Do not share or publish; Library update approval and final release remain separate gates.
+
+**Next useful action / Handoff:** Once preview access works, build and serve the recorded candidate commit, then prove its exact CSS and JavaScript are loaded in Chrome before running the requested checks. When New Smashburger Test is readable, inspect its saved component state. Keep Acceptance pending.
 
 ## 16 October 2026 — Combined candidate review access follow-up — Codex (night shift)
 
