@@ -1,9 +1,45 @@
 # SmashBurger — Status
-**Stage:** Candidate reproducibility verification now preserves existing files on matching, stale and failed builds. All 16 focused build/distribution checks pass. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
+**Stage:** Rapid menu reversals and Custom motion pass all local delivery checks. Reproduced late events and delayed focus are repaired in the unreleased candidate. All 217 candidate checks pass. v0.2.6 remains unchanged. The older Library verification pin predates these repairs. Browser, Webflow/consumer, human/device and release gates remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 18147a2 — checked candidate preservation, deliberate build output and protected historical hashes; this entry records the results.
-**Next action:** Review the local candidate-preservation changes and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
+**Reviewed at commit:** 60960a3 — checked source and candidate motion reversals, full test commands, reproducibility and protected historical hashes; this entry records the results.
+**Next action:** Review the local reversal fixes and continue separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Rapid menu changes stop late events and focus moves — Codex (night shift)
+
+**Changed (R-095, R-155):**
+
+- Cancelling an opening now discards its request to focus the first link, including before native reopening.
+- Closing from an `opened` event listener no longer lets the finishing opening move focus back into the panel.
+- A completion timer checks the actual native menu state before announcing completion. A reversal just before its deadline cannot announce the wrong result while native notification is still queued.
+- Added 80 candidate checks for interrupted motion and repeated public calls, with separate non-zero opening/closing durations in Dropdown and Custom motion.
+- Regenerated only candidate runtime deliveries and their derived files. Scroll-lock ownership, public hooks, the test gate, dependencies, protected releases and Acceptance are unchanged.
+
+**Outputs:** Local repair/test commit `60960a3`; [executable delivery checks](tests/runtime-delivery.test.js); [reproduction, exact coverage and limits](webflow/rapid-menu-reversals-2026-10-16.md); evidence additions in ROADMAP.
+
+**Checked how:**
+
+- Focused source checks pass 20/20. Before repair, source probes reproduced retained focus requests, focus theft after an event listener's close and stale completion in both motion modes.
+- `npm run test:candidate` exits 0: 217/217 pass, zero failures, zero skips and zero expected failures. All 80 new checks pass across source, candidate distribution, minified output and self-contained Embed.
+- `npm test` exits 0: 157 tests, 130 passes, zero unmarked failures, zero skips and the existing 27 executed expected historical failures. No label, assertion, timeout or runner changed.
+- The controlled clock uses the runtime's configured 280 ms opening and 220 ms closing durations. Native Details notifications remain asynchronous in the DOM simulator.
+- Exact event order, completion counts, bubbling, payload keys/object identity, native state, root/menu/panel/backdrop state, public state, ARIA, inertness and panel relationships pass. Focus histories also catch temporary late moves.
+- Tests advance beyond cancelled deadlines. Separate checks reverse immediately before a deadline and run the old timer before queued native notification delivery.
+- Candidate reproducibility and namespace checks exit 0. All 17 protected historical SHA-256 hashes match. Explicit diffs confirm protected deliveries, maintained CSS, dependencies, test gate, build/verifier and compatibility records are unchanged.
+- Syntax checks, evidence-record links/heading anchors and `git diff --check` pass.
+- Initial main was clean at `a44742e`. Its only commit after the prior reviewed baseline recorded the already documented candidate-preservation evidence. Boss confirmed brief #73 taken and showed no conflicting agent work or new decision needed.
+- Not checked: browser scheduling or rendering, real keyboard/pointer input, external GSAP/Webflow Interactions, rendered focus, assistive technology, devices or physical display ratios.
+- Not checked: Webflow Canvas/Preview, linked consumer installation/update, CDN/network loading, Library sharing or publication.
+
+**Still open:** Nothing remains in brief #73. Browser, human, Webflow/consumer and release checks retain their existing gates. Native restoration after destroy, ordinary closing focus and two-menu Escape remain separate briefs #76–#78.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser access, Library sharing, human/device checks and final release approval remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Review the local commits and continue separately authorised local briefs. No push, tag or publication occurred.
+
+**Handoff:** On main, use `npm run test:candidate` for a fresh build with all candidate checks mandatory. The new scenarios always run against source; the same assertions also run against all three generated deliveries in candidate mode. The controlled clock intercepts only enhancement timeouts; native Details events still use the existing asynchronous simulator. Read the linked record before treating this as browser or third-party animation proof. The candidate loader proposal's JavaScript integrity value follows regenerated bytes; no loader logic or installed loader changed. The older commit-pinned Library verification loader remains unchanged and is not proof for these repairs. Preserve immutable releases, public hooks, scroll-lock ownership, pending Acceptance and all existing release gates. No browser, desktop app, Webflow or remote access occurred.
 
 ## 16 October 2026 — Verification preserves existing candidate files — Codex (night shift)
 
