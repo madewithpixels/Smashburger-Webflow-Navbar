@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** e898dc1 — checked current combined-candidate handoff, read-only Webflow metadata and the new local-preview attempts against this baseline.
+**Reviewed at commit:** 41b47e0 — checked the prior combined-candidate handoff and Webflow MCP access to the named clean-install fixture against this baseline.
 **Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
 
@@ -18,6 +18,20 @@
 **Needs Michael:** The already-open Boss request to allow a local preview remains unresolved. Existing approval is still needed before a Library update is shared, and human/device and final release checks remain.
 
 **Next useful action / Handoff:** When local HTTP preview is enabled, serve the recorded candidate commit and verify the exact CSS and JavaScript requests in Chrome before running the width, interaction, motion and script-failure checks. Keep Acceptance pending and leave Webflow unchanged.
+
+## 16 October 2026 — Clean-install MCP access check — Codex (night shift)
+
+**Changed (R-121, R-126):** No candidate or Webflow content changed. The named New Smashburger Test site could not be read through this session's Webflow MCP connection, so its clean-install component state remains unverified. Acceptance remains pending.
+
+**Outputs:** Added this access result to [combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Starting commit: `41b47e0b77721ab083b36aa5bb2d0c35dc4c60bb`; working tree was clean on `main`.
+
+**Checked how:** Confirmed Git root and Boss mapping still point to this folder. Webflow MCP `list_sites` returned 16 sites and omitted New Smashburger Test (`6ad10fe7ca9deaf9a5ea7498`); a read-only component query for its Home page returned 404, “The site cannot be found”. This session did not retry the failed read. CUA `getState` showed the Chrome extension browser; its documented controls do not expose viewport emulation, network blocking or CDP. No new browser tab was opened. The documented fixture is a native test navbar, not a Library install. Existing readback of the two saved Library editions and the older linked Smashburger component remains in the preceding evidence record.
+
+**Still open:** The clean-install instance's current variants, properties, bindings and assets are not verified in this session. All Chrome-rendered candidate checks remain open because the local preview access request is unresolved.
+
+**Needs Michael:** The already-open request to enable local preview remains the gate for Chrome review. No additional question was raised.
+
+**Next useful action / Handoff:** Once local preview is enabled, complete the exact-commit Chrome checks. Separately, restore read-only MCP access to New Smashburger Test before treating its component state as current evidence. Do not share, publish, edit or unlink anything; keep Acceptance pending.
 
 ## Current position — 16 October 2026
 

@@ -44,3 +44,11 @@ After Python's earlier `PermissionError` on `127.0.0.1:8765`, a Node static serv
 Read-only Webflow MCP confirmed the saved self-contained candidate and CDN candidate still exist in MWP Component Library, each with five collapse variants, 60 properties and the same default component-property structure. Both currently select Mobile landscape. The linked SmashBurger staging component is the older `SmashBurger CDN` definition, has eight instances, five variants and 60 properties, and also selects Mobile landscape. Earlier detailed element, binding and image-asset readback remains recorded above. These are older definitions; none is proof that the combined commit has been installed, rendered or released. No Webflow state was changed.
 
 No Chrome width, short-viewport, scrolling, close/focus/Escape, overlap/reversal, reduced-motion, custom-animation, or blocked-script result was obtained. Chrome Preview was not used because the page was not showing the exact combined candidate. Acceptance remains pending.
+
+## 16 October 2026 — Clean-install MCP access follow-up
+
+In a later session starting from clean `main` at `41b47e0b77721ab083b36aa5bb2d0c35dc4c60bb`, Webflow MCP `list_sites` returned 16 accessible sites and omitted New Smashburger Test (`6ad10fe7ca9deaf9a5ea7498`). A read-only `get_all_components` request for its Home page (`6ad10fe9ca9deaf9a5ea74b9`) returned 404: “The site cannot be found.” The request was not repeated. This session therefore could not verify current component variants, properties, bindings or assets on that fixture.
+
+CUA `getState` enumerated the Chrome extension browser and its open tabs. The documented controls expose no viewport emulation, network request blocking or CDP in this session. No new browser tab was opened, and no Chrome page or candidate behavior was tested.
+
+The project record identifies New Smashburger Test as a native test navbar rather than an imported Library component. This site access result does not alter the earlier readback of the two saved Library candidates or the older linked Smashburger CDN component, and none of those is proof that the combined candidate is installed. No Webflow content changed. Acceptance remains pending.
