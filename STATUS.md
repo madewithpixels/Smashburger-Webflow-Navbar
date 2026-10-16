@@ -1,11 +1,25 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** 71a9a87 — canonical source/deliveries unchanged; the dated entry records old-checkout cleanup, verified recovery and Michael’s project-settings confirmation.
+**Reviewed at commit:** 9a82678 — canonical source/deliveries unchanged; the dated entry records old-checkout cleanup, verified recovery and Michael’s project-settings confirmation.
 **Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
 
 ## Current position — 16 October 2026
+
+## 16 October 2026 — Night-shift workspace routing checked — Codex (night shift)
+
+**Changed (R-128):** Confirmed this session opened in the selected SmashBurger folder, with the Git root and Boss mapping at the same location. Its origin is `madewithpixels/Smashburger-Webflow-Navbar`.
+
+**Outputs:** Before committing, recorded the old checkout at `0864f820`, clean on `main`, with 20 refs and SHA-256 hashes for 25,364 files. The hash-list SHA-256 is `d16e12bd5b8d063f294b447d62fe24a33da986fd3bd946d39a7c9a057200cbf0`.
+
+**Checked how:** Read `pwd`, Git root, branch, status, origin and `/Users/michaelauty/.config/boss/runner.json`; saved the old checkout's refs, status and file hashes for comparison. This entry is committed through Boss and read back from the canonical checkout.
+
+**Still open:** The after-commit comparison of the old checkout is reported in Boss.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Continue SmashBurger work from the canonical folder; leave the clean old checkout unchanged.
 
 - **Built:** The core native navbar, the repository transfer and the renamed source candidate. The existing released version is still v0.2.6. Local fixes cover overlapping scroll locks and rapid opening/closing. Sources: [transfer](webflow/canonical-rename-2026-10-15.md), [overlapping menus](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md), [rapid changes](webflow/rapid-menu-reversals-2026-10-16.md).
 - **Settings evidence committed:** Local commit `e599c09` preserves the tests, evidence and refreshed docs. The saved pre-integration run passed 385/385 with 168 settings checks. Those same settings checks are included in the combined 685/685 run. No settings repair was needed. Sources: [configuration evidence](webflow/native-settings-deliveries-2026-10-16.md) and [combined reconciliation](webflow/canonical-reconciliation-2026-10-16.md). These are simulated checks, not browser or linked-consumer proof.
