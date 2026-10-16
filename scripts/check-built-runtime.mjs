@@ -6,7 +6,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 for (const args of [
   ['scripts/build-all.mjs'],
   ['scripts/check-class-namespace.mjs'],
-  ['--test', 'tests/runtime-delivery.test.js', 'tests/dist.test.js', 'tests/demo.test.js', 'tests/class-namespace.test.js', 'tests/lite-candidate.test.js']
+  ['--test', 'tests/runtime-delivery.test.js', 'tests/dist.test.js', 'tests/demo.test.js', 'tests/class-namespace.test.js', 'tests/lite-candidate.test.js', 'tests/library-verification.test.js']
 ]) {
   const result = spawnSync(process.execPath, args, {
     cwd: root, stdio: 'inherit',

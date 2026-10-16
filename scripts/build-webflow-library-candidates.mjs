@@ -2,11 +2,12 @@ import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { transform } from 'esbuild';
 import { JSDOM } from 'jsdom';
+import { createLibraryVerificationLoader } from './library-verification.mjs';
+export { verificationCommit } from './library-verification.mjs';
 
 // Isolated review definitions have their own Webflow-generated variant markers.
 // Keep every released marker and add aliases only to these unshared candidates.
 const root = new URL('../', import.meta.url);
-export const verificationCommit = 'ddb83c79934914ef0f03f3f012ee2743154153f7';
 const aliases = [
   'smashburger-0-3-0-rc-1-candidate',
   'smashburger-cdn-0-3-0-rc-1-candidate',
@@ -24,6 +25,9 @@ export function addCandidateAliases(code, names = aliases) {
       ...(value === 'mobile-landscape' ? [unmarkedBase] : [])].join(', '));
 }
 export async function buildLibraryCandidates() {
+  const { version } = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));
+  // Resolve both immutable blobs before writing any Library outputs.
+  const loader = createLibraryVerificationLoader(version);
   await mkdir(new URL('candidate/webflow/library/', root), { recursive: true });
   for (const name of ['navbar-light-embed.html', 'navbar-light-canvas-embed.html']) {
     const source = await readFile(new URL(`candidate/webflow/${name}`, root), 'utf8');
@@ -57,9 +61,6 @@ export async function buildLibraryCandidates() {
   dom.window.close();
   const minifiedAliases = await transform(aliasCss, { loader: 'css', minify: true });
   if (minifiedAliases.code.includes('--mwp-nav-css-ready')) throw new Error('Alias layer must not fake CDN CSS readiness');
-  const proposal = await readFile(new URL('candidate/webflow/navbar-light-cdn-loader.html', root), 'utf8');
-  const loader = proposal.replace(/^<!-- UNRELEASED CANDIDATE[^\n]*\n/, '<!-- UNRELEASED LIBRARY VERIFICATION ONLY: exact existing commit pin; no release tag. -->\n')
-    .replace(/@v0\.3\.0-rc\.1\/dist\//g, `@${verificationCommit}/candidate/dist/`);
   await writeFile(new URL('candidate/webflow/library/navbar-light-cdn-candidate-loader.html', root), `<style>\n${minifiedAliases.code}</style>\n${loader}`);
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) await buildLibraryCandidates();

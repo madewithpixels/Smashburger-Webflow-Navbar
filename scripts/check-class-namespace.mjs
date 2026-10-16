@@ -4,6 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { JSDOM } from 'jsdom';
+import { assertLibraryVerificationLoader } from './library-verification.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = path => readFile(resolve(root, path), 'utf8');
@@ -53,6 +54,7 @@ export async function checkNamespace() {
   assertContracts(libraryCanvas, contracts.sourceTokens['src/navbar-light-canvas.css'], 'unshared Library Canvas helper');
   const libraryCdn = await read('candidate/webflow/library/navbar-light-cdn-candidate-loader.html');
   assertNoLegacyClasses(libraryCdn, 'unshared Library CDN verification loader');
+  assertLibraryVerificationLoader(libraryCdn);
   assert.match(libraryCdn, /@ddb83c79934914ef0f03f3f012ee2743154153f7\/candidate\/dist\//);
   assert.doesNotMatch(libraryCdn, /--mwp-nav-css-ready/);
   for (const path of ['candidate/webflow/navbar-light-canvas-embed.html', 'candidate/demo/navbar-light.browser.js']) {
