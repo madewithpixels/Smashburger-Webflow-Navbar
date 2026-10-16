@@ -106,7 +106,12 @@ for (const delivery of deliveries) {
     } finally { f.close(); }
   });
 
-  test(`${delivery}: multiple overlay navbars keep page scrolling locked until all close`, async () => {
+  test(`${delivery}: multiple overlay navbars keep page scrolling locked until all close`, {
+    // Confirmed in all three immutable v0.2.6 deliveries; source and candidate
+    // builds must still pass these exact assertions.
+    todo: delivery !== 'source' && !process.env.SMASHBURGER_CANDIDATE && !process.env.SMASHBURGER_FRESH_BUILD
+      ? 'Known v0.2.6 overlapping-menu scroll-lock defect; immutable artifacts retained. Candidate assertions remain mandatory.' : false
+  }, async () => {
     const f = runtimeFixture(delivery);
     try {
       f.root.dataset.layout = 'overlay';

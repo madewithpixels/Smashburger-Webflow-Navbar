@@ -6,7 +6,9 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 for (const args of [
   ['scripts/build-all.mjs'],
   ['scripts/check-class-namespace.mjs'],
-  ['--test', 'tests/runtime-delivery.test.js', 'tests/runtime-scroll-lock.test.js', 'tests/dist.test.js', 'tests/demo.test.js', 'tests/class-namespace.test.js', 'tests/lite-candidate.test.js', 'tests/library-verification.test.js', 'tests/migration-rollback.test.js']
+  // Match npm test discovery so maintained-source regressions cannot be omitted.
+  // Serial files avoid contention against the existing subprocess/event timeouts.
+  ['--test', '--test-concurrency=1']
 ]) {
   const result = spawnSync(process.execPath, args, {
     cwd: root, stdio: 'inherit',
