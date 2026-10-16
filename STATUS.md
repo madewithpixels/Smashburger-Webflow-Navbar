@@ -11,11 +11,11 @@
 
 **Changed (R-128):** Confirmed this session opened in the selected SmashBurger folder, with the Git root and Boss mapping at the same location. Its origin is `madewithpixels/Smashburger-Webflow-Navbar`.
 
-**Outputs:** Before committing, recorded the old checkout at `0864f820`, clean on `main`, with 20 refs and SHA-256 hashes for 25,364 files. The hash-list SHA-256 is `d16e12bd5b8d063f294b447d62fe24a33da986fd3bd946d39a7c9a057200cbf0`.
+**Outputs:** The old checkout remains at `0864f820`, clean on `main`, with the same 20 refs and SHA-256 hashes for 36,824 files before and after the commit. Both hash lists have SHA-256 `b50e4937c5b95c27775668fbdbef87668c599154d1a75c185a3059851d2bcade`.
 
-**Checked how:** Read `pwd`, Git root, branch, status, origin and `/Users/michaelauty/.config/boss/runner.json`; saved the old checkout's refs, status and file hashes for comparison. This entry is committed through Boss and read back from the canonical checkout.
+**Checked how:** Read `pwd`, Git root, branch, status, origin and `/Users/michaelauty/.config/boss/runner.json`; compared the old checkout's saved HEAD, refs, status and file hashes after each canonical commit. Both commits contain only `STATUS.md` and were read back from canonical `main`.
 
-**Still open:** The after-commit comparison of the old checkout is reported in Boss.
+**Still open:** Nothing in this routing check.
 
 **Needs Michael:** Nothing.
 
