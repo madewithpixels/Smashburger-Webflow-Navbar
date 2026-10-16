@@ -1,0 +1,36 @@
+# Combined SmashBurger candidate review — 16 October 2026
+
+Brief #88 — Codex (night shift), serving browser and release readiness
+(R-037, R-095, R-121, R-125, R-126, R-155). Acceptance remains pending.
+
+## Starting point and build
+
+- Confirmed Git root: `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`.
+- Confirmed `smashburger` in `/Users/michaelauty/.config/boss/runner.json` points to the same folder.
+- Started on `main` at candidate commit `9211a9f5871b9de30a613b0bf7d5118035858d86`; the working tree was clean.
+- `npm run build` completed with exit 0. `git diff --exit-code -- candidate` also returned 0, so the checked-in candidate files are identical to the files regenerated from this commit.
+- Candidate outputs are under `candidate/dist/` and `candidate/webflow/`. This identifies the exact local build; it does not prove that Chrome loaded it.
+
+## Chrome and local preview
+
+- Browser requested: Google Chrome. No candidate page was successfully loaded.
+- Tried `python3 -m http.server 8765 --bind 127.0.0.1` from the canonical folder. It exited with `PermissionError: [Errno 1] Operation not permitted` while binding the local address.
+- Opened a fresh Chrome tab at `http://127.0.0.1:8765/candidate/webflow/`. Chrome showed `ERR_CONNECTION_REFUSED` (“127.0.0.1 refused to connect”). Closed that tab and confirmed it was no longer in the tab list.
+- CUA reported `Capability is not available: visibility` when asked to create a visible tab. Omitting that unsupported option allowed the tab attempt, but did not make the local server reachable.
+- The available CUA browser API exposes page/DOM inspection, screenshots, read-only page evaluation and console logs. It did not expose viewport emulation or network request blocking. The Node REPL did not expose a working Playwright import (`SyntaxError: The requested module './index.js' does not provide an export named 'default'`), so CDP controls were unavailable in this session.
+- Not checked in Chrome: 1280, 991, 767, 479 or 393px widths; Full-width and Right menus in a short viewport; scrolling; closing; focus return; Escape; overlapping menus; rapid open/close; reduced motion; Custom animation; or script blocking and native closed Details/link fallback. No Webflow Preview was used because it was not showing this exact combined candidate.
+
+## Read-only Webflow state
+
+Read through Webflow MCP on 16 October 2026. No page, component, asset, Library item or publication was changed.
+
+- `MWP Component Library` (`6a0351de7c4e42148a81db6f`) still contains the saved self-contained candidate `SmashBurger 0.3.0-rc.1 candidate` (`f5b0a303-de0f-3ff8-adbe-6369ae720de8`) and CDN candidate `SmashBurger CDN 0.3.0-rc.1 candidate` (`6dc7881f-30d8-cf8a-c2c5-1efdfa57f459`). Both definitions report five collapse variants, 60 properties and nine image properties. Readback of all 144 elements in each definition found 67 component-property bindings. Their native header/details/summary/navigation structure and candidate class names remain present.
+- All nine icon image properties in each saved edition point to its original MWP Component Library SVG assets. Read-only `get_asset` calls resolved the Facebook, Instagram, LinkedIn, TikTok, Threads, X, WhatsApp, Telephone and Email SVGs.
+- The `Smashburger` staging site (`6a7d0157bbb1360af4e66961`) Home page (`6a7d015abbb1360af4e66968`) has a linked `SmashBurger CDN` instance (`867bf7f2-ed3c-a61e-09b8-9625881be9ec`). It is the older shared component (`97620538-d9db-0997-4d42-278c3ee1dffc`), with 60 properties and the same five collapse variants. Its selected variant is Tablet; its two explicit overrides are Tablet and Show primary navigation. The nine icon properties point to nine destination-site SVG assets, each resolving by `get_asset` to the expected icon filename.
+- These saved definitions and the linked consumer predate the combined candidate commit recorded above. Their structure, properties, bindings and assets are not proof that the 16 October combined candidate is installed, rendered or released.
+
+## Handoff and limits
+
+- The local build is reproducible from the recorded commit. The Chrome review and all candidate-specific rendered checks remain open because this environment denied local server binding and Chrome could not reach the address.
+- Do not share, publish, update or unlink the Library, and do not release or tag anything. The current authority does not allow those actions.
+- Next: once local preview can bind to loopback, rerun the Chrome checks against this exact commit and record the loaded CSS/JavaScript URLs before treating any browser result as candidate evidence.

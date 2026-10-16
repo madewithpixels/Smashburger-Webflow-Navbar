@@ -7,6 +7,20 @@
 
 ## Current position — 16 October 2026
 
+## 16 October 2026 — Combined candidate build and Webflow readback — Codex (night shift)
+
+**Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Rebuilt the combined candidate locally and read back the saved Library candidates and linked Smashburger menu. The current build is not installed in the Library or consumer. Acceptance remains pending.
+
+**Outputs:** [Combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Candidate commit reviewed: `9211a9f5871b9de30a613b0bf7d5118035858d86`.
+
+**Checked how:** Confirmed Git root and `smashburger` Boss mapping both point to this folder. Started from clean `main` at the recorded candidate commit. `npm run build` exited 0 and `git diff --exit-code -- candidate` found no generated differences. Read both saved Webflow candidate definitions, their 144-element trees and raw settings, five variants, 60 properties, 67 bindings and nine SVG assets; read the linked Smashburger Home instance, its selected Tablet variant, two overrides and nine destination-mapped SVG assets. The exact candidate could not be served: Python's local server returned `PermissionError: Operation not permitted`; Chrome returned `ERR_CONNECTION_REFUSED` for the loopback URL. No browser or Preview result is claimed.
+
+**Still open:** Chrome rendering at 1280, 991, 767, 479 and 393px; Full-width and Right menu behavior in a short viewport; scrolling, close, focus return, Escape, overlapping menus and rapid reversals; reduced motion, Custom animation and blocked-script fallback. The saved Library/consumer state predates the combined candidate and cannot close those checks.
+
+**Needs Michael:** The existing Boss request to allow local preview remains the setup gate. No new product decision is needed. No Webflow change, Library sharing, publication, tag or release occurred.
+
+**Next useful action / Handoff:** Once loopback preview is available, serve the recorded commit, confirm Chrome loaded its exact built CSS and JavaScript, then complete the listed interaction and motion checks. Keep Acceptance pending and do not use the older Library pin as combined-candidate proof.
+
 ## 16 October 2026 — Night-shift workspace routing checked — Codex (night shift)
 
 **Changed (R-128):** Confirmed this session opened in the selected SmashBurger folder, with the Git root and Boss mapping at the same location. Its origin is `madewithpixels/Smashburger-Webflow-Navbar`.
