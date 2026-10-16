@@ -1065,6 +1065,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **15 October 2026 — Codex:** Candidate is built/tested with proposed canonical exact-version URLs and SHA-384 values. No new release tag or CDN publication exists. Staging fixture publication is a separate test-site action and does not complete this release item.
 **Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md). [Library CDN verification](webflow/library-sb-nav-candidates-2026-10-15.md) reads an already-pushed exact commit and verifies bytes/SRI locally; this does not create or complete a semantic release.
 
+**16 October 2026 — brief #67:** Repaired candidate verification integrity using raw local Git blobs at the unchanged older pin. Both CSS/JavaScript values match; the current-source illustrative loader remains separate and unchanged. No semantic release, version or URL pin changed. See [repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
+
 
 #### R-126 · Update both MWP Component Library editions and the `Smashburger` clean-install instance through the Library workflow; verify properties, variants, assets, CDN loading, rollback and update linkage.
 **State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
@@ -1072,6 +1074,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 **15 October 2026 — Codex:** Backed-up isolated copies of both real editions retain 144 nodes, 60 properties, five variants, nine assets and 67 bindings; source self-contained Canvas/Preview is verified. Exact-commit CDN runtime and script-omission fallback are separately verified locally. No Library share or consumer installation occurred. The five-resource sharing review requires approval; linked properties/overrides/assets/class prefixes, fresh unlink, update/rollback and actual Webflow CDN/fallback remain open.
 **Evidence links:** [Library candidate checks and sharing scope](webflow/library-sb-nav-candidates-2026-10-15.md)
+
+**16 October 2026 — brief #67:** Corrected the local verification loader only; installed Embeds and historical Library readbacks are unchanged. The older pin predates the latest overlapping-overlay fix, so matching integrity does not verify that fix or consumer loading. Existing sharing/linkage/rollback gates remain open. See [integrity repair limits](webflow/library-verification-integrity-2026-10-16.md).
 
 
 #### R-127 · Archive the old compatibility repository only after the new release and old pinned URLs have both been independently verified.
@@ -1382,6 +1386,9 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Brief #12 Preview availability follow-up — 15 October 2026:** a new Designer tab for the authorised Clean Trial probe exposed only an empty embedded surface, without usable canvas or Preview controls. The existing `CompilationError: Invalid source code` therefore could not be retested or isolated. A fresh published comparison page loaded, but it is baseline evidence only. No Webflow changes or publication occurred; browser tabs opened for the check were closed. See [STATUS](STATUS.md) and the [test record](webflow/lite-preparation-local-tests-2026-10-14.md).
 
 **Brief #12 fixture and inspection-route readback — 15 October 2026:** read-only Webflow MCP confirms the Clean Trial probe remains an empty draft and the site has no custom domains; four unrelated pages remain drafts. The current browser controls do not expose DOM, viewport, console or request inspection, so the completed candidate checks were not repeated and the automatic failed-script request remains unrecorded. No Webflow content or publication changed. See [STATUS](STATUS.md) and the [test record](webflow/lite-preparation-local-tests-2026-10-14.md).
+
+**16 October 2026 — brief #67:** `npm run test:candidate` passed 65/65 with no skips or expected failures, including both exact-pin integrity comparisons, deliberate wrong-hash rejection and missing-object build failure. All 17 protected historical hashes match; candidate reproducibility and syntax checks pass. Browser/Webflow/human checks were not run. Historical Acceptance is unchanged; this repair remains pending. See [local integrity evidence](webflow/library-verification-integrity-2026-10-16.md).
+
 
 #### R-156 · Make panel focus order match visual order (WCAG 2.4.3). Decision (Michael, 2026-10-03): Primary first everywhere. Both MWP Component Library source components now have `Primary navigation` before `Secondary navigation` (MCP move and readback); the published source pages Tab through the primary links first, collapsed and expanded, with no overflow. The demo, tests and docs were updated. No CSS or CDN change was needed: the collapsed `order` rules stay so older instances keep their visual layout.
 **State:** built · **Evidence:** none · **Acceptance:** accepted (historical)

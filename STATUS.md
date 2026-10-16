@@ -1,9 +1,34 @@
 # SmashBurger — Status
-**Stage:** The unreleased 0.3.0-rc.1 candidate now fixes overlapping overlay scroll locks and has locally checked Lite example and workbench references. v0.2.6 and its protected assets remain unchanged. Library sharing, rendered local review, consumer linkage/rollback and human/device checks remain open.
+**Stage:** The unreleased 0.3.0-rc.1 candidate has a locally verified Library integrity repair. Its older verification pin still predates the overlay scroll-lock fix in current source. v0.2.6 and protected historical files remain unchanged. Library sharing, rendered review, consumer linkage/rollback and human/device checks remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 19ef5e6 — checked the candidate baseline and following docs-only handoff commit; this entry records the new Lite DOM checks and partial roadmap progress.
+**Reviewed at commit:** 4b3be79 — checked the pinned-integrity repair, candidate outputs and protected historical files; this entry adds the local evidence and handoff.
 **Next action:** Review the candidate examples in a local browser when an authorised preview is available. Separately, approve the exact five-resource Library review before any sharing or consumer installation.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Library verification integrity repaired — Codex (night shift)
+
+**Changed (R-125, R-126, R-155):** The Library verification loader now has integrity values calculated from the exact files at its unchanged older commit. Its JavaScript hash was wrong; its CSS hash was already correct. Missing local Git objects stop the Library build clearly. The current-source illustrative loader stays separate and byte-identical. The older verification pin does not include the latest overlapping-overlay scroll-lock fix.
+
+**Outputs:** Repair commit `4b3be79`; [integrity repair and checks](webflow/library-verification-integrity-2026-10-16.md); six new [regressions](tests/library-verification.test.js) included in the normal candidate checks; refreshed candidate verification loader; README and roadmap evidence. Version `0.3.0-rc.1`, pin `ddb83c79934914ef0f03f3f012ee2743154153f7`, released files, installed Embeds and historical snapshots are unchanged. No Acceptance was changed.
+
+**Checked how:**
+
+- `node --test tests/library-verification.test.js` passed 6/6. Both asset hashes match independent calculations over raw local Git bytes.
+- Deliberately wrong CSS and JavaScript hashes were rejected. Reusing today's JavaScript hash with the older URL also failed as intended.
+- An empty temporary Git object directory made the Library build exit 1 with the missing commit/path. Its three outputs stayed unchanged.
+- `npm run test:candidate` passed 65/65 across source, candidate distribution, minified runtime and self-contained Embed. No checks were skipped or marked as expected failures.
+- The guard verified all 17 protected historical hashes. Explicit diffs confirmed historical evidence, released files, package/version/dependencies and the illustrative loader were unchanged.
+- `npm run check:dist`, `npm run check` and `git diff --check` passed.
+- The initial working tree was clean. The one commit after the previous reviewed baseline was the Lite structure check already described in STATUS.
+- Not checked: network/CDN loading, browser rendering, Webflow/Preview and installed Embeds.
+
+**Still open:** Nothing remains in brief #67. Library sharing, consumer update/rollback, human/device checks and release approval remain at their existing gates. The corrected older pin cannot serve as evidence for the newer overlay fix.
+
+**Needs Michael:** Review the local repair when convenient. Existing Library sharing, human/device and final release decisions remain his; no new decision blocks this brief.
+
+**Next useful action:** Review the two local commits, then continue the separately authorised local briefs. Keep sharing and release steps gated.
+
+**Handoff:** On main, start with this entry and the integrity repair record. The candidate build now requires both pinned artifact blobs in local Git and never fetches missing objects. Preserve the old pin, release files and historical evidence snapshots. Use `npm run test:candidate` for the six new checks as well as the delivery matrix; this is local preparation only.
 
 ## 16 October 2026 — Lite structure checks and partial roadmap progress — Codex (night shift)
 
