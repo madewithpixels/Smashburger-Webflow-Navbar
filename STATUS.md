@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** 9a82678 — canonical source/deliveries unchanged; the dated entry records old-checkout cleanup, verified recovery and Michael’s project-settings confirmation.
+**Reviewed at commit:** e898dc1 — checked current combined-candidate handoff, read-only Webflow metadata and the new local-preview attempts against this baseline.
 **Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 16 October 2026 — Combined candidate preview retry and Webflow metadata — Codex (night shift)
+
+**Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Retried local preview with Node after the earlier Python server could not bind. The environment denied both loopback attempts. Chrome rejected a local `file:` URL before opening it. No combined-candidate page was loaded, so no rendered behavior is claimed. Acceptance remains pending.
+
+**Outputs:** Updated [combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Candidate source/build commit: `9211a9f5871b9de30a613b0bf7d5118035858d86`; documentation starting HEAD: `e898dc1537a7d51fff094cffa371af292e3f1c42`.
+
+**Checked how:** Confirmed Git root and `smashburger` Boss routing both resolve to this folder. The starting working tree was clean on `main`; `e898dc1` adds the prior handoff record above the candidate commit. Read-only Webflow MCP refreshed the two saved Library candidate editions and the linked SmashBurger CDN definition: each reports the five collapse variants and 60 properties, with the corresponding variant selected as Mobile landscape; the linked component reports eight instances. Their names and descriptions identify older/unshared editions, so they do not prove the combined candidate is installed. Existing element-tree and asset evidence remains in the linked record.
+
+**Still open:** Chrome at 1280, 991, 767, 479 and 393px; Full-width and Right menus in a short viewport; scrolling, closing, focus return, Escape, overlapping menus and rapid reversals; reduced motion, Custom animation and blocked-script fallback. The CUA `file:` navigation was rejected by browser URL policy (only HTTP(S) allowed); both Python and Node loopback servers returned permission errors. Request blocking was not available through that browser surface. Chrome Preview was not used because it was not showing this exact candidate.
+
+**Needs Michael:** The already-open Boss request to allow a local preview remains unresolved. Existing approval is still needed before a Library update is shared, and human/device and final release checks remain.
+
+**Next useful action / Handoff:** When local HTTP preview is enabled, serve the recorded candidate commit and verify the exact CSS and JavaScript requests in Chrome before running the width, interaction, motion and script-failure checks. Keep Acceptance pending and leave Webflow unchanged.
 
 ## Current position — 16 October 2026
 

@@ -34,3 +34,13 @@ Read through Webflow MCP on 16 October 2026. No page, component, asset, Library 
 - The local build is reproducible from the recorded commit. The Chrome review and all candidate-specific rendered checks remain open because this environment denied local server binding and Chrome could not reach the address.
 - Do not share, publish, update or unlink the Library, and do not release or tag anything. The current authority does not allow those actions.
 - Next: once local preview can bind to loopback, rerun the Chrome checks against this exact commit and record the loaded CSS/JavaScript URLs before treating any browser result as candidate evidence.
+
+## 16 October 2026 follow-up
+
+The follow-up session started from clean `main` at documentation HEAD `e898dc1537a7d51fff094cffa371af292e3f1c42`. The combined candidate source/build remains commit `9211a9f5871b9de30a613b0bf7d5118035858d86`; the newer HEAD is the previous handoff documentation commit.
+
+After Python's earlier `PermissionError` on `127.0.0.1:8765`, a Node static server was tried once on the same loopback address and port. Node returned `listen EPERM: operation not permitted`. Chrome's supported CUA rejected a direct `file:` navigation because its browser URL policy permits only HTTP and HTTPS. No candidate browser tab was opened. Request blocking is not exposed by this CUA browser surface. No alternate route was attempted.
+
+Read-only Webflow MCP confirmed the saved self-contained candidate and CDN candidate still exist in MWP Component Library, each with five collapse variants, 60 properties and the same default component-property structure. Both currently select Mobile landscape. The linked SmashBurger staging component is the older `SmashBurger CDN` definition, has eight instances, five variants and 60 properties, and also selects Mobile landscape. Earlier detailed element, binding and image-asset readback remains recorded above. These are older definitions; none is proof that the combined commit has been installed, rendered or released. No Webflow state was changed.
+
+No Chrome width, short-viewport, scrolling, close/focus/Escape, overlap/reversal, reduced-motion, custom-animation, or blocked-script result was obtained. Chrome Preview was not used because the page was not showing the exact combined candidate. Acceptance remains pending.
