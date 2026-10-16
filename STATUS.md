@@ -1,9 +1,41 @@
 # SmashBurger — Status
-**Stage:** The unreleased 0.3.0-rc.1 candidate has a locally verified Library integrity repair. Its older verification pin still predates the overlay scroll-lock fix in current source. v0.2.6 and protected historical files remain unchanged. Library sharing, rendered review, consumer linkage/rollback and human/device checks remain open.
+**Stage:** The unreleased 0.3.0-rc.1 candidate passes local multiple-menu teardown, resize and document-lock checks. No new runtime fix was needed. Its repaired older Library verification pin still predates the overlay lock fix. v0.2.6 remains unchanged. Library sharing, rendered review, consumer linkage/rollback and human/device checks remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 4b3be79 — checked the pinned-integrity repair, candidate outputs and protected historical files; this entry adds the local evidence and handoff.
-**Next action:** Review the candidate examples in a local browser when an authorised preview is available. Separately, approve the exact five-resource Library review before any sharing or consumer installation.
+**Reviewed at commit:** 17a2058 — checked the multiple-menu lifecycle tests, complete candidate suite and protected historical hashes; this entry adds the evidence and handoff.
+**Next action:** Review the local lifecycle evidence and continue the separately authorised local briefs. Rendered candidate review resumes only with browser authority; Library sharing remains separately gated.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Multiple-menu teardown and resize checks — Codex (night shift)
+
+**Changed (R-095, R-155):**
+
+- Added checks that page scrolling stays locked when one open menu is removed while another needs the lock.
+- Covered repeated removal, repeat initialisation, all three pairs of collapse breakpoints and both menu orders.
+- Checked Left/Right locking drawers beside non-locking dropdowns, saved document styles and two independent owner documents.
+- No new runtime defect appeared. Runtime, visual design, public configuration, generated outputs, release pins, dependencies and Acceptance are unchanged.
+
+**Outputs:** Local test commit `17a2058`; [new lifecycle tests](tests/runtime-scroll-lock.test.js); candidate runner inclusion; [precise cases, commands and limits](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md#brief-68--teardown-resize-and-separate-documents); evidence additions under the automated checks and release verification items (R-095, R-155).
+
+**Checked how:**
+
+- `SMASHBURGER_CANDIDATE=1 node --test tests/runtime-scroll-lock.test.js` passed 16/16, with no skipped tests or expected failures. The four delivery forms cover 64 scenario runs.
+- Final `npm run test:candidate` passed 81/81, with no skipped tests or expected failures. This includes maintained source, candidate distribution, minified output and self-contained Embed.
+- The candidate guard verified all 17 protected historical SHA-256 hashes. Explicit diffs confirmed runtime, generated candidate outputs, released files, version and dependencies were unchanged.
+- A historical comparison first reproduced nine failures in immutable v0.2.6: teardown and breakpoint expansion unlock too early, and a second owner document does not acquire its own lock. These three groups fail in each historical delivery form.
+- Only those newly confirmed historical failures use the existing TODO convention in the new file. Its historical rerun exits 0: seven passes and nine executed expected failures. Candidate mode keeps every assertion mandatory.
+- `npm run check`, new-file syntax checks and `git diff --check` passed. Initial main was clean at `f11a8f0`; the only commit since the prior reviewed baseline recorded integrity evidence already in STATUS.
+- Not checked: rendered page scrolling, visual scrollbar padding, overlapping-menu stacking, narrow-height containment, physical keyboard/touch, assistive technology, Webflow Preview or linked consumer update/rollback.
+- Not checked: the full ordinary `npm test` gate. Brief #70 separately owns its older unmarked overlap failures and maintained-source coverage. The old overlap test was left untouched.
+
+**Still open:** Nothing remains in brief #68. Rendered multiple-menu scrolling and the existing Webflow, consumer rollback, human/device and release gates remain open. The older Library verification pin still cannot demonstrate the current lock fix.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser, Library sharing, human/device and final release approvals remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Continue the separately authorised local briefs. When rendered checks are authorised, try teardown and each collapse boundary with two open menus, checking page scrolling and visible scrollbar padding before the final release.
+
+**Handoff:** On main, read this entry and the appended brief #68 section in the multiple-navbar record. The new test file is included in `npm run test:candidate`; its historical TODOs never apply to source or candidate mode. Separate-document evidence covers lock ownership only, not general cross-document keyboard/event handling. Non-zero motion/reversal coverage and the existing ordinary test-gate repair remain separate briefs. Preserve protected releases, the older Library pin and all Acceptance fields. No browser, Webflow or remote access occurred.
 
 ## 16 October 2026 — Library verification integrity repaired — Codex (night shift)
 
