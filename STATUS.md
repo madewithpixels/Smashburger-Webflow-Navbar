@@ -5,6 +5,20 @@
 **Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
 
+## 16 October 2026 — Combined candidate review access follow-up — Codex (night shift)
+
+**Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Refreshed the Chrome capability and saved Library readbacks. The combined candidate still has no browser rendering proof. Acceptance remains pending.
+
+**Outputs:** [Combined candidate review evidence](webflow/combined-candidate-review-2026-10-16.md). Candidate source/build commit `9211a9f5871b9de30a613b0bf7d5118035858d86`; checked starting documentation commit `24701c7ecc153628de1fd85519c90f350f0f8f0b`.
+
+**Checked how:** Confirmed the Git root and `smashburger` Boss routing match this folder; started clean on `main`. Chrome inventory showed the Boss Agents page. Current browser controls include viewport override and read-only page evaluation, but no network blocking. No local server bind was retried because Python and Node had both returned `EPERM` in the unchanged environment. Read-only Webflow MCP listed 16 sites and again omitted New Smashburger Test; the earlier 404 was not repeated. Both saved Library editions still report five variants, 60 properties and nine image properties, and their 144-element trees load. Existing detailed readback records 67 bindings and nine resolved SVG assets per edition. No Webflow content changed.
+
+**Still open:** Not checked: Chrome loading the candidate's exact built CSS and JavaScript, the 1280/991/767/479/393px widths, Full-width and Right menus in a short viewport, scrolling, close, focus return, Escape, overlapping menus, rapid open/close, reduced motion, Custom animation and blocked-script fallback. Not checked: current bindings/assets in this resumed read because this tree endpoint omits them; earlier detailed readback remains documented. The clean-install site's current variants, properties, bindings and assets are unreadable. The older Library and staging components are not proof of the combined candidate.
+
+**Needs Michael:** Enable local browser preview and restore read-only access to New Smashburger Test. Sharing, publication and release remain separate approval gates.
+
+**Next useful action / Handoff:** When local preview is enabled, serve the recorded candidate commit and verify the CSS and JavaScript requests in Chrome before running the responsive, interaction and motion checks. When New Smashburger Test is readable, inspect its saved component state. Do not share or publish; keep Acceptance pending.
+
 ## 16 October 2026 — Combined candidate Chrome access check — Codex (night shift)
 
 **Changed (R-037, R-095, R-121, R-125, R-126, R-155):** Added the current Chrome access check to the review record. No candidate page loaded, so rendered checks remain open and Acceptance stays pending.
