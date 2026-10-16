@@ -1656,6 +1656,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Exit criteria:**
 **Local preparation — 16 October 2026:** Candidate plain/styled HTML examples each contain one native panel and one set of three links. A DOM regression checks the link tree and candidate class/runtime hooks. This does not provide a native Webflow component or clonable.
 **Runtime evidence — brief #71, 16 October 2026:** The actual page, declared local stylesheets and candidate browser bundle pass automatic discovery of both navbars, unique panel IDs and trigger relationships, closed ARIA/inert state, independent public opening/closing in both orders and repeat initialisation without duplicate completion events. Simulated Escape returns focus with either menu open on its own. This remains DOM simulation; browser rendering, native keyboard activation, Webflow Canvas and clone flow are unverified. [Evidence and limits](webflow/lite-examples-runtime-2026-10-16.md).
+**Current automated check — brief #90, 16 October 2026:** `npm run test:candidate` passed 685/685, including the Lite structure/runtime tests. Chrome rejected the local `file:` page under its URL policy, so no rendered layout was checked. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 **Evidence links:** [candidate examples](candidate/lite/review-examples.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
@@ -1665,13 +1666,15 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Exit criteria:**
 **Local preparation — 16 October 2026:** Candidate HTML contains one closed and one open native disclosure reference plus a labelled backdrop swatch. A DOM regression checks the two states and retained candidate structure. This is a static workbench reference, not a Webflow workbench.
 **Reference evidence — brief #71, 16 October 2026:** The actual workbench with its local CSS retains the native closed/open states and adjacent panels without a runtime, injected ARIA/inert state or readiness marker. Its labelled backdrop remains a static sample. All fragment links now resolve after adding the two missing article IDs. No design or script changed. This does not prove rendering or Canvas editability. [Evidence and limits](webflow/lite-examples-runtime-2026-10-16.md).
+**Current automated check — brief #90, 16 October 2026:** The full `npm run test:candidate` run passed 685/685, including the workbench state and fragment checks. Browser rendering and Canvas behavior remain unchecked. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 **Evidence links:** [workbench references](candidate/lite/workbench-references.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
 #### R-183 · Install one exact-version pinned CDN Embed with integrity metadata and keep the settings/structure understandable on the Canvas.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** blocked · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 256 (now 257); baseline `c808ca4`.
 **Exit criteria:**
+**Build gate — 16 October 2026:** Local `0.3.0-rc.1` candidate loader checks pass, but that tag is unreleased and must not be installed. Released v0.2.6 uses the earlier `mwp-*` classes. No released loader matching the settled `sb-nav` migration is verified; final URL and integrity values await an authorised released runtime. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 
 
 #### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal. *(accepted by Michael in boss, 15 Oct 2026)*
@@ -1684,9 +1687,10 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-185 · Verify the clone flow into a blank test project, including Canvas editability, all four core breakpoints, keyboard behavior, asset loading, zero overflow and a clean console.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** blocked · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 258 (now 259); baseline `c808ca4`.
 **Exit criteria:**
+**Project access check — brief #90, 16 October 2026:** Read-only Webflow site listing returned 16 accessible sites but no blank SmashBurger Lite test project. SB Unlink Clean Trial is a populated fixture, so it does not satisfy this clone-flow gate. New Smashburger Test was not re-probed. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 
 
 #### R-186 · Prepare the clonable as an early-exposure route for the SmashBurger site launch, with a clear route from the free baseline to the Library component and future app.

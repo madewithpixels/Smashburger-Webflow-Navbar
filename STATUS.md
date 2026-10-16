@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** cf7d67b — checked the current candidate handoff, fresh disposable-copy rebuild and release-file audit against this baseline.
+**Reviewed at commit:** 5ee299f — checked the combined release preflight, Lite source/evidence and current candidate verification against this baseline.
 **Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 16 October 2026 — Brief #90 Lite native build preparation — Codex (night shift)
+
+**Changed (R-177–R-186):** Prepared a source-based native component build sheet. The plain/styled examples and workbench pass the full candidate check; the native component and public clonable remain unbuilt. Acceptance remains pending.
+
+**Outputs:** [SmashBurger Lite native build sheet](webflow/lite-native-build-sheet-2026-10-16.md). It records the proposed element tree, classes, hooks, trigger/panel relationship, example/workbench/Read Me pages and unresolved runtime/build choices.
+
+**Checked how:** Reviewed the accepted Lite scope, current STATUS and R-177–R-186; read both local examples, the workbench, safe-editing guide and existing Lite evidence. `npm run test:candidate` passed 685/685 and preserved the 17 protected historical files. Read-only Webflow site listing returned 16 sites, with no blank SmashBurger Lite test project; SB Unlink Clean Trial is populated. Chrome rejected the new local `file:` tab under its URL policy, which expressly disallows alternate loading routes. No Webflow content changed.
+
+**Still open:** No released runtime matching the `sb-nav` class migration is verified. v0.2.6 has the earlier `mwp-*` classes; 0.3.0-rc.1 is unreleased and its illustrative loader must not be installed. No blank test project is accessible for clone-flow checks. Not checked: rendered visual layout, actual Canvas behaviour, Preview, native keyboard activation or clone flow.
+
+**Needs Michael:** Select and authorise the versioned `sb-nav` runtime release needed for the pinned loader. Make a blank test project accessible for the clone-flow checks. A Chrome route that permits local pages is needed to review the examples visually.
+
+**Next useful action / Handoff:** After the released runtime is available, verify its exact files and integrity values, finish the native component and loader, then use an accessible blank test project for clone-flow checks. Keep Acceptance pending.
 
 ## 16 October 2026 — Brief #89 release preflight — Codex (night shift)
 
