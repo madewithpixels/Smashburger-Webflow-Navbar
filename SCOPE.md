@@ -102,9 +102,9 @@ Source: Michael’s completion brief in this chat, 15 October 2026; [transfer ev
 
 ## Current delivery position — 16 October 2026
 
-Naming and the canonical destination are settled. The core navbar and renamed candidate are built locally, with later settings verification saved but uncommitted. Current browser, consumer installation/update/rollback, release and Lite clone-flow checks remain open. Sources: [STATUS current position](STATUS.md#current-position--16-october-2026), [settings evidence](webflow/native-settings-deliveries-2026-10-16.md), ROADMAP R-115, R-121, R-125–R-126 and R-177–R-186.
+Naming and the canonical destination are settled. The core navbar and renamed candidate are built locally, with settings verification committed as `e599c09` and a combined candidate passing 685/685 local checks. Current browser, consumer installation/update/rollback, release and Lite clone-flow checks remain open. Sources: [STATUS current position](STATUS.md#current-position--16-october-2026), [settings evidence](webflow/native-settings-deliveries-2026-10-16.md), ROADMAP R-115, R-121, R-125–R-126 and R-177–R-186.
 
-The current chat uses the canonical folder, but Boss runner configuration still points `smashburger` to the retained old checkout. That checkout holds separate later migration-guide, native-removal, closing-focus and Escape commits not integrated here. This is a maintenance/setup gap, not a naming or scope decision. Preserve both histories and reconcile them before claiming that one candidate contains all repairs. Source: [STATUS checkout handoff](STATUS.md#checkout-handoff), local readback on 16 October 2026.
+Boss now explicitly routes `smashburger` to the canonical folder. The seven retained-old-checkout commits for migration instructions, native removal, closing focus and Escape are reconciled with the newer canonical fixes, with full local candidate verification. Both old history/working-tree state and Claude’s uncommitted Boss work are preserved. No scope, publication or Acceptance gate changed. Source: [reconciliation and limits](webflow/canonical-reconciliation-2026-10-16.md), [STATUS checkout handoff](STATUS.md#checkout-handoff).
 
 ## Deferred decisions (not blocking the docs update)
 

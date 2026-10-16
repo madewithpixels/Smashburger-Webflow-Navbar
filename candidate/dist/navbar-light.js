@@ -63,6 +63,64 @@
     element.id = `${prefix}-${random}`;
     return element.id;
   }
+  function snapshotEnhancement(navbar) {
+    const { root, menu, trigger, panel, backdrop, items, submenus } = navbar;
+    const data = [
+      [root, ["layout", "motion", "align", "iconLines", "mwpReady", "mwpCollapsed", "state"]],
+      [menu, ["state"]],
+      [panel, ["state"]],
+      [backdrop, ["state"]]
+    ].flatMap(([element, names]) => element ? names.map((name) => [element.dataset, name, element.dataset[name]]) : []);
+    const attributes = [
+      [root, ["data-focus-first", "data-close-on-outside", "data-close-on-link", "data-scroll-lock"]],
+      [menu, ["open"]],
+      [trigger, ["aria-controls", "aria-haspopup", "aria-expanded"]],
+      [panel, ["id", "aria-hidden", "inert"]],
+      ...submenus.map((submenu) => [submenu, ["open"]])
+    ].flatMap(([element, names]) => element ? names.map((name) => [element, name, element.getAttribute(name)]) : []);
+    const styles = [
+      [root, [
+        "--mwp-nav-duration-open",
+        "--mwp-nav-duration-close",
+        "--mwp-nav-distance",
+        "--mwp-nav-ease",
+        "--mwp-nav-panel-width",
+        "--mwp-nav-stagger",
+        "--mwp-nav-icon-duration",
+        "--mwp-nav-submenu-icon-duration",
+        "--mwp-nav-submenu-icon-ease",
+        "--mwp-nav-submenu-icon-rotation",
+        "--mwp-nav-icon-auto-shift"
+      ]],
+      ...items.map((item) => [item, ["--mwp-item-index"]])
+    ].map(([element, names]) => [element, element.hasAttribute("style"), names.map((name) => [name, element.style.getPropertyValue(name), element.style.getPropertyPriority(name)])]);
+    const inert = panel.inert;
+    const ownInert = Object.hasOwn(panel, "inert");
+    const handles = [[root, "mwpNavbarLight"], [menu, "mwpNav"]].map(([element, name]) => [element, name, Object.getOwnPropertyDescriptor(element, name)]);
+    return () => {
+      if (ownInert || inert !== void 0) panel.inert = inert;
+      else delete panel.inert;
+      for (const [dataset, name, value] of data) {
+        if (value === void 0) delete dataset[name];
+        else dataset[name] = value;
+      }
+      for (const [element, name, value] of attributes) {
+        if (value === null) element.removeAttribute(name);
+        else element.setAttribute(name, value);
+      }
+      for (const [element, hadStyle, properties] of styles) {
+        for (const [name, value, priority] of properties) {
+          if (value) element.style.setProperty(name, value, priority);
+          else element.style.removeProperty(name);
+        }
+        if (!hadStyle && !element.style.cssText) element.removeAttribute("style");
+      }
+      for (const [element, name, descriptor] of handles) {
+        if (descriptor) Object.defineProperty(element, name, descriptor);
+        else delete element[name];
+      }
+    };
+  }
   var NavbarLight = class {
     constructor(root) {
       this.root = root;
@@ -86,6 +144,7 @@
       this.onBreakpointChange = this.onBreakpointChange.bind(this);
       this.syncIconGeometry = this.syncIconGeometry.bind(this);
       if (!this.menu || !this.trigger || !this.panel || !navbarStylesAvailable(this.root)) return;
+      this.restoreEnhancement = snapshotEnhancement(this);
       this.configure();
       this.bind();
       this.onBreakpointChange(true);
@@ -242,17 +301,20 @@
       if (link && booleanAttribute(this.root, "data-close-on-link", true)) this.close();
     }
     onKeydown(event) {
-      if (event.key !== "Escape") return;
-      const openSubmenu = this.submenus.find((submenu) => submenu.open && submenu.contains(document.activeElement));
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      const activeElement = this.root.ownerDocument.activeElement;
+      const focusedNavbar = activeElement?.closest(ROOT_SELECTOR);
+      if (focusedNavbar && focusedNavbar !== this.root) return;
+      const openSubmenu = this.submenus.find((submenu) => submenu.open && submenu.contains(activeElement));
       if (openSubmenu) {
+        event.preventDefault();
         openSubmenu.open = false;
         openSubmenu.querySelector("summary")?.focus();
-        event.preventDefault();
         return;
       }
       if (this.menu.open && this.isCollapsed()) {
-        this.close({ focusTrigger: true });
         event.preventDefault();
+        this.close({ focusTrigger: true });
       }
     }
     syncNative(notify) {
@@ -277,6 +339,7 @@
     transitionToClosed(notify = true) {
       this.clearStateTimer();
       this.focusOnOpened = false;
+      this.restoreTriggerFocus();
       this.setState("closing", notify);
       const duration = this.motionDuration("close");
       this.stateTimer = window.setTimeout(() => {
@@ -320,11 +383,14 @@
       this.focusOnOpened = focusFirst;
       this.menu.open = true;
     }
+    restoreTriggerFocus(force = false) {
+      if (force || this.panel.contains(this.root.ownerDocument.activeElement)) this.trigger.focus();
+    }
     close({ focusTrigger = false } = {}) {
       if (!this.isCollapsed() || !this.menu.open) return;
       this.focusOnOpened = false;
+      this.restoreTriggerFocus(focusTrigger);
       this.menu.open = false;
-      if (focusTrigger) this.trigger.focus();
     }
     toggle(options) {
       if (this.menu.open) this.close(options);
@@ -349,6 +415,7 @@
       this.destroyed = true;
       this.clearStateTimer();
       this.unlockScroll();
+      if (!this.restoreEnhancement) return;
       this.menu.removeEventListener("toggle", this.onToggle);
       this.backdrop?.removeEventListener("click", this.onBackdropClick);
       document.removeEventListener("click", this.onDocumentClick);
@@ -357,8 +424,8 @@
       window.removeEventListener("resize", this.onBreakpointChange);
       this.mediaQuery?.removeEventListener?.("change", this.onBreakpointChange);
       this.iconObserver?.disconnect();
-      delete this.root.mwpNavbarLight;
-      delete this.menu.mwpNav;
+      this.focusOnOpened = false;
+      this.restoreEnhancement();
     }
   };
   function initNavbarLight(root = document) {
