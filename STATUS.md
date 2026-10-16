@@ -1,9 +1,78 @@
 # SmashBurger — Status
-**Stage:** Rapid menu reversals and Custom motion pass all local delivery checks. Reproduced late events and delayed focus are repaired in the unreleased candidate. All 217 candidate checks pass. v0.2.6 remains unchanged. The older Library verification pin predates these repairs. Browser, Webflow/consumer, human/device and release gates remain open.
-**Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 60960a3 — checked source and candidate motion reversals, full test commands, reproducibility and protected historical hashes; this entry records the results.
-**Next action:** Review the local reversal fixes and continue separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
-**Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+**Stage:** Core navbar built; the renamed 0.3.0-rc.1 candidate is unreleased. Local settings checks pass alongside the existing candidate checks. Browser, Webflow consumer, human/device and release checks remain. Lite has local examples and a guide, but no finished public clonable.
+**Last updated:** 16 October 2026 — Codex
+**Reviewed at commit:** bc2caeb — canonical docs and local history reviewed; the saved settings-test inputs match. Separate compatibility-checkout work is identified below, not treated as part of this baseline.
+**Next action:** Commit the verified settings evidence and refreshed docs, then reconcile the seven compatibility commits and test the combined candidate. Boss now targets the canonical folder; keep SmashBurger paused until integration is checked.
+**Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## Current position — 16 October 2026
+
+- **Built:** The core native navbar, the repository transfer and the renamed source candidate. The existing released version is still v0.2.6. Local fixes cover overlapping scroll locks and rapid opening/closing. Sources: [transfer](webflow/canonical-rename-2026-10-15.md), [overlapping menus](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md), [rapid changes](webflow/rapid-menu-reversals-2026-10-16.md).
+- **Tested locally, awaiting commit:** Settings passed 168 new checks across four deliveries. The saved full candidate run passed 385/385; all 151 saved input hashes were rechecked before this docs update and matched. No settings defect required a runtime change. Sources: [configuration evidence](webflow/native-settings-deliveries-2026-10-16.md) and the saved recovery logs described in the entry below. These are simulated checks, not browser or linked-consumer proof.
+- **Built separately, awaiting integration:** Migration instructions, native behaviour after removing enhancement, safe closing focus and Escape ownership were completed in the retained old checkout. Those commits are absent from this canonical baseline. Their recorded tests do not prove a combined candidate. See the checkout handoff below.
+- **Still to verify:** Current-candidate rendering, responsive geometry, scrolling, real keyboard/touch, reduced motion/custom animation, physical-display icon checks and screen readers, including Windows NVDA. Earlier live fixture checks remain useful historical evidence; they predate later repairs. Sources: [fresh staging fixture](webflow/new-smashburger-test-2026-10-15.md); ROADMAP R-037, R-115, R-155 and R-244.
+- **Still to deliver:** Approved Library sharing and clean consumer installation/update/rollback; a new semantic release with verified CDN loading/fallback; the editable Lite Webflow component, blank-project clone checks and public clonable. Local Lite examples, workbench references and the accepted safe-editing guide are preparation, not a finished clonable. Sources: ROADMAP R-125–R-126 and R-177–R-186; [Lite checks](webflow/lite-examples-runtime-2026-10-16.md).
+- **Deferred:** Designer Extension / Make local until Lite works; mega-menu and commercial/backend choices remain separate (D-014/D-015).
+
+### Checkout handoff
+
+The canonical working folder is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, on main at `bc2caeb`. This chat runs there and its origin points to `madewithpixels/Smashburger-Webflow-Navbar`. The `smashburger` entry in `~/.config/boss/runner.json` now points here after the explicit setup selection. Setup and doctor both confirm this path; doctor confirms the night shift is off; it does not display a paused flag for SmashBurger. Claude’s uncommitted Boss 0.10 repair preserves explicit choices. Source: authorised setup/doctor and local configuration readback on 16 October 2026.
+
+The retained checkout is on main at `e4a8f8d` and does not contain `bc2caeb`; these histories need reconciliation rather than a blind copy or fast-forward assumption. Its separate work includes migration-guide commit `a59f455`, native-removal repair `7c6abdd` and evidence `8efb6e8`, closing-focus repair `1886f86` and evidence `ea4d09b`, and Escape repair `f6c9d58` and evidence `e4a8f8d`. Its STATUS and settings-recovery handoff are already uncommitted. Sources: that checkout's Git history, STATUS and `webflow/brief-74-recovery-2026-10-16.md`, inspected read-only.
+
+Preserve both working trees, all local commits and immutable release files. Fix the Boss night-shift routing before dispatching more work. Boss MCP commits and doc sync use their own session folder, independently of runner.json; verify that folder before committing canonical work. Then review and integrate the separate changes with the canonical rapid-reversal and scroll-lock repairs, refresh the candidate and run the combined checks. This documentation session does not merge code, change routing or claim integration is complete. Old dated entries below retain their historical naming, access and workspace statements; this current position supersedes those statements.
+
+## 16 October 2026 — Canonical routing restored and settings close-out saved — Codex
+
+**Changed (R-121, R-122, R-128, R-155):** Ran the explicit setup selection authorised by Michael, confirmed canonical routing with doctor, and prepared the preserved settings verification and refreshed docs for a local commit. The night shift is off; this session does not start it or change project pause settings. Claude’s uncommitted Boss repair and the old checkout are unchanged.
+
+**Outputs:** Settings test/evidence files, the four refreshed project docs and the canonical runner mapping. Setup output selects the new folder; doctor reports Boss 0.10, the loaded job and the new SmashBurger path. Setup added the canonical pre-push guard; existing guards were left in place.
+
+**Checked how:** Saved settings logs record 385/385 candidate passes, including 168 settings checks. All 147 non-document inputs still match the saved manifest; only the four intentionally refreshed docs differ. Existing input test/evidence bytes are unchanged. Both setup and doctor exited successfully; doctor confirms the night shift is off and does not show a project pause flag. Snapshot comparisons confirm all 137 old-checkout and 370 Boss repository file hashes, HEADs and working-tree status are unchanged. `git diff --check` passes. No new runtime suite is needed before saving this unchanged tested baseline.
+
+**Still open:** Reconcile the seven commits from briefs #75–#78 with the canonical rapid-reversal/scroll-lock repairs and verify the combined candidate. Browser, human/device, Webflow/consumer and release checks remain separate.
+
+**Needs Michael:** Existing preview, Library-sharing, human/device and final-release steps only. The canonical write-access/routing recovery blocker is resolved in this session. Acceptance is unchanged.
+
+**Next useful action / Handoff:** Commit only the six preserved canonical files, then integrate the separate work using the old checkout read-only. Preserve the full test-discovery gate and regenerate candidate outputs from the combined source. Keep SmashBurger paused; no push, tag, release or Webflow operation is authorised here.
+
+## 16 October 2026 — Why night-shift routing reverted — Codex
+
+**Changed (R-128):** Diagnosed the routing regression and corrected the earlier overbroad commit warning. No runner code, configuration, process or Git history changed.
+
+**Outputs / cause:** Boss setup scans the project root for registered repo keys. Both SmashBurger checkouts report `boss.repo=smashburger`. `found[info.name] = p` silently replaces an earlier match; `cfg.repos = { ...cfg.repos, ...found }` then replaces the configured destination. A read-only reproduction using Node's actual directory scan order visits the canonical folder first and the old folder second, and selects the old folder even when the input mapping is canonical. Source: `/Users/michaelauty/Work on MacStudio/boss/agents/boss-mcp/boss-runner.mjs`, lines 1574–1583.
+
+**Checked how:** Runner configuration was modified at 10:47:21 BST on 16 October. The runner log records SIGTERM at 10:47:21 and version 0.8 restarting at 10:47:26. Claude's Boss session at 10:39:29 BST recommended running `boss-runner.mjs setup` if a restart was needed. Together these strongly indicate setup caused the overwrite; the exact command execution/operator was not recorded in the evidence inspected. The duplicate-selection behaviour itself is reproduced, not inferred. Earlier routing was verified canonical on 15 October; retained rollout evidence is historical, not current state.
+
+**Correction:** Night-shift jobs read runner.json. MCP `runTool()` instead calls `repoInfo()` on its own process working directory (boss-mcp.mjs, lines 515–516); commits and sync do not consult runner.json. This chat's Boss sync reports canonical baseline `bc2caeb`. The earlier claim that the runner config by itself prevents canonical MCP commits is withdrawn. Verify the tool's actual session folder rather than treating the night-shift map as its commit target.
+
+**Still open / Next useful action:** Fix setup to preserve a valid explicit mapping and report duplicate repo keys instead of silently choosing one. Restore `smashburger` to the canonical folder and reload the runner when idle; its daemon reads configuration at startup. Keep both folders and their histories. Separately reconcile the local fixes. No configuration repair or code integration is claimed here.
+
+**Needs Michael:** No product choice. Repair implementation and runner reload remain separate from this read-only investigation and the existing release/Library gates.
+
+**Handoff:** Read this diagnosis before the older routing warnings. The docs remain saved and uncommitted alongside the preserved settings work. Run no setup command as a mere restart until duplicate discovery is repaired. `git diff --check` passes; no runtime/browser/Webflow tests were needed for this read-only reproduction.
+
+## 16 October 2026 — Project records reconciled with both checkouts — Codex
+
+**Changed (R-121, R-125, R-126, R-128, R-155, R-165, R-181, R-182):** Updated the current summary and launch sequence, removed stale naming blockers from current roadmap guidance, corrected the infrastructure prototype's acceptance wording, and identified the checkout/routing mismatch. Added current-reading notes to settled decisions without rewriting their original text.
+
+**Outputs:** SCOPE.md, ROADMAP.md, DECISIONS.md and STATUS.md. Existing settings tests, their evidence record and their three ROADMAP additions are preserved. All changes remain uncommitted. The initial assumption that runner.json also controls this chat’s MCP commit target was too broad; see the routing diagnosis below. No unrelated work is included in a commit.
+
+**Checked how:**
+
+- Read the four docs, Boss inbox, runner log/configuration and both local histories/working-tree states. Canonical `60960a3..bc2caeb` contains only the already recorded reversal evidence commit.
+- Rechecked all 151 saved settings-test input hashes before editing docs: zero differences. The three pending-file hashes also match the recovery record.
+- Read `/private/tmp/smashburger-brief74-000b_jh4/candidate-tests.log`: 385 passes, zero failures/cancellations/skips/expected failures. The saved reproducibility log passes. These are retained test results, not a new execution.
+- Checked the documentation diff, local link targets, stable roadmap/decision IDs and unchanged State/Evidence/Acceptance fields. Verified that existing settings additions and original settled-decision text are retained.
+- Not checked: a new runtime test run, combined compatibility/canonical candidate, browser rendering/input, Webflow Canvas/Preview, linked consumers, CDN loading, human/device behaviour or publication.
+
+**Still open:** Correct the Boss binding and commit canonical work; reconcile the separate compatibility fixes; complete browser, Library consumer, release and Lite clone-flow checks. Brief #74's saved verification is complete, but its final local commit remains pending. Existing technical and human acceptance gates remain.
+
+**Needs Michael:** Existing local-preview, Library-sharing, human/device and final-release steps only. The former canonical write-access limitation does not apply to this chat; the runner's older checkout binding is a separate setup gap. Naming is settled.
+
+**Next useful action:** Resolve the checkout binding and review both histories, preserving all uncommitted work. Integrate the separate local fixes and verify the combined candidate before any Webflow update or release.
+
+**Handoff:** Next canonical session: start with this current position and the preserved settings evidence. Confirm the MCP session folder before committing; the runner mapping alone does not establish that tool’s target. Do not copy the old runtime over the canonical version or treat either checkout's test count as combined proof. Keep v0.2.6, existing Library pins and Acceptance unchanged. This entry supersedes earlier workspace/naming/access summaries without deleting their history.
 
 ## 16 October 2026 — Rapid menu changes stop late events and focus moves — Codex (night shift)
 

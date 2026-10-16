@@ -5,6 +5,14 @@ source presents a settled choice, not agent acceptance of implementation. Unknow
 original dates are explicit. Michael’s 14 October answers are applied below;
 remaining Proposed choices are recorded here without another boss question.
 
+## Current reading — 16 October 2026
+
+SmashBurger, the `sb-nav` structural names and the canonical repository/package/path are settled (D-012/D-013). Their original questions, proposal text and follow-ups below are retained as decision history; they are not current blockers. The class migration exists as an unreleased local candidate (D-017), and both Library review candidates are prepared (D-018). Library sharing, consumer verification and release approval remain open.
+
+Lite's agreed scope is unchanged (D-011). Local examples and workbench references are prepared; the native Webflow component and public clonable are unfinished. Designer Extension / Make local waits until Lite works (D-014); mega-menu and commercial/backend choices remain separate (D-015). The infrastructure snapshot remains an accepted prototype requiring manual upkeep (D-016; Michael accepted R-165 on 15 October 2026).
+
+The canonical checkout and the retained old checkout now contain separate local work, and Boss currently routes to the old folder. Correcting that binding and reconciling both histories is setup/maintenance work, not an undecided product name or a change to these decisions. See [STATUS current position and handoff](STATUS.md#current-position--16-october-2026), [candidate boundary](webflow/canonical-rename-2026-10-15.md) and [Lite preparation](webflow/lite-examples-runtime-2026-10-16.md). No new decision or Acceptance is recorded by this refresh.
+
 ## D-001 - Native, CSS-first progressive enhancement
 **Status:** Accepted
 **Date:** Not recorded in the source; extracted 14 October 2026
@@ -87,7 +95,7 @@ Lite contains a local native component, plain/styled examples, workbench, safe-e
 ## D-012 - Exact structural sb-nav class mapping
 **Status:** Accepted
 **Qualifier:** settled by Michael in boss, 15 October 2026
-**For Michael:** Should the visible class names use “sb-nav” and its role names? I recommend keeping that clear pattern; choosing it lets the migration start, while another name changes the class names designers see.
+**Original question — resolved 15 October 2026:** Should the visible class names use “sb-nav” and its role names? I recommend keeping that clear pattern; choosing it lets the migration start, while another name changes the class names designers see.
 **Date:** 14 October 2026 specification
 The proposed mapping uses sb-nav for the root and sb-nav-{role} for children, replacing mwp-css-nav_ and converting suffix underscores to hyphens. The mapping remains Proposed while Michael decides the product name (Q-02/Q-03, 14 October 2026); do not begin the class migration.
 **Source:** webflow/class-namespace-migration-audit.md §Chosen class mapping; git c808ca4, 5d720b1; R-121–R-124.
@@ -100,7 +108,7 @@ when the new canonical checkout is available.
 ## D-013 - Canonical repository/package and replacement local path
 **Status:** Accepted
 **Qualifier:** settled by Michael in boss, 15 October 2026 — *"'/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar'"*
-**For Michael:** What should the main repository and package be called, and where should the local folder live? I recommend keeping the SmashBurger name and choosing a MacStudio path; this sets where you and collaborators find the work, while another choice changes those names and location.
+**Original question — resolved 15 October 2026:** What should the main repository and package be called, and where should the local folder live? I recommend keeping the SmashBurger name and choosing a MacStudio path; this sets where you and collaborators find the work, while another choice changes those names and location.
 **Date:** Not recorded in the source; extracted 14 October 2026
 The earlier proposal names madewithpixels/SmashBurger-Webflow-Navbar as the repository and smashburger-webflow-navbar package, retaining the old repository for CDN compatibility and renaming the local folder last. R-128 still names Work on Macbook; a MacStudio replacement target and final identity remain unresolved, Q-03. Michael is still deciding whether to rename the product; nothing is deployed on a live domain yet, so retaining the old repository for CDN compatibility matters less. This is context for the decision, not permission to remove it (Michael, 14 October 2026, this session).
 **Source:** todo §SmashBurger repository and local-folder rename (R-119–R-128); namespace audit §Build order and release boundary; current local cwd.

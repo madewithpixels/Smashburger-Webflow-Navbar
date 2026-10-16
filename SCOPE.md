@@ -55,7 +55,7 @@ CDN distribution; todo §§1–10, 13.
 The accepted Lite boundary is a native local component with plain and styled
 examples, a workbench, a safe-editing guide and one pinned CDN loader. No Library
 install, app dependency, CMS or mega-menu. Source: Michael, Q-01, 14 October 2026;
-D-011; R-177–R-186. The clonable is not built or published.
+D-011; R-177–R-186. The native Webflow clonable is not built or published. Local plain/styled HTML examples and workbench references now exist and have simulated runtime checks; they do not complete the native component or clone flow. Source: [Lite runtime evidence](webflow/lite-examples-runtime-2026-10-16.md), R-181/R-182.
 
 The Designer Extension / Make local commitment is deferred until Lite works.
 Mega-menu stays separate from the basic navbar; premium pricing, licensing and
@@ -99,6 +99,12 @@ The source class migration is an unreleased `0.3.0-rc.1` candidate. Michael sepa
 Source: Michael’s completion brief in this chat, 15 October 2026; [transfer evidence](webflow/canonical-rename-2026-10-15.md); R-119–R-128.
 
 **15 October 2026 — Library migration preparation:** isolated copies of both real Library editions now use sb-nav classes while preserving their properties, assets and five variants. Source readback and self-contained Preview are verified; the CDN exact-commit pin and runtime-script-omission fallback are locally verified. This does not complete Library installation/update linkage, the separate one-Base Lite direction, a released version or Michael's Acceptance. See [the candidate and sharing record](webflow/library-sb-nav-candidates-2026-10-15.md); D-018, R-121, R-125–R-126.
+
+## Current delivery position — 16 October 2026
+
+Naming and the canonical destination are settled. The core navbar and renamed candidate are built locally, with later settings verification saved but uncommitted. Current browser, consumer installation/update/rollback, release and Lite clone-flow checks remain open. Sources: [STATUS current position](STATUS.md#current-position--16-october-2026), [settings evidence](webflow/native-settings-deliveries-2026-10-16.md), ROADMAP R-115, R-121, R-125–R-126 and R-177–R-186.
+
+The current chat uses the canonical folder, but Boss runner configuration still points `smashburger` to the retained old checkout. That checkout holds separate later migration-guide, native-removal, closing-focus and Escape commits not integrated here. This is a maintenance/setup gap, not a naming or scope decision. Preserve both histories and reconcile them before claiming that one candidate contains all repairs. Source: [STATUS checkout handoff](STATUS.md#checkout-handoff), local readback on 16 October 2026.
 
 ## Deferred decisions (not blocking the docs update)
 
