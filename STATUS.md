@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** feb3488 — checked the current candidate handoff, Chrome access and refreshed read-only Webflow metadata against this baseline.
+**Reviewed at commit:** cf7d67b — checked the current candidate handoff, fresh disposable-copy rebuild and release-file audit against this baseline.
 **Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 16 October 2026 — Brief #89 release preflight — Codex (night shift)
+
+**Changed (R-121, R-125, R-155):** Added a local release preflight for the combined candidate. It is reproducible and the protected v0.2.6 files still match their saved pins. Browser, consumer, CDN and release approval gates remain open; Acceptance is pending.
+
+**Outputs:** [Combined candidate release preflight](webflow/release-preflight-2026-10-16.md). Candidate source/build commit: `9211a9f5871b9de30a613b0bf7d5118035858d86`.
+
+**Checked how:** In a disposable local clone at the named source commit, `npm run check:dist` rebuilt the candidate with no file differences. Audited the 19-file list, version text, both proposed loader paths and integrity values, Embed character limits, and all 17 protected v0.2.6 hashes. `npm run check:namespace` passed and confirmed the 17 historical files remain byte-identical. No release output, tag, remote or Webflow content changed.
+
+**Still open:** Not checked: browser rendering of the exact combined candidate, clean linked consumer, current CDN loading/fallback, and human/device behaviour. The New Smashburger Test site is not readable in the existing Webflow connection. These checks do not prove release availability.
+
+**Needs Michael:** Approve the exact five-resource Library share; approve a named staging/test consumer and backup before its update; approve any staging publication separately; after review, approve the version tag and CDN release, then any final Webflow update/publication. Review the remaining evidence and record Acceptance.
+
+**Next useful action / Handoff:** Once local preview and New Smashburger Test read access are available, verify the exact candidate in Chrome and the clean consumer. Keep sharing, release, publication and Acceptance pending until their separate approvals.
 
 ## 16 October 2026 — Brief #88 current readback — Codex (night shift)
 
