@@ -1,9 +1,44 @@
 # SmashBurger — Status
-**Stage:** The unreleased 0.3.0-rc.1 candidate passes local multiple-menu teardown, resize and document-lock checks. No new runtime fix was needed. Its repaired older Library verification pin still predates the overlay lock fix. v0.2.6 remains unchanged. Library sharing, rendered review, consumer linkage/rollback and human/device checks remain open.
+**Stage:** The unreleased 0.3.0-rc.1 candidate passes the offline class migration/rollback rehearsal and existing local checks. Authored content survives and the saved fixture restores exactly. Its older Library verification pin still predates the overlay lock fix. v0.2.6 remains unchanged. Cloned-Webflow upgrade/rollback, Library sharing, rendered review and human/device checks remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 17a2058 — checked the multiple-menu lifecycle tests, complete candidate suite and protected historical hashes; this entry adds the evidence and handoff.
-**Next action:** Review the local lifecycle evidence and continue the separately authorised local briefs. Rendered candidate review resumes only with browser authority; Library sharing remains separately gated.
+**Reviewed at commit:** 358e157 — checked the offline rehearsal, candidate suite and protected historical hashes; this entry adds evidence and the handoff.
+**Next action:** Review the local migration/rollback record and continue the separately authorised local briefs. Cloned-Webflow upgrade/rollback and Library sharing remain separately gated.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Offline class migration and exact rollback — Codex (night shift)
+
+**Changed (R-115, R-121, R-155):**
+
+- Added a repeatable local rehearsal that preserves client content while switching legacy classes and matching delivery files to the candidate and back.
+- Saved the fixture before migration and checked that rollback restores its complete parsed structure exactly.
+- Included extra classes, links, accessible names, image references, custom settings and deliberately reordered native content.
+- Kept all migration helpers inside test fixtures. No runtime behaviour, released files, versions, dependencies or Acceptance changed.
+- The cloned-Webflow upgrade/rollback item remains planned (R-115). This is local preparation only.
+
+**Outputs:** Local test commit `358e157`; [executable tests](tests/migration-rollback.test.js); [fixture helpers](tests/fixtures/migration-rehearsal.mjs); inclusion in the candidate command; [steps, evidence and limits](webflow/offline-migration-rollback-2026-10-16.md); local preparation notes in ROADMAP.
+
+**Checked how:**
+
+- `npm run test:candidate` passed 87/87, with no skips or expected failures. All six new rehearsal tests passed.
+- Normal files, minified files and the self-contained Embed each passed original legacy checks and two migration/rollback cycles. The checks used 15 fresh simulated pages, without network or browser access.
+- Each phase checked opening, closing, two-stage Escape, first-link focus, trigger focus return and the ARIA/inert state that controls accessibility.
+- All 37 explicit mapping entries were covered. Unknown lookalikes and unrelated authored classes survived.
+- Deliberate content, order, destination, name, image, setting and unrelated-class damage was detected. A mixed historical/candidate delivery pair was rejected.
+- All 17 protected historical hashes matched. Explicit diffs confirmed runtime source, generated candidate output, released files, package/version and dependencies were unchanged.
+- New-file syntax checks, `npm run check`, record link checks and `git diff --check` passed.
+- Initial main was clean at `d4fed86`. Its only commit since the previous reviewed baseline recorded evidence already described in STATUS. The boss inbox showed this brief taken and no conflicting agent work or new decision needed.
+- Not checked: browser rendering, real keyboard activation, assistive technology, image loading, real CDN requests/integrity, Webflow class/style records, bindings/assets, Canvas/Preview, linked Library update or cloned-site upgrade/rollback.
+- Not checked: the ordinary `npm test` gate. Its known historical overlap failures remain the separate brief #70.
+
+**Still open:** Nothing remains in brief #69. The cloned-Webflow semantic-version upgrade/rollback remains planned, with live checks outstanding (R-115). Rendered review, Library sharing/consumer checks, human/device and final release gates remain open.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser, Library sharing, human/device and final release approvals remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Continue the separately authorised local briefs. Use this rehearsal as preparation for a later backed-up cloned-Webflow upgrade/rollback once its release and site authority exist.
+
+**Handoff:** On main, run `node --test tests/migration-rollback.test.js` to read existing artifacts only, or `npm run test:candidate` to build the isolated candidate and run the wider checks. Runtime checks use fresh simulated pages to represent a reload; exact restoration applies to the saved parsed author fixture, not a live runtime's destroy lifecycle or Webflow records. Keep helpers fixture-only. Preserve released files, the older Library pin, all Acceptance fields and the planned state of R-115. No browser, Webflow, remote or publication work occurred.
 
 ## 16 October 2026 — Multiple-menu teardown and resize checks — Codex (night shift)
 
