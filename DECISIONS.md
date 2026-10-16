@@ -11,7 +11,7 @@ SmashBurger, the `sb-nav` structural names and the canonical repository/package/
 
 Lite's agreed scope is unchanged (D-011). Local examples and workbench references are prepared; the native Webflow component and public clonable are unfinished. Designer Extension / Make local waits until Lite works (D-014); mega-menu and commercial/backend choices remain separate (D-015). The infrastructure snapshot remains an accepted prototype requiring manual upkeep (D-016; Michael accepted R-165 on 15 October 2026).
 
-Boss routing is restored to the canonical checkout, and the seven old-checkout commits are reconciled with its newer runtime fixes. The combined candidate passes 685/685 local checks. Original history and the old working tree are preserved. This setup/maintenance work changes none of these decisions; see [reconciliation evidence](webflow/canonical-reconciliation-2026-10-16.md). See [STATUS current position and handoff](STATUS.md#current-position--16-october-2026), [candidate boundary](webflow/canonical-rename-2026-10-15.md) and [Lite preparation](webflow/lite-examples-runtime-2026-10-16.md). No new decision or Acceptance is recorded by this refresh.
+Boss routing is restored to the canonical checkout, and the seven old-checkout commits are reconciled with its newer runtime fixes. The combined candidate passes 685/685 local checks. The original pre-cleanup state is preserved in a verified recovery set; the old working tree is now restored to its remote baseline and removed from this Codex project under Michael’s later instruction (D-019). See [reconciliation evidence](webflow/canonical-reconciliation-2026-10-16.md) and [cleanup evidence](webflow/old-checkout-cleanup-2026-10-16.md). See [STATUS current position and handoff](STATUS.md#current-position--16-october-2026), [candidate boundary](webflow/canonical-rename-2026-10-15.md) and [Lite preparation](webflow/lite-examples-runtime-2026-10-16.md). No new decision or Acceptance is recorded by this refresh.
 
 ## D-001 - Native, CSS-first progressive enhancement
 **Status:** Accepted
@@ -163,3 +163,18 @@ Duplicate the two actual Library editions into explicitly named 0.3.0-rc.1 revie
 **Rationale:** A class-only rehearsal should not silently redesign the original Library properties/variants or publish a nonexistent release tag. An immutable existing-commit pin enables CDN verification without a new release operation.
 **Source:** Michael's continuation and full-focus instructions, 15 October 2026; D-012/D-017; R-121/R-122/R-126; [candidate checks and limits](webflow/library-sb-nav-candidates-2026-10-15.md); `scripts/build-webflow-library-candidates.mjs`.
 **Consequence:** This is technical candidate preparation, not Michael's Acceptance or sharing authority. The actual five-resource sharing review, clean consumer linkage/update/unlink/rollback, Webflow fallback, stable release and human/device checks remain gated. The separate one-Base Lite/unlink direction remains unchanged.
+
+## D-019 - Freeze the old local checkout at its remote baseline
+**Status:** Accepted
+**Date:** 16 October 2026 — Michael in this chat
+Michael asked to remove unwanted local development from the old checkout, restore
+it to where it should have been left and remove it from the Codex project's
+folders. This authorises the bounded local cleanup after verified backup; it
+supersedes the earlier keep-untouched instruction for that cleanup only.
+**Source:** Michael's cleanup request and subsequent confirmation that he removed
+the folder from Codex project settings; [execution and recovery evidence](webflow/old-checkout-cleanup-2026-10-16.md).
+**Consequence:** The old local main/worktree is a clean compatibility copy at
+`0864f82`, matching its live-verified GitHub main. Its complete pre-cleanup history
+and working files are backed up. Development uses the canonical folder. Release
+tags, the prototype worktree, the old GitHub repository and CDN pins remain intact;
+remote archival/retirement stays gated under R-127. No roadmap Acceptance follows.

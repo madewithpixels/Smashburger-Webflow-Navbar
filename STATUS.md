@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** 0c87623 — committed combined source/candidate and its 685/685 verification; final readback and handoff recorded below.
+**Reviewed at commit:** 71a9a87 — canonical source/deliveries unchanged; the dated entry records old-checkout cleanup, verified recovery and Michael’s project-settings confirmation.
 **Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
 
@@ -18,9 +18,32 @@
 
 The canonical working folder is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, on main. The preserved baseline is `e599c09`; the tested reconciliation is committed as `0c87623`. This chat runs there and its origin points to `madewithpixels/Smashburger-Webflow-Navbar`. The `smashburger` entry in `~/.config/boss/runner.json` now points here after the explicit setup selection. Setup and doctor both confirm this path; doctor confirms the night shift is off; it does not display a paused flag for SmashBurger. Claude’s uncommitted Boss 0.10 repair preserves explicit choices. Source: authorised setup/doctor and local configuration readback on 16 October 2026.
 
-The retained checkout remains on main at `e4a8f8d` with its pre-existing uncommitted notes. Its seven implementation/evidence commits are reconciled in canonical commit `0c87623`; the original old history remains intact. Its separate work includes migration-guide commit `a59f455`, native-removal repair `7c6abdd` and evidence `8efb6e8`, closing-focus repair `1886f86` and evidence `ea4d09b`, and Escape repair `f6c9d58` and evidence `e4a8f8d`. Its STATUS and settings-recovery handoff are already uncommitted. Sources: that checkout's Git history, STATUS and `webflow/brief-74-recovery-2026-10-16.md`, inspected read-only.
+The retained checkout is now clean on main at `0864f82`, matching its live-verified GitHub baseline. Michael authorised its local restoration after verified full backup, then confirmed removal of the old folder from Codex project settings. Its earlier ten local commits and uncommitted STATUS/recovery notes are recoverable from the canonical ignored backup set. The three migration commits remain in canonical history; the seven later commits are reconciled in `0c87623`. See [cleanup and recovery evidence](webflow/old-checkout-cleanup-2026-10-16.md), D-019.
 
-The seven commits’ original hashes and reconciliation choices are recorded in [the integration evidence](webflow/canonical-reconciliation-2026-10-16.md). Generated candidates were rebuilt from combined source, and the full canonical test discovery is retained. Both the old checkout and Claude’s uncommitted Boss files passed unchanged snapshot comparisons. Boss MCP commits and doc sync use their own session folder, independently of runner.json. Old dated entries below retain their historical naming, access and workspace statements; this current position supersedes those statements.
+All original release tags, other refs and the prototype worktree remain unchanged. Boss routes to the canonical folder. The old GitHub repository and CDN pins were not modified. Earlier dated entries accurately describe the state before this subsequently authorised cleanup; this current position supersedes their keep-untouched/old-working-tree statements.
+
+## 16 October 2026 — Old compatibility checkout restored and removed from the project — Codex
+
+**Changed (R-120, R-127, R-128):** At Michael's request, restored the old local checkout to its correct pre-migration baseline after preserving its full history and files. Michael then confirmed removing the old folder from Codex project settings. Recorded D-019 and the recovery location. Current canonical runtime and Acceptance are unchanged.
+
+**Outputs:** [Cleanup evidence](webflow/old-checkout-cleanup-2026-10-16.md); complete local recovery set in `.backups/old-checkout-cleanup-2026-10-16/`; updated SCOPE, ROADMAP, DECISIONS and STATUS. Old local main is clean at `0864f82`. No remote write occurred.
+
+**Checked how:**
+
+- Live `git ls-remote` confirms old GitHub main `0864f820670f78917d0726ae24a0b930506ff03a` and unchanged v0.2.6 tag object. The extra ten commits were local, not pushed.
+- A complete 22-ref Git bundle verifies with no prerequisites. The full-folder archive includes Git metadata, ignored files and dirty notes; all 137 tracked/untracked file hashes match archive contents. Backup checksums were reverified after cleanup.
+- Old checkout has no pending files or ahead/behind count. Its tracked tree and released CSS/JS/Embeds match baseline blobs. Every ref except the intentionally restored local main matches the saved inventory; the linked prototype worktree remains unchanged.
+- Leftover old backups, candidate files and recovery note were moved into the recovery set with explicit paths. No broad clean/delete command ran.
+- Michael's chat confirmation is the evidence for removal from Codex project settings. Computer Use refused access to the Codex app, so this was not independently observed through UI automation.
+- Canonical source, candidate output, dependencies and pins remain at tested `71a9a87`; only documentation changes. Boss still maps to the canonical folder. Local links and `git diff --check` pass.
+- Not checked: a new runtime test run, fresh CDN requests, browser/Webflow/human/device behaviour or release publication. The earlier 685/685 combined candidate result remains the relevant local runtime evidence.
+
+**Still open:** Existing browser, Library/consumer, human/device, release and Lite clone-flow checks. R-127's eventual remote archive remains gated. Nothing remains in this bounded old-folder cleanup.
+
+**Needs Michael:** No further cleanup step. Existing preview, Library-sharing, human/device and release steps remain separate.
+
+**Next useful action / Handoff:** Develop only in the canonical folder. Treat the clean old checkout as frozen compatibility evidence. Use the recovery archive/bundle if an old uncommitted note or original commit is needed; do not restore its older runtime over the canonical candidate. No GitHub retirement or tag/CDN change is authorised by this local cleanup.
+
 
 ## 16 October 2026 — Final committed readback and handoff — Codex
 

@@ -1113,6 +1113,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 
 
+**Local cleanup — 16 October 2026, Michael authorised:** The old checkout was fully backed up, then restored to its live-verified remote baseline `0864f82`; it is clean and Michael confirmed removal from Codex project settings. No old GitHub repository archive, release-tag change or CDN operation occurred. This does not complete R-127's remote-archival gate. [Evidence and recovery](webflow/old-checkout-cleanup-2026-10-16.md); D-019.
+
 #### R-128 · Rename the local folder last to `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, update the Git remote and reopen Codex from the new workspace path.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 176 (now 177); baseline `c808ca4`.
@@ -1124,6 +1126,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 **Resolution — 16 October 2026:** Authorised setup selected the canonical folder and doctor confirmed it. The seven compatibility commits are reconciled locally with 685 passing candidate checks. This completes the local-folder/workspace/routing step; retirement of the old folder/repository remains separately gated under R-127. The night shift is off; no pause setting or Acceptance changed. [Evidence](webflow/canonical-reconciliation-2026-10-16.md).
+
+**Project-folder cleanup — 16 October 2026:** Michael confirmed that the old folder was removed from Codex project settings after its backed-up restoration to `0864f82`. The canonical path remains the Boss runner destination. [Cleanup evidence](webflow/old-checkout-cleanup-2026-10-16.md). Acceptance is unchanged.
 
 
 ## 10. Migration hardening and public clonable
