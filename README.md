@@ -195,6 +195,8 @@ Open [demo/index.html](demo/index.html) directly or through a local web server a
 
 The candidate includes the earlier unreleased stylesheet-failure and breakpoint/focus fixes. On 15 October 2026, `npm run test:candidate` passed all 53 delivery, namespace and demo checks with no pending tests. `npm test` passed 75 checks with 15 known legacy-delivery checks marked TODO; those defects remain in the immutable v0.2.6 outputs. These are local automated results. A fresh native Webflow fixture has also passed [staging checks](webflow/new-smashburger-test-2026-10-15.md); existing Library upgrades, human/device accessibility and clone upgrade/rollback remain open. See [the candidate record](webflow/canonical-rename-2026-10-15.md).
 
+Both test commands now discover the complete test set, including `tests/navbar-light.test.js`, and run files one at a time to avoid contention against existing timeouts. Ordinary `npm test` executes known immutable v0.2.6 limitations as labelled TODOs. The same assertions remain mandatory for source and fresh candidate deliveries; candidate runs must have no TODOs. See [the 16 October test-gate repair and results](webflow/test-gate-repair-2026-10-16.md).
+
 ## Optional CDN distribution
 
 The CDN route uses exact semantic-version GitHub tags through jsDelivr. The `v0.2.6` production files are:

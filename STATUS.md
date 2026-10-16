@@ -1,9 +1,42 @@
 # SmashBurger — Status
-**Stage:** The unreleased 0.3.0-rc.1 candidate passes the offline class migration/rollback rehearsal and existing local checks. Authored content survives and the saved fixture restores exactly. Its older Library verification pin still predates the overlay lock fix. v0.2.6 remains unchanged. Cloned-Webflow upgrade/rollback, Library sharing, rendered review and human/device checks remain open.
+**Stage:** The local test gate now reports historical v0.2.6 limitations explicitly. All 124 source/fresh-candidate checks pass without expected failures. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 358e157 — checked the offline rehearsal, candidate suite and protected historical hashes; this entry adds evidence and the handoff.
-**Next action:** Review the local migration/rollback record and continue the separately authorised local briefs. Cloned-Webflow upgrade/rollback and Library sharing remain separately gated.
+**Reviewed at commit:** 53cb0d2 — checked the repaired gates, complete candidate suite and protected historical hashes; this entry records the results.
+**Next action:** Review the local test-gate repair and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Test gate repaired without changing v0.2.6 — Codex (night shift)
+
+**Changed (R-125, R-155):**
+
+- The ordinary test command now succeeds while explicitly reporting confirmed limitations in the immutable release.
+- Marked only the three confirmed historical overlapping-menu failures as expected failures. The assertions still run and remain mandatory for source and freshly built candidates.
+- Included all maintained tests in the candidate command. It previously omitted 37 source checks in `tests/navbar-light.test.js`.
+- Both commands run test files one at a time. This avoids competition that twice exceeded an existing build-failure timeout; no timeout or assertion was relaxed.
+- No runtime, proposed scroll-lock scenario, generated delivery, loader integrity, release version, dependency or Acceptance changed.
+
+**Outputs:** Local repair commit `53cb0d2`; [reproduction, commands and limits](webflow/test-gate-repair-2026-10-16.md); [candidate runner](scripts/check-built-runtime.mjs); [overlap regression](tests/runtime-delivery.test.js); README and roadmap evidence.
+
+**Checked how:**
+
+- Before labelling, an isolated overlap comparison passed source and failed all three historical delivery forms at the same premature-unlock assertion. Four tests ran: one pass and three failures, with no TODOs or skips.
+- `npm test` exits 0: 124 tests, 97 passes, zero unmarked failures, zero skips and 27 executed expected failures. These are 15 existing stylesheet/breakpoint/focus limitations, nine existing lock-lifecycle limitations and the three confirmed overlap failures.
+- `npm run test:candidate` exits 0 after a fresh build: 124/124 passes, zero skips and zero expected failures. All nine test files run, including the 37 previously omitted maintained-source checks.
+- The same overlap assertions pass for source, candidate distribution, minified output and self-contained Embed.
+- All 17 protected historical SHA-256 hashes match. Explicit diffs also confirm source, generated candidate files, released deliveries, compatibility records, dependency lockfile and archived demos are unchanged.
+- `npm run check`, syntax checks for the edited test and runner, and `git diff --check` passed.
+- Initial main was clean at `78d72f2`. Its only commit after the prior reviewed baseline recorded evidence already described in STATUS. The boss inbox showed brief #70 taken and no conflicting agent work or new decision needed.
+- Not checked: browser rendering or actual scrolling, native keyboard/touch, assistive technology, network/CDN loading, Webflow Canvas/Preview, linked consumer upgrade/rollback and human/device checks.
+
+**Still open:** Nothing remains in brief #70. Historical defects remain in immutable v0.2.6. Existing rendered, Webflow/consumer, human/device and release gates stay open; this local repair does not complete release verification.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser access, Library sharing, human/device checks and final release approval remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Review the two local commits and continue the separately authorised local briefs. No push, tag or publication occurred.
+
+**Handoff:** On main, use `npm test` for source plus historical delivery evidence and `npm run test:candidate` for a fresh build with every discovered regression mandatory. The three new TODO labels apply only to historical deliveries when neither candidate nor fresh-build mode is set. Preserve release bytes, pins, existing scenario scope and Acceptance. Read the linked record for the initial timeout runs and the clean isolated reproduction. No browser, Webflow or remote access occurred.
 
 ## 16 October 2026 — Offline class migration and exact rollback — Codex (night shift)
 
