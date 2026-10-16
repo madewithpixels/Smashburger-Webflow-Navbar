@@ -1,9 +1,45 @@
 # SmashBurger — Status
-**Stage:** The local test gate now reports historical v0.2.6 limitations explicitly. All 124 source/fresh-candidate checks pass without expected failures. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
+**Stage:** The actual Lite examples now pass local behaviour checks with their candidate runtime. All 128 source/fresh-candidate checks pass without expected failures. v0.2.6 remains unchanged. The older Library verification pin still predates the overlay lock fix. Rendered, Webflow/consumer, human/device and release gates remain open.
 **Last updated:** 16 October 2026 — Codex (night shift)
-**Reviewed at commit:** 53cb0d2 — checked the repaired gates, complete candidate suite and protected historical hashes; this entry records the results.
-**Next action:** Review the local test-gate repair and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
+**Reviewed at commit:** 9200c0e — checked the actual Lite examples, complete candidate suite and protected historical hashes; this entry records the results.
+**Next action:** Review the local Lite checks and continue the separately authorised local briefs. Existing browser, Library sharing and release gates remain separate.
 **Needs Michael:** Enable local browser preview to unlock rendered checks. Approve the exact five-resource Library update before sharing. Human/device sign-off and final release approval remain separate gates.
+
+## 16 October 2026 — Actual Lite examples checked with their runtime — Codex (night shift)
+
+**Changed (R-181, R-182, R-155):**
+
+- The plain and styled examples now run with their actual candidate stylesheets and browser bundle in the existing DOM simulator.
+- Added four mandatory checks for automatic discovery, panel relationships, accessible state, separate opening/closing, repeat initialisation, simulated Escape and the script-free workbench.
+- Repaired the workbench's missing closed/open link targets by adding IDs to its existing articles.
+- No redesign, runtime, generated delivery, released asset, version, dependency or Acceptance changed.
+- The examples and workbench items remain in progress. This does not create Webflow components or a clonable.
+
+**Outputs:** Local test/repair commit `9200c0e`; [executable Lite checks](tests/lite-candidate.test.js); [workbench reference repair](candidate/lite/workbench-references.html); [method, assertions and limits](webflow/lite-examples-runtime-2026-10-16.md); evidence additions in ROADMAP.
+
+**Checked how:**
+
+- `npm run test:candidate` exits 0 after a fresh build: 128/128 passes, zero failures, zero skips and zero expected failures. All six Lite tests pass through this command.
+- The initial focused run passed five of six tests and exposed the missing workbench fragment targets. The final candidate run passes after their repair.
+- Automatic startup finds both actual navbars without a manual initialisation call. Their panel IDs differ, and each trigger controls its own panel.
+- Both public opening/closing orders preserve the other menu's state. Repeated initialisation while closed, while both are open and after closure preserves IDs and APIs without duplicate completion events.
+- With either menu open on its own, simulated Escape closes it and returns focus from its first link to its trigger. Closed ARIA/inert state agrees with native Details state.
+- The actual workbench loads local CSS without any script. Its native closed/open references, adjacent panels and labelled backdrop sample remain intact; every fragment link resolves.
+- The candidate guard verified all 17 protected historical SHA-256 hashes. Explicit diffs against the starting commit confirm maintained runtime, generated candidates, released files, compatibility records, package and dependencies are unchanged.
+- New-test syntax, `npm run check`, evidence-record links and `git diff --check` passed.
+- Initial main was clean at `810ef55`. Its only commit after the prior reviewed baseline recorded the test-gate evidence already described in STATUS. The boss inbox showed brief #71 taken and no conflicting agent work or new decision needed.
+- Not checked: browser rendering, native keyboard activation, actual pointer input, assistive technology, responsive geometry, Webflow Canvas/Preview, network asset loading, Library installation or clone flow.
+- Not checked: Escape with both menus open or native accessibility after destruction. These remain separate briefs #78 and #76.
+
+**Still open:** Nothing remains in brief #71. Browser, Webflow/consumer, human/device, clone-flow and release checks remain at their existing gates.
+
+**Needs Michael:** No new decision blocks this brief. Existing browser access, Library sharing, human/device checks and final release approval remain his.
+
+**Open questions (not blocking):** None added.
+
+**Next useful action:** Review the local changes and continue the separately authorised local briefs. No push, tag or publication occurred.
+
+**Handoff:** On main, use `npm run test:candidate` for a fresh build with all tests mandatory. `node --test tests/lite-candidate.test.js` reads the currently generated candidate assets without building. The new helper reads the actual page and declared assets from disk; resource fetching is disabled and automatic runtime discovery remains enabled. It uses the existing permissive CSS-support shim and no reduced-motion preference. The workbench deliberately has no runtime. Read the linked record before interpreting the evidence. Preserve protected releases, pending Acceptance on the Lite items and all browser/Webflow/clone gates. No browser, Webflow or remote access occurred.
 
 ## 16 October 2026 — Test gate repaired without changing v0.2.6 — Codex (night shift)
 
