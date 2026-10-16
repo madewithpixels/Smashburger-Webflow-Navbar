@@ -32,7 +32,7 @@ These seven original commits remain intact in the retained old checkout on main
 at `e4a8f8d`. Their hashes identify the work incorporated here; generated files
 were rebuilt from combined source rather than copied from the older branch.
 The original commit objects/history in the retained checkout are not rewritten.
-The canonical integration is a new scoped commit recording these source hashes,
+Canonical integration commit `0c87623` records these source hashes,
 not a claim that the divergent histories were fast-forwarded or cherry-picked.
 
 | Original commit | Work retained |

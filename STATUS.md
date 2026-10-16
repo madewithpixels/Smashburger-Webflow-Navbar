@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** e599c09 — preserved canonical baseline; the dated reconciliation entry records the tested working-tree changes on top of it.
+**Reviewed at commit:** 0c87623 — committed combined source/candidate and its 685/685 verification; final readback and handoff recorded below.
 **Next action:** Review the combined candidate in an authorised browser, then proceed through the approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session left the shift off and changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
 
@@ -16,17 +16,29 @@
 
 ### Checkout handoff
 
-The canonical working folder is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, on main. The preserved baseline is `e599c09`; the latest reconciliation result is recorded below. This chat runs there and its origin points to `madewithpixels/Smashburger-Webflow-Navbar`. The `smashburger` entry in `~/.config/boss/runner.json` now points here after the explicit setup selection. Setup and doctor both confirm this path; doctor confirms the night shift is off; it does not display a paused flag for SmashBurger. Claude’s uncommitted Boss 0.10 repair preserves explicit choices. Source: authorised setup/doctor and local configuration readback on 16 October 2026.
+The canonical working folder is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, on main. The preserved baseline is `e599c09`; the tested reconciliation is committed as `0c87623`. This chat runs there and its origin points to `madewithpixels/Smashburger-Webflow-Navbar`. The `smashburger` entry in `~/.config/boss/runner.json` now points here after the explicit setup selection. Setup and doctor both confirm this path; doctor confirms the night shift is off; it does not display a paused flag for SmashBurger. Claude’s uncommitted Boss 0.10 repair preserves explicit choices. Source: authorised setup/doctor and local configuration readback on 16 October 2026.
 
-The retained checkout remains on main at `e4a8f8d` with its pre-existing uncommitted notes. Its seven implementation/evidence commits have now been reconciled into the canonical working tree; the original old history remains intact. Its separate work includes migration-guide commit `a59f455`, native-removal repair `7c6abdd` and evidence `8efb6e8`, closing-focus repair `1886f86` and evidence `ea4d09b`, and Escape repair `f6c9d58` and evidence `e4a8f8d`. Its STATUS and settings-recovery handoff are already uncommitted. Sources: that checkout's Git history, STATUS and `webflow/brief-74-recovery-2026-10-16.md`, inspected read-only.
+The retained checkout remains on main at `e4a8f8d` with its pre-existing uncommitted notes. Its seven implementation/evidence commits are reconciled in canonical commit `0c87623`; the original old history remains intact. Its separate work includes migration-guide commit `a59f455`, native-removal repair `7c6abdd` and evidence `8efb6e8`, closing-focus repair `1886f86` and evidence `ea4d09b`, and Escape repair `f6c9d58` and evidence `e4a8f8d`. Its STATUS and settings-recovery handoff are already uncommitted. Sources: that checkout's Git history, STATUS and `webflow/brief-74-recovery-2026-10-16.md`, inspected read-only.
 
 The seven commits’ original hashes and reconciliation choices are recorded in [the integration evidence](webflow/canonical-reconciliation-2026-10-16.md). Generated candidates were rebuilt from combined source, and the full canonical test discovery is retained. Both the old checkout and Claude’s uncommitted Boss files passed unchanged snapshot comparisons. Boss MCP commits and doc sync use their own session folder, independently of runner.json. Old dated entries below retain their historical naming, access and workspace statements; this current position supersedes those statements.
+
+## 16 October 2026 — Final committed readback and handoff — Codex
+
+**Changed (R-121, R-128, R-155):** Recorded the verified integration commit and final handoff. Local settings/docs commit `e599c09` and integration commit `0c87623` are on canonical main. No remote operation occurred.
+
+**Outputs:** Updated reviewed baseline and commit pointers in STATUS and the reconciliation evidence.
+
+**Checked how:** Read back `0c87623`, its explicit 22-file scope and a clean canonical working tree before this documentation-only entry. The previously recorded 685/685 candidate and standard-suite results apply to its exact source/delivery bytes; no code changed after those runs. Rechecked unchanged old/Boss snapshots, canonical runner mapping and the stopped night shift. Local links and `git diff --check` pass. No repeat runtime test was needed for commit-pointer edits.
+
+**Still open / Needs Michael:** Authorised browser, human/device, Library/consumer, release and Lite clone-flow checks remain. Confirm the intended project pause in Boss before a future shift starts; this session observed the night shift off and altered no pause setting. Existing Acceptance is unchanged.
+
+**Next useful action / Handoff:** Review the combined candidate from this canonical folder. Use `npm run test:candidate`; the older verification CDN pin does not include these repairs. Keep the old folder and Claude's uncommitted Boss repair intact. No local reconciliation or settings-close-out work remains.
 
 ## 16 October 2026 — Seven compatibility commits reconciled and combined candidate checked — Codex
 
 **Changed (R-005, R-006, R-009, R-038, R-039, R-040, R-095, R-096, R-097, R-121, R-128, R-155):** Brought briefs #75–#78 into the canonical checkout while preserving its newer rapid-reversal and scroll-lock fixes. Retained all settings tests and the complete candidate test-discovery gate. Native removal, closing focus and two-menu Escape repairs are now checked together in all four local deliveries. Updated current project summaries; Acceptance is unchanged.
 
-**Outputs:** Reconciled source, three imported regression files, three original evidence records, README/migration-guide updates, freshly generated candidate outputs and [the seven-commit provenance/reconciliation record](webflow/canonical-reconciliation-2026-10-16.md). The original seven commits and the old checkout remain intact. Settings close-out was committed first as `e599c09`; brief #74 is reported done in Boss, not accepted.
+**Outputs:** Local integration commit `0c87623`: reconciled source, three imported regression files, three original evidence records, README/migration-guide updates, freshly generated candidate outputs and [the seven-commit provenance/reconciliation record](webflow/canonical-reconciliation-2026-10-16.md). The original seven commits and the old checkout remain intact. Settings close-out was committed first as `e599c09`; brief #74 is reported done in Boss, not accepted.
 
 **Checked how:**
 
