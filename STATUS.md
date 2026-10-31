@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 39647bc — final local runtime styling candidate and checks reviewed; no Webflow changes.
+**Reviewed at commit:** f8d605a — sign-off wording checked against the recorded local styling work and latest documentation; no new runtime or site checks.
 **Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
+
+## 31 October 2026 — Plain sign-off wording added — Codex (night shift)
+
+**Changed (R-269):** Added a Try line explaining that the menu should keep Michael's chosen layout, colours and spacing across Designer, Preview and the published test page. It says the test page still needs to be prepared before he can compare them. Michael confirmed in this follow-up that no other sessions are running, clearing the earlier editing conflict.
+
+**Outputs:** One Try entry directly under the existing State line. R-269 already describes a visible outcome, so its engineering checks remain supporting exit criteria within that item; no separate outcome or Covers entry was needed.
+
+**Checked how:** Read the current item and its runtime styling boundary note; reviewed the two documentation commits since the prior checked baseline. Compared the documentation diff and checked whitespace. State, Evidence and Acceptance are unchanged. No runtime tests were needed for this wording change.
+
+**Still open:** Preparing the backed-up test page and comparing Designer, Preview and the published result remain separate work. This wording adds no site evidence or sign-off.
+
+**Needs Michael:** Nothing for this documentation change.
+
+**Next useful action / Handoff:** Continue with the bounded site comparison already described in the runtime styling boundary note. Give Michael the exact page to review after that work is ready. Brief #179's wording change is complete.
 
 ## 31 October 2026 — Runtime styling fix built locally — Codex (night shift)
 

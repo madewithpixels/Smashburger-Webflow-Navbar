@@ -2326,6 +2326,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**Try:** Your chosen menu layout, colours and spacing should stay the same in Webflow Designer, Preview and the published test page. Once an agent prepares that page with this change, open the menu in each and compare them; the page is not ready for this check yet.
 **Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.
 **Owner:** agent · **Depends on:** an exact candidate and an authorised disposable Webflow consumer with a backup for Designer/Preview/published checks
 **Source:** Michael's report, Claude's supplied diagnosis and Michael's instruction to roadmap it, 24 October 2026; Git audit of `38bbf475e6b3bdfcbd0bc0d261ace0c4502c6639` (8 October), `v0.2.6:dist/navbar-light.css` and current `src/navbar-light.css`; [recorded overlay activation](webflow/madewithpixels-functional-menu-2026-10-23.md).
