@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** f8d605a — sign-off wording checked against the recorded local styling work and latest documentation; no new runtime or site checks.
+**Reviewed at commit:** 6dacdae — reviewed current R-037 source, prior icon evidence and local Git before this run.
 **Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
+
+## 31 October 2026 — Local icon matrix prepared; browser render blocked — Codex (night shift)
+
+**Changed (R-037):** Added a rerunnable visual fixture with 120 open-icon cases across both icon shapes, four line thicknesses, three project spacing overrides and five simulated pixel grids. The fixture embeds the maintained source CSS and JavaScript and checks rendered line-centre alignment when opened in a browser.
+
+**Outputs:** Added the matrix generator and generated local HTML page. Recorded the exact commands, results and limits in the [dated icon evidence note](webflow/icon-geometry-regression-2026-10-31.md), and linked it and the fixture from R-037.
+
+**Checked how:** `npm run test:icon-visual` generated all 120 cases. `npm run test:icon-geometry` passed (1 test, 0 failures). `node --check scripts/create-icon-visual-matrix.mjs` and `git diff --check` passed. Chrome headless exited with code 134 before making a screenshot. A fresh Chrome tab attempt to open the local page was rejected by the browser URL policy (`file:` protocol not allowed); the page did not load, so no rendered-case result or screenshot is claimed.
+
+**Still open:** The generated fixture's browser-rendered PASS/FAIL result remains unverified. The pixel-grid values are simulated, not browser DPR emulation. Retina display and Webflow consumer/version checks remain separate and open.
+
+**Needs Michael:** Nothing for this local implementation. The browser tool blocked the local-page check; no Webflow access or action is needed for this work.
+
+**Next useful action / Handoff:** When a permitted local browser route is available, open the generated fixture, confirm its 120-case result and save a screenshot. Then keep the Retina display and Webflow consumer/version checks as distinct follow-ups. No released asset or Webflow content was changed; no acceptance is claimed.
 
 ## 31 October 2026 — Plain sign-off wording added — Codex (night shift)
 
