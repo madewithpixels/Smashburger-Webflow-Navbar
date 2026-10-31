@@ -269,7 +269,7 @@
     translate: -50% 0;
   }
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-panel] {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-panel]) {
   box-sizing: border-box;
   max-height: calc(100dvh - var(--mwp-nav-header-height, 4.5rem));
   overflow-x: hidden;
@@ -285,8 +285,8 @@
   gap: clamp(1rem, 2vw, 2rem);
   padding: clamp(1rem, 2vw, 2rem);
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-primary],
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-links] {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-primary]),
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-links]) {
   align-items: stretch;
   display: grid;
   min-width: 0;
@@ -295,10 +295,10 @@
 [data-mwp-navbar][data-mwp-collapsed=true]:not([data-presets=false i]) [data-mwp-links] {
   gap: 0.5rem;
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-primary] {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-primary]) {
   order: 0;
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-links] > * {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-links] > *) {
   min-width: 0;
 }
 [data-mwp-navbar][data-mwp-collapsed=true]:not([data-presets=false i]) [data-mwp-links] > a,
@@ -309,7 +309,7 @@
   min-height: 2.75rem;
   padding: 0.5rem 0;
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-secondary] {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-secondary]) {
   display: grid;
   min-width: 0;
   order: 1;
@@ -319,7 +319,7 @@
   gap: 0.75rem;
   padding-top: 1rem;
 }
-[data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-secondary] > * {
+:where([data-mwp-navbar][data-mwp-collapsed=true] [data-mwp-secondary] > *) {
   display: flex;
   flex-wrap: wrap;
 }
@@ -335,7 +335,7 @@
   translate: -50% 0;
   width: 100vw;
 }
-[data-mwp-navbar][data-mwp-collapsed=true][data-layout=full-width] [data-mwp-panel] {
+:where([data-mwp-navbar][data-mwp-collapsed=true][data-layout=full-width] [data-mwp-panel]) {
   grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
   max-height: calc(100dvh - var(--mwp-nav-header-height, 4.5rem));
 }
@@ -344,7 +344,7 @@
   border-right: 0;
   box-shadow: var(--mwp-nav-panel-shadow, 0 1rem 2.5rem rgb(0 0 0 / 0.12));
 }
-[data-mwp-navbar][data-mwp-collapsed=true][data-layout=full-width] [data-mwp-links] {
+:where([data-mwp-navbar][data-mwp-collapsed=true][data-layout=full-width] [data-mwp-links]) {
   grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
 }
 [data-mwp-navbar][data-mwp-collapsed=true][data-layout=full-width]:not([data-presets=false i]) [data-mwp-secondary] {
@@ -359,7 +359,7 @@
   position: fixed;
   top: 0;
 }
-[data-mwp-navbar][data-mwp-collapsed=true]:is([data-layout=left], [data-layout=right]) [data-mwp-panel] {
+:where([data-mwp-navbar][data-mwp-collapsed=true]:is([data-layout=left], [data-layout=right]) [data-mwp-panel]) {
   align-content: start;
   grid-template-rows: auto 1fr;
   height: 100dvh;
@@ -368,7 +368,7 @@
 :where([data-mwp-navbar][data-mwp-collapsed=true]:is([data-layout=left], [data-layout=right]) [data-mwp-panel]) {
   width: min(var(--mwp-nav-panel-width), 100vw);
 }
-[data-mwp-navbar][data-mwp-collapsed=true]:is([data-layout=left], [data-layout=right]) [data-mwp-secondary] {
+:where([data-mwp-navbar][data-mwp-collapsed=true]:is([data-layout=left], [data-layout=right]) [data-mwp-secondary]) {
   align-self: end;
 }
 :where([data-mwp-navbar][data-mwp-collapsed=true][data-layout=left] [data-mwp-panel]) {
@@ -392,11 +392,10 @@
 [data-mwp-navbar][data-mwp-collapsed=true][data-layout=overlay] [data-mwp-panel] {
   transform: translateY(100%);
 }
-[data-mwp-navbar][data-mwp-collapsed=true][data-layout=overlay] [data-mwp-panel] {
-  display: grid;
+:where([data-mwp-navbar][data-mwp-collapsed=true][data-layout=overlay] [data-mwp-panel]) {
   translate: none;
 }
-[data-mwp-navbar][data-mwp-collapsed=true][data-layout=overlay] [data-mwp-panel] {
+:where([data-mwp-navbar][data-mwp-collapsed=true][data-layout=overlay] [data-mwp-panel]) {
   align-content: center;
   height: 100dvh;
   justify-items: center;

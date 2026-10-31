@@ -983,7 +983,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-112 · Visually approve the new Home and Style Guide pages in Designer/Preview, then publish them from Webflow.
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** in progress · **Evidence:** verified (local, limited to source edit and candidate generation) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 157 (now 158); baseline `c808ca4`.
 **Exit criteria:**
 
@@ -2329,7 +2329,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.
 **Owner:** agent · **Depends on:** an exact candidate and an authorised disposable Webflow consumer with a backup for Designer/Preview/published checks
 **Source:** Michael's report, Claude's supplied diagnosis and Michael's instruction to roadmap it, 24 October 2026; Git audit of `38bbf475e6b3bdfcbd0bc0d261ace0c4502c6639` (8 October), `v0.2.6:dist/navbar-light.css` and current `src/navbar-light.css`; [recorded overlay activation](webflow/madewithpixels-functional-menu-2026-10-23.md).
-**Confirmed cause:** The 8 October change added a high-specificity overlay `display: grid` rule intended to override destination Flex layouts. It shipped in v0.2.6 and remains in the current source. Enabling overlay activates it even with `data-presets="false"`; stale Grid column declarations can then affect a panel styled as Flex in the Designer. Other high-specificity alignment and sizing rules also need auditing. This diagnosis is verified from source/history; the fix and regression checks are not implemented or verified.
+**Confirmed cause:** The 8 October change added a high-specificity overlay `display: grid` rule intended to override destination Flex layouts. It shipped in v0.2.6 and remains in the immutable release. This brief removed that forced display from current source and lowered specificity on several layout defaults. The audit and regression checks are incomplete; remaining high-specificity author-owned layout/appearance properties still need conversion and a build guard.
 **Required outcome:** Authors control layout and appearance through the Designer. Runtime behaviour must not silently replace their choices. Keep this separate from R-268's duplicate-name targeting failure.
 **Exit criteria:**
 - Inventory every runtime CSS property by layout and closed/opening/open/closing state, including Canvas-open and no-script fallback. Document which properties the library controls and why; distinguish behaviour requirements from author-owned layout and appearance.
@@ -2341,4 +2341,4 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 - Preserve open/close, stagger, CTA navigation, keyboard/focus return, Escape, reduced motion, scroll containment and no-script fallback. Test upgrades from v0.2.6 as well as clean installs; do not substitute old release results for candidate checks.
 - Audit runtime selectors to keep behavioural hooks on data attributes rather than styling class names. Coordinate imported/local namespace and supported agent customisation checks with R-268; do not claim that selector changes alone remove Webflow's class-name ambiguity.
 - Assess compatibility for installs relying on forced layouts; document migration and rollback, choose the appropriate breaking version before release approval, and retain immutable v0.2.6 assets. No consumer rollout is implied by this item.
-**Evidence boundary:** Diagnosis only. Implementation, CSS guard, Designer parity, browser checks and migration verification remain not run. Michael's acceptance is pending.
+**Evidence boundary (31 October 2026):** Source changes and candidate build are local only. The first full test run failed: two existing tests still assert the old forced layout/preset behavior, the new CSS contract test has two incorrect assertions, and known immutable v0.2.6 distribution checks fail. No rendered-browser evidence, Designer/Preview/published comparison, CSS build guard or migration verification. Michael's acceptance is pending.

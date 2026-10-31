@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 6e576c1 — checked the runtime styling regression and roadmap update against this baseline; earlier candidate evidence retains its recorded limits.
+**Reviewed at commit:** 1525b9a — checked the local runtime styling work against this baseline; earlier candidate evidence retains its recorded limits.
 **Next action:** Agent: complete local styling brief #164 (R-269), then prepare the exact Designer/Preview comparison and bring back only the approvals needed for that stage.
 **Needs Michael:** Nothing.
+
+## 31 October 2026 — Runtime styling work started — Codex (night shift)
+
+**Changed (R-269):** Removed the overlay's forced Grid display and lowered specificity on several collapsed-layout defaults so ordinary Webflow classes can override them. Presets remain gated in the existing source rules. This is a partial implementation; R-269 remains open.
+
+**Outputs:** Updated source stylesheet and generated `candidate/` outputs; added an initial CSS contract test. The candidate is local and unreleased. No v0.2.6 files were changed.
+
+**Checked how:** `npm run build` completed. `npm test` failed: existing source assertions still expect prior forced layout/preset rules; the new test has two faulty assertions; immutable distribution checks also report pre-existing v0.2.6 defects. These results are source/test evidence only, not rendered behavior. No browser or Webflow changes were made.
+
+**Still open:** Finish the layout/appearance specificity audit across all states and layouts; repair and extend the test to cover Flex with stale Grid tracks, intentionally styled Grid, host styles, presets-off and all layouts; add the required build guard; reconcile changed source tests; verify functional behavior against candidate. Audit Canvas helper and prepare Designer component/variant instructions. No Designer, Preview, published or upgrade/rollback checks have run.
+
+**Needs Michael:** Nothing tonight. Acceptance remains pending.
+
+**Next useful action:** Continue R-269 by completing the audit and guard, then run candidate checks before preparing a separate, backed-up disposable-site comparison.
+
+**Handoff:** Follow-up must not begin R-268 Webflow testing or modify Webflow. Candidate still needs Designer Canvas-open, Preview and published test comparison after the local checks are complete.
 
 ## 31 October 2026 — Boss attention cleanup — Codex
 
