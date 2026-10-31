@@ -1,7 +1,7 @@
 # SmashBurger — Status
-**Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
+**Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 47c1147 — continued from the partial styling commit; the worktree was clean before this brief's changes.
+**Reviewed at commit:** 39647bc — final local runtime styling candidate and checks reviewed; no Webflow changes.
 **Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
 
@@ -19,7 +19,7 @@
 
 **Next useful action:** Run a separate bounded brief for Designer, Preview and published comparison on an authorised backed-up disposable Webflow site. Keep R-268 separate and do not update consumers.
 
-**Handoff:** Read the runtime styling boundary note first. Local build and checks pass. The bounded Webflow comparison remains for a separate brief; the local commit is still to be recorded. Do not change Webflow or immutable v0.2.6 assets in this brief.
+**Handoff:** Read the runtime styling boundary note first. Local build and candidate checks pass in commit 39647bc. The bounded Webflow comparison remains for a separate brief. Do not change Webflow or immutable v0.2.6 assets in this brief.
 
 ## 31 October 2026 — Runtime styling work started — Codex (night shift)
 
