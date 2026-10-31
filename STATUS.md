@@ -1,9 +1,37 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
-**Last updated:** 16 October 2026 — Codex
-**Reviewed at commit:** 5ee299f — checked the combined release preflight, Lite source/evidence and current candidate verification against this baseline.
+**Last updated:** 31 October 2026 — Codex
+**Reviewed at commit:** 6e576c1 — checked the runtime styling regression and roadmap update against this baseline; earlier candidate evidence retains its recorded limits.
 **Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
 **Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+
+## 31 October 2026 — Pending records prepared for commit — Codex
+
+**Changed (R-268, R-269):** Reviewed the six pending documentation/evidence files and prepared them for one local commit at Michael's request. Preserved the earlier test-preparation entries and distinguished the reverted styling attempt from the later functional-only menu update.
+
+**Outputs:** Roadmap styling tests and release blocker, status history, two dated consumer records and two historical Preview screenshots.
+
+**Checked how:** Reviewed the pending diff and evidence references against baseline `6e576c1`; checked that the records retain their limits and pending acceptance. Documentation whitespace check passed. No new runtime, browser or Webflow checks performed.
+
+**Still open:** Styling defects and controlled regression checks remain unresolved. The screenshot evidence is historical, not current site acceptance.
+
+**Needs Michael:** Push the resulting local commit when ready.
+
+**Next useful action / Handoff:** After Michael pushes, recap the roadmap from the resulting repository state. No runtime or site changes are included here.
+
+## 24 October 2026 — Designer styling release blocker — Codex
+
+**Changed (R-269):** Added a release blocker for runtime CSS overriding Designer layout and appearance. Kept the separate duplicate-class targeting test (R-268) intact. Added the blocker to the route to launch.
+
+**Outputs:** ROADMAP R-269 records the cause, required runtime/Designer boundary, CSS guard, all-layout regression checks and upgrade/migration checks.
+
+**Checked how:** Source/history audit identified the forced overlay Grid rule in commit `38bbf47` (8 October), the v0.2.6 distribution and current source. The recorded 23 October overlay configuration activated that rule. Checked the new item against S-03/S-04 and the current release gates; no runtime or site changes made. Reviewed baseline: `6e576c1`; three documentation commits follow the older header baseline, with no runtime fix among them.
+
+**Still open:** The defect remains unfixed. No implementation or new browser/Designer test has run; existing passing tests do not cover this regression. Acceptance remains pending.
+
+**Needs Michael:** Nothing for this documentation update. Existing Webflow testing and release approvals still apply.
+
+**Next useful action / Handoff:** Read R-269 before the next release implementation or preflight. Fix and test the Designer/runtime boundary before promoting the candidate; coordinate class ambiguity checks with R-268. Preserve unrelated uncommitted work and immutable released files.
 
 ## 16 October 2026 — Brief #90 Lite native build preparation — Codex (night shift)
 
@@ -18,6 +46,34 @@
 **Needs Michael:** Select and authorise the versioned `sb-nav` runtime release needed for the pinned loader. Make a blank test project accessible for the clone-flow checks. A Chrome route that permits local pages is needed to review the examples visually.
 
 **Next useful action / Handoff:** After the released runtime is available, verify its exact files and integrity values, finish the native component and loader, then use an accessible blank test project for clone-flow checks. Keep Acceptance pending.
+
+## 16 October 2026 — Brief #92 human and physical-device check preparation — Codex (night shift)
+
+**Changed (R-037, R-155, R-244):** Prepared blank instructions and result fields for Windows NVDA checks and physical-display icon checks. No check is claimed passed; Acceptance remains pending.
+
+**Outputs:** [Human and physical-display run sheets](webflow/human-and-physical-check-run-sheets-2026-10-16.md) and [evidence template](webflow/human-and-physical-check-evidence-template-2026-10-16.md).
+
+**Checked how:** Read the project rules and records, including the icon geometry and v0.2.6 release evidence. Confirmed the published Smashburger example is `/demo-overlay` and the known Tablet variant is on the older linked consumer. The machine is macOS; this run did not operate Windows/NVDA or inspect a physical 2×/3× display. No browser page was opened, and no Webflow state changed.
+
+**Still open:** Not checked: NVDA speech, keyboard focus, real-display 2×/3× rendering, measurements or screenshots. The combined candidate remains unreleased without an approved route; its evidence is explicitly Not run and must not be replaced by v0.2.6 evidence.
+
+**Needs Michael:** Arrange a Windows/NVDA tester and access to the named published page. Arrange verified physical 2× and 3× display access and a tester who can capture measurements and screenshots. Provide an approved route for the exact combined candidate before recording candidate results.
+
+**Next useful action / Handoff:** Have the human tester complete the run sheets for one exact release or candidate at a time, attach the original captures, and record each result against that exact artifact. Keep browser emulation separate from physical-display evidence and Acceptance pending.
+
+## 16 October 2026 — Brief #91 combined release preflight — Codex (night shift)
+
+**Changed (R-121, R-125, R-155):** Rebuilt and checked the combined candidate from its recorded source commit. It remains unreleased; Acceptance is pending.
+
+**Outputs:** [Combined candidate preflight follow-up](webflow/release-preflight-followup-2026-10-16.md), with the 19-file size and integrity inventory and upgrade/rollback checklist.
+
+**Checked how:** Verified clean `main` at `a42bfcc`; the saved candidate matches its source commit. A disposable local clone passed `npm run check:dist`, `SMASHBURGER_CANDIDATE=1 npm run test:candidate` (685/685) and `npm run check:namespace`. All 17 protected v0.2.6 files match their recorded hashes. No candidate, release or Webflow state changed.
+
+**Still open:** Not checked: candidate rendering in Chrome, the linked Library consumer, actual Webflow CDN/Preview and fallback, human accessibility, physical-display icon checks, or a cloned Webflow upgrade/rollback. The note's versioned URLs and hashes remain provisional until a version and tag are authorised.
+
+**Needs Michael:** Review the candidate evidence and separately approve the version/tag and any later Library share, staging update or publication. Acceptance remains pending.
+
+**Next useful action / Handoff:** Continue the browser and clean-consumer checks when the outstanding local-preview and site-read access is available; keep release and Webflow changes gated. The note is the only file requested for this brief's commit; this STATUS entry remains local and uncommitted.
 
 ## 16 October 2026 — Brief #89 release preflight — Codex (night shift)
 

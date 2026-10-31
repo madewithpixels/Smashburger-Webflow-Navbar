@@ -23,7 +23,10 @@ item and its continuation notes retain any explicit required outcomes.
 The name and canonical destination are settled. The original item wording and dated evidence below remain as history; this summary gives the current order of work.
 
 1. **Local reconciliation complete.** Boss now explicitly routes to the canonical checkout. Settings evidence is committed as `e599c09`; the seven migration-guide, native-removal, closing-focus and Escape commits are reconciled with canonical repairs. The combined candidate passes 685/685 checks. Original histories and the old working tree are preserved (R-128, R-121, R-155). See [integration evidence](webflow/canonical-reconciliation-2026-10-16.md).
-2. **Check the combined candidate in browsers and Webflow.** Complete responsive, scrolling, keyboard/touch, animation, screen-reader and physical-display checks. After approval of the exact Library review, verify a clean linked consumer, its properties/assets, update and rollback (R-037, R-115, R-126, R-155, R-244).
+2. **Check the combined candidate in browsers and Webflow.** Complete responsive, scrolling, keyboard/touch, animation, screen-reader and physical-display checks. After approval of the exact Library review, verify a clean linked consumer, its properties/assets, update and rollback (R-037, R-115, R-126, R-155, R-244). **Added 23 October: test agent styling after unlinking when local and imported Library classes have identical names (R-268).** Do not treat the earlier unlink cleanup acceptance as proof of safe agent style targeting.
+
+**Release blocker added 24 October 2026:** Fix runtime CSS overriding Designer layout and appearance, and prove Canvas/Preview/published parity before promoting the combined candidate (R-269). This is separate from ambiguous class targeting (R-268).
+
 3. **Release the renamed version.** Select/promote the verified bytes, generate exact loader/integrity values and verify the real CDN and fallback before release approval. v0.2.6 and old pins remain protected (R-120–R-127).
 4. **Finish Lite.** Turn the local examples/workbench into the editable Webflow component, install the released loader, check a blank-project clone and prepare the public clonable (R-164, R-178–R-186).
 
@@ -2293,3 +2296,36 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Covers:** R-122, R-129–R-137
 **Source:** [always-class audit](webflow/always-unlink-class-audit-2026-10-13.md); [unlink candidate record](webflow/unlink-hardening-candidate.md).
 **Evidence boundary:** Recorded checks cover the legacy cleanup duplicate and the one-Base candidate in the named fixtures; they do not promise the same result for every existing or future Webflow instance.
+
+#### R-268 · Test safe agent styling of an unlinked menu with duplicate class names.
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Owner:** agent · **Depends on:** an authorised disposable Webflow consumer with a backup and an exact release/candidate identified
+**Source:** Michael's request in this chat, 23 October 2026: record the duplicate-class issue and flag it for testing; [madewithpixels incident and restored-site record](webflow/madewithpixels-menu-2026-10-23.md#duplicate-class-targeting-incident-and-required-test).
+**Issue:** Unlinked local classes and imported Library classes can share display names. In the recorded v0.2.6 incident, name-based writes for `mwp-css-nav_panel`, `mwp-css-nav_link` and `mwp-css-nav_contacts` landed on imported records rather than the intended local records. A success response and a name-based readback did not establish that the intended element was styled. Test this agent-customisation risk independently of routine consumer-site updates.
+**Release test:** Install → configure → unlink → inspect both style records → agent restyle → inspect both records and actual element assignments → Preview at desktop/mobile → verify rollback. Repeat for the exact renamed release candidate; the v0.2.6 incident is not candidate proof.
+**Exit criteria:**
+- Record stable style IDs, selectors, Library/local origin and declarations before and after each write. Prove whether a supported write route can select the intended record deterministically; do not assume all API routes lack ID targeting.
+- Prove only the intended local records change, while the imported records and a linked sibling remain unchanged. Check normal, hover/focus and breakpoint styles, plus rendered geometry and keyboard behaviour.
+- Define and test an agent preflight that detects duplicate names and stops ambiguous writes. If deterministic targeting is unavailable, test a uniquely named local-class route that preserves functional hooks and unrelated styling.
+- Document the supported unlink-and-style workflow, its limitations and recovery steps before claiming agent-assisted customisation is verified.
+**Evidence links:** The incident and temporary workaround are recorded below; the controlled regression test has **not run**. R-267's existing acceptance remains unchanged and does not cover this separate failure mode.
+
+
+#### R-269 · Make Designer styling survive the runtime in every menu layout.
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.
+**Owner:** agent · **Depends on:** an exact candidate and an authorised disposable Webflow consumer with a backup for Designer/Preview/published checks
+**Source:** Michael's report, Claude's supplied diagnosis and Michael's instruction to roadmap it, 24 October 2026; Git audit of `38bbf475e6b3bdfcbd0bc0d261ace0c4502c6639` (8 October), `v0.2.6:dist/navbar-light.css` and current `src/navbar-light.css`; [recorded overlay activation](webflow/madewithpixels-functional-menu-2026-10-23.md).
+**Confirmed cause:** The 8 October change added a high-specificity overlay `display: grid` rule intended to override destination Flex layouts. It shipped in v0.2.6 and remains in the current source. Enabling overlay activates it even with `data-presets="false"`; stale Grid column declarations can then affect a panel styled as Flex in the Designer. Other high-specificity alignment and sizing rules also need auditing. This diagnosis is verified from source/history; the fix and regression checks are not implemented or verified.
+**Required outcome:** Authors control layout and appearance through the Designer. Runtime behaviour must not silently replace their choices. Keep this separate from R-268's duplicate-name targeting failure.
+**Exit criteria:**
+- Inventory every runtime CSS property by layout and closed/opening/open/closing state, including Canvas-open and no-script fallback. Document which properties the library controls and why; distinguish behaviour requirements from author-owned layout and appearance.
+- Remove high-specificity layout/appearance overrides across dropdown, overlay, left, right, full-width and collapsed states. Put overridable defaults in zero-specificity `:where()` selectors so a single author class wins. Preserve necessary visibility, motion, focus, inert/ARIA, scroll-lock and fallback behaviour; explicitly document any justified behavioural exception rather than weakening accessibility.
+- Keep visual presets opt-in and consistently gated by `:not([data-presets="false" i])`. With presets disabled, runtime must not impose colours, typography, decorative button styling or other visual presets. Audit trigger/close styling in every state.
+- Make layout variants and their editable styles visible in the Designer. Canvas “show open menu” must reproduce the corresponding live open layout; the runtime reads configuration for behaviour rather than masking the authored layout.
+- Add a build-time CSS guard against non-zero-specificity author-owned layout/appearance declarations. Define and test a narrow behaviour allowlist and any documented exceptions; cover generated delivery formats as well as source.
+- For every layout, test authored Flex and Grid panels with presets disabled; style panel, primary links, secondary/contact links, CTA and trigger through the Style panel. Include opinionated global styles, stale `grid-template-columns`, breakpoint changes and linked/unlinked instances. Compare Designer Canvas-open, Preview and the authorised published test page at desktop/mobile and short viewport heights, with screenshots and computed-style evidence against the exact candidate.
+- Preserve open/close, stagger, CTA navigation, keyboard/focus return, Escape, reduced motion, scroll containment and no-script fallback. Test upgrades from v0.2.6 as well as clean installs; do not substitute old release results for candidate checks.
+- Audit runtime selectors to keep behavioural hooks on data attributes rather than styling class names. Coordinate imported/local namespace and supported agent customisation checks with R-268; do not claim that selector changes alone remove Webflow's class-name ambiguity.
+- Assess compatibility for installs relying on forced layouts; document migration and rollback, choose the appropriate breaking version before release approval, and retain immutable v0.2.6 assets. No consumer rollout is implied by this item.
+**Evidence boundary:** Diagnosis only. Implementation, CSS guard, Designer parity, browser checks and migration verification remain not run. Michael's acceptance is pending.
