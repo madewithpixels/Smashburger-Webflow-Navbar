@@ -3,7 +3,7 @@
 **Last updated:** 31 October 2026 — Codex
 **Reviewed at commit:** 6e576c1 — checked the runtime styling regression and roadmap update against this baseline; earlier candidate evidence retains its recorded limits.
 **Next action:** Agent: complete local styling brief #164 (R-269), then prepare the exact Designer/Preview comparison and bring back only the approvals needed for that stage.
-**Needs Michael:** Nothing for the local styling brief now. Human/device access, exact Library-sharing and final release approvals remain future gates; see the Boss attention cleanup.
+**Needs Michael:** Nothing.
 
 ## 31 October 2026 — Boss attention cleanup — Codex
 
