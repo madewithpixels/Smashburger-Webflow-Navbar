@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 6dacdae — reviewed current R-037 source, prior icon evidence and local Git before this run.
+**Reviewed at commit:** 6f98fd9 — checked the current record and local Git during the nightshift stall investigation.
 **Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
+
+## 31 October 2026 — False Claude session warning diagnosed — Codex
+
+**Changed:** Recorded why the nightshift waits despite Claude being idle. No SmashBurger roadmap item was changed; this was Michael's direct investigation request, separate from brief #178.
+
+**Outputs:** Findings reported to Boss. Codex's global hooks in `/Users/michaelauty/.codex/hooks.json` pass `--agent claude` for session start, session end and turn completion. Consequently, this Codex chat itself appears as a Claude session and can block the nightshift.
+
+**Checked how:** Read the live runner queue at 18:43 London, local hook commands and runner/server source. The runner reported Codex idle, SmashBurger skipped for a Claude session, and Claude separately waiting after a usage-limit response until 19:30 London. The process list contained no Claude CLI. The runner log repeatedly reports `unknown action run_abandon`, with the same rejection for `stalls_sync` and `push_queue`: the local runner is newer than the deployed service. The current chat ID `01a19344-1b48-77b2-bfb4-7a369730d092` was registered as Claude run `89e35003-5bb8-41c4-9b2b-a66e54c8f05c`, directly confirming the wrong attribution.
+
+**Still open:** Correct the Codex hook attribution and switch on the already-built Boss stale-session fix, then confirm the false sessions clear and queued work resumes. The runner's 19:30 Claude retry is a separate hold; this investigation does not verify restored provider capacity.
+
+**Needs Michael:** Ask Claude to switch on today's changes to Boss, including the stale-session fix already recorded under Boss R-144. No release or Webflow action is needed.
+
+**Next useful action / Handoff:** Correct only the Boss commands in Codex's global hook file, preserving unrelated hooks, then activate the existing Boss migration and agent service and verify both lanes from the live queue. This investigation changed no hooks, live service, task, brief status or acceptance. The clean checkout's only commit since the prior reviewed baseline was the icon evidence commit, already described below.
 
 ## 31 October 2026 — Local icon matrix prepared; browser render blocked — Codex (night shift)
 
