@@ -123,7 +123,8 @@ rename step (R-128).
 **Follow-up — Michael, 15 October 2026, completion brief:** Explicitly authorised Codex to carry out the full history transfer and necessary remote repository operations. The clone already exists at the selected path; Michael will not handle the Git transfer. Preserve the old repository and all release hooks/URLs. This authority replaces the earlier allocation of the transfer work to Michael; it does not authorise bypassing the release or Webflow gates.
 
 ## D-014 - Designer Extension with Make local as the preferred product track
-**Status:** Proposed
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss, 31 October 2026 — “yes”. This records the accepted direction; the previously recorded Lite-first sequencing remains until Michael changes it.
 **For Michael:** After you have used the Lite release, do you want to build a separate Designer Extension and menu-maintenance tool? I recommend waiting for that experience before deciding; committing means building and maintaining a second tool, while declining keeps SmashBurger focused on the native navbar component.
 **Qualifier:** Deferred until Lite works — Michael, Q-04, 14 October 2026
 **Date:** Not recorded in the source; extracted 14 October 2026

@@ -18,6 +18,12 @@ future products or superseded designs; see DECISIONS for supersession.
 Exit criteria are left blank where the source has no separate criteria; the verbatim
 item and its continuation notes retain any explicit required outcomes.
 
+## Immediate attention — 31 October 2026
+
+**Michael now:** Nothing for the authorised local styling brief #164. Agent work comes first; do not re-raise historical access requests without a fresh failure. Local Chrome test permission is recorded, with no publishing.
+
+**Next:** Fix and verify R-269 locally, then prepare the exact R-268/R-269 Webflow comparison. Keep visual review, backed-up site access, exact Library-sharing approval, human/device checks and final release approval staged for when the relevant result is ready. Future tasks and closed attention requests are preserved with reactivation conditions in the [Boss attention cleanup](webflow/boss-attention-cleanup-2026-10-31.md). Closing a request does not complete its underlying check or grant approval.
+
 ## Current route to launch — 16 October 2026
 
 The name and canonical destination are settled. The original item wording and dated evidence below remain as history; this summary gives the current order of work.
@@ -1090,6 +1096,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
+**Task:** 43612101 in your boss list
 **Source:** [todo.md](todo.md), original line 173 (now 174); baseline `c808ca4`.
 **Exit criteria:**
 **16 October 2026 — brief #72:** Candidate reproducibility verification now builds in a disposable copy and preserves existing paths and bytes on matching, stale and failed builds. Nine bounded fixture checks cover partial failure, new/removed files, termination and deliberate build output. The real verification and deliberate build retain all current output bytes. No release, pin or Acceptance changed. See [behaviour, evidence and limits](webflow/candidate-reproducibility-2026-10-16.md).
@@ -1674,11 +1681,13 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-183 · Install one exact-version pinned CDN Embed with integrity metadata and keep the settings/structure understandable on the Canvas.
-**State:** blocked · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** planned · **Evidence:** verified (local) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 256 (now 257); baseline `c808ca4`.
 **Exit criteria:**
 **Build gate — 16 October 2026:** Local `0.3.0-rc.1` candidate loader checks pass, but that tag is unreleased and must not be installed. Released v0.2.6 uses the earlier `mwp-*` classes. No released loader matching the settled `sb-nav` migration is verified; final URL and integrity values await an authorised released runtime. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 
+
+**Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.
 
 #### R-184 · Include a short in-project safe-editing guide covering functional data hooks, the trigger/panel relationship, native Menu Button restrictions, stacking, icon-only accessible names and final duplicate-header removal. *(accepted by Michael in boss, 15 Oct 2026)*
 **State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (15 October 2026)
@@ -1690,14 +1699,17 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-185 · Verify the clone flow into a blank test project, including Canvas editability, all four core breakpoints, keyboard behavior, asset loading, zero overflow and a clean console.
-**State:** blocked · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** planned · **Evidence:** verified (live) · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 258 (now 259); baseline `c808ca4`.
 **Exit criteria:**
 **Project access check — brief #90, 16 October 2026:** Read-only Webflow site listing returned 16 accessible sites but no blank SmashBurger Lite test project. SB Unlink Clean Trial is a populated fixture, so it does not satisfy this clone-flow gate. New Smashburger Test was not re-probed. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 
 
+**Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.
+
 #### R-186 · Prepare the clonable as an early-exposure route for the SmashBurger site launch, with a clear route from the free baseline to the Library component and future app.
 **State:** planned · **Evidence:** none · **Acceptance:** pending
+**Task:** 43612103 in your boss list
 **Source:** [todo.md](todo.md), original line 259 (now 260); baseline `c808ca4`.
 **Exit criteria:**
 
@@ -1713,6 +1725,7 @@ The preferred app form is a Webflow Designer Extension that installs and configu
 
 #### R-187 · Scaffold a private Designer Extension with the Webflow CLI.
 **State:** planned · **Evidence:** none · **Acceptance:** pending
+**Task:** 43612102 in your boss list
 **Source:** [todo.md](todo.md), original line 267 (now 268); baseline `c808ca4`.
 **Exit criteria:**
 

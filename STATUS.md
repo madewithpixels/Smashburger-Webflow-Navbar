@@ -2,8 +2,22 @@
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
 **Reviewed at commit:** 6e576c1 — checked the runtime styling regression and roadmap update against this baseline; earlier candidate evidence retains its recorded limits.
-**Next action:** Enable local browser preview, then review the exact combined candidate before proceeding through approved Library/consumer and release checks. Confirm the intended project pause in Boss before any later night shift starts; this session changed no pause setting.
-**Needs Michael:** Enable local browser preview; approve the exact Library update before sharing; arrange human/device checks and approve the final release. Naming is settled. No new product decision is needed for these docs.
+**Next action:** Agent: complete local styling brief #164 (R-269), then prepare the exact Designer/Preview comparison and bring back only the approvals needed for that stage.
+**Needs Michael:** Nothing for the local styling brief now. Human/device access, exact Library-sharing and final release approvals remain future gates; see the Boss attention cleanup.
+
+## 31 October 2026 — Boss attention cleanup — Codex
+
+**Changed (R-155, R-244, R-268, R-269):** At Michael's request, preserved old requests and future work with clear reactivation conditions, removed historical/premature requests from immediate attention, and separated local agent work from later personal approvals. Deferred Lite dependency items R-183/R-185 to planned; prerequisites, evidence and Acceptance are unchanged. Recorded Michael's Boss acceptance of D-014 (“yes”, 31 October), retaining Lite-first sequencing.
+
+**Outputs:** [Boss attention cleanup and preserved original records](webflow/boss-attention-cleanup-2026-10-31.md). Current release task clarified; app/site tasks remain open and labelled Later because Boss has no task snooze state.
+
+**Checked how:** Read full Boss question/task records through its authenticated agent API and inspected the task UI. Request #145 contains permission for local Chrome testing, not a passed check or release approval. Reviewed unchanged source baseline `9ce1d0f`; no runtime or Webflow edits. Pending request closures and renamed tasks are verified by readback before handoff.
+
+**Still open:** All unperformed engineering, Designer, screen-reader, device, clone-flow and release checks. Future open tasks cannot be hidden from All open tasks through current Boss controls without deleting or completing them; neither is appropriate.
+
+**Needs Michael:** Nothing now. Return only with an exact result to review or a fresh, concrete blocker.
+
+**Next useful action / Handoff:** Nightshift continues brief #164. Read the cleanup record before asking Michael anything; re-raise future checks at their stated trigger, not during local work. No test was marked passed and no release or sharing approved by this cleanup.
 
 ## 31 October 2026 — Pending records prepared for commit — Codex
 
