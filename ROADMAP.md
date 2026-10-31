@@ -1041,7 +1041,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-119 · Create `madewithpixels/SmashBurger-Webflow-Navbar` as the new canonical GitHub repository with the complete Git history; use `smashburger-webflow-navbar` for the package name.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** accepted (31 October 2026)
 **Source:** [todo.md](todo.md), original line 167 (now 168); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** The verified empty canonical remote received both branches and all eight existing tags without force. The selected clone contains the complete history; package naming is applied. No new release was published. Acceptance remains pending.
@@ -1079,7 +1079,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-123 · Add a generated-output assertion that a clean renamed release contains no legacy `mwp-*` class tokens while still rejecting accidental changes to retained runtime attributes or compatibility hooks.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (31 October 2026)
 **Source:** [todo.md](todo.md), original line 171 (now 172); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** Added source/generated class and retained-hook assertions, negative fixtures and 17 immutable-file hashes. Included in candidate checks and CI; no release was tagged.
@@ -1087,7 +1087,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-124 · Audit public-facing HTML, CSS and JavaScript comments, diagnostics, demo copy and generated banners for stale `Navbar Light` wording. Use `SmashBurger` for the product name while retaining versioned filenames, CDN URLs, Webflow variant markers and compatibility API aliases until an explicitly tested migration can replace them.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (31 October 2026)
 **Source:** [todo.md](todo.md), original line 172 (now 173); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** Audited maintained sources, new banners/console text and demo copy. New output says SmashBurger. Historical Webflow readbacks, filenames, API/diagnostic identifiers and exact old URLs retain their actual names; current guides explain the boundary.
@@ -1126,7 +1126,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Local cleanup — 16 October 2026, Michael authorised:** The old checkout was fully backed up, then restored to its live-verified remote baseline `0864f82`; it is clean and Michael confirmed removal from Codex project settings. No old GitHub repository archive, release-tag change or CDN operation occurred. This does not complete R-127's remote-archival gate. [Evidence and recovery](webflow/old-checkout-cleanup-2026-10-16.md); D-019.
 
 #### R-128 · Rename the local folder last to `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar`, update the Git remote and reopen Codex from the new workspace path.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (31 October 2026)
 **Source:** [todo.md](todo.md), original line 176 (now 177); baseline `c808ca4`.
 **Exit criteria:**
 **15 October 2026 — Codex:** Selected clone is populated with the canonical origin and was used for final tests and the push of 1261de5. Its boss key is smashburger; the runner path now points there. Original folder is retained. This chat/boss commit binding still points at the old checkout; final workspace reopen and release-dependent retirement remain open. No folder was destructively moved.
