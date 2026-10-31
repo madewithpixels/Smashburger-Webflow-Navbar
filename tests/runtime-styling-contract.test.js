@@ -2,59 +2,68 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { JSDOM } from 'jsdom';
+import { violations } from '../scripts/check-runtime-style-specificity.mjs';
 
 const css = await readFile(new URL('../src/navbar-light.css', import.meta.url), 'utf8');
-const dom = new JSDOM(`<style>${css}</style>`);
+const canvasCss = await readFile(new URL('../src/navbar-light-canvas.css', import.meta.url), 'utf8');
 
-function rules(list, into = []) {
-  for (const rule of list) {
-    if (rule.cssRules) rules(rule.cssRules, into);
-    else if (rule.selectorText) into.push({ selector: rule.selectorText, style: rule.style });
-  }
-  return into;
-}
-
-const parsed = rules(dom.window.document.styleSheets[0].cssRules);
-const declarations = property => parsed.filter(r => r.style.getPropertyValue(property));
-
-test('overlay has no forced display or track sizing, even with presets disabled', () => {
-  const overlay = parsed.filter(r => r.selector.includes('data-layout="overlay"') && r.selector.includes('data-mwp-panel'));
-  assert.ok(overlay.length);
-  for (const rule of overlay) {
-    assert.equal(rule.style.getPropertyValue('display'), '', rule.selector);
-    assert.equal(rule.style.getPropertyValue('grid-template-columns'), '', rule.selector);
-    assert.equal(rule.style.getPropertyValue('grid-template-rows'), '', rule.selector);
+test('single author class wins over layout defaults in every layout with stale Grid tracks', () => {
+  const layouts = ['dropdown', 'overlay', 'left', 'right', 'full-width'];
+  for (const layout of layouts) {
+    const host = new JSDOM(`<style>${css}\n.author-flex{display:flex;grid-template-columns:2fr 1fr;width:67%;align-items:start}\n.author-grid{display:grid;grid-template-columns:3fr 1fr;align-content:start}\n</style><header data-mwp-navbar data-mwp-collapsed="true" data-state="open" data-layout="${layout}" data-presets="false"><details open data-mwp-menu></details><nav data-mwp-panel class="author-flex"></nav></header>`);
+    const panel = host.window.document.querySelector('[data-mwp-panel]');
+    const style = host.window.getComputedStyle(panel);
+    assert.equal(style.display, 'flex', `${layout}: Flex class must win`);
+    assert.equal(style.gridTemplateColumns, '2fr 1fr', `${layout}: stale tracks remain authored but inert on Flex`);
+    assert.equal(style.width, '67%', `${layout}: authored width must win`);
+    host.window.close();
   }
 });
 
-test('author-owned panel layout defaults use zero-specificity selectors', () => {
-  const layoutProps = ['display', 'grid-template-columns', 'grid-template-rows', 'align-content', 'justify-items', 'width', 'height', 'max-width', 'max-height', 'inset', 'top', 'right', 'bottom', 'left', 'translate'];
-  for (const property of layoutProps) {
-    for (const rule of declarations(property)) {
-      if (rule.selector.includes('data-mwp-panel') && !/data-state|data-menu\]\[open\]|wf-design-mode/.test(rule.selector)) {
-        assert.match(rule.selector, /:where\(/, `${property}: ${rule.selector}`);
-      }
-    }
-  }
+test('an intentionally styled Grid panel and opinionated host styles survive presets-off', () => {
+  const host = new JSDOM(`<style>${css}\nnav{display:flex;color:purple;padding:3px}\n.author-grid{display:grid;grid-template-columns:3fr 1fr;align-content:start;width:72%;background-color:teal}</style><header data-mwp-navbar data-mwp-collapsed="true" data-state="open" data-layout="overlay" data-presets="false"><details open data-mwp-menu></details><nav data-mwp-panel class="author-grid"></nav></header>`);
+  const panel = host.window.document.querySelector('[data-mwp-panel]');
+  const style = host.window.getComputedStyle(panel);
+  assert.equal(style.display, 'grid');
+  assert.equal(style.gridTemplateColumns, '3fr 1fr');
+  assert.equal(style.alignContent, 'start');
+  assert.equal(style.width, '72%');
+  assert.equal(style.backgroundColor, 'rgb(0, 128, 128)');
+  assert.equal(style.color, 'rgb(128, 0, 128)');
+  assert.equal(style.padding, '3px');
+  host.window.close();
 });
 
-test('visual preset declarations are gated, and false mode has no visual values', () => {
-  const visual = new Set(['background', 'background-color', 'border', 'border-color', 'border-radius', 'box-shadow', 'color', 'font-size', 'font-family', 'line-height', 'text-align', 'gap', 'padding']);
-  for (const rule of parsed) {
-    const props = [...visual].filter(property => rule.style.getPropertyValue(property));
-    if (props.length && rule.selector.includes('data-presets="false"')) assert.fail(`false preset selector styles appearance: ${rule.selector}`);
-  }
-  assert.ok(parsed.some(r => r.selector.includes(':not([data-presets="false" i])') && r.style.getPropertyValue('background')));
+test('visual preset rules remain gated; open and closed state selectors still provide behavior', () => {
+  const parsed = new JSDOM(`<style>${css}</style>`).window.document.styleSheets[0].cssRules;
+  const flat = [];
+  const visit = rules => { for (const rule of rules) { if (rule.type === 4) visit(rule.cssRules); else if (rule.selectorText) flat.push(rule); } };
+  visit(parsed);
+  const visualProps = ['background', 'background-color', 'border', 'border-radius', 'box-shadow', 'color', 'font-size', 'font-family', 'line-height', 'text-align', 'gap', 'padding'];
+  for (const rule of flat) if (visualProps.some(property => rule.style.getPropertyValue(property)))
+    assert.match(rule.selectorText, /:not\(\[data-presets="false" i\]\)/, rule.selectorText);
+  assert.match(css, /:not\(\[data-presets="false" i\]\) \[data-mwp-panel\]\)\s*\{\s*background:/);
+  assert.ok(flat.some(rule => rule.style.getPropertyValue('opacity') === '1' && rule.selectorText.includes('[open]')));
+  assert.ok(flat.some(rule => rule.style.getPropertyValue('visibility') === 'hidden' && rule.selectorText.includes('[data-state="closed"]')));
 });
 
-test('host Flex and Grid declarations retain priority over runtime layout defaults', () => {
-  const host = new JSDOM(`<style>${css}\n.author-flex{display:flex;grid-template-columns:2fr 1fr}\n.author-grid{display:grid;grid-template-columns:3fr 1fr;align-content:start}</style><div class="author-flex" data-mwp-panel></div><div class="author-grid" data-mwp-panel></div>`);
-  const sheet = host.window.document.styleSheets[0];
-  const flex = host.window.document.querySelector('.author-flex');
-  const grid = host.window.document.querySelector('.author-grid');
-  assert.equal(host.window.getComputedStyle(flex).display, 'flex');
-  assert.equal(host.window.getComputedStyle(flex).gridTemplateColumns, '2fr 1fr');
-  assert.equal(host.window.getComputedStyle(grid).display, 'grid');
-  assert.equal(host.window.getComputedStyle(grid).gridTemplateColumns, '3fr 1fr');
-  assert.ok(sheet.cssRules.length > 0);
+test('Canvas-open helper only hides closed panels and has no competing layout or appearance rules', () => {
+  assert.match(canvasCss, /:not\(\[data-canvas-open="true" i\]\)/);
+  const runtime = new JSDOM(`<style>${css}</style>`).window.document.styleSheets[0].cssRules;
+  const text = [...runtime].map(rule => rule.cssText).join(' ');
+  assert.doesNotMatch(text, /wf-design-mode/);
+  const canvasRules = new JSDOM(`<style>${canvasCss}</style>`).window.document.styleSheets[0].cssRules;
+  const canvasDeclarations = [];
+  const visitCanvas = rules => { for (const rule of rules) { if (rule.type === 4) visitCanvas(rule.cssRules); else if (rule.style) canvasDeclarations.push(...Array.from({ length: rule.style.length }, (_, index) => { const property = rule.style.item(index); return [property, rule.style.getPropertyValue(property)]; })); } };
+  visitCanvas(canvasRules);
+  assert.ok(canvasDeclarations.length > 0);
+  assert.ok(canvasDeclarations.every(([property, value]) => property === 'display' && value === 'none'));
+  assert.ok(violations(css).length === 0, violations(css).join('\n'));
+});
+
+test('build guard rejects high-specificity author layout and appearance declarations', () => {
+  assert.deepEqual(violations(':where([data-mwp-navbar] [data-mwp-panel]){display:grid;color:red}'), []);
+  assert.ok(violations(':where([data-mwp-navbar]) [data-mwp-panel]{display:grid;color:red}').length > 0);
+  assert.ok(violations(':where([data-mwp-navbar]) [data-mwp-panel] > [data-mwp-link]{color:red}').length > 0);
+  assert.ok(violations('[data-mwp-navbar][data-layout="overlay"] [data-mwp-panel]{display:grid}').length > 0);
 });

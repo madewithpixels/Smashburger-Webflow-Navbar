@@ -143,7 +143,7 @@ test('overlay keeps its trigger in the authored header position while drawers re
   const position = () => fixture.window.getComputedStyle(menu).position;
 
   assert.equal(position(), 'relative');
-  assert.equal(fixture.window.getComputedStyle(root.querySelector('[data-mwp-panel]')).display, 'grid');
+  assert.equal(fixture.window.getComputedStyle(root.querySelector('[data-mwp-panel]')).display, 'flex', 'The Webflow class must keep control of the overlay display mode');
   assert.equal(fixture.window.getComputedStyle(root.querySelector('[data-mwp-panel]')).translate, 'none');
   root.dataset.mwpCollapsed = 'false';
   menu.open = true;
@@ -611,8 +611,8 @@ test('reads Canvas-visible configuration values and normalises presets', () => {
 
 test('Layout presets can be switched off so destination classes own the collapsed look', () => {
   const css = readFileSync(new URL('../src/navbar-light.css', import.meta.url), 'utf8');
-  const visualPanel = '[data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-panel]';
-  const structuralPanel = '[data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-panel]';
+  const visualPanel = ':where([data-mwp-navbar][data-mwp-collapsed="true"]:not([data-presets="false" i]) [data-mwp-panel])';
+  const structuralPanel = ':where([data-mwp-navbar][data-mwp-collapsed="true"] [data-mwp-panel])';
   assert.ok(css.includes(`${visualPanel} {`));
   assert.ok(css.includes(`${structuralPanel} {`));
   const structuralBody = css.split(`${structuralPanel} {`)[1].split('}')[0];

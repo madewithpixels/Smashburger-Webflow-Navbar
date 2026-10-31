@@ -23,8 +23,8 @@ export function addCandidateAliases(code, names = aliases) {
     'mwp-component-library--smashburger', 'mwp-component-library--smashburger-cdn'];
   const unmarkedBase = `[data-mwp-navbar]:not([data-collapse]):not(:is(${[...oldNames, ...aliases].map(name => `[data-wf--${name}--variant]`).join(', ')}))`;
   return code.replace(/\[data-wf--navbar-light--variant="([a-z-]+)"\]/g,
-    (old, value) => [old, ...names.map(name => `[data-wf--${name}--variant="${value}"]`),
-      ...(value === 'mobile-landscape' ? [unmarkedBase] : [])].join(', '));
+    (old, value) => `:is(${[old, ...names.map(name => `[data-wf--${name}--variant="${value}"]`),
+      ...(value === 'mobile-landscape' ? [unmarkedBase] : [])].join(',')})`);
 }
 export async function buildLibraryCandidates() {
   const { version } = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));

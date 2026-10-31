@@ -1,9 +1,25 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 685/685 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
 **Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 1525b9a — checked the local runtime styling work against this baseline; earlier candidate evidence retains its recorded limits.
-**Next action:** Agent: complete local styling brief #164 (R-269), then prepare the exact Designer/Preview comparison and bring back only the approvals needed for that stage.
+**Reviewed at commit:** 47c1147 — continued from the partial styling commit; the worktree was clean before this brief's changes.
+**Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
+
+## 31 October 2026 — Runtime styling fix built locally — Codex (night shift)
+
+**Changed (R-269):** Removed the forced overlay Grid declaration. Layout and appearance defaults on the menu, links, contact area, trigger and close control now use zero-specificity selectors so a Webflow class can override them. Visual presets, including the backdrop surface, are gated. State visibility, motion and native fallback behavior remain runtime-owned.
+
+**Outputs:** Updated the source CSS, candidate delivery files, build guard and regression checks. Added the [runtime styling boundary and bounded Designer/Preview/published follow-up](webflow/runtime-styling-boundary-2026-10-31.md). Candidate Embed JavaScript is minified at build time so the expanded CSS/variant aliases remain under the Embed size limit. Immutable v0.2.6 files remain unchanged.
+
+**Checked how:** `npm run build` passed, including the CSS specificity guard over source, candidate stylesheets and generated Webflow/Library Embed styles. The final `npm run test:candidate` passed 690/690, including simulated upgrade/rollback and runtime behavior. Final `npm test` passed with 279 tests: 252 passed and 27 TODO for documented immutable v0.2.6 defects. The final navbar/CSS suite passed 42/42. New source JSDOM regressions cover Flex with stale Grid columns, authored Grid, opinionated host styles, presets off and all five layouts. These are source/build checks, not rendered-browser evidence.
+
+**Still open:** No local rendered-browser, Designer Canvas, Preview, published page, upgrade or rollback comparison. Chrome rejected the local `file:` page before opening a tab because its URL policy allows only HTTP/HTTPS; no alternative route was attempted. No Webflow change was made. R-269 remains open until the exact candidate is checked on a backed-up disposable site and Michael reviews it.
+
+**Needs Michael:** Nothing tonight; Acceptance remains pending.
+
+**Next useful action:** Run a separate bounded brief for Designer, Preview and published comparison on an authorised backed-up disposable Webflow site. Keep R-268 separate and do not update consumers.
+
+**Handoff:** Read the runtime styling boundary note first. Local build and checks pass. The bounded Webflow comparison remains for a separate brief; the local commit is still to be recorded. Do not change Webflow or immutable v0.2.6 assets in this brief.
 
 ## 31 October 2026 — Runtime styling work started — Codex (night shift)
 
