@@ -2345,3 +2345,10 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 - Assess compatibility for installs relying on forced layouts; document migration and rollback, choose the appropriate breaking version before release approval, and retain immutable v0.2.6 assets. No consumer rollout is implied by this item.
 **Evidence boundary (31 October 2026):** Source changes and candidate build are local only. The first full test run failed: two existing tests still assert the old forced layout/preset behavior, the new CSS contract test has two incorrect assertions, and known immutable v0.2.6 distribution checks fail. No rendered-browser evidence, Designer/Preview/published comparison, CSS build guard or migration verification. Michael's acceptance is pending.
 **Local implementation and evidence (31 October 2026):** The candidate has a build-time CSS guard over source, candidate stylesheets and generated Webflow/Library Embed styles, plus JSDOM regressions for Flex with stale Grid tracks, intentionally authored Grid, opinionated host styles, presets disabled and all five layouts; Canvas helper checks also pass. The final candidate-only verification passed 690/690, including simulated upgrade and rollback cases. The full `npm test` passed with 279 tests: 252 passed and 27 are TODO for documented immutable v0.2.6 defects. No rendered-browser, Designer Canvas, Preview, published-page or real-site upgrade/rollback comparison was performed. R-269 remains open until the bounded site comparison and Michael's review are complete.
+
+
+#### R-270 · Burger menu navigation button jumping colour and size check
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Task:** 43612352 in your boss list
+**Done when (inferred — confirm):** Check the burger menu navigation button across the relevant menu states and responsive widths; record whether its colour or size jumps unexpectedly and the exact conditions. If it does, identify the cause and a correction before reporting the check complete.
+**Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.

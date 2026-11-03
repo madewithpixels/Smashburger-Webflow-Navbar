@@ -1,9 +1,23 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
-**Last updated:** 31 October 2026 — Codex
-**Reviewed at commit:** 6f98fd9 — checked the current record and local Git during the nightshift stall investigation.
+**Last updated:** 3 November 2026 — Codex (night shift)
+**Reviewed at commit:** 196de21 — checked the current record and local Git before recording Michael's new task.
 **Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
 **Needs Michael:** Nothing.
+
+## 3 November 2026 — New navigation check recorded — Codex (night shift)
+
+**Changed (R-270):** Added Michael's burger menu navigation button colour and size check to the verification roadmap, using the task title from the Boss inbox and linking task #43612352.
+
+**Outputs:** R-270 records a completion condition marked “inferred — confirm” because Michael's task does not specify the states, widths or expected appearance.
+
+**Checked how:** Read the project record, current roadmap and Boss inbox; checked the existing navigation and verification sections and current Git status. No site or Webflow work was performed.
+
+**Still open:** The visual check itself has not been performed. Its exact conditions in the done-when remain inferred.
+
+**Needs Michael:** Nothing for this roadmap entry.
+
+**Next useful action:** An agent can perform the check under R-270 when the task is picked up.
 
 ## 31 October 2026 — False Claude session warning diagnosed — Codex
 
