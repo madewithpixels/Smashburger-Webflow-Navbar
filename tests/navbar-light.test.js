@@ -284,6 +284,22 @@ test('initialises a collapsed navbar in a closed accessible state', () => {
   navbar.destroy();
 });
 
+test('ignores a synthetic resize even if computed layout reports a different breakpoint', () => {
+  const root = document.querySelector('[data-mwp-navbar]');
+  const navbar = new NavbarLight(root);
+  const menu = root.querySelector('[data-mwp-menu]');
+  menu.open = true;
+  navbar.setState('open', false);
+  navbar.isCollapsed = () => false;
+
+  window.dispatchEvent(new dom.window.Event('resize'));
+
+  assert.equal(menu.open, true);
+  assert.equal(root.dataset.state, 'open');
+  assert.equal(root.dataset.mwpCollapsed, 'true');
+  navbar.destroy();
+});
+
 test('ignores a resize event when the collapsed breakpoint has not changed', () => {
   const root = document.querySelector('[data-mwp-navbar]');
   const navbar = new NavbarLight(root);

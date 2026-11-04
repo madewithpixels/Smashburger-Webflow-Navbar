@@ -182,14 +182,14 @@ export class NavbarLight {
     return ['left', 'right', 'overlay'].includes(this.root.dataset.layout);
   }
 
-  onBreakpointChange(initial = false) {
+  onBreakpointChange(eventOrInitial = false) {
+    const initial = eventOrInitial === true;
+    if (eventOrInitial?.type === 'resize' && eventOrInitial.isTrusted === false) return;
+
     const collapsed = this.isCollapsed();
     const previous = this.root.dataset.mwpCollapsed === 'true';
 
-    // Ignore resize events that leave the navbar at the same breakpoint. In
-    // particular, scroll locking can trigger a synthetic resize after opening.
     if (!initial && collapsed === previous) return;
-
     this.root.dataset.mwpCollapsed = String(collapsed);
 
     if (collapsed) {
