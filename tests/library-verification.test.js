@@ -22,7 +22,7 @@ test('Library verification loader authenticates both exact pinned Git blobs', as
   try {
     for (const [kind, extension, attribute] of [['css', 'css', 'href'], ['javascript', 'js', 'src']]) {
       const node = dom.window.document.querySelector(`[data-mwp-navbar-light-cdn="${kind}"]`);
-      const path = `candidate/dist/navbar-light.min.${extension}`;
+      const path = `candidate/dist/navbar-light${kind === 'css' ? '.min' : ''}.${extension}`;
       const bytes = execFileSync('git', ['show', `${verificationCommit}:${path}`], {
         cwd: root, env: { ...process.env, GIT_NO_LAZY_FETCH: '1', GIT_NO_REPLACE_OBJECTS: '1' }
       });
@@ -56,8 +56,8 @@ test('illustrative loader remains tied to current candidate bytes and proposed t
   try {
     for (const [kind, extension, attribute] of [['css', 'css', 'href'], ['javascript', 'js', 'src']]) {
       const node = dom.window.document.querySelector(`[data-mwp-navbar-light-cdn="${kind}"]`);
-      assert.equal(node.getAttribute('integrity'), hash(await readFile(resolve(root, `candidate/dist/navbar-light.min.${extension}`))));
-      assert.ok(node.getAttribute(attribute).endsWith(`@v0.3.0-rc.1/dist/navbar-light.min.${extension}`));
+      assert.equal(node.getAttribute('integrity'), hash(await readFile(resolve(root, `candidate/dist/navbar-light${kind === 'css' ? '.min' : ''}.${extension}`))));
+      assert.ok(node.getAttribute(attribute).endsWith(`@v0.3.0-rc.1/dist/navbar-light${kind === 'css' ? '.min' : ''}.${extension}`));
     }
     assert.match(proposal, /Do not install in Webflow/);
     assert.ok(!proposal.includes(verificationCommit));

@@ -9,7 +9,7 @@ export const verificationCommit = 'ddb83c79934914ef0f03f3f012ee2743154153f7';
 const baseUrl = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${verificationCommit}/candidate/dist`;
 const assets = [
   { kind: 'css', selector: 'link', attribute: 'href', name: 'navbar-light.min.css' },
-  { kind: 'javascript', selector: 'script', attribute: 'src', name: 'navbar-light.min.js' }
+  { kind: 'javascript', selector: 'script', attribute: 'src', name: 'navbar-light.js' }
 ];
 
 export function readPinnedArtifact(path) {

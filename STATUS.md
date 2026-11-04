@@ -1,5 +1,20 @@
 # SmashBurger — Status
 
+## 4 November 2026 — Repaired the release checks after the stable update — Codex
+
+**Changed (R-125, R-271):** Corrected checks that still expected the old working files and compressed JavaScript address. The historical v0.2.6 hashes are now checked against their recorded Git revision; the current stable files must match the v0.2.9 tag exactly. GitHub now fetches the history needed to read those releases and the existing Library verification pin. Corrected the uninstalled Library verification loader's integrity value to authenticate the uncompressed file its URL actually requests.
+
+**Outputs:** Updated the verification scripts, their existing assertions, the generated Library verification snippet and GitHub workflow. No release tag or consumer-site code changed.
+
+**Checked how:** The syntax check, candidate reproducibility and namespace checks pass. The full unit suite passes: 282 cases, 255 passed, zero failed and 27 existing expected failures for documented stable-release defects. The freshly built candidate suite passes all 693 cases with zero expected or unexpected failures. The online GitHub run is pending the corrective push; its result will be reported in this session and Boss.
+
+**Still open:** The existing stable-release expected failures are retained and executed; this change does not repair those runtime defects. Browser/site checks and Michael's acceptance remain separate.
+
+**Needs Michael:** Nothing for this check repair.
+
+**Next useful action:** Confirm the corrected GitHub run completes successfully, then continue the existing Voice Focus browser check.
+
+
 ## 4 November 2026 — Merged the v0.2.9 fixes and updated Voice Focus — Codex
 
 **Changed (R-125, R-271):** Merged the v0.2.9 release history into `main`, preserving the `0.3.0-rc.1` candidate under its separate build path. The stable top-level files now represent v0.2.9. Updated the Voice Focus Header's existing CDN Embed from v0.2.7 to v0.2.9.
@@ -16,7 +31,7 @@
 
 **Stage:** Stable v0.2.9 is merged into main and published to MWP and Voice Focus staging. The `0.3.0-rc.1` candidate remains unreleased. R-269 still needs its separate site comparison.
 **Last updated:** 4 November 2026 — Codex
-**Reviewed at commit:** f6e094b — merged v0.2.9 into main while preserving the 0.3 candidate.
+**Reviewed at commit:** 7d53e11 — release-check repair verified against the merged v0.2.9 baseline while preserving the 0.3 candidate.
 **Next action:** Michael: check the Voice Focus staging menu in the browser; the published code is updated but its interaction has not been checked after this release.
 **Needs Michael:** Check the menu on [Voice Focus staging](https://voice-focus.webflow.io/). Separately, continue the R-269 comparison when the disposable site's required access is available.
 

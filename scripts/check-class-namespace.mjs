@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -23,8 +24,15 @@ export async function checkNamespace() {
   const contracts = JSON.parse(await read('compatibility/runtime-contracts.json'));
   const baseline = JSON.parse(await read('compatibility/v0.2.6-baseline.json'));
   for (const [path, expected] of Object.entries(baseline.sha256)) {
-    const bytes = await readFile(resolve(root, path));
-    assert.equal(createHash('sha256').update(bytes).digest('hex'), expected, `${path}: immutable baseline changed`);
+    // The historical release stays immutable in Git; D-020 advances the
+    // working stable distribution to v0.2.9, separate from candidate/.
+    const gitBytes = revision => execFileSync('git', ['show', `${revision}:${path}`], {
+      cwd: root, stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 * 1024 * 1024,
+      env: { ...process.env, GIT_NO_LAZY_FETCH: '1', GIT_NO_REPLACE_OBJECTS: '1' }
+    });
+    const historical = gitBytes(baseline.baseline);
+    assert.equal(createHash('sha256').update(historical).digest('hex'), expected, `${path}: historical baseline changed`);
+    assert.deepEqual(await readFile(resolve(root, path)), gitBytes('refs/tags/v0.2.9'), `${path}: stable v0.2.9 artifact changed`);
   }
   for (const [path, expected] of Object.entries(contracts.sourceTokens)) {
     const text = await read(path);
@@ -76,6 +84,6 @@ export async function checkNamespace() {
   assertContracts(loader, ['data-mwp-navbar-light-cdn', 'data-mwp-navbar-light-version', 'mwp-navbar-light:cdn-error', 'mwpStatus'], 'candidate loader');
   assert.match(loader, /UNRELEASED CANDIDATE/);
   assert.match(loader, /Smashburger-Webflow-Navbar@v0\.3\.0-rc\.1\/dist/);
-  console.log(`Namespace and compatibility checks passed; ${Object.keys(baseline.sha256).length} historical files are byte-identical.`);
+  console.log(`Namespace and compatibility checks passed; ${Object.keys(baseline.sha256).length} historical files verified in Git and stable working files match v0.2.9.`);
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await checkNamespace();
