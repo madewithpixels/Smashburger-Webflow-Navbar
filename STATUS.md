@@ -16,7 +16,7 @@
 
 **Stage:** Stable v0.2.9 is merged into main and published to MWP and Voice Focus staging. The `0.3.0-rc.1` candidate remains unreleased. R-269 still needs its separate site comparison.
 **Last updated:** 4 November 2026 — Codex
-**Reviewed at commit:** v0.2.9 merge commit (recorded after commit).
+**Reviewed at commit:** f6e094b — merged v0.2.9 into main while preserving the 0.3 candidate.
 **Next action:** Michael: check the Voice Focus staging menu in the browser; the published code is updated but its interaction has not been checked after this release.
 **Needs Michael:** Check the menu on [Voice Focus staging](https://voice-focus.webflow.io/). Separately, continue the R-269 comparison when the disposable site's required access is available.
 
