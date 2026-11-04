@@ -2358,3 +2358,11 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Brief 286 access result (4 November 2026):** New Smashburger Test remains absent from the current Webflow MCP `list_sites`; `get_site`, `list_pages` and site-instruction search using its recorded ID returned site-not-found. No site changes or snapshot exports were made. The required before and after backups are confirmed; the comparison remains blocked. See [brief 286 handoff](evidence/brief-286-r269-access-block-2026-11-04.md) for candidate hashes, backup routes, exact unchecked items and restore steps.
 
 
+#### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Owner:** agent · **Depends on:** the reported bug being described or reproduced
+**Source:** Michael's task #43612358 in Boss.
+**Exit criteria:** Reproduce and identify the reported bug, correct it in the appropriate source, and verify the correction against the expected behavior **(inferred — confirm)**. Michael's task title does not specify the symptom or expected behavior.
+**Task:** #43612358 in your boss list.
+
+

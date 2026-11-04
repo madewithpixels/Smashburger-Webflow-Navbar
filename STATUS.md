@@ -1,7 +1,7 @@
 # SmashBurger — Status
 **Stage:** Canonical routing restored; the unreleased combined candidate passes 690/690 checks. The R-269 site comparison is blocked because the authorised disposable site is missing from the current Webflow tools. v0.2.6 is unchanged; Lite is not a finished public clonable.
 **Last updated:** 4 November 2026 — Codex (night shift)
-**Reviewed at commit:** e555cf7 — checked the current record and Git before attempting brief #286.
+**Reviewed at commit:** 8f2d24f — checked the current record and Git before brief #296.
 **Next action:** Michael: make New Smashburger Test available to the Webflow MCP connection; then an agent can resume the bounded R-269 comparison.
 **Needs Michael:** Make New Smashburger Test available to the Webflow MCP connection so the authorised site can be read and snapshotted.
 
@@ -18,6 +18,20 @@
 **Needs Michael:** Make New Smashburger Test available to the Webflow MCP connection. This unlocks the site read and snapshot required to resume the comparison.
 
 **Next useful action:** After the site appears in the current Webflow tool site list, resume the bounded R-269 comparison on this same disposable site. Verify its current site ID, export the before snapshot, and follow the recorded test matrix; do not substitute the separate Smashburger site.
+
+## 4 November 2026 — New bug task added to the roadmap — Codex (night shift)
+
+**Changed (R-271):** Added Michael's task about a bug in the v0.2.6 Navbar Light script to the roadmap. The task title is preserved. The completion condition is marked as inferred because the task gives no symptom or expected result.
+
+**Outputs:** Added R-271 with Boss task #43612358 linked.
+
+**Checked how:** Read the Boss inbox for brief #296 and unmatched tasks, checked the verification section for the correct placement and next available roadmap ID, and reviewed the roadmap diff. No bug work or Webflow changes were performed.
+
+**Still open:** The bug itself has not been investigated; the completion condition needs the task's missing symptom and expected behavior before implementation.
+
+**Needs Michael:** Nothing for this roadmap entry.
+
+**Next useful action:** An agent can investigate the bug described by task #43612358 when it is picked up.
 
 ## 3 November 2026 — New navigation check recorded — Codex (night shift)
 
