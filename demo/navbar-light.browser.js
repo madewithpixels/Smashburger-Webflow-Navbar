@@ -185,14 +185,17 @@ class NavbarLight {
   onBreakpointChange(initial = false) {
     const collapsed = this.isCollapsed();
     const previous = this.root.dataset.mwpCollapsed === 'true';
+
+    // Ignore resize events that leave the navbar at the same breakpoint. In
+    // particular, scroll locking can trigger a synthetic resize after opening.
+    if (!initial && collapsed === previous) return;
+
     this.root.dataset.mwpCollapsed = String(collapsed);
 
     if (collapsed) {
       if (initial || !previous) {
         this.menu.open = false;
         this.setState('closed', false);
-      } else {
-        this.syncNative(false);
       }
     } else {
       this.unlockScroll();

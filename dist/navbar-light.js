@@ -1,4 +1,4 @@
-/*! Navbar Light v0.2.6 */
+/*! Navbar Light v0.2.7 */
 (() => {
   // src/navbar-light.js
   var ROOT_SELECTOR = "[data-mwp-navbar]";
@@ -162,13 +162,12 @@
     onBreakpointChange(initial = false) {
       const collapsed = this.isCollapsed();
       const previous = this.root.dataset.mwpCollapsed === "true";
+      if (!initial && collapsed === previous) return;
       this.root.dataset.mwpCollapsed = String(collapsed);
       if (collapsed) {
         if (initial || !previous) {
           this.menu.open = false;
           this.setState("closed", false);
-        } else {
-          this.syncNative(false);
         }
       } else {
         this.unlockScroll();
@@ -332,5 +331,5 @@
   }
   globalThis.NavbarLight = NavbarLight;
   globalThis.initNavbarLight = initNavbarLight;
-  globalThis.MWP_NAVBAR_LIGHT_VERSION = "0.2.6";
+  globalThis.MWP_NAVBAR_LIGHT_VERSION = "0.2.7";
 })();

@@ -44,7 +44,7 @@ test('CDN loader pins the release tag and authenticates the committed artifacts'
   const packageMetadata = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
   const loader = await readFile(resolve(root, 'webflow/navbar-light-cdn-loader.html'), 'utf8');
   const tag = `v${packageMetadata.version}`;
-  const expectedBase = `https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@${tag}/dist`;
+  const expectedBase = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${tag}/dist`;
   const integrity = (source) => `sha384-${createHash('sha384').update(source).digest('base64')}`;
   const css = await readFile(resolve(root, 'dist/navbar-light.min.css'));
   const javascript = await readFile(resolve(root, 'dist/navbar-light.min.js'));

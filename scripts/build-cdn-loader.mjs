@@ -7,7 +7,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const packageMetadata = JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8'));
 const version = packageMetadata.version;
 const tag = `v${version}`;
-const baseUrl = `https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@${tag}/dist`;
+const baseUrl = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${tag}/dist`;
 const css = await readFile(resolve(projectRoot, 'dist/navbar-light.min.css'));
 const javascript = await readFile(resolve(projectRoot, 'dist/navbar-light.min.js'));
 const integrity = (source) => `sha384-${createHash('sha384').update(source).digest('base64')}`;
