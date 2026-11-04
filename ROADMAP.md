@@ -2361,7 +2361,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 #### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
 **State:** built · **Evidence:** verified (local) · **Acceptance:** pending
-**Owner:** agent · **Depends on:** the reported bug being described or reproduced
+**Owner:** agent
 **Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
 **Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
 **Task:** #43612358 in your boss list.
