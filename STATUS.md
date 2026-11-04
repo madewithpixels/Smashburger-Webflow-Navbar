@@ -2,17 +2,17 @@
 
 ## 4 November 2026 — Ran the disposable-site layout comparison — Codex
 
-**Changed (R-269):** Installed one `SmashBurger CDN Unlink Trial` library instance beside the sample navigation on Disposable SB test site. Published dropdown, overlay, left, right and full-width layouts to that site's Webflow subdomain. Restored dropdown as the final setting.
+**Changed (R-269):** Installed the `SmashBurger CDN Unlink Trial` beside the sample navigation on Disposable SB test site, tested its five layouts, then unlinked the trial instance and replaced its loader with a temporary, commit-pinned 0.3.0-rc.1 candidate loader. Published only to the site's Webflow subdomain; the trial is restored to dropdown.
 
-**Outputs:** The [published disposable test page](https://disposable-sb-test-site.webflow.io/) is ready for review. The upper menu is the sample/reference; the lower menu is the trial. Confirmed and recorded the named before and after backups in the Webflow dashboard.
+**Outputs:** The [published disposable test page](https://disposable-sb-test-site.webflow.io/) has the upper sample/reference and lower trial. A fresh after backup was confirmed at 11:56 pm (1 page / 101 styles / 224 elements) and recorded in Boss. The trial now uses an unreleased candidate loader for isolated testing; this is not a release or a shared Library change.
 
-**Checked how:** Compared sampled styles and responsive states in Designer; opened all five layouts in Preview and on the published page at phone width; checked Preview's no-custom-code Space fallback; checked Escape and focus return on the initial live dropdown; reloaded and verified the restored dropdown. Only the Webflow staging subdomain was published.
+**Checked how:** Compared sampled styles and responsive states in Designer; opened all five layouts in Preview and on the published page at phone width; checked Preview's no-custom-code Space fallback; checked Escape and focus return on the initial live dropdown. After installing the candidate loader, the lower trial opened on the published page. Only the Webflow staging subdomain was published.
 
-**Still open:** Webflow MCP still does not list this site. The trial component loads released v0.2.6 CSS and JavaScript, not the unreleased 0.3.0-rc.1 runtime. This is not full candidate verification. Authored-style parity across every state/layout, keyboard close paths across all layouts, reduced motion, short-height scrolling, upgrade, rollback and Michael's review remain open.
+**Still open:** I could not confirm from the live page that the candidate CSS and JavaScript actually loaded; Chrome's current tab connection did not provide script/runtime inspection, and the requested source view was blocked by browser policy. The candidate test has not been repeated in Preview. Authored-style parity across every state/layout, candidate keyboard close paths, reduced motion, short-height scrolling, upgrade, rollback and Michael's review remain open. Webflow MCP still does not list this site.
 
-**Needs Michael:** Open [Disposable SB test site](https://disposable-sb-test-site.webflow.io/) at phone width and compare the lower trial menu with the upper reference. Then tell me whether to proceed with a temporary candidate-runtime install on this disposable instance or first enable the site in Webflow MCP; the current MCP connection cannot read it.
+**Needs Michael:** Open [Disposable SB test site](https://disposable-sb-test-site.webflow.io/) at phone width and compare the lower trial menu with the upper reference. If the candidate looks right, confirm whether to keep this temporary candidate loader on the disposable test page while I finish the remaining checks.
 
-**Next useful action:** Record Michael's visual feedback and settle how to make the unreleased candidate runtime available for the remaining checks. See [comparison evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
+**Next useful action:** Confirm candidate asset loading and complete the mobile keyboard/state checks, then record Michael's visual review. See [comparison evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
 
 ## 4 November 2026 — Repaired the release checks after the stable update — Codex
 

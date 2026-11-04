@@ -10,6 +10,8 @@ The MWP Component Library's `SmashBurger CDN Unlink Trial` instance was installe
 
 - Before comparison: **boss · brief #286 · before**, shown in the dashboard list at 11:22 pm, 1 page / 74 styles / 145 elements. A duplicate with the same name is also listed. Boss recorded the confirmed dashboard backup.
 - After comparison: **boss · brief #286 · after**, shown in the dashboard list at 11:40 pm, 1 page / 74 styles / 146 elements. Boss recorded the confirmed dashboard backup.
+- Before candidate-loader change: **boss · brief #286 · before**, shown in the dashboard list at 11:46:22 pm, 1 page / 74 styles / 146 elements. Boss recorded the confirmed dashboard backup.
+- After candidate-loader change: **boss · brief #286 · after**, shown in the dashboard list at 11:56:53 pm, 1 page / 101 styles / 224 elements. Boss recorded the confirmed dashboard backup.
 
 ## Checks completed
 
@@ -20,10 +22,10 @@ The MWP Component Library's `SmashBurger CDN Unlink Trial` instance was installe
 
 ## Limits and next checks
 
-The trial instance still loads the released v0.2.6 CSS and JavaScript. This confirms Designer/Preview/published presentation of the installed trial component's five layout modes; it does **not** confirm the unreleased 0.3.0-rc.1 candidate runtime or full author-controlled style parity. The Webflow MCP connection still cannot provide site snapshots or live computed-style exports.
+After the five-layout comparison, the trial instance was unlinked from the shared Library and its Embed loader was replaced with a temporary, commit-pinned 0.3.0-rc.1 candidate loader. The candidate menu opened on the published page after subdomain-only publishing. This does **not** confirm the candidate CSS/JavaScript actually loaded: the active Chrome connection did not expose page script/runtime inspection, and the browser blocked a `view-source:` navigation. Candidate behavior has not yet been retested in Preview. The Webflow MCP connection still cannot provide site snapshots or live computed-style exports.
 
-Not checked: authored colour/spacing changes property-by-property across each surface; open/closing/closed state styling for every mode; live Escape, second-click and link close for every mode; reduced motion; short-height scrolling; linked-instance and v0.2.6-upgrade behavior; rollback. Michael's visual review and acceptance remain pending. Do not describe this as R-269 complete.
+Not checked: confirmation of candidate assets loading; candidate Preview behavior; authored colour/spacing changes property-by-property across each surface; open/closing/closed state styling for every mode; candidate live Escape, second-click and link close; reduced motion; short-height scrolling; linked-instance and v0.2.6-upgrade behavior; rollback. Michael's visual review and acceptance remain pending. Do not describe this as R-269 complete.
 
 ## Current test-page state
 
-The test page has the sample/reference menu and one trial component instance. The trial layout prop is `dropdown`; the page is published to `https://disposable-sb-test-site.webflow.io/`. No MWP or Voice Focus consumer site was changed.
+The test page has the sample/reference menu and one unlinked trial instance. The trial layout prop is `dropdown`; its temporary candidate loader is published to `https://disposable-sb-test-site.webflow.io/`. No shared Library source, MWP site or Voice Focus site was changed.
