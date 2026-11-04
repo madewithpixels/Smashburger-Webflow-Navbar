@@ -1102,6 +1102,14 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
 **Evidence:** The Voice Focus trigger fades over 180 ms while its panel takes 280 ms to close. The madewithpixels trigger changes colour with no fade while its configured panel close is 220 ms. No trigger size change was found in the inspected rules. Only the stated 511 px and 2044 px widths were checked; see [browser evidence and limits](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
+#### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
+**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**Owner:** agent
+**Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
+**Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
+**Task:** #43612358 in your boss list.
+**Evidence:** v0.2.7 returns early when the collapsed/expanded result has not changed. All 43 local tests pass, including same-state resize, real breakpoint change, Escape, second click and link closing. Published CDN files match the tested files byte for byte. Consumer-site browser checks remain open; see [release and test evidence](webflow/evidence/r270-r271-v027-2026-11-04.md).
+
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Task:** 43612101 in your boss list
@@ -2357,14 +2365,5 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Local implementation and evidence (31 October 2026):** The candidate has a build-time CSS guard over source, candidate stylesheets and generated Webflow/Library Embed styles, plus JSDOM regressions for Flex with stale Grid tracks, intentionally authored Grid, opinionated host styles, presets disabled and all five layouts; Canvas helper checks also pass. The final candidate-only verification passed 690/690, including simulated upgrade and rollback cases. The full `npm test` passed with 279 tests: 252 passed and 27 are TODO for documented immutable v0.2.6 defects. No rendered-browser, Designer Canvas, Preview, published-page or real-site upgrade/rollback comparison was performed. R-269 remains open until the bounded site comparison and Michael's review are complete.
 
 **Brief 286 access result (4 November 2026):** New Smashburger Test remains absent from the current Webflow MCP `list_sites`; `get_site`, `list_pages` and site-instruction search using its recorded ID returned site-not-found. No site changes or snapshot exports were made. The required before and after backups are confirmed; the comparison remains blocked. See [brief 286 handoff](evidence/brief-286-r269-access-block-2026-11-04.md) for candidate hashes, backup routes, exact unchecked items and restore steps.
-
-
-#### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
-**Owner:** agent
-**Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
-**Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
-**Task:** #43612358 in your boss list.
-**Evidence:** v0.2.7 returns early when the collapsed/expanded result has not changed. All 43 local tests pass, including same-state resize, real breakpoint change, Escape, second click and link closing. Published CDN files match the tested files byte for byte. Consumer-site browser checks remain open; see [release and test evidence](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
 

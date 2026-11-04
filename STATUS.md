@@ -2399,3 +2399,7 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 Written in from Michael's task list in boss. The order is his; the runner only moves the items. If a move breaks a dependency, tell him; don't undo it.
 - Michael moved R-270 before R-125 (dragged its task in boss).
 
+## 4 November 2026, 15:16 — boss runner *(Michael's roadmap order, R-120)*
+Written in from Michael's task list in boss. The order is his; the runner only moves the items. If a move breaks a dependency, tell him; don't undo it.
+- Michael moved R-271 before R-125 (dragged its task in boss).
+
