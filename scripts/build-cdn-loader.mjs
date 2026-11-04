@@ -9,7 +9,9 @@ const version = packageMetadata.version;
 const tag = `v${version}`;
 const baseUrl = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${tag}/dist`;
 const css = await readFile(resolve(projectRoot, 'dist/navbar-light.min.css'));
-const javascript = await readFile(resolve(projectRoot, 'dist/navbar-light.min.js'));
+// Use the explicit unminified file. jsDelivr re-minifies *.min.js and adds a
+// banner, changing its bytes and breaking the SRI hash calculated here.
+const javascript = await readFile(resolve(projectRoot, 'dist/navbar-light.js'));
 const integrity = (source) => `sha384-${createHash('sha384').update(source).digest('base64')}`;
 
 const loader = `<!-- Navbar Light CDN loader: exact version ${version} (${tag}) -->
@@ -24,7 +26,7 @@ const loader = `<!-- Navbar Light CDN loader: exact version ${version} (${tag}) 
   onerror="this.dataset.mwpStatus='error';window.dispatchEvent(new CustomEvent('mwp-navbar-light:cdn-error',{detail:{asset:'css',version:'${version}'}}));console.error('Navbar Light ${version}: CDN CSS failed to load; native navigation content remains available.')">
 <script
   defer
-  src="${baseUrl}/navbar-light.min.js"
+  src="${baseUrl}/navbar-light.js"
   integrity="${integrity(javascript)}"
   crossorigin="anonymous"
   data-mwp-navbar-light-cdn="javascript"
