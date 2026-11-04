@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** Canonical routing restored; the unreleased combined candidate passes 690/690 checks. The R-269 site comparison is blocked because the exact site opens in Chrome but is absent from the current Webflow tools and has no confirmed before backup. v0.2.6 is unchanged; Lite is not a finished public clonable.
-**Last updated:** 4 November 2026 — Codex (night shift)
-**Reviewed at commit:** 8469e3a — checked the current record and Git before brief #286.
-**Next action:** Michael: make Disposable SB test site available to the Webflow MCP connection and create/confirm the required before backup; then an agent can resume the bounded R-269 comparison.
-**Needs Michael:** Make Disposable SB test site available to the Webflow MCP connection and confirm its before backup so the authorised site can be read and snapshotted.
+**Stage:** Stable v0.2.7 resize fix released. The combined 0.3 candidate remains unreleased. R-269 is still blocked because the exact test site is not available through the current Webflow tools.
+**Last updated:** 4 November 2026 — Codex
+**Reviewed at commit:** f1c1fab — checked the current record and Git before the v0.2.7 release work.
+**Next action:** Michael: point the madewithpixels and Voice Focus installs to the v0.2.7 CSS and JavaScript URLs in the evidence note, then run the listed live menu checks.
+**Needs Michael:** Update the two installed site snippets to v0.2.7 and check them live. Separately, make Disposable SB test site available to the Webflow MCP connection for R-269.
+
+## 4 November 2026 — Checked trigger timing and released the resize fix — Codex
+
+**Changed (R-270, R-271):** The Voice Focus trigger colour takes 180 ms to fade while its panel takes 280 ms to close. On madewithpixels the trigger colour changes immediately while the configured panel close takes 220 ms. I changed no Webflow styles or content. I fixed the same-breakpoint resize behavior in a v0.2.7 patch based on v0.2.6 and published its new tag.
+
+**Outputs:** The v0.2.7 CDN links and integrity values are in the [evidence note](webflow/evidence/r270-r271-v027-2026-11-04.md). Both CDN assets match the tested release files. The 0.3 class-migration candidate and the R-269 test site remain unchanged.
+
+**Checked how:** Read computed styles on the published Voice Focus page at 511 px and madewithpixels at 2044 px. Ran all 43 local tests; the same-breakpoint resize, real breakpoint change, Escape, second click and link-close checks passed. Fetched both CDN files and compared them byte for byte with the release assets. The madewithpixels menu closed within 40 ms after a trigger click, but I did not capture the resize event itself.
+
+**Still open:** Not checked: the full responsive and open/closing/closed visual matrix; live v0.2.7 behavior in either consumer; 1440 px and 1024 px open/resize checks; or the requested tablet/phone behavior after updating the sites. Michael's acceptance is pending.
+
+**Needs Michael:** Replace the CSS and JavaScript URLs in the existing SmashBurger snippets on madewithpixels and Voice Focus with the v0.2.7 links in the evidence note, then run the live checks there. No site was changed or published in this session.
+
+**Next useful action:** After Michael updates the two installed snippets, check the menu at 1440 px and 1024 px, send Escape, click the trigger again, follow a link, dispatch a same-size resize, cross a real breakpoint, and confirm tablet/phone behavior.
 
 ## 4 November 2026 — Exact R-269 test URL checked; comparison stopped — Codex (night shift)
 

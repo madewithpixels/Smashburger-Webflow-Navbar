@@ -1096,10 +1096,11 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-270 · Burger menu navigation button jumping colour and size check
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
 **Task:** 43612352 in your boss list
-**Done when (inferred — confirm):** Check the burger menu navigation button across the relevant menu states and responsive widths; record whether its colour or size jumps unexpectedly and the exact conditions. If it does, identify the cause and a correction before reporting the check complete.
+**Done when:** Check the trigger's colour and size in closed/open/closing states, compare its transition with the panel close time, and record the responsive conditions.
 **Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
+**Evidence:** The Voice Focus trigger fades over 180 ms while its panel takes 280 ms to close. The madewithpixels trigger changes colour with no fade while its configured panel close is 220 ms. No trigger size change was found in the inspected rules. Only the stated 511 px and 2044 px widths were checked; see [browser evidence and limits](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
@@ -2359,10 +2360,11 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 
 #### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
-**State:** planned · **Evidence:** none · **Acceptance:** pending
+**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
 **Owner:** agent · **Depends on:** the reported bug being described or reproduced
-**Source:** Michael's task #43612358 in Boss.
-**Exit criteria:** Reproduce and identify the reported bug, correct it in the appropriate source, and verify the correction against the expected behavior **(inferred — confirm)**. Michael's task title does not specify the symptom or expected behavior.
+**Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
+**Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
 **Task:** #43612358 in your boss list.
+**Evidence:** v0.2.7 returns early when the collapsed/expanded result has not changed. All 43 local tests pass, including same-state resize, real breakpoint change, Escape, second click and link closing. Published CDN files match the tested files byte for byte. Consumer-site browser checks remain open; see [release and test evidence](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
 
