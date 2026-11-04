@@ -18,7 +18,7 @@ export function renderCdnLoader({ version, baseUrl, css, javascript,
   onerror="this.dataset.mwpStatus='error';window.dispatchEvent(new CustomEvent('mwp-navbar-light:cdn-error',{detail:{asset:'css',version:'${version}'}}));console.error('SmashBurger ${version}: CDN CSS failed to load; native navigation content remains available.')">
 <script
   defer
-  src="${baseUrl}/navbar-light.min.js"
+  src="${baseUrl}/navbar-light.js"
   integrity="${integrity(javascript)}"
   crossorigin="anonymous"
   data-mwp-navbar-light-cdn="javascript"

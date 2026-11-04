@@ -275,10 +275,14 @@ export class NavbarLight {
     return ['left', 'right', 'overlay'].includes(this.root.dataset.layout);
   }
 
-  onBreakpointChange(initial = false) {
-    const isInitial = initial === true;
+  onBreakpointChange(eventOrInitial = false) {
+    const isInitial = eventOrInitial === true;
+    if (eventOrInitial?.type === 'resize' && eventOrInitial.isTrusted === false) return;
+
     const collapsed = this.isCollapsed();
     const previous = this.root.dataset.mwpCollapsed === 'true';
+
+    if (!isInitial && collapsed === previous) return;
     this.root.dataset.mwpCollapsed = String(collapsed);
 
     if (collapsed) {
@@ -290,8 +294,6 @@ export class NavbarLight {
         }
         this.menu.open = false;
         this.setState('closed', false);
-      } else {
-        this.syncNative(false);
       }
     } else {
       // A collapsed animation must not overwrite the new expanded state later.

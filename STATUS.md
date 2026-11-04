@@ -1,9 +1,24 @@
 # SmashBurger — Status
-**Stage:** Stable v0.2.7 resize fix released. The combined 0.3 candidate remains unreleased. R-269 is still blocked because the exact test site is not available through the current Webflow tools.
+
+## 4 November 2026 — Merged the v0.2.9 fixes and updated Voice Focus — Codex
+
+**Changed (R-125, R-271):** Merged the v0.2.9 release history into `main`, preserving the `0.3.0-rc.1` candidate under its separate build path. The stable top-level files now represent v0.2.9. Updated the Voice Focus Header's existing CDN Embed from v0.2.7 to v0.2.9.
+
+**Outputs:** The exact v0.2.9 CSS and JavaScript links are in the [release verification](webflow/v0.2.9-release-verification.md). Voice Focus published to `voice-focus.webflow.io`; no custom domains were selected. MWP staging remains on v0.2.9. The shared Library component was not updated.
+
+**Checked how:** Read the Voice Focus Header code back through Webflow MCP and confirmed the exact URLs, SRI values and `crossorigin` attributes. Webflow reports the staging publish completed. Preserved the main candidate package version and generated its build separately.
+
+**Still open:** Not checked: the published Voice Focus page HTML or the menu interaction in a browser after this update. Automated tests were not rerun after merging. Michael's acceptance is pending.
+
+**Needs Michael:** Open the Voice Focus staging homepage, reload, and check that the menu opens with one click, stays open, and closes with Escape, a second click and a link.
+
+**Next useful action:** After Michael's browser check, record any issue against the exact viewport and browser; keep R-269 separate from this release.
+
+**Stage:** Stable v0.2.9 is merged into main and published to MWP and Voice Focus staging. The `0.3.0-rc.1` candidate remains unreleased. R-269 still needs its separate site comparison.
 **Last updated:** 4 November 2026 — Codex
-**Reviewed at commit:** f1c1fab — checked the current record and Git before the v0.2.7 release work.
-**Next action:** Michael: point the madewithpixels and Voice Focus installs to the v0.2.7 CSS and JavaScript URLs in the evidence note, then run the listed live menu checks.
-**Needs Michael:** Update the two installed site snippets to v0.2.7 and check them live. Separately, make Disposable SB test site available to the Webflow MCP connection for R-269.
+**Reviewed at commit:** v0.2.9 merge commit (recorded after commit).
+**Next action:** Michael: check the Voice Focus staging menu in the browser; the published code is updated but its interaction has not been checked after this release.
+**Needs Michael:** Check the menu on [Voice Focus staging](https://voice-focus.webflow.io/). Separately, continue the R-269 comparison when the disposable site's required access is available.
 
 ## 4 November 2026 — Checked trigger timing and released the resize fix — Codex
 

@@ -275,7 +275,7 @@ for (const delivery of motionDeliveries) for (const motion of ['dropdown', 'cust
 for (const delivery of deliveries) {
   test(`${delivery}: missing component CSS leaves native navigation accessible`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 stylesheet-failure defect; immutable artifacts retained. Source fix needs a new release.' : false
+      ? 'Known v0.2.9 stylesheet-failure defect; immutable artifacts retained. Source fix needs a new release.' : false
   }, () => {
     const f = runtimeFixture(delivery, { includeCss: false });
     try {
@@ -377,10 +377,10 @@ for (const delivery of deliveries) {
   });
 
   test(`${delivery}: multiple overlay navbars keep page scrolling locked until all close`, {
-    // Confirmed in all three immutable v0.2.6 deliveries; source and candidate
+    // Confirmed in all three immutable v0.2.9 deliveries; source and candidate
     // builds must still pass these exact assertions.
     todo: delivery !== 'source' && !process.env.SMASHBURGER_CANDIDATE && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 overlapping-menu scroll-lock defect; immutable artifacts retained. Candidate assertions remain mandatory.' : false
+      ? 'Known v0.2.9 overlapping-menu scroll-lock defect; immutable artifacts retained. Candidate assertions remain mandatory.' : false
   }, async () => {
     const f = runtimeFixture(delivery);
     try {
@@ -443,7 +443,7 @@ for (const delivery of deliveries) {
 
   test(`${delivery}: expanding during an opening transition cancels the collapsed timer`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false
+      ? 'Known v0.2.9 defect; immutable artifacts retained. Source fix needs a new release.' : false
   }, async () => {
     const f = runtimeFixture(delivery);
     try {
@@ -461,7 +461,7 @@ for (const delivery of deliveries) {
 
   test(`${delivery}: breakpoint expansion cancels queued first-link focus`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false
+      ? 'Known v0.2.9 defect; immutable artifacts retained. Source fix needs a new release.' : false
   }, async () => {
     const f = runtimeFixture(delivery);
     try {
@@ -479,7 +479,7 @@ for (const delivery of deliveries) {
 
   test(`${delivery}: collapsing to mobile restores focus before hiding desktop links`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 focus-on-hidden-panel defect; immutable artifacts retained. Source fix needs a new release.' : false
+      ? 'Known v0.2.9 focus-on-hidden-panel defect; immutable artifacts retained. Source fix needs a new release.' : false
   }, () => {
     const f = runtimeFixture(delivery);
     try {
@@ -498,7 +498,7 @@ for (const delivery of deliveries) {
 
   test(`${delivery}: expanding during a closing transition cancels hiding and preserves scroll styles`, {
     todo: delivery !== 'source' && !process.env.SMASHBURGER_FRESH_BUILD
-      ? 'Known v0.2.6 defect; immutable artifacts retained. Source fix needs a new release.' : false
+      ? 'Known v0.2.9 defect; immutable artifacts retained. Source fix needs a new release.' : false
   }, async () => {
     const f = runtimeFixture(delivery);
     try {

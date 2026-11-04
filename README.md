@@ -10,7 +10,7 @@ The canonical repository is `madewithpixels/Smashburger-Webflow-Navbar`; the wor
 
 The Library verification loader stays pinned to `ddb83c79934914ef0f03f3f012ee2743154153f7`. Its CSS and JavaScript integrity values are generated from that commit's raw local Git objects, with no network or current-source fallback. Missing objects stop the Library build with an explicit error. This older runtime **does not include the latest overlapping-overlay scroll-lock fix**; the current-source self-contained candidate does. The illustrative tag loader separately hashes current candidate output and remains uninstalled. `npm run test:candidate` checks both pinned assets and rejects deliberately mismatched hashes. See [the integrity repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
 
-**Released baseline:** v0.2.6 remains installed in Webflow. The existing `dist/`, top-level Webflow Embeds/loader, `demo/navbar-light.browser.js`, archived `smashed-navbar-html-demo/` and ZIP retain their original bytes. The old GitHub repository remains available for pinned CDN URLs. Do not mix its legacy classes with candidate CSS. Runtime attributes, CSS variables, APIs/events, diagnostics and variant markers remain compatible; their `mwp-*` or `NavbarLight` names are intentional.
+**Released baseline:** v0.2.9 is the current stable distribution; the MWP and Voice Focus staging embeds use its exact versioned CDN files. The shared Library component remains a separate v0.2.6 install. The v0.2.6 tag and its already-published bytes remain immutable. Do not mix the stable release classes with the 0.3 candidate CSS. Runtime attributes, CSS variables, APIs/events, diagnostics and variant markers remain compatible; their `mwp-*` or `NavbarLight` names are intentional.
 
 Run `npm run test:candidate` for the fresh candidate deliveries, `npm test` for source and legacy regression coverage, `npm run check:namespace` for class/hook and immutable-file checks, and `npm run check:dist` for candidate build reproducibility. See [the migration and repository record](webflow/canonical-rename-2026-10-15.md) for evidence, remaining gates and the class map.
 
@@ -205,16 +205,16 @@ Both test commands now discover the complete test set, including `tests/navbar-l
 
 ## Optional CDN distribution
 
-The CDN route uses exact semantic-version GitHub tags through jsDelivr. The `v0.2.6` production files are:
+The CDN route uses exact semantic-version GitHub tags through jsDelivr. The `v0.2.9` production files are:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.6/dist/navbar-light.min.css">
-<script defer src="https://cdn.jsdelivr.net/gh/madewithpixels/Webflow-Navbar-Light@v0.2.6/dist/navbar-light.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.2.9/dist/navbar-light.min.css">
+<script defer src="https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.2.9/dist/navbar-light.js"></script>
 ```
 
 Never use `latest`, a branch name or a version range in a production Webflow project. Exact jsDelivr versions are permanently cached, so a correction must receive a new version and tag. The generated [webflow/navbar-light-cdn-loader.html](webflow/navbar-light-cdn-loader.html) includes the exact URLs, SHA-384 integrity values, a readable runtime version and load/error state on the native link/script elements. A failed asset dispatches `mwp-navbar-light:cdn-error` and logs a diagnostic without hiding the native navigation content.
 
-The `v0.2.6` build keeps the Overlay trigger in its authored header position throughout opening, open and closing states. The `v0.2.5` build adds the `Layout presets` switch. The `v0.2.4` build fixes the reduced-motion panel/item duration cascade, measures the native burger bars so the open X stays centred, recognises current and namespaced Webflow variant markers, and accepts Webflow's capitalised `True` for `Show backdrop`. `v0.2.3` added neutral layouts and timed custom motion. Sites pinned to earlier versions keep their files until their exact CDN URLs are updated.
+The `v0.2.9` build keeps the v0.2.8 synthetic-resize fix and uses an explicit JavaScript file URL so jsDelivr serves the exact bytes used by Subresource Integrity. The `v0.2.8` build ignores synthetic resize events so page scripts and scroll locking cannot close an open menu; real browser resize and breakpoint changes are still handled. The `v0.2.7` build ignores same-breakpoint resizes. The `v0.2.6` build keeps the Overlay trigger in its authored header position throughout opening, open and closing states. The `v0.2.5` build adds the `Layout presets` switch. The `v0.2.4` build fixes the reduced-motion panel/item duration cascade, measures the native burger bars so the open X stays centred, recognises current and namespaced Webflow variant markers, and accepts Webflow's capitalised `True` for `Show backdrop`. `v0.2.3` added neutral layouts and timed custom motion. Sites pinned to earlier versions keep their files until their exact CDN URLs are updated.
 
 Sites with a Content Security Policy must allow `https://cdn.jsdelivr.net` in `style-src` and `script-src`. The loader's inline diagnostic handlers also need the site's permitted inline-handler policy; blocking those handlers suppresses the custom diagnostic but does not itself block the external CSS or JavaScript. The CDN necessarily receives ordinary request metadata needed to serve the files. Use the self-contained Embed or self-hosted files when third-party requests or the required CSP allowances are unsuitable.
 

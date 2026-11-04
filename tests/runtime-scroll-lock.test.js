@@ -3,10 +3,10 @@ import test from 'node:test';
 import { deliveries, runtimeFixture, change } from '../scripts/runtime-test-fixture.mjs';
 
 // These three lifecycle groups were each observed failing in all immutable
-// v0.2.6 deliveries. Execute them as TODOs only there, never for candidates.
+// v0.2.9 deliveries. Execute them as TODOs only there, never for candidates.
 function historicalLockFailure(delivery) {
   return { todo: delivery !== 'source' && !process.env.SMASHBURGER_CANDIDATE && !process.env.SMASHBURGER_FRESH_BUILD
-    ? 'Known v0.2.6 scroll-lock ownership defect; immutable artifacts retained. Candidate assertions remain mandatory.' : false };
+    ? 'Known v0.2.9 scroll-lock ownership defect; immutable artifacts retained. Candidate assertions remain mandatory.' : false };
 }
 
 function cloneNavbar(f, settings = {}) {

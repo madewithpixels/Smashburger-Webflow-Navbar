@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { deliveries, runtimeFixture, change, event } from '../scripts/runtime-test-fixture.mjs';
 
 // Ordinary tests check maintained source. Candidate mode checks the same contract
-// against fresh generated files, without imposing it on immutable v0.2.6 assets.
+// against fresh generated files, without imposing it on immutable v0.2.9 assets.
 const targets = deliveries.filter(d => d === 'source' || process.env.SMASHBURGER_CANDIDATE);
 const saved = JSON.parse(readFileSync(new URL('../webflow/evidence/library-sb-nav-candidate-2026-10-15.json', import.meta.url)));
 const paths = {

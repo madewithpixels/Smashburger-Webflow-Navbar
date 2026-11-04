@@ -5,6 +5,9 @@ source presents a settled choice, not agent acceptance of implementation. Unknow
 original dates are explicit. Michael’s 14 October answers are applied below;
 remaining Proposed choices are recorded here without another boss question.
 
+## Current reading — 4 November 2026
+The stable distribution is v0.2.9 and the `0.3.0-rc.1` class-migration candidate remains unreleased. Michael directed that v0.2.9 be brought into `main` and installed on Voice Focus; the shared Library update remains separate. D-017's v0.2.6 baseline is superseded by D-020; the old v0.2.6 tag and its bytes remain immutable.
+
 ## Current reading — 16 October 2026
 
 SmashBurger, the `sb-nav` structural names and the canonical repository/package/path are settled (D-012/D-013). Their original questions, proposal text and follow-ups below are retained as decision history; they are not current blockers. The class migration exists as an unreleased local candidate (D-017), and both Library review candidates are prepared (D-018). Library sharing, consumer verification and release approval remain open.
@@ -148,7 +151,7 @@ Keep the closed infrastructure Details and manual settings snapshot as a prototy
 **Consequence:** Static text requires manual upkeep; no live binding or accepted shared pattern is claimed.
 
 ## D-017 - Isolate the renamed class candidate from the immutable release
-**Status:** Accepted
+**Status:** Superseded by D-020
 **Qualifier:** technical — settled by Codex, 15 October 2026, under project-docs / boss D-096
 **Date:** 15 October 2026
 Use package name `smashburger-webflow-navbar` and prerelease version `0.3.0-rc.1` for the accepted `sb-nav` class migration. Generate into `candidate/`; retain the existing top-level v0.2.6 distribution, Embeds, loader and archived demo bytes. Protect these bytes and the retained runtime contracts with automated assertions. Do not create a release tag or install the illustrative candidate loader.
@@ -179,3 +182,12 @@ the folder from Codex project settings; [execution and recovery evidence](webflo
 and working files are backed up. Development uses the canonical folder. Release
 tags, the prototype worktree, the old GitHub repository and CDN pins remain intact;
 remote archival/retirement stays gated under R-127. No roadmap Acceptance follows.
+
+
+## D-020 - Advance the stable baseline to v0.2.9 while retaining the 0.3 candidate
+**Status:** Accepted
+**Date:** 4 November 2026 — Michael in this chat
+Bring the released v0.2.9 changes into `main` and update Voice Focus to the exact v0.2.9 CDN files. Keep the `0.3.0-rc.1` class-migration work isolated under `candidate/`; do not replace it with the stable release.
+**Rationale:** The resize fix and exact-byte CDN loader are now the stable consumer baseline. Advancing the top-level stable artifacts should not discard the separately maintained 0.3 candidate.
+**Source:** Michael's instruction in this chat, 4 November 2026; release record `webflow/v0.2.9-release-verification.md`.
+**Consequence:** The top-level stable distribution and loader are v0.2.9; the v0.2.6 tag and its already-published bytes remain immutable. The 0.3 candidate remains unreleased.

@@ -8,7 +8,7 @@ const version = packageMetadata.version;
 const tag = `v${version}`;
 const baseUrl = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${tag}/dist`;
 const css = await readFile(resolve(outputRoot, 'dist/navbar-light.min.css'));
-const javascript = await readFile(resolve(outputRoot, 'dist/navbar-light.min.js'));
+const javascript = await readFile(resolve(outputRoot, 'dist/navbar-light.js'));
 const loader = renderCdnLoader({ version, baseUrl, css, javascript });
 
 await writeFile(resolve(outputRoot, 'webflow/navbar-light-cdn-loader.html'), loader);

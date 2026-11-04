@@ -10,7 +10,7 @@ const projectRoot = resolve(import.meta.dirname, '..');
 const root = candidate ? resolve(projectRoot, 'candidate') : projectRoot;
 
 test('release artifacts are versioned, browser-ready and mapped to source', async () => {
-  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.6' };
+  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.9' };
   const paths = {
     css: 'dist/navbar-light.css',
     minCss: 'dist/navbar-light.min.css',
@@ -43,16 +43,16 @@ test('release artifacts are versioned, browser-ready and mapped to source', asyn
 });
 
 test('CDN loader pins the release tag and authenticates the committed artifacts', async () => {
-  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.6' };
+  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.9' };
   const loader = await readFile(resolve(root, 'webflow/navbar-light-cdn-loader.html'), 'utf8');
   const tag = `v${packageMetadata.version}`;
-  const expectedBase = `https://cdn.jsdelivr.net/gh/madewithpixels/${candidate ? 'Smashburger-Webflow-Navbar' : 'Webflow-Navbar-Light'}@${tag}/dist`;
+  const expectedBase = `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@${tag}/dist`;
   const integrity = (source) => `sha384-${createHash('sha384').update(source).digest('base64')}`;
   const css = await readFile(resolve(root, 'dist/navbar-light.min.css'));
-  const javascript = await readFile(resolve(root, 'dist/navbar-light.min.js'));
+  const javascript = await readFile(resolve(root, 'dist/navbar-light.js'));
 
   assert.match(loader, new RegExp(`${expectedBase.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}/navbar-light\\.min\\.css`));
-  assert.match(loader, new RegExp(`${expectedBase.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}/navbar-light\\.min\\.js`));
+  assert.match(loader, new RegExp(`${expectedBase.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}/navbar-light\\.js`));
   assert.match(loader, new RegExp(integrity(css).replaceAll('+', '\\+')));
   assert.match(loader, new RegExp(integrity(javascript).replaceAll('+', '\\+')));
   assert.doesNotMatch(loader, /@(latest|main|master)|@\d+\.x|@\^|@~/i);
@@ -60,7 +60,7 @@ test('CDN loader pins the release tag and authenticates the committed artifacts'
 });
 
 test('CDN loader reports failures without removing native navigation content', async () => {
-  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.6' };
+  const packageMetadata = candidate ? JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8')) : { version: '0.2.9' };
   const loader = await readFile(resolve(root, 'webflow/navbar-light-cdn-loader.html'), 'utf8');
   const nativeMarkup = '<details data-mwp-menu><summary>Menu</summary><nav data-mwp-panel>Native fallback</nav></details>';
   const dom = new JSDOM(`<!doctype html><html><head>${loader}</head><body>${nativeMarkup}</body></html>`, {

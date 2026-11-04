@@ -182,17 +182,20 @@ class NavbarLight {
     return ['left', 'right', 'overlay'].includes(this.root.dataset.layout);
   }
 
-  onBreakpointChange(initial = false) {
+  onBreakpointChange(eventOrInitial = false) {
+    const initial = eventOrInitial === true;
+    if (eventOrInitial?.type === 'resize' && eventOrInitial.isTrusted === false) return;
+
     const collapsed = this.isCollapsed();
     const previous = this.root.dataset.mwpCollapsed === 'true';
+
+    if (!initial && collapsed === previous) return;
     this.root.dataset.mwpCollapsed = String(collapsed);
 
     if (collapsed) {
       if (initial || !previous) {
         this.menu.open = false;
         this.setState('closed', false);
-      } else {
-        this.syncNative(false);
       }
     } else {
       this.unlockScroll();

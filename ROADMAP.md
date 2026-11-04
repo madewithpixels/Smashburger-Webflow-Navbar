@@ -1103,21 +1103,25 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Evidence:** The Voice Focus trigger fades over 180 ms while its panel takes 280 ms to close. The madewithpixels trigger changes colour with no fade while its configured panel close is 220 ms. No trigger size change was found in the inspected rules. Only the stated 511 px and 2044 px widths were checked; see [browser evidence and limits](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
 #### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
 **Owner:** agent
 **Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
 **Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
 **Task:** #43612358 in your boss list.
 **Evidence:** v0.2.7 returns early when the collapsed/expanded result has not changed. All 43 local tests pass, including same-state resize, real breakpoint change, Escape, second click and link closing. Published CDN files match the tested files byte for byte. Consumer-site browser checks remain open; see [release and test evidence](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
+**4 November 2026 — v0.2.9 rollout:** The release also ignores synthetic resize events and uses the exact-byte `.js` CDN URL. MWP and Voice Focus staging now use the v0.2.9 loader; Voice Focus saved-code readback and subdomain publication are confirmed. The release evidence is in [v0.2.9 verification](webflow/v0.2.9-release-verification.md).
+
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
-**State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
 **Task:** 43612101 in your boss list
 **Source:** [todo.md](todo.md), original line 173 (now 174); baseline `c808ca4`.
 **Exit criteria:**
 **16 October 2026 — brief #72:** Candidate reproducibility verification now builds in a disposable copy and preserves existing paths and bytes on matching, stale and failed builds. Nine bounded fixture checks cover partial failure, new/removed files, termination and deliberate build output. The real verification and deliberate build retain all current output bytes. No release, pin or Acceptance changed. See [behaviour, evidence and limits](webflow/candidate-reproducibility-2026-10-16.md).
 **16 October 2026 — brief #70:** Repaired the local test gate using executed expected failures only for confirmed immutable v0.2.6 overlap defects. Fresh candidate checks discover the full maintained-source test set and keep those assertions mandatory. Test files run one at a time to avoid existing timeout contention. No release or runtime change. See [commands, results and limits](webflow/test-gate-repair-2026-10-16.md).
 **15 October 2026 — Codex:** Candidate is built/tested with proposed canonical exact-version URLs and SHA-384 values. No new release tag or CDN publication exists. Staging fixture publication is a separate test-site action and does not complete this release item.
+
+**4 November 2026 — v0.2.9:** Released and merged into `main`; exact CDN files were byte-checked, and MWP plus Voice Focus staging use v0.2.9. The `0.3.0-rc.1` class migration remains an unreleased candidate. See [release verification](webflow/v0.2.9-release-verification.md).
 **Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md). [Library CDN verification](webflow/library-sb-nav-candidates-2026-10-15.md) reads an already-pushed exact commit and verifies bytes/SRI locally; this does not create or complete a semantic release.
 
 **16 October 2026 — brief #67:** Repaired candidate verification integrity using raw local Git blobs at the unchanged older pin. Both CSS/JavaScript values match; the current-source illustrative loader remains separate and unchanged. No semantic release, version or URL pin changed. See [repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
