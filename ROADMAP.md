@@ -2333,8 +2333,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.
 **State:** blocked · **Evidence:** verified (local) · **Acceptance:** pending
-**Blocked:** The authorised New Smashburger Test site is missing from the current Webflow MCP site list, and its recorded ID returns site-not-found; no comparison or snapshot export can proceed.
-**Unblock:** Make New Smashburger Test available to the Webflow MCP connection, then resume the bounded comparison on that same disposable site.
+**Blocked:** Disposable SB test site opens in Chrome but is absent from the Webflow MCP list and has no confirmed before backup; no safe comparison or snapshot export can proceed.
+**Unblock:** Make Disposable SB test site available to the Webflow MCP connection and confirm a before backup for that exact site, then resume the bounded comparison.
 **Blocked since:** 4 November 2026 · **Unblocker:** Michael
 **Try:** Your chosen menu layout, colours and spacing should stay the same in Webflow Designer, Preview and the published test page. Once an agent prepares that page with this change, open the menu in each and compare them; the page is not ready for this check yet.
 **Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.

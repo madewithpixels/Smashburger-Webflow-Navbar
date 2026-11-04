@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** Canonical routing restored; the unreleased combined candidate passes 690/690 checks. The R-269 site comparison is blocked because the authorised disposable site is missing from the current Webflow tools. v0.2.6 is unchanged; Lite is not a finished public clonable.
+**Stage:** Canonical routing restored; the unreleased combined candidate passes 690/690 checks. The R-269 site comparison is blocked because the exact site opens in Chrome but is absent from the current Webflow tools and has no confirmed before backup. v0.2.6 is unchanged; Lite is not a finished public clonable.
 **Last updated:** 4 November 2026 — Codex (night shift)
-**Reviewed at commit:** 8f2d24f — checked the current record and Git before brief #296.
-**Next action:** Michael: make New Smashburger Test available to the Webflow MCP connection; then an agent can resume the bounded R-269 comparison.
-**Needs Michael:** Make New Smashburger Test available to the Webflow MCP connection so the authorised site can be read and snapshotted.
+**Reviewed at commit:** 8469e3a — checked the current record and Git before brief #286.
+**Next action:** Michael: make Disposable SB test site available to the Webflow MCP connection and create/confirm the required before backup; then an agent can resume the bounded R-269 comparison.
+**Needs Michael:** Make Disposable SB test site available to the Webflow MCP connection and confirm its before backup so the authorised site can be read and snapshotted.
+
+## 4 November 2026 — Exact R-269 test URL checked; comparison stopped — Codex (night shift)
+
+**Changed (R-269):** No page, component, class, CMS item, custom code or publishing setting changed. The exact brief URL opened Designer for **Disposable SB test site**. Its Webflow dashboard Backups page showed “No versions exist for this site”, so the required before backup could not be confirmed. The earlier backup evidence belongs to the differently named **New Smashburger Test** and was not treated as this site's backup.
+
+**Outputs:** Added the exact-site result and backup record to the [brief 286 evidence](webflow/evidence/brief-286-r269-access-block-2026-11-04.md). Created **boss · brief #286 · after** from Designer Settings → Backups and confirmed it in the dashboard list (1 page, 0 styles, 1 element). Boss recorded it as confirmed, route Designer.
+
+**Checked how:** Opened https://disposable-sb-test-site.design.webflow.com/ in signed-in Chrome. The dashboard identifies the site as Disposable SB test site at webflow.com/dashboard/sites/disposable-sb-test-site/backups; it reported no existing versions before the after backup. Webflow MCP list_sites returned 16 sites and omitted the site. No snapshot could be exported. No structural change was attempted.
+
+**Still open:** Designer Canvas, Preview and published comparisons; candidate verification; screenshots and computed styles; the layout, size, behavior, keyboard/focus, reduced-motion, short-height scrolling, no-script, upgrade and rollback checks remain unchecked. The exact candidate hashes in the prior evidence apply to its recorded baseline, not a fresh inspection of this site's candidate. No before backup or rollback point for the pre-attempt state was confirmed.
+
+**Needs Michael:** Make Disposable SB test site available to the Webflow MCP connection and confirm a before backup for this exact site. The prior New Smashburger Test backup does not cover it.
+
+**Next useful action:** After the exact site is readable through Webflow MCP and its before backup is visible, resume the bounded comparison on Disposable SB test site. Do not change the site until both gates are satisfied.
 
 ## 4 November 2026 — R-269 site comparison stopped at Webflow access — Codex (night shift)
 

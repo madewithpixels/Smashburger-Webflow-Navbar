@@ -34,3 +34,15 @@ Local checked baseline: commit `e555cf7f1032e7c5481aa62c35dcfa38e4b39224`.
 First make **New Smashburger Test** available to the Webflow MCP connection, then verify its current site ID with `list_sites` and confirm it uniquely matches the dashboard and `new-smashburger-test.webflow.io`. Re-read/export the current site before any mutation. Repeat the before-backup gate for the resumed brief if Boss requires a new run's backup, then apply only the candidate and authored-style test setup described in [the R-269 bounded follow-up](../runtime-styling-boundary-2026-10-31.md). Publish only to the Webflow subdomain.
 
 If the comparison fails or needs full rollback, open **New Smashburger Test → Settings → Backups**, find **boss · brief #286 · before**, press **Restore**, and verify the site returns to the saved 1-page / 26-style / 45-element state. The “after” backup is the post-attempt restore point; no site edits were made in this run.
+
+## Exact URL follow-up — 4 November 2026
+
+The current brief names `https://disposable-sb-test-site.design.webflow.com/`. Signed-in Chrome opened it in Designer as **Disposable SB test site**. Its dashboard backup page is `https://webflow.com/dashboard/sites/disposable-sb-test-site/backups`. This is not the **New Smashburger Test** named in the earlier handoff above; do not use that site's backups or rollback instructions for this site.
+
+Before any structural change, the dashboard said **“No versions exist for this site.”** Therefore the brief's instruction that the before backup was already made could not be confirmed for this exact site, and no structural edits, candidate install, publishing, or comparison were attempted. Webflow MCP `list_sites` returned 16 sites and did not include Disposable SB test site, so no MCP snapshots of pages, styles, variables or custom code were possible.
+
+The required closing backup was created in Designer under Settings → Backups as **boss · brief #286 · after**. The Designer reported “Site backup started”; the dashboard list then showed the saved backup (1 page, 0 styles, 1 element). Boss recorded this after backup as confirmed, route `designer`. No site content changed. The dashboard's before list was empty; this after backup is not a before restore point.
+
+No comparison screenshots or computed-style evidence were captured. Canvas, Preview and published styling; all layouts and viewport sizes; open/closed behavior; keyboard/focus; reduced motion; short-height scrolling; no-script; upgrade and rollback remain unchecked. The earlier candidate hashes above identify the previous handoff's local baseline only; this follow-up did not verify that candidate on this site. Interactions and animations are not represented by the unavailable snapshot export.
+
+To resume, make **Disposable SB test site** readable through the Webflow MCP connection and confirm a before backup for this exact site. Then export its before snapshot and run the bounded comparison on this site only. No rollback is required for this follow-up because no content changed; do not restore from the after backup as though it were the prior state.
