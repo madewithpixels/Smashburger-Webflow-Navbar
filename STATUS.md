@@ -1,5 +1,19 @@
 # SmashBurger — Status
 
+## 4 November 2026 — Ran the disposable-site layout comparison — Codex
+
+**Changed (R-269):** Installed one `SmashBurger CDN Unlink Trial` library instance beside the sample navigation on Disposable SB test site. Published dropdown, overlay, left, right and full-width layouts to that site's Webflow subdomain. Restored dropdown as the final setting.
+
+**Outputs:** The [published disposable test page](https://disposable-sb-test-site.webflow.io/) is ready for review. The upper menu is the sample/reference; the lower menu is the trial. Confirmed and recorded the named before and after backups in the Webflow dashboard.
+
+**Checked how:** Compared sampled styles and responsive states in Designer; opened all five layouts in Preview and on the published page at phone width; checked Preview's no-custom-code Space fallback; checked Escape and focus return on the initial live dropdown; reloaded and verified the restored dropdown. Only the Webflow staging subdomain was published.
+
+**Still open:** Webflow MCP still does not list this site. The trial component loads released v0.2.6 CSS and JavaScript, not the unreleased 0.3.0-rc.1 runtime. This is not full candidate verification. Authored-style parity across every state/layout, keyboard close paths across all layouts, reduced motion, short-height scrolling, upgrade, rollback and Michael's review remain open.
+
+**Needs Michael:** Open [Disposable SB test site](https://disposable-sb-test-site.webflow.io/) at phone width and compare the lower trial menu with the upper reference. Then tell me whether to proceed with a temporary candidate-runtime install on this disposable instance or first enable the site in Webflow MCP; the current MCP connection cannot read it.
+
+**Next useful action:** Record Michael's visual feedback and settle how to make the unreleased candidate runtime available for the remaining checks. See [comparison evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
+
 ## 4 November 2026 — Repaired the release checks after the stable update — Codex
 
 **Changed (R-125, R-271):** Corrected checks that still expected the old working files and compressed JavaScript address. The historical v0.2.6 hashes are now checked against their recorded Git revision; the current stable files must match the v0.2.9 tag exactly. GitHub now fetches the history needed to read those releases and the existing Library verification pin. Corrected the uninstalled Library verification loader's integrity value to authenticate the uncompressed file its URL actually requests.
