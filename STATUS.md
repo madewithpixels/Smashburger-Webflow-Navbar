@@ -2353,3 +2353,7 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 - 15 October 2026 — Accepted by Michael in boss: R-184 (checked: not stated)
 - 15 October 2026 — Accepted by Michael in boss: D-013 (*"'/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar'"*)
 
+## 4 November 2026, 13:04 — boss runner *(Michael's roadmap order, R-120)*
+Written in from Michael's task list in boss. The order is his; the runner only moves the items. If a move breaks a dependency, tell him; don't undo it.
+- Michael moved R-270 before R-125 (dragged its task in boss).
+

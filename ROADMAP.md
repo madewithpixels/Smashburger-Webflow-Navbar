@@ -1095,6 +1095,12 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Evidence links:** [canonical transfer and candidate checks](webflow/canonical-rename-2026-10-15.md)
 
 
+#### R-270 · Burger menu navigation button jumping colour and size check
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Task:** 43612352 in your boss list
+**Done when (inferred — confirm):** Check the burger menu navigation button across the relevant menu states and responsive widths; record whether its colour or size jumps unexpectedly and the exact conditions. If it does, identify the cause and a correction before reporting the check complete.
+**Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
+
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** in progress · **Evidence:** verified (local) · **Acceptance:** pending
 **Task:** 43612101 in your boss list
@@ -2352,8 +2358,3 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Brief 286 access result (4 November 2026):** New Smashburger Test remains absent from the current Webflow MCP `list_sites`; `get_site`, `list_pages` and site-instruction search using its recorded ID returned site-not-found. No site changes or snapshot exports were made. The required before and after backups are confirmed; the comparison remains blocked. See [brief 286 handoff](evidence/brief-286-r269-access-block-2026-11-04.md) for candidate hashes, backup routes, exact unchecked items and restore steps.
 
 
-#### R-270 · Burger menu navigation button jumping colour and size check
-**State:** planned · **Evidence:** none · **Acceptance:** pending
-**Task:** 43612352 in your boss list
-**Done when (inferred — confirm):** Check the burger menu navigation button across the relevant menu states and responsive widths; record whether its colour or size jumps unexpectedly and the exact conditions. If it does, identify the cause and a correction before reporting the check complete.
-**Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
