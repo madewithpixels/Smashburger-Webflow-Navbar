@@ -2326,7 +2326,10 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.
-**State:** built · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** blocked · **Evidence:** verified (local) · **Acceptance:** pending
+**Blocked:** The authorised New Smashburger Test site is missing from the current Webflow MCP site list, and its recorded ID returns site-not-found; no comparison or snapshot export can proceed.
+**Unblock:** Make New Smashburger Test available to the Webflow MCP connection, then resume the bounded comparison on that same disposable site.
+**Blocked since:** 4 November 2026 · **Unblocker:** Michael
 **Try:** Your chosen menu layout, colours and spacing should stay the same in Webflow Designer, Preview and the published test page. Once an agent prepares that page with this change, open the menu in each and compare them; the page is not ready for this check yet.
 **Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.
 **Owner:** agent · **Depends on:** an exact candidate and an authorised disposable Webflow consumer with a backup for Designer/Preview/published checks
@@ -2345,6 +2348,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 - Assess compatibility for installs relying on forced layouts; document migration and rollback, choose the appropriate breaking version before release approval, and retain immutable v0.2.6 assets. No consumer rollout is implied by this item.
 **Evidence boundary (31 October 2026):** Source changes and candidate build are local only. The first full test run failed: two existing tests still assert the old forced layout/preset behavior, the new CSS contract test has two incorrect assertions, and known immutable v0.2.6 distribution checks fail. No rendered-browser evidence, Designer/Preview/published comparison, CSS build guard or migration verification. Michael's acceptance is pending.
 **Local implementation and evidence (31 October 2026):** The candidate has a build-time CSS guard over source, candidate stylesheets and generated Webflow/Library Embed styles, plus JSDOM regressions for Flex with stale Grid tracks, intentionally authored Grid, opinionated host styles, presets disabled and all five layouts; Canvas helper checks also pass. The final candidate-only verification passed 690/690, including simulated upgrade and rollback cases. The full `npm test` passed with 279 tests: 252 passed and 27 are TODO for documented immutable v0.2.6 defects. No rendered-browser, Designer Canvas, Preview, published-page or real-site upgrade/rollback comparison was performed. R-269 remains open until the bounded site comparison and Michael's review are complete.
+
+**Brief 286 access result (4 November 2026):** New Smashburger Test remains absent from the current Webflow MCP `list_sites`; `get_site`, `list_pages` and site-instruction search using its recorded ID returned site-not-found. No site changes or snapshot exports were made. The required before and after backups are confirmed; the comparison remains blocked. See [brief 286 handoff](evidence/brief-286-r269-access-block-2026-11-04.md) for candidate hashes, backup routes, exact unchecked items and restore steps.
 
 
 #### R-270 · Burger menu navigation button jumping colour and size check

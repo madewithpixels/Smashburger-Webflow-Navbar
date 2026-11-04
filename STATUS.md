@@ -1,9 +1,23 @@
 # SmashBurger — Status
-**Stage:** Canonical routing restored; settings evidence committed; all seven compatibility commits reconciled locally. The unreleased combined candidate passes 690/690 checks. v0.2.6 is unchanged. Browser, Webflow consumer, human/device and release checks remain; Lite is not a finished public clonable.
-**Last updated:** 3 November 2026 — Codex (night shift)
-**Reviewed at commit:** 196de21 — checked the current record and local Git before recording Michael's new task.
-**Next action:** Agent: prepare the bounded Designer/Preview/published comparison on a backed-up disposable site for R-269; keep R-268 separate.
-**Needs Michael:** Nothing.
+**Stage:** Canonical routing restored; the unreleased combined candidate passes 690/690 checks. The R-269 site comparison is blocked because the authorised disposable site is missing from the current Webflow tools. v0.2.6 is unchanged; Lite is not a finished public clonable.
+**Last updated:** 4 November 2026 — Codex (night shift)
+**Reviewed at commit:** e555cf7 — checked the current record and Git before attempting brief #286.
+**Next action:** Michael: make New Smashburger Test available to the Webflow MCP connection; then an agent can resume the bounded R-269 comparison.
+**Needs Michael:** Make New Smashburger Test available to the Webflow MCP connection so the authorised site can be read and snapshotted.
+
+## 4 November 2026 — R-269 site comparison stopped at Webflow access — Codex (night shift)
+
+**Changed (R-269):** No site changes. The authorised disposable site's dashboard confirms both required backups, but the current Webflow tools cannot find that site.
+
+**Outputs:** Recorded the exact local candidate hashes, the confirmed backup names and routes, the failed site lookup, all unchecked comparison items and restore steps in the [brief 286 handoff](webflow/evidence/brief-286-r269-access-block-2026-11-04.md). Updated R-269's state to blocked pending site access.
+
+**Checked how:** Opened New Smashburger Test in signed-in Chrome. Created the “before” backup from Designer; Designer showed a loading spinner, then the dashboard Backups list confirmed the exact name. Created and read back the “after” backup through the dashboard. The Boss Webflow tools recorded both. Webflow MCP `list_sites` omitted New Smashburger Test; `get_site`, `list_pages` and site-instruction search with its recorded site ID returned site-not-found. Computed the candidate SHA-256 hashes locally.
+
+**Still open:** No Designer Canvas, Preview or published comparison, screenshots, computed-style evidence, layout/state/viewport matrix, keyboard/focus, reduced-motion, short-height scroll, no-script, upgrade or rollback behavior was checked. Snapshot exports could not be made because the Webflow tools could not read this site. The existing backups make rollback available; no Webflow content changed.
+
+**Needs Michael:** Make New Smashburger Test available to the Webflow MCP connection. This unlocks the site read and snapshot required to resume the comparison.
+
+**Next useful action:** After the site appears in the current Webflow tool site list, resume the bounded R-269 comparison on this same disposable site. Verify its current site ID, export the before snapshot, and follow the recorded test matrix; do not substitute the separate Smashburger site.
 
 ## 3 November 2026 — New navigation check recorded — Codex (night shift)
 
