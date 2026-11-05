@@ -1,5 +1,19 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Resumed R-269 after Webflow access returned — Codex
+
+**Changed (R-269):** No lasting Webflow changes. Reconnected the correct Webflow data tools to Disposable SB test site and corrected the previous access-blocked record.
+
+**Checked how:** Webflow confirmed the disposable site's identity and one Home page. Site and page custom-code fields are empty, and there are no site-specific agent instructions. Read all five page Embed code settings. Compared the saved styles on the candidate and reference: all 27 shared class names have identical base and responsive breakpoint property records; no hover, active or focus overrides were returned for those classes. On the published page, checked the trial at 991 px: it opened, Escape closed it, and a second click also closed it. Crossing to 1024 px changed it to the normal expanded navigation; crossing back to 991 px returned it closed. Earlier checks still show contained menu scrolling at 390 × 500 and the 768 px collapse difference is due to `data-collapse="tablet"` on the trial only. Reset Chrome to its normal viewport (2044 × 1076). No site edits or publishing occurred.
+
+**Further check:** At the published page's 2044 × 1076 viewport, measured computed styles for both nav rows. Root area, panel, links, secondary links and trigger values matched across the two. Chrome's available controls here did not permit changing the live viewport, so this confirms desktop only; it does not add a tablet-width computed-style comparison.
+
+**Still open:** A previous Preview attempt reported Webflow's generic `CompilationError: Invalid source code`. In this continuation, Preview loaded with all page embeds restored, so the earlier error was not reproduced or explained. A real linked upgrade/rollback test needs the unreleased candidate shared through the Webflow Library, which is outside this disposable-site comparison. Reduced-motion and physical-device checks, remaining state/layout style comparisons, visual review and Michael's acceptance are also open.
+
+**Next useful action:** Finish the remaining non-Library state/layout, reduced-motion and visual checks on the disposable site. If the Preview error returns, capture its current console output before changing code. Ask Michael before sharing the candidate to test a linked upgrade/rollback. Keep the test page staging-only; no publication is needed for the completed checks.
+
+**Handoff:** Site ID `6aeb2f272edef7503d4839ad`; Home page ID `6aeb2f292edef7503d483a01`. [Disposable test page](https://disposable-sb-test-site.webflow.io/). Full evidence: [Brief 286 comparison](webflow/evidence/brief-286-r269-comparison-2026-11-04.md). Shared Library, MWP and Voice Focus remain unchanged.
+
 ## 5 November 2026 — Confirmed the candidate in Preview and on the published test page — Codex
 
 **Changed (R-269):** No lasting site changes. Confirmed the candidate in Preview and on the published disposable page, then narrowed the Preview compiler error without publishing any isolation edits.
