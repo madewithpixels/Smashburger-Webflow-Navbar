@@ -1,5 +1,15 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Shared and published the scoped Embed fix — Codex
+
+**Changed (R-269):** Updated the shared `SmashBurger 0.3.0-rc.1 candidate` with the locally committed Embed fix that keeps runtime declarations private, then accepted that Library update on the disposable site. Published only to `disposable-sb-test-site.webflow.io`; the production custom domain stayed unchecked. No backup was made, as Michael asked. MWP, Voice Focus and the CDN candidate were not changed in this update.
+
+**Checked how:** The Library share review listed only the self-hosted SmashBurger candidate as changed. The disposable site's Libraries panel showed the update accepted and “Up to date”. The publish dialog showed the Webflow staging domain checked and the custom domain disabled; Webflow confirmed it was published. On the emulated 375 × 667 page, I opened the middle candidate menu, dispatched a synthetic `resize` while it was open, and confirmed the panel stayed open. A second trigger click closed it; opening again and pressing Escape also closed it. The screenshot showed the expected candidate panel and its close icon. DevTools reported only two missing `/favicon.ico` requests at the time of the latest check; no SmashBurger runtime error was visible.
+
+**Still open:** Chrome's responsive-device menu timed out before desktop widths could be tested. Link-close, real-breakpoint close, the 1024/1440 px checks, authored-style state/layout comparison, reduced-motion, short-height scrolling, and the remaining Designer/Preview/published visual checks are open. The earlier generic Preview compiler error remains unexplained. R-269 is not complete; this candidate remains unreleased, with no stable tag or consumer-site rollout.
+
+**Next useful action:** Resume in Chrome on the disposable test page, check link-close and a real breakpoint crossing, then compare 1024/1440 px. Keep all tests on the disposable site.
+
 ## 5 November 2026 — Fixed the local Embed collision and verified the candidate — Codex
 
 **Changed (R-269):** Michael approved all three items in the Webflow share review. I shared `SmashBurger 0.3.0-rc.1 candidate`, `SmashBurger CDN 0.3.0-rc.1 candidate` and `MWP Cookie Consent`; the disposable site is up to date and has a linked candidate instance. After confirming a global-name collision between the old and candidate inline runtimes, I changed the local Embed build to keep its declarations private and added a regression check. This local fix has not been shared to Webflow.

@@ -69,3 +69,15 @@ The local Webflow Embed builder was then changed to wrap candidate runtime decla
 ## Current test-page state
 
 The test page has the reference menu plus the shared CDN and self-hosted candidate samples. The self-hosted candidate is a linked instance. The old reference runtime embed is restored; the candidate currently coexists with it on `https://disposable-sb-test-site.webflow.io/`, so the isolated no-collision result above does not describe the current published page. The local IIFE-scope fix is unshared and untested live. The custom domain remains disabled. No instance of Cookie Consent was placed; MWP and Voice Focus were not changed.
+
+## 5 November — Scoped Embed fix shared and published to staging
+
+The locally committed fix wraps the candidate runtime in a private function scope, keeping its `const` declarations from colliding with the reference runtime when both are embedded on one page. It preserves the intended public `NavbarLight` and `initNavbarLight` globals. The current generated candidate also retains the synthetic-resize guard.
+
+The MWP Component Library's Share updates review listed only `SmashBurger 0.3.0-rc.1 candidate` as changed. It was shared with the workspace using the description “Fix a runtime name collision when multiple SmashBurger navbars are on one page.” The disposable site accepted the update; its Libraries panel showed “Up to date”. No unrelated library items were part of this update.
+
+The disposable site was published to `disposable-sb-test-site.webflow.io` only. The custom domain checkbox was disabled. No backup was taken, as Michael asked to skip backups this session. MWP and Voice Focus were not changed; there was no stable tag or consumer-site update.
+
+Chrome DevTools was opened on the published page with device emulation at 375 × 667. The middle row is the self-hosted candidate. I opened its menu, dispatched a synthetic `resize` while it was open, and confirmed the panel stayed open. A second trigger click closed it; opening again and pressing Escape also closed it. The panel rendered in the expected position and the trigger changed to its close icon. DevTools showed two `/favicon.ico` 404s at the latest inspection; no SmashBurger runtime error was visible. This is a phone-width interaction check only.
+
+**Still to verify:** On this updated published version, confirm link activation closes the candidate menu, and cross a real breakpoint while it is open to confirm it closes. Check 1024/1440 px and tablet/phone. Chrome's responsive-device menu timed out when I tried switching from the phone preset, so those checks remain open. Continue the authored-style, state/layout, reduced-motion, short-height, Preview-error and visual checks. Do not treat this partial check as R-269 acceptance.
