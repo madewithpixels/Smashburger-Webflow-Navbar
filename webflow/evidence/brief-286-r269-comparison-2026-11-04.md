@@ -34,6 +34,8 @@ To isolate the error further, the candidate loader Embed was temporarily cleared
 
 At 768 px, the trial's root has `data-collapse="tablet"`; the reference root has no explicit `data-collapse`. This explains why the trial collapses while the reference remains expanded at that width. Treat that as a configuration difference, not a CSS regression.
 
+A fresh attempt to interact with the published trial was stopped before a click could be sent: Chrome's browser-control request timed out. No page interaction or site change resulted from that attempt. The earlier recorded live checks remain the evidence for open/close behavior; this session did not repeat them.
+
 **Confirmed:** candidate asset URLs/SRI and runtime instance on the published page; mobile open/second-click/Escape behavior; Preview rendering and trial-menu open/close at the observed widths; the 768 px collapse difference is due to configuration; the candidate loader alone does not cause the Preview compiler error. **Still open:** identify the remaining source of the Preview compiler error; compare authored style values across every property/state/layout; reduced motion; short-height scrolling; linked-instance and v0.2.6-upgrade behavior; rollback; Michael's visual review and acceptance. Do not describe R-269 as complete.
 
 ## Current test-page state
