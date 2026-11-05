@@ -1,5 +1,15 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Clean Preview comparison completed — Codex
+
+**Changed (R-269):** No Webflow page content, component, custom code, or publishing setting was changed. I reopened the disposable site's Designer and published test page in Chrome. I returned the Designer to Design mode and restored its 2044 px canvas width.
+
+**Checked how:** I cleared Chrome DevTools, reloaded the Designer, and then opened Preview with its custom-code switch on. The fresh Preview rendered all three menu rows with dark surfaces and light text, matching the published test page's colour treatment; the earlier light-canvas/dark-text mismatch was not reproduced. A clean Designer reload showed only Webflow's `manifest.json` warning before Preview. With Preview custom code on, fresh console messages included `CompilationError: Invalid source code` and its rejected promise from Webflow's `webflow.js:501`, a Webflow Library token-prefix error, React warnings from Webflow's Canvas app, and a PayPal SDK 400 request containing the sandbox placeholder `client-id=sb` and `merchant-id=XXX`. The old `ROOT_SELECTOR` redeclaration did not recur. After switching Preview custom code off and clearing the console, no further messages appeared during observation; this does not prove which embed triggers the compiler error. The PayPal request's source pointed to Webflow's Designer/Canvas bundles, not SmashBurger runtime code. Published-page and Preview screenshots were read-only comparisons.
+
+**Still open:** The styling mismatch is not confirmed. The Preview compiler error remains reproducible with custom code enabled, but its source is not identified. The 400 request and Webflow Canvas warnings also remain unexplained. Finish the remaining authored-style/state comparisons, reduced-motion and short-height checks, linked upgrade/rollback decision, and Michael's review and acceptance. R-269 is still open; no stable release or consumer-site update is authorised.
+
+**Next useful action:** Isolate the Preview compiler error by checking the site's embeds one at a time in the disposable site, then finish the remaining menu-style and motion checks. Make no code or publishing changes until a specific source is confirmed.
+
 ## 5 November 2026 — Preview comparison surfaced an unconfirmed mismatch — Codex
 
 **Changed (R-269):** No Webflow page content, component, code, or publishing setting was changed. I opened the disposable site's Preview, then returned it to the Designer canvas. The production custom domain was not involved.
