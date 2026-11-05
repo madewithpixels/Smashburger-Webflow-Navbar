@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Shared candidate and staging check held — Codex (night shift)
+
+**Changed (brief #321):** No shared Webflow candidate or staging page changed. The local candidate remains as it was.
+
+**Outputs:** Confirmed the local candidate and its generated files are reproducible. No duplicate script-name result is claimed for the disposable staging page.
+
+**Checked how:** `npm run test:candidate` passed all 693 checks with zero failures. It checks local source and generated deliveries, namespace and compatibility contracts, author-style CSS rules and simulated runtime cases. The exact Webflow staging page was not opened; these local checks do not establish its script-name behavior.
+
+**Still open:** Updating the shared Webflow candidate and checking the disposable staging page require Webflow access. The project's current record says the exact disposable site is absent from the Webflow connection and has no confirmed before backup. Tonight's hard limits prohibit Webflow/Designer changes and browser use, so neither action was attempted.
+
+**Needs Michael:** The already-open request to make the exact test site available and confirm its before backup remains the next owner step; no duplicate request was raised.
+
+**Next useful action:** When the exact site is available through the Webflow connection and its before backup is confirmed, resume the shared-candidate update and staging-page duplicate-script-name check under an authorised brief.
+
+**Reviewed at commit:** 633a52c — local candidate verification was run against this baseline.
+
 ## 5 November 2026 — Local icon matrix HTTP access blocker — Codex (night shift)
 
 **Changed (R-037):** The existing visual-matrix page was regenerated with 120 cases. No runtime code, released asset or Webflow content changed.
