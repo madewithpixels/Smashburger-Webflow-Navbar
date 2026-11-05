@@ -320,8 +320,9 @@ the Library global-style packaging finding, and remaining scope.
 **Evidence boundary:** Historical recorded check only; not rerun during this docs retrofit.
 
 
-#### R-037 · Add visual regression checks for the open two-line and three-line icons at common device-pixel ratios, including odd/even line thicknesses and project-overridden spacing. The local 1x candidate and Webflow Preview full-source Embed fixture passed both modes at 3px bars/7px gap; SB Test Five's linked released default passed both modes at emulated 2x and 3x with 2px bars/5px gap. Candidate editable Webflow source/consumer and versioned distribution remain. See `webflow/icon-geometry-regression.md`. `v0.2.4` passed the published 1x 2px/5px check in both modes; the DPR and odd/even thickness matrix for `v0.2.4` remains. See `webflow/v0.2.4-release-verification.md`. The odd/even thickness matrix also passed on `v0.2.4` (1–4px bars). Deferred: DPR 2×/3× on a Retina display.
-**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
+#### R-037 · Add visual regression checks for the open two-line and three-line icons at common device-pixel ratios, including odd/even line thicknesses and project-overridden spacing. The local 1x candidate and Webflow Preview full-source Embed fixture passed both modes at 3px bars/7px gap; SB Test Five's linked released default passed both modes at emulated 2x and 3x with 2px bars/5px gap. Candidate editable Webflow source/consumer and versioned distribution remain. See `webflow/icon-geometry-regression.md`. `v0.2.4` passed the published 1x 2px/5px check in both modes; the DPR and odd/even thickness matrix for `v0.2.4` remains. See `webflow/v0.2.4-release-verification.md`. The odd/even thickness matrix also passed on `v0.2.4` (1–4px bars). Deferred: DPR 2×/3× on a Retina display. *(accepted by Michael in boss, 5 Nov 2026)*
+**State:** built (by Michael, 5 November 2026) · **Evidence:** verified (live) · **Acceptance:** accepted (5 November 2026)
+**Accepted by Michael in boss, 5 November 2026** — checked: Looked at brief #178's result.
 **Source:** [todo.md](todo.md), original line 58 (now 59); baseline `c808ca4`.
 **Exit criteria:**
 **Evidence links:** [webflow/icon-geometry-regression.md](webflow/icon-geometry-regression.md); [generated 120-case local visual fixture](webflow/icon-geometry-matrix-2026-10-31.html)

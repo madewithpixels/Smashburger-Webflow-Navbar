@@ -2481,3 +2481,8 @@ Written in from Michael's task list in boss. The order is his; the runner only m
 **Next useful action:** If Webflow exposes the registered script contents and the failed Preview request details, compare those against the saved probe and isolate the remaining source-versus-compiler question.
 
 **Webflow backups:** `boss · brief #316 · before` was created from the Designer Backups panel and confirmed in the dashboard. The Designer stayed on “Loading” when making the after backup, so `boss · brief #316 · after` was created and confirmed through the dashboard. Both were recorded in boss. No snapshots were needed because no site content changed.
+
+## 5 November 2026, 15:26 — boss runner *(Michael's verdicts, R-092)*
+Written in from the Needs you queue on boss's Agents page. The verdicts are Michael's; the runner only records them.
+- 5 November 2026 — Accepted by Michael in boss: R-037 (checked: Looked at brief #178's result.)
+
