@@ -1,5 +1,17 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Fixed the local Embed collision and verified the candidate — Codex
+
+**Changed (R-269):** Michael approved all three items in the Webflow share review. I shared `SmashBurger 0.3.0-rc.1 candidate`, `SmashBurger CDN 0.3.0-rc.1 candidate` and `MWP Cookie Consent`; the disposable site is up to date and has a linked candidate instance. After confirming a global-name collision between the old and candidate inline runtimes, I changed the local Embed build to keep its declarations private and added a regression check. This local fix has not been shared to Webflow.
+
+**Checked how:** On the isolated published page at 375 × 667, the candidate menu opened and Chrome DevTools showed only two missing-favicon 404 notices. After restoring the old runtime and republishing, reload reproduced `Uncaught SyntaxError: Identifier 'ROOT_SELECTOR' has already been declared`. The focused Embed regression check passed, the full candidate suite passed (679 pass, 0 fail, 15 existing TODOs), and the namespace check passed. At 1024 px the three navigation samples remained expanded. The custom domain was not selected.
+
+**Still open:** The local fix has not been checked on the published site. That needs a new shared Library update, which would become visible to workspace members, and a staging publish. Finish the remaining Designer/Preview/published style comparisons, reduced-motion checks, linked update/rollback behavior, human review and acceptance. The generic Preview compiler error is still unexplained. The candidate remains unreleased; no stable tag or consumer-site update was made.
+
+**Next useful action:** Michael to approve or decline sharing the local Embed-scope fix to the existing candidate Library item; then I can publish to disposable staging and verify that both runtimes coexist without the console error. Do not change MWP or Voice Focus.
+
+**Handoff:** [Disposable test page](https://disposable-sb-test-site.webflow.io/) is staged with the reference and linked candidate samples. The three approved items are now visible in the shared Workspace Library. Full detail is in the [Brief 286 evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
+
 ## 5 November 2026 — Resumed R-269 after Webflow access returned — Codex
 
 **Changed (R-269):** No lasting Webflow changes. Reconnected the correct Webflow data tools to Disposable SB test site and corrected the previous access-blocked record.
@@ -13,6 +25,18 @@
 **Next useful action:** Finish the remaining non-Library state/layout, reduced-motion and visual checks on the disposable site. If the Preview error returns, capture its current console output before changing code. Ask Michael before sharing the candidate to test a linked upgrade/rollback. Keep the test page staging-only; no publication is needed for the completed checks.
 
 **Handoff:** Site ID `6aeb2f272edef7503d4839ad`; Home page ID `6aeb2f292edef7503d483a01`. [Disposable test page](https://disposable-sb-test-site.webflow.io/). Full evidence: [Brief 286 comparison](webflow/evidence/brief-286-r269-comparison-2026-11-04.md). Shared Library, MWP and Voice Focus remain unchanged.
+
+## 5 November 2026 — Checked the linked-test Library share scope — Codex
+
+**Changed (R-269):** No Webflow changes. Michael approved sharing the current SmashBurger candidate to run a linked update/rollback test on the disposable site. The Library review surfaced an unrelated item in the same share bundle, so I did not submit it.
+
+**Checked how:** The current MWP Component Library review lists three additions: `SmashBurger 0.3.0-rc.1 candidate`, `SmashBurger CDN 0.3.0-rc.1 candidate`, and `MWP Cookie Consent`. Webflow says workspace members without access to the source site can still see and install the shared library. I canceled the review without sharing. The exact contents are in the [Brief 286 evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
+
+**Still open:** Michael's approval covers the SmashBurger test, not the unrelated Cookie Consent addition. Await his direction on whether to share that bundle or isolate the two SmashBurger additions first. Do not submit the review while that scope is unresolved. No stable release, tag, source-site publication or consumer rollout is authorised by this test approval.
+
+**Next useful action:** Follow Michael's answer on the exact bundle, then test only the disposable site's linked update and rollback. Keep MWP, Voice Focus and other installed sites untouched.
+
+**Handoff:** The share review is canceled and the original unshared state remains. Chrome Designer is on MWP Component Library, with the Library panel open and no dialog. The disposable test site's published page is unchanged.
 
 ## 5 November 2026 — Confirmed the candidate in Preview and on the published test page — Codex
 

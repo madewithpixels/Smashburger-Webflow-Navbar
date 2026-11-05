@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFileSync } from 'node:fs';
 import { deliveries, runtimeFixture, event, change } from '../scripts/runtime-test-fixture.mjs';
 
 // Advance only the enhancement's window timers. Native Details toggle delivery
@@ -571,5 +572,20 @@ test('maintained source icon geometry centres two- and three-line opens across s
           `${mode} lines, ${height}px bars, ${gap}px gap, ${ratio}x`);
         navbar.destroy();
       }
+  } finally { f.close(); }
+});
+
+test('the Webflow Embed can coexist with another classic-script runtime', () => {
+  const f = runtimeFixture('embed', { javascript: false });
+  try {
+    // Execute the generated Embed body twice in the same classic-script scope.
+    const embed = readFileSync(new URL(`../${process.env.SMASHBURGER_CANDIDATE ? 'candidate/' : ''}webflow/navbar-light-embed.html`, import.meta.url), 'utf8');
+    const script = embed.match(/<script>\s*([\s\S]*?)<\/script>/)?.[1];
+    assert.ok(script);
+    f.dom.window.MWP_NAVBAR_LIGHT_AUTO_INIT = false;
+    assert.doesNotThrow(() => f.dom.window.eval(script));
+    assert.doesNotThrow(() => f.dom.window.eval(script), 'a second Embed must not redeclare page-global bindings');
+    assert.equal(typeof f.dom.window.NavbarLight, 'function');
+    assert.equal(typeof f.dom.window.initNavbarLight, 'function');
   } finally { f.close(); }
 });
