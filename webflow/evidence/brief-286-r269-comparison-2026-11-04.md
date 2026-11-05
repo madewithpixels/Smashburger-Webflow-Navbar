@@ -89,3 +89,11 @@ The previous note misidentified the candidate as the middle row. The **bottom** 
 At 991 px, I opened the candidate and entered a synthetic `window.dispatchEvent(new Event('resize'))` in that tab's DevTools console. After the event, the menu remained open (`data-state="open"`, `aria-expanded="true"`). With the menu open, changing the viewport from 991 to 1024 px changed the navigation to its expanded desktop state (`data-mwp-collapsed="false"`, `aria-expanded="false"`). Returning to 991 px left it closed (`data-state="closed"`). Chrome was returned to its normal 2044 px-wide, non-emulated viewport. No Webflow page edit or publish occurred.
 
 This confirms the requested resize and breakpoint interaction paths at the tested widths. It does not complete the authored-style comparison across all layouts/states, reduced-motion, visual review, Preview investigation, linked upgrade/rollback, or Michael's acceptance. The prior 375 px candidate menu click and earlier Home-link click remain separate pointer-driven phone checks; current continuation used keyboard activation because Chrome's remote mouse event control timed out. Do not mark R-269 complete.
+
+Selected published computed styles also matched in these comparisons:
+
+- At 1024 px, the upper reference's inner bar, trigger, panel, primary links, first link, and secondary links matched the lower candidate on the measured dimensions and style properties. The upper wrapper contains the linked sample below it, so its overall height includes both rows and is not comparable by itself.
+- At 2044 px, the linked candidate row and lower unlinked candidate matched the same selected properties; at 1024 px the selected properties also matched between the upper reference and both candidate rows.
+- At 390 px with the menus opened one at a time, the linked and unlinked candidate instances matched for the selected root, inner bar, trigger, panel, primary group, links, first item, and secondary group properties.
+
+The candidate panel reported a 280 ms opening transition. Immediately after Escape, its closing state reported a 220 ms transition; these match the element's 280 ms open and 220 ms close settings. After Escape, focus remained on the menu trigger. These are selected computed-style and interaction checks, not a complete audit of every CSS property, visual state, layout, or browser.
