@@ -22,7 +22,7 @@ item and its continuation notes retain any explicit required outcomes.
 
 **Michael now:** Nothing for the authorised local styling brief #164. Agent work comes first; do not re-raise historical access requests without a fresh failure. Local Chrome test permission is recorded, with no publishing.
 
-**Next:** Local R-269 styling changes and checks are built; prepare the bounded Designer/Preview/published comparison on a backed-up disposable site before any consumer or release decision. Keep R-268 separate, and retain the visual review, human/device checks, exact Library-sharing approval and release gates. Future tasks and closed attention requests are preserved with reactivation conditions in the [Boss attention cleanup](webflow/boss-attention-cleanup-2026-10-31.md). Closing a request does not complete its underlying check or grant approval.
+**Next:** R-269 is being compared on the backed-up disposable site. Candidate assets and mobile behavior are confirmed on the published page; Preview renders and responds at the inspected widths, but reports a generic source-code compilation error whose originating embed/script is not yet identified. Match the reference and trial collapse settings, trace that error, then complete property-by-property styling, human/device checks, Michael's review and the release gates. Keep R-268 separate; no shared Library or consumer update is authorised by this comparison. Future tasks and closed attention requests are preserved with reactivation conditions in the [Boss attention cleanup](webflow/boss-attention-cleanup-2026-10-31.md). Closing a request does not complete its underlying check or grant approval.
 
 ## Current route to launch — 16 October 2026
 

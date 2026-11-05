@@ -22,9 +22,15 @@ The MWP Component Library's `SmashBurger CDN Unlink Trial` instance was installe
 
 ## Limits and next checks
 
-After the five-layout comparison, the trial instance was unlinked from the shared Library and its Embed loader was replaced with a temporary, commit-pinned 0.3.0-rc.1 candidate loader. The candidate menu opened on the published page after subdomain-only publishing. This does **not** confirm the candidate CSS/JavaScript actually loaded: the active Chrome connection did not expose page script/runtime inspection, and the browser blocked a `view-source:` navigation. Candidate behavior has not yet been retested in Preview. The Webflow MCP connection still cannot provide site snapshots or live computed-style exports.
+After the five-layout comparison, the trial instance was unlinked from the shared Library and its Embed loader was replaced with a temporary, commit-pinned 0.3.0-rc.1 candidate loader. The candidate CSS and JavaScript were subsequently confirmed in Chrome DevTools on the published page, with their exact pinned URLs and SRI values. The lower trial is the instance attached to the candidate runtime. On the published page at 375 × 667, its menu opened, closed on a second click and closed with Escape.
 
-Not checked: confirmation of candidate assets loading; candidate Preview behavior; authored colour/spacing changes property-by-property across each surface; open/closing/closed state styling for every mode; candidate live Escape, second-click and link close; reduced motion; short-height scrolling; linked-instance and v0.2.6-upgrade behavior; rollback. Michael's visual review and acceptance remain pending. Do not describe this as R-269 complete.
+## 5 November continuation
+
+In Webflow Preview with custom code enabled, the candidate rendered and the trial menu opened and closed. The Preview canvas was inspected at 1440, 1024 and 768 px; at 768 px the trial switched to its menu button and Escape closed it. At 1440 and 1024 px both rows remained expanded. The reference row remains expanded at 768 px while the candidate collapses, so those rows do not share the same collapse configuration and are not an exact breakpoint comparison.
+
+Preview's DevTools console reports `CompilationError: Invalid source code` / `Uncaught (in promise) CompilationError: Invalid source code` from Webflow's `webflow.js:501`. The custom-code toggle was turned off and restored on; with it off, Preview returned to the Designer Canvas. With it on, compilation completed and the Preview rendered. This check does not identify which embed or script triggers the compiler error, nor prove that the candidate runtime itself is free of Preview-specific issues. No code was changed to suppress the error.
+
+**Confirmed:** candidate asset URLs/SRI and runtime instance on the published page; mobile open/second-click/Escape behavior; Preview rendering and trial-menu open/close at the observed widths. **Still open:** identify the source of the Preview compiler error; compare authored style values across every property/state/layout; reduced motion; short-height scrolling; linked-instance and v0.2.6-upgrade behavior; rollback; Michael's visual review and acceptance. Do not describe R-269 as complete.
 
 ## Current test-page state
 

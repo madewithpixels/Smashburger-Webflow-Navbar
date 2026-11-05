@@ -1,5 +1,17 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Confirmed the candidate in Preview and on the published test page — Codex
+
+**Changed (R-269):** No new site changes. Confirmed that the temporary candidate CSS/JavaScript loaded on the published disposable page and checked the candidate at more Preview widths.
+
+**Checked how:** Chrome DevTools showed the exact commit-pinned asset URLs, SRI values and the candidate runtime attached to the lower trial instance. At 375 × 667 on the published page, the candidate menu opened, closed on a second click and closed with Escape. In Preview with custom code enabled, the trial rendered at 1440, 1024 and 768 px; at 768 its menu button opened and Escape closed it. The reference row remains expanded at 768 px, unlike the candidate, so their breakpoint settings differ. Preview's console reports `CompilationError: Invalid source code` at Webflow's `webflow.js:501`; the render completes, but the error does not identify its source. Turning the Preview custom-code option off and back on restored the prior view; no site code was edited.
+
+**Still open:** Identify which embed/script causes the generic Preview compiler error; compare authored styles property by property across states and layouts; reduced motion; short-height scrolling; linked-instance and v0.2.6 upgrade checks; rollback; Michael's visual review and acceptance. Details are in the [Brief 286 comparison evidence](webflow/evidence/brief-286-r269-comparison-2026-11-04.md).
+
+**Next useful action:** Inspect the candidate and reference collapse settings and the exact Webflow embeds/custom-code entries to make their comparison meaningful and locate the Preview compiler error. Continue only on the disposable site.
+
+**Handoff:** The published disposable page remains on the Webflow subdomain with the unlinked candidate trial. Shared Library, MWP and Voice Focus were not changed. The custom-code Preview toggle is restored on. Candidate is unreleased; no shared Library update or release was made.
+
 ## 4 November 2026 — Ran the disposable-site layout comparison — Codex
 
 **Changed (R-269):** Installed the `SmashBurger CDN Unlink Trial` beside the sample navigation on Disposable SB test site, tested its five layouts, then unlinked the trial instance and replaced its loader with a temporary, commit-pinned 0.3.0-rc.1 candidate loader. Published only to the site's Webflow subdomain; the trial is restored to dropdown.
