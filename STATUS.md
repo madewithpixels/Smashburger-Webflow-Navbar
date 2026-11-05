@@ -1,5 +1,15 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Preview comparison surfaced an unconfirmed mismatch — Codex
+
+**Changed (R-269):** No Webflow page content, component, code, or publishing setting was changed. I opened the disposable site's Preview, then returned it to the Designer canvas. The production custom domain was not involved.
+
+**Checked how:** With Webflow's Preview custom-code switch on, a screenshot showed the three menu rows on a white/light canvas with dark text. The published test page at the same desktop width showed a dark surface with light text. DevTools also showed a `ROOT_SELECTOR` redeclaration and Webflow `CompilationError` among 52 existing console messages. I had not cleared or freshly captured those messages, so I cannot tell whether they came from this Preview load or earlier attempts. The attempt to reset the console was interrupted when Chrome changed into Michael's control; I stopped using it. No clean reload test was completed.
+
+**Still open:** Confirm whether the Preview colours really differ from the published styling. Confirm whether the duplicate-name and compiler errors are fresh. Both need a clean Preview reload and a new console read. Chrome is back in Michael's control.
+
+**Next useful action:** When Chrome is available, clear the Preview console, reload the disposable site's Preview, and check the colours and fresh errors before diagnosing or changing code.
+
 ## 5 November 2026 — Finished responsive checks on the published candidate — Codex
 
 **Changed (R-269):** No Webflow content or code was changed in this continuation. I corrected the previous test note: the actual self-hosted candidate is the **bottom/lower** navigation row, not the middle row.

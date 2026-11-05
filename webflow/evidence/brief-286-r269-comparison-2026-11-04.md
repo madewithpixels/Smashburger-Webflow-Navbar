@@ -97,3 +97,7 @@ Selected published computed styles also matched in these comparisons:
 - At 390 px with the menus opened one at a time, the linked and unlinked candidate instances matched for the selected root, inner bar, trigger, panel, primary group, links, first item, and secondary group properties.
 
 The candidate panel reported a 280 ms opening transition. Immediately after Escape, its closing state reported a 220 ms transition; these match the element's 280 ms open and 220 ms close settings. After Escape, focus remained on the menu trigger. These are selected computed-style and interaction checks, not a complete audit of every CSS property, visual state, layout, or browser.
+
+## 5 November — Preview colour and console lead (unconfirmed)
+
+Webflow's Designer tool reported the Home page in Preview mode with Preview custom code enabled. The Preview screenshot showed three menu rows on a light canvas with dark text, while the published page at a 2044 px viewport showed dark surfaces and light text. DevTools on the Designer tab showed `ROOT_SELECTOR` redeclaration and Webflow `CompilationError: Invalid source code` among 52 console messages. The messages were not cleared and the page was not freshly reloaded before Chrome changed into Michael's control, so they may include earlier attempts. This is a visual discrepancy to recheck, not a confirmed code defect. No site edit or publish occurred. Next check: clear the console, reload Preview, then compare the same elements and capture only errors from that load.
