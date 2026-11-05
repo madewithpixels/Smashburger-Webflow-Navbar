@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Checked reduced motion and all five candidate layouts — Codex (night shift)
+
+**Changed (R-269):** No source, generated candidate, Webflow page, component, class, CMS item, custom code or publishing setting changed. The local checks found no specific defect to fix.
+
+**Outputs:** Reduced-motion timing and the five layouts (Dropdown, Full-width, Left, Right and Overlay) pass in the source, candidate distribution, minified candidate and self-contained Embed. The candidate remains unreleased. The check confirms code and simulated behaviour, not how the layouts look in a rendered browser.
+
+**Checked how:** `npm run test:candidate` passed all 693 checks. Its matrix opens and Escape-closes all 35 combinations of five layouts and seven motion modes, and checks reduced-motion opening and closing waits in all four deliveries. The CSS contract checks also confirm that authored panel layout styles can override defaults in all five layouts. These are local automated checks; they do not check a real operating-system motion setting, browser rendering, Webflow Designer, Preview or a published page.
+
+**Still open:** R-269's exact candidate comparison in Designer, Preview and the authorised test page remains blocked because Disposable SB test site is not available to the Webflow MCP connection and lacks a confirmed before backup. Rendered-browser visual evidence and Michael's acceptance also remain open.
+
+**Needs Michael:** Nothing for this local check.
+
+**Next useful action:** After the exact test site is available through Webflow MCP and its before backup is confirmed, resume the bounded R-269 site comparison. Do not claim rendered or live results from this local suite.
+
+**Handoff:** This local check adds no source changes. Continue the exact-site gate above before any Webflow comparison; earlier backups for a different test site do not cover Disposable SB test site.
+
+**Reviewed at commit:** d2caaa0 — local candidate verification was run against this baseline.
+
 ## 4 November 2026 — Repaired the release checks after the stable update — Codex
 
 **Changed (R-125, R-271):** Corrected checks that still expected the old working files and compressed JavaScript address. The historical v0.2.6 hashes are now checked against their recorded Git revision; the current stable files must match the v0.2.9 tag exactly. GitHub now fetches the history needed to read those releases and the existing Library verification pin. Corrected the uninstalled Library verification loader's integrity value to authenticate the uncompressed file its URL actually requests.
