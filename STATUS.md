@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Local icon matrix HTTP access blocker — Codex (night shift)
+
+**Changed (R-037):** The existing visual-matrix page was regenerated with 120 cases. No runtime code, released asset or Webflow content changed.
+
+**Outputs:** Recorded the local HTTP access failure in the [R-037 evidence note](webflow/icon-geometry-regression-2026-10-31.md). Node returned `listen EPERM` while binding `127.0.0.1:8765`, before Chrome was opened. No screenshot was produced.
+
+**Checked how:** `npm run test:icon-visual` reported 120 cases generated. The local HTTP server attempt failed with `listen EPERM`. Chrome rendering and all 120 PASS results were not checked; the prior file-URL rejection remains a separate earlier attempt and is not treated as a result for this brief.
+
+**Still open:** Chrome could not receive the page because local HTTP serving was denied. The matrix PASS/FAIL result and screenshot are absent. DPR labels are simulated; they do not emulate separate browser DPR settings or prove physical pixel rasterisation. Webflow consumer, linked candidate, versioned distribution and physical Retina-display checks remain separate.
+
+**Needs Michael:** Nothing; the exact local access blocker is documented for brief #319.
+
+**Next useful action:** Retry the rendered check when local HTTP serving is available to the session.
+
+**Handoff:** This brief stopped at local server bind failure, before opening Chrome. No Chrome tab was created.
+
+**Reviewed at commit:** 9450951 — project records and the generated icon matrix were checked against this baseline.
+
 ## 5 November 2026 — Checked reduced motion and all five candidate layouts — Codex (night shift)
 
 **Changed (R-269):** No source, generated candidate, Webflow page, component, class, CMS item, custom code or publishing setting changed. The local checks found no specific defect to fix.

@@ -2346,7 +2346,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.
-**State:** blocked · **Evidence:** verified (local) · **Acceptance:** pending
+**State:** blocked · **Evidence:** verified (local) · **Acceptance:** accepted (5 November 2026)
+**Accepted by Michael in boss, 5 November 2026** — checked: Looked at brief #318's result.
 **Blocked:** Disposable SB test site opens in Chrome but is absent from the Webflow MCP list and has no confirmed before backup; no safe comparison or snapshot export can proceed.
 **Unblock:** Make Disposable SB test site available to the Webflow MCP connection and confirm a before backup for that exact site, then resume the bounded comparison.
 **Blocked since:** 4 November 2026 · **Unblocker:** Michael

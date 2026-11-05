@@ -21,4 +21,12 @@ The first command regenerates [the local visual matrix](icon-geometry-matrix-202
 
 ## Evidence limits and remaining checks
 
-The generated fixture is a local, reproducible browser check, but its PASS/FAIL output has not been observed in this run. The DPR labels use a simulated pixel-grid calculation inside each browser-rendered case; they do not emulate separate browser DPR settings or prove physical pixel rasterisation. The Mac Retina display check remains open. The source-derived Webflow consumer, linked candidate and exact versioned-distribution checks remain open as separate checks. No Webflow or released assets were changed, and no physical-display result or Michael acceptance is claimed.
+The generated fixture is a local, reproducible browser check, but its PASS/FAIL output has not been observed in the 31 October run. The DPR labels use a simulated pixel-grid calculation inside each browser-rendered case; they do not emulate separate browser DPR settings or prove physical pixel rasterisation. The Mac Retina display check remains open. The source-derived Webflow consumer, linked candidate and exact versioned-distribution checks remain open as separate checks. No Webflow or released assets were changed, and no physical-display result is claimed.
+
+## 5 November 2026 — Brief #319 local HTTP attempt — Codex (night shift)
+
+- `npm run test:icon-visual` regenerated the existing page with 120 cases (two- and three-line icons; four bar heights; three spacing overrides; five simulated pixel grids).
+- The attempt to serve the page over local HTTP failed before Chrome was opened: Node returned `Error: listen EPERM` while binding `127.0.0.1:8765`.
+- Chrome, page rendering, all 120 PASS results and a screenshot are therefore not checked. The page was not observed; no claim about rendered results is made.
+- The DPR labels are simulated calculations at the browser's actual DPR. They do not emulate separate browser DPR settings or prove physical pixel rasterisation. Webflow consumer, linked candidate, exact versioned distribution and Retina-display checks remain separate and open.
+- No runtime code, released asset or Webflow content changed.
