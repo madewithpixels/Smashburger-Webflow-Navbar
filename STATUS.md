@@ -1,5 +1,15 @@
 # SmashBurger — Status
 
+## 5 November 2026 — Finished responsive checks on the published candidate — Codex
+
+**Changed (R-269):** No Webflow content or code was changed in this continuation. I corrected the previous test note: the actual self-hosted candidate is the **bottom/lower** navigation row, not the middle row.
+
+**Checked how:** On the published disposable page, the lower candidate was expanded at 1024 and 1440 px. At 768 and 991 px it collapsed to its menu trigger. At 991 px I opened it, sent a synthetic `resize` event, and confirmed it remained open (`data-state="open"`, `aria-expanded="true"`). Moving from 991 to 1024 while open changed it to expanded desktop navigation and closed the trigger; returning to 991 left it closed. At 390 px, keyboard opening worked, a second press closed it, and Escape closed it. The earlier live Home-link click also closed the panel. I reset Chrome to its normal 2044 px-wide viewport. No publication or site edits occurred.
+
+**Still open:** This confirms responsive interaction only. The remaining comparison of authored styling and menu states, reduced-motion, short-height and visual checks, Preview error investigation, and Michael's visual review and acceptance remain. Linked upgrade/rollback testing still needs a separate decision about sharing or using the linked candidate.
+
+**Next useful action:** Continue the remaining bounded style and state comparisons on the disposable site, then ask Michael to review the lower candidate menu against the upper reference. Do not release it or update consumer sites as part of R-269.
+
 ## 5 November 2026 — Shared and published the scoped Embed fix — Codex
 
 **Changed (R-269):** Updated the shared `SmashBurger 0.3.0-rc.1 candidate` with the locally committed Embed fix that keeps runtime declarations private, then accepted that Library update on the disposable site. Published only to `disposable-sb-test-site.webflow.io`; the production custom domain stayed unchecked. No backup was made, as Michael asked. MWP, Voice Focus and the CDN candidate were not changed in this update.
