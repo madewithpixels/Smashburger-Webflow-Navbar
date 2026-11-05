@@ -2433,3 +2433,33 @@ Written in from Michael's task list in boss. The order is his; the runner only m
 Written in from Michael's task list in boss. The order is his; the runner only moves the items. If a move breaks a dependency, tell him; don't undo it.
 - Michael moved R-271 before R-125 (dragged its task in boss).
 
+
+## 5 November 2026 — Preview error source comparison — Codex (night shift)
+
+**Changed (R-155):** Compared the saved Clean Trial probe code and earlier isolation results. No Webflow page, component, class, CMS item, custom code or publishing setting changed.
+
+**Outputs:** The earlier empty draft probe had only Body content and blank page-level head/footer code; a later temporary candidate Embed was removed and readback confirmed the probe returned to Body-only with blank page code. Preview also failed on two existing fixtures when custom code was enabled, while native Details worked when all custom code was disabled. The same Preview error on the empty probe rules out its page elements and page-level code. It does not distinguish site-wide custom code from Webflow's Preview compiler. The saved navbar source and local checks do not reproduce Webflow's `CompilationError: Invalid source code`; no specific source can be named from available evidence.
+
+**Checked how:** Reviewed the saved test record and roadmap entries. `node --check src/navbar-light.js` and `node --check demo/navbar-light.browser.js` passed. These syntax checks do not exercise Webflow Preview. No Chrome page was opened and no Webflow tool was used.
+
+**Still open:** Exact failing source/script or compiler diagnostic, and a local reproduction of the Preview error. The previous run lacked Network request capture and the scripts readback route returned 404 without a source location.
+
+**Needs Michael:** Nothing for this evidence review.
+
+**Next useful action:** With a usable Preview and read access to the site's site-wide custom code and failed script requests, isolate the remaining source-versus-compiler question. No site backup was made because this session used no Webflow tool or site surface.
+
+## 5 November 2026 — Preview error follow-up — Codex (night shift)
+
+**Changed (R-155):** Compared the saved page-code findings with the earlier isolation checks. No page, component, class, CMS content, custom code or publishing setting changed.
+
+**Outputs:** The Webflow dashboard's site-wide Head and Footer custom-code fields are empty. This makes those freeform blocks an unlikely source. The saved probe was Body-only with blank page-level code; Preview also failed on two populated fixtures with custom code enabled, and worked when custom code was disabled. These results rule out the probe's elements and page-level code, but do not identify a failing source or distinguish an unexposed registered script from Webflow's Preview compiler.
+
+**Checked how:** Read the dashboard custom-code fields and retried the Scripts readback for site and probe page. Both returned “Custom code block not found” (404). The prior record has passing JavaScript syntax checks, but those do not reproduce Preview compilation. I used Chrome only to inspect the named test site's settings and backups; I did not open Preview.
+
+**Still open:** The exact failing script/source, a compiler diagnostic with a source location, failed-request capture and a local reproduction of Webflow's Preview error. No Webflow content was changed or published.
+
+**Needs Michael:** Nothing for this evidence report.
+
+**Next useful action:** If Webflow exposes the registered script contents and the failed Preview request details, compare those against the saved probe and isolate the remaining source-versus-compiler question.
+
+**Webflow backups:** `boss · brief #316 · before` was created from the Designer Backups panel and confirmed in the dashboard. The Designer stayed on “Loading” when making the after backup, so `boss · brief #316 · after` was created and confirmed through the dashboard. Both were recorded in boss. No snapshots were needed because no site content changed.
