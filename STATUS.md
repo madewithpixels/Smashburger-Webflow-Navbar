@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Runtime CSS guard runs as a command — Codex (night shift)
+
+**Changed (R-269):** Moved the runtime CSS guard's direct-entry check to module scope. Imports remain quiet, while the command now runs the guard. Added one regression for its clean and planted-failure command paths.
+
+**Outputs:** `npm run check:runtime-css` now prints its pass result. The regression's disposable readable CSS delivery with a high-specificity author `display` rule exits 1 and names `candidate readable CSS`; its clean delivery exits 0. Candidate building still invokes the same exported guard. Candidate and stable artifact bytes were not changed: the build wrote only to a temporary output tree, and the working-tree changes are limited to the guard, its regression and this entry.
+
+**Checked how:** At baseline `c117ef8`, `npm run check:runtime-css` exited 0 with no result. After the change, `node --test tests/runtime-css-guard-cli.test.js` passed (1/1), including clean (0) and planted violation (1); importing the guard printed only the explicit import-safety marker; `npm run check:runtime-css` printed the expected result and exited 0. `node scripts/build-all.mjs` with `SMASHBURGER_BUILD_OUTPUT_ROOT` set to a temporary directory completed and printed the same guard result. `git diff --check` passed. The script, npm command and builder all resolve to `scripts/check-runtime-style-specificity.mjs`; builder calls its exported function.
+
+**Still open:** No browser, Webflow, published or authoring behavior was checked. Michael's acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local guard repair.
+
+**Next useful action:** Commit the focused guard and regression repair; keep the separate runtime-CSS gap checks and rendered R-269 gates in their own briefs.
+
+**Reviewed at commit:** `c117ef8` — recorded the silent baseline, compared the package and builder wiring, then exercised the direct command and isolated build.
+
 ## 10 November 2026 — Larger follow-up briefs prepared — Codex
 
 **Changed (R-115, R-121, R-125, R-126, R-155, R-178–R-185, R-268, R-269, R-271, R-272):** Prepared 15 follow-up briefs with standalone access, scope, checks and handoff instructions in every brief.

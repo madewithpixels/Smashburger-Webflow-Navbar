@@ -70,7 +70,6 @@ for (const [label, path] of files) {
   try { errors.push(...violations(await readFile(path, 'utf8'), label)); }
   catch (error) { errors.push(`${label}: ${error.message}`); }
 }
-if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await checkRuntimeStyleSpecificity();
 for (const path of [
   resolve(outputRoot, 'webflow/navbar-light-embed.html'),
   resolve(outputRoot, 'webflow/navbar-light-cdn-loader.html'),
@@ -88,4 +87,8 @@ if (errors.length) {
 } else {
   console.log('Runtime author-style specificity guard passed for source and candidate CSS deliveries.');
 }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  await checkRuntimeStyleSpecificity();
 }
