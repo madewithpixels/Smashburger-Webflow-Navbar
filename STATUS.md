@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Published and Preview compared at 667 px — Codex (night shift)
+
+**Changed (R-269):** Recorded a width-matched visual comparison of the bottom menu in saved Home Preview and the published Disposable SB Home page.
+
+**Outputs:** Both bottom menus show the same Full-width panel arrangement, primary links, More row, outlined VIEW RELEASE button, social/contact links and very dark icons against the black panel. Each page has three stacked menu instances. The published bottom row is identifiable by position and content only; the browser page gives it no unique label. Its visible layout presets setting remains unknown. Earlier published-state records disagree about whether presets were on or off, and the comparison cannot resolve whether publication predates the saved settings.
+
+**Checked how:** Chrome showed 667 CSS px in both the saved Preview Canvas and the published page's Responsive width control. The published bottom menu was opened for comparison. Height was not independently read back; this is width-matched visual evidence only. No screenshots were saved, and no computed styles, Console, link destinations or single-menu behavior were checked. No page content was edited or saved, and nothing was published or shared.
+
+**Still open:** Exact published instance identity and preset value; matched viewport height; single-menu rendering and remaining R-269 checks.
+
+**Needs Michael:** Nothing to complete this comparison.
+
+**Next useful action:** Continue the remaining R-269 browser checks with a uniquely identifiable menu instance where the saved and published settings can be matched.
+
+**Reviewed at commit:** b89b6a4 — checked current R-269 records and performed the Chrome comparison at 667 CSS px.
+
 ## 10 November 2026 — Preview error observed in Chrome — Codex (night shift)
 
 **Changed (R-272):** Recorded the available Preview Console evidence and the limits of the browser capture. No page content, code, Preview setting or publishing state was changed.
