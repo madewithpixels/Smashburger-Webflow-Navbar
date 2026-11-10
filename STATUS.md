@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Windows spoken-output protocol clarified — Codex (night shift)
+
+**Changed (R-244):** Made the future Windows spoken-output check repeatable without presenting expected behavior as an NVDA result.
+
+**Outputs:** The existing run sheet now records the exact component and runtime version, browser and version, viewport, zoom/scaling and tester details. Each step separates the expected behavior from blank fields for exact NVDA speech, focus target and result. It specifies the collapsed and expanded trigger states, omission of closed submenu links, authored nested-link order and two-stage Escape focus return. Historical VoiceOver evidence is identified as context only.
+
+**Checked how:** Compared the protocol with the accessibility requirements in README, SCOPE and R-243–R-244, then reviewed the revised fields. `git diff --check` passed. No Windows or NVDA session was run; all actual speech and result fields remain blank.
+
+**Still open:** Spoken-output behavior on Windows remains untested until a tester runs this protocol against an identified published page and exact component/runtime version.
+
+**Needs Michael:** Nothing to prepare the protocol.
+
+**Next useful action:** Use the run sheet when the Windows tester and the exact published Tablet page are available.
+
+**Reviewed at commit:** 0d24860 — checked current project records and the existing R-244 run sheet before this update.
+
 ## 10 November 2026 — Lite clone-flow capture sheet prepared — Codex (night shift)
 
 **Changed (R-185):** Prepared a repeatable record for a future blank-project clone check.

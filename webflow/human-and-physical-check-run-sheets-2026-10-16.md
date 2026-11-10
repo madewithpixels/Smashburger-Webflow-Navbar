@@ -1,14 +1,17 @@
 # Human and physical-display check run sheets
 
-Prepared 16 October 2026 by Codex (night shift). Serves R-037, R-155 and
-R-244. These are instructions and blank records; no human or physical-display
-checks were performed and no result is a pass.
+Prepared 16 October 2026 by Codex (night shift); NVDA protocol clarified
+10 November 2026. Serves R-037, R-155 and R-244. These are instructions and
+blank records; no human or physical-display checks were performed and no
+result is a pass.
 
 ## Windows NVDA — published Tablet variant
 
 ### Identify the tested page
 
-- Release or candidate and exact version/commit: __________________________
+- Component name and exact component version: ____________________________
+- Runtime release/version and commit or embedded build identity: ____________
+- Release or candidate name: ____________________________________________
 - Published page URL: _________________________________________________
 - Expected release for the known published Smashburger example: v0.2.6,
   `/demo-overlay` (copy the exact staging hostname from the browser address
@@ -24,44 +27,81 @@ checks were performed and no result is a pass.
 - NVDA version: _______________________________________________________
 - Browser and version: ________________________________________________
 - Page and URL: _______________________________________________________
+- Browser viewport width × height in CSS pixels: _________________________
+- Page zoom / Windows display scaling: __________________________________
 - Date / tester: ______________________________________________________
 - Screen-reader speech and browser zoom: ________________________________
 - Variant confirmed as Tablet at the page width: __________________________
 
+### Expected behavior (requirements, not observed speech)
+
+Judge the behavior below against the named page and exact component/runtime
+version. These are expected outcomes from the project requirements and the
+historical VoiceOver sequence; they are not NVDA results. The exact NVDA words
+must be copied into the recorded-results fields below only after listening.
+
+- With the main menu closed, its trigger exposes a collapsed state; after it
+  opens, the trigger exposes an expanded state.
+- While a nested submenu is closed, its child links are absent from both the
+  screen-reader reading sequence and keyboard Tab sequence.
+- Opening the nested submenu exposes its links in document order. The primary
+  and secondary groups follow their authored DOM order; do not infer a custom
+  order from the visual layout.
+- The first Escape closes the nested submenu and returns focus to that submenu's
+  trigger. The second Escape closes the main menu and returns focus to the main
+  trigger, now collapsed.
+
+Requirements source: `README.md` §§CSS baseline and progressive enhancement,
+Editing native content, and the historical VoiceOver result; `SCOPE.md` S-02
+and S-05; `ROADMAP.md` R-243–R-244. The historical VoiceOver result is context,
+not evidence for NVDA.
+
 ### Steps and observations
 
 Use the keyboard only for menu interaction. Keep NVDA speech output or Speech
-Viewer available so the spoken words can be transcribed. Record the actual
-words, including role and expanded/collapsed state; do not infer them.
+Viewer available. Keep expected behavior separate from the exact words heard;
+copy every actual announcement verbatim, including role and expanded/collapsed
+state. Leave each recorded speech field empty until observed.
 
 1. Reload the named page, move to the menu trigger, and focus it without
    opening it. Record its full announcement and whether it clearly says the
    menu is collapsed.
-   - Observed words / result: ___________________________________________
+   - Expected: trigger reports collapsed.
+   - Exact NVDA speech heard: __________________________________________
+   - Result (pass / fail / not run) and focus target: _____________________
 2. Press Enter or Space once. Record the trigger announcement and whether it
    clearly says expanded. Confirm focus remains on the trigger unless the
    page's recorded design moves it elsewhere.
-   - Observed words / result: ___________________________________________
+   - Expected: trigger reports expanded and focus stays on the trigger.
+   - Exact NVDA speech heard: __________________________________________
+   - Result (pass / fail / not run) and focus target: _____________________
 3. Move through the expanded menu. Record each submenu link in announcement
    order and confirm links under the closed nested submenu are not exposed in
    the reading or tab sequence while that submenu is closed.
-   - Link order: _______________________________________________________
-   - Closed submenu links exposed? _____________________________________
+   - Expected nested-link order: _______________________________________
+   - Exact order heard: _______________________________________________
+   - Expected closed-submenu exposure: no child links exposed.
+   - Exact speech / reading and Tab sequence observed: ___________________
+   - Result (pass / fail / not run): ____________________________________
 4. Open a nested submenu. Press Escape once. Confirm only that submenu closes
    and focus returns to its own submenu trigger. Record both announcements.
-   - Closed / focus target / words: _____________________________________
+   - Expected: nested submenu closes; focus returns to its trigger.
+   - Exact focus target and NVDA speech heard: ___________________________
+   - Result (pass / fail / not run): ____________________________________
 5. Press Escape a second time. Confirm the main menu closes and focus returns
    to the main menu trigger. Record the collapsed announcement.
-   - Closed / focus target / words: _____________________________________
+   - Expected: main menu closes; focus returns to its collapsed trigger.
+   - Exact focus target and NVDA speech heard: ___________________________
+   - Result (pass / fail / not run): ____________________________________
 6. Repeat once using the other trigger key (Enter, then Space, or vice versa).
-   - Result: __________________________________________________________
+   - Exact key used and result: ________________________________________
 
 ### Observations and evidence
 
 - Unexpected speech, missing/extra links, or focus loss: __________________
 - Screenshot or NVDA Speech Viewer capture file: _________________________
 - Evidence filename and saved location: __________________________________
-- Overall result for this exact release/page: Pass / Fail / Not run
+- Overall result for this exact page, component and runtime: Pass / Fail / Not run
 - Notes: ______________________________________________________________
 
 ## Physical display — two-line and three-line menu icons at 2× and 3×
