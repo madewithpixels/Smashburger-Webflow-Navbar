@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Next night-shift briefs prepared — Codex
+
+**Changed (R-115, R-121, R-124, R-181, R-183, R-269, R-271, R-272):** Prepared seven independent local briefs covering resize, repeated Embeds, a short-height fixture, rollback version evidence, README install pointers, authored Grid and Lite loader protection.
+
+**Outputs:** [Copy-ready night-shift briefs](webflow/smashburger-night-shift-briefs-2026-11-10.md), ordered with the strongest work first. The briefs have not been queued or run.
+
+**Checked how:** Compared the Boss inbox, recent shift results, roadmap dependencies, named test gaps, source paths and the two locally tagged loaders. The only commits since the prior reviewed baseline were the testing proposal and its checklist formatting.
+
+**Still open:** The briefs' implementation and all separate live, release and acceptance checks.
+
+**Needs Michael:** No product decision is needed for the local work in these briefs.
+
+**Next useful action:** Paste the briefs into Boss in the listed order with repository access only.
+
+**Reviewed at commit:** `b52712d`.
+
 ## 10 November 2026 — Risk-weighted testing proposal — Codex
 
 **Changed (R-269, R-121, R-125, R-181, R-182, R-183, R-185):** Prepared a guide for choosing focused development checks, when to broaden them, and which checks belong at release, rollout and recovery.
