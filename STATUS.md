@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Duplicate-style evidence template — Codex (night shift)
+
+**Changed (R-268):** Added a reusable evidence record for the controlled duplicate-style check.
+
+**Outputs:** The template captures each matching style record by stable ID, selector and local/Library origin; before/after declarations by breakpoint and pseudo-state; actual element assignments; intended local and same-name imported records; rendered evidence; the linked sibling; and the named recovery point with independent recovery checks. It directs the later checker to the existing preflight and keeps this blank template distinct from test evidence.
+
+**Checked how:** Compared the fields with R-268's exit criteria, the incident record and the duplicate-class write preflight. `git diff --check` passed. No Webflow, Designer, Preview, published-page or write check was run.
+
+**Still open:** The controlled R-268 regression test and all site-level evidence remain unrun.
+
+**Needs Michael:** Nothing to unblock this local template.
+
+**Next useful action:** Use the template during the separately authorised R-268 check on its exact backed-up fixture.
+
+**Reviewed at commit:** 0eb082a — checked the current project record and duplicate-class preflight before this update.
+
 ## 10 November 2026 — Clarified older-style upgrade and rollback guidance — Codex (night shift)
 
 **Changed (R-269):** Updated the local candidate upgrade guide for installations that rely on v0.2.6's forced layout or visual defaults.
