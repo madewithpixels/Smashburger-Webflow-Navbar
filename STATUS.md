@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Saved-page Preview and responsive check — Codex
+
+**Changed (R-269, R-272):** Recorded partial evidence from the current saved page in Webflow Preview. No page content, styles or component settings changed.
+
+**Outputs:** The page shows three menu roots: a standalone menu, a nested Library component and an unlinked candidate. At 991 px only the Tablet copy collapsed; by 767 and 479 px all three were collapsed. The Preview tab is left open in Codex's browser, so Michael's Chrome windows are free.
+
+**Checked how:** Read the saved Home page and Embed code through Webflow, then inspected Preview with custom code enabled at 1334, 991, 767 and 479 px. At 479 px the closed panels were 384 px wide and hidden; triggers were 44 px high. A syntax check of the five inline scripts, alone and together, found no repeated global names. Preview Console showed Webflow's general “CompilationError: Invalid source code” and an uncaught promise error, but no specific duplicate-name message. This same general error was already recorded on two fixture pages and an empty draft page with no page content or page-level code in October; the source then remained unresolved between site-wide code and Webflow's Preview compiler. That history does not prove the cause on this site, but the current message alone is not evidence of a duplicate script name. See the [earlier Preview diagnosis](webflow/lite-preparation-local-tests-2026-10-14.md#empty-page-preview-compiler-probe).
+
+**Still open:** Recheck whether the Preview error is specific to this site's code or Webflow's compiler; inspect the open menu panel and its styles; compare all five menu layouts with presets disabled; finish open/close, keyboard, focus and short-height checks. The published page remains a 5 November version. Clicking the unlinked menu trigger opened a JavaScript alert; its text was not recorded, and the Designer session later showed Michael as inactive, so the menu could not be reopened.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Restore an active Designer Preview session and isolate this site's error without repeating reloads alone; the October empty-page check already showed that Webflow can report this error without page content or page-level code. Then resume the remaining menu interaction and layout checks.
+
+**Handoff:** The Codex in-app browser is on the saved Disposable SB Preview with custom code enabled. Webflow's Designer controls did not connect after sign-in, but the Preview worked in the separate browser. No new backup was made; use the confirmed 10 November backup, and ask Michael if another backup is specifically needed.
+
+**Reviewed at commit:** 21ed125 — checked the saved page, current Preview and existing site records.
+
 ## 10 November 2026 — Record queued candidate task — Codex
 
 **Changed (brief #366):** Added R-272 for Michael's queued task to update the shared candidate and check the disposable staging page.
