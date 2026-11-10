@@ -37,6 +37,7 @@ const trailingNewlineOnly = expected.trimEnd() === library.trimEnd();
 console.log(`Maintained CSS == readable Embed CSS: yes (${source.length} characters each)`);
 console.log(`Library CSS == minified aliased Embed CSS: ${exact ? 'yes' : 'no'}`);
 console.log(`Equal after trimming trailing whitespace: ${trailingNewlineOnly ? 'yes' : 'no'}`);
+if (!exact && trailingNewlineOnly) console.log('Difference: trailing whitespace only; generated CSS content matches.');
 console.log(`Expected SHA-256: ${sha256(expected)}`);
 console.log(`Library SHA-256:  ${sha256(library)}`);
 console.log(`Expected length: ${expected.length}; Library length: ${library.length}`);

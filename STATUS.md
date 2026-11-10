@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Unified local release-candidate gate — Codex (night shift)
+
+**Changed (R-121, R-125):** Added one documented command that rebuilds the candidate in a disposable folder, compares every generated path and byte, checks the protected release files and retained runtime hooks, compares the aliased Library CSS, and runs source and candidate tests.
+
+**Outputs:** `npm run check:release` prints the package version, checked Git commit, candidate artifact SHA-256 values and expected v0.2.6 protected-file hashes. It leaves the checked candidate and released files untouched. The gate does not establish release readiness or Webflow rollout.
+
+**Checked how:** The candidate rebuild matched every existing candidate byte. The class namespace, retained runtime/API hooks and 17 protected historical files passed; stable files matched v0.2.9. Library CSS content matched after trimming one trailing whitespace byte. The full local suite reported 677 passes, 1 failure and 15 existing TODOs: the Lite workbench test expects a missing “Backdrop reference” label (`tests/lite-candidate.test.js`). This is a separate Lite workbench issue, not a candidate artifact mismatch. `git diff --check` passed. Local automated checks only; no browser or Webflow behavior was checked.
+
+**Still open:** R-121 remains in progress pending the wider Webflow Library and rollout work. The single Lite workbench test failure remains open under the Lite work.
+
+**Needs Michael:** Nothing for this local gate.
+
+**Next useful action:** Resolve the Lite workbench label mismatch under its own brief, then rerun `npm run check:release`. Keep release approval and Webflow rollout as separate gates.
+
+**Reviewed at commit:** a9d3c5d — checked the checkout and project record before adding this gate.
+
 ## 10 November 2026 — Built-in look removed from both Lite examples — Codex (night shift)
 
 **Changed (R-181):** Turned the runtime's built-in visual presets off in the styled local example, matching the plain example.
