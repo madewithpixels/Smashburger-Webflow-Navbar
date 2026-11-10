@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Workbench styling contained — Codex (night shift)
+
+**Changed (R-182):** Scoped the local workbench page styling so it cannot target the Lite example pages if the stylesheet is reused or combined.
+
+**Outputs:** The workbench body now carries a page-specific class. Its `body`, direct-child `main`, `article`, `.workbench-example` and `.backdrop-swatch` rules all require that page scope. The [selector review](webflow/r182-workbench-css-containment-2026-11-10.md) lists the workbench, Lite example and candidate runtime selectors inspected. No runtime CSS, generated delivery files or released assets changed.
+
+**Checked how:** Compared both Lite page stylesheets and markup with candidate runtime CSS, then reviewed the changed selectors and file list. `git diff --check` passed. Source inspection only; no browser rendering was checked.
+
+**Still open:** Browser rendering and Webflow Canvas editing remain unverified under the wider Lite work.
+
+**Needs Michael:** Nothing for this local correction.
+
+**Next useful action:** Continue the remaining Lite workbench and clone-flow checks.
+
+**Reviewed at commit:** c1ab040 — checked the current CSS, example markup and candidate runtime selectors before this correction.
+
 ## 10 November 2026 — Lite example navigation names clarified — Codex (night shift)
 
 **Changed (R-181):** Gave the plain, styled and static workbench examples distinct navigation and trigger names.
