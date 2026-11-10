@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite check names an unreleased loader install — Codex (night shift)
+
+**Changed (R-181, R-183):** Tightened the local Lite check so the example must include its intended local runtime stylesheet and script, and so an install-like remote or candidate runtime asset is identified directly.
+
+**Outputs:** The unchanged examples still pass. A disposable copy with the illustrative candidate URL wired into a script tag now fails with `examples must not install a remote or candidate runtime asset: https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.3.0-rc.1/dist/navbar-light.js`. The URL was never requested. The shipped guide's explicit warning and legitimate reference text remain unchanged. No released files, pins or Webflow content changed.
+
+**Checked how:** `npm run check:lite` passed on unchanged files (7/7) before the edit and after it. On a disposable copy, the same check failed only the example file (6/7) with the loader-specific message above; no request was sent. `git diff --check` passed. No browser, Webflow or actual Lite install was checked.
+
+**Still open:** The actual Lite install still needs a released runtime and the blank-project trial in the [Lite trial sheet](webflow/lite-blank-project-trial-sheet.md). Michael's acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local checker brief.
+
+**Next useful action:** Commit this bounded checker change; later, under authorised release and trial briefs, test the released runtime in a blank project.
+
+**Reviewed at commit:** `c184f4b` — checked the project records and current Lite checker before running the required baseline and disposable negative checks.
+
 ## 10 November 2026 — Authored Grid checked in all five layouts — Codex (night shift)
 
 **Changed (R-269):** Extended the authored Grid and host-style fixture from Overlay to Dropdown, Full-width, Left and Right; Overlay remains covered. The existing five-layout Flex fixture is unchanged.

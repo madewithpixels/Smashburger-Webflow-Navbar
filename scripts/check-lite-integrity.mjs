@@ -56,8 +56,19 @@ function checkLocalTargets(key) {
   return doc;
 }
 
-const exampleDoc = checkLocalTargets('examples');
+const exampleDoc = documentFor('examples');
 check(files.examples, () => {
+  const stylesheets = [...exampleDoc.querySelectorAll('link[rel="stylesheet"]')].map(element => element.getAttribute('href'));
+  const scripts = [...exampleDoc.querySelectorAll('script[src]')].map(element => element.getAttribute('src'));
+  requireValue(stylesheets.includes('../dist/navbar-light.css'), 'examples must include the intended local runtime stylesheet ../dist/navbar-light.css');
+  requireValue(scripts.includes('../demo/navbar-light.browser.js'), 'examples must include the intended local runtime script ../demo/navbar-light.browser.js');
+  const runtimeAssets = [...exampleDoc.querySelectorAll('link[rel="stylesheet"][href], script[src]')];
+  for (const element of runtimeAssets) {
+    const target = element.getAttribute(element.tagName === 'LINK' ? 'href' : 'src');
+    requireValue(!/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(target), `examples must not install a remote or candidate runtime asset: ${target}`);
+    requireValue(!/candidate\/webflow\/navbar-light-cdn-loader|0\.3\.0-rc\.1/i.test(target), `examples must not install a remote or candidate runtime asset: ${target}`);
+  }
+  checkLocalTargets('examples');
   const sections = [...exampleDoc.querySelectorAll('section')].filter(section => /Plain example|Styled example/.test(section.querySelector('h2')?.textContent ?? ''));
   requireValue(sections.length === 2, `expected plain and styled example sections; found ${sections.length}`);
   for (const section of sections) {
