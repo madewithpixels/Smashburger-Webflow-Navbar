@@ -1076,6 +1076,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **Offline fixture follow-up — 10 November 2026, brief #420:** Added focused preservation assertions for responsive/focus author CSS, an unsupported legacy-looking token and a Webflow-style numbered collision class. All six rehearsal tests pass, with repeated conversion/rollback per delivery form and exact full-fixture restoration. This does not constitute Webflow component, Library or clonable rollout evidence.
 
+**Candidate release pack — 10 November 2026, brief #430:** [Current local candidate inventory, hashes, gate results and separate approval/live checks](webflow/candidate-release-evidence-pack-2026-11-10.md). The pack does not complete the class migration or release.
+
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (step — covered by R-267)
@@ -1144,6 +1146,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **4 November 2026 — v0.2.9:** Released and merged into `main`; exact CDN files were byte-checked, and MWP plus Voice Focus staging use v0.2.9. The `0.3.0-rc.1` class migration remains an unreleased candidate. See [release verification](webflow/v0.2.9-release-verification.md).
 **Evidence links:** [candidate and release boundary](webflow/canonical-rename-2026-10-15.md). [Library CDN verification](webflow/library-sb-nav-candidates-2026-10-15.md) reads an already-pushed exact commit and verifies bytes/SRI locally; this does not create or complete a semantic release.
 
+**Candidate release pack — 10 November 2026, brief #430:** [Current candidate gate, exact-version loader metadata and promotion requirements](webflow/candidate-release-evidence-pack-2026-11-10.md). Candidate URLs remain illustrative; hosted release and CDN checks are outstanding.
+
 **16 October 2026 — brief #67:** Repaired candidate verification integrity using raw local Git blobs at the unchanged older pin. Both CSS/JavaScript values match; the current-source illustrative loader remains separate and unchanged. No semantic release, version or URL pin changed. See [repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
 
 **10 November 2026 — brief #424:** Named every workflow step and added an always-run job summary with checked commit, package version, completed steps and failed step names. Local YAML parsing and simulated success/failure summary generation passed. No GitHub run was inspected; the summary script is not exercised by the hosted Actions runner yet.
@@ -1155,6 +1159,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 **15 October 2026 — Codex:** Backed-up isolated copies of both real editions retain 144 nodes, 60 properties, five variants, nine assets and 67 bindings; source self-contained Canvas/Preview is verified. Exact-commit CDN runtime and script-omission fallback are separately verified locally. No Library share or consumer installation occurred. The five-resource sharing review requires approval; linked properties/overrides/assets/class prefixes, fresh unlink, update/rollback and actual Webflow CDN/fallback remain open.
 **Evidence links:** [Library candidate checks and sharing scope](webflow/library-sb-nav-candidates-2026-10-15.md)
+
+**Candidate release pack — 10 November 2026, brief #430:** [Local candidate inventory and separate Library/consumer gates](webflow/candidate-release-evidence-pack-2026-11-10.md). No share or consumer update is implied.
 
 **16 October 2026 — brief #67:** Corrected the local verification loader only; installed Embeds and historical Library readbacks are unchanged. The older pin predates the latest overlapping-overlay fix, so matching integrity does not verify that fix or consumer loading. Existing sharing/linkage/rollback gates remain open. See [integrity repair limits](webflow/library-verification-integrity-2026-10-16.md).
 

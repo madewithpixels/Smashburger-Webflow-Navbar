@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Candidate-to-release evidence pack — Codex (night shift)
+
+**Changed (R-121, R-125, R-126):** Added a refreshable, local-only evidence pack for the current `0.3.0-rc.1` candidate.
+
+**Outputs:** The pack records the checked commit, 19 candidate file hashes, exact illustrative loader metadata, protected-file result, test gate and its known Library CSS whitespace diagnostic. It links each result to its check or source and separates release promotion, Library sharing, consumer update, cloned rollback and archive gates. Earlier release and Library evidence was retained unchanged. No tag, publishing, CDN read, Webflow change, Library share or release claim was made.
+
+**Checked how:** `npm run check:release` exited 0 at `6cc44f62b9f527aab7d31d700c614937623f7602`. Candidate rebuild matched current files; all 17 protected v0.2.6 files matched their Git baseline; stable files matched v0.2.9. The Library CSS content matched after trimming trailing whitespace only (29,071 versus 29,070 bytes). The candidate hash inventory and CSS/JavaScript SHA-384 values were independently read from local files. These checks do not establish hosted workflow, CDN, browser, Webflow or approval evidence.
+
+**Still open:** Release version/tag approval and release URL verification; the exact five-resource Library share review and backed-up consumer checks; real cloned rollback; independent old pinned URL verification before any archive; Michael's review. Candidate remains unreleased.
+
+**Needs Michael:** Nothing blocks refreshing this local evidence pack. Release and sharing approvals remain separate future decisions.
+
+**Next useful action:** Review [the candidate-to-release evidence pack](webflow/candidate-release-evidence-pack-2026-11-10.md) when considering a later release candidate; refresh it from the next complete local gate before any promotion proposal.
+
+**Reviewed at commit:** `6cc44f6` — checked the current candidate gate, generated files, existing release records, Library sharing record and R-121/R-125/R-126 evidence before adding this pack.
+
 ## 10 November 2026 — Lite examples and blank-project trial preparation — Codex (night shift)
 
 **Changed (R-181, R-182, R-185):** Added a short trial sheet that separates local preparation from the checks that require a blank Webflow project. Extended the Lite integrity gate to include the sheet and validate its required checklist sections and local links. Corrected R-185's Evidence to `none`: the blank-project clone flow has not been performed, and an access listing or local preparation does not verify it.
