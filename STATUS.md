@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Runtime class styling-hook audit — Codex (night shift)
+
+**Changed (R-268, R-269):** Audited class-based selectors in maintained runtime CSS and JavaScript, plus the checked-in candidate delivery copies.
+
+**Outputs:** The findings note classifies `.sb-nav-inner` as structural positioning, `.sb-nav-submenu-list` as structural layout with open-state visibility, `.sb-nav-panel` as a JavaScript structure fallback, and `.w-embed` as a Designer placeholder rule. None uses the three class names in the recorded R-268 style-write incident. The overlap is limited to the general risk of name-based Webflow style writes; this audit gives no evidence that changing runtime selectors would solve it. The note names the controlled follow-up and its evidence limits.
+
+**Checked how:** Read the maintained CSS and JavaScript and compared the matching candidate distribution and generated Embed selectors. Read the R-268 incident record and roadmap exit criteria. No Webflow, browser, rendering or test check was made.
+
+**Still open:** The controlled R-268 style-targeting regression test has not run. Any removal of legacy `.sb-nav-*` selectors requires evidence that supported legacy markup carries the equivalent data hooks.
+
+**Needs Michael:** Nothing to unblock this local source audit.
+
+**Next useful action:** Run the authorised R-268 controlled test against an exact pinned candidate, recording stable style IDs and element assignments before and after each write.
+
+**Reviewed at commit:** c864f9a — reviewed current project records, source selectors, generated candidate selectors and the incident record before this audit.
+
 ## 10 November 2026 — Presets-off source audit — Codex (night shift)
 
 **Changed (R-269):** Audited the maintained candidate CSS, readable generated CSS and main generated Embed for visual declarations across the root, panel, links, contact links, CTA, trigger and backdrop.
