@@ -10,7 +10,7 @@ The canonical repository is `madewithpixels/Smashburger-Webflow-Navbar`; the wor
 
 The Library verification loader stays pinned to `ddb83c79934914ef0f03f3f012ee2743154153f7`. Its CSS and JavaScript integrity values are generated from that commit's raw local Git objects, with no network or current-source fallback. Missing objects stop the Library build with an explicit error. This older runtime **does not include the latest overlapping-overlay scroll-lock fix**; the current-source self-contained candidate does. The illustrative tag loader separately hashes current candidate output and remains uninstalled. `npm run test:candidate` checks both pinned assets and rejects deliberately mismatched hashes. See [the integrity repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
 
-**Released baseline:** v0.2.9 is the current stable distribution; the MWP and Voice Focus staging embeds use its exact versioned CDN files. The shared Library component remains a separate v0.2.6 install. The v0.2.6 tag and its already-published bytes remain immutable. Do not mix the stable release classes with the 0.3 candidate CSS. Runtime attributes, CSS variables, APIs/events, diagnostics and variant markers remain compatible; their `mwp-*` or `NavbarLight` names are intentional.
+**Released baseline:** v0.2.9 is the current stable distribution; the MWP and Voice Focus staging embeds use its exact versioned CDN files. The shared Library component remains a separate v0.2.6 install. The v0.2.6 tag and its already-published bytes remain immutable. Do not mix the stable release classes with the unreleased 0.3 candidate CSS. Runtime attributes, CSS variables, APIs/events, diagnostics and variant markers remain compatible; their `mwp-*` or `NavbarLight` names are intentional.
 
 Run `npm run test:candidate` for the fresh candidate deliveries, `npm test` for source and legacy regression coverage, `npm run check:namespace` for class/hook and immutable-file checks, and `npm run check:dist` for candidate build reproducibility. See [the migration and repository record](webflow/canonical-rename-2026-10-15.md) for evidence, remaining gates and the class map.
 
@@ -224,12 +224,12 @@ Sites with a Content Security Policy must allow `https://cdn.jsdelivr.net` in `s
 
 ### Switching delivery without rebuilding the navigation
 
-These steps apply to the **released v0.2.6 legacy-class component**. Keep its classes and delivery files together. The `src/` and `candidate/` outputs are unreleased sb-nav work; their illustrative tag loader is not an upgrade to install. The separate exact-commit Library verification loader remains subject to [the candidate sharing and rollout gates](webflow/library-sb-nav-candidates-2026-10-15.md#sharing-gate-and-next-action).
+Choose the Embed that matches the component already installed. The shared Library component is still the **v0.2.6 legacy-class version**; v0.2.9 is the **current stable distribution** used by the MWP and Voice Focus staging embeds. These releases have different delivery files. Keep each version's classes and Embed together. The `src/` and `candidate/` outputs are unreleased sb-nav work; their illustrative tag loader is not an upgrade to install. The separate exact-commit Library verification loader is a test candidate, not either released version, and remains subject to [the candidate sharing and rollout gates](webflow/library-sb-nav-candidates-2026-10-15.md#sharing-gate-and-next-action).
 
 The native Webflow structure and component properties are independent of the delivery choice. Change only the Canvas-visible delivery Embed; do not recreate the Brand, trigger, panel, links, wrappers, settings or backdrop.
 
-- **Self-contained:** use [webflow/navbar-light-embed.html](webflow/navbar-light-embed.html). It carries the functional CSS and progressive-enhancement script together and makes no third-party runtime request.
-- **Pinned CDN:** use [webflow/navbar-light-cdn-loader.html](webflow/navbar-light-cdn-loader.html). It loads the exact versioned `dist` files with Subresource Integrity.
+- **For an existing v0.2.6 Library install:** copy the [self-contained Embed from the v0.2.6 tag](https://github.com/madewithpixels/Smashburger-Webflow-Navbar/blob/v0.2.6/webflow/navbar-light-embed.html), or the [v0.2.6 CDN loader](https://github.com/madewithpixels/Smashburger-Webflow-Navbar/blob/v0.2.6/webflow/navbar-light-cdn-loader.html). Those tagged files identify version 0.2.6 and use its exact tagged delivery files. Do not use the unversioned files below for this install; they are now v0.2.9.
+- **For the current stable v0.2.9 distribution:** use [webflow/navbar-light-embed.html](webflow/navbar-light-embed.html) for self-contained delivery, or [webflow/navbar-light-cdn-loader.html](webflow/navbar-light-cdn-loader.html) for the pinned CDN. The CDN loader uses `dist/navbar-light.min.css` and the exact `dist/navbar-light.js` URL whose bytes its JavaScript Subresource Integrity value covers.
 - **Self-hosted:** upload or serve the matching `dist/navbar-light.min.css` and `dist/navbar-light.min.js`, then change only the two URLs in the CDN-shaped Embed. Keep the version markers, load/error state and diagnostic handlers; generate new integrity values whenever the bytes or origin change.
 
 Never leave two delivery Embeds active. After switching, publish and verify `data-mwp-ready="true"`, the hidden runtime settings block, the expected asset requests and native open/close fallback. In a shared Library installation, make the Embed change in a versioned source component and apply the Library update; the future Designer Extension will automate this safely.
@@ -252,7 +252,7 @@ The historical published Tablet variant passed a macOS VoiceOver keyboard-and-sp
 ├── todo.md
 ├── candidate/  # unreleased generated output; never install its CDN loader
 ├── compatibility/  # immutable-file hashes and retained runtime contracts
-├── dist  # released v0.2.6 baseline
+├── dist  # current stable v0.2.9 distribution; v0.2.6 stays in its immutable tag
 │   ├── navbar-light.css
 │   ├── navbar-light.js
 │   └── minified files and source maps
@@ -272,9 +272,11 @@ The historical published Tablet variant passed a macOS VoiceOver keyboard-and-sp
     ├── component-map.md
     ├── copy-paste-test.md
     ├── migration-guide.md
-    ├── navbar-light-cdn-loader.html
-    └── navbar-light-embed.html
+    ├── navbar-light-cdn-loader.html  # current stable v0.2.9
+    └── navbar-light-embed.html  # current stable v0.2.9
 ```
+
+The shared Library remains on v0.2.6. Its matching [tagged self-contained Embed](https://github.com/madewithpixels/Smashburger-Webflow-Navbar/blob/v0.2.6/webflow/navbar-light-embed.html) and [tagged CDN loader](https://github.com/madewithpixels/Smashburger-Webflow-Navbar/blob/v0.2.6/webflow/navbar-light-cdn-loader.html) are preserved with that release; the top-level files and `dist/` are v0.2.9. `candidate/` is unreleased and is not an installation choice.
 
 ## Webflow testing safety
 

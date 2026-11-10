@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — README points to the matching installed-version Embed — Codex (night shift)
+
+**Changed (R-121, R-124):** Clarified the README's delivery guidance and repository map so the v0.2.6 shared Library install is distinguished from the current stable v0.2.9 files and the unreleased candidate.
+
+**Outputs:** Added links to both exact v0.2.6 tagged Embeds and identified the unversioned top-level Embed and loader as v0.2.9. The stable CDN JavaScript path is documented as `dist/navbar-light.js`, matching the bytes authenticated by its Subresource Integrity value. Marked `candidate/` and its illustrative loader as unreleased. No released file, installed pin, component or Webflow site changed.
+
+**Checked how:** Read both tagged CDN loaders and confirmed their versions, repository paths, CSS and JavaScript filenames. v0.2.6 identifies `Webflow-Navbar-Light@v0.2.6` and `dist/navbar-light.min.js`; v0.2.9 identifies `Smashburger-Webflow-Navbar@v0.2.9` and `dist/navbar-light.js`. Confirmed the README now directs the shared Library install to v0.2.6 tagged files and stable use to the v0.2.9 top-level files. `git diff --check` passed. No browser, Webflow or hosted-link check was run.
+
+**Still open:** No pin or installed component was changed; any desired Library upgrade is a separate follow-up. Michael's acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this documentation brief.
+
+**Next useful action:** Use the tagged v0.2.6 Embed when maintaining the existing shared Library install; consider any Library upgrade only under a separate authorised brief.
+
+**Reviewed at commit:** `7236805` — checked the project records, local tags and both tagged loaders before editing the README.
+
 ## 10 November 2026 — Rollback rehearsal names both legacy baselines — Codex (night shift)
 
 **Changed (R-115, R-121):** Made the offline rehearsal's normal legacy baseline explicit as v0.2.9 and added a separate tagged v0.2.6 Library Embed rollback case.
