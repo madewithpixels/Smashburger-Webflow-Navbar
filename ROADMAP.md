@@ -1098,6 +1098,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 #### R-270 · Burger menu navigation button jumping colour and size check
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**Try:** Open and close the menu on the Voice Focus and madewithpixels staging pages at desktop and narrow widths. Compare the button’s colour and size while the menu closes; the button on madewithpixels changes colour without a fade, and neither button changes size (R-270).
 **Task:** 43612352 in your boss list
 **Done when:** Check the trigger's colour and size in closed/open/closing states, compare its transition with the panel close time, and record the responsive conditions.
 **Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
@@ -1105,6 +1106,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 #### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**Try:** On either staging page, open the menu and resize the window without crossing its desktop/mobile layout change; it should stay open. Then cross that change and check that the menu switches layout, and that Escape, a second click and a menu link still close it. (R-271)
+**Covers:** R-125
 **Owner:** agent
 **Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
 **Exit criteria:** A same-breakpoint resize leaves an open menu alone; a real breakpoint change still switches to the correct collapsed or expanded state; Escape, second click and link closing continue to work.
@@ -1121,7 +1124,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Evidence (10 November 2026):** The local generator now wraps its JavaScript in a private scope; the saved Library candidate already had that wrapper and matches the rebuilt Embed exactly. Candidate checks passed 693/693. On 10 November, the exact Disposable SB test site was published to its Webflow subdomain only, with no custom domains. The staging Home page loads and its accessibility tree exposes three menu navigation rows. At the 605 × 900 screenshot viewport, the bottom row's panel showed all its links; the middle panel's first Home link was in the accessibility tree but not visible; the top panel's upper content was visibly hidden behind lower rows. The exact CSS viewport width and row identities remain unknown. Space opened the top menu and Escape closed it with focus remaining on the trigger. No Console was read, so the duplicate-name check remains open. The current saved-page Preview showed Webflow's general “CompilationError: Invalid source code”, with no specific duplicate-name message. The nightshift source review found no concrete local syntax or scope defect in the generated Embed path; it does not prove what Webflow Preview parses or explain the general compiler error. No Library share occurred. See [STATUS](STATUS.md#10-november-2026--published-mobile-menu-and-keyboard-check--codex), [nightshift source review](STATUS.md#10-november-2026--local-preview-error-source-review--codex) and the [earlier Preview diagnosis](webflow/lite-preparation-local-tests-2026-10-14.md#empty-page-preview-compiler-probe).
 
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-271)
 **Task:** 43612101 in your boss list
 **Source:** [todo.md](todo.md), original line 173 (now 174); baseline `c808ca4`.
 **Exit criteria:**

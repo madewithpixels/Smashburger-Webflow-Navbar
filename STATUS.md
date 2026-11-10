@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Sign-off wording for menu findings and release — Codex (night shift)
+
+**Changed (R-270, R-271, R-125):** Added plain Try instructions to the menu button finding and menu resize fix. The release step is now grouped under the menu fix outcome, which lists it as covered. State and Evidence were left unchanged; the release step is not separately accepted.
+
+**Outputs:** The two outcome items now tell Michael what to try on the staging pages. The earlier release item is identified as a covered step rather than a separate sign-off.
+
+**Checked how:** Compared the three roadmap entries with their existing evidence and the D-095 sign-off rule. Read the edited entries and checked the diff; no tests or browser checks were needed for this wording-only update.
+
+**Still open:** Michael’s sign-off remains pending for the two outcome items. Consumer-site checks described in the existing evidence remain open.
+
+**Needs Michael:** Nothing to unblock this documentation update.
+
+**Next useful action:** Michael can try the two menu checks on the staging pages and sign off the outcomes in Boss.
+
+**Reviewed at commit:** 2ee2615 — reviewed the current roadmap, project records and Git baseline before this update.
+
 ## 10 November 2026 — Saved Preview, backup and staging comparison — Codex
 
 **Changed (R-269):** With Michael’s instruction to keep working in Chrome and permission to back up and publish, I backed up the current saved site and published it to the Webflow staging subdomain. No page structure, style or Library content was edited or shared.
