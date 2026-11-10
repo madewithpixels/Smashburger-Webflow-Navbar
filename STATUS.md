@@ -1,5 +1,25 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Published mobile menu and keyboard check — Codex
+
+**Changed (R-269, R-272):** No Webflow changes. The published test page remains as published to its Webflow subdomain.
+
+**Outputs:** On the published Home page, the in-app browser screenshot measured 605 × 900 pixels; the CSS viewport width was not read. It showed three collapsed MENU buttons. Opening the bottom row exposed its full panel and all listed links. Opening the middle row showed its panel, but the first Home link was present in the accessibility tree and not visible in the screenshot; it appears to be obscured by the row below. Opening the top row left the panel's upper content visibly hidden behind the rows beneath it. Row-to-component identities remain unknown. On the top row, Space opened the menu; Escape closed it and focus remained on the same trigger. These are checks of the published page, separate from Michael's earlier Preview reports.
+
+**Checked how:** Opened each published MENU button separately in Codex's in-app browser and reviewed its accessibility tree and screenshot. Used Space and Escape on the top trigger, then verified the resulting expanded/collapsed state and focused element. Left all menus closed. No Console was read.
+
+**Still open:** Compare the saved styling with the published page; check another mobile width, short height, presets-off and Console. The earlier general Preview compilation error remains unexplained.
+
+**Needs Michael:** Nothing for this check.
+
+**Next useful action:** Continue with the remaining styling and runtime checks without treating the stacked test menus as a defect.
+
+**Reviewed at commit:** 37e04fd — reviewed the latest pushed nightshift records and R-269 checklist before the published-page checks.
+
+**Handoff:** The staging page is open in Codex's in-app browser with all three menus closed. Do not change page structure, publish again or share the Library during the comparison.
+
+**Clarification from Michael:** The page deliberately contains multiple menu instances. Lower rows cover panels from rows above because of their position in the same page's DOM; that stacking is expected and is not a defect to fix.
+
 ## 10 November 2026 — Published-page check card — Codex (night shift)
 
 **Changed (R-269):** Prepared a focused checklist for the next authorised browser session. No site, page or menu was changed.
