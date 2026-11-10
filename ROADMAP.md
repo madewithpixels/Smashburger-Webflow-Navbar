@@ -1152,6 +1152,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **10 November 2026 — brief #424:** Named every workflow step and added an always-run job summary with checked commit, package version, completed steps and failed step names. Local YAML parsing and simulated success/failure summary generation passed. No GitHub run was inspected; the summary script is not exercised by the hosted Actions runner yet.
 
+**10 November 2026 — brief #450:** The published Home opened at the named Webflow subdomain and exposed three navigation containers, but the authorised Chrome controls did not provide a readable Console. No fresh Console reload, menu interaction, CSS viewport measurement, script/asset identity or error/request inventory was obtained. This does not establish whether a duplicate-script error occurs. See [brief 450 access record](webflow/evidence/brief-450-published-console-access-2026-11-10.md). The actual repeated-Embed test, current staging bytes and saved Designer Preview remain distinct checks.
+
 
 #### R-126 · Update both MWP Component Library editions and the `Smashburger` clean-install instance through the Library workflow; verify properties, variants, assets, CDN loading, rollback and update linkage.
 **State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
