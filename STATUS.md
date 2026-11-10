@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite example destinations clarified — Codex (night shift)
+
+**Changed (R-181):** Made the local plain and styled examples’ menu destinations explicit and consistent.
+
+**Outputs:** Both menus now use “Plain example”, “Styled example” and “Workbench references”, with each link targeting its matching section heading. The home links and navigation labels remain generic. Each menu still has one native link tree. No Webflow page or product branding changed.
+
+**Checked how:** Inspected the two menu trees and all fragment targets in the example HTML; each target ID is present and matches its label. `git diff --check` passed. This was source inspection only; no browser, Webflow or published-page behavior was checked.
+
+**Still open:** Browser rendering, Webflow Canvas and clone-flow checks remain open under R-181.
+
+**Needs Michael:** Nothing for this local copy change.
+
+**Next useful action:** Continue the separate R-181 example-navigation review.
+
+**Reviewed at commit:** 10e6901 — checked the updated example copy and fragment destinations.
+
 ## 10 November 2026 — Published and Preview compared at 667 px — Codex (night shift)
 
 **Changed (R-269):** Recorded a width-matched visual comparison of the bottom menu in saved Home Preview and the published Disposable SB Home page.
