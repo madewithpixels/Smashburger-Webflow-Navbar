@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Release workflow troubleshooting path — Codex (night shift)
+
+**Changed (R-125):** Mapped every release-workflow step to its purpose, local equivalent and evidence limits. The workflow now continues independent checks after a check failure when dependency setup succeeded; any failed check still fails the job. Added guidance for reading failed and skipped steps alongside local results.
+
+**Outputs:** README links to the troubleshooting guide. The guide explains setup failures, matching local invocations, the consolidated `check:release` output, and why a local pass cannot confirm a hosted run, email, release, CDN delivery, Webflow behavior or acceptance. Checkout, Node setup and dependency installation remain prerequisites. No gate, permission or dependency was weakened or changed. No Webflow content was changed.
+
+**Checked how:** Ruby parsed the workflow YAML; `node --check scripts/write-release-summary.mjs` and `git diff --check` passed. `npm run check:release` exited 0 at `fd15e9337f635ae56418270333d0420ca6987deb`: candidate rebuild and byte comparison passed; 17 protected historical files and stable v0.2.9 files matched; the Library CSS diagnostic still reports one trailing whitespace byte, with content matching after trim; the serial suite reported 695 tests, 680 passed, 0 failed and 15 TODO. This run does not execute GitHub Actions condition evaluation or establish hosted behavior. No GitHub access or failure email was used.
+
+**Still open:** Hosted workflow and email rendering have not been checked. R-125 remains subject to Michael's reordered R-270 and R-271 work and its separately gated release steps.
+
+**Needs Michael:** Nothing for these local changes. No release or hosted rerun is requested by this brief.
+
+**Next useful action:** After R-270 and R-271, use the guide to compare any future release-check notice with local results; inspect hosted summary and email only under an authorised future check.
+
+**Reviewed at commit:** `fd15e93` — checked the workflow, local check scripts, package commands, README and R-125 records before changing the troubleshooting path.
+
 ## 10 November 2026 — Lite readiness gates reconciled — Codex (night shift)
 
 **Changed (R-181, R-182, R-183, R-185):** Added criterion-by-criterion links to existing local evidence and explicitly marked where Webflow evidence is missing. Corrected the distinction between R-183's local instruction-integrity evidence and the still-unbuilt released loader. Replaced no settled decision and recorded no Acceptance.

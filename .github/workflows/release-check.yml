@@ -31,16 +31,20 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Run the source test suite
         id: source_tests
+        if: ${{ always() && steps.install_dependencies.outcome == 'success' }}
         run: npm test -- --test-reporter=dot
       - name: Check maintained JavaScript syntax
         id: source_syntax
+        if: ${{ always() && steps.install_dependencies.outcome == 'success' }}
         run: npm run check
       # Candidate generation must stay reproducible without changing v0.2.6 bytes.
       - name: Rebuild candidate and compare generated files
         id: candidate_rebuild
+        if: ${{ always() && steps.install_dependencies.outcome == 'success' }}
         run: npm run check:dist
       - name: Check candidate runtime behavior and contracts
         id: candidate_runtime
+        if: ${{ always() && steps.install_dependencies.outcome == 'success' }}
         run: npm run test:candidate
       - name: Summarise release checks
         if: always()

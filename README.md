@@ -16,6 +16,8 @@ Run `npm run test:candidate` for the fresh candidate deliveries, `npm test` for 
 
 Run `npm run check:release` for the complete local release-candidate gate. It rebuilds in a disposable copy, compares every candidate path and byte, checks protected v0.2.6 hashes, stable-file protection, retained runtime/API hooks, class namespace rules, Embed/Library JavaScript parity, loader contracts, Library CSS alias expansion, and the serial source/candidate test suite. It prints the package version, current commit, SHA-256 for every candidate artifact and the protected v0.2.6 baseline hashes. It does not modify candidate or released files and does not establish Webflow rollout or release readiness.
 
+For a step-by-step map from release-workflow failures to local checks, including the limits of each result, see [release workflow troubleshooting](webflow/release-workflow-troubleshooting-2026-11-10.md).
+
 The following installation instructions use the released v0.2.6 Library component and legacy `mwp-css-nav` / `mwp-css-nav_*` classes. Isolated sb-nav source-Library candidates are prepared, but no migrated Library update has been shared and linked consumers remain unverified. The future Lite clonable is not built or published. The links below are historical acceptance locations, not a fresh live check; see [the version-specific migration guide](webflow/migration-guide.md) and [current sharing gates](webflow/library-sb-nav-candidates-2026-10-15.md#sharing-gate-and-next-action).
 
 Published acceptance builds:
