@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Single-menu short-height fixture prepared — Codex (night shift)
+
+**Changed (R-269):** Prepared an offline Full-width fixture so a daytime check can observe the short-height menu without the stacked rows on the published test page.
+
+**Outputs:** The fixture uses one native menu, ten navigation links, presets off, and the checked-in candidate CSS and JavaScript. The last link is Contact us and points to a visible destination section. Its use note gives 471 × 500 and 471 × 900 CSS pixel viewports and asks the observer to record last-link reachability, panel scrolling and keyboard focus. No runtime or CSS fix was made.
+
+**Checked how:** Read the HTML structure and relative asset paths; confirmed one root, one details/summary trigger and one adjacent navigation panel with a single link tree. Confirmed the contact destination is present. Existing candidate asset files have no working-tree changes. Existing fixtures were not equivalent: the Full-width example has stacked menus, and the single-menu native example lacks the candidate assets and long content. `git diff --check` passed. No browser check was run.
+
+**Still open:** The rendered fixture has not been opened or observed. Whether the final link is reachable and the panel scrolls at either viewport remains unknown. R-269 runtime and CSS changes require a separate brief if a rendered observation demonstrates a failure.
+
+**Needs Michael:** Nothing for this prepared local fixture.
+
+**Next useful action:** Open the fixture in daytime Chrome at the two noted CSS viewport sizes and record the single-menu observations.
+
+**Reviewed at commit:** `e6d1b89` — checked the local record, candidate assets, existing fixtures and recent history before preparing this page.
+
 ## 10 November 2026 — Repeated candidate Embed check added — Codex (night shift)
 
 **Changed (R-272):** Added one offline regression that loads two copies of the checked-in candidate Embed as separate inline script blocks in the same JSDOM page, with a separate native menu in each root.
