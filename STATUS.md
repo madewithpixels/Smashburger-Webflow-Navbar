@@ -3054,3 +3054,19 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 **Next useful action:** Use the authorised Chrome session to verify the exact staging consumer pages across same-breakpoint resizing, real breakpoint crossing and each close method.
 
 **Reviewed at commit:** 41ba04b — checked current project records, handler, tests and release evidence before this update.
+
+## 10 November 2026 — Lite example preset choice prepared — Codex (night shift)
+
+**Changed (R-181):** Prepared Michael's choice on whether the local styled example should retain the runtime's built-in visual look.
+
+**Outputs:** Boss now offers two options: keep the current difference, or turn the built-in look off in both examples so the styled example isolates its authored styling. I recommend the second option for that purpose. No example default or Webflow page was changed. This choice does not settle the final Webflow Lite default.
+
+**Checked how:** Compared `candidate/lite/review-examples.html`, `candidate/lite/review-examples.css` and the visual preset selectors in `src/navbar-light.css`. The plain header explicitly sets `data-presets="false"`; the styled header omits it and has separate authored background, text, spacing, layout, brand, focus and narrow-screen rules. The runtime's visual preset rules are enabled unless presets are false. This is local source evidence only; no browser or Webflow behavior was checked.
+
+**Still open:** Michael's choice; final Webflow Lite default; browser and Webflow checks for the examples.
+
+**Needs Michael:** Choose which appearance the styled local example should demonstrate in the Boss question.
+
+**Next useful action:** Apply only the selected local example setting in a follow-up brief; decide the final Webflow Lite default separately.
+
+**Reviewed at commit:** c56f178 — checked the examples and preset rules before recording this choice.
