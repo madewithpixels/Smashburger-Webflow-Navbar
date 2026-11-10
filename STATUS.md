@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Unified release-candidate gate verified — Codex (night shift)
+
+**Changed (R-121, R-125):** Verified the documented one-command local gate against the current candidate. The earlier Lite workbench assertion is now fixed, so the complete gate finishes successfully.
+
+**Outputs:** `npm run check:release` reports version `0.3.0-rc.1`, checked commit `2c03961e730846dc430ee0fb258c358ddc026f9a`, candidate artifact SHA-256 values and the expected hashes for all 17 protected v0.2.6 files. It checks rebuild byte parity, retained v0.2.9 files, runtime/API contracts, namespace rules, loader metadata, Library JavaScript parity and Library CSS alias expansion. The candidate rebuild left existing files unchanged. The Library CSS content matches after trimming one trailing whitespace byte; the gate reports this difference and exits successfully. No release or Webflow rollout is approved by this result.
+
+**Checked how:** `npm run check:release` exited 0. Candidate rebuild and protected release/runtime checks passed. The serial suite reported 693 tests: 678 passed, 0 failed and 15 TODO. The CSS comparison reported expected SHA-256 `34f7067b9edd436bf570d603267112a685d8bebde4bc0b3c66b3aca5e20aa3f7` and Library SHA-256 `e6ae0212a34a2cebd3add1312ed29a6f7419220ec00ce1175075f56e9bb63d52`; only one final whitespace byte differs. All evidence is local; no browser or Webflow checks were made.
+
+**Still open:** R-121's wider Webflow/Library/clonable work and R-125's separately gated release steps remain open. Michael reordered R-270 and R-271 ahead of R-125; this local gate does not perform or replace them.
+
+**Needs Michael:** Nothing for this local verification gate.
+
+**Next useful action:** Continue with the roadmap's ordered prerequisites. Keep live checks and release approval separate from this local result.
+
+**Reviewed at commit:** 2c03961 — checked the current project records and ran the unified local candidate gate.
+
 ## 10 November 2026 — Release-check Lite assertion fixed — Codex (night shift)
 
 **Changed (R-125, R-182):** The release-check failure was the Lite workbench source missing the exact “Backdrop reference” heading text required by its test. Added that wording to the existing static backdrop sample heading; kept the sample non-interactive and preserved its explanatory accessible label. This is the same issue noted in the previous status entry.
