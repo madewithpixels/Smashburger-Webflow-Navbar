@@ -2346,12 +2346,11 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.
-**State:** blocked · **Evidence:** verified (local) · **Acceptance:** accepted (5 November 2026)
+**State:** in progress · **Evidence:** verified (local) · **Acceptance:** accepted (5 November 2026)
 **Accepted by Michael in boss, 5 November 2026** — checked: Looked at brief #318's result.
-**Blocked:** Disposable SB test site opens in Chrome but is absent from the Webflow MCP list and has no confirmed before backup; no safe comparison or snapshot export can proceed.
-**Unblock:** Make Disposable SB test site available to the Webflow MCP connection and confirm a before backup for that exact site, then resume the bounded comparison.
-**Blocked since:** 4 November 2026 · **Unblocker:** Michael
-**Try:** Your chosen menu layout, colours and spacing should stay the same in Webflow Designer, Preview and the published test page. Once an agent prepares that page with this change, open the menu in each and compare them; the page is not ready for this check yet.
+**Access gate cleared:** Disposable SB test site is available through Webflow MCP, and its 10 November backup is confirmed. The prior access hold ran from 4 to 10 November 2026.
+**Still open:** Designer, Preview and published comparisons of the five layouts, including author-set layout and appearance. The 10 November staging check only confirms zero Console messages on the page last published 5 November; it does not verify styling or the current saved Designer page.
+**Try:** Compare the chosen menu layout, colours and spacing in Designer, Preview and the published test page at desktop and mobile widths. Check all five layouts, because the staging console check alone does not show that styles survive the runtime.
 **Priority:** Release blocker for the next release/Marketplace readiness; passing existing local checks does not clear it.
 **Owner:** agent · **Depends on:** an exact candidate and an authorised disposable Webflow consumer with a backup for Designer/Preview/published checks
 **Source:** Michael's report, Claude's supplied diagnosis and Michael's instruction to roadmap it, 24 October 2026; Git audit of `38bbf475e6b3bdfcbd0bc0d261ace0c4502c6639` (8 October), `v0.2.6:dist/navbar-light.css` and current `src/navbar-light.css`; [recorded overlay activation](webflow/madewithpixels-functional-menu-2026-10-23.md).
@@ -2371,5 +2370,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Local implementation and evidence (31 October 2026):** The candidate has a build-time CSS guard over source, candidate stylesheets and generated Webflow/Library Embed styles, plus JSDOM regressions for Flex with stale Grid tracks, intentionally authored Grid, opinionated host styles, presets disabled and all five layouts; Canvas helper checks also pass. The final candidate-only verification passed 690/690, including simulated upgrade and rollback cases. The full `npm test` passed with 279 tests: 252 passed and 27 are TODO for documented immutable v0.2.6 defects. No rendered-browser, Designer Canvas, Preview, published-page or real-site upgrade/rollback comparison was performed. R-269 remains open until the bounded site comparison and Michael's review are complete.
 
 **Brief 286 access result (4 November 2026):** New Smashburger Test remains absent from the current Webflow MCP `list_sites`; `get_site`, `list_pages` and site-instruction search using its recorded ID returned site-not-found. No site changes or snapshot exports were made. The required before and after backups are confirmed; the comparison remains blocked. See [brief 286 handoff](evidence/brief-286-r269-access-block-2026-11-04.md) for candidate hashes, backup routes, exact unchecked items and restore steps.
+
+**Brief #321 check — 10 November 2026:** The generated self-contained Library candidate now wraps its JavaScript in a private scope, and its Embed matches the saved `SmashBurger 0.3.0-rc.1 candidate` exactly. `npm run test:candidate` passed 693/693. Chrome's Console showed zero messages after reloading the published Disposable SB test site. The published page displays three navbar rows; their relationship to the two roots in the current Designer tree is unresolved. The site was last published 5 November, so this is not a current Designer/Preview check. No Webflow page, component, style, Library share or published content changed. See [STATUS](STATUS.md#10-november-2026--candidate-embed-and-staging-script-check--codex).
 
 

@@ -9,7 +9,14 @@ const browserSource = moduleSource
   .replace(/^export class /m, 'class ')
   .replace(/^export function /m, 'function ')
   .concat('\n\nglobalThis.NavbarLight = NavbarLight;\nglobalThis.initNavbarLight = initNavbarLight;\n');
-const compactBrowserSource = (await transform(browserSource, { loader: 'js', minify: true, target: 'es2020' })).code;
+// Webflow may embed the same component more than once on a page. Keep local
+// declarations private to this script block so repeated embeds do not collide.
+const minifiedBrowserSource = (await transform(browserSource, {
+  loader: 'js',
+  minify: true,
+  target: 'es2020'
+})).code;
+const compactBrowserSource = `(() => {${minifiedBrowserSource}})();`;
 
 const embed = `<style>\n${css.trim()}\n</style>\n<script>\n${compactBrowserSource}\n</script>\n`;
 await writeFile(resolve(outputRoot, 'webflow/navbar-light-embed.html'), embed);

@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Candidate embed and staging script check — Codex
+
+**Changed (brief #321, R-269):** Updated the local Webflow Embed generator so each copy keeps its JavaScript names private. Rebuilt the candidate files. The saved self-contained Library candidate already had this wrapper, so it needed no Webflow edit.
+
+**Outputs:** The generated Library candidate Embed now matches the saved `SmashBurger 0.3.0-rc.1 candidate` code exactly. No Library share, test-page edit or publish was made. The staging page's visible layout shows three navbar rows.
+
+**Checked how:** `npm run test:candidate` passed 693/693 checks. Reloaded the published Disposable SB test site with Chrome DevTools open; the Console showed zero messages. The site was last published on 5 November, so this is evidence for the published version, not proof of the current saved Designer version or of R-269's layout styling.
+
+**Still open:** The Designer, Preview and five-layout styling comparison for R-269. The three visible navbar rows on the published test page are also unexplained. No layout styling, menu behavior or mobile comparison was checked in this brief.
+
+**Needs Michael:** Nothing for brief #321.
+
+**Next useful action:** Continue the R-269 comparison in Designer and Preview on the backed-up Disposable SB test site. Keep the separate Library share and publish gates closed.
+
+**Handoff:** `Disposable SB test site` has a confirmed brief #321 backup named `Backup` from 10 November at 09:33. `MWP Component Library` has a confirmed `boss · brief #321 · before` backup from 10 November at 09:42. No page, component or style content changed in either site.
+
+**Reviewed at commit:** 22c7d6d — project records and the 5 November baseline were checked before this work.
+
 ## 5 November 2026 — Shared candidate and staging check held — Codex (night shift)
 
 **Changed (brief #321):** No shared Webflow candidate or staging page changed. The local candidate remains as it was.
