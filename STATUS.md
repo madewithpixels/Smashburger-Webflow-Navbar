@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-269 styling comparison stopped before site access — Codex (night shift)
+
+**Changed (R-269):** No Webflow content or styles were changed. I could not begin the five-layout comparison because the authorised Chrome window could not be opened, and the named disposable site could not be matched in the Webflow site list.
+
+**Outputs:** `cua.getApp("Google Chrome")` returned `Computer Use server error -10005: cgWindowNotFound`. The read-only Webflow site list contained no site named “Disposable SB test site”, so I could not confirm the exact test target or candidate instance. I made no styling or structural changes and took no backup. No before-state snapshot was needed because nothing was changed.
+
+**Checked how:** Used the user-authorised Chrome desktop entry exactly as specified, then made a read-only Webflow site-list request for the named target. Neither produced a usable target page. I did not try another browser route or touch another site.
+
+**Still open:** Dropdown, Full-width, Left, Right and Overlay with presets off; Flex/Grid comparisons including stale tracks and host styles; Style-panel edits for the panel, primary/contact links, CTA and trigger; Canvas-open and Preview screenshots at desktop/mobile widths; computed styles; and linked/unlinked evidence. Published comparison is also unchecked.
+
+**Needs Michael:** Restore Chrome access to the named disposable site and make its exact site identity available to the Webflow account used for this brief.
+
+**Next useful action:** Re-run the authorised comparison once Chrome opens the named site and its exact Webflow identity can be confirmed.
+
+**Reviewed at commit:** `e7f6473` — checked project records and local Git state before attempting the authorised site access.
+
 ## 10 November 2026 — Dark-icon source trace stopped at Chrome page access — Codex (night shift)
 
 **Changed (R-269):** No Webflow content, assets or colours were changed. The exact published icon source could not be read in Chrome.
