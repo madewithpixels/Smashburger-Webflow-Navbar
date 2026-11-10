@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Presets-off source audit — Codex (night shift)
+
+**Changed (R-269):** Audited the maintained candidate CSS, readable generated CSS and main generated Embed for visual declarations across the root, panel, links, contact links, CTA, trigger and backdrop.
+
+**Outputs:** Presets-off gates panel and overlay colours, borders, shadows, overlay type, link appearance, decorative spacing, contact separators and icon tinting. The CTA has no runtime style rule; the closed trigger has behavior rules only. Drawer close-button appearance is gated. Backdrop surface is gated while its position and visibility behavior remain unconditional. Unconditional layout rules remain for collapse, panel geometry and full-width grid tracks; the audit lists them without claiming rendered effects. No source/generated gating discrepancy was found.
+
+**Checked how:** Read numbered declarations in `src/navbar-light.css`, `candidate/dist/navbar-light.css` and `candidate/webflow/navbar-light-embed.html`. No browser, Webflow or rendering check was made.
+
+**Still open:** This source audit cannot establish Designer, Preview or published rendering. The broader R-269 comparisons and authored-style cases remain open as recorded below.
+
+**Needs Michael:** Nothing to unblock this local audit.
+
+**Next useful action:** Continue the remaining R-269 comparison work from its current authorised checklist.
+
+**Reviewed at commit:** 7e74359 — reviewed project records and candidate source before this audit.
+
 ## 10 November 2026 — Menu button finding accepted; runtime style ownership mapped — Codex (night shift)
 
 - 10 November 2026 — Accepted by Michael in boss: R-270 (checked: Looked at brief #318's result).
