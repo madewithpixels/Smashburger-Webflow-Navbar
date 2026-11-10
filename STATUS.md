@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Minified Library Embed CSS compared — Codex (night shift)
+
+**Changed (R-269):** Added a reproducible local comparison for the minified Library Embed CSS.
+
+**Outputs:** The maintained CSS and readable candidate Embed CSS match exactly after trimming outer whitespace. The minified Library Embed has candidate variant aliases; after applying the Library builder's alias expansion and CSS minification, its complete CSS matches the generated result apart from a trailing newline. No selector or declaration differences remain in that comparison, including layout, visual presets and state rules.
+
+**Checked how:** Ran `node scripts/compare-library-embed-css.mjs`. It compares the complete CSS blocks and prints character counts and SHA-256 values. No source, generated artifact, Webflow content or release was changed. No browser or Webflow behavior was checked.
+
+**Still open:** The result verifies checked-in generated CSS only. It does not establish the current saved Webflow Embed bytes or Designer, Preview or published rendering and cascade behavior.
+
+**Needs Michael:** Nothing to unblock this local comparison.
+
+**Next useful action:** Continue the separately authorised R-269 staging comparisons; use the exact saved page and browser evidence to assess rendered layout and appearance.
+
+**Reviewed at commit:** 7ca4d9c — checked the current project records and the three CSS artifacts before comparison.
+
 ## 10 November 2026 — R-271 sign-off location clarified — Codex (night shift)
 
 **Changed (R-271):** Named the Voice Focus and madewithpixels staging pages in the sign-off instructions and clarified the menu button check.
