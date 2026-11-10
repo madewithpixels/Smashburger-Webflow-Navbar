@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Workbench references labelled as static — Codex (night shift)
+
+**Changed (R-182):** Clarified what the local closed/open workbench samples and backdrop represent.
+
+**Outputs:** The closed sample is labelled as a static authoring reference; the open sample as a static forced-open authoring reference; and the backdrop as a non-interactive static sample. The page and native build sheet state that these references do not verify menu interaction or runtime behavior, nor backdrop activation, dismissal or scroll locking. No Webflow page or runtime code changed.
+
+**Checked how:** Read the page, build sheet, R-182 and the current project record; reviewed the changed wording and ran `git diff --check`. Source wording only: no browser rendering, Webflow Canvas, Preview or published behavior was checked.
+
+**Still open:** Browser rendering and Webflow Canvas editing remain unverified under the wider Lite work.
+
+**Needs Michael:** Nothing for this wording update.
+
+**Next useful action:** Continue the remaining Lite workbench and clone-flow checks.
+
+**Reviewed at commit:** 8862ba0 — checked the workbench page, native build sheet and project records before this wording update.
+
 ## 10 November 2026 — Workbench styling contained — Codex (night shift)
 
 **Changed (R-182):** Scoped the local workbench page styling so it cannot target the Lite example pages if the stylesheet is reused or combined.

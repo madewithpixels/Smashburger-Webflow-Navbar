@@ -9,10 +9,13 @@ component or page was created or changed. Acceptance remains pending.
   ordinary links, plain and styled examples, a separate workbench, a short Read
   Me page and one exact-version CDN loader. There is no Library install, app,
   CMS, duplicate mobile tree or mega-menu.
-- Candidate files provide local plain/styled examples and a static workbench.
-  Each example has one root, one details/summary trigger and one panel containing
-  three links. The workbench has closed and open references and a labelled,
-  non-interactive backdrop swatch.
+- Candidate files provide local plain/styled examples and a static authoring
+  workbench. Each example has one root, one details/summary trigger and one panel
+  containing three links. The workbench labels its closed sample as a static
+  authoring reference, its open sample as a static forced-open authoring
+  reference, and its backdrop as a non-interactive static sample. These samples
+  do not test menu interaction or runtime behavior, or backdrop activation,
+  dismissal or scroll locking.
 - `npm run test:candidate` passed 685/685 checks. The Lite checks passed for
   shared link-tree structure, local runtime behavior, independent menu state,
   simulated Escape/focus return, static workbench behavior and working fragments.
@@ -86,8 +89,10 @@ placement, hook attributes and native element types together.
   the baseline simple and visibly label demo destinations.
 - **Styled example:** the same component structure and one set of links, with
   ordinary editable Webflow classes supplying its distinct presentation.
-- **Workbench:** separate closed and forced-open references plus a static,
-  labelled backdrop sample. Keep it out of real page content.
+- **Workbench:** separate closed and forced-open static authoring references
+  plus a non-interactive backdrop sample. They do not verify menu interaction,
+  runtime behavior or backdrop activation, dismissal or scroll locking. Keep the
+  workbench out of real page content.
 - **Read Me:** adapt the safe-editing guide after class names and the released
   loader are confirmed. Explain native Details/summary, functional hooks,
   trigger/panel placement, stacking, accessible names, and duplicate-header
