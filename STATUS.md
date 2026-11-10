@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Record queued candidate task — Codex
+
+**Changed (brief #366):** Added R-272 for Michael's queued task to update the shared candidate and check the disposable staging page.
+
+**Outputs:** The roadmap keeps the task's acceptance open. It records the earlier local candidate match and the zero-message published-page Console result, including the 5 November publication limit.
+
+**Checked how:** Compared the Boss inbox wording with the existing R-269 evidence and the 10 November status entry. No Webflow site was opened or changed in this brief.
+
+**Still open:** Check the current saved Designer page or Preview for the duplicate script-name error, and confirm any shared candidate update that is still needed.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Continue the R-269 comparison in Designer and Preview on the backed-up Disposable SB test site; keep the Library share and publish gates closed.
+
+**Reviewed at commit:** 9fd984c — checked the task against the existing candidate evidence and current roadmap.
+
 ## 10 November 2026 — Candidate embed and staging script check — Codex
 
 **Changed (brief #321, R-269):** Updated the local Webflow Embed generator so each copy keeps its JavaScript names private. Rebuilt the candidate files. The saved self-contained Library candidate already had this wrapper, so it needed no Webflow edit.

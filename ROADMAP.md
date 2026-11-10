@@ -1113,6 +1113,13 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **4 November 2026 — v0.2.9 rollout:** The release also ignores synthetic resize events and uses the exact-byte `.js` CDN URL. MWP and Voice Focus staging now use the v0.2.9 loader; Voice Focus saved-code readback and subdomain publication are confirmed. The release evidence is in [v0.2.9 verification](webflow/v0.2.9-release-verification.md).
 
+#### R-272 · Update the shared SmashBurger candidate and verify the disposable staging page has no duplicate script-name error.
+**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
+**Task:** 43612398 in your boss list
+**Source:** Michael's task #43612398 in the Boss inbox, 10 November 2026; title retained as given there.
+**Done when:** The shared SmashBurger candidate matches the generated candidate Embed, and reloading the disposable staging page shows no duplicate script-name error. Record whether the check covered the saved Designer page, Preview or the published page.
+**Evidence (10 November 2026):** The local generator now wraps its JavaScript in a private scope; the saved Library candidate already had that wrapper and matches the rebuilt Embed exactly. Candidate checks passed 693/693. The published Disposable SB test site showed zero Console messages after reload, but it was last published on 5 November, so this does not verify the current saved Designer page or Preview. No Library share or site edit was made. See [STATUS](STATUS.md#10-november-2026--candidate-embed-and-staging-script-check--codex).
+
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
 **Task:** 43612101 in your boss list
