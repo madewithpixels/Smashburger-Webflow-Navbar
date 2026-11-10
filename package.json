@@ -18,6 +18,7 @@
     "check": "node --check src/navbar-light.js",
     "check:dist": "node scripts/check-dist.mjs",
     "check:release": "node scripts/check-release-candidate.mjs",
+    "check:lite": "node scripts/check-lite-integrity.mjs",
     "test:candidate": "node scripts/check-built-runtime.mjs",
     "check:namespace": "node scripts/check-class-namespace.mjs"
   },

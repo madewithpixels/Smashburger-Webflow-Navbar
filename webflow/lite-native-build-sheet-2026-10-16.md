@@ -63,12 +63,12 @@ provide the no-script fallback.
   source and agree with the accepted `sb-nav` mapping.
 - Keep the functional `data-mwp-*` hooks shown in the tree. They are the
   candidate runtime contract; the class migration does not rename them.
-- The candidate examples use `data-collapse="always"` and
-  `data-layout="dropdown"`. These are reference values, not settled Lite
-  defaults: the scope leaves the default collapse choice for the build. The
-  plain example also uses `data-presets="false"`; whether Lite exposes this
-  control needs to be settled against the selected released runtime and the
-  safe-editing guide.
+- The local plain and styled review examples currently use
+  `data-collapse="always"`, `data-layout="dropdown"` and
+  `data-presets="false"`. These are source reference values, not a verified
+  final Lite default or a Webflow Canvas readback. Keep the examples' current
+  presets-off setting aligned until the selected released runtime and final
+  build choices are confirmed.
 - Candidate-only example styling includes `lite-example--styled`, `brand`,
   `workbench-example` and `backdrop-swatch`. These are not agreed component
   classes. Choose the final example styling during the Webflow build.

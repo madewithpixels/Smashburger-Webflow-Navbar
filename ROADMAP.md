@@ -1710,6 +1710,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Destination copy — brief #403, 10 November 2026:** Both local examples use the same generic menu labels for the Plain example, Styled example and Workbench references, and each fragment target names the section it reaches. The home links and navigation labels are generic. This is source inspection only; no browser, Webflow or published-page behavior was checked.
 **Navigation semantics — brief #404, 10 November 2026:** Plain and styled review examples, plus the static workbench references, each have a distinct navigation landmark and trigger name. Review-example backdrops remain hidden from assistive technology; the workbench swatch remains a labelled image. See [findings and limits](webflow/r181-navigation-semantics-2026-11-10.md). Source-level review only.
 **Example appearance — brief #417, 10 November 2026:** Both local review examples set `data-presets="false"`, so the styled example demonstrates its own authored styling without the runtime's built-in visual presets. Source inspection confirms the attribute on both headers. No Webflow page or browser rendering was changed or checked.
+**Integrity gate — brief #421, 10 November 2026:** `npm run check:lite` reports file-level results for both examples, their CSS, the workbench and the two Lite guides. It checks each example's one named native navigation tree, link targets, current presets-off setting and absence of generated `.always*` classes; it also checks workbench CSS scoping, static labels and links, and the guides' unreleased-loader boundary. This is local source evidence only; it does not verify rendering, Webflow or clone flow.
 **Evidence links:** [candidate examples](candidate/lite/review-examples.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
@@ -1721,6 +1722,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Reference evidence — brief #71, 16 October 2026:** The actual workbench with its local CSS retains the native closed/open states and adjacent panels without a runtime, injected ARIA/inert state or readiness marker. Its labelled backdrop remains a static sample. All fragment links now resolve after adding the two missing article IDs. No design or script changed. This does not prove rendering or Canvas editability. [Evidence and limits](webflow/lite-examples-runtime-2026-10-16.md).
 **Current automated check — brief #90, 16 October 2026:** The full `npm run test:candidate` run passed 685/685, including the workbench state and fragment checks. Browser rendering and Canvas behavior remain unchecked. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 **Evidence links:** [workbench references](candidate/lite/workbench-references.html); [Lite candidate checks](tests/lite-candidate.test.js)
+**Integrity gate — brief #421, 10 November 2026:** `npm run check:lite` checks file-level results for the workbench HTML/CSS and Lite instructions, including scoped selectors, static state labels, local links and explicit non-installability of the unreleased loader. This does not establish Canvas behavior or rendering.
 
 
 #### R-183 · Install one exact-version pinned CDN Embed with integrity metadata and keep the settings/structure understandable on the Canvas.
@@ -1728,6 +1730,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Source:** [todo.md](todo.md), original line 256 (now 257); baseline `c808ca4`.
 **Exit criteria:**
 **Build gate — 16 October 2026:** Local `0.3.0-rc.1` candidate loader checks pass, but that tag is unreleased and must not be installed. Released v0.2.6 uses the earlier `mwp-*` classes. No released loader matching the settled `sb-nav` migration is verified; final URL and integrity values await an authorised released runtime. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
+**Instruction integrity — brief #421, 10 November 2026:** `npm run check:lite` checks that the safe-editing guide and native build sheet state the unreleased loader is not installable and do not present it as an installation step. No loader was installed and no Webflow component was created.
 
 
 **Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.
@@ -1746,6 +1749,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Source:** [todo.md](todo.md), original line 258 (now 259); baseline `c808ca4`.
 **Exit criteria:**
 **Project access check — brief #90, 16 October 2026:** Read-only Webflow site listing returned 16 accessible sites but no blank SmashBurger Lite test project. SB Unlink Clean Trial is a populated fixture, so it does not satisfy this clone-flow gate. New Smashburger Test was not re-probed. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
+**Local instruction integrity — brief #421, 10 November 2026:** The Lite local gate checks the build sheet's unreleased-loader boundary. It does not perform or claim blank-project clone-flow evidence.
 
 
 **Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.

@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite local integrity gate — Codex (night shift)
+
+**Changed (R-181, R-182, R-183, R-185):** Added one local command that checks the Lite review examples, workbench and instructions and reports pass/fail by file with specific failures.
+
+**Outputs:** The gate checks the plain and styled examples' single named native navigation trees, link destinations, trigger and navigation names, presets-off values, and absence of duplicate/Library variant or unlink-generated `.always*` classes. It checks local links, static labels and page-scoped selectors in the workbench, plus the unreleased-loader boundary in the safe-editing guide and native build sheet. The build sheet now records that both local review examples currently use presets off. No Webflow component, loader installation or release change was made.
+
+**Checked how:** `npm run check:lite` passed all six Lite files with zero failures. `node --check scripts/check-lite-integrity.mjs` and `git diff --check` passed. The checks read local source and documentation only; they do not verify browser rendering, Webflow Canvas or clone flow.
+
+**Still open:** R-181 and R-182 still need their separate browser/Canvas checks. R-183 still awaits an approved released runtime before a loader can be built or installed. R-185 clone-flow evidence remains unperformed.
+
+**Needs Michael:** Nothing for this local gate.
+
+**Next useful action:** Run the gate alongside future Lite edits; resume Canvas and clone-flow work only when its runtime and test-project gates are met.
+
+**Reviewed at commit:** 04ba15a — checked the current project record and local Lite sources before adding this gate.
+
 ## 10 November 2026 — Offline migration fixture coverage strengthened — Codex (night shift)
 
 **Changed (R-115, R-121):** Added explicit fixture coverage for preserving author-owned responsive and focus styles, a Webflow-style numbered class collision, and an unsupported legacy-looking class token.
