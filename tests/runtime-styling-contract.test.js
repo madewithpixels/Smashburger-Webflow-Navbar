@@ -67,3 +67,15 @@ test('build guard rejects high-specificity author layout and appearance declarat
   assert.ok(violations(':where([data-mwp-navbar]) [data-mwp-panel] > [data-mwp-link]{color:red}').length > 0);
   assert.ok(violations('[data-mwp-navbar][data-layout="overlay"] [data-mwp-panel]{display:grid}').length > 0);
 });
+
+test('build guard includes Flex and Grid placement shorthands in its author-owned layout properties', () => {
+  for (const declaration of [
+    'flex-direction:column', 'flex-wrap:wrap', 'grid-template-areas:"nav"',
+    'grid-area:nav', 'grid-column:1 / -1', 'place-items:start', 'row-gap:1rem', 'column-gap:2rem'
+  ]) {
+    assert.ok(violations(`:where([data-mwp-navbar]) [data-mwp-panel]{${declaration}}`).length > 0,
+      `guard should flag ${declaration} outside a zero-specificity selector`);
+    assert.deepEqual(violations(`:where([data-mwp-navbar] [data-mwp-panel]){${declaration}}`), [],
+      `a zero-specificity default should remain allowed for ${declaration}`);
+  }
+});

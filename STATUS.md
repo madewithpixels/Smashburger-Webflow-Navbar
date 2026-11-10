@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-269 CSS guard stress check — Codex (night shift)
+
+**Changed (R-269):** Extended the CSS guard's list of layout properties so it also checks Flex direction and wrapping, Grid placement, alignment shorthands and separate row/column gaps. Added focused checks showing that high-specificity rules using these properties are refused while zero-specificity defaults remain allowed.
+
+**Outputs:** The review found that existing local tests already covered host styles, stale Grid tracks, authored Flex and Grid, presets off and all five layouts. The guard itself had a narrower property list than those layout risks required. The new cases close that confirmed local gap. The [guard limits and risk review](webflow/r269-styling-guard-limits-2026-11-10.md) records what is covered and what the guard cannot establish. No Webflow content, dependencies or generated release files changed.
+
+**Checked how:** `node --test tests/runtime-styling-contract.test.js` passed all 6 tests. `npm run check:runtime-css` passed against current source and generated CSS deliveries. `git diff --check` passed. These checks exercise local CSS and JSDOM fixtures only.
+
+**Still open:** This does not prove Designer Style-panel editing, Canvas layout, Preview rendering, published rendering, exact page CSS or parity with the files checked locally. The browser-only R-269 checks remain open as listed in the coverage map.
+
+**Needs Michael:** Nothing for this local guard change.
+
+**Next useful action:** Continue the separately authorised R-269 Designer, Preview and published-page comparisons on the disposable test site.
+
+**Reviewed at commit:** acd5c73 — checked the current project records, guard, CSS contract tests and R-269 coverage map before this change.
+
 ## 10 November 2026 — Candidate runtime contract audit — Codex (night shift)
 
 **Changed (R-121, R-125):** Documented the candidate’s public runtime contract and compared maintained source, generated candidate deliveries, stable v0.2.9 and protected v0.2.6 files. Added candidate-delivery regression coverage for `.sb-nav-panel` discovery when its data hook is absent.
