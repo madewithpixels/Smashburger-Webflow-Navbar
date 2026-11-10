@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Local Preview error source review — Codex (night shift)
+
+**Changed (R-272):** No source or generated code changed. Added this evidence note only.
+
+**Outputs:** Confirmed source facts: `scripts/build-webflow-embed.mjs` reads `src/navbar-light.js`, removes the `export` prefix from the class and initializer declarations (lines 8–11), minifies that browser source (lines 14–18), and wraps it in `(() => { ... })()` (line 19) before writing the style and script tags (lines 21–22). The generated candidate at `candidate/webflow/navbar-light-embed.html` ends its script body with the same closure (lines 720–723; minified body at line 721). The module has two exported declarations (`src/navbar-light.js`, lines 127 and 486); the builder removes those prefixes and appends assignments for `NavbarLight` and `initNavbarLight` on `globalThis`. The closure keeps ordinary declarations, including `const` and the class, local to each Embed execution. I found no concrete syntax or scope defect in this wrapper path that explains Webflow's general “CompilationError: Invalid source code”.
+
+**Possible causes, not established:** A compiler limitation or a difference in Webflow's transformed Preview input could still be involved. This source review cannot determine whether Webflow parses the complete Embed, injects or combines other code, or fails on a runtime-only condition. The `globalThis` exports are intentional shared properties; they do not by themselves show a duplicate top-level lexical declaration.
+
+**Checked how:** Read the local builder, source and generated candidate Embed with line numbers; searched the relevant files for script tags, module imports/exports and closing-script text; reviewed the prior R-272 Preview evidence and local Git history. No Webflow, browser, network, tests or code execution was used.
+
+**Still open:** The exact failing Preview input and compiler diagnostic/source location, and whether the current candidate Embed reproduces the error in Webflow Preview.
+
+**Needs Michael:** Nothing for this local source review.
+
+**Next useful action:** In an authorised browser session, capture the failing Preview request and source location, then compare the exact submitted script with this local candidate.
+
+**Reviewed at commit:** e5f9c8b — checked current project records, source, generated Embed and relevant history.
+
 ## 10 November 2026 — Test site published to staging — Codex
 
 **Changed (R-269, R-272):** With Michael's permission, published the Disposable SB test site to its Webflow subdomain only. The site has no custom domains. No styles, page content, Library share or other domains were changed.
