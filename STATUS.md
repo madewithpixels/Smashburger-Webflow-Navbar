@@ -1,5 +1,47 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Staging resize checks stopped at Chrome page access — Codex (night shift)
+
+**Changed (R-271):** No staging site or Webflow content was changed. Neither consumer page was verified.
+
+**Outputs:** The authorised Google Chrome app opened. I created a new tab and attempted to open the madewithpixels staging homepage, but Chrome's accessibility state remained “New tab”; its screenshot control returned “Screenshot unavailable for /Applications/Google Chrome.app.” I closed the tab I opened and returned to the existing “Disposable SB test site” window. The exact staging page, loaded site revision, browser version and CSS viewport therefore remain unobserved.
+
+Expected loader identity from the release record is v0.2.9. The loaded runtime and actual collapse boundary could not be read. The following records are outcomes of the access stop, not passes or failures of menu behavior.
+
+**madewithpixels staging —** `https://madewithpixels-dev.webflow.io/` (release-record homepage)
+
+| Requested behaviour | Result |
+| --- | --- |
+| Same-breakpoint resize with menu open | Not checked; page unavailable |
+| Cross to expanded and back | Not checked; boundary and widths unknown |
+| Escape from a fresh open | Not checked |
+| Second trigger activation from a fresh open | Not checked |
+| Link closing from a fresh open | Not checked |
+
+Expected loader: v0.2.9 per the release record; loaded loader not verified. CSS viewport widths and browser version not measurable. Focus return and unwanted page shift not checked.
+
+**Voice Focus staging —** `https://voice-focus.webflow.io/` (release-record staging homepage)
+
+| Requested behaviour | Result |
+| --- | --- |
+| Same-breakpoint resize with menu open | Not checked; page unavailable |
+| Cross to expanded and back | Not checked; boundary and widths unknown |
+| Escape from a fresh open | Not checked |
+| Second trigger activation from a fresh open | Not checked |
+| Link closing from a fresh open | Not checked |
+
+Expected loader: v0.2.9 per the release record; loaded loader not verified. CSS viewport widths and browser version not measurable. Focus return and unwanted page shift not checked.
+
+**Checked how:** Used the authorised Google Chrome desktop app only. After creating a new tab, I entered the madewithpixels staging homepage address and submitted it; the accessibility state continued to show “New tab.” The app screenshot call returned the exact unavailable message above. I did not open the Voice Focus page after this access failure. I closed the one tab I created. No browser page or menu behavior is claimed as checked.
+
+**Still open:** Both sites' loaded runtime, actual collapse boundary, exact CSS viewport widths and all five requested behaviors; focus return and page-shift observations on both sites. The expected v0.2.9 loader identity comes from `webflow/v0.2.9-release-verification.md`, not a page readback in this check.
+
+**Needs Michael:** Restore Chrome page access so the two staging pages can be read through the desktop controls.
+
+**Next useful action:** Re-run the two staging checks when Chrome page access is available. Keep Michael's pending review separate and leave the release order intact.
+
+**Reviewed at commit:** `071b823` — checked the current project record and git state before the Chrome attempt.
+
 ## 10 November 2026 — Preview reproduction blocked by Chrome page-read failure — Codex (night shift)
 
 **Changed (R-272/R-155):** No Preview page, saved content or custom-code setting was changed. A fresh compiler reproduction could not be captured.
