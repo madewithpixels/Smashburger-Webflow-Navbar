@@ -3310,3 +3310,19 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 **Next useful action:** Apply only the selected local example setting in a follow-up brief; decide the final Webflow Lite default separately.
 
 **Reviewed at commit:** c56f178 — checked the examples and preset rules before recording this choice.
+
+## 10 November 2026 — Clean-checkout release rehearsal — Codex (night shift)
+
+**Changed (R-121, R-125):** Documented a repeatable rehearsal from fresh local tracked files using only the already-installed locked dependencies and the existing build and verification commands. This documents the current `check:release` gate; it does not add or replace a gate.
+
+**Outputs:** The [clean-checkout rehearsal runbook](webflow/clean-checkout-release-rehearsal-2026-11-10.md) records the exact setup, command order, version, checked commit and all candidate artifact SHA-256 values. It keeps local verification separate from release approval and Webflow/browser evidence.
+
+**Checked how:** At `9acbd1804d43fd0ec55de4b3d459ed224041f48a`, made a local-only clone in `/tmp`, linked the existing `node_modules`, and ran `npm run build`, `npm run check:dist`, `npm run test:candidate` and `npm run check:release`. All commands exited successfully. `check:dist` found no candidate path or byte differences. The consolidated gate reported version `0.3.0-rc.1`, all 17 protected v0.2.6 files matching their Git-baseline hashes, retained v0.2.9 files matching, and 678 passed / 0 failed / 15 TODO in the full suite. It also reported the existing one-byte trailing-whitespace difference in the Library CSS comparison; content matches after trimming that byte. The clone's only status entry was the untracked `node_modules` dependency symlink; no tracked file changed. No release file was modified and no network, browser, Webflow or hosted workflow was used. `git diff --check` passed.
+
+**Still open:** Local reproducibility does not establish release approval, a hosted workflow result, Webflow rollout or live behavior. The Library CSS comparison continues to report its trailing-whitespace diagnostic.
+
+**Needs Michael:** Nothing for this local rehearsal.
+
+**Next useful action:** Continue the roadmap's separately ordered prerequisites. Keep release and live checks distinct from this local evidence.
+
+**Reviewed at commit:** 9acbd18 — checked the current project record, release gate and clean-clone results before adding the runbook.
