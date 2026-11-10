@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-269 local coverage mapped — Codex (night shift)
+
+**Changed (R-269):** Mapped the local checks to the styling and behavior criteria they represent, and separated those results from the remaining Webflow and browser checks.
+
+**Outputs:** The [coverage map](webflow/r269-local-coverage-map-2026-11-10.md) links the five-layout Flex/Grid cascade, preset gates, CSS specificity guard and generated deliveries, states, Canvas helper, motion, trigger/close behavior and fallback to named tests and source. It lists the Designer, Preview, published, viewport, motion, fallback and real-site upgrade/rollback checks that remain open. No missing local test was identified; no CSS or Webflow content was changed.
+
+**Checked how:** Read the R-269 exit criteria, relevant source and candidate generation guard, existing local tests and current evidence notes. `git diff --check` passed. No test suite or browser/Webflow check was run for this documentation map; prior logged test results are linked as context, not rerun evidence.
+
+**Still open:** All explicitly listed Designer, Preview and published cases remain open until checked on the exact candidate and recorded with page, component, state and viewport. Michael's historical reports remain identified as his observations, not independent Codex checks.
+
+**Needs Michael:** Nothing for this local coverage map.
+
+**Next useful action:** Use the map during the already-authorised disposable-site comparison and record each browser result separately from local test evidence.
+
+**Reviewed at commit:** f5378fe — checked the current project record, R-269 criteria, local source/tests and evidence before writing the map.
+
 ## 10 November 2026 — Lite local integrity gate — Codex (night shift)
 
 **Changed (R-181, R-182, R-183, R-185):** Added one local command that checks the Lite review examples, workbench and instructions and reports pass/fail by file with specific failures.
