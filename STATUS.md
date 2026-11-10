@@ -8,9 +8,9 @@
 
 **Checked how:** The candidate rebuild matched every existing candidate byte. The class namespace, retained runtime/API hooks and 17 protected historical files passed; stable files matched v0.2.9. Library CSS content matched after trimming one trailing whitespace byte. The full local suite reported 677 passes, 1 failure and 15 existing TODOs: the Lite workbench test expects a missing “Backdrop reference” label (`tests/lite-candidate.test.js`). This is a separate Lite workbench issue, not a candidate artifact mismatch. `git diff --check` passed. Local automated checks only; no browser or Webflow behavior was checked.
 
-**Still open:** R-121 remains in progress pending the wider Webflow Library and rollout work. The single Lite workbench test failure remains open under the Lite work.
+**Still open:** R-121 remains in progress pending the wider Webflow Library and rollout work. The single Lite workbench test failure remains open under the Lite work. The requested Webflow backups remain outstanding; they were not attempted under this run's local-repository-only limit.
 
-**Needs Michael:** Nothing for this local gate.
+**Needs Michael:** If the requested backups are still required, authorise a separate Webflow-enabled follow-up for the missing brief #321 after backup and the brief #419 before and after backups.
 
 **Next useful action:** Resolve the Lite workbench label mismatch under its own brief, then rerun `npm run check:release`. Keep release approval and Webflow rollout as separate gates.
 
