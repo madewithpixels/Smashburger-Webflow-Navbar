@@ -1,5 +1,25 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Dropdown and Full-width Preview checks — Codex
+
+**Changed (R-269, R-272):** Temporarily set the saved candidate instance to Full-width and then Left. Restored its original Dropdown layout; Layout presets remain On and Canvas-open Off. No styles, page content, component definition, Library share or publication changed.
+
+**Outputs:** In the saved Home page's 667 px Designer Preview, Michael reports that the unlinked bottom candidate opens and closes cleanly in Dropdown, Full-width and Left. The separate, still-linked second menu is set to Right; Michael reports it opens without clipping but sits underneath the bottom menu. These are his visual observations. The current Preview rendered three collapsed menu triggers with custom code enabled. The published site is still the 5 November version. Michael's phone review also reports that the upper expanded menu is cut off by menus beneath it while the lower menu works well; he chose to keep the updated version for further checks (brief #370).
+
+**Checked how:** Reconnected Webflow MCP to the exact Disposable SB test site. Read the saved component instance and its five supported Layout values. Changed the bottom candidate's Layout property to Full-width and then Left through Webflow MCP, reading the values back each time; restored Dropdown and confirmed presets On and Canvas-open Off. Preview was at 667 px. Codex could not click within Webflow's separate-origin Preview frame; Michael performed and reported the Dropdown, Full-width, Left, Right and Overlay visual checks. No Console was read. No new backup was made, following Michael's instruction for this session.
+
+**Still open:** Presets-off, short-height, keyboard/focus, and detailed Style-panel versus Preview/published comparisons remain open. The general Preview compilation error reported in an earlier check remains unexplained; this run does not establish a duplicate-script error or prove its absence. The published page remains at 5 November.
+
+**Needs Michael:** Nothing for the layout comparison; Michael reports Overlay on the second, still-linked menu is good and restored Right afterwards.
+
+**Next useful action:** Continue with the remaining presets-off, short-height, keyboard/focus, and Style-panel versus Preview/published checks. Keep the unlinked bottom candidate in Dropdown and the second linked menu in Right.
+
+**Handoff:** Codex's in-app Designer is on the Disposable SB Home Preview at 667 px. The unlinked bottom candidate is in Dropdown; presets are On and Canvas-open is Off. The still-linked second menu is restored to Right after its Overlay check. Michael reports Overlay is good. Do not share the Library or publish.
+
+**Reviewed at commit:** 6a07a1b — checked the saved Home page, current Preview, component props, site publication date and project records.
+
+**Correction:** The Right-layout observation above concerns the second, still-linked menu, not the unlinked bottom candidate. The bottom candidate's confirmed open layouts are Dropdown, Full-width and Left.
+
 ## 10 November 2026 — Phone comparison decision recorded — Codex (night shift)
 
 **Changed (R-269):** Kept the updated menu on the disposable test page for further checks, following Michael's choice in brief #370. No Webflow content or published page was changed in this session.
