@@ -1,5 +1,41 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Component layout property check — Codex
+
+**Changed (R-269, R-272):** Temporarily changed the saved Home page's embedded SmashBurger instance from Dropdown to Full width and turned on its Canvas-open helper. Both values were restored (`Layout=dropdown`, Canvas helper Off). No styles, component definition, Library share or published content changed.
+
+**Outputs:** The instance Properties panel shows the Mobile landscape variant, Dropdown layout, 24 rem panel width, Layout presets On and Canvas-open Off. At 667 px, setting Layout to Full width changed the property readback, but the open panel did not appear in the Canvas even with Canvas-open On. Preview loaded and its accessibility tree showed three collapsed menu triggers. A click on the selected menu in Preview failed because its content is in a separate-origin frame, so no open-panel rendering was verified. This check does not prove that Full width or the other four layouts render correctly.
+
+**Checked how:** Read the instance Properties panel, switched to the Mobile (L) breakpoint at 667 px, temporarily set Full width and Canvas-open On, then restored Dropdown and Canvas-open Off. The component property now reads Dropdown, presets On and Canvas-open Off. Tried the selected component's Preview trigger once; it was unavailable to the browser control. No new backup was made, following Michael's instruction for this session.
+
+**Still open:** Verify open-panel rendering for all five layouts, presets off, styles across Designer Canvas and Preview, open/close and keyboard/focus behavior, short-height behavior and the current published page. The Preview click limitation and the generic compilation error reported earlier remain unresolved.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Continue from this saved component instance and find a supported way to open its menu in Preview or a current rendered test page; keep the Library share and publish gates closed.
+
+**Handoff:** Codex's in-app Designer is on the Disposable SB Home Canvas at 667 px with the SmashBurger instance selected. Its Layout is restored to Dropdown; Layout presets are On and Canvas-open is Off. No dialog is open. Read this entry and R-269/R-272 first.
+
+**Reviewed at commit:** 659fc6f — checked the current Designer and project records before this entry.
+
+## 10 November 2026 — Presets-off and candidate Style-panel check — Codex
+
+**Changed (R-269, R-272):** No lasting site change. Temporarily set the unlinked menu's `data-presets` to `false` for a Canvas look, then restored it to `true`. No styles or page content were edited.
+
+**Outputs:** At 999 px (Desktop), the candidate menu remained visible with its links and outlined CTA while presets were off; the screenshot showed no obvious appearance change from the preceding presets-on view. Read-only Style-panel checks showed: the panel is a Flex child with left/center alignment, 0.125 rem gap, 0.25 rem vertical padding, transparent background and 0.75 rem radius; the secondary links are a Flex child with left/stretch alignment, 0.5 rem gap, transparent background and inherited colour; the CTA uses inline Flex, centered content, 2.75 rem minimum height, bold text, 99 rem radius, a 1 px border, 1 rem side padding and inherited colour. This is Designer Canvas and saved Style-panel evidence; it does not prove computed styles or Preview/published rendering.
+
+**Checked how:** Compared the Canvas at 999 px before and during the temporary presets-off setting. Settings read back `data-presets=true`, `data-canvas-open=false` and `data-collapse=tablet` after restoration. The Designer remained active. No new backup was made, following Michael's instruction for this session.
+
+**Still open:** The five-layout presets-off comparison, the other authored elements, open/close and keyboard/focus behavior, short-height checks, and current published-page comparison. The general Preview compilation error remains unexplained; no duplicate-name error has been confirmed.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Map which layout variants are available in this exact saved page, then continue the bounded comparison without sharing the Library or publishing.
+
+**Handoff:** Codex's in-app Designer remains on the Disposable SB Home Canvas at 999 px with the unlinked menu selected and Navigator open. All temporary settings are restored. Read this entry and R-269/R-272 first. Do not publish or share the Library.
+
+**Reviewed at commit:** 659fc6f — checked project records and the saved Designer Canvas before this entry.
+
 ## 10 November 2026 — Designer and Preview layout checks — Codex
 
 **Changed (R-269, R-272):** Added a reversible layout-attribute check on the unlinked candidate in the saved Home page. No style, page content, component definition, Library share or published content was changed.
