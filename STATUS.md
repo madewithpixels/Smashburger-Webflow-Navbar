@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Dark-icon source trace stopped at Chrome page access — Codex (night shift)
+
+**Changed (R-269):** No Webflow content, assets or colours were changed. The exact published icon source could not be read in Chrome.
+
+**Outputs:** The named Chrome window was “Disposable SB test site”, but Chrome’s accessibility view exposed only the macOS Edit menu, even after Escape. Its screenshot control returned `Screenshot unavailable for /Applications/Google Chrome.app`. This does not establish the current URL, loaded page version, browser version, CSS viewport, selected menu, image URL or inline SVG, image fill/filter, panel background, or authored/computed styles. No current page observation or screenshot was obtained.
+
+The existing local source trace identifies a candidate explanation, not a confirmed cause on the published page: presets-off CSS omits the rule that recolours single-colour social/contact images to follow link text, leaving the selected images to show their source colours and authored image styling. To distinguish dark source artwork from page/runtime styling, the exact selected image bytes or SVG fill and the image’s authored/computed style on the matched menu instance are still needed. The previous 667 px note is historical and does not supply those values.
+
+**Checked how:** Opened the authorised Google Chrome app as instructed, read the existing “Disposable SB test site” window, tried Escape to dismiss the exposed Edit menu, and requested a screenshot. The exact screenshot error is recorded above. Per the access boundary, I did not try a different browser route or inspect another page. No Preview comparison, asset export or style readback was possible.
+
+**Still open:** Current published URL and loaded version; measured 667 CSS px viewport and browser version; exact bottom-menu selectors, variant and content; selected social image URL/SVG data; image fill/filter; panel background; relevant authored/computed styles; comparison with one legible control. The candidate CSS explanation remains unverified against the current published instance.
+
+**Needs Michael:** Restore Chrome page reading for the named Disposable SB test site window so the matched menu and its selected image/style values can be inspected.
+
+**Next useful action:** Re-run the bounded icon trace when Chrome exposes the page; record the exact element, viewport, source art and computed styling before considering a repair.
+
+**Reviewed at commit:** `3b3fa12` — checked current project records and Git state before the authorised Chrome attempt.
+
 ## 10 November 2026 — Staging resize checks stopped at Chrome page access — Codex (night shift)
 
 **Changed (R-271):** No staging site or Webflow content was changed. Neither consumer page was verified.
