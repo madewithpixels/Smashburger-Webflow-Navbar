@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Release summaries distinguish skipped checks — Codex (night shift)
+
+**Changed (R-125):** The release summary now reports GitHub's `skipped` outcome and a missing outcome as “not run”. Added offline regressions for dependency setup failure, a failed source test followed by successful independent checks, and cancelled/unavailable results. No workflow, triggers, permissions, gates, released files, pins or dependencies changed.
+
+**Outputs:** The scenarios write to temporary summary files and verify the checked revision, current package version, failing step and all seven workflow result rows. A setup failure retains the install failure and shows dependent checks as not run. A source-test failure remains named while independent checks pass. Cancellation stays visible, while an absent outcome is not run.
+
+**Checked how:** Baseline `5776a370dff56bef8a9fbd9736159f1549e13f61`; read the documented local troubleshooting guide and existing status simulations first. The initial new regression run exposed that `skipped` was printed literally; after normalisation, `node --test tests/write-release-summary.test.mjs` passed (3/3). `node --check scripts/write-release-summary.mjs` and `git diff --check` passed. Inspected `.github/workflows/release-check.yml`: the summary step uses `always()`, but invokes a script from the checkout, so after checkout failure the script is unavailable. Fixing that requires a separately authorised workflow change. No GitHub run, Actions expression evaluation or hosted summary rendering was checked.
+
+**Still open:** A real GitHub Actions run must confirm the summary rendering and the checkout-failure path. Existing workflow triggers, permissions and gate coverage were left untouched.
+
+**Needs Michael:** Nothing to finish this local regression work; review and acceptance remain his.
+
+**Next useful action:** Run the release workflow in GitHub during an authorised release check and inspect its job summary, including the early checkout-failure behavior.
+
+**Reviewed at commit:** `5776a370dff56bef8a9fbd9736159f1549e13f61` — inspected the script, documented simulations and workflow invocation before editing.
+
 ## 10 November 2026 — Lite preflight reports broken inputs without stopping — Codex (night shift)
 
 **Changed (R-181, R-182, R-183):** The seven-file Lite check now reads each input inside its own file check. A missing file or broken local target is reported against its named file, and remaining checks for that file are marked skipped. Independent files continue to report. The remote/candidate loader rejection and explicit unreleased warning remain in place.

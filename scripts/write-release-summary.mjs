@@ -21,7 +21,7 @@ try {
   // Keep the summary useful even if checkout or package metadata is unavailable.
 }
 
-const outcome = value => value === 'success' ? 'passed' : value === 'failure' ? 'failed' : value || 'not run';
+const outcome = value => value === 'success' ? 'passed' : value === 'failure' ? 'failed' : value === 'skipped' || !value ? 'not run' : value;
 const completed = checks.filter(([, value]) => value === 'success');
 const failed = checks.filter(([, value]) => value === 'failure');
 const rows = checks.map(([name, value]) => `- ${name}: ${outcome(value)}`);
