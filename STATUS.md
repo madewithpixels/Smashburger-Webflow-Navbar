@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Preview error observed in Chrome — Codex (night shift)
+
+**Changed (R-272):** Recorded the available Preview Console evidence and the limits of the browser capture. No page content, code, Preview setting or publishing state was changed.
+
+**Outputs:** The saved Home page in Designer Preview showed Webflow's general `CompilationError: Invalid source code`, with stack locations at `webflow.js:501:37415` and `webflow.js:501:37229`. No duplicate-script or duplicate-declaration message appeared. The candidate version and any request tied to the compiler error were not identifiable. An earlier, separate PayPal SDK script request showed HTTP 400 in the Console; DevTools said that request was unavailable in Network, and no evidence connects it to the compiler error.
+
+**Checked how:** Opened the exact Disposable SB Home Preview in Chrome, enabled Console log preservation, cleared old entries and reloaded once. The page showed “Compiling custom code…” and then redirected to GoDaddy sign-in. The exact general compiler error and source links were visible in the Console before that reload, but the cleared-log run did not reproduce it. The available viewport controls showed iPad Pro 13 emulation at 1376 × 1032 CSS px and 75% device-toolbar zoom; the Webflow Canvas viewport had initially read 2044 px. No screenshot or response excerpt was saved.
+
+**Still open:** Fresh reproduction, candidate/version and instance identification, the failing submitted source, a page-specific compiler location and any directly related script request or response. The duplicate-script hypothesis remains unconfirmed. See [the capture record](webflow/r272-preview-error-capture-2026-11-10.md).
+
+**Needs Michael:** Nothing for this capture record.
+
+**Next useful action:** When the Disposable SB test site opens without redirecting to sign-in, repeat the cleared-Console Preview capture and inspect only requests demonstrably tied to that compiler error.
+
+**Reviewed at commit:** d821bc6 — checked the current project record, R-272 capture card, saved Preview page state and Console evidence before recording this observation.
+
 ## 10 November 2026 — Minified Library Embed CSS compared — Codex (night shift)
 
 **Changed (R-269):** Added a reproducible local comparison for the minified Library Embed CSS.
