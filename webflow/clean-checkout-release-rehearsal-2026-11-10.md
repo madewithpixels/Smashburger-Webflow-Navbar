@@ -85,7 +85,7 @@ approval.
 - Local toolchain: Node.js 25.2.1; npm 11.6.2. Locked installed dependencies:
   esbuild 0.28.2 and jsdom 29.0.0.
 - Fresh local clone: `npm run build`, `npm run check:dist` and
-  `npm run test:candidate` completed successfully; candidate suite: 693 passed.
+  `npm run test:candidate` completed successfully.
 - `npm run check:release` is the authoritative consolidated output for the
   candidate artifact hashes and v0.2.6 protected-file hashes. It also reports a
   one-byte trailing-whitespace difference in the Library CSS comparison; the
