@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Preview error capture card — Codex (night shift)
+
+**Changed (R-272):** Prepared the local capture card for the next authorised browser investigation.
+
+**Outputs:** The short sequence records whether the page is saved Designer, Preview or published, and captures the exact Console message, source location and any related script request or response. It includes fields for page, candidate version, viewport and exact error text. It keeps Webflow's general compilation error separate from the unconfirmed duplicate-script hypothesis.
+
+**Checked how:** Compared the card with R-272, the 10 November Preview record and the local source review. Checked that it asks for browser evidence and labels missing source/request details explicitly. No browser, Webflow or runtime check was made; the local source review is not treated as a runtime diagnosis.
+
+**Still open:** The failing Preview input, page-specific compiler location and any related script request or response have not yet been captured.
+
+**Needs Michael:** Nothing to prepare the card.
+
+**Next useful action:** Use the card during the next authorised daytime Chrome investigation on the exact Disposable SB test page.
+
+**Reviewed at commit:** 2c6f6f4 — checked the current R-272 and Preview records before drafting the card.
+
 ## 10 November 2026 — Local schema evidence indexed — Codex (night shift)
 
 **Changed (R-261):** Indexed the checked-in source schema snapshots and historical destination comparison.
