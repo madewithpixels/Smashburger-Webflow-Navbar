@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-271 sign-off location clarified — Codex (night shift)
+
+**Changed (R-271):** Named the Voice Focus and madewithpixels staging pages in the sign-off instructions and clarified the menu button check.
+
+**Outputs:** Michael can now find the two staging pages to try the resize and menu-closing outcome. State and Evidence are unchanged; Acceptance remains pending.
+
+**Checked how:** Compared the R-271 instruction with the recorded staging-site evidence and D-095's outcome sign-off rule. Read the updated entry and checked the diff. No browser checks or tests were needed for this wording change.
+
+**Still open:** Michael's sign-off remains pending. Fresh consumer-page checks remain open as recorded in the roadmap.
+
+**Needs Michael:** Review the named staging pages and decide whether to sign off the outcome.
+
+**Next useful action:** Try the R-271 checks on the Voice Focus and madewithpixels staging pages.
+
+**Reviewed at commit:** f945390 — checked the current roadmap and project record before this wording update.
+
 ## 10 November 2026 — Preview error capture card — Codex (night shift)
 
 **Changed (R-272):** Prepared the local capture card for the next authorised browser investigation.

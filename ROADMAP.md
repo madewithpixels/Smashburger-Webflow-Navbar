@@ -1107,7 +1107,7 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 #### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
 **State:** built · **Evidence:** verified (live) · **Acceptance:** pending
-**Try:** On either staging page, open the menu and resize the window without crossing its desktop/mobile layout change; it should stay open. Then cross that change and check that the menu switches layout, and that Escape, a second click and a menu link still close it. (R-271)
+**Try:** On the Voice Focus and madewithpixels staging pages, open the menu and resize the window without crossing its desktop/mobile layout change; it should stay open. Then cross that change and check the layout switches, and that Escape, a second click on the menu button and a menu link each close it (R-271).
 **Covers:** R-125
 **Owner:** agent
 **Source:** Michael's description in this session, 4 November 2026; task #43612358 in Boss.
