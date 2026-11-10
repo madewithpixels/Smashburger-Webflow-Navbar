@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Presets-off icon source trace — Codex (night shift)
+
+**Changed (R-269):** Traced how the candidate handles default social and contact image icons when layout presets are off.
+
+**Outputs:** The [asset/style trace](webflow/r269-dark-social-icons-trace-2026-11-10.md) identifies the concrete mechanism: preset-off excludes the CSS treatment that paints a copy of each image silhouette in the link's text colour, leaving the image's own colours to show. The checked-in evidence contains default asset IDs, but not the image bytes or SVG fills, so it cannot confirm the exact source colour of the icons in the supplied screenshot.
+
+**Checked how:** Read the maintained and generated candidate CSS, the local Webflow component evidence and the preset behavior note. Confirmed the candidate CSS carries the same gate. No browser or Webflow readback was performed for this trace; no colors or site content were changed. No tests were run.
+
+**Still open:** Exact selected icon asset contents and any per-image authored styles in the supplied Preview instance need visual/source confirmation in that same instance. The local trace does not establish rendered contrast or prove the screenshot's exact pixels.
+
+**Needs Michael:** Nothing for this local source trace.
+
+**Next useful action:** Read the selected icon assets and their computed image styles on the same Preview instance before considering any contrast change.
+
+**Reviewed at commit:** b4b4cde — checked current project records and the local candidate/source evidence before this trace.
+
 ## 10 November 2026 — Short-height candidate CSS source review — Codex (night shift)
 
 **Changed (R-269):** Recorded source-level height, overflow and positioning rules for Dropdown, Full-width, Left, Right and Overlay.
