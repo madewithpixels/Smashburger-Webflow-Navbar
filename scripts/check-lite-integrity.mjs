@@ -14,12 +14,24 @@ const files = {
   buildSheet: 'webflow/lite-native-build-sheet-2026-10-16.md',
   trialSheet: 'webflow/lite-blank-project-trial-sheet.md'
 };
-const contents = Object.fromEntries(Object.entries(files).map(([key, file]) => [key, readFileSync(path.join(root, file), 'utf8')]));
-const errors = new Map(Object.values(files).map(file => [file, []]));
+const contents = {};
+const errors = new Map(Object.values(files).map(file => [file, { failures: [], skipped: [] }]));
 
 function check(file, fn) {
   try { fn(); }
-  catch (error) { errors.get(file).push(error.message); }
+  catch (error) {
+    const result = errors.get(file);
+    result.failures.push(error.code === 'ENOENT' ? `required input is missing: ${path.relative(root, error.path)}` : error.message);
+    result.skipped.push('remaining checks for this file were skipped after the failure');
+  }
+}
+function read(key) {
+  try { contents[key] = readFileSync(path.join(root, files[key]), 'utf8'); }
+  catch (error) {
+    if (error.code === 'ENOENT') error.message = `required input is missing: ${files[key]}`;
+    throw error;
+  }
+  return contents[key];
 }
 function requireValue(condition, message) { assert.ok(condition, message); }
 function documentFor(file) { return new JSDOM(contents[file], { url: `file://${path.join(root, files[file])}` }).window.document; }
@@ -56,8 +68,9 @@ function checkLocalTargets(key) {
   return doc;
 }
 
-const exampleDoc = documentFor('examples');
 check(files.examples, () => {
+  read('examples');
+  const exampleDoc = documentFor('examples');
   const stylesheets = [...exampleDoc.querySelectorAll('link[rel="stylesheet"]')].map(element => element.getAttribute('href'));
   const scripts = [...exampleDoc.querySelectorAll('script[src]')].map(element => element.getAttribute('src'));
   requireValue(stylesheets.includes('../dist/navbar-light.css'), 'examples must include the intended local runtime stylesheet ../dist/navbar-light.css');
@@ -91,8 +104,9 @@ check(files.examples, () => {
   requireValue(!contents.examples.includes('0.3.0-rc.1/dist/navbar-light.min.js'), 'examples point at the unreleased candidate loader');
 });
 
-const workbenchDoc = checkLocalTargets('workbench');
 check(files.workbench, () => {
+  read('workbench');
+  const workbenchDoc = checkLocalTargets('workbench');
   requireValue(workbenchDoc.body.classList.contains('workbench-page'), 'body must carry workbench-page scope');
   requireValue(workbenchDoc.querySelectorAll('script').length === 0, 'workbench references must remain script-free');
   const articles = [...workbenchDoc.querySelectorAll('article')];
@@ -110,6 +124,7 @@ check(files.workbench, () => {
 });
 
 check(files.workbenchCss, () => {
+  read('workbenchCss');
   const css = contents.workbenchCss.replace(/\/\*[\s\S]*?\*\//g, '');
   for (const [index, raw] of css.split('}').entries()) {
     const selector = raw.split('{', 1)[0].trim();
@@ -118,10 +133,10 @@ check(files.workbenchCss, () => {
   }
 });
 
-check(files.exampleCss, () => requireValue(contents.exampleCss.trim().length > 0, 'example stylesheet is empty'));
+check(files.exampleCss, () => requireValue(read('exampleCss').trim().length > 0, 'example stylesheet is empty'));
 for (const key of ['guide', 'buildSheet']) {
   check(files[key], () => {
-    const text = contents[key];
+    const text = read(key);
     const namesCandidateLoaderAsInstallable = /(?:install|add|paste|use)\b[^\n.]{0,100}(?:candidate\/webflow\/navbar-light-cdn-loader|0\.3\.0-rc\.1)[^\n.]{0,100}(?:loader|embed)?/i;
     requireValue(!namesCandidateLoaderAsInstallable.test(text), 'instructions present the unreleased candidate loader as installable');
     requireValue(/(?:unreleased|unpublished)[^\n.]{0,140}(?:not be installed|not an installation instruction|must not be installed)/i.test(text), 'must state that the unreleased loader is not installable');
@@ -129,7 +144,7 @@ for (const key of ['guide', 'buildSheet']) {
 }
 
 check(files.trialSheet, () => {
-  const text = contents.trialSheet;
+  const text = read('trialSheet');
   for (const heading of [
     '## Local evidence already prepared',
     '## Blank-project checks still required',
@@ -151,11 +166,15 @@ check(files.trialSheet, () => {
 let failureCount = 0;
 for (const file of Object.values(files)) {
   const fileErrors = errors.get(file);
-  if (fileErrors.length) {
-    failureCount += fileErrors.length;
+  if (fileErrors.failures.length) {
+    failureCount += fileErrors.failures.length;
     console.log(`FAIL ${file}`);
-    for (const error of fileErrors) console.log(`  - ${error}`);
+    for (const error of fileErrors.failures) console.log(`  - ${error}`);
+    for (const reason of fileErrors.skipped) console.log(`  - SKIPPED: ${reason}`);
+  } else if (fileErrors.skipped.length) {
+    console.log(`SKIP ${file}`);
+    for (const reason of fileErrors.skipped) console.log(`  - ${reason}`);
   } else console.log(`PASS ${file}`);
 }
-console.log(`Lite integrity: ${Object.keys(files).length - [...errors.values()].filter(list => list.length).length}/${Object.keys(files).length} files pass; ${failureCount} failure(s).`);
+console.log(`Lite integrity: ${Object.keys(files).length - [...errors.values()].filter(result => result.failures.length || result.skipped.length).length}/${Object.keys(files).length} files pass; ${failureCount} failure(s); ${[...errors.values()].filter(result => result.skipped.length).length} file(s) had checks skipped.`);
 if (failureCount) process.exitCode = 1;

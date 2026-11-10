@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite preflight reports broken inputs without stopping — Codex (night shift)
+
+**Changed (R-181, R-182, R-183):** The seven-file Lite check now reads each input inside its own file check. A missing file or broken local target is reported against its named file, and remaining checks for that file are marked skipped. Independent files continue to report. The remote/candidate loader rejection and explicit unreleased warning remain in place.
+
+**Outputs:** A clean run reports all seven files passing. In two disposable copies, removing the trial sheet reports `required input is missing` under that file; breaking the workbench stylesheet target reports the missing target under the workbench HTML. Each broken copy exits non-zero, with six unaffected files passing. Source examples, released assets and pins were not changed.
+
+**Checked how:** At baseline `3086d71`, `npm run check:lite` passed 7/7. Before the fix, disposable missing-input and broken-target copies both exited 1 before any per-file results, with respectively an uncaught `ENOENT` stack and an uncaught assertion stack. After the fix, `npm run check:lite` passed 7/7; the two disposable copies each exited 1, reported one failure and six passing files. `node --check scripts/check-lite-integrity.mjs` and `git diff --check` passed. Temporary copies were removed.
+
+**Still open:** No browser, Webflow, rendering or clone-flow behavior was checked. Michael's acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local checker repair.
+
+**Next useful action:** Review the local preflight change; keep Webflow construction and blank-project checks under their existing authorised gates.
+
+**Reviewed at commit:** `3086d71` — recorded the clean baseline and both failure modes in disposable copies before editing.
+
 ## 10 November 2026 — CSS guard catches nested author rules — Codex (night shift)
 
 **Changed (R-269):** Closed two reproduced gaps in the local CSS guard. It now checks rules nested in grouping rules such as `@supports` and `@container`, and grants the three existing display behavior exceptions only to their exact selectors. Added positive and negative regressions. No shipped CSS, generated delivery, release pin or Webflow content changed.
