@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite clone-flow capture sheet prepared — Codex (night shift)
+
+**Changed (R-185):** Prepared a repeatable record for a future blank-project clone check.
+
+**Outputs:** The sheet has fields for project and page identity, observed component structure, Canvas edits, Desktop, Tablet, Mobile landscape and Mobile portrait, keyboard and focus, no-script fallback, assets, horizontal overflow and Console messages. It provides explicit values for unknowns, skipped checks and failures, and says that the sheet itself is not clone-flow evidence.
+
+**Checked how:** Compared the fields with R-185, the accepted Lite scope and the native build sheet. Reviewed that observations remain blank and that template preparation is distinguished from performed checks. `git diff --check` passed. No Webflow project or browser was opened; no clone-flow behavior was checked.
+
+**Still open:** The blank-project clone attempt and all runtime, Canvas and browser checks remain to be performed in an accessible blank test project.
+
+**Needs Michael:** Nothing to prepare the template.
+
+**Next useful action:** Use the capture sheet when the released Lite setup and blank test project are ready for the clone-flow check.
+
+**Reviewed at commit:** 21450f3 — checked the current project records and Lite build evidence before drafting the template.
+
 ## 10 November 2026 — Workbench references labelled as static — Codex (night shift)
 
 **Changed (R-182):** Clarified what the local closed/open workbench samples and backdrop represent.
