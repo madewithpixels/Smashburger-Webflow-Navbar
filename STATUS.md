@@ -2910,3 +2910,19 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 **Next useful action:** Use the preflight when preparing the separately authorised R-268 controlled test; stop if any required identity or evidence is unavailable.
 
 **Reviewed at commit:** 54a5a8b — checked current records and incident evidence before this update.
+
+## 10 November 2026 — R-271 regression coverage map — Codex (night shift)
+
+**Changed (R-271):** Mapped each stated resize-fix exit condition to current handler code and existing named tests or release evidence.
+
+**Outputs:** Same-breakpoint resize, breakpoint change, Escape and menu-link closing have source and recorded local test coverage. The current test source does not explicitly name or demonstrate a second user click on the trigger; API toggle coverage is adjacent evidence only. The note also identifies the narrower same-breakpoint test's closed starting state. Consumer-site behavior remains open.
+
+**Checked how:** Read the current resize and close handlers, relevant test names and assertions, the R-271 roadmap entry, and v0.2.7/v0.2.9 release evidence. No tests, browser or Webflow checks were run.
+
+**Still open:** Explicit test evidence for second-trigger-click closing; consumer-browser checks on the named staging sites, including resize and keyboard/link behavior.
+
+**Needs Michael:** Nothing to unblock this local coverage map.
+
+**Next useful action:** Use the authorised Chrome session to verify the exact staging consumer pages across same-breakpoint resizing, real breakpoint crossing and each close method.
+
+**Reviewed at commit:** 41ba04b — checked current project records, handler, tests and release evidence before this update.
