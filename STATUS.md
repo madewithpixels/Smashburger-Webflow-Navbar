@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Risk-weighted testing proposal — Codex
+
+**Changed (R-269, R-121, R-125, R-181, R-182, R-183, R-185):** Prepared a guide for choosing focused development checks, when to broaden them, and which checks belong at release, rollout and recovery.
+
+**Outputs:** [Testing priorities proposal and brief template](webflow/testing-priorities-proposal-2026-11-10.md). No code, tests, workflow, roadmap state, Boss tasks or release policy changed.
+
+**Checked how:** Compared the project rules and accepted decisions with the recent shift evidence, workflow, local commands and Webflow trial records. Checked the proposal's source links and the diff. The commit after the previous reviewed baseline was the recorded release-workflow correction; the recorded 680-pass suite belongs to the preceding revision. No tests, hosted run or Webflow checks were performed for this proposal.
+
+**Still open:** The reviewed records do not provide a hosted run link and result for the correction. The outstanding R-269 comparisons, Lite clone checks and separate release and recovery gates remain as recorded.
+
+**Needs Michael:** Nothing to finish this proposal. Any change to required checks or release policy remains his decision.
+
+**Next useful action:** Use the template in the next development brief to name its first check, when to broaden it and what should be handed off.
+
+**Reviewed at commit:** `33ce14b` — checked the project records, workflow and recent local evidence before drafting.
+
 ## 10 November 2026 — Release workflow troubleshooting path — Codex (night shift)
 
 **Changed (R-125):** Mapped every release-workflow step to its purpose, local equivalent and evidence limits. The workflow now continues independent checks after a check failure when dependency setup succeeded; any failed check still fails the job. Added guidance for reading failed and skipped steps alongside local results.

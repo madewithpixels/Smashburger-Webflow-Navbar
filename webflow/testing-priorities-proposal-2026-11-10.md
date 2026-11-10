@@ -1,0 +1,43 @@
+# SmashBurger testing priorities
+
+**Proposal for Michael · 10 November 2026**
+
+Start each brief with the smallest check that could catch the mistake it is most likely to introduce. Broaden it when more people, layouts or delivery methods could be affected. Run the full checks at the point where someone will rely on the result to release, publish or recover a site.
+
+### Risk-to-check guide
+
+| Change | Smallest useful check | When to broaden; what needs separate evidence |
+| --- | --- | --- |
+| Prose, links or a readiness note | Review the changed claims against their sources, follow changed links and check the diff. | Run the relevant content check if a heading, snippet, install instruction or other text is read by a test or build. A document review establishes what the instructions say, not whether they work in Webflow. |
+| Menu logic or shared configuration | Reproduce the issue with an existing focused test or a small fixture; check the fix and the nearest behaviour it could break. For resize, start with an **open** menu, then check both staying within a breakpoint and crossing it. | If class or data hooks, options, events/API, focus, scroll locking or fallback change, check the affected behaviours across maintained source and fresh candidate deliveries. Browser input, assistive technology and consumer behaviour need their own evidence. |
+| Generated CSS, JavaScript, Embeds or loader | Rebuild and compare candidate paths and bytes (`npm run check:dist`); run the check specific to the affected delivery. | A generator, version, pin or integrity change warrants the full local release gate before proposing promotion. Confirm protected old files and retained hooks. Local hashes identify local bytes; check the actual CDN responses and loader in the target browser after an authorised release. |
+| Styling, layout or motion | Check the changed layout and nearest breakpoint/state. For shared runtime CSS, run the CSS guard and relevant fixture; for appearance or geometry, inspect the affected rendered case when an authorised browser is available. | Expand for shared selectors, more than one layout, host CSS, presets, short heights or a failed representative case. For the R-269 release blocker, keep the required five-layout authored Flex/Grid checks and compare the same candidate and settings in Canvas, Preview and authorised staging. Local CSS/DOM checks cannot establish what the Designer can edit or how the page lays out. |
+| Webflow structure, linked components or Lite | Review the proposed structure or use the Lite integrity check for local examples. For an authorised structural trial, confirm a named backup first and inspect the exact affected site and instance. | If classes collide, identify the actual style records and assignments; stop if targeting is ambiguous. Keep the Navbar Light refresh restriction. For Lite, use an authorised blank project and an exact released loader; record Canvas edits, four breakpoints, keyboard/focus, fallback, assets, overflow and Console. Source readback or an offline fixture cannot prove any of those rendered or clone results. |
+| Release, Library update or rollback | Rehearse on local files or a disposable fixture. Identify the exact versions, matching component and delivery files, and what should be restored. | Keep the full release and recovery gates below. A local rehearsal cannot prove hosted checks, live delivery, linked consumer behaviour, a real restore or Michael's acceptance. |
+
+### Testing ladder
+
+1. **During work:** Check the changed behaviour and one nearby failure mode. Reuse a prior result when it covers the same relevant files, fixtures and environment; cite what was checked and at which commit.
+2. **When the risk spreads:** Broaden for a shared runtime contract, changed generated files, several layouts or breakpoints, or a new failure, skipped check or unexplained change to a known TODO. Reproduce the first failure, then widen to its neighbours. A missing prerequisite means those checks did not run.
+3. **At promotion:** Refresh `npm run check:release` on the exact candidate. It covers rebuild and byte comparison, protected v0.2.6 files, the v0.2.9 baseline, runtime contracts and serial tests. Keep the hosted Release checks on the exact revision separate. Retain R-270/R-271's order ahead of R-125, the R-269 browser and Webflow requirements, and Michael's approval for the version and tag. After the authorised release, verify the exact-version URLs, delivered bytes and SHA-384 integrity. Record human/device checks and Michael's acceptance separately.
+4. **At rollout or recovery:** Sharing, publication and consumer changes need their own authority. For Library sharing, retain the exact five-resource review and backed-up consumer checks. Before an authorised upgrade or restore, identify the named clone, confirmed backup and matching old/new component and loader. After rollback, compare the restored structure, properties, variants, bindings, overrides, authored content and assets to the saved baseline; exercise the restored menu and delivery. Verify the old pinned URLs independently before any separately approved archive.
+
+### What this would have changed last shift
+
+- **CSS guard (R-269):** Keep the targeted guard tests: they caught a gap for Flex direction and wrapping, Grid placement and gaps. Reuse the existing local five-layout fixture coverage. Spend the next browser check on the remaining gap: match the instance, presets and viewport before comparing Canvas, Preview and staging. The earlier published page predates the saved presets-off state; its stacked fixture cannot settle single-menu short-height behaviour.
+- **Candidate and workflow (R-121/R-125):** Keep cross-delivery testing for the public class and hook changes. For the missing “Backdrop reference” heading, reproduce and rerun the failing Lite assertion, then run the required broader gate once for the intended revision. The clean-checkout rehearsal answered a useful reproducibility question once; repeating its overlapping commands adds little on unchanged inputs. The latest recorded local gate at `fd15e93` had **680 passed, 0 failed, 15 known TODOs** and a one-byte Library CSS whitespace difference, which is not byte identity. It does not establish the hosted result for workflow correction `33ce14b`. Record the actual run link, checked revision and step outcomes before calling that confirmed.
+- **Lite (R-181/R-182/R-183/R-185):** Use the seven-file integrity check when examples or install guidance change, and the focused DOM tests when the navigation structure or runtime interaction changes. A readiness write-up can cite those results. Another local run cannot supply the released loader, Canvas edit or blank-project clone evidence; the capture sheet still needs actual observations.
+
+### Template for the next brief
+
+> **Outcome and scope:** [What changes, affected files or site, what is out of scope.]  
+> **First check:** [One failure to catch, check to run, expected result; cite any evidence reused.]  
+> **Expand if:** [Shared behaviour, generated bytes, affected layouts or failed check; name the next check.]  
+> **Stop and hand off if:** [Required setup, access or evidence is missing, the check fails beyond this brief, or a protected file/site would change.]  
+> **Report:** [Commit/candidate and environment; what passed, failed or did not run; evidence link; one next action and who owns it. List any separate release, live or recovery gate.]
+
+Overnight, name the local commands the brief authorises. Capture the first useful error and rerun the affected check after an in-scope fix. If the same failure persists or requires work outside the brief, hand it off. Continue independent checks only if their prerequisites still hold; mark dependent checks as not run. No remote access, Webflow edits, publication, tags or dependency changes under the night-shift rules.
+
+**Michael's choice:** Try this as a guide for choosing checks in the next brief. Removing or substituting a required check, changing hosted workflow coverage or triggers, or reducing the Webflow, release or recovery evidence would need Michael's separate approval. This proposal makes no such change.
+
+Sources: [project rules](../AGENTS.md), [scope](../SCOPE.md), [accepted decisions](../DECISIONS.md), [roadmap](../ROADMAP.md), [shift record](../STATUS.md), [CSS guard limits](r269-styling-guard-limits-2026-11-10.md), [workflow troubleshooting](release-workflow-troubleshooting-2026-11-10.md), [candidate evidence pack](candidate-release-evidence-pack-2026-11-10.md), [Lite trial](lite-blank-project-trial-sheet.md), [rollback checklist](r115-cloned-site-upgrade-rollback-checklist.md).
