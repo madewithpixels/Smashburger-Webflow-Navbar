@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-271 resize evidence gaps closed locally — Codex (night shift)
+
+**Changed (R-271):** Added distinct local cases for an open menu surviving a same-breakpoint handler call and for two native Summary activations opening then closing the menu. Updated the resize coverage map with the exact evidence and harness behavior.
+
+**Outputs:** Both local evidence gaps now have named passing cases. No runtime, released file, pin or dependency changed. This records test evidence only; it does not change R-271 acceptance or its staging evidence.
+
+**Checked how:** At baseline `571778b`, `node --test --test-name-pattern='keeps an open collapsed menu|native Summary activation twice' tests/navbar-light.test.js` passed both selected tests (2 pass, 0 fail). The breakpoint case calls the maintained handler directly, keeps the menu open, verifies both links and accessible panel state, and checks focus remains on its link. The Summary case uses two JSDOM `summary.click()` activations and waits for the closed lifecycle event; native Details activation is modelled by this harness. No browser or staging checks were run.
+
+**Still open:** Voice Focus and madewithpixels staging behavior and Michael's acceptance remain open.
+
+**Needs Michael:** Nothing to finish this local evidence work.
+
+**Next useful action:** Check the menu on both staging pages during daytime, including same-breakpoint resizing and a second Summary activation.
+
+**Reviewed at commit:** `571778b` — checked the coverage map, maintained handler, test cases and recent local project records before adding these focused cases.
+
 ## 10 November 2026 — Next night-shift briefs prepared — Codex
 
 **Changed (R-115, R-121, R-124, R-181, R-183, R-269, R-271, R-272):** Prepared seven independent local briefs covering resize, repeated Embeds, a short-height fixture, rollback version evidence, README install pointers, authored Grid and Lite loader protection.

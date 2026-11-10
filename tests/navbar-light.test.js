@@ -315,6 +315,46 @@ test('ignores a resize event when the collapsed breakpoint has not changed', () 
   navbar.destroy();
 });
 
+test('keeps an open collapsed menu, its links and focus when the breakpoint handler reports no change', () => {
+  const root = document.querySelector('[data-mwp-navbar]');
+  const navbar = new NavbarLight(root);
+  const menu = root.querySelector('[data-mwp-menu]');
+  const link = root.querySelector('a');
+
+  menu.open = true;
+  navbar.setState('open', false);
+  link.focus();
+
+  // Exercise the supported handler directly; a synthetic resize is ignored.
+  navbar.onBreakpointChange();
+
+  assert.equal(root.dataset.mwpCollapsed, 'true');
+  assert.equal(menu.open, true);
+  assert.equal(root.dataset.state, 'open');
+  assert.equal(link.isConnected, true);
+  assert.equal(root.querySelectorAll('[data-mwp-panel] a').length, 2);
+  assert.equal(root.querySelector('[data-mwp-panel]').inert, false);
+  assert.equal(document.activeElement, link);
+  navbar.destroy();
+});
+
+test('native Summary activation twice closes the open panel', async () => {
+  const root = document.querySelector('[data-mwp-navbar]');
+  const navbar = new NavbarLight(root);
+  const menu = root.querySelector('[data-mwp-menu]');
+  const summary = root.querySelector('[data-mwp-trigger]');
+
+  summary.click();
+  assert.equal(menu.open, true, 'the first native Summary activation opens the Details');
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  const closed = waitForEvent(root, 'mwp-nav:closed');
+  summary.click();
+  assert.equal(menu.open, false, 'the second native Summary activation closes the Details');
+  await closed;
+  assert.equal(root.dataset.state, 'closed');
+  navbar.destroy();
+});
+
 test('closes the collapsed menu when a real breakpoint change is detected', () => {
   const root = document.querySelector('[data-mwp-navbar]');
   root.dataset.collapse = 'tablet';
