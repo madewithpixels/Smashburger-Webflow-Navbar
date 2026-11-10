@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-268 held for exact site and recovery authority — Codex (night shift)
+
+**Changed (R-268):** No Webflow site or style record was read or changed. The test remains on hold because this brief does not identify the exact disposable site, menu/runtime or permitted recovery point.
+
+**Outputs:** Asked Michael in boss to confirm those details. The brief's structural-work gate requires a named before backup, while its publishing note says not to make or record any backup. I will not unlink or write styles until that conflict and the target are resolved.
+
+**Checked how:** Read the current project records, R-268 preflight and evidence requirements, Git state, and the boss inbox for this run. No Webflow read, Chrome check, backup, snapshot or site change was attempted.
+
+**Still open:** Duplicate-class preflight on the exact site; before-state IDs and assignments; deterministic-write assessment; linked-sibling control; authorised style change and recovery evidence; desktop/mobile geometry and keyboard checks.
+
+**Needs Michael:** Choose the disposable site, exact menu/runtime and named recovery point, and clarify whether a before backup is authorised for this structural test.
+
+**Next useful action:** Continue the controlled R-268 test only after the exact target and recovery authority are confirmed.
+
+**Reviewed at commit:** `9804c05` — checked the current project record and Git state before holding at the access gate.
+
 ## 10 November 2026 — R-269 styling comparison stopped before site access — Codex (night shift)
 
 **Changed (R-269):** No Webflow content or styles were changed. I could not begin the five-layout comparison because the authorised Chrome window could not be opened, and the named disposable site could not be matched in the Webflow site list.
