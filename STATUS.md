@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Authored Grid checked in all five layouts — Codex (night shift)
+
+**Changed (R-269):** Extended the authored Grid and host-style fixture from Overlay to Dropdown, Full-width, Left and Right; Overlay remains covered. The existing five-layout Flex fixture is unchanged.
+
+**Outputs:** Every layout has a named local authored Grid result. Each confirms author-set Grid display, columns and alignment, plus authored width/background, opinionated host color/padding and presets-off. Updated the local coverage map. No runtime CSS or Webflow content changed.
+
+**Checked how:** The required first check, `node --test tests/runtime-styling-contract.test.js`, passed on unchanged files (6/6). After the fixture expansion, it passed 11/11, including named Dropdown, Overlay, Left, Right and Full-width subtests. `git diff --check` passed. No declaration won over author control and no JSDOM limitation arose. No browser, Canvas, Preview or published check was run; JSDOM results do not establish rendered Webflow behavior. Michael's acceptance remains pending.
+
+**Still open:** Designer, Canvas, Preview and published cascade behavior remain unchecked under the separate R-269 gates.
+
+**Needs Michael:** Nothing to finish this local test coverage brief.
+
+**Next useful action:** During an authorised daytime R-269 check, compare authored Grid settings in Designer, Preview and the published test page.
+
+**Reviewed at commit:** `f2ab3fe` — checked the required focused test before editing and reran it after extending the fixture.
+
 ## 10 November 2026 — README points to the matching installed-version Embed — Codex (night shift)
 
 **Changed (R-121, R-124):** Clarified the README's delivery guidance and repository map so the v0.2.6 shared Library install is distinguished from the current stable v0.2.9 files and the unreleased candidate.

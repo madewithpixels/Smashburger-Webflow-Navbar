@@ -20,18 +20,21 @@ test('single author class wins over layout defaults in every layout with stale G
   }
 });
 
-test('an intentionally styled Grid panel and opinionated host styles survive presets-off', () => {
-  const host = new JSDOM(`<style>${css}\nnav{display:flex;color:purple;padding:3px}\n.author-grid{display:grid;grid-template-columns:3fr 1fr;align-content:start;width:72%;background-color:teal}</style><header data-mwp-navbar data-mwp-collapsed="true" data-state="open" data-layout="overlay" data-presets="false"><details open data-mwp-menu></details><nav data-mwp-panel class="author-grid"></nav></header>`);
-  const panel = host.window.document.querySelector('[data-mwp-panel]');
-  const style = host.window.getComputedStyle(panel);
-  assert.equal(style.display, 'grid');
-  assert.equal(style.gridTemplateColumns, '3fr 1fr');
-  assert.equal(style.alignContent, 'start');
-  assert.equal(style.width, '72%');
-  assert.equal(style.backgroundColor, 'rgb(0, 128, 128)');
-  assert.equal(style.color, 'rgb(128, 0, 128)');
-  assert.equal(style.padding, '3px');
-  host.window.close();
+test('an intentionally styled Grid panel and opinionated host styles survive presets-off', async t => {
+  const layouts = ['dropdown', 'overlay', 'left', 'right', 'full-width'];
+  for (const layout of layouts) await t.test(layout, () => {
+    const host = new JSDOM(`<style>${css}\nnav{display:flex;color:purple;padding:3px}\n.author-grid{display:grid;grid-template-columns:3fr 1fr;align-content:start;width:72%;background-color:teal}</style><header data-mwp-navbar data-mwp-collapsed="true" data-state="open" data-layout="${layout}" data-presets="false"><details open data-mwp-menu></details><nav data-mwp-panel class="author-grid"></nav></header>`);
+    const panel = host.window.document.querySelector('[data-mwp-panel]');
+    const style = host.window.getComputedStyle(panel);
+    assert.equal(style.display, 'grid', `${layout}: author-set Grid display must win`);
+    assert.equal(style.gridTemplateColumns, '3fr 1fr', `${layout}: author-set Grid columns must win`);
+    assert.equal(style.alignContent, 'start', `${layout}: author-set Grid alignment must win`);
+    assert.equal(style.width, '72%', `${layout}: authored width must win`);
+    assert.equal(style.backgroundColor, 'rgb(0, 128, 128)', `${layout}: authored background must win`);
+    assert.equal(style.color, 'rgb(128, 0, 128)', `${layout}: opinionated host color must survive`);
+    assert.equal(style.padding, '3px', `${layout}: opinionated host padding must survive`);
+    host.window.close();
+  });
 });
 
 test('visual preset rules remain gated; open and closed state selectors still provide behavior', () => {
