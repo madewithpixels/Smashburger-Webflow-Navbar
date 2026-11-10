@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Integrated candidate check recorded — Codex (night shift)
+
+**Changed (R-121, R-125, R-269, R-272):** Ran the first integrated local candidate check after the recent guard and test updates. Added a revision record while preserving the earlier evidence pack as history. No candidate or released delivery bytes, pins, dependencies or Webflow content changed.
+
+**Outputs:** The candidate rebuilt byte-for-byte across all 19 paths. All 17 protected v0.2.6 files matched their Git baseline; stable working delivery files matched v0.2.9. Runtime namespace, compatibility, contracts and CSS guard passed. The serial suite recorded 695 passed, 0 failed and 15 TODO. Repeated Embed, resize, both rollback baselines and authored Grid coverage appeared in the aggregate's intended serial test mode. The Library CSS comparison retains its known trailing-whitespace-only one-byte difference.
+
+**Checked how:** On clean `main` revision `bc63d67a609d16bb1447d245e94f3a92bfdba5bd`, ran `npm run check:release` once; exit 0. The output included reproducible candidate bytes, protected-release and retained-contract checks, CSS alias expansion and the complete serial source/candidate suite (710 total tests). `git diff --check` passed before recording this result. The check did not write tracked candidate files. Details and limits are in [the integrated revision record](webflow/evidence/candidate-integrated-check-bc63d67-2026-11-10.md).
+
+**Still open:** Browser, Webflow Designer/Preview/published, actual Library, CDN and hosted workflow behavior remain unchecked. The 15 TODOs are documented v0.2.9 behaviors in immutable outputs. No promotion or release-order change follows from this local pass. Acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local check; review and acceptance remain his.
+
+**Next useful action:** Continue the separately queued daytime rendered checks and keep release promotion behind its existing approval and hosted/CDN gates.
+
+**Reviewed at commit:** `bc63d67a609d16bb1447d245e94f3a92bfdba5bd` — verified clean status and ran the integrated gate once before recording the result.
+
 ## 10 November 2026 — Release summaries distinguish skipped checks — Codex (night shift)
 
 **Changed (R-125):** The release summary now reports GitHub's `skipped` outcome and a missing outcome as “not run”. Added offline regressions for dependency setup failure, a failed source test followed by successful independent checks, and cancelled/unavailable results. No workflow, triggers, permissions, gates, released files, pins or dependencies changed.
