@@ -1097,7 +1097,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 
 #### R-270 · Burger menu navigation button jumping colour and size check
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** built · **Evidence:** verified (live) · **Acceptance:** accepted (10 November 2026)
+*(accepted by Michael in boss, 10 November 2026)*
 **Try:** Open and close the menu on the Voice Focus and madewithpixels staging pages at desktop and narrow widths. Compare the button’s colour and size while the menu closes; the button on madewithpixels changes colour without a fade, and neither button changes size (R-270).
 **Task:** 43612352 in your boss list
 **Done when:** Check the trigger's colour and size in closed/open/closing states, compare its transition with the panel close time, and record the responsive conditions.

@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Menu button finding accepted; runtime style ownership mapped — Codex (night shift)
+
+- 10 November 2026 — Accepted by Michael in boss: R-270 (checked: Looked at brief #318's result).
+
+**Changed (R-269):** Recorded the source-level ownership map for Dropdown, Full-width, Left, Right and Overlay, including the shared closed/open/closing rules and the Designer-owned properties.
+
+**Outputs:** The maintained CSS and the main candidate Embed contain the same CSS text. Candidate output styling is predominantly low-specificity structural defaults; surface, colour, borders, shadows, spacing and overlay typography are behind the presets switch. Runtime state rules still control visibility, pointer access, transforms and transitions. Full-width has a runtime grid layout and mobile one-column rule; left/right/overlay receive fixed placement and motion. The note records the separate serialization limits for the minified Library Embed and older 0.2.9 Embed.
+
+**Checked how:** Compared numbered source and candidate CSS, inspected the style block in the generated candidate Embed, and checked the five layout selector groups plus state, backdrop, close-trigger and motion rules. Compared Webflow evidence only as historical reported observations; no Webflow or browser check was made in this session.
+
+**Still open:** The minified Library Embed has not had a complete normalized selector/declaration comparison against source. This note cannot establish the saved Designer styles, Preview rendering or published behavior for each layout. Prior reports cover some staging observations but do not identify every layout-instance-width combination.
+
+**Needs Michael:** Nothing to unblock this local comparison.
+
+**Next useful action:** Continue the separately queued presets-off audit, then use the existing authorised staging comparison to capture matched Designer, Preview and published evidence for each layout.
+
+**Reviewed at commit:** a8be015 — checked current records and source baseline before this update.
+
 ## 10 November 2026 — Sign-off wording for menu findings and release — Codex (night shift)
 
 **Changed (R-270, R-271, R-125):** Added plain Try instructions to the menu button finding and menu resize fix. The release step is now grouped under the menu fix outcome, which lists it as covered. State and Evidence were left unchanged; the release step is not separately accepted.
