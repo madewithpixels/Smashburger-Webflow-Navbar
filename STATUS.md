@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Tablet and mobile layout checks — Codex
+
+**Changed (R-269):** No Webflow changes. The candidate page and its layout settings were left as they were after the prior checks.
+
+**Outputs:** Michael reports that all five layouts—Dropdown, Full-width, Left, Right and Overlay—open cleanly at Tablet and Mobile sizes in the disposable test site. This is his visual report; exact pixel widths and the menu instance used for each layout were not specified. It does not establish behavior on the published page.
+
+**Checked how:** Recorded Michael's report in chat. I did not independently operate the Designer Preview. No new backup was made, following Michael's instruction for this session.
+
+**Still open:** Compare Designer and Preview styling with the current published page; check presets-off, short-height, keyboard/focus and any remaining authored-style cases. The published site remains at 5 November. The earlier general Preview compilation error remains unexplained.
+
+**Needs Michael:** Nothing for the reported Tablet and Mobile layout checks.
+
+**Next useful action:** Continue the remaining appearance, keyboard/focus and published-page checks without changing the saved layout settings.
+
+**Reviewed at commit:** a395206 — reviewed the current status and roadmap before recording Michael's new report.
+
+**Handoff:** Layout state remains as previously recorded: the unlinked bottom menu is Dropdown, and the still-linked second menu is Right. No styles, page content, Library share or publication changed.
+
 ## 10 November 2026 — Dropdown and Full-width Preview checks — Codex
 
 **Changed (R-269, R-272):** Temporarily set the saved candidate instance to Full-width and then Left. Restored its original Dropdown layout; Layout presets remain On and Canvas-open Off. No styles, page content, component definition, Library share or publication changed.
