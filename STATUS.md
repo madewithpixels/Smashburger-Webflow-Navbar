@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Test site published to staging — Codex
+
+**Changed (R-269, R-272):** With Michael's permission, published the Disposable SB test site to its Webflow subdomain only. The site has no custom domains. No styles, page content, Library share or other domains were changed.
+
+**Outputs:** Webflow reports the site published at 10 November 2026, 12:01 UTC. The staging Home page loads. At the 1280 × 720 browser viewport, a screenshot shows three expanded navigation rows stacked vertically; the accessibility tree exposes three menu navigation rows with links. This does not verify mobile layout, menu interactions or keyboard behavior on the published page. I also drafted two local-only nightshift briefs for R-269 and R-272 in [the brief drafts](webflow/nightshift-brief-drafts-2026-11-10.md); the connected Boss tools do not expose a create-brief action, so they have not been queued.
+
+**Checked how:** Read the exact site's publish targets before publishing; `customDomains` was empty. After publishing, read site metadata showing the updated `lastPublished` and `fullSiteCompiledAt`, then opened the staging URL and inspected its accessibility tree. No console log was read.
+
+**Still open:** Compare the three expanded rows with the intended published desktop layout, then check the newly published page's responsive layouts, keyboard/focus behavior and console. The screenshot is one desktop viewport only.
+
+**Needs Michael:** The two nightshift briefs are ready in the local draft file. Queueing them requires the normal Boss brief-creation route, which is not available through this session's Boss tools.
+
+**Next useful action:** Queue the two prepared briefs through the normal Boss brief-creation route, then continue a bounded visual and keyboard check on the published staging page.
+
+**Reviewed at commit:** b942c44 — checked the current project record before publishing and recording the result.
+
+**Handoff:** The exact Disposable SB test site is published to `disposable-sb-test-site.webflow.io` only. No custom domains are configured. Do not publish elsewhere or share the Library without separate authority.
+
 ## 10 November 2026 — Tablet and mobile layout checks — Codex
 
 **Changed (R-269):** No Webflow changes. The candidate page and its layout settings were left as they were after the prior checks.
@@ -8,7 +26,7 @@
 
 **Checked how:** Recorded Michael's report in chat. I did not independently operate the Designer Preview. No new backup was made, following Michael's instruction for this session.
 
-**Still open:** Compare Designer and Preview styling with the current published page; check presets-off, short-height, keyboard/focus and any remaining authored-style cases. The published site remains at 5 November. The earlier general Preview compilation error remains unexplained.
+**Still open:** Compare Designer and Preview styling with the current published page; check presets-off, short-height, keyboard/focus and any remaining authored-style cases. The staging site was published on 10 November; open-menu, responsive, keyboard/focus and console behavior on that publish have not been checked. The earlier general Preview compilation error remains unexplained.
 
 **Needs Michael:** Nothing for the reported Tablet and Mobile layout checks.
 
