@@ -42,8 +42,15 @@ test('every explicit documented class maps and rolls back; unrelated lookalikes 
     assert.ok(root.className.includes(expected));
     assert.ok(root.classList.contains('mwp-css-nav_unknown'));
     assert.ok(root.classList.contains('mwp-css-nav_panel_extra'));
+    assert.ok(root.classList.contains('mwp-css-nav_panel-5'), 'Webflow collision suffix must remain untouched');
+    assert.match(f.authoredStyle.textContent, /@media screen and \(max-width: 767px\)/);
+    assert.match(f.authoredStyle.textContent, /:focus-visible/);
+    const savedStyle = f.authoredStyle.textContent;
+    assertPreserved(f);
     rollback(f);
     assert.equal(root.className, saved);
+    assert.equal(f.authoredStyle.textContent, savedStyle);
+    assert.equal(f.dom.serialize(), f.original, 'Fixture including author CSS must restore exactly');
   } finally { f.dom.window.close(); }
 });
 

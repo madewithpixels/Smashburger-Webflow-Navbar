@@ -54,6 +54,18 @@ export function createRehearsal(form) {
   img.alt = 'Sheffield studio';
   img.className = 'client-image mwp-client-art';
   root.querySelector('.brand').prepend(img);
+  // Keep authored responsive/focus rules beside the fixture so migration must
+  // preserve the exact style text and its references to collision classes.
+  const authoredStyle = dom.window.document.createElement('style');
+  authoredStyle.id = 'client-authored-responsive-focus';
+  authoredStyle.textContent = `
+.mwp-css-nav_panel-5 { border-color: #ab2468; }
+.client-header .anal-trigger:focus-visible { outline: 3px dashed #ab2468; outline-offset: 4px; }
+@media screen and (max-width: 767px) {
+  .client-header .mwp-css-nav_panel-5 { width: 100%; }
+  .client-header .anal-trigger:focus-visible { outline-offset: 2px; }
+}`;
+  dom.window.document.head.append(authoredStyle);
   // These inert descriptors represent a paired local delivery, never a CDN load.
   const delivery = dom.window.document.createElement('script');
   delivery.type = 'application/json';
@@ -61,7 +73,7 @@ export function createRehearsal(form) {
   delivery.textContent = JSON.stringify(deliveryPair(form));
   dom.window.document.head.append(delivery);
   const nodes = elements(root);
-  return { dom, root, delivery, form, nodes,
+  return { dom, root, delivery, authoredStyle, originalStyle: authoredStyle.textContent, form, nodes,
     classes: nodes.map(node => node.getAttribute('class')),
     original: dom.serialize(), originalDelivery: delivery.textContent,
     authored: authoredStructure(root) };
@@ -82,6 +94,7 @@ export function authoredStructure(root) {
 export function assertPreserved(f) {
   assert.deepEqual(elements(f.root), f.nodes, 'Nodes and native order must survive');
   assert.deepEqual(authoredStructure(f.root), f.authored, 'Authored content/attributes/classes changed');
+  assert.equal(f.authoredStyle.textContent, f.originalStyle, 'Responsive/focus author CSS changed');
 }
 
 export function migrate(f) {

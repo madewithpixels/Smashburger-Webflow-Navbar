@@ -1016,6 +1016,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **Real-site evidence template — 10 November 2026, brief #410:** The [cloned-site upgrade and rollback checklist](webflow/r115-cloned-site-upgrade-rollback-checklist.md) links to the offline rehearsal and captures exact old/new versions, component and authored state, backup, upgrade, rollback and restored-page evidence. It explicitly says the real-site trial remains untested until performed on a named, backed-up clone. Template preparation only; State, Evidence and Acceptance remain unchanged.
 
+**Offline fixture follow-up — 10 November 2026, brief #420:** Added explicit local checks for preservation of responsive/focus author CSS, an unsupported legacy-looking class and a Webflow-style numbered collision class; the full saved fixture is asserted exact after rollback. Focused rehearsal checks passed 6/6. This is fixture-only evidence; the cloned-Webflow upgrade and rollback remain unrun. State, Evidence and Acceptance remain unchanged.
+
 
 #### R-116 · Document switching safely between self-contained Embed, pinned CDN and self-hosted delivery without rebuilding the component.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (historical)
@@ -1071,6 +1073,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Live evidence — 15 October 2026:** [New Smashburger Test](webflow/new-smashburger-test-2026-10-15.md): backed-up fresh native fixture, exact saved candidate Embeds, authorised staging publication, 35 layout/motion pairs, 25 collapse/width checks, keyboard/focus, short-height and genuine no-JavaScript fallback. This does not verify Library property/asset retention, upgrades or the future clonable.
 **Local follow-up — 16 October 2026:** Fixed overlapping overlay scroll locks in the unreleased candidate and added a regression across source, candidate distribution, minified output and Embed. [Check record](webflow/sb-nav-candidate-multiple-navbars-2026-10-16.md). Rendered stacking and short-height placement remain unverified.
 **Offline rehearsal — 16 October 2026, brief #69:** [Migration and rollback tests](webflow/offline-migration-rollback-2026-10-16.md) preserve authored extra classes, content, order, links, accessible names, image references and custom settings through repeated explicit class mapping and paired delivery changes. Rollback restores the saved parsed fixture exactly. No Webflow records or released files changed; consumer and clonable rollout remain open.
+
+**Offline fixture follow-up — 10 November 2026, brief #420:** Added focused preservation assertions for responsive/focus author CSS, an unsupported legacy-looking token and a Webflow-style numbered collision class. All six rehearsal tests pass, with repeated conversion/rollback per delivery form and exact full-fixture restoration. This does not constitute Webflow component, Library or clonable rollout evidence.
 
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.

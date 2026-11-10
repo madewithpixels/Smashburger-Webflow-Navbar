@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Offline migration fixture coverage strengthened — Codex (night shift)
+
+**Changed (R-115, R-121):** Added explicit fixture coverage for preserving author-owned responsive and focus styles, a Webflow-style numbered class collision, and an unsupported legacy-looking class token.
+
+**Outputs:** The rehearsal report now distinguishes these locally covered fixture cases from the still-unrun cloned-Webflow upgrade and rollback. The migration continues to rename only the documented class tokens, and rollback restores the full recorded fixture serialisation exactly.
+
+**Checked how:** `node --test tests/migration-rollback.test.js` passed 6/6. Each of the three local delivery forms still completes two conversion/rollback cycles and runs the legacy and candidate contracts. The new CSS assertions check text preservation only; they do not render responsive or focus behavior. No Webflow page, component or style was changed. No released file or tag was changed.
+
+**Still open:** R-115's cloned-Webflow semantic-version upgrade, explicit rollback and restored-page checks remain unrun. R-121 remains in progress for Webflow component, Library and clonable rollout. Fixture checks do not prove Designer, Preview or published behavior.
+
+**Needs Michael:** Nothing is needed for this local fixture extension.
+
+**Next useful action:** When a future brief authorises a named cloned test site and backup, use the existing checklist to run and record its upgrade and rollback.
+
+**Reviewed at commit:** 6e321ff — checked the clean checkout and project record before extending the local rehearsal.
+
 ## 10 November 2026 — Unified local release-candidate gate — Codex (night shift)
 
 **Changed (R-121, R-125):** Added one documented command that rebuilds the candidate in a disposable folder, compares every generated path and byte, checks the protected release files and retained runtime hooks, compares the aliased Library CSS, and runs source and candidate tests.

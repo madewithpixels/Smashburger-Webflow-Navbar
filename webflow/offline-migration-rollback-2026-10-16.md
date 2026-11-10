@@ -34,6 +34,10 @@ network connection or browser. There are no installs or network fetches.
    No prefix-wide substitution is used. Swap the inert local delivery descriptor
    to the matching candidate CSS/JavaScript or self-contained Embed. Assert the
    same nodes, order, text, attributes and unrelated classes survive.
+   The fixture also carries author-owned responsive and `:focus-visible` CSS,
+   including a Webflow-style numbered collision class. Checks assert those rules
+   remain byte-for-byte unchanged and that the unsupported legacy-looking token
+   and collision class are not renamed.
 4. Load that fixture into a fresh jsdom page. Read its actual CSS and JavaScript
    from disk. Check discovery and repeat initialisation, trigger/panel IDs,
    opening with first-link focus, two-stage submenu/outer Escape with focus
@@ -67,6 +71,14 @@ then two candidate/rollback pairs per form. All 17 protected historical hashes
 matched. Syntax checks, `npm run check`, record link checks and `git diff --check`
 passed. Explicit diffs confirmed runtime source, generated candidate output,
 protected releases, version and dependencies were unchanged.
+
+**Local follow-up — 10 November 2026, brief #420:** `node --test
+tests/migration-rollback.test.js` passed **6/6** after adding explicit assertions
+for responsive and focus stylesheet preservation, the unsupported token, and
+the numbered Webflow collision class. The shared fixture serialisation is also
+asserted byte-for-byte after rollback. The original legacy/candidate contract
+still runs twice per delivery form. This does not render responsive/focus CSS or
+verify a cloned Webflow upgrade and rollback.
 
 The executable checks are in [the rehearsal tests](../tests/migration-rollback.test.js).
 All migration/rollback helpers are confined to
