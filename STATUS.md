@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Release-check Lite assertion fixed — Codex (night shift)
+
+**Changed (R-125, R-182):** The release-check failure was the Lite workbench source missing the exact “Backdrop reference” heading text required by its test. Added that wording to the existing static backdrop sample heading; kept the sample non-interactive and preserved its explanatory accessible label. This is the same issue noted in the previous status entry.
+
+**Outputs:** The workbench now names the backdrop reference required by the Lite workbench specification and local assertion. No released file, runtime, generated delivery, dependency or Webflow site was changed. The email screenshot was not attached or otherwise available in this session, so I cannot confirm its visible text or details. Local reproduction identifies the failing assertion independently. A failure notice alone establishes that a workflow run failed; it does not establish this local cause or that the correction passes.
+
+**Checked how:** Reproduced the workflow's `npm test` locally before the correction: 282 tests, 254 passes, the single failure at `tests/lite-candidate.test.js:177` (`workbench.includes('Backdrop reference')`) and 27 TODOs. The separate actual-workbench behavior test passed. After the correction, the focused failing test passed; the workflow `npm test` rerun exited 0; the full candidate runtime suite passed (693/693); `npm run check`, `npm run check:dist`, `npm run test:candidate`, `npm run check:lite` (6/6) and `git diff --check` passed. The test suite still reports expected TODO cases concerning known defects in retained v0.2.9 files; those files were preserved. `npm ci` was not run because this brief forbids dependency installation. These are local checks only; no GitHub or remote workflow was inspected.
+
+**Still open:** Remote workflow verification remains unperformed and requires a later authorised push/run; this session did not inspect GitHub. The email screenshot itself could not be assessed because it was not provided here.
+
+**Needs Michael:** Nothing for the local correction.
+
+**Next useful action:** Review the next release-check run after it is available.
+
+**Reviewed at commit:** 67c452e — checked the current project record, local workflow and workbench test/source before this correction.
+
 ## 10 November 2026 — R-269 local coverage mapped — Codex (night shift)
 
 **Changed (R-269):** Mapped the local checks to the styling and behavior criteria they represent, and separated those results from the remaining Webflow and browser checks.
