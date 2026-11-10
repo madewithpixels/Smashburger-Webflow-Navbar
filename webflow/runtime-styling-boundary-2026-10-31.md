@@ -22,9 +22,26 @@ No-script CSS uses `data-collapse` or the supported Webflow variant marker at th
 
 ## Upgrade and rollback guidance
 
-Older installations may rely on the runtime forcing overlay panels to Grid or on high-specificity defaults replacing a Webflow class. Those installations can change layout when they adopt this candidate. Before upgrade, inspect the panel, links, contact area, trigger and close control at each collapse breakpoint. Set the intended `display`, grid tracks or flex direction, alignment, dimensions and appearance explicitly in the component's Webflow classes/variants. For overlay, choose Grid or Flex deliberately; the runtime no longer changes Flex into Grid. If the preset look is desired, leave presets enabled; if the Webflow class owns the full look, set presets off and author the visual properties.
+### Before upgrading an installation that relies on v0.2.6 styling
 
-No installation or upgrade was performed. Test the exact candidate against a backed-up disposable site before considering rollout. If the comparison fails, restore the prior pinned runtime/candidate and its matching component state. v0.2.6 remains immutable and is the known older fallback, but it restores the forced overlay behavior and may not include later fixes; rollback is a recovery option, not proof of parity. Do not update consumers or publish from this local brief.
+The source shows a real ownership change, but it does not say which Webflow values a particular installation has saved. v0.2.6's released stylesheet forces Grid in its overlay layout and supplies visual defaults; see the [immutable v0.2.6 stylesheet](../dist/navbar-light.css) and its [release verification record](v0.2.6-release-verification.md). The candidate keeps some low-specificity structural defaults, but gates much of its appearance behind `data-presets`; its overlay no longer forces Grid. The [current source map](r269-runtime-style-ownership-2026-11-10.md) identifies the declarations and explicitly limits them to source evidence. The [candidate CSS](../candidate/dist/navbar-light.css) and [main candidate Embed](../candidate/webflow/navbar-light-embed.html) are the relevant candidate deliveries. The older top-level v0.2.9 files are not candidate evidence.
+
+Before changing a real installation, inspect its saved Webflow classes and variants at every collapse/layout breakpoint. If the intended result currently comes only from v0.2.6, author and save the required values on the matching Webflow elements before switching runtimes:
+
+- **Panel layout:** choose Grid or Flex deliberately, including grid tracks or flex direction, alignment, gaps, and responsive column changes. This is especially important for Overlay: the candidate will no longer turn an authored Flex panel into Grid. Candidate Full-width still has structural grid tracks, including a one-column mobile rule; decide whether those defaults are the intended layout or author the required tracks in Webflow.
+- **Panel and content geometry:** check width, height, positioning, inset, overflow/scrolling, and alignment for the chosen layout. The candidate retains structural geometry for Dropdown, drawers and Overlay, so only author values that the existing installation depends on or needs to override; do not assume every layout property must be recreated.
+- **Visual appearance:** check panel surface, borders, radius, shadow, text colour, link spacing and padding, contact/secondary separators, overlay typography, backdrop surface, trigger and close-control appearance. These candidate visual presets can be disabled by `data-presets="false"`; when presets are off, save the desired look in Webflow styles. With presets on, do not infer from source alone which saved class or runtime declaration will win in Designer or the browser.
+- **Authored motion:** check any Webflow transform or transition on the panel. Candidate state rules still use transforms and transitions for opening and closing; an authored transform can alter that motion. Preserve and compare the intended motion rather than treating it as visual decoration.
+
+Use a named, backed-up disposable site first. Record the exact candidate version and delivery, then compare saved Designer values and rendered Canvas, Preview and published results at the same layouts and widths. Check open and closed states, keyboard/focus behavior and a short viewport as well as appearance. If any required authored value is missing or the result differs, stop rollout and restore the matching pre-upgrade component and runtime set. This brief changes documentation only; it did not install or upgrade a site.
+
+### What rollback must check
+
+Rollback means restoring a compatible set, not swapping one CSS or script URL. On the disposable site, restore the matching saved component/Embed and delivery mode, the prior pinned CSS and JavaScript (or the exact self-contained Embed), URLs and integrity metadata, class names, variant/property bindings, assets, `data-presets` value and saved Webflow styles/overrides. The [local upgrade/rollback preflight](release-preflight-followup-2026-10-16.md#upgrade-and-rollback-checklist) records this whole-set requirement; the [offline rehearsal](offline-migration-rollback-2026-10-16.md) is local evidence only.
+
+After restoring, read back the saved component and styles and compare them with the before backup. In Designer, confirm the expected classes, variants, bindings, assets and authored values. In Preview and then the published test page, check each used layout at matching widths, visual styling, menu opening/closing, keyboard/focus behavior, and that only the intended old runtime/assets load. Verify the restored page against the before state before calling recovery complete. A successful offline rehearsal does not prove a Webflow rollback worked.
+
+No installation, upgrade or rollback was performed for this note. v0.2.6 remains immutable and is a possible recovery version, not proof of visual or behavioral parity with the candidate. No consumer update or publication is authorised by this documentation brief.
 
 ## Bounded follow-up: Designer, Preview and published comparison
 
@@ -35,14 +52,15 @@ Use a separate authorised brief against a backed-up disposable Webflow test site
 3. Check Canvas closed and Canvas-open states. Record computed styles and screenshots for panel, primary links, contact/CTA, trigger and close control. Confirm a class on each element controls its layout and appearance.
 4. Preview the same cases, including a short viewport, opening/closing motion, keyboard, focus return, Escape, reduced motion and scroll containment.
 5. Publish only to the authorised disposable site's Webflow subdomain and repeat the comparisons. Record any differences from Designer and Preview.
-6. Test upgrade from the specified prior runtime and rollback on that disposable site. Keep the consumer unchanged and leave Acceptance to Michael.
+6. Test upgrade from the specified prior runtime and rollback on that disposable site. For rollback, verify the complete matching set and compare saved readback, Designer, Preview and published results with the before backup. Keep the consumer unchanged and leave Acceptance to Michael.
 
 **Exit evidence:** exact candidate identity, named site/page, both backup records, screenshots and computed-style values for each surface and layout, results for behavior and upgrade/rollback, plus a plain list of any follow-up component/variant changes. A source or JSDOM pass alone cannot satisfy this evidence.
 
 ## Local evidence
 
-- Runtime source audit: `src/navbar-light.css`; Canvas-helper audit: `src/navbar-light-canvas.css`.
+- Runtime source audit: `src/navbar-light.css`; Canvas-helper audit: `src/navbar-light-canvas.css`; [dated ownership comparison](r269-runtime-style-ownership-2026-11-10.md).
 - Regression fixtures: `tests/runtime-styling-contract.test.js` (Flex with stale Grid columns and authored Grid across all five layouts; opinionated host styles; presets off; Canvas helper and guard checks).
 - Build guard: `scripts/check-runtime-style-specificity.mjs`, called by `npm run build`; checks source and readable/minified candidate CSS plus the CSS carried in generated Webflow Embed outputs.
 - Candidate Embed JavaScript is minified by the existing pinned esbuild tool to retain room under the Webflow Embed character limit. The authored source and standalone browser demo remain readable.
-- Protected v0.2.6 output must remain byte-identical under the existing distribution check.
+- Protected v0.2.6 output must remain byte-identical under the existing distribution check; its forced and visual rules are documented in the [released stylesheet](../dist/navbar-light.css) and [release record](v0.2.6-release-verification.md).
+- Evidence limit: these source and local records do not establish the saved Designer values, Canvas rendering, Preview behavior or published behavior for each installation. The current comparison records only bounded, site-specific observations; see the [published-page checklist](r269-published-page-checklist-2026-11-10.md). Do not generalise those observations to all menus or widths.

@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Clarified older-style upgrade and rollback guidance — Codex (night shift)
+
+**Changed (R-269):** Updated the local candidate upgrade guide for installations that rely on v0.2.6's forced layout or visual defaults.
+
+**Outputs:** The guide now distinguishes v0.2.6 source behavior from current candidate defaults, lists the Webflow layout, geometry, visual and motion values an author may need to save before upgrading, and gives a whole-set rollback check for component, styles and runtime. It links the candidate stylesheet, immutable v0.2.6 stylesheet, dated source comparison and prior rollback records. It says explicitly that source and bounded site observations do not prove behavior for each installation.
+
+**Checked how:** Compared the guide with the current CSS ownership map, candidate stylesheet and Embed, v0.2.6 release record, offline rollback note and release preflight. `git diff --check` passed. No tests, Webflow, Designer, Preview, published-page or installation check was run.
+
+**Still open:** Designer saved styles, Canvas rendering, Preview, published behavior and a real Webflow upgrade/rollback remain unverified for installations covered by this guide.
+
+**Needs Michael:** Nothing to unblock this documentation update.
+
+**Next useful action:** Use the guide in the separately authorised backed-up disposable-site comparison; do not infer consumer readiness from this documentation change.
+
+**Reviewed at commit:** af169fb — checked the current source, candidate records and project documentation before this update.
+
 ## 10 November 2026 — Runtime class styling-hook audit — Codex (night shift)
 
 **Changed (R-268, R-269):** Audited class-based selectors in maintained runtime CSS and JavaScript, plus the checked-in candidate delivery copies.
