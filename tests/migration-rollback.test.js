@@ -3,7 +3,7 @@ import test from 'node:test';
 import { classMapping, createRehearsal, migrate, rollback, authoredStructure, assertPreserved, checkContract } from './fixtures/migration-rehearsal.mjs';
 
 for (const form of ['dist', 'minified', 'embed']) {
-  test(`${form}: offline legacy → candidate → exact rollback preserves authoring and focused contract`, async () => {
+  test(`${form}: v0.2.9 → candidate → exact rollback preserves authoring and focused contract`, async () => {
     const f = createRehearsal(form);
     try {
       await checkContract(f, false);
@@ -23,6 +23,21 @@ for (const form of ['dist', 'minified', 'embed']) {
     } finally { f.dom.window.close(); }
   });
 }
+
+test('v0.2.6 tagged Library Embed → candidate → exact tagged-byte rollback', async () => {
+  const f = createRehearsal('embed', { legacyVersion: 'v0.2.6' });
+  try {
+    const originalPair = JSON.parse(f.delivery.textContent);
+    assert.deepEqual(originalPair, { embed: 'v0.2.6:webflow/navbar-light-embed.html' });
+    await checkContract(f, false);
+    migrate(f);
+    await checkContract(f, true);
+    rollback(f);
+    assert.deepEqual(JSON.parse(f.delivery.textContent), originalPair);
+    await checkContract(f, false);
+    assert.equal(f.dom.serialize(), f.original);
+  } finally { f.dom.window.close(); }
+});
 
 test('every explicit documented class maps and rolls back; unrelated lookalikes survive', () => {
   const f = createRehearsal('dist');

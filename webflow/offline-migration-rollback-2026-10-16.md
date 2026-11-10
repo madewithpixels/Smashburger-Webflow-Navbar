@@ -47,12 +47,18 @@ network connection or browser. There are no installs or network fetches.
    submenu using its applicable class name.
 5. Restore only the saved class strings and original delivery descriptor. Assert
    the complete fixture serialisation equals the saved original exactly, then
-   repeat the focused contract with v0.2.6. Run the whole migration/rollback cycle
-   twice against the same saved fixture for each delivery form.
+   repeat the focused contract with the selected legacy delivery. Run the whole
+   migration/rollback cycle twice against the same saved fixture for each form.
 
-Normal distribution, minified distribution and self-contained Embed are paired
-between the protected top-level v0.2.6 artifacts and their unreleased
-`candidate/` counterparts. A mixed old/new pair is rejected before execution.
+The normal distribution, minified distribution and self-contained Embed cases
+read the unprefixed top-level files. Those files are v0.2.9, confirmed against
+the local `v0.2.9` tag; they are paired with the unreleased `candidate/`
+counterparts. A separate Library Embed case reads
+`webflow/navbar-light-embed.html` directly from the local `v0.2.6` tag. It
+upgrades to the candidate Embed, then restores and executes the same tagged
+v0.2.6 bytes and delivery descriptor. The v0.2.6 Library baseline is therefore
+distinct from the current v0.2.9 top-level delivery. A mixed old/new pair is
+rejected before execution.
 Automatic resource loading is disabled; simulated-page fetch, XHR and WebSocket
 entry points throw. Image references are preserved as authored data, not loaded.
 
@@ -79,6 +85,13 @@ the numbered Webflow collision class. The shared fixture serialisation is also
 asserted byte-for-byte after rollback. The original legacy/candidate contract
 still runs twice per delivery form. This does not render responsive/focus CSS or
 verify a cloned Webflow upgrade and rollback.
+
+**Local follow-up — 10 November 2026, brief #437:** The unprefixed distribution
+and Embed inputs are v0.2.9, confirmed against local tag `v0.2.9`. Added a
+targeted Library Embed case that reads v0.2.6 bytes from local tag `v0.2.6`,
+upgrades to the candidate and restores the tagged delivery on rollback. The
+focused result is recorded in the current session's STATUS entry. No protected
+delivery was rewritten.
 
 The executable checks are in [the rehearsal tests](../tests/migration-rollback.test.js).
 All migration/rollback helpers are confined to

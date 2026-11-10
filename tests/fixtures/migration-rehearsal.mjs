@@ -1,10 +1,12 @@
 // Test fixtures only. No installer, Webflow operations or files written to disk.
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
 import { event } from '../../scripts/runtime-test-fixture.mjs';
 
 const read = path => readFileSync(new URL(`../../${path}`, import.meta.url), 'utf8');
+const readTagged = (tag, path) => execFileSync('git', ['show', `${tag}:${path}`], { encoding: 'utf8' });
 const audit = read('webflow/class-namespace-migration-audit.md');
 // Only the explicit table entries are eligible. Lookalikes and combos stay intact.
 export const classMapping = new Map([...audit.matchAll(/^\| `(mwp-css-nav[^`]*)` \| `(sb-nav[^`]*)` \|$/gm)]
@@ -12,7 +14,12 @@ export const classMapping = new Map([...audit.matchAll(/^\| `(mwp-css-nav[^`]*)`
 assert.equal(classMapping.size, 37, 'Review changes to the documented mapping');
 
 const elements = root => [root, ...root.querySelectorAll('*')];
-export function deliveryPair(form, candidate = false) {
+export function deliveryPair(form, candidate = false, legacyVersion = 'v0.2.9') {
+  if (!candidate && legacyVersion === 'v0.2.6') {
+    assert.equal(form, 'embed', 'The tagged v0.2.6 rehearsal is the Library Embed path');
+    return { embed: 'v0.2.6:webflow/navbar-light-embed.html' };
+  }
+  assert.ok(candidate || legacyVersion === 'v0.2.9', `Unsupported legacy baseline: ${legacyVersion}`);
   const prefix = candidate ? 'candidate/' : '';
   if (form === 'embed') return { embed: `${prefix}webflow/navbar-light-embed.html` };
   assert.ok(['dist', 'minified'].includes(form));
@@ -20,7 +27,7 @@ export function deliveryPair(form, candidate = false) {
   return { css: `${prefix}dist/navbar-light${suffix}.css`, js: `${prefix}dist/navbar-light${suffix}.js` };
 }
 
-export function createRehearsal(form) {
+export function createRehearsal(form, { legacyVersion = 'v0.2.9' } = {}) {
   const archive = new JSDOM(read('smashed-navbar-html-demo/demo/index.html'));
   const header = archive.window.document.querySelector('[data-mwp-navbar]').outerHTML;
   archive.window.close();
@@ -70,12 +77,12 @@ export function createRehearsal(form) {
   const delivery = dom.window.document.createElement('script');
   delivery.type = 'application/json';
   delivery.id = 'rehearsal-delivery';
-  delivery.textContent = JSON.stringify(deliveryPair(form));
+  delivery.textContent = JSON.stringify(deliveryPair(form, false, legacyVersion));
   dom.window.document.head.append(delivery);
   const nodes = elements(root);
   return { dom, root, delivery, authoredStyle, originalStyle: authoredStyle.textContent, form, nodes,
     classes: nodes.map(node => node.getAttribute('class')),
-    original: dom.serialize(), originalDelivery: delivery.textContent,
+    original: dom.serialize(), originalDelivery: delivery.textContent, legacyVersion,
     authored: authoredStructure(root) };
 }
 
@@ -120,10 +127,11 @@ export function rollback(f) {
 
 export async function checkContract(f, candidate) {
   const pair = JSON.parse(f.delivery.textContent);
-  assert.deepEqual(pair, deliveryPair(f.form, candidate), 'CSS and JavaScript must use the same delivery');
-  const embed = pair.embed ? read(pair.embed) : null;
-  const css = embed ? embed.match(/<style>\s*([\s\S]*?)<\/style>/)[1] : read(pair.css);
-  const js = embed ? embed.match(/<script>\s*([\s\S]*?)<\/script>/)[1] : read(pair.js);
+  assert.deepEqual(pair, deliveryPair(f.form, candidate, f.legacyVersion), 'CSS and JavaScript must use the same delivery');
+  const source = path => path.startsWith('v0.2.6:') ? readTagged('v0.2.6', path.slice('v0.2.6:'.length)) : read(path);
+  const embed = pair.embed ? source(pair.embed) : null;
+  const css = embed ? embed.match(/<style>\s*([\s\S]*?)<\/style>/)[1] : source(pair.css);
+  const js = embed ? embed.match(/<script>\s*([\s\S]*?)<\/script>/)[1] : source(pair.js);
   // A fresh realm models a page reload, avoiding any claim that destroy() restores
   // every runtime attribute. The saved author fixture never receives runtime state.
   // Leave automatic resource loading disabled (jsdom's default).

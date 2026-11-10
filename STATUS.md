@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Rollback rehearsal names both legacy baselines — Codex (night shift)
+
+**Changed (R-115, R-121):** Made the offline rehearsal's normal legacy baseline explicit as v0.2.9 and added a separate tagged v0.2.6 Library Embed rollback case.
+
+**Outputs:** The three standard delivery cases now state v0.2.9. The additional Library case reads the v0.2.6 Embed from the local Git tag, upgrades to the candidate Embed, and restores the v0.2.6 delivery descriptor and bytes for the rollback check. Updated the rehearsal note to distinguish the old Library baseline from current top-level delivery. No released artifact, pin, production mapping or Webflow site changed.
+
+**Checked how:** At baseline `b7114a0`, confirmed unprefixed `dist/` and `webflow/` delivery inputs matched local tag v0.2.9, while the note said v0.2.6. SHA-256 comparisons confirmed the current unprefixed Embed and paired distribution files match the v0.2.9 tag and differ from v0.2.6. `node --test tests/migration-rollback.test.js` passed 7/7, including exact fixture rollback, tagged Embed rollback and existing preservation assertions. `git diff --check` passed. No browser, Webflow, Library update or cloned-site check was run.
+
+**Still open:** The named cloned-Webflow upgrade and rollback remains untested; local simulation does not establish Library or published behavior. Michael's Acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local rehearsal update.
+
+**Next useful action:** Use the separate R-115 clone checklist during an authorised daytime Webflow rehearsal to record an actual v0.2.6 Library rollback.
+
+**Reviewed at commit:** `b7114a0` — checked the existing fixture, note, relevant roadmap entries and local tag bytes before changing the rehearsal.
+
 ## 10 November 2026 — Single-menu short-height fixture prepared — Codex (night shift)
 
 **Changed (R-269):** Prepared an offline Full-width fixture so a daytime check can observe the short-height menu without the stacked rows on the published test page.
