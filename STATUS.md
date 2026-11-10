@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Repeated candidate Embed check added — Codex (night shift)
+
+**Changed (R-272):** Added one offline regression that loads two copies of the checked-in candidate Embed as separate inline script blocks in the same JSDOM page, with a separate native menu in each root.
+
+**Outputs:** Both menus initialise, receive distinct panel relationships and retain their own runtime instances. Opening the first menu emits one open lifecycle and leaves the second menu closed without events. Inline and JSDOM script errors are captured and must be absent. The test executes the actual candidate Embed twice; it does not compare script strings. Repeated evaluation is therefore exercised for both top-level redeclaration errors and duplicate event binding/initialisation.
+
+**Checked how:** `node --test tests/repeated-embed.test.js` passed (1 test, 0 failures). JSDOM external resource fetching is disabled by omitting its `resources` option. `git diff --check` passed. The repeated test inputs are the same checked-in candidate file, so the saved Library parity check was not needed. No generator, delivery file, dependency, browser, Webflow page or published page changed.
+
+**Still open:** Webflow Preview's general `CompilationError: Invalid source code` remains a separate, unidentified compiler issue; the saved capture does not name a duplicate declaration or script. The published-page Console check was not run. Neither is explained or cleared by this local regression. Michael's acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local regression brief.
+
+**Next useful action:** In a separately authorised daytime check, capture the Preview compiler result and published-page Console independently, without attributing either to repeated script names unless the evidence names them.
+
+**Handoff:** The Preview capture from 10 November records the general `webflow.js:501` error and the limits of that observation. It is not evidence of a duplicate-script failure. The published-page Console remains uninspected.
+
+**Reviewed at commit:** `3dda43b` — checked the current candidate Embed, existing Lite repeat-initialisation coverage, R-272 records and recent local history before adding this distinct repeated-script case.
+
 ## 10 November 2026 — R-271 resize evidence gaps closed locally — Codex (night shift)
 
 **Changed (R-271):** Added distinct local cases for an open menu surviving a same-breakpoint handler call and for two native Summary activations opening then closing the menu. Updated the resize coverage map with the exact evidence and harness behavior.
