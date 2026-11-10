@@ -1,5 +1,31 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Published styling, short-height and keyboard comparison — Codex
+
+**Changed (R-269):** No Webflow content, styles, publication or Library share changed. Recorded a bounded read-only comparison of the published test page.
+
+**Outputs:** At a measured CSS viewport of 1280 × 720, the published Home page showed three expanded menu rows. Their top edges were at 0, 91 and 183 px; the first two published roots report Dropdown and the third Full-width. The panel, first link and CTA computed styles matched across the rows: transparent panel with a pale 1 px border and 12 px radius; 12.8 px links with 10 px / 12 px padding; and a 12 px CTA with a pale border. This is a published-page read, not proof that the stacked desktop appearance is intended.
+
+At 471 × 900, opening the top and middle rows showed their panels partly hidden behind later rows; opening the bottom row showed its full-width panel and all links. Michael has confirmed that lower rows covering upper panels is expected on this multi-menu fixture, so no stacking fix is needed.
+
+At 471 × 500, the bottom full-width panel began at y=216 px and extended to y=610 px. Its CTA was visible, but its social and contact links fell below the viewport. The panel reported `overflow-y: auto` but had equal scroll and client heights; a wheel attempt did not move it. This is evidence about the stacked fixture only and does not establish how a single isolated menu behaves at short heights.
+
+On the top trigger at 471 × 900, Tab moved focus from the brand link to the trigger with a visible focus indicator. Space opened the menu while focus stayed on the trigger. Escape closed it and retained focus there. After reopening, Tab moved focus to Home; Escape closed the menu and returned focus to the trigger.
+
+The current saved Home Preview readback has three roots: a standalone menu, a root marked `data-unlink-candidate`, and a `SmashBurger 0.3.0-rc.1 candidate` component instance. That component instance currently reads Layout Full-width, Layout presets Off and Canvas-open Off. The prior STATUS entry recorded different layout and presets values for the test menus. The published third row is Full-width, and the published page reports presets enabled. I did not change these values; whether the saved state changed after publication is unresolved. The root-to-row mapping is not fully verified.
+
+**Checked how:** Read the live Home page in the in-app browser, measured its CSS viewport and menu rectangles, inspected computed styles and accessibility state, and performed the short-height wheel and keyboard checks. Read the saved Home page tree and component-instance props through Webflow MCP. The component-instance visual snapshot and library component tree were unavailable through the Webflow tools, so I could not capture a matching saved Preview screenshot. No Console logs were read. No local screenshot files were saved.
+
+**Still open:** Compare the current saved component instance with the published row at matched sizes, including why its current Layout presets Off readback differs from the published page's enabled-preset state. Webflow's component snapshot and tree-readback routes did not support this library component, so the exact saved Preview rendering remains unverified. Check short-height behavior with one identifiable menu, presets-off rendering, the remaining authored-style cases and Console. The general Preview compilation error is still unexplained.
+
+**Needs Michael:** Nothing for this read-only check.
+
+**Next useful action:** Continue the same-instance Designer/Preview/published style comparison without changing the current props or publishing.
+
+**Reviewed at commit:** 3ea52a4 — checked current status, roadmap, project scope and the latest R-269 published-check record before this comparison.
+
+**Handoff:** The in-app browser remains on `disposable-sb-test-site.webflow.io` at its default viewport with all three menus closed. The Webflow Designer remains on the saved Home Preview with the candidate component instance selected. No page structure, styles, Library share or published content changed.
+
 ## 10 November 2026 — Published mobile menu and keyboard check — Codex
 
 **Changed (R-269, R-272):** No Webflow changes. The published test page remains as published to its Webflow subdomain.
