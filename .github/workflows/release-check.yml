@@ -15,16 +15,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        name: Check out the commit being verified
+        id: checkout
         with:
           # Verification reads historical release and Library-pinned Git blobs.
           fetch-depth: 0
       - uses: actions/setup-node@v4
+        name: Set up Node.js 22 and npm cache
+        id: setup_node
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
-      - run: npm test
-      - run: npm run check
+      - name: Install locked project dependencies
+        id: install_dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Run the source test suite
+        id: source_tests
+        run: npm test -- --test-reporter=dot
+      - name: Check maintained JavaScript syntax
+        id: source_syntax
+        run: npm run check
       # Candidate generation must stay reproducible without changing v0.2.6 bytes.
-      - run: npm run check:dist
-      - run: npm run test:candidate
+      - name: Rebuild candidate and compare generated files
+        id: candidate_rebuild
+        run: npm run check:dist
+      - name: Check candidate runtime behavior and contracts
+        id: candidate_runtime
+        run: npm run test:candidate
+      - name: Summarise release checks
+        if: always()
+        env:
+          CHECKED_COMMIT: ${{ github.sha }}
+          CHECKOUT: ${{ steps.checkout.outcome }}
+          NODE_SETUP: ${{ steps.setup_node.outcome }}
+          DEPENDENCY_INSTALL: ${{ steps.install_dependencies.outcome }}
+          SOURCE_TESTS: ${{ steps.source_tests.outcome }}
+          SOURCE_SYNTAX: ${{ steps.source_syntax.outcome }}
+          CANDIDATE_REBUILD: ${{ steps.candidate_rebuild.outcome }}
+          CANDIDATE_RUNTIME: ${{ steps.candidate_runtime.outcome }}
+        run: node scripts/write-release-summary.mjs

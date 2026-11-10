@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Release check summaries identify failures — Codex (night shift)
+
+**Changed (R-125):** Named each release-workflow step so the Actions run and its failure notice identify the check or setup stage that stopped.
+
+**Outputs:** The workflow now adds a concise job summary with the checked commit, package version, completed steps, every step outcome and any failed step names. The summary script reads only package metadata and explicit step outcomes; it does not print environment secrets or raw logs. Dependency installation uses the existing lockfile without audit/funding network requests. No dependency files changed.
+
+**Checked how:** Ruby's YAML parser accepted the workflow. `node --check scripts/write-release-summary.mjs` and `git diff --check` passed. Ran the summary script locally with all-success outcomes and with a source-syntax failure followed by skipped checks; both summaries showed the commit/version and correct completion, failure and skipped states. These simulations validate summary generation, not GitHub Actions expression evaluation or hosted-run behavior. No GitHub access or remote run was performed. `actionlint` is not installed, so no Actions-specific linter was available.
+
+**Still open:** A hosted workflow run has not confirmed the summary appears in GitHub Actions or that the changed npm test reporter behaves in the runner environment.
+
+**Needs Michael:** Nothing for this local workflow change.
+
+**Next useful action:** Review the summary on a future authorised release-check run.
+
+**Reviewed at commit:** f7bd786 — checked the workflow, package commands and local check scripts before updating the failure report.
+
 ## 10 November 2026 — Unified release-candidate gate verified — Codex (night shift)
 
 **Changed (R-121, R-125):** Verified the documented one-command local gate against the current candidate. The earlier Lite workbench assertion is now fixed, so the complete gate finishes successfully.

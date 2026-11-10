@@ -1146,6 +1146,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **16 October 2026 — brief #67:** Repaired candidate verification integrity using raw local Git blobs at the unchanged older pin. Both CSS/JavaScript values match; the current-source illustrative loader remains separate and unchanged. No semantic release, version or URL pin changed. See [repair and local checks](webflow/library-verification-integrity-2026-10-16.md).
 
+**10 November 2026 — brief #424:** Named every workflow step and added an always-run job summary with checked commit, package version, completed steps and failed step names. Local YAML parsing and simulated success/failure summary generation passed. No GitHub run was inspected; the summary script is not exercised by the hosted Actions runner yet.
+
 
 #### R-126 · Update both MWP Component Library editions and the `Smashburger` clean-install instance through the Library workflow; verify properties, variants, assets, CDN loading, rollback and update linkage.
 **State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
