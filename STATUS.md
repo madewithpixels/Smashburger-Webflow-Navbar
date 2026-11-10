@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Short-height candidate CSS source review — Codex (night shift)
+
+**Changed (R-269):** Recorded source-level height, overflow and positioning rules for Dropdown, Full-width, Left, Right and Overlay.
+
+**Outputs:** The [short-height CSS source note](webflow/r269-short-height-css-source-2026-11-10.md) cites the maintained CSS lines and separates the shared header-adjusted panel cap from the full-viewport fixed drawer/overlay rules. It identifies the later single-menu browser observations needed to check actual scrolling and content reachability.
+
+**Checked how:** Read the maintained stylesheet and its generated candidate distribution. Traced the shared collapsed-panel declarations and each layout's height, overflow and fixed-position rules. This is CSS-source evidence only; no browser, Preview, Webflow or published behavior was checked. No tests were run.
+
+**Still open:** Whether each exact candidate menu scrolls as expected at short viewport heights, with one identifiable instance, remains a later browser check.
+
+**Needs Michael:** Nothing for this source review.
+
+**Next useful action:** Use the source note to guide the remaining R-269 short-height browser check on the authorised disposable test site.
+
+**Reviewed at commit:** bc019a9 — checked the current project records and candidate source before this review.
+
 ## 10 November 2026 — Real-site upgrade and rollback checklist prepared — Codex (night shift)
 
 **Changed (R-115):** Prepared a blank evidence checklist for a future authorised trial on one named cloned staging or test site.
