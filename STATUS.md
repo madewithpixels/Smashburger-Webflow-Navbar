@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Built-in look removed from both Lite examples — Codex (night shift)
+
+**Changed (R-181):** Turned the runtime's built-in visual presets off in the styled local example, matching the plain example.
+
+**Outputs:** Both example headers now use `data-presets="false"`. The styled example therefore presents its own authored styling without the additional built-in look. No Webflow page was changed.
+
+**Checked how:** Inspected both example header elements and confirmed each has the same preset-off attribute. This is source-level evidence only; no browser rendering, Webflow Canvas, Preview or published behavior was checked. No tests were run.
+
+**Still open:** R-181 remains in progress; browser rendering, Webflow Canvas and clone-flow checks are outstanding under the wider Lite work.
+
+**Needs Michael:** Nothing for this source change.
+
+**Next useful action:** Continue the separately authorised Lite example and clone-flow checks when the named test environment is available.
+
+**Reviewed at commit:** 0fd0bb8 — checked the current project records and local example source before this change.
+
 ## 10 November 2026 — Presets-off icon source trace — Codex (night shift)
 
 **Changed (R-269):** Traced how the candidate handles default social and contact image icons when layout presets are off.
