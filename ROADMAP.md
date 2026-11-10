@@ -1713,6 +1713,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Navigation semantics — brief #404, 10 November 2026:** Plain and styled review examples, plus the static workbench references, each have a distinct navigation landmark and trigger name. Review-example backdrops remain hidden from assistive technology; the workbench swatch remains a labelled image. See [findings and limits](webflow/r181-navigation-semantics-2026-11-10.md). Source-level review only.
 **Example appearance — brief #417, 10 November 2026:** Both local review examples set `data-presets="false"`, so the styled example demonstrates its own authored styling without the runtime's built-in visual presets. Source inspection confirms the attribute on both headers. No Webflow page or browser rendering was changed or checked.
 **Integrity gate — brief #421, 10 November 2026:** `npm run check:lite` reports file-level results for both examples, their CSS, the workbench and the two Lite guides. It checks each example's one named native navigation tree, link targets, current presets-off setting and absence of generated `.always*` classes; it also checks workbench CSS scoping, static labels and links, and the guides' unreleased-loader boundary. This is local source evidence only; it does not verify rendering, Webflow or clone flow.
+**Trial preparation — brief #428, 10 November 2026:** Added a bounded blank-project checklist and included it in `npm run check:lite`, which now checks seven files, trial sections and local document links. `node --test tests/lite-candidate.test.js` passes 6/6. This remains local preparation and DOM simulation; no browser, Canvas, Preview or clone-flow behavior is established. See the [trial sheet](webflow/lite-blank-project-trial-sheet.md).
 **Evidence links:** [candidate examples](candidate/lite/review-examples.html); [Lite candidate checks](tests/lite-candidate.test.js)
 
 
@@ -1725,6 +1726,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Current automated check — brief #90, 16 October 2026:** The full `npm run test:candidate` run passed 685/685, including the workbench state and fragment checks. Browser rendering and Canvas behavior remain unchecked. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 **Evidence links:** [workbench references](candidate/lite/workbench-references.html); [Lite candidate checks](tests/lite-candidate.test.js)
 **Integrity gate — brief #421, 10 November 2026:** `npm run check:lite` checks file-level results for the workbench HTML/CSS and Lite instructions, including scoped selectors, static state labels, local links and explicit non-installability of the unreleased loader. This does not establish Canvas behavior or rendering.
+**Trial preparation — brief #428, 10 November 2026:** The trial sheet now identifies the local closed/open/backdrop evidence and lists the remaining blank-project checks. The integrity gate checks its sections and local links; the existing DOM regression passes 6/6. Canvas editing and rendered behavior remain unchecked.
 
 
 #### R-183 · Install one exact-version pinned CDN Embed with integrity metadata and keep the settings/structure understandable on the Canvas.
@@ -1747,11 +1749,12 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 
 
 #### R-185 · Verify the clone flow into a blank test project, including Canvas editability, all four core breakpoints, keyboard behavior, asset loading, zero overflow and a clean console.
-**State:** planned · **Evidence:** verified (live) · **Acceptance:** pending
+**State:** planned · **Evidence:** none · **Acceptance:** pending
 **Source:** [todo.md](todo.md), original line 258 (now 259); baseline `c808ca4`.
 **Exit criteria:**
 **Project access check — brief #90, 16 October 2026:** Read-only Webflow site listing returned 16 accessible sites but no blank SmashBurger Lite test project. SB Unlink Clean Trial is a populated fixture, so it does not satisfy this clone-flow gate. New Smashburger Test was not re-probed. See the [native build sheet](webflow/lite-native-build-sheet-2026-10-16.md).
 **Local instruction integrity — brief #421, 10 November 2026:** The Lite local gate checks the build sheet's unreleased-loader boundary. It does not perform or claim blank-project clone-flow evidence.
+**Trial preparation — brief #428, 10 November 2026:** Prepared the [blank-project trial sheet](webflow/lite-blank-project-trial-sheet.md), distinguishing existing local evidence from the required Canvas, breakpoint, keyboard, fallback, asset, overflow and console checks. The gate and DOM checks pass locally. No blank project was cloned or inspected, so this preparation is not clone-flow evidence and the Evidence field remains none.
 
 
 **Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.

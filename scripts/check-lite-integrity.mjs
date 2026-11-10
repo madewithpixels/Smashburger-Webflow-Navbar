@@ -11,7 +11,8 @@ const files = {
   workbench: 'candidate/lite/workbench-references.html',
   workbenchCss: 'candidate/lite/workbench-references.css',
   guide: 'webflow/smashburger-lite-safe-editing.md',
-  buildSheet: 'webflow/lite-native-build-sheet-2026-10-16.md'
+  buildSheet: 'webflow/lite-native-build-sheet-2026-10-16.md',
+  trialSheet: 'webflow/lite-blank-project-trial-sheet.md'
 };
 const contents = Object.fromEntries(Object.entries(files).map(([key, file]) => [key, readFileSync(path.join(root, file), 'utf8')]));
 const errors = new Map(Object.values(files).map(file => [file, []]));
@@ -115,6 +116,26 @@ for (const key of ['guide', 'buildSheet']) {
     requireValue(/(?:unreleased|unpublished)[^\n.]{0,140}(?:not be installed|not an installation instruction|must not be installed)/i.test(text), 'must state that the unreleased loader is not installable');
   });
 }
+
+check(files.trialSheet, () => {
+  const text = contents.trialSheet;
+  for (const heading of [
+    '## Local evidence already prepared',
+    '## Blank-project checks still required',
+    '7. **Close-out:**'
+  ]) requireValue(text.includes(heading), `missing trial-sheet section ${heading}`);
+  for (const checkName of ['Clone and structure', 'Canvas editing', 'Four breakpoints', 'Keyboard and focus', 'Fallback', 'Assets and console']) {
+    requireValue(text.includes(`**${checkName}:**`), `missing bounded trial check ${checkName}`);
+  }
+  requireValue(/(?:unreleased|unpublished)[^\n.]{0,100}(?:do not|must not)[^\n.]{0,50}install/i.test(text), 'must say not to install the unreleased loader');
+  requireValue(/not\s+evidence that a Webflow component[^.]*clone flow has been checked/i.test(text), 'must distinguish this plan from performed Webflow checks');
+  const markdownLinks = [...text.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map(match => match[1]);
+  for (const href of markdownLinks) {
+    if (/^[a-z][a-z\d+.-]*:/i.test(href) || href.startsWith('#') || href.startsWith('//')) continue;
+    const targetPath = decodeURIComponent(href.split(/[?#]/, 1)[0]);
+    requireValue(existsSync(path.resolve(path.dirname(path.join(root, files.trialSheet)), targetPath)), `missing trial-sheet link target ${href}`);
+  }
+});
 
 let failureCount = 0;
 for (const file of Object.values(files)) {

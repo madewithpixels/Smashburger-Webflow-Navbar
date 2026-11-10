@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite examples and blank-project trial preparation — Codex (night shift)
+
+**Changed (R-181, R-182, R-185):** Added a short trial sheet that separates local preparation from the checks that require a blank Webflow project. Extended the Lite integrity gate to include the sheet and validate its required checklist sections and local links. Corrected R-185's Evidence to `none`: the blank-project clone flow has not been performed, and an access listing or local preparation does not verify it.
+
+**Outputs:** The sheet maps existing local example and workbench evidence to the remaining clone, Navigator, Canvas editing, four-breakpoint, keyboard/focus, fallback, assets, overflow and console checks. The examples and workbench remain review references, not a native Webflow component or clonable. No runtime or Webflow content changed.
+
+**Checked how:** `npm run check:lite` passed for all 7 files. `node --test tests/lite-candidate.test.js` passed 6/6 using the existing JSDOM fixtures. `git diff --check` passed. The tests establish local source integrity and simulated runtime behavior only.
+
+**Still open:** A released `sb-nav` runtime and its exact loader must be selected before construction. The blank-project clone, Canvas edits, rendered breakpoint behavior, native keyboard use, live asset loading, overflow and browser console remain unchecked.
+
+**Needs Michael:** Nothing for this local preparation.
+
+**Next useful action:** When the released Lite setup and a blank test project are available, follow the trial sheet and record observed results in the clone-flow capture sheet.
+
+**Reviewed at commit:** a2bf169 — checked the current Lite examples, workbench, guides, integrity gate, tests and roadmap before adding the trial preparation.
+
 ## 10 November 2026 — R-269 CSS guard stress check — Codex (night shift)
 
 **Changed (R-269):** Extended the CSS guard's list of layout properties so it also checks Flex direction and wrapping, Grid placement, alignment shorthands and separate row/column gaps. Added focused checks showing that high-specificity rules using these properties are refused while zero-specificity defaults remain allowed.
