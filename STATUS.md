@@ -1,5 +1,35 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Preview reproduction blocked by Chrome page-read failure — Codex (night shift)
+
+**Changed (R-272/R-155):** No Preview page, saved content or custom-code setting was changed. A fresh compiler reproduction could not be captured.
+
+**Outputs:** The authorised Google Chrome app opened on a window titled “Disposable SB test site”. The desktop control then returned “The browser access host is unavailable” when asked to read the page. This does not establish the current URL, saved Home revision, selected instance, custom-code setting, CSS viewport, Console or Network state. No claim is made about a fresh compiler result. The previous 10 November capture remains the only Preview evidence: a general `webflow.js:501` error appeared before a cleared-log reload redirected to sign-in; it did not identify the failing source or establish a duplicate-name cause.
+
+**Checked how:** Called the authorised Chrome app entry and requested its accessibility state. Chrome returned the exact access-host error before the page could be read. Per the brief's stop rule, I made no further browser attempt. No Designer or Webflow MCP state was read. No screenshot, fresh Console/Network capture, custom-code comparison, or viewport measurement was obtained.
+
+**Still open:** Fresh reproduction on the exact saved Home page; selected instance and revision; Preview custom-code setting; measured CSS viewport; Console and Network evidence; and any enabled/disabled comparison. The duplicate-name explanation remains a hypothesis, not reproduced evidence.
+
+**Needs Michael:** Restore Chrome page-read access for the authorised desktop controls so the existing Preview capture can be repeated.
+
+**Next useful action:** Re-run brief #451 once Chrome can expose the page. Capture the first specific compiler diagnostic and only inspect requests tied to it; keep the duplicate-name hypothesis separate unless the evidence names it.
+
+**Reviewed at commit:** `c4665f7` — read the current Preview capture record and relevant status before the authorised Chrome access attempt.
+
+## 10 November 2026 — Short-height fixture browser access unavailable — Codex (night shift)
+
+**Changed (R-269):** No fixture behavior was changed or verified. The required Google Chrome app opening call timed out after 30 seconds, before the fixture could be opened.
+
+**Outputs:** The use note identifies the exact local fixture and candidate CSS/JavaScript paths. This is source/use-note evidence only; it does not establish the loaded version, viewport, rendered panel geometry, scrolling, focus or link activation. The prior 471 × 500 observation was on a three-menu stacked published page and remains a separate fixture result.
+
+**Checked how:** Read the fixture use note, HTML and prior stacked-page record. Attempted `cua.getApp("Google Chrome")` as required; the CUA call timed out and reset its kernel. No browser page opened and no screenshot or geometry evidence was captured. The 471 × 500 and 471 × 900 checks, wheel/keyboard reachability, Contact us activation and comparison against the standalone fixture remain undone. No files beyond this status note were changed.
+
+**Still open:** Both requested viewport observations and any reproducible single-menu failure remain unobserved. No CSS fix is justified by current evidence.
+
+**Needs Michael:** Chrome must be open and available to the desktop controls before a follow-up can inspect the local fixture.
+
+**Next useful action:** Re-run the bounded fixture check in Chrome when the app-opening control works.
+
 ## 10 November 2026 — Integrated candidate check recorded — Codex (night shift)
 
 **Changed (R-121, R-125, R-269, R-272):** Ran the first integrated local candidate check after the recent guard and test updates. Added a revision record while preserving the earlier evidence pack as history. No candidate or released delivery bytes, pins, dependencies or Webflow content changed.
