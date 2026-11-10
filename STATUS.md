@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite readiness gates reconciled — Codex (night shift)
+
+**Changed (R-181, R-182, R-183, R-185):** Added criterion-by-criterion links to existing local evidence and explicitly marked where Webflow evidence is missing. Corrected the distinction between R-183's local instruction-integrity evidence and the still-unbuilt released loader. Replaced no settled decision and recorded no Acceptance.
+
+**Outputs:** R-181 and R-182 have local source and DOM preparation, but no verified rendered page, native component, Canvas edit or clone. R-183 has only a local check that instructions reject the unreleased loader; its runtime release and loader remain prerequisites. R-185 has a checklist and empty capture template, but no clone-flow observations; Evidence remains none. The 16 October site listing is historical and does not establish present access to a blank project. The roadmap now maps each R-185 criterion to a capture step and states the narrowest useful next local action for each item.
+
+**Checked how:** Compared the four roadmap entries with the named local examples, workbench, runtime evidence, native build sheet, integrity script, trial sheet, clone-flow capture sheet and status entries dated 10 October/16 October through 10 November. Reviewed the proposed roadmap diff for link and claim accuracy. No tests, browser checks or Webflow checks were run; no Webflow project was opened or changed. The existing local pass claims are cited as prior evidence, not rerun results.
+
+**Still open:** Released `sb-nav` runtime selection and authorisation, Webflow component/loader construction, rendered and Canvas checks, and the blank-project clone trial. There is no evidence that a blank test project is currently available.
+
+**Needs Michael:** No decision is needed to make this evidence map. A later authorised release and accessible blank project are prerequisites for the Webflow-specific work.
+
+**Next useful action:** When a released `sb-nav` runtime and blank test project are available under an authorised brief, build the exact pinned loader/component and fill the clone-flow capture sheet from actual observations.
+
+**Reviewed at commit:** `73ebfbf` — checked the four Lite roadmap entries and their linked local source, documentation, integrity checks and status evidence before updating the readiness map.
+
 ## 10 November 2026 — Candidate-to-release evidence pack — Codex (night shift)
 
 **Changed (R-121, R-125, R-126):** Added a refreshable, local-only evidence pack for the current `0.3.0-rc.1` candidate.
