@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Candidate runtime contract audit — Codex (night shift)
+
+**Changed (R-121, R-125):** Documented the candidate’s public runtime contract and compared maintained source, generated candidate deliveries, stable v0.2.9 and protected v0.2.6 files. Added candidate-delivery regression coverage for `.sb-nav-panel` discovery when its data hook is absent.
+
+**Outputs:** The contract note records classes and runtime hooks, configuration attributes and CSS properties, bubbling lifecycle events and payload, public JavaScript names, accessibility state, loader metadata and version expectations. It distinguishes the intended class migration from known retained v0.2.9 behavior defects exercised as TODO cases, and states that local records do not establish current consumer behavior. No product decision was required.
+
+**Checked how:** `SMASHBURGER_CANDIDATE=1 node --test tests/class-namespace.test.js tests/runtime-delivery.test.js tests/destroy-delivery.test.js tests/configuration-delivery.test.js tests/escape-delivery.test.js tests/close-focus-delivery.test.js` passed: 602 tests, 587 passed, 0 failed, 15 expected TODO. The namespace check verified 17 protected historical files and stable files against v0.2.9. `git diff --check` passed. These checks are local; no Webflow, CDN, browser or live consumer check was made.
+
+**Still open:** No product question blocks the class migration contract. Current Designer, Preview, published-site and consumer behavior remain unverified by this local audit.
+
+**Needs Michael:** Nothing.
+
+**Next useful action:** Continue the already ordered roadmap gates; use the contract note if a later authorised candidate or consumer comparison needs its hook inventory.
+
+**Reviewed at commit:** 5d4e78a — checked source, generated candidate files, release records, compatibility manifests and focused regression tests before recording the audit.
+
 ## 10 November 2026 — Release check summaries identify failures — Codex (night shift)
 
 **Changed (R-125):** Named each release-workflow step so the Actions run and its failure notice identify the check or setup stage that stopped.

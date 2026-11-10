@@ -14,15 +14,17 @@ test('compatibility guard rejects removed hooks', () => {
   assert.throws(() => assertContracts('data-sb-navbar', ['data-mwp-navbar'], 'negative fixture'));
   assert.throws(() => assertContracts('SmashBurger', ['NavbarLight'], 'negative fixture'));
 });
-test('source runtime discovers the renamed panel class when the panel hook is absent', () => {
-  const fixture = runtimeFixture('source');
-  try {
-    const panel = fixture.root.querySelector('[data-mwp-panel]');
-    panel.removeAttribute('data-mwp-panel');
-    panel.className = 'sb-nav-panel';
-    const navbar = fixture.create();
-    assert.equal(navbar.panel, panel);
-    assert.equal(fixture.root.dataset.mwpReady, 'true');
-    navbar.destroy();
-  } finally { fixture.close(); }
-});
+for (const delivery of process.env.SMASHBURGER_CANDIDATE ? ['source', 'dist'] : ['source']) {
+  test(`${delivery} runtime discovers the renamed panel class when the panel hook is absent`, () => {
+    const fixture = runtimeFixture(delivery);
+    try {
+      const panel = fixture.root.querySelector('[data-mwp-panel]');
+      panel.removeAttribute('data-mwp-panel');
+      panel.className = 'sb-nav-panel';
+      const navbar = fixture.create();
+      assert.equal(navbar.panel, panel);
+      assert.equal(fixture.root.dataset.mwpReady, 'true');
+      navbar.destroy();
+    } finally { fixture.close(); }
+  });
+}
