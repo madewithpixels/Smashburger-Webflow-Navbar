@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Larger follow-up briefs prepared — Codex
+
+**Changed (R-115, R-121, R-125, R-126, R-155, R-178–R-185, R-268, R-269, R-271, R-272):** Prepared 15 follow-up briefs with standalone access, scope, checks and handoff instructions in every brief.
+
+**Outputs:** [Next shift and daytime brief pack](webflow/smashburger-next-briefs-2026-11-10.md). Five Code-only briefs, five daytime observations and five held trials. No brief was queued.
+
+**Checked how:** Reviewed the seven shift commits since `571778b`, the current Boss inbox and the remaining roadmap and evidence. A bounded local call to `npm run check:runtime-css` returned exit zero without a guard result. The first proposed brief addresses that verified entry-point symptom. No runtime code changed.
+
+**Still open:** The draft jobs and all separate release, Webflow and acceptance gates.
+
+**Needs Michael:** No product choice for the first five briefs. Held trials need their named prerequisites and authority.
+
+**Next useful action:** Queue the standalone CSS guard repair first. Run the integrated candidate check after the new local changes.
+
+**Reviewed at commit:** `bf4d7f0`.
+
 ## 10 November 2026 — Lite check names an unreleased loader install — Codex (night shift)
 
 **Changed (R-181, R-183):** Tightened the local Lite check so the example must include its intended local runtime stylesheet and script, and so an install-like remote or candidate runtime asset is identified directly.
