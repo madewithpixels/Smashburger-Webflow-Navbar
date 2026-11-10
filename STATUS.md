@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Phone comparison decision recorded — Codex (night shift)
+
+**Changed (R-269):** Kept the updated menu on the disposable test page for further checks, following Michael's choice in brief #370. No Webflow content or published page was changed in this session.
+
+**Outputs:** Michael's phone review found that at mobile width the upper expanded menu is cut off by the menus beneath it; the lower menu works well. The updated menu remains the chosen test version despite that finding.
+
+**Checked how:** Read Michael's brief answer in the boss inbox and checked the current project status and R-269 record. I did not open a browser or phone page; tonight's limits allow local repository work only. The phone finding is Michael's report, not an independent check by Codex.
+
+**Still open:** R-269's remaining visual comparisons and the reported mobile overlap need follow-up in the authorised Webflow/browser session. This record does not establish current published-page behaviour beyond Michael's report.
+
+**Needs Michael:** Nothing for brief #370; Michael has supplied the phone finding and selected Keep it for further checks.
+
+**Next useful action:** Continue the remaining R-269 checks in an authorised browser session, keeping the updated test menu in place.
+
+**Reviewed at commit:** 5df7c36 — checked the current status, roadmap, decision record and brief answer before this entry.
+
 ## 10 November 2026 — Component layout property check — Codex
 
 **Changed (R-269, R-272):** Temporarily changed the saved Home page's embedded SmashBurger instance from Dropdown to Full width and turned on its Canvas-open helper. Both values were restored (`Layout=dropdown`, Canvas helper Off). No styles, component definition, Library share or published content changed.
