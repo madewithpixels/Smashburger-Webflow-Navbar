@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Local schema evidence indexed — Codex (night shift)
+
+**Changed (R-261):** Indexed the checked-in source schema snapshots and historical destination comparison.
+
+**Outputs:** The index identifies which recorded source fields are available and which destination details need a fresh Webflow read. It separates dated checked-in snapshots from current saved component state and makes no claim about files outside the inspection.
+
+**Checked how:** Read the two 15 October Library JSON snapshots, the Library candidate report, the historical POC acceptance and copy-paste records, the destination test-page snapshot, and the 16 October combined-candidate review. Inspected snapshot keys, edition/variant counts and image-property IDs/defaults. No Webflow or browser read was made.
+
+**Still open:** The exact current source/destination linked schemas, destination property/default rows, and destination-local icon asset-ID crosswalk require a later Webflow read.
+
+**Needs Michael:** Nothing; this local evidence index completes the brief's inventory.
+
+**Next useful action:** Use the index to guide a separately authorised read-only Webflow comparison for the exact R-261 source and destination.
+
+**Reviewed at commit:** a9642f5 — checked the project records and named local evidence files before this update.
+
 ## 10 November 2026 — R-270 trigger source map — Codex (night shift)
 
 **Changed (R-270):** Mapped local trigger and close-control styling, dimensions and timing against the earlier browser note.
