@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite example navigation names clarified — Codex (night shift)
+
+**Changed (R-181):** Gave the plain, styled and static workbench examples distinct navigation and trigger names.
+
+**Outputs:** Each sample has one clearly named navigation landmark and a trigger named for its example. The review examples' backdrops remain decorative; the workbench backdrop swatch remains a labelled image. The existing Details, Summary and adjacent panel structure is retained because the local runtime and no-script fallback rely on that sibling relationship. Findings and limits are recorded in the [navigation review](webflow/r181-navigation-semantics-2026-11-10.md).
+
+**Checked how:** Read the local example markup and existing structure checks; confirmed distinct names and backdrop treatment in source. `git diff --check` passed. No browser or screen-reader announcement, Webflow Canvas, or published behavior was checked.
+
+**Still open:** Browser and assistive-technology behavior remain unverified as part of the wider Lite work.
+
+**Needs Michael:** Nothing for this local correction.
+
+**Next useful action:** Continue the remaining Lite example and clone-flow checks.
+
+**Reviewed at commit:** e84ea28 — checked the current examples and project record before this review.
+
 ## 10 November 2026 — Lite example destinations clarified — Codex (night shift)
 
 **Changed (R-181):** Made the local plain and styled examples’ menu destinations explicit and consistent.
