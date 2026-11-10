@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — CSS guard catches nested author rules — Codex (night shift)
+
+**Changed (R-269):** Closed two reproduced gaps in the local CSS guard. It now checks rules nested in grouping rules such as `@supports` and `@container`, and grants the three existing display behavior exceptions only to their exact selectors. Added positive and negative regressions. No shipped CSS, generated delivery, release pin or Webflow content changed.
+
+**Outputs:** The guard catches high-specificity author rules inside nested groups and broad display rules that merely mention an expanded root, submenu or icon selector. The current collapsed-trigger, closed-submenu and two-line-icon behavior selectors remain exempt. Zero-specificity defaults remain allowed.
+
+**Checked how:** Before the repair, `node --test tests/runtime-styling-contract.test.js` reproduced both gaps (11 passed, 2 failed). Afterward it passed (13/13). `npm run check:runtime-css` passed against source, candidate readable and minified CSS, and all configured Webflow and Library Embed CSS. An initial guard comparison exposed CSSOM serialization differences for unquoted `false` and spaces around `>`; the exact matches now allow those equivalent serializations. `git diff --check` passed.
+
+**Still open:** No browser, Webflow, Canvas, Preview, published page or authoring behavior was checked. Michael's R-269 acceptance remains pending.
+
+**Needs Michael:** Nothing to finish this local guard repair.
+
+**Next useful action:** Review the local guard change, then continue the separately queued integrated candidate and rendered R-269 checks.
+
+**Reviewed at commit:** `127efee` — reproduced both reported guard gaps before editing, then compared the actual source and generated CSS with the repaired guard.
+
 ## 10 November 2026 — Runtime CSS guard runs as a command — Codex (night shift)
 
 **Changed (R-269):** Moved the runtime CSS guard's direct-entry check to module scope. Imports remain quiet, while the command now runs the guard. Added one regression for its clean and planted-failure command paths.

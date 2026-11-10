@@ -26,11 +26,11 @@ export function violations(css, label = 'CSS') {
   const bad = [];
   const visit = rules => {
     for (const rule of rules) {
-      if (rule.type === 4) visit(rule.cssRules);
+      if (rule.cssRules) visit(rule.cssRules);
       if (!rule.selectorText || !authorTargets.test(rule.selectorText)) continue;
       const properties = [...authorProperties].filter(property => rule.style.getPropertyValue(property));
       const displayBehavior = properties.length === 1 && properties[0] === 'display'
-        && /data-icon-lines|data-mwp-submenu|data-mwp-collapsed=(?:"false"|false)/.test(rule.selectorText);
+        && isDisplayBehavior(rule.selectorText.trim());
       if (displayBehavior) continue;
       if (properties.length && !isZeroSpecificity(rule.selectorText.trim())) {
         bad.push(`${label}: ${properties.join(', ')} — ${rule.selectorText}`);
@@ -40,6 +40,12 @@ export function violations(css, label = 'CSS') {
   visit(dom.window.document.styleSheets[0].cssRules);
   dom.window.close();
   return bad;
+}
+
+function isDisplayBehavior(selector) {
+  return /^\[data-mwp-navbar\]\[data-icon-lines="2"\] \[data-mwp-line\]:nth-child\(2\)$/.test(selector)
+    || /^\[data-mwp-navbar\]\[data-mwp-collapsed=(?:"false"|false)\] \[data-mwp-trigger\]$/.test(selector)
+    || /^\[data-mwp-submenu\]:not\(\[open\]\)\s*>\s*\.sb-nav-submenu-list$/.test(selector);
 }
 
 function isZeroSpecificity(selector) {

@@ -82,3 +82,32 @@ test('build guard includes Flex and Grid placement shorthands in its author-owne
       `a zero-specificity default should remain allowed for ${declaration}`);
   }
 });
+
+test('build guard visits nested grouping rules beyond media queries', () => {
+  const snippets = [
+    '@supports (display: grid) { #site [data-mwp-panel] { color: rebeccapurple } }',
+    '@container menu (width > 30rem) { #site [data-mwp-panel] { display: grid } }'
+  ];
+  for (const snippet of snippets) {
+    assert.ok(violations(snippet).length > 0, `guard should inspect ${snippet}`);
+  }
+  assert.deepEqual(violations('@supports (display: grid) { :where([data-mwp-panel]) { display: grid } }'), []);
+});
+
+test('display behavior exceptions require the behavior selector itself', () => {
+  const genuineBehavior = [
+    '[data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-trigger]{display:none}',
+    '[data-mwp-submenu]:not([open]) > .sb-nav-submenu-list{display:none}',
+    '[data-mwp-navbar][data-icon-lines="2"] [data-mwp-line]:nth-child(2){display:none}'
+  ];
+  for (const snippet of genuineBehavior) assert.deepEqual(violations(snippet), [], snippet);
+
+  const broadMentions = [
+    '#site [data-mwp-navbar][data-mwp-collapsed="false"] [data-mwp-trigger]{display:none}',
+    '#site [data-mwp-submenu] [data-mwp-panel]{display:none}',
+    '#site [data-icon-lines="2"] [data-mwp-line]:nth-child(2){display:none}'
+  ];
+  for (const snippet of broadMentions) {
+    assert.ok(violations(snippet).length > 0, `guard should reject broad display rule ${snippet}`);
+  }
+});
