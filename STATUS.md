@@ -2862,3 +2862,19 @@ Written in from Michael's task list in boss. The order is his; the runner only m
 Written in from the Needs you queue on boss's Agents page. The verdicts are Michael's; the runner only records them.
 - 5 November 2026 — Accepted by Michael in boss: R-037 (checked: Looked at brief #178's result.)
 
+
+## 10 November 2026 — Duplicate-class write preflight — Codex (night shift)
+
+**Changed (R-268):** Drafted a local read-only preflight for the duplicate-class style-write risk.
+
+**Outputs:** The procedure requires checking each style record's stable ID, selector, local/Library origin, declarations, actual element assignment and linked sibling before any proposed write. It gives explicit stop conditions and requires separate before, after and recovery evidence. It does not claim any Webflow write route is safe.
+
+**Checked how:** Read the 23 October incident record, R-268 exit criteria and the current project records. Compared the procedure against the recorded failure: name-based writes affected imported IDs while intended local declarations remained unchanged, and name-based readback did not establish targeting. No Webflow, browser or write-route check was made.
+
+**Still open:** The controlled R-268 regression test remains unrun. Any later Webflow check still needs its own exact-site authority, pinned candidate, recovery point and independent proof of targeting.
+
+**Needs Michael:** Nothing to unblock this local procedure.
+
+**Next useful action:** Use the preflight when preparing the separately authorised R-268 controlled test; stop if any required identity or evidence is unavailable.
+
+**Reviewed at commit:** 54a5a8b — checked current records and incident evidence before this update.
