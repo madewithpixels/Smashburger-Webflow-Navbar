@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Saved Preview, backup and staging comparison — Codex
+
+**Changed (R-269):** With Michael’s instruction to keep working in Chrome and permission to back up and publish, I backed up the current saved site and published it to the Webflow staging subdomain. No page structure, style or Library content was edited or shared.
+
+**Outputs:** Michael supplied a Designer Preview screenshot of the selected third candidate open at 667 px. All menu links and the CTA are visible in the screenshot. The social icons appear much darker than their labels against the black panel. Screenshot height is not separately recorded. In the Webflow Designer Backups list, I confirmed `R-269 before publishing current saved state` (1 page, 137 styles, 226 elements). The Publish dialog showed only `disposable-sb-test-site.webflow.io` selected and the custom-domain option disabled. After publishing and refreshing the staging page, its third row matched the saved library component by class, reported Full-width and `data-presets=False`, and was open. At 2044 × 1076 CSS pixels, computed styles showed a transparent panel with pale 1 px border and 12 px radius; pale 12.8 px links with 10 px / 12 px padding; and a pale 12 px CTA with a pale border. This confirms the current saved presets-off value reached staging, but the 2044 px style read is not a matched-width comparison with the 667 px Preview screenshot.
+
+**Checked how:** Read Michael’s supplied screenshot and the Webflow Designer Preview. In Chrome, used Designer Settings → Backups and confirmed the named backup in the list. Checked the Publish destinations, published to the Webflow subdomain, refreshed the published page and inspected the third component’s DOM attributes and computed panel, link and CTA styles. No Console logs were read and no screenshot file was saved.
+
+**Still open:** Compare the published component visually at 667 px with the supplied Preview screenshot; its height remains unknown. Check one identifiable menu at short viewport height, the remaining authored-style cases and the published Console. The general Preview compilation error remains unexplained. R-269 remains in progress and Michael’s acceptance remains unchanged.
+
+**Needs Michael:** Nothing for this comparison.
+
+**Next useful action:** Continue the browser comparison at a measured 667 px published viewport, then check short-height behavior with one identifiable menu and the remaining authored styles.
+
+**Reviewed at commit:** 6538140 — reviewed current project records and the R-269 comparison checklist before this Chrome pass.
+
+**Handoff:** The candidate’s current settings are now published to `disposable-sb-test-site.webflow.io`; the Webflow backup is named above. The staging page was inspected at 2044 × 1076 CSS pixels. The exact-width comparison, single-menu short-height check, remaining authored-style cases and Console read remain open. No Library share occurred.
+
 ## 10 November 2026 — Published styling, short-height and keyboard comparison — Codex
 
 **Changed (R-269):** No Webflow content, styles, publication or Library share changed. Recorded a bounded read-only comparison of the published test page.
