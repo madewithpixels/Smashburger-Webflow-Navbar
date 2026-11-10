@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Published-page check card — Codex (night shift)
+
+**Changed (R-269):** Prepared a focused checklist for the next authorised browser session. No site, page or menu was changed.
+
+**Outputs:** The checklist separates Michael's reported 667 px and Tablet/Mobile layout observations from the published Home-page evidence. It records the published baseline of three expanded navigation rows at 1280 × 720, while marking their menu identities and intended appearance unknown. It covers appearance across Canvas, Preview and the published page; presets off; short viewport height; keyboard opening; Escape closing; and focus return. Each check asks for the page, menu identity and measured viewport where known, plus screenshots or interaction evidence. Unknown width and instance identity are explicit.
+
+**Checked how:** Read the current R-269 STATUS and ROADMAP evidence, the published-page record and the local brief draft. No Webflow, browser, network or tests were used, as required by brief #387. No site changes, publication or Library sharing were made.
+
+**Still open:** All new published-page appearance, presets-off, short-height and keyboard/focus checks remain outstanding. The checklist does not count earlier Preview checks or Michael's reports as published results.
+
+**Needs Michael:** Nothing for preparing the checklist.
+
+**Next useful action:** Use the checklist in one authorised browser session on the Disposable SB test site's Home page and record results by layer, menu instance and viewport.
+
+**Reviewed at commit:** e008273 — checked current project records and R-269 evidence before preparing the checklist.
+
+**Handoff:** The next authorised browser session should start with the checklist and the 10 November published baseline. Match the three published rows to the saved Home page's menu roots before attributing results; keep unknown identities and widths labelled unknown. Do not infer acceptance from the checklist or the earlier reports.
+
 ## 10 November 2026 — Local Preview error source review — Codex (night shift)
 
 **Changed (R-272):** No source or generated code changed. Added this evidence note only.

@@ -2388,4 +2388,6 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 **10 November 2026 — authorised staging publish:** Michael authorised publication of the exact Disposable SB test site. It was published to `disposable-sb-test-site.webflow.io` only; the site had no custom domains. The Home page loads. At 1280 × 720, a screenshot shows three expanded navigation rows stacked vertically; its accessibility tree exposes three menu navigation rows. This does not establish that the desktop appearance is intended or verify responsive behavior, menu interactions, or a duplicate-script error; no Console was read. See [STATUS](STATUS.md#10-november-2026--test-site-published-to-staging--codex).
 
+**10 November 2026 — published-page check card:** A local checklist separates Michael's reported layout observations from the limited published Home-page baseline, then gives one focused sequence for appearance, presets-off, short-height, keyboard opening, Escape and focus return. It marks unknown widths and menu identity rather than filling them in. No new browser check was made. See [the R-269 checklist](webflow/r269-published-page-checklist-2026-11-10.md).
+
 
