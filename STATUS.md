@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — R-270 trigger source map — Codex (night shift)
+
+**Changed (R-270):** Mapped local trigger and close-control styling, dimensions and timing against the earlier browser note.
+
+**Outputs:** The ordinary trigger's source rules define behavior but no colour or box dimensions. A preset close-control rule gives Left, Right and Overlay layouts a 44px minimum and dark surface/text/border colours during opening, open and closing. Panel and icon durations are defined separately; no trigger background transition is specified. Earlier Voice Focus and madewithpixels measurements remain explicitly consumer-site browser evidence.
+
+**Checked how:** Read the maintained CSS and JavaScript, checked the candidate generated CSS and main Embed, and compared them with the 4 November R-270 browser note. No Webflow or browser check was made tonight.
+
+**Still open:** Current consumer rendering, state-specific colours and dimensions, computed trigger transition timing, and whether the close-control minimum is overridden remain browser-only checks.
+
+**Needs Michael:** Nothing to unblock this local source map.
+
+**Next useful action:** Use the authorised Chrome checks to compare trigger box and computed colour/timing in closed, hover, keyboard focus, open and closing states on each named consumer page.
+
+**Reviewed at commit:** 8005010 — checked current project records, the R-270 browser note, and maintained and checked-in release sources before this update.
+
 ## 10 November 2026 — Duplicate-style evidence template — Codex (night shift)
 
 **Changed (R-268):** Added a reusable evidence record for the controlled duplicate-style check.
