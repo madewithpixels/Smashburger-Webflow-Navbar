@@ -1014,6 +1014,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Exit criteria:**
 **Local preparation — 16 October 2026, brief #69:** Added an [executable offline migration/rollback rehearsal](webflow/offline-migration-rollback-2026-10-16.md) using the archived legacy header, the explicit class table and paired v0.2.6/candidate deliveries. It checks authored content preservation, focused interaction and exact restoration of the saved parsed fixture. This is local preparation only; this item remains planned with cloned-Webflow semantic-version upgrade/rollback outstanding. Its State, Evidence and Acceptance fields are unchanged.
 
+**Real-site evidence template — 10 November 2026, brief #410:** The [cloned-site upgrade and rollback checklist](webflow/r115-cloned-site-upgrade-rollback-checklist.md) links to the offline rehearsal and captures exact old/new versions, component and authored state, backup, upgrade, rollback and restored-page evidence. It explicitly says the real-site trial remains untested until performed on a named, backed-up clone. Template preparation only; State, Evidence and Acceptance remain unchanged.
+
 
 #### R-116 · Document switching safely between self-contained Embed, pinned CDN and self-hosted delivery without rebuilding the component.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** accepted (historical)

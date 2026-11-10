@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Real-site upgrade and rollback checklist prepared — Codex (night shift)
+
+**Changed (R-115):** Prepared a blank evidence checklist for a future authorised trial on one named cloned staging or test site.
+
+**Outputs:** The [checklist](webflow/r115-cloned-site-upgrade-rollback-checklist.md) links to the existing [offline migration and rollback rehearsal](webflow/offline-migration-rollback-2026-10-16.md). It records exact old and new runtime versions and delivery files, clone/page identity, a confirmed pre-change backup, component state, authored styles, upgrade and rollback outcomes, and restored-page checks. It states that real-site upgrade and rollback remain untested until performed on a named, backed-up cloned site.
+
+**Checked how:** Read the current project record and offline rehearsal, then reviewed the checklist against the requested evidence fields and stop conditions. Confirmed the links resolve and the results are blank/not run. No Webflow site or browser was opened; no site was changed or published. No tests were run.
+
+**Still open:** The actual semantic-version upgrade, rollback and restored-page checks remain untested until an authorised trial is performed on a named, backed-up cloned site.
+
+**Needs Michael:** Nothing is needed to prepare this local checklist.
+
+**Next useful action:** Use the checklist only when a future brief authorises a named cloned staging or test site and its pre-change backup is confirmed.
+
+**Reviewed at commit:** 49cd870 — checked the current project records and offline rehearsal before drafting this checklist.
+
 ## 10 November 2026 — Windows spoken-output protocol clarified — Codex (night shift)
 
 **Changed (R-244):** Made the future Windows spoken-output check repeatable without presenting expected behavior as an NVDA result.
