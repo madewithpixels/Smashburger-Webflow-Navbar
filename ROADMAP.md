@@ -2380,8 +2380,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 
 #### R-268 · Test safe agent styling of an unlinked menu with duplicate class names.
 **State:** blocked · **Evidence:** none · **Acceptance:** pending
-**Blocked:** The named disposable site is missing from the connected Webflow site list, and Chrome did not open its Designer.
-**Unblock:** Make the exact site available in Webflow MCP and open its Designer in Chrome; confirm the named before backup before any structural or style change.
+**Blocked:** The exact Designer is now open, but Webflow leaves the named backup in “Loading…” and it does not appear in the Backups list.
+**Unblock:** Restore backup creation in the Disposable SB test site Designer and confirm `boss · brief #480 · before` appears in Backups before any structural or style change.
 **Owner:** agent · **Depends on:** an authorised disposable Webflow consumer with a backup and an exact release/candidate identified
 **Source:** Michael's request in this chat, 23 October 2026: record the duplicate-class issue and flag it for testing; [madewithpixels incident and restored-site record](webflow/madewithpixels-menu-2026-10-23.md#duplicate-class-targeting-incident-and-required-test).
 **Issue:** Unlinked local classes and imported Library classes can share display names. In the recorded v0.2.6 incident, name-based writes for `mwp-css-nav_panel`, `mwp-css-nav_link` and `mwp-css-nav_contacts` landed on imported records rather than the intended local records. A success response and a name-based readback did not establish that the intended element was styled. Test this agent-customisation risk independently of routine consumer-site updates.

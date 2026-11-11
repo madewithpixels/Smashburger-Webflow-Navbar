@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Correct Designer opened; backup creation stalled — Codex (night shift)
+
+**Changed (R-268):** I opened the exact Disposable SB test site Designer in Chrome and started the named before backup. Webflow never completed it, so I made no menu or style changes.
+
+**Outputs:** The Designer canvas shows three menu instances. Its Backups panel showed the existing records, but not `boss · brief #480 · before`. After I saved that name, Webflow reported “Site backup started”; the save dialog then remained on “Loading…” with its Save button disabled. I closed a second, duplicate backup prompt without saving it. The original backup remains unconfirmed.
+
+**Checked how:** Called `boss_start`, read the project record and Git baseline, called Webflow MCP `list_sites` (16 sites; the named site is absent), and used the authorised Google Chrome desktop app to open its already-present Designer tab. In Settings → Backups, I entered the exact backup name and pressed Save. I checked the visible notification and backup list; the name never appeared. The three visible menu rows do not establish which one is the saved `0.3.0-rc.1` candidate or its runtime. No Webflow MCP page, class or element records were readable, and no menu styles or structure were changed.
+
+**Still open:** Confirm the named backup in the Designer; then identify the exact saved bottom-menu instance and runtime and perform the R-268 preflight. The Webflow MCP site list still omits the named site.
+
+**Needs Michael:** Nothing new to decide; the site and menu choice are already settled. The backup creation process must complete before any edits.
+
+**Next useful action:** Resume R-268 after the named backup appears in the Backups list. Do not edit the menu while recovery is unconfirmed.
+
+**Reviewed at commit:** `9291947` — checked the project records and Git baseline before this update.
+
 ## 11 November 2026 — Lite runtime order settled — Codex (night shift)
 
 **Changed (R-183):** Michael chose for the `sb-nav` version to be released before the SmashBurger Lite Webflow component is built. Lite keeps its agreed `sb-nav` classes; it will not be changed to the older v0.2.9 classes.
