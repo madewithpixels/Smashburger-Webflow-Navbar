@@ -1,5 +1,26 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Dark Facebook icon traced to the image file — Claude (night shift)
+
+**Changed (R-269):** Nothing in Webflow or the repo's code. Read-only checks of the published Home page and the saved Webflow styles. I made no backup, no publish, no snapshot (nothing changed).
+
+**Outputs:**
+- **Source of the dark colour: the image file.** The Facebook SVG (`..._Navbar Light — facebook icon.svg`, 150 × 150 asset) contains one `<path>` with no `fill` attribute, so it draws in the default colour, black. I read its markup by fetching it from the page.
+- **Bottom MENU (header 3, `data-presets="False"`)**: Facebook `<img>` computed `filter` is `none`, `color` rgb(237, 243, 238), page background rgb(11, 14, 12). With no recolour rule, the black artwork sits on near-black. VIEW RELEASE is text with a pale border, so it stays legible.
+- **Why presets-on menus differ:** the loaded CSS has a rule (`[data-mwp-navbar]:not([data-presets="false" i]):not([data-icon-mode="original"]) [data-mwp-secondary] a[data-mwp-item] img`) that applies `filter: drop-shadow(currentcolor 4rem 0 0)` with a `translateX(-4rem)`. That recolours the image to the link text colour. It does not match the presets-off bottom menu. In the two presets-on menus above it, the link colour is rgb(29, 32, 34), also dark on this page background (separate point, not investigated).
+- **Saved Webflow styles (Webflow MCP, read-only, Home page):** the image classes (`mwp-css-nav_secondary-icon`, `-2`, library `sb-nav-secondary-icon`) hold only display block, 1.25rem size, flex-shrink 0, object-fit contain. The link classes hold flex layout, padding, radius, font size, no text decoration and `color: inherit`. No saved filter, opacity or fill on either.
+- **Conclusion:** not a saved page style. The darkness is the black SVG with the recolour rule intentionally absent in presets-off mode.
+
+**Checked how:** New Chrome tab on `https://disposable-sb-test-site.webflow.io/` (window resized to 667 wide; the page reported innerWidth 667, innerHeight 757, not 900). JavaScript read computed styles, matched stylesheet rules and fetched the SVG text. Webflow MCP: list sites, list pages, query styles (read only). I closed my tab.
+
+**Still open:** Whether to fix it, and how: that is a design choice (see Needs Michael). Preview and Designer Style-panel views were not read. Interactions and any image settings Webflow MCP cannot expose were not read. Window height was 757, not 900. One of my first script reads was blocked by the tool's output filter and I reran it with simpler output.
+
+**Needs Michael:** Choose how the presets-off menu should show social icons: (a) use icon files that carry a light fill; (b) keep a single-colour file and add an authored rule that recolours it; (c) leave as designed. Recommendation (a), because presets-off is meant to leave styling to the author.
+
+**Next useful action:** Once Michael chooses, apply it on the disposable test site and recheck at 667 px.
+
+**Reviewed at commit:** `1bb385c`.
+
 ## 11 November 2026 — Published keyboard, motion and fallback check — Codex (night shift)
 
 **Changed (R-269, R-155):** I checked the published Home page on Disposable SB test site. I did not change the Webflow page, component, styles, CMS, custom code, or publication, and I did not make a backup. I temporarily blocked the candidate script in Chrome, then removed that browser rule and reloaded the page. I did not change the saved Embed.
