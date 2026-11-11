@@ -1,5 +1,47 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Both consumer resize checks recorded — Codex (night shift)
+
+**Changed (R-271):** Verified the released menu resize fix on both named consumer staging homepages. No Webflow content or settings changed. Michael's acceptance remains pending, and the release order is unchanged.
+
+**Outputs:** Both pages loaded the exact v0.2.9 JavaScript loader `https://cdn.jsdelivr.net/gh/madewithpixels/Smashburger-Webflow-Navbar@v0.2.9/dist/navbar-light.js`; MWP also loaded the matching v0.2.9 CSS file. Voice Focus' matching CSS was not separately read in this browser check. The release record names these homepages, but neither page exposes a Webflow publish revision in the visible browser state.
+
+Google Chrome was used. Its version was not recorded. Device emulation used CSS viewport widths/heights of 471 × 500, 500 × 500, 991 × 500 and 992 × 500; DevTools showed DPR 2. A page read at 471 × 500 reported `innerWidth: 471` and `innerHeight: 500`. Other widths/heights are the responsive viewport controls, not separate `innerWidth` reads.
+
+**madewithpixels staging —** `https://madewithpixels-dev.webflow.io/` (homepage; page revision not exposed)
+
+| Requested behaviour | Result |
+| --- | --- |
+| Same-breakpoint resize with menu open | Pass: opened at 471 × 500 CSS px; remained open after resizing to 500 × 500. |
+| Cross to expanded and back | At 991 × 500 the collapsed trigger/menu was available; at 992 × 500 the expanded layout appeared. Returning to 991 restored the collapsed layout. |
+| Escape from a fresh open | Pass: Escape closed the menu and returned visible focus to its trigger. |
+| Second trigger activation from a fresh open | Pass: the second activation closed the open menu. |
+| Link closing from a fresh open | Pass: About closed the menu and navigated to `/#about`. |
+
+No unwanted shift was apparent in the resize screenshots. A numeric scroll offset was not recorded. The About link intentionally moved the page to its section.
+
+**Voice Focus staging —** `https://voice-focus.webflow.io/` (homepage; page revision not exposed)
+
+| Requested behaviour | Result |
+| --- | --- |
+| Same-breakpoint resize with menu open | Pass: opened at 471 × 500 CSS px; remained open after resizing to 500 × 500. |
+| Cross to expanded and back | At 991 × 500 the collapsed menu was shown; at 992 × 500 the expanded links appeared; returning to 991 restored the collapsed trigger. **Finding:** Chrome reported “Blocked aria-hidden on an element because its descendant retained focus” during the change back to collapsed while a menu link had focus. The menu was marked closing/hidden while that link still held focus. |
+| Escape from a fresh open | Pass: Escape closed the menu and returned visible focus to its trigger. |
+| Second trigger activation from a fresh open | Pass: the second activation closed the open menu. |
+| Link closing from a fresh open | Pass: Biography closed the menu and navigated to `/biography`. |
+
+No unwanted shift was apparent in the resize screenshots. A numeric scroll offset was not recorded. The Biography link intentionally navigated to another page. The accessibility warning is a browser observation and has not been separately tested with assistive technology.
+
+**Checked how:** Used only the authorised Google Chrome desktop app and the two named published staging homepages. Inspected each page's loaded script URL in DevTools, read CSS viewport dimensions from the responsive controls, resized the open collapsed menu within the breakpoint and across the 991/992 px edge, and used fresh opens for Escape, second-trigger and link closing. Focus return was checked from the browser's visible focus ring/accessibility state. Screenshots and page accessibility state are observational evidence; no separate test suite, mobile device, assistive technology or Webflow revision readback was used. Closed the tabs opened for this check and returned to the pre-existing Chrome tab.
+
+**Still open:** Michael's review and acceptance. Chrome's version and numerical scroll offsets were not captured. Voice Focus emitted the focus/`aria-hidden` warning described above.
+
+**Needs Michael:** Review the two live staging observations and decide whether to accept R-271; keep this separate from the release order.
+
+**Next useful action:** Michael reviews the recorded behaviour and the Voice Focus focus warning; no further site changes are authorised by this check.
+
+**Reviewed at commit:** `beb74a3` — checked the project records and current Git baseline before the browser checks.
+
 ## 11 November 2026 — Single-menu short-height check completed — Codex (night shift)
 
 **Changed (R-269):** The standalone Full-width menu scrolls internally at 471 × 500 CSS px, and its links fit without scrolling at 471 × 900 CSS px. No reproducible failure appeared, so no CSS fix was opened.
