@@ -2379,10 +2379,8 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 **Evidence boundary:** Recorded checks cover the legacy cleanup duplicate and the one-Base candidate in the named fixtures; they do not promise the same result for every existing or future Webflow instance.
 
 #### R-268 · Test safe agent styling of an unlinked menu with duplicate class names.
-**State:** blocked · **Evidence:** none · **Acceptance:** pending
-**Blocked:** The exact Designer is now open, but Webflow leaves the named backup in “Loading…” and it does not appear in the Backups list.
-**Unblock:** Restore backup creation in the Disposable SB test site Designer and confirm `boss · brief #480 · before` appears in Backups before any structural or style change.
-**Owner:** agent · **Depends on:** an authorised disposable Webflow consumer with a backup and an exact release/candidate identified
+**State:** in progress · **Evidence:** verified (live) · **Acceptance:** pending
+**Owner:** agent · **Depends on:** an authorised disposable Webflow consumer and an exact release/candidate identified; backups are not required on the sites named in D-022
 **Source:** Michael's request in this chat, 23 October 2026: record the duplicate-class issue and flag it for testing; [madewithpixels incident and restored-site record](webflow/madewithpixels-menu-2026-10-23.md#duplicate-class-targeting-incident-and-required-test).
 **Issue:** Unlinked local classes and imported Library classes can share display names. In the recorded v0.2.6 incident, name-based writes for `mwp-css-nav_panel`, `mwp-css-nav_link` and `mwp-css-nav_contacts` landed on imported records rather than the intended local records. A success response and a name-based readback did not establish that the intended element was styled. Test this agent-customisation risk independently of routine consumer-site updates.
 **Release test:** Install → configure → unlink → inspect both style records → agent restyle → inspect both records and actual element assignments → Preview at desktop/mobile → verify rollback. Repeat for the exact renamed release candidate; the v0.2.6 incident is not candidate proof.
@@ -2391,7 +2389,7 @@ Treat a mega-menu as a separate component or extension-installed premium feature
 - Prove only the intended local records change, while the imported records and a linked sibling remain unchanged. Check normal, hover/focus and breakpoint styles, plus rendered geometry and keyboard behaviour.
 - Define and test an agent preflight that detects duplicate names and stops ambiguous writes. If deterministic targeting is unavailable, test a uniquely named local-class route that preserves functional hooks and unrelated styling.
 - Document the supported unlink-and-style workflow, its limitations and recovery steps before claiming agent-assisted customisation is verified.
-**Evidence links:** The incident and temporary workaround are recorded below; the controlled regression test has **not run**. R-267's existing acceptance remains unchanged and does not cover this separate failure mode.
+**Evidence links:** [11 November Designer style check](STATUS.md#11-november-2026--unlinked-candidate-style-survived-reload-on-disposable-sb-test-site--codex-night-shift). The controlled regression test remains in progress. R-267's existing acceptance remains unchanged and does not cover this separate failure mode.
 
 
 #### R-269 · Make Designer styling survive the runtime in every menu layout.

@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Unlinked candidate style survived reload on Disposable SB test site — Codex (night shift)
+
+**Changed (R-268):** I unlinked the bottom `SmashBurger 0.3.0-rc.1 candidate` menu on the Home page in Disposable SB test site. In Designer, its root became a regular `sb-nav` element. I changed only its local `sb-nav-panel` Flex gap from 0.125rem to 0.25rem. I did not publish.
+
+**Outputs:** Before unlinking, the selected bottom component was Mobile landscape, Layout `full-width`, presets Off and Canvas-open Off. Its panel class showed as `mwp-css-nav_panel 2`; the Style panel showed Flex, 0.125rem gap, 0.25rem top/bottom padding, approximately 0.2rem left/right padding, transparent background and 0.75rem radius. The Navigator showed the candidate descendants with `mwp-css-nav_* 2` class names. After unlinking, the Navigator showed root `sb-nav` and local panel class `sb-nav-panel`. I changed its gap to 0.25rem, reloaded Designer, selected the bottom panel again and read back 0.25rem. The unlink and local style both survived reload.
+
+**Checked how:** Chrome desktop app, exact Designer page `https://disposable-sb-test-site.design.webflow.com/`, Home canvas, Navigator and Style panel. I also opened the published page `https://disposable-sb-test-site.webflow.io/` in a new tab and confirmed three menu rows; that page was not changed or published. No backup was made or waited for.
+
+**Still open:** R-268's full exit criteria are not complete. The Webflow MCP `list_sites` result contained 16 sites but omitted Disposable SB test site. So I could not export the requested before/after snapshots or read stable style IDs, origins and exact declarations through MCP. I did not prove imported duplicate records and the linked sibling stayed unchanged by stable ID, nor check Preview at desktop/mobile, breakpoint or hover/focus styles, rendered geometry and keyboard behaviour, or a deterministic agent write route. I used Designer UI for this one saved local style edit. The page remains unpublished.
+
+**Needs Michael:** Restore read-only Webflow MCP access to Disposable SB test site so the remaining stable-ID and snapshot comparisons can be completed.
+
+**Next useful action:** After the named site appears in the Webflow MCP site list, complete the remaining R-268 comparisons on this same Home page and exact unlinked bottom menu; do not publish.
+
+**Reviewed at commit:** `af06cd7` — checked project records and clean Git baseline before this work.
+
 ## 11 November 2026 — Local Facebook icon source trace completed — Codex (night shift)
 
 **Changed (R-269):** I traced the exact published Facebook asset URL from the earlier R-269 record against the local candidate CSS and repository files. No site, asset or style was changed.

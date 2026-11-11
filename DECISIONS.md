@@ -201,3 +201,12 @@ Bring the released v0.2.9 changes into `main` and update Voice Focus to the exac
 Release the renamed `sb-nav` version first, then build the SmashBurger Lite Webflow component against its matching classes. Keep the accepted Lite structure and class direction from D-011/D-012; do not change it to v0.2.9 classes.
 **Rationale:** The released v0.2.9 runtime uses the older `mwp-css-nav_*` class family, while the agreed Lite design uses `sb-nav` classes.
 **Consequence:** The Lite component and exact-version loader remain gated on a separately authorised release of the `sb-nav` runtime. The unreleased `0.3.0-rc.1` loader must not be installed. This choice itself does not authorise release, tagging, publishing or Webflow changes.
+
+## D-022 - No backup gate on named disposable test sites
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss D-114; applies only to the five named test sites
+**Date:** 11 November 2026
+**Source:** Michael's instruction in boss D-114, repeated on 11 November 2026.
+Backups are not required before work on Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB Unlink Clean Trial or Griddle Native Test. Do not make or wait for a backup on these sites as a condition for an authorised test. This supersedes any earlier project backup gate for work on these five sites; it does not change backup rules for any other site.
+**Rationale:** Michael has repeatedly set these disposable sites outside the backup requirement. Waiting for backup creation would block the test without applying his current policy.
+**Consequence:** Work on a named site may proceed within its separate access and scope authority. Record before state where the brief asks; do not publish or change another site without explicit authority.

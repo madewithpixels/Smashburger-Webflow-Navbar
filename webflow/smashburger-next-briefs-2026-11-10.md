@@ -108,7 +108,7 @@ For Boss, copy a heading as the title and the entire section body below it. Each
 
 **Run lane.** Hold · authorised disposable Webflow session.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Confirm a named before backup for structural work and record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target or recovery point cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
 
 **Work and first check.** On the named Disposable SB test site, identify one exact candidate. Use the existing R-269 coverage map to check Dropdown, Full-width, Left, Right and Overlay with presets off. In each layout compare authored Flex and Grid, including stale tracks and opinionated host styles. Verify Style-panel editing on the panel, primary and contact links, CTA and trigger. Capture Canvas-open and Preview at representative desktop and mobile widths. Compare with published staging only where the same bytes and settings are already present or where staging publication has separate authority. Track linked and unlinked evidence separately.
 
@@ -118,7 +118,7 @@ For Boss, copy a heading as the title and the entire section body below it. Each
 
 **Run lane.** Hold · authorised disposable Webflow and browser session.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Confirm a named before backup for structural work and record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target or recovery point cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
 
 **Work and first check.** Use the matched candidate instance established by the styling comparison. Check real keyboard opening, Tab order, visible focus, nested and outer Escape, trigger focus return, CTA activation, scroll containment and quick reversal during a transition. Compare one motion with reduced motion enabled. In the browser, block the runtime script by an authorised reversible method and verify native Details and links without changing the saved Embed. Record which delivery, view and input was exercised. Published and Preview checks should have their own evidence rows.
 
@@ -128,9 +128,9 @@ For Boss, copy a heading as the title and the entire section body below it. Each
 
 **Run lane.** Hold · authorised cloned Webflow test.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Confirm a named before backup for structural work and record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target or recovery point cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
 
-**Work and first check.** Use the duplicate-class preflight and retain a linked sibling as the control. On a backed-up disposable consumer, configure and unlink a duplicate using the authorised exact runtime. Record colliding stable IDs, selector, origin, declarations and actual assignments before attempting a write. Proceed only with a verifiably deterministic route. Compare both records and the linked sibling after each authorised change. If that route cannot be proven, exercise a uniquely named local class only if the brief authorises it. Verify desktop/mobile geometry and keyboard behaviour, and restore the before state.
+**Work and first check.** Use the duplicate-class preflight and retain a linked sibling as the control. On the authorised disposable consumer, configure and unlink a duplicate using the authorised exact runtime. Record colliding stable IDs, selector, origin, declarations and actual assignments before attempting a write. Proceed only with a verifiably deterministic route. Compare both records and the linked sibling after each authorised change. If that route cannot be proven, exercise a uniquely named local class only if the brief authorises it. Verify desktop/mobile geometry and keyboard behaviour, and restore the before state.
 
 **Finish and handoff.** Done when there is before, after and recovery evidence by record ID, or a documented stop at the point targeting became ambiguous. A success response alone is insufficient.
 
@@ -138,17 +138,17 @@ For Boss, copy a heading as the title and the entire section body below it. Each
 
 **Run lane.** Hold · authorised clone and approved delivery pair.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Confirm a named before backup for structural work and record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target or recovery point cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
 
 **Work and first check.** Use the existing cloned-site checklist on one named disposable consumer. Confirm the actual old install and exact proposed delivery pair. Capture linked properties, variants, bindings, authored overrides, class assignments, images and loader before upgrading. Verify the approved update in the clone, then restore the paired old component and loader. Compare the restored saved and rendered states, including keyboard, fallback, asset loading and the linked consumer relationship. The existing offline tagged v0.2.6 and v0.2.9 results can guide the comparison.
 
-**Finish and handoff.** Done when the upgrade, restore and post-restore checks are evidenced separately on the clone. A missing update, backup or approved delivery pair is a stop condition.
+**Finish and handoff.** Done when the upgrade, restore and post-restore checks are evidenced separately on the clone. A missing update or approved delivery pair is a stop condition.
 
 ## 15. Build and trial the native SmashBurger Lite clone (R-178–R-185)
 
 **Run lane.** Hold · released runtime and authorised blank project.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Confirm a named before backup for structural work and record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target or recovery point cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
 
 **Work and first check.** Use the accepted Lite scope, native build sheet and trial sheet. With the exact released sb-nav loader and verified integrity, build the local native component with one link tree, plain and styled examples, a workbench and the safe-editing guide. Verify the resulting clone in an actually blank authorised project. Check Navigator classes, Canvas edits and persistence, Desktop/Tablet/both mobile breakpoints, keyboard/focus, no-script links, assets, overflow and Console. Keep Library and Extension out of this work.
 
