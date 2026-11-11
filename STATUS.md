@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — R-268 reached the named test page but not its Designer — Codex (night shift)
+
+**Changed (R-268):** I confirmed that the named published test page loads and shows three menu rows, including the bottom candidate. I made no Webflow changes and did not create a backup.
+
+**Outputs:** The Webflow MCP site list did not include “Disposable SB test site”. Chrome displayed the published page at `https://disposable-sb-test-site.webflow.io/`. A Dashboard navigation attempt timed out after 30 seconds; the resulting Chrome state showed a different Designer named “b545 Smashburger Test”, so I did not use it for this brief. The selected site, saved 0.3.0-rc.1 bottom menu and backup name are now authorised, but the site’s Designer and recovery point remain unconfirmed.
+
+**Checked how:** Called `boss_start`, read the project records and Git state, used Webflow MCP `list_sites`, and opened the exact published URL in a new Google Chrome tab. Its accessibility tree showed three navigation rows and the expected test-site links. I closed the tab I opened. No saved Designer instance, runtime version, backup list, style records or element assignments were checked.
+
+**Still open:** Create `boss · brief #480 · before` in the Designer for Disposable SB test site and confirm it appears in Backups; verify the exact saved bottom-menu instance and candidate runtime; then run the R-268 preflight and controlled test. No site or backup state was changed.
+
+**Needs Michael:** Make the exact test site available to the connected Webflow tools and open its Designer in Chrome; the connected site list does not contain it, and the available Designer tab was a different site.
+
+**Next useful action:** Resume after the exact Disposable SB test site is readable in Webflow MCP and its Designer is open in Chrome. Create and confirm the named before backup before any structural or style change.
+
+**Reviewed at commit:** `c6382b9` — checked the current project record and Git baseline before this access check.
+
 ## 11 November 2026 — Published dark social icon traced — Codex (night shift)
 
 **Changed (R-269):** I measured and inspected the published bottom menu at the reported 667 CSS px width. No Webflow content, styles, assets or colours changed. Michael's acceptance remains as recorded on R-269.
