@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Lite runtime order settled — Codex (night shift)
+
+**Changed (R-183):** Michael chose for the `sb-nav` version to be released before the SmashBurger Lite Webflow component is built. Lite keeps its agreed `sb-nav` classes; it will not be changed to the older v0.2.9 classes.
+
+**Outputs:** The roadmap and decisions now record the release prerequisite and preserve the rule that the unreleased candidate loader must not be installed. This is a sequencing decision, not a release. No Webflow page, component, class, custom code or CMS item changed; no snapshot or backup was made.
+
+**Checked how:** Read the boss inbox for brief #482 and Michael's selected answer, then checked D-011/D-012, D-020, R-183 and the current release route. Confirmed the project still records v0.2.9 as stable and `0.3.0-rc.1` as unreleased. No browser, Webflow or release check was needed or performed.
+
+**Still open:** The separately authorised `sb-nav` release and its exact URL/integrity values. R-183 remains planned; Lite construction and installation wait for that release.
+
+**Needs Michael:** Nothing to decide on this brief; Michael's choice is recorded.
+
+**Next useful action:** Complete the release gates in the authorised release work, then resume R-183 against the released runtime.
+
+**Reviewed at commit:** `2c80d0f` — checked the current project records and Git baseline before this update.
+
 ## 11 November 2026 — R-268 reached the named test page but not its Designer — Codex (night shift)
 
 **Changed (R-268):** I confirmed that the named published test page loads and shows three menu rows, including the bottom candidate. I made no Webflow changes and did not create a backup.

@@ -8,6 +8,9 @@ remaining Proposed choices are recorded here without another boss question.
 ## Current reading — 4 November 2026
 The stable distribution is v0.2.9 and the `0.3.0-rc.1` class-migration candidate remains unreleased. Michael directed that v0.2.9 be brought into `main` and installed on Voice Focus; the shared Library update remains separate. D-017's v0.2.6 baseline is superseded by D-020; the old v0.2.6 tag and its bytes remain immutable.
 
+## Current reading — 11 November 2026
+Michael chose to release the `sb-nav` version before building the SmashBurger Lite Webflow component (D-021). The Lite class direction in D-011/D-012 stays intact; v0.2.9 classes are not substituted. The `0.3.0-rc.1` candidate remains unreleased and its loader must not be installed. This records release order only and grants no authority to publish, tag or release.
+
 ## Current reading — 16 October 2026
 
 SmashBurger, the `sb-nav` structural names and the canonical repository/package/path are settled (D-012/D-013). Their original questions, proposal text and follow-ups below are retained as decision history; they are not current blockers. The class migration exists as an unreleased local candidate (D-017), and both Library review candidates are prepared (D-018). Library sharing, consumer verification and release approval remain open.
@@ -191,3 +194,10 @@ Bring the released v0.2.9 changes into `main` and update Voice Focus to the exac
 **Rationale:** The resize fix and exact-byte CDN loader are now the stable consumer baseline. Advancing the top-level stable artifacts should not discard the separately maintained 0.3 candidate.
 **Source:** Michael's instruction in this chat, 4 November 2026; release record `webflow/v0.2.9-release-verification.md`.
 **Consequence:** The top-level stable distribution and loader are v0.2.9; the v0.2.6 tag and its already-published bytes remain immutable. The 0.3 candidate remains unreleased.
+
+## D-021 - Release sb-nav before building the Lite component
+**Status:** Accepted
+**Date:** 11 November 2026 — Michael in boss, brief #482
+Release the renamed `sb-nav` version first, then build the SmashBurger Lite Webflow component against its matching classes. Keep the accepted Lite structure and class direction from D-011/D-012; do not change it to v0.2.9 classes.
+**Rationale:** The released v0.2.9 runtime uses the older `mwp-css-nav_*` class family, while the agreed Lite design uses `sb-nav` classes.
+**Consequence:** The Lite component and exact-version loader remain gated on a separately authorised release of the `sb-nav` runtime. The unreleased `0.3.0-rc.1` loader must not be installed. This choice itself does not authorise release, tagging, publishing or Webflow changes.

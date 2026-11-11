@@ -33,8 +33,8 @@ The name and canonical destination are settled. The original item wording and da
 
 **Release blocker added 24 October 2026:** Fix runtime CSS overriding Designer layout and appearance, and prove Canvas/Preview/published parity before promoting the combined candidate (R-269). This is separate from ambiguous class targeting (R-268).
 
-3. **Release the renamed version.** Select/promote the verified bytes, generate exact loader/integrity values and verify the real CDN and fallback before release approval. v0.2.6 and old pins remain protected (R-120–R-127).
-4. **Finish Lite.** Turn the local examples/workbench into the editable Webflow component, install the released loader, check a blank-project clone and prepare the public clonable (R-164, R-178–R-186).
+3. **Release the renamed version first.** Select/promote the verified bytes, generate exact loader/integrity values and verify the real CDN and fallback before release approval. v0.2.6 and old pins remain protected (R-120–R-127). Michael selected this as Lite's runtime prerequisite on 11 November 2026 (D-021).
+4. **Finish Lite after that release.** Turn the local examples/workbench into the editable Webflow component using the released `sb-nav` runtime, check a blank-project clone and prepare the public clonable (R-164, R-178–R-186). Do not install the unreleased candidate loader or change Lite to v0.2.9 classes.
 
 Designer Extension / Make local remains deferred until Lite works. Mega-menu and commercial/backend choices remain separate (D-014/D-015). Built work and passing simulated tests do not constitute Michael's acceptance or a released product.
 
@@ -1749,6 +1749,7 @@ Follow-up: the isolated `Unlink Fallback Isolation` route also contains a native
 **Instruction integrity — brief #421, 10 November 2026:** `npm run check:lite` checks that the safe-editing guide and native build sheet state the unreleased loader is not installable and do not present it as an installation step. No loader was installed and no Webflow component was created.
 **Resilient preflight — brief #446, 10 November 2026:** The seven-file check continues to name unreleased-loader misuse and retains the explicit warning. Missing-file failures now remain inside the per-file report instead of aborting startup.
 **Exit-criterion map — brief #431, 10 November 2026:** Local evidence is limited to source/build preparation and the [integrity gate](scripts/check-lite-integrity.mjs), which checks that instructions do not present the unreleased candidate as installable. It does not verify any installed Embed, exact released URL, integrity value or Canvas clarity. R-183 remains **planned** because its build prerequisite is unmet; `Evidence: verified (local)` refers only to that bounded instruction-integrity check, not completion of the exit criterion. **Next local step:** none can produce the required released URL or hash before release. **Prerequisite:** Michael-authorised release of the `sb-nav` runtime, then select its exact version and generate/check the pinned loader before Webflow construction.
+**Release order — brief #482, 11 November 2026:** Michael chose release of the `sb-nav` runtime before Lite component construction; see accepted D-021. This does not authorise release or installation of the unreleased loader. R-183 remains planned until the separately authorised release supplies the exact released URL and integrity value.
 
 
 **Scheduling — 31 October 2026:** Deferred dependency work, not an immediate request for Michael. The runtime/test-site prerequisites remain unmet; resume at the gate recorded in the Boss attention cleanup. Evidence and Acceptance are unchanged.
