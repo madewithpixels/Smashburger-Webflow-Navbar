@@ -1,5 +1,26 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Single-menu short-height check completed — Codex (night shift)
+
+**Changed (R-269):** The standalone Full-width menu scrolls internally at 471 × 500 CSS px, and its links fit without scrolling at 471 × 900 CSS px. No reproducible failure appeared, so no CSS fix was opened.
+
+**Outputs:** Opened `file:///Users/michaelauty/Work%20on%20MacStudio/Smashburger-Webflow-Navbar/webflow/fixtures/full-width-short-height.html` in Google Chrome. The page loaded the checked-in candidate `0.3.0-rc.1` assets from the clean local baseline `6246bea77ffdae1a374251bff7ca684400de0c2d`: `candidate/dist/navbar-light.css` SHA-256 `22ff5988ce1144dff4eef02b3f25abf3394f84660d4344f7cecb5dd6f8c8af7c`; `candidate/dist/navbar-light.js` SHA-256 `af03d79ba1495e8f109b2b84860d4e317e6bda7c9a50847a1447460d9e663ca7`. The fixture has one Full-width menu and presets off.
+
+- At **471 × 500**, the open panel bounds were x=0, y=56, width=471, height=428 CSS px (bottom=484). `clientHeight` was 428 and `scrollHeight` was 480, with `overflow-y: auto`. A wheel over the panel moved its own `scrollTop` from 0 to 52 while page `scrollY` stayed 0. Tab reached Contact us; the visible focus indicator moved with the final link into view. Enter activated it, closed the menu and changed the URL fragment to `#contact`.
+- At **471 × 900**, the panel bounds were x=0, y=56, width=471, height=480 CSS px (bottom=536). `clientHeight` and `scrollHeight` were both 480; `overflow-y` was `auto` and `scrollTop` was 0. The entire link list fit. Tab reached Contact us with a visible focus indicator. Enter activated it, closed the menu and changed the URL fragment to `#contact`.
+- The screenshot evidence was observed in Chrome at both responsive sizes, with Contact us focused at each size. No screenshot file was saved. Geometry and scroll values were read in Chrome DevTools. The browser was Google Chrome; its version was not recorded.
+- Compared with the different published test page observed on 10 November: that page was 667 CSS px wide with three stacked instances and an open bottom menu. Its viewport height was not read. All bottom-menu links were exposed, while parts of the upper rows were obscured by the other stacked menus; no per-menu scroll values or Contact us activation were tested there. That stacked-page observation does not contradict the single-menu result.
+
+**Checked how:** Followed `webflow/fixtures/full-width-short-height-use.md`; opened only the named local fixture in the authorised Chrome app. Used the responsive viewport controls for the two specified CSS sizes, read panel geometry and computed overflow in DevTools, wheeled over the open panel, tabbed from Menu to Contact us, checked the visible focus state and activated the link. The URL fragment confirmed the destination at both sizes. Compared only with the 10 November record in `webflow/r269-published-667-comparison-2026-11-10.md`. No Webflow page or project was opened or changed. This is local-fixture evidence, not Designer, Preview or published-page evidence. The exact Chrome version was not checked.
+
+**Still open:** R-269's Designer, Preview and published comparisons across layouts, authored styles, breakpoints and short heights remain open. This fixture covers one local Full-width menu only. Michael's acceptance remains unchanged.
+
+**Needs Michael:** Nothing for this local check.
+
+**Next useful action:** Continue the separately authorised R-269 site comparisons; use this result only as evidence for the single-menu local short-height case.
+
+**Reviewed at commit:** `6246bea` — checked the project records and clean local baseline before the fixture observation.
+
 ## 10 November 2026 — Lite build held at runtime and blank-project gates — Codex (night shift)
 
 **Changed (R-178–R-185):** No Webflow project, component or page was read or changed. The native Lite build and clone trial remain on hold.
