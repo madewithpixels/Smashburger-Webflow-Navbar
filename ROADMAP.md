@@ -1113,8 +1113,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Source:** Michael's task #43612352 in the Boss inbox, 3 November 2026; title retained as given there.
 **Evidence:** The Voice Focus trigger fades over 180 ms while its panel takes 280 ms to close. The madewithpixels trigger changes colour with no fade while its configured panel close is 220 ms. No trigger size change was found in the inspected rules. Only the stated 511 px and 2044 px widths were checked; see [browser evidence and limits](webflow/evidence/r270-r271-v027-2026-11-04.md).
 
-#### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js):
-**State:** built · **Evidence:** verified (live) · **Acceptance:** pending
+#### R-271 · Bug in Webflow-Navbar-Light (v0.2.6, navbar-light.min.js): *(accepted by Michael in boss, 11 Nov 2026)*
+**State:** built · **Evidence:** verified (live) · **Acceptance:** accepted (11 November 2026)
 **Try:** On the Voice Focus and madewithpixels staging pages, open the menu and resize the window without crossing its desktop/mobile layout change; it should stay open. Then cross that change and check the layout switches, and that Escape, a second click on the menu button and a menu link each close it (R-271).
 **Covers:** R-125
 **Owner:** agent

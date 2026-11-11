@@ -3917,3 +3917,8 @@ Written in from the Needs you queue on boss's Agents page. The verdicts are Mich
 **Next useful action:** Continue the roadmap's separately ordered prerequisites. Keep release and live checks distinct from this local evidence.
 
 **Reviewed at commit:** 9acbd18 — checked the current project record, release gate and clean-clone results before adding the runbook.
+
+## 11 November 2026, 13:22 — boss runner *(Michael's verdicts, R-092)*
+Written in from the Needs you queue on boss's Agents page. The verdicts are Michael's; the runner only records them.
+- 11 November 2026 — Accepted by Michael in boss: R-271 (checked: not stated)
+
