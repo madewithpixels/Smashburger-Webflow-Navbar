@@ -1,5 +1,17 @@
 # R-269 dark social and contact icons — local source trace
 
+## Brief #499 follow-up — Facebook SVG and candidate declarations (11 November 2026)
+
+**Exact published asset URL from the prior R-269 record:** `https://cdn.prod.website-files.com/6aeb2f272edef7503d4839ad/6aeb43cfc5919a84d5a1d6b4_e4e9a2173656a39df687e7c0dd6335db_Navbar%20Light%20%E2%80%94%20facebook%20icon.svg` (STATUS, “Published dark social icon traced”). This URL points to a Webflow-hosted SVG, but its response bytes are not present in this checkout; no network fetch was made for this follow-up.
+
+The preceding 11 November STATUS entry (“Dark Facebook icon traced to the image file — Claude”) records that its page fetch returned an SVG containing one `<path>` without an explicit `fill`, which was reported to render in the default black. That is a prior browser observation, not a fresh local inspection of the SVG source. The 10 November published trace correctly records the path fill as not exposed by its page read. The local repo therefore cannot independently establish the exact asset path/fill; the two historical notes are evidence of prior inspection, not a checked-in asset source.
+
+**Candidate declarations:** `src/navbar-light.css` lines 531–541 clips each secondary link and shifts its image while painting a `drop-shadow(... currentColor)` silhouette, but the selector excludes `[data-presets="false" i]` and roots opting into `data-icon-mode="original"`. No candidate rule supplies a light replacement fill in presets-off mode. The same relevant rule is present in `candidate/dist/navbar-light.css` lines 422–429. Thus, if the published instance uses this candidate CSS and has the recorded `data-presets="False"`, the candidate does not recolour the image; a black source path can explain the dark appearance. This is a source-based explanation, not proof that the prior fetched asset bytes or candidate CSS were the bytes rendered by the current Webflow page.
+
+The checkout contains no file named for the exact published Facebook asset or its asset ID. A separate baseline JSON records a different Facebook asset ID (`6a7cf64c75497f55ff504577`) and no SVG bytes, so it cannot be treated as the same asset. No saved Style-panel declarations for the exact published image are available locally. Whether a page-authored filter, opacity, or other image setting also affects it remains unknown without read-only Style-panel access. No repair is proposed.
+
+**Limits/checks:** Read-only search of local records and candidate files only. No browser, Webflow, network, tests or asset/style edits. The earlier published computed-style report recorded `filter: none`, but this follow-up did not reproduce that check.
+
 **Finding:** In the current candidate, `data-presets="false"` disables the CSS treatment that recolours the native social/contact image icons to match their link text. The images are therefore left to display their own source colours (and any authored image styling). This is the concrete local mechanism that can explain dark icons in presets-off mode. It is not a verified finding about the exact pixels in the supplied Preview screenshot because the checked-in evidence does not contain the actual image files or their decoded fills.
 
 ## What the local files establish

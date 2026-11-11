@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Local Facebook icon source trace completed — Codex (night shift)
+
+**Changed (R-269):** I traced the exact published Facebook asset URL from the earlier R-269 record against the local candidate CSS and repository files. No site, asset or style was changed.
+
+**Outputs:** The exact asset is hosted on Webflow and its SVG bytes are absent from this checkout. A prior 11 November STATUS report says a browser fetch found one path without an explicit fill, reported as default black; this is historical browser evidence, not a local source read, and the earlier published trace had not exposed the SVG's internal fill. The candidate CSS paints secondary image silhouettes in link `currentColor` only when presets are on (and original-icon mode is off). The recorded published instance has presets off, so this candidate recolouring rule would not apply; if that prior SVG finding is accurate, its black path can explain the dark appearance. The same relevant rule exists in the checked-in built candidate CSS. No matching local asset file or exact published image's saved Style-panel declarations were found. The local source therefore supports a plausible explanation but cannot confirm the image's actual bytes, authored image settings or rendered cause.
+
+**Checked how:** Read the prior STATUS and ROADMAP R-269 findings; searched local asset/evidence references; read the source and candidate CSS declarations. No browser, Webflow, network, tests or asset/style edits.
+
+**Still open:** Independent inspection of the exact SVG bytes and the selected image's saved Style-panel declarations. These are unavailable in the local checkout; no repair is proposed.
+
+**Needs Michael:** Nothing for this bounded evidence trace.
+
+**Next useful action:** In a separately authorised read-only Webflow session, inspect the selected Facebook Image's Style panel and compare its saved styles with the exact asset source before deciding whether any visual change is needed.
+
+**Reviewed at commit:** `aab4a00` — checked the project record and clean working-tree baseline before this update.
+
 ## 11 November 2026 — Short-height scroll difference narrowed, cause unresolved — Codex (night shift)
 
 **Changed (R-269, R-155):** I compared the local Full-width fixture and candidate files with the published-page measurements already recorded. I found no supported candidate-code correction, so I made no runtime or asset changes.
