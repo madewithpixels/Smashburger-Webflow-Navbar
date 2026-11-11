@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 10 November 2026 — Lite build held at runtime and blank-project gates — Codex (night shift)
+
+**Changed (R-178–R-185):** No Webflow project, component or page was read or changed. The native Lite build and clone trial remain on hold.
+
+**Outputs:** The local Lite integrity check passed for all seven prepared files. The released v0.2.9 runtime uses the older class family; the matching `sb-nav` loader remains an unreleased candidate and is not installable. Asked Michael to choose the runtime direction and name the blank test project and authorised recovery point. No backup or snapshot was made.
+
+**Checked how:** Ran `npm run check:lite`; inspected the maintained runtime selectors, Lite build/trial sheets, accepted scope and release record. These are local checks only. No Webflow site or Chrome page was opened.
+
+**Still open:** A released runtime matching the chosen Lite class family; a named, confirmed blank project and recovery point; native component construction; separate build and blank-project observed evidence; Canvas, breakpoint, keyboard/focus, no-script, asset, overflow and Console checks.
+
+**Needs Michael:** Choose whether Lite waits for a released `sb-nav` runtime or changes to the existing v0.2.9 classes; name the exact blank project and authorised recovery point. The brief's instruction not to make or record a backup conflicts with its structural-work gate requiring a named before backup.
+
+**Next useful action:** Resume after Michael's replies and after a compatible released runtime is available; then confirm the named project and its recovery point before any structural change.
+
+**Reviewed at commit:** `b68c8e3` — checked the current project record and local Lite integrity/runtime boundary for brief #458.
+
 ## 10 November 2026 — R-268 held for exact site and recovery authority — Codex (night shift)
 
 **Changed (R-268):** No Webflow site or style record was read or changed. The test remains on hold because this brief does not identify the exact disposable site, menu/runtime or permitted recovery point.
