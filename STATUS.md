@@ -1,5 +1,25 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Published dark social icon traced — Codex (night shift)
+
+**Changed (R-269):** I measured and inspected the published bottom menu at the reported 667 CSS px width. No Webflow content, styles, assets or colours changed. Michael's acceptance remains as recorded on R-269.
+
+**Outputs:** On `https://disposable-sb-test-site.webflow.io/` (Home; Webflow page revision not exposed), the third `header.mwp-component-library--sb-nav` is the bottom candidate. It has `data-layout="full-width"`, `data-presets="False"` and variant `mobile-landscape`. Its panel is `.mwp-component-library--sb-nav-panel`; content includes Home, CDN build, Self-hosted, Style guide, More, VIEW RELEASE, Facebook, Instagram, LinkedIn, TikTok, Threads, X, WhatsApp, Telephone and Email.
+
+The Facebook link uses an external 150 × 150 SVG: `https://cdn.prod.website-files.com/6aeb2f272edef7503d4839ad/6aeb43cfc5919a84d5a1d6b4_e4e9a2173656a39df687e7c0dd6335db_Navbar%20Light%20%E2%80%94%20facebook%20icon.svg`. In the open panel its image `filter` is `none`, its computed `fill` is black, its inherited `color` is `rgb(237, 243, 238)`, opacity is 1 and it has no inline style. The SVG's internal path fill was not exposed, so the computed `fill` on the `<img>` does not establish the SVG file's own fill. The panel background is transparent over a root background of `rgb(11, 14, 12)`. The `.mwp-component-library--sb-nav-cta` VIEW RELEASE control has pale text and border (`rgb(237, 243, 238)`) and a transparent background. The screenshot showed the Facebook icon nearly black against that panel, while the CTA remained legible. This rules out a computed image filter as the darkening source, but not a fill inside the external SVG or another authored rule.
+
+The page loaded CSS and JavaScript from the candidate at commit `58e09a204a94156aa2a15f8107d30949560a24d8` (`candidate/dist/navbar-light.css` and `.js`). The measured responsive viewport was 667 × 900 CSS px at DPR 2; `innerWidth` and `innerHeight` read 667 and 900. Google Chrome desktop was used with DevTools Responsive mode. The actual desktop Chrome version was not read; the emulated page user agent reported Android 16 / Pixel 10 / Chrome 157.0.0.0. No Webflow page revision was visible. No screenshot file was saved.
+
+**Checked how:** Opened only the named published Home page in a new Chrome tab, used DevTools Responsive controls, opened the bottom MENU trigger, compared its Facebook image with VIEW RELEASE, and read page attributes, image URL, computed styles and loaded resource URLs in the DevTools Console. The initial viewport screenshot showed three expanded desktop rows; at the measured viewport all three were collapsed before I opened the bottom row. One read-only inspection expression initially failed because its text-based CTA lookup found no match; I used the CTA's exact class selector for the successful read. This was an inspector query error, not a page edit. I closed the tab I opened and returned to the pre-existing Chrome tab.
+
+**Still open:** The external SVG's own path/fill markup and the selected image's authored Webflow Style-panel rules are not available from this page read. Those are the exact remaining data needed to confirm whether the SVG itself is dark or an authored rule changes its appearance. No repair path is proposed from the available evidence. The published page revision and actual desktop Chrome version were not exposed.
+
+**Needs Michael:** Nothing for this bounded observation.
+
+**Next useful action:** Use the asset's SVG markup and the selected image's saved Style-panel declarations in a separately authorised read-only comparison before proposing a repair.
+
+**Reviewed at commit:** `8b5cf38` — checked the current project record and Git baseline before this browser observation.
+
 ## 11 November 2026 — Both consumer resize checks recorded — Codex (night shift)
 
 **Changed (R-271):** Verified the released menu resize fix on both named consumer staging homepages. No Webflow content or settings changed. Michael's acceptance remains pending, and the release order is unchanged.
