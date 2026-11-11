@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Short-height scroll difference narrowed, cause unresolved — Codex (night shift)
+
+**Changed (R-269, R-155):** I compared the local Full-width fixture and candidate files with the published-page measurements already recorded. I found no supported candidate-code correction, so I made no runtime or asset changes.
+
+**Outputs:** The local fixture has one menu root, one details/summary trigger and one panel with ten vertically stacked links. Its inline page styles set panel link padding and page-header styling; candidate CSS and JavaScript are loaded from checked-in local paths. The published page had three stacked menu roots, with the bottom Full-width menu opened. At 471 × 400, its panel was below the viewport and the recorded scroll area measured 298 px for both content and visible height; wheel input did not move it. The existing fixture check instead measured 471 × 500 and 471 × 900, and passed there. It did not test 471 × 400.
+
+The maintained candidate CSS gives collapsed panels `overflow-y: auto` and `max-height: calc(100dvh - var(--mwp-nav-header-height, 4.5rem))`; Full-width repeats that maximum. The candidate JavaScript has no panel scroll sizing or scrolling operation. The local candidate CSS and JavaScript hashes exactly match the assets recorded as loaded by the published check. The local fixture and published failure therefore share the same candidate assets, but differ in page structure and page-authored styling. The 11 November published record does not contain the 471 × 400 panel's computed maximum height, full measured box/parent geometry, or the authored style rules that could explain why its content and visible heights were equal. The specific local cause remains unresolved; changing candidate source without those measurements would be speculative.
+
+**Checked how:** Read the existing fixture, its usage record, maintained CSS and JavaScript, the 11 November published measurements, and ROADMAP R-269; compared SHA-256 hashes of local candidate assets with the locally available pinned candidate commit. No browser, Webflow, external page, network or test suite was used.
+
+**Still open:** Explain why the published panel had no internal overflow at 471 × 400, and whether the cause lies in its saved markup/styles or rendered layout. No correction or regression test was justified by the available evidence. This is a source comparison, not new browser verification.
+
+**Needs Michael:** Nothing for this local investigation.
+
+**Next useful action:** In a separately authorised browser check, record the published panel's computed max-height, dimensions, scrollHeight/clientHeight, containing-block geometry and relevant authored rules at 471 × 400, then compare the same measurements in the single-menu fixture at that exact size.
+
+**Reviewed at commit:** `3662dca` — checked the current project record and clean Git baseline before this update.
+
 ## 11 November 2026 — Dark Facebook icon traced to the image file — Claude (night shift)
 
 **Changed (R-269):** Nothing in Webflow or the repo's code. Read-only checks of the published Home page and the saved Webflow styles. I made no backup, no publish, no snapshot (nothing changed).
