@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Designer style readback confirmed; reader still omits Disposable site — Codex (night shift)
+
+**Changed (R-268):** I clarified that the five named disposable test sites do not require a before backup, and linked R-268 to that decision. I made no Webflow change tonight and did not publish.
+
+**Outputs:** In the exact Disposable SB test site Designer on Home, the Navigator shows the two linked menu roots `mwp-css-nav` and `mwp-css-nav 2` above the separate unlinked `sb-nav` root. The bottom `sb-nav-panel` has the local class `sb-nav-panel`, four selectors, Flex layout, and a 0.25rem gap. Its saved value matches the previous run's readback after reopening Designer. The previous run records the before panel as `mwp-css-nav_panel 2` with a 0.125rem gap; after unlinking it records the local `sb-nav-panel` gap changed to 0.25rem and surviving Designer reload. I did not repeat that saved edit.
+
+**Checked how:** Opened `https://disposable-sb-test-site.design.webflow.com/` in the signed-in Google Chrome desktop app, selected the bottom menu in Navigator, expanded its descendants, and read the selected panel's Style panel. The Webflow reader still returns 16 other sites and omits Disposable SB test site; a page read rejects the site ID. This prevents stable style-ID/origin comparison and the requested before/after Webflow exports. I did not create empty snapshots. No other site was opened or changed. No backup was made or awaited.
+
+**Still open:** R-268's stable-ID/origin comparison, linked-sibling and imported-style non-change proof, deterministic agent write-route or unique-name route, normal/hover/focus/breakpoint comparisons, Preview desktop/mobile geometry and keyboard checks, recovery evidence, supported workflow documentation, and MCP exports remain incomplete. Interactions and animations are not available in the requested snapshots. The site remains unpublished.
+
+**Needs Michael:** Restore read-only Webflow reader access to Disposable SB test site so the remaining style-record comparisons and exports can be completed. This is the same reader-access blocker already recorded in the previous run.
+
+**Next useful action:** When the site appears in the Webflow reader's site list, continue the R-268 identity and recovery checks on Home and the bottom unlinked `sb-nav` menu. Do not publish.
+
+**Reviewed at commit:** `c049717` — checked the current project record and clean local baseline before this update.
+
 ## 11 November 2026 — R-268 reopened for the remaining identity checks — Codex (night shift)
 
 **Changed (R-268):** I set the roadmap item to planned, reflecting that the backup condition is removed and work can resume when the required style records are available. I made no Webflow edits and did not publish.

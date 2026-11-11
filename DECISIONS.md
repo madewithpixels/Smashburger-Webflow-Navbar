@@ -210,3 +210,12 @@ Release the renamed `sb-nav` version first, then build the SmashBurger Lite Webf
 Backups are not required before work on Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB Unlink Clean Trial or Griddle Native Test. Do not make or wait for a backup on these sites as a condition for an authorised test. This supersedes any earlier project backup gate for work on these five sites; it does not change backup rules for any other site.
 **Rationale:** Michael has repeatedly set these disposable sites outside the backup requirement. Waiting for backup creation would block the test without applying his current policy.
 **Consequence:** Work on a named site may proceed within its separate access and scope authority. Record before state where the brief asks; do not publish or change another site without explicit authority.
+
+## D-023 - Remove the before-backup gate for the five disposable test sites
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss D-114 and repeated on 11 November 2026
+**Date:** 11 November 2026
+**Source:** Michael's boss setting D-114 and his instruction for brief #531.
+For Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB Unlink Clean Trial and Griddle Native Test, do not require, make, confirm or wait for a before backup as a condition of authorised work. This supersedes the earlier project before-backup gate for these five sites. It does not change the backup rules for any other site or grant authority to publish or make changes outside a brief's stated scope. D-022 remains the earlier record of this same site-specific policy.
+**Rationale:** Michael has set these named sites outside the backup requirement. A stalled backup must not prevent an authorised test there.
+**Consequence:** Record the requested before state by reading it, then proceed only within the brief's scope. Keep each site's access, publication and change limits in force.
