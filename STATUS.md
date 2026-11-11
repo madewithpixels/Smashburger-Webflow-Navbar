@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 11 November 2026 — R-268 reopened for the remaining identity checks — Codex (night shift)
+
+**Changed (R-268):** I set the roadmap item to planned, reflecting that the backup condition is removed and work can resume when the required style records are available. I made no Webflow edits and did not publish.
+
+**Outputs:** Chrome opened the exact Designer for Disposable SB test site on Home. The Navigator showed the two linked roots `mwp-css-nav` and `mwp-css-nav 2`, plus the bottom unlinked `sb-nav` root. I selected `sb-nav-inner`; its Style panel showed Flex and a 0.75rem gap. The prior committed Designer check records the bottom panel's before classes and declarations, its local 0.25rem gap change after unlinking, and that value surviving a Designer reload. I did not repeat that saved change.
+
+**Checked how:** Opened `https://disposable-sb-test-site.design.webflow.com/` through the signed-in Google Chrome app and read the Home canvas, Navigator and Style panel. The Webflow MCP site list again returned 16 sites and omitted Disposable SB test site, so stable style IDs, origins, exact before/after declarations through the reader, and the requested export files were unavailable. No other site was opened or changed.
+
+**Still open:** The stable-ID comparison of local/imported records and the linked sibling; a deterministic agent write or unique-name route; normal, hover/focus and breakpoint comparisons; Preview desktop/mobile geometry and keyboard checks; recovery evidence; and the supported workflow documentation. The saved Designer gap readback does not complete R-268's full exit criteria. No before/after MCP exports were created.
+
+**Needs Michael:** Restore read-only Webflow reader access to Disposable SB test site so the remaining R-268 record comparisons and exports can be completed.
+
+**Next useful action:** When Disposable SB test site appears in the Webflow MCP site list, continue the R-268 identity and recovery checks on its Home page and bottom unlinked `sb-nav` menu; do not publish.
+
+**Reviewed at commit:** 43dcc3e — checked project records and the clean Git baseline before this update.
+
 ## 11 November 2026 — Unlinked candidate style survived reload on Disposable SB test site — Codex (night shift)
 
 **Changed (R-268):** I unlinked the bottom `SmashBurger 0.3.0-rc.1 candidate` menu on the Home page in Disposable SB test site. In Designer, its root became a regular `sb-nav` element. I changed only its local `sb-nav-panel` Flex gap from 0.125rem to 0.25rem. I did not publish.
