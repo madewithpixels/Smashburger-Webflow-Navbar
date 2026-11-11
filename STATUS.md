@@ -1,5 +1,28 @@
 # SmashBurger — Status
 
+## 11 November 2026 — Published keyboard, motion and fallback check — Codex (night shift)
+
+**Changed (R-269, R-155):** I checked the published Home page on Disposable SB test site. I did not change the Webflow page, component, styles, CMS, custom code, or publication, and I did not make a backup. I temporarily blocked the candidate script in Chrome, then removed that browser rule and reloaded the page. I did not change the saved Embed.
+
+**Outputs:**
+- **Published page:** At 667 × 900 CSS px (DPR 2), the bottom third menu is the Full-width candidate with `data-presets="False"`. Its loaded runtime is the candidate JavaScript pinned to commit `58e09a204a94156aa2a15f8107d30949560a24d8`.
+- **Keyboard:** Real Tab moved through the three brand links and triggers in order. Focus was visible on the candidate trigger. Space opened the outer menu, Tab reached Home, and Space opened More. Escape closed More and returned focus to its trigger; a second Escape closed the outer menu and returned focus to the candidate trigger.
+- **Reduced motion:** With Chrome emulating `prefers-reduced-motion: reduce`, the open panel's computed transition duration was 0.00001 seconds, compared with 0.28 seconds without emulation. This is computed timing evidence, not a motion recording.
+- **Quick reversal:** After restoring the runtime, a rapid click-and-Space reversal on the candidate trigger left the menu closed, with focus on the trigger.
+- **Short-height scroll:** At 471 × 400 CSS px, the open Full-width panel extended below the viewport. Its scroll area had equal content and visible heights (298 px); wheel input over the panel did not move it. The social and contact links were below the visible viewport. **Fail: the published candidate did not scroll its panel at this short height.**
+- **No-script fallback:** Chrome confirmed that the exact candidate script request was blocked. Space still opened native Details, and the menu links appeared in the accessibility tree. The temporary block rule was removed before reload.
+- **Preview:** Not checked. I only opened the published staging page in this run, so there is no Preview evidence here.
+
+**Checked how:** Used the signed-in Google Chrome desktop app and its Responsive viewport on `https://disposable-sb-test-site.webflow.io/`. Read the exact candidate's layout, presets value, script URL and computed panel timing in Chrome DevTools. Used real keyboard input for menu opening, Tab and Escape. Read the DevTools console's blocked-request warning and confirmed links remained available with the script blocked. I closed the staging tab I opened. No other tabs were closed.
+
+**Still open:** The short-height scroll failure needs investigation in a separately authorised follow-up. Preview keyboard, motion and no-script behavior remain unverified. The VIEW RELEASE link pointed outside the named test site, so I did not activate it. Physical-device and assistive-technology checks remain separate.
+
+**Needs Michael:** Nothing to decide for this browser check.
+
+**Next useful action:** Check the same saved candidate in Preview, and investigate the published panel clipping at 471 × 400 before treating scroll containment as passing.
+
+**Reviewed at commit:** `33ef7ce` — checked current project records and Git baseline before this entry.
+
 ## 11 November 2026 — Correct Designer opened; backup creation stalled — Codex (night shift)
 
 **Changed (R-268):** I opened the exact Disposable SB test site Designer in Chrome and started the named before backup. Webflow never completed it, so I made no menu or style changes.
