@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 12 November 2026 — Unlinked panel style change survived reload — Codex (night shift)
+
+**Changed (R-268):** On Disposable SB test site's Home page, I changed only the bottom unlinked menu's local `sb-nav-panel` Flex gap from 0.625rem to 0.75rem. I did not publish or change another site.
+
+**Outputs:** Before the change, the Navigator showed linked roots `mwp-css-nav` and `mwp-css-nav 2`, and a separate bottom `sb-nav` root. Selecting the bottom menu's `sb-nav-panel` showed a local class with four selectors, Flex layout, 0.625rem gap, 0.25rem top/bottom padding, approximately 0.2rem left/right padding and 0.75rem radius. After changing the gap and reloading Designer, the same local panel showed 0.75rem.
+
+**Checked how:** Used signed-in Google Chrome at `https://disposable-sb-test-site.design.webflow.com/`, Home → Navigator → bottom `sb-nav` → `sb-nav-inner` → `sb-nav-panel`. Read the local style before changing it and again after a Designer reload. The Webflow MCP site list returned 16 sites and omitted Disposable SB test site, so stable style IDs and the requested before/after snapshots could not be exported. Interactions and animations are not included in the snapshot format. I did not publish or change another site.
+
+**Still open:** The imported style record and linked sibling have not been compared by stable ID. I have not proved a deterministic agent write route, checked the remaining normal/hover/focus/breakpoint styles, Preview geometry or keyboard behaviour, or documented recovery evidence. This check proves only that a local Designer style change survived reload.
+
+**Needs Michael:** Nothing for this bounded Designer check. The Webflow reader must include Disposable SB test site before the remaining stable-ID comparison and snapshot exports can be completed.
+
+**Next useful action:** When the reader includes Disposable SB test site, continue the stable-ID comparison on Home and the bottom unlinked `sb-nav` menu. Do not publish.
+
+**Reviewed at commit:** `8d019ec` — checked the project records and Git baseline before this Designer check.
+
 ## 12 November 2026 — Single-menu fixture reaches Contact us at 471 × 400 — Codex (night shift)
 
 **Changed (R-269, R-155):** I opened the checked-in single-menu fixture in Chrome and checked it at an actual 471 × 400 CSS-pixel responsive viewport. No source, site, asset or published content was changed.
