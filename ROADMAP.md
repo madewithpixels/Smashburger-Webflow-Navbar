@@ -1078,6 +1078,8 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 
 **Candidate release pack — 10 November 2026, brief #430:** [Current local candidate inventory, hashes, gate results and separate approval/live checks](webflow/candidate-release-evidence-pack-2026-11-10.md). The pack does not complete the class migration or release.
 
+**Refreshed local candidate evidence — 12 November 2026, brief #564:** [Exact checked commit, current candidate inventory and hashes, release-gate results and evidence limits](webflow/candidate-release-evidence-pack-2026-11-12.md). This supersedes the earlier pack as a current local snapshot; it does not alter the release or Webflow gates.
+
 
 #### R-122 · Audit non-class public hooks separately during the rename. The 2026-10-14 audit records the class-only boundary and retained runtime attributes, custom properties, JavaScript APIs/events, diagnostics and variant markers. See `webflow/class-namespace-migration-audit.md`.
 **State:** built · **Evidence:** verified (local) · **Acceptance:** n/a (step — covered by R-267)

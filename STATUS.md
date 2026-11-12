@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 12 November 2026 — Local 0.3 evidence pack refreshed — Codex (night shift)
+
+**Changed (R-121, R-125, R-272):** I refreshed the local evidence for the unreleased 0.3 candidate. It identifies the exact checked candidate and keeps its local test results separate from release and Webflow checks.
+
+**Outputs:** The fresh record lists all 19 current candidate files and their SHA-256 hashes. It links the 10 November record as historical. The checker passed 695 tests, with 15 expected TODO cases and no failures. The stable v0.2.9 files and pins remain untouched.
+
+**Checked how:** Ran `npm run check:release` on `main` at `1437345a5ef22e14339028d66aacac70c41d60fc`. Candidate rebuild and protected release checks passed. The Library CSS diagnostic notes a trailing-whitespace-only byte difference. This is local automated evidence, not release approval, CDN delivery, browser behaviour or Webflow verification.
+
+**Still open:** Release selection and promotion, Library sharing and consumer checks, Webflow rendering, rollback, hosted/CDN verification and Michael's review remain separate.
+
+**Needs Michael:** Nothing for this local evidence update.
+
+**Next useful action:** Use the refreshed local pack as the candidate baseline for separately authorised review; do not treat it as release or Webflow verification.
+
+**Reviewed at commit:** `1437345` — exact commit checked by the release-candidate gate.
+
 ## 12 November 2026 — Unlinked panel style change survived reload — Codex (night shift)
 
 **Changed (R-268):** On Disposable SB test site's Home page, I changed only the bottom unlinked menu's local `sb-nav-panel` Flex gap from 0.625rem to 0.75rem. I did not publish or change another site.
