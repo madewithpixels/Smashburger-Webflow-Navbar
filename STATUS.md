@@ -1,5 +1,69 @@
 # SmashBurger — Status
 
+## 12 November 2026 — Unlinked panel style survived another Designer reload — Codex (night shift)
+
+**Changed (R-268):** On Disposable SB test site's Home page, I changed only the bottom unlinked `sb-nav-panel` local Flex gap from 0.5rem to 0.625rem. I did not publish or change another site.
+
+**Outputs:** Before the change, the Navigator showed linked roots `mwp-css-nav` and `mwp-css-nav 2`, plus a separate `sb-nav` root. The selected bottom panel used the local `sb-nav-panel` class with four selectors. Its Style panel showed a 0.5rem Flex gap, 0.25rem top/bottom padding, approximately 0.2rem left/right padding, transparent background and 0.75rem radius. After the change and a Designer reload, the same panel showed a 0.625rem gap.
+
+**Checked how:** In signed-in Google Chrome at `https://disposable-sb-test-site.design.webflow.com/`, I selected Home → Navigator → bottom `sb-nav` → `sb-nav-inner` → `sb-nav-panel`, read the before values, changed the local gap, reloaded Designer, then selected the panel again and read 0.625rem. No backup was made or awaited. The Webflow MCP site list returned 16 other sites and omitted Disposable SB test site. Stable style IDs and the requested before/after snapshots could not be exported. The snapshot format also omits interactions and animations.
+
+**Still open:** The imported style records and linked sibling have not been compared by stable ID. I have not proved a deterministic agent write route, checked the remaining normal/hover/focus/breakpoint styles, Preview geometry or keyboard behaviour, or documented recovery evidence. This check proves only that the local Designer style change survived reload.
+
+**Needs Michael:** Restore read-only Webflow style-reader access to Disposable SB test site so stable record comparisons and the requested snapshots can be completed.
+
+**Next useful action:** When the named site is available to the Webflow style reader, continue the stable-ID comparison on the same Home page and bottom unlinked `sb-nav` menu. Do not publish.
+
+**Reviewed at commit:** `1a0ec44` — checked the current project record and Designer baseline before this update.
+
+## 12 November 2026 — Unlinked local style survived a fresh Designer reload — Codex (night shift)
+
+**Changed (R-268):** On Disposable SB test site's Home page, I changed only the bottom unlinked menu's local `sb-nav-panel` Flex gap from 0.375rem to 0.5rem. I did not publish or change another site.
+
+**Outputs:** Before the change, I read the selected panel's `sb-nav-panel` class and four selectors. It showed a 0.375rem Flex gap, 0.25rem top/bottom padding, approximately 0.2rem left/right padding, transparent background and 0.75rem radius. The Navigator showed two linked menu roots (`mwp-css-nav` and `mwp-css-nav 2`) and a separate `sb-nav` root with local `sb-nav-inner` and `sb-nav-panel` descendants. After changing the gap, I reloaded Designer, reopened the bottom panel and read 0.5rem; it survived reload.
+
+**Checked how:** Used signed-in Google Chrome at `https://disposable-sb-test-site.design.webflow.com/`, Home → Navigator → bottom `sb-nav` → `sb-nav-inner` → `sb-nav-panel`. No backup was made or awaited. The Webflow reader still lists 16 other sites and omits Disposable SB test site, so I could not read stable style IDs or export before/after snapshots. No snapshot files were created. The snapshot format also omits interactions and animations.
+
+**Still open:** The imported style records and linked sibling have not been compared by stable ID. The deterministic write route, remaining normal/hover/focus/breakpoint styles, Preview geometry and keyboard checks, recovery evidence and supported workflow documentation remain open. This Designer edit proves only that the local panel gap change survived reload.
+
+**Needs Michael:** Restore read-only Webflow style-reader access to Disposable SB test site so the record comparison and exports can be completed.
+
+**Next useful action:** After the reader includes Disposable SB test site, continue the style-record comparison on the same Home page and bottom unlinked menu. Do not publish.
+
+**Reviewed at commit:** `96b962a` — checked the project records and local baseline before this update.
+
+## 12 November 2026 — Local unlinked-menu style survived Designer reload — Codex (night shift)
+
+**Changed (R-268):** On Disposable SB test site, I changed the bottom unlinked menu's local `sb-nav-panel` Flex gap from 0.25rem to 0.375rem. I did not publish or change another site.
+
+**Outputs:** Before the change, the Home page Navigator showed linked roots `mwp-css-nav` and `mwp-css-nav 2`, plus a separate bottom `sb-nav` root. The selected panel used the local `sb-nav-panel` class with four selectors. Its Style panel showed Flex, 0.25rem gap, 0.25rem top/bottom padding, approximately 0.2rem left/right padding, transparent background and 0.75rem radius. After the edit, the Style panel showed a 0.375rem gap. I reloaded Designer, reopened the bottom unlinked menu and read 0.375rem again. The local style change survived reload.
+
+**Checked how:** In signed-in Google Chrome, opened `https://disposable-sb-test-site.webflow.io/` and `https://disposable-sb-test-site.design.webflow.com/`. Read the published Home page and Designer Navigator/Style panel; after editing, reloaded Designer in a fresh tab and read the selected bottom `sb-nav-panel` again. The Webflow reader returned 16 sites and omitted Disposable SB test site, so it could not provide before/after style-record exports or stable IDs. The requested snapshots could not be made because the reader omits this site; snapshots would not capture interactions or animations.
+
+**Still open:** R-268's stable-ID/origin comparison, proof that imported records and a linked sibling stay unchanged, deterministic style-write route or unique-name route, normal/hover/focus/breakpoint comparisons, Preview desktop/mobile and keyboard checks, recovery evidence, and supported workflow documentation. The saved local style change is verified in Designer; this does not complete those exit criteria.
+
+**Needs Michael:** Restore read-only Webflow reader access to Disposable SB test site so the remaining record comparisons and exports can be completed.
+
+**Next useful action:** When that site is available to the reader, continue the exact Home-page comparison on the bottom unlinked `sb-nav` menu. Do not publish.
+
+**Reviewed at commit:** `917e6aa` — checked the project records and local baseline before this update.
+
+## 12 November 2026 — 471 × 400 single-menu check not run — Codex (night shift)
+
+**Changed (R-269, R-155):** No new viewport or wheel-scrolling evidence was captured. The current night-shift limits prohibit browsers and desktop apps, which are needed to render this fixture at an actual CSS-pixel viewport and send wheel input.
+
+**Outputs:** The existing single-menu record measures 471 × 500 (panel client height 428 px, scroll height 480 px; wheel scrolling reached the final link) and 471 × 900 (client and scroll heights 480 px; all links fit). It does not establish the result at 471 × 400. The separate published-page record at 471 × 400 reports equal 298 px client and scroll heights and no movement from wheel input. These are prior observations; no new local reading was made tonight.
+
+**Checked how:** Read the fixture instructions, HTML, prior local measurements, and published-page record. The fixture is `/Users/michaelauty/Work on MacStudio/Smashburger-Webflow-Navbar/webflow/fixtures/full-width-short-height.html`; measuring it requires browser rendering and wheel input. No browser, desktop app, Webflow page, production code, asset, or published content was opened or changed.
+
+**Still open:** The requested local measurements at 471 × 400 and the matched comparison remain unrecorded. The published 298 px observation belongs to a different page with three stacked menus and does not establish the single-menu result.
+
+**Needs Michael:** Nothing during this session; the current brief explicitly prohibits the browser needed for the check.
+
+**Next useful action:** In a session where a local browser check is allowed, open the fixture above at an actual 471 × 400 CSS-pixel viewport, open Menu, record `innerWidth`/`innerHeight`, panel `clientHeight`/`scrollHeight`, and whether wheel input reaches Contact us; compare only then with the separate published-page record.
+
+**Reviewed at commit:** `917e6aa` — checked the current project records and clean local baseline before this note.
+
 ## 11 November 2026 — Designer style readback confirmed; reader still omits Disposable site — Codex (night shift)
 
 **Changed (R-268):** I clarified that the five named disposable test sites do not require a before backup, and linked R-268 to that decision. I made no Webflow change tonight and did not publish.

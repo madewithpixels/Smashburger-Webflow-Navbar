@@ -126,11 +126,11 @@ For Boss, copy a heading as the title and the entire section body below it. Each
 
 ## 13. Prove a local style can be changed safely after unlinking (R-268)
 
-**Run lane.** Hold · authorised cloned Webflow test.
+**Run lane.** Active · authorised Disposable SB test site.
 
-**Access and boundaries.** Hold until separately authorised for the named disposable project and exact changes. Record the before state. Keep old pins and other projects untouched. Publishing and Library sharing require their own explicit authority. Stop if the target cannot be confirmed. Record what was actually observed and leave acceptance to Michael.
+**Access and boundaries.** The authorised target is the saved `0.3.0-rc.1` bottom menu on Home at Disposable SB test site. No backup is required. Do not publish, share a Library update or change another site. Record the before state and leave acceptance to Michael.
 
-**Work and first check.** Use the duplicate-class preflight and retain a linked sibling as the control. On the authorised disposable consumer, configure and unlink a duplicate using the authorised exact runtime. Record colliding stable IDs, selector, origin, declarations and actual assignments before attempting a write. Proceed only with a verifiably deterministic route. Compare both records and the linked sibling after each authorised change. If that route cannot be proven, exercise a uniquely named local class only if the brief authorises it. Verify desktop/mobile geometry and keyboard behaviour, and restore the before state.
+**Work and first check.** Keep the linked sibling as a control. Read the local and imported records, selector, origin, declarations and actual assignments before attempting a write. Proceed only with a verifiably deterministic route. Compare both records and the linked sibling after the change. If Webflow's reader cannot identify the records, record that limit and do not claim the comparison passed. Verify the saved local style after reloading Designer; do not publish.
 
 **Finish and handoff.** Done when there is before, after and recovery evidence by record ID, or a documented stop at the point targeting became ambiguous. A success response alone is insufficient.
 
