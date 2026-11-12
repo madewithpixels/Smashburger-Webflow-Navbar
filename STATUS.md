@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 12 November 2026 — Single-menu fixture reaches Contact us at 471 × 400 — Codex (night shift)
+
+**Changed (R-269, R-155):** I opened the checked-in single-menu fixture in Chrome and checked it at an actual 471 × 400 CSS-pixel responsive viewport. No source, site, asset or published content was changed.
+
+**Outputs:** Chrome's page readback reported `innerWidth: 471` and `innerHeight: 400`. With Menu open, the single navigation panel measured 328 px `clientHeight` and 480 px `scrollHeight`. Wheel scrolling over the menu moved its links and brought Contact us into view. The separate published Home-page observation at 471 × 400 is from a page with three stacked menus: the open bottom panel had equal 298 px client and scroll heights, and wheel input did not move its contents. That published result remains evidence about the stacked page only; it does not contradict or establish single-menu published behavior.
+
+**Checked how:** Opened `webflow/fixtures/full-width-short-height.html` in the signed-in Google Chrome desktop app, enabled Responsive device mode and confirmed 471 × 400 in both the toolbar and page `innerWidth`/`innerHeight` readback. Opened Menu, read the panel dimensions in Chrome DevTools Console, and scrolled inside the responsive page until Contact us was visible. Compared with the existing 11 November published-page record; did not reopen or change that page.
+
+**Still open:** A matched single-menu published-page check has not been made. The published 298 px result belongs to the separate page containing three stacked menus.
+
+**Needs Michael:** Nothing for this local fixture check.
+
+**Next useful action:** Continue the separately authorised staging comparison only when a single-menu published page is available; keep its result separate from the three-menu Home-page observation.
+
+**Reviewed at commit:** `ca66702` — checked the project record and Git baseline before this browser check.
+
 ## 12 November 2026 — Unlinked panel style survived another Designer reload — Codex (night shift)
 
 **Changed (R-268):** On Disposable SB test site's Home page, I changed only the bottom unlinked `sb-nav-panel` local Flex gap from 0.5rem to 0.625rem. I did not publish or change another site.
