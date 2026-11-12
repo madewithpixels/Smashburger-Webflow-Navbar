@@ -1,5 +1,19 @@
 # SmashBurger — Status
 
+## 12 November 2026 — Night-shift rule in AGENTS.md no longer bars Webflow and browser briefs — Claude (night shift)
+
+**Changed:** Replaced the night-shift paragraph in AGENTS.md section 3. The default is still the local repo only (no push, pull or fetch, no deploys, no tags, no external messages, no paid operations). Webflow and Chrome are now allowed when a brief ticks that access, on the staging or test sites it names. Publishing, Library sharing, CDN releases and tags still need Michael's explicit authority. The limits on force, rebase, reset --hard, branch deletion, history rewrite, dependency installs, deleting others' files, boss_commit with explicit paths and writing .git are kept. The brief #6 sentences are removed. The "Before structural Webflow testing, require a backup" sentence is unchanged, as briefed.
+
+**Checked how:** Read the edited paragraph back. `git diff` shows only AGENTS.md and STATUS.md. No Webflow, Chrome or network access was used.
+
+**Still open:** The backup sentence in AGENTS.md section 3 is untouched. Planning sessions should now be able to propose R-115, R-269 and R-272 briefs; I have not run a planning session to confirm.
+
+**Needs Michael:** The sentence "Before structural Webflow testing, require a backup" in AGENTS.md may now conflict with the 5 November decision that backups are per-brief switches (briefs #342 and #483). Say whether to reword it. No acceptance was recorded.
+
+**Next useful action:** Re-run "Plan next briefs" and check it now offers the Webflow and browser items.
+
+**Reviewed at commit:** `2602a97` — checked the local baseline before editing.
+
 ## 12 November 2026 — R-115 checklist follows the site-specific backup rule — Codex (night shift)
 
 **Changed (R-009, R-115):** I aligned the cloned-site checklist with the accepted site-specific backup rule. The five named disposable test sites do not require, request, confirm or wait for a before backup; other sites still need a confirmed backup before changes.

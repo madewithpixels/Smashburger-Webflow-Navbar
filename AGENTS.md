@@ -44,13 +44,15 @@ sharing, CDN releases, remote changes and tags need Michael's explicit authority
 Retain pinned assets and user-authored content; distinguish source readback,
 Preview behavior and published checks. See README and the webflow records.
 
-During the night shift: local repo only; no remote access (push, pull, fetch),
-deploys, Webflow/Designer changes, CDN releases, tags, external messages or paid
-operations. No force, rebase, reset --hard, branch deletion or history rewrite.
-No dependency installs/upgrades. Do not delete files you did not create unless the
-brief explicitly asks. Use boss_commit for local commits with explicit paths;
-never write .git directly. Brief #6 is docs only and uses one commit named
-`Retrofit project docs`. Future sessions follow their own authorised brief.
+During the night shift the default is the local repo only: no push, pull or fetch,
+no deploys, no tags, no external messages and no paid operations. Webflow (the
+Webflow MCP) and Chrome are allowed only when the brief ticks that access, and only
+on the staging or test sites the brief names. Publishing, Library sharing, CDN
+releases and tags still need Michael's explicit authority. No force, rebase,
+reset --hard, branch deletion or history rewrite. No dependency installs/upgrades.
+Do not delete files you did not create unless the brief explicitly asks. Use
+boss_commit for local commits with explicit paths; never write .git directly. Each
+session follows its own authorised brief.
 
 ## 4. Close with evidence and a handoff
 
