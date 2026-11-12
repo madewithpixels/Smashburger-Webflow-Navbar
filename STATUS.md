@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 12 November 2026 — R-115 checklist follows the site-specific backup rule — Codex (night shift)
+
+**Changed (R-009, R-115):** I aligned the cloned-site checklist with the accepted site-specific backup rule. The five named disposable test sites do not require, request, confirm or wait for a before backup; other sites still need a confirmed backup before changes.
+
+**Outputs:** The checklist keeps explicit site authorisation, the named-site and scope limits, and separate publication approval. This documentation change does not authorise a Webflow trial. Roadmap state, evidence and acceptance are unchanged.
+
+**Checked how:** Compared the entry conditions and final evidence boundary with D-024 and checked the wording names all five exempt sites. `git diff --check` passed. Local diff shows only the intended checklist wording before this STATUS entry. Checked baseline: `9a6801dd81fdbea78c6fc2ac8d671d7ded79f1ba` (`9a6801d`). No Webflow or network access was used.
+
+**Still open:** R-115's authorised cloned-site upgrade and rollback trial remains untested. No trial was started.
+
+**Needs Michael:** Nothing for this documentation change. No acceptance was recorded.
+
+**Next useful action:** Run the separate R-115 trial only under a brief that names and authorises its site, with the applicable backup and publication gates observed.
+
+**Reviewed at commit:** `9a6801d` — checked the local baseline before editing the checklist.
+
 ## 12 November 2026 — README and roadmap checked against stable and candidate delivery — Codex (night shift)
 
 **Changed (R-009):** I linked the README's 0.3 candidate overview to the current local evidence pack and updated R-009's evidence links to include that pack and the v0.2.9 release record.

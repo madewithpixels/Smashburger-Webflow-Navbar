@@ -14,8 +14,14 @@ rehearsal cannot provide.
 
 - Do not begin until the trial is explicitly authorised for one named cloned
   staging or test site. Record its exact Webflow site name and URL below.
-- Record and confirm a named Webflow backup made before the first change. If no
-  confirmed backup exists, stop; do not upgrade.
+- For any site other than the five named disposable test sites below, record and
+  confirm a named Webflow backup made before the first change. If no confirmed
+  backup exists, stop; do not upgrade.
+- For Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB
+  Unlink Clean Trial or Griddle Native Test, do not make, request, confirm or
+  wait for a before backup. This exemption removes only the backup condition;
+  the trial still needs explicit site authorisation and must stay within its
+  named site and scope. Do not publish unless separately authorised.
 - Use the exact old and new runtime versions and matching delivery files. Do not
   mix versions or infer the saved version from a planned candidate.
 - Keep the trial on the named clone. Do not publish unless separately authorised;
@@ -31,8 +37,11 @@ rehearsal cannot provide.
 - Site URL and environment (staging or test):
 - Exact page name and URL:
 - Clone source and clone date, if known:
-- Webflow backup name made before changes:
-- Backup confirmation evidence (dashboard entry, date/time or capture reference):
+- Before-backup rule for this site: `Required` / `Not required — named disposable
+  site` (site name):
+- Webflow backup name made before changes, when required:
+- Backup confirmation evidence, when required (dashboard entry, date/time or
+  capture reference):
 - Exact currently saved runtime version:
 - Exact proposed runtime version:
 - Delivery type and exact asset/Embed names for old version:
@@ -109,7 +118,9 @@ these checks have been performed and evidence recorded on the named clone.
 - Backup used for recovery, if any:
 - Who reviewed the record and when:
 
-Until this record is completed on a **named, backed-up cloned site**, the real-site
-semantic-version upgrade and rollback remain **untested**. Completing a blank
-template or repeating the offline rehearsal does not change that status. A result
-on one clone does not establish results on another site or a published page.
+Until this record is completed on a **named, authorised cloned site**, with a
+confirmed before backup where required, the real-site semantic-version upgrade
+and rollback remain **untested**. The five named disposable test sites do not
+require or wait for a backup. Completing a blank template or repeating the
+offline rehearsal does not change that status. A result on one clone does not
+establish results on another site or a published page.
