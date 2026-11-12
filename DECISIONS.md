@@ -212,10 +212,20 @@ Backups are not required before work on Disposable SB test site, b545 Smashburge
 **Consequence:** Work on a named site may proceed within its separate access and scope authority. Record before state where the brief asks; do not publish or change another site without explicit authority.
 
 ## D-023 - Remove the before-backup gate for the five disposable test sites
-**Status:** Accepted
+**Status:** Superseded by D-024
 **Qualifier:** settled by Michael in boss D-114 and repeated on 11 November 2026
 **Date:** 11 November 2026
 **Source:** Michael's boss setting D-114 and his instruction for brief #531.
 For Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB Unlink Clean Trial and Griddle Native Test, do not require, make, confirm or wait for a before backup as a condition of authorised work. This supersedes the earlier project before-backup gate for these five sites. It does not change the backup rules for any other site or grant authority to publish or make changes outside a brief's stated scope. D-022 remains the earlier record of this same site-specific policy.
 **Rationale:** Michael has set these named sites outside the backup requirement. A stalled backup must not prevent an authorised test there.
 **Consequence:** Record the requested before state by reading it, then proceed only within the brief's scope. Keep each site's access, publication and change limits in force.
+
+## D-024 - Proceed on the five named test sites without a backup gate
+**Status:** Accepted
+**Qualifier:** settled by Michael in boss D-114 and repeated for brief #531
+**Date:** 12 November 2026
+**Supersedes:** D-023
+**Source:** Michael's D-114 setting and his direct instruction for this test.
+For Disposable SB test site, b545 Smashburger Test, New Smashburger Test, SB Unlink Clean Trial and Griddle Native Test, a before backup is not required for authorised work. Do not create, name, confirm or wait for one as a condition of that work. This supersedes the earlier project backup gate only for these five sites; other sites keep their existing rules. This decision does not authorise publishing or work outside a brief's stated scope.
+**Rationale:** Michael has repeatedly removed the backup requirement for these disposable test sites; a stalled backup must not block an authorised test.
+**Consequence:** Read and record the requested before state, then work only within the brief's site and change limits. Do not publish unless the brief explicitly authorises it.
