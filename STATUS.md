@@ -1,5 +1,21 @@
 # SmashBurger — Status
 
+## 12 November 2026 — README and roadmap checked against stable and candidate delivery — Codex (night shift)
+
+**Changed (R-009):** I linked the README's 0.3 candidate overview to the current local evidence pack and updated R-009's evidence links to include that pack and the v0.2.9 release record.
+
+**Outputs:** The guidance distinguishes the stable v0.2.9 distribution from the unreleased 0.3.0-rc.1 candidate. It states that the evidence pack is local evidence only. No incorrect release, sharing or acceptance claim was found in the reviewed sections; historical notes were retained.
+
+**Checked how:** Read README, ROADMAP, DECISIONS, the 12 November candidate evidence pack and v0.2.9 release record. Confirmed package version `0.3.0-rc.1`, stable files under `dist/`, candidate outputs under `candidate/`, and the pack's stated local-only limits. `git diff --check` passed after the documentation edits. Checked baseline: `c4fd8a003b1894353e653f2c090786c77426ea5d` (`c4fd8a0`).
+
+**Still open:** Browser, Webflow, hosted/CDN, release approval, Library sharing, rollback and human/device checks remain separate. No Webflow or network access was used.
+
+**Needs Michael:** Nothing for this documentation audit. No acceptance was recorded.
+
+**Next useful action:** Continue the separate release, Webflow and human/device gates under their existing authority.
+
+**Reviewed at commit:** `c4fd8a0` — checked the local baseline before editing this guidance.
+
 ## 12 November 2026 — Local 0.3 evidence pack refreshed — Codex (night shift)
 
 **Changed (R-121, R-125, R-272):** I refreshed the local evidence for the unreleased 0.3 candidate. It identifies the exact checked candidate and keeps its local test results separate from release and Webflow checks.
