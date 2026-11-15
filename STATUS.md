@@ -1,5 +1,23 @@
 # SmashBurger — Status
 
+## 15 November 2026 — iPad Safari burger-button fix planned — Codex
+
+**Changed (R-273):** Added a planned fix for the extra triangle beside the burger bars reported on Voice Focus and madewithpixels.
+
+**Outputs:** The roadmap item records the likely native marker cause, the scope of the shared CSS fix and the physical iPad Safari checks. It cites the madewithpixels workaround (MWP R-140).
+
+**Checked how:** Searched the SmashBurger roadmap for a matching item and checked the existing IDs. Read the MWP workaround and confirmed that the local trigger CSS sets `list-style: none`. This was a documentation review.
+
+**Still open:** Shared CSS implementation and physical iPad Safari verification are pending. Webflow changes and publishing are outside this session.
+
+**Needs Michael:** Nothing for this roadmap update.
+
+**Next useful action:** In a separate session, implement the scoped marker rules and verify the appearance and native toggle on a physical iPad.
+
+**Handoff:** The next implementing agent should start with R-273 and the MWP R-140 workaround. Keep marker suppression scoped to the burger trigger and preserve the native toggle. Keep Webflow and publishing outside the implementation unless separately authorised.
+
+**Reviewed at commit:** `6d1e491` — checked the local baseline before recording the item.
+
 ## 12 November 2026 — Night-shift rule in AGENTS.md no longer bars Webflow and browser briefs — Claude (night shift)
 
 **Changed:** Replaced the night-shift paragraph in AGENTS.md section 3. The default is still the local repo only (no push, pull or fetch, no deploys, no tags, no external messages, no paid operations). Webflow and Chrome are now allowed when a brief ticks that access, on the staging or test sites it names. Publishing, Library sharing, CDN releases and tags still need Michael's explicit authority. The limits on force, rebase, reset --hard, branch deletion, history rewrite, dependency installs, deleting others' files, boss_commit with explicit paths and writing .git are kept. The brief #6 sentences are removed. The "Before structural Webflow testing, require a backup" sentence is unchanged, as briefed.

@@ -1136,6 +1136,13 @@ Keep the current Canvas-visible, self-contained Embed as the dependable default.
 **Preview follow-up:** [Capture card](webflow/r272-preview-error-capture-card-2026-11-10.md) records the page state, candidate, viewport, exact Console error and source location, plus any related script request or response. It keeps the general compilation error distinct from the unconfirmed duplicate-script hypothesis and the local source review.
 **10 November 2026 — Preview capture:** [Chrome observation](webflow/r272-preview-error-capture-2026-11-10.md) records the visible general error and its two `webflow.js` stack locations. The candidate version and related request remain unidentified; a cleared-log reload redirected to sign-in before the error could be reproduced. No duplicate-script message was observed.
 
+#### R-273 · Remove the extra burger-button triangle in iPad Safari.
+**State:** planned · **Evidence:** none · **Acceptance:** pending
+**Source:** Michael’s 15 November 2026 report in this session and [madewithpixels roadmap R-140](../mwp-webflow/ROADMAP.md#r-140--tablet-burger-menu-shows-an-arrow-and-the-burger-bar-geometry---remove-the-arrow-accepted-by-michael-in-boss-11-nov-2026).
+**Issue:** Michael saw a small white triangle beside the three burger bars inside the Voice Focus menu button in iPad Safari. He saw the same issue on madewithpixels. Safari may be rendering the native `<summary>` disclosure marker despite `list-style: none` (inferred — confirm).
+**Planned fix:** Use the MWP workaround in the shared SmashBurger CSS. Scope suppression of both `::-webkit-details-marker` and `::marker` to the SmashBurger burger trigger. Preserve the native `<details>/<summary>` structure and toggle behaviour. The rules only suppress the browser-drawn marker, and the three bars remain native elements.
+**Exit criteria:** On a physical iPad in Safari, the triangle is gone and the three bars stay centred. The menu opens and closes by touch and keyboard with JavaScript enabled and disabled.
+
 #### R-125 · Build, test and publish a new semantic release from `SmashBurger-Webflow-Navbar`; generate exact new jsDelivr URLs and SHA-384 integrity values.
 **State:** built · **Evidence:** verified (live) · **Acceptance:** n/a (step — covered by R-271)
 **Task:** 43612101 in your boss list
